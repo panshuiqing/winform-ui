@@ -1,0 +1,80 @@
+﻿namespace Teleware.ZPG.Client
+{
+    partial class SkinForm
+    {
+        /// <summary>
+        /// Required designer variable.
+        /// </summary>
+        private System.ComponentModel.IContainer components = null;
+
+        /// <summary>
+        /// Clean up any resources being used.
+        /// </summary>
+        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing && (components != null))
+            {
+                components.Dispose();
+            }
+            base.Dispose(disposing);
+        }
+
+        #region Windows Form Designer generated code
+
+        /// <summary>
+        /// Required method for Designer support - do not modify
+        /// the contents of this method with the code editor.
+        /// </summary>
+        private void InitializeComponent()
+        {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SkinForm));
+            this.SuspendLayout();
+            // 
+            // SkinForm
+            // 
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
+            this.Back = global::Teleware.ZPG.Client.Properties.Resources.Back;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(165)))), ((int)(((byte)(59)))));
+            this.BackPalace = global::Teleware.ZPG.Client.Properties.Resources.BackPalace2;
+            this.BackShade = false;
+            this.BorderPalace = global::Teleware.ZPG.Client.Properties.Resources.BackPalace;
+            this.CanResize = false;
+            this.CaptionHeight = 30;
+            this.ClientSize = new System.Drawing.Size(331, 371);
+            this.CloseBoxSize = new System.Drawing.Size(39, 20);
+            this.CloseDownBack = global::Teleware.ZPG.Client.Properties.Resources.form_close_down;
+            this.CloseMouseBack = global::Teleware.ZPG.Client.Properties.Resources.form_close_hover;
+            this.CloseNormlBack = global::Teleware.ZPG.Client.Properties.Resources.form_close_normal;
+            this.ControlBoxOffset = new System.Drawing.Point(-2, -1);
+            this.DropBack = false;
+            this.EffectCaption = CCWin.TitleType.Title;
+            this.Font = CCWin.Localization.Localizer.DefaultFont;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(0);
+            this.MaxDownBack = global::Teleware.ZPG.Client.Properties.Resources.form_max_down;
+            this.MaxMouseBack = global::Teleware.ZPG.Client.Properties.Resources.form_max_hover;
+            this.MaxNormlBack = global::Teleware.ZPG.Client.Properties.Resources.form_max_normal;
+            this.MaxSize = new System.Drawing.Size(28, 20);
+            this.MiniDownBack = global::Teleware.ZPG.Client.Properties.Resources.form_min_down;
+            this.MiniMouseBack = global::Teleware.ZPG.Client.Properties.Resources.form_min_hover;
+            this.MiniNormlBack = global::Teleware.ZPG.Client.Properties.Resources.form_min_normal;
+            this.MiniSize = new System.Drawing.Size(28, 20);
+            this.Mobile = CCWin.MobileStyle.Mobile;
+            this.Name = "SkinForm";
+            this.RestoreDownBack = global::Teleware.ZPG.Client.Properties.Resources.form_restore_down;
+            this.RestoreMouseBack = global::Teleware.ZPG.Client.Properties.Resources.form_restore_hover;
+            this.RestoreNormlBack = global::Teleware.ZPG.Client.Properties.Resources.form_restore_normal;
+            this.RoundStyle = CCWin.SkinClass.RoundStyle.All;
+            this.ShowBorder = false;
+            this.ShowDrawIcon = false;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "SkinForm";
+            this.TitleColor = System.Drawing.Color.White;
+            this.ResumeLayout(false);
+
+        }
+
+        #endregion
+    }
+}

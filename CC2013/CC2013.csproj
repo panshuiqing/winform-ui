@@ -1,0 +1,510 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{3F8A866D-EB38-4CD1-AC4F-27420ED21669}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>CC2013</RootNamespace>
+    <AssemblyName>CC2013</AssemblyName>
+    <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>UDP%28TCP%29\2226.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.XML" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form2.Designer.cs">
+      <DependentUpon>Form2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmChat.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmChat.designer.cs">
+      <DependentUpon>FrmChat.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmPrintscreen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmPrintscreen.Designer.cs">
+      <DependentUpon>FrmPrintscreen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmCountenance.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmCountenance.Designer.cs">
+      <DependentUpon>FrmCountenance.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmInformation.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmInformation.Designer.cs">
+      <DependentUpon>FrmInformation.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmLogin.Designer.cs">
+      <DependentUpon>FrmLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmMain.designer.cs">
+      <DependentUpon>FrmMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmSearch.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmSearch.Designer.cs">
+      <DependentUpon>FrmSearch.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmWeatherFit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmWeatherFit.designer.cs">
+      <DependentUpon>FrmWeatherFit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Helper\AndyDateConvert.cs" />
+    <Compile Include="Helper\Helper.cs" />
+    <Compile Include="Helper\WeatherGet.cs" />
+    <Compile Include="Helper\WebServiceHelper.cs" />
+    <Compile Include="Helper\WryLocator.cs" />
+    <Compile Include="LoginCode.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="LoginCode.Designer.cs">
+      <DependentUpon>LoginCode.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="FrmUserInformation.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmUserInformation.Designer.cs">
+      <DependentUpon>FrmUserInformation.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PwdErro.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PwdErro.Designer.cs">
+      <DependentUpon>PwdErro.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Tools.cs" />
+    <Compile Include="UDP%28TCP%29\ClassBoardCast.cs" />
+    <Compile Include="UDP%28TCP%29\ClassReceiveMsg.cs" />
+    <Compile Include="UDP%28TCP%29\ClassSendFile.cs" />
+    <Compile Include="UDP%28TCP%29\ClassSendMsg.cs" />
+    <Compile Include="UDP%28TCP%29\ClassStartUdpThread.cs" />
+    <Compile Include="UDP%28TCP%29\ClassTcpConnect.cs" />
+    <Compile Include="UDP%28TCP%29\UserLogin.cs" />
+    <Compile Include="FrmWeather.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmWeather.Designer.cs">
+      <DependentUpon>FrmWeather.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Web References\WeatherService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+    <Compile Include="FrmGroup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmGroup.Designer.cs">
+      <DependentUpon>FrmGroup.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmGroupChat.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmGroupChat.Designer.cs">
+      <DependentUpon>FrmGroupChat.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form2.resx">
+      <DependentUpon>Form2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmChat.resx">
+      <DependentUpon>FrmChat.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmPrintscreen.resx">
+      <DependentUpon>FrmPrintscreen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmCountenance.resx">
+      <DependentUpon>FrmCountenance.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmInformation.resx">
+      <DependentUpon>FrmInformation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmLogin.resx">
+      <DependentUpon>FrmLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmMain.resx">
+      <DependentUpon>FrmMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmSearch.resx">
+      <DependentUpon>FrmSearch.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmWeatherFit.resx">
+      <DependentUpon>FrmWeatherFit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LoginCode.resx">
+      <DependentUpon>LoginCode.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="FrmUserInformation.resx">
+      <DependentUpon>FrmUserInformation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmWeather.resx">
+      <DependentUpon>FrmWeather.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmGroup.resx">
+      <DependentUpon>FrmGroup.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PwdErro.resx">
+      <DependentUpon>PwdErro.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmGroupChat.resx">
+      <DependentUpon>FrmGroupChat.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="app.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <None Include="Web References\WeatherService\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\WeatherService\WeatherWebService.wsdl" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\AIO_SetBtn_down.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\AIO_SetBtn_highlight.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\AIO_SetBtn_highlight_normal.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\AIO_SetBtn_normal.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\btn_close_disable.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\btn_close_down.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\btn_close_highlight.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\btn_max_down.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\btn_max_highlight.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\btn_max_normal.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\btn_mini_down.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\btn_mini_highlight.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\btn_mini_normal.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\btn_restore_down.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\btn_restore_highlight.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\btn_restore_normal.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\btn_Skin_down.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\btn_Skin_highlight.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\btn_Skin_normal.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\texture.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\night.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\duozhanghao6.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\corner_back.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\corner_back_hover.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\corner_back_press.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\corner_left.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\corner_left_hover.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\corner_left_press.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\corner_right.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\corner_right_hover.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\corner_right_press.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\duozhanghao1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\duozhanghao2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\duozhanghao3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\duozhanghao4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\duozhanghao5.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\btn_set_hover.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\btn_set_normal.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\btn_set_press.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\zhuce_press.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\mima.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\mima_hover.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\mima_press.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\zhuce.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\zhuce_hover.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\2221.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="UDP%28TCP%29\2226.ico" />
+    <None Include="Resources\icon_close_normal.png" />
+    <None Include="Resources\icon_close_hover.png" />
+    <None Include="Resources\icon_close_down.png" />
+    <None Include="Resources\Full_close_normal.PNG" />
+    <None Include="Resources\Full_close_hover.PNG" />
+    <None Include="Resources\Full_close_down.PNG" />
+    <None Include="Resources\%24this.CloseNormlBack.png" />
+    <None Include="Resources\BackPalace2.png" />
+    <None Include="Web References\WeatherService\WeatherWebService.disco" />
+    <None Include="Resources\main_10.jpg" />
+    <None Include="Resources\main_9.jpg" />
+    <None Include="Resources\main_8.jpg" />
+    <None Include="Resources\main_7.jpg" />
+    <None Include="Resources\main_6.jpg" />
+    <None Include="Resources\main_5.jpg" />
+    <None Include="Resources\main_4.jpg" />
+    <None Include="Resources\main_3.jpg" />
+    <None Include="Resources\main_2.jpg" />
+    <None Include="Resources\main_1.jpg" />
+    <None Include="Resources\Small_10.png" />
+    <None Include="Resources\Small_9.png" />
+    <None Include="Resources\Small_8.png" />
+    <None Include="Resources\Small_7.png" />
+    <None Include="Resources\Small_6.png" />
+    <None Include="Resources\Small_5.png" />
+    <None Include="Resources\Small_4.png" />
+    <None Include="Resources\Small_3.png" />
+    <None Include="Resources\Small_2.png" />
+    <None Include="Resources\Small_1.png" />
+    <None Include="Resources\Big_10.png" />
+    <None Include="Resources\Big_9.png" />
+    <None Include="Resources\Big_8.png" />
+    <None Include="Resources\Big_7.png" />
+    <None Include="Resources\Big_6.png" />
+    <None Include="Resources\Big_5.png" />
+    <None Include="Resources\Big_4.png" />
+    <None Include="Resources\Big_3.png" />
+    <None Include="Resources\Big_2.png" />
+    <None Include="Resources\Big_1.png" />
+    <None Include="Resources\set_icon.png" />
+    <None Include="Resources\button_login_normal.png" />
+    <None Include="Resources\button_login_hover.png" />
+    <None Include="Resources\button_login_down.png" />
+    <None Include="Resources\noon.jpg" />
+    <None Include="Resources\morning.jpg" />
+    <None Include="Resources\afternoon.jpg" />
+    <None Include="Resources\BackPalace.png" />
+    <None Include="bin\Debug\Back\night.jpg" />
+    <None Include="Resources\ToolbarBtnNormal.png" />
+    <None Include="Resources\ToolbarBtnDown.png" />
+    <None Include="Resources\menu_btn_normal.png" />
+    <None Include="Resources\menu_btn_highlight.png" />
+    <None Include="Resources\menu_check.png" />
+    <None Include="Resources\pictureBox1.Image.png" />
+    <None Include="Resources\aio_quickbar_twitter.png" />
+    <None Include="Resources\aio_quickbar_sendpic.png" />
+    <None Include="Resources\aio_quickbar_screen2.png" />
+    <None Include="Resources\aio_quickbar_screen1.png" />
+    <None Include="Resources\aio_quickbar_richface.png" />
+    <None Include="Resources\aio_quickbar_register.png" />
+    <None Include="Resources\aio_quickbar_more.png" />
+    <None Include="Resources\aio_quickbar_inputassist.png" />
+    <None Include="Resources\aio_quickbar_font.png" />
+    <None Include="Resources\aio_quickbar_flirtationface.png" />
+    <None Include="Resources\aio_quickbar_face.png" />
+    <None Include="Resources\aio_quickbar_cut.png" />
+    <None Include="Resources\all_inside_bkg.png" />
+    <None Include="Resources\BCF_Title32.ico" />
+    <None Include="Resources\aio_head_normal.png" />
+    <None Include="Resources\checkbox_tick_pushed.png" />
+    <None Include="Resources\checkbox_tick_normal.png" />
+    <None Include="Resources\checkbox_tick_highlight.png" />
+    <None Include="Resources\checkbox_pushed.png" />
+    <None Include="Resources\checkbox_hightlight.png" />
+    <None Include="Resources\checkbox_normal.png" />
+    <None Include="Resources\busy %282%29.png" />
+    <None Include="Resources\away %282%29.png" />
+    <None Include="Resources\Qme %282%29.png" />
+    <None Include="Resources\mute %282%29.png" />
+    <None Include="Resources\invisible %282%29.png" />
+    <None Include="Resources\imonline %282%29.png" />
+    <None Include="Resources\imoffline %282%29.png" />
+    <None Include="Resources\Norml.png" />
+    <None Include="Resources\allbtn_highlight.png" />
+    <None Include="Resources\allbtn_down.png" />
+    <None Include="Resources\1_100.gif" />
+    <None Include="Resources\imgRjp.BackgroundImage.png" />
+    <None Include="Resources\login_inputbtn_highlight.png" />
+    <None Include="Resources\login_inputbtn_down.png" />
+    <None Include="Resources\login_inputbtn_normal.png" />
+    <None Include="Resources\spin_normal_down.png" />
+    <None Include="Resources\frameBorderEffect_normalDraw.png" />
+    <None Include="Resources\frameBorderEffect_mouseDownDraw.png" />
+    <None Include="Resources\texture2.png" />
+    <None Include="bin\Debug\Back\morning.jpg" />
+    <None Include="bin\Debug\Back\afternoon.jpg" />
+    <None Include="bin\Debug\Back\noon.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <WebReferences Include="Web References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WebReferenceUrl Include="http://www.webxml.com.cn/WebServices/WeatherWebService.asmx">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\WeatherService\</RelPath>
+      <UpdateFromURL>http://www.webxml.com.cn/WebServices/WeatherWebService.asmx</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>CC2013_WeatherService_WeatherWebService</CachedSettingsPropName>
+    </WebReferenceUrl>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\CSkin\CSkin.csproj">
+      <Project>{7f988dda-955f-42f2-82eb-d6058fb7ff75}</Project>
+      <Name>CSkin</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
