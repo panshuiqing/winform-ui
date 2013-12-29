@@ -197,11 +197,13 @@
             this.txtPwd.SkinTxt.Font = new System.Drawing.Font("微软雅黑", 9.75F);
             this.txtPwd.SkinTxt.Location = new System.Drawing.Point(5, 5);
             this.txtPwd.SkinTxt.Name = "BaseText";
+            this.txtPwd.SkinTxt.PasswordChar = '*';
             this.txtPwd.SkinTxt.Size = new System.Drawing.Size(152, 18);
             this.txtPwd.SkinTxt.TabIndex = 0;
             this.txtPwd.SkinTxt.WaterColor = System.Drawing.Color.FromArgb(((int)(((byte)(127)))), ((int)(((byte)(127)))), ((int)(((byte)(127)))));
             this.txtPwd.SkinTxt.WaterText = "密码";
             this.txtPwd.TabIndex = 33;
+            this.txtPwd.IconClick += new System.EventHandler(this.txtPwd_IconClick);
             // 
             // skinCheckBox1
             // 

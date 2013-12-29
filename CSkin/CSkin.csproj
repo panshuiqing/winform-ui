@@ -389,11 +389,11 @@
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="SkinControl\SkinStrip\ToolStripColorTable.cs" />
-    <Compile Include="SkinControl\SkinKey\PassKey.cs">
+    <Compile Include="SkinControl\SkinKey\KeyBoardForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="SkinControl\SkinKey\PassKey.Designer.cs">
-      <DependentUpon>PassKey.cs</DependentUpon>
+    <Compile Include="SkinControl\SkinKey\KeyBoardForm.Designer.cs">
+      <DependentUpon>KeyBoardForm.cs</DependentUpon>
     </Compile>
     <Compile Include="SkinControl\SkinLabel\SkinLabel.cs">
       <SubType>Component</SubType>
@@ -593,8 +593,8 @@
     <EmbeddedResource Include="SkinControl\SkinGroupBox\SkinGroupBox.resx">
       <DependentUpon>SkinGroupBox.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="SkinControl\SkinKey\PassKey.resx">
-      <DependentUpon>PassKey.cs</DependentUpon>
+    <EmbeddedResource Include="SkinControl\SkinKey\KeyBoardForm.resx">
+      <DependentUpon>KeyBoardForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="SkinControl\ChatListBox\ChatListBox.resx">
       <DependentUpon>ChatListBox.cs</DependentUpon>

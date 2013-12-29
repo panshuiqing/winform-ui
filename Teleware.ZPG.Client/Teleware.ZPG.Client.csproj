@@ -77,7 +77,6 @@
     <EmbeddedResource Include="SkinForm.resx">
       <DependentUpon>SkinForm.cs</DependentUpon>
     </EmbeddedResource>
-    <None Include="app.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -549,6 +548,9 @@
     <Content Include="Resources\skinButton2.DownBack.png" />
     <Content Include="Resources\skinButton2.MouseBack.png" />
     <Content Include="Resources\skinButton2.NormlBack.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="data\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

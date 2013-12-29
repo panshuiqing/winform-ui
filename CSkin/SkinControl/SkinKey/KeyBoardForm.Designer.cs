@@ -20,7 +20,7 @@
 
 namespace CCWin.SkinControl
 {
-    partial class PassKey
+    partial class KeyBoardForm
     {
         /// <summary>
         /// Required designer variable.
@@ -49,7 +49,7 @@ namespace CCWin.SkinControl
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PassKey));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(KeyBoardForm));
             this.toolShow = new System.Windows.Forms.ToolTip(this.components);
             this.btnClose = new CCWin.SkinControl.SkinButton();
             this.btnhx2 = new CCWin.SkinControl.SkinButton();

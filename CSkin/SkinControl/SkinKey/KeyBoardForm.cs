@@ -33,14 +33,14 @@ using CCWin.Win32;
 
 namespace CCWin.SkinControl
 {
-    public partial class PassKey : Form
+    public partial class KeyBoardForm : Form
     {
         //需要操作的文本框
         private TextBox txt;
         private int X;
         private int Y;
         //位置显示有问题
-        public PassKey(int x, int y, TextBox txt)
+        public KeyBoardForm(int x, int y, TextBox txt)
         {
             InitializeComponent();
             this.txt = txt;
