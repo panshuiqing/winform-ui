@@ -44,9 +44,11 @@
             this.tabPage6 = new System.Windows.Forms.TabPage();
             this.tabPage7 = new System.Windows.Forms.TabPage();
             this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.panelDetail = new CCWin.SkinControl.SkinPanel();
             this.skinPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.skinPictureBox1)).BeginInit();
             this.skinTabControl1.SuspendLayout();
+            this.tabPage1.SuspendLayout();
             this.SuspendLayout();
             // 
             // toolbarImages
@@ -183,19 +185,20 @@
             this.skinTabControl1.PagePalace = true;
             this.skinTabControl1.Radius = 1;
             this.skinTabControl1.SelectedIndex = 0;
-            this.skinTabControl1.Size = new System.Drawing.Size(898, 569);
+            this.skinTabControl1.Size = new System.Drawing.Size(898, 649);
             this.skinTabControl1.SizeMode = System.Windows.Forms.TabSizeMode.Fixed;
             this.skinTabControl1.TabIndex = 3;
             // 
             // tabPage1
             // 
             this.tabPage1.BackColor = System.Drawing.Color.White;
+            this.tabPage1.Controls.Add(this.panelDetail);
             this.tabPage1.ForeColor = System.Drawing.Color.White;
             this.tabPage1.ImageIndex = 5;
             this.tabPage1.Location = new System.Drawing.Point(0, 75);
             this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(898, 494);
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(1);
+            this.tabPage1.Size = new System.Drawing.Size(898, 574);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "交易大厅";
             this.tabPage1.Click += new System.EventHandler(this.tabPage1_Click);
@@ -256,11 +259,25 @@
             this.tabPage3.Text = "注销登录";
             this.tabPage3.UseVisualStyleBackColor = true;
             // 
+            // panelDetail
+            // 
+            this.panelDetail.BackColor = System.Drawing.Color.Transparent;
+            this.panelDetail.ControlState = CCWin.SkinClass.ControlState.Normal;
+            this.panelDetail.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panelDetail.DownBack = null;
+            this.panelDetail.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.panelDetail.Location = new System.Drawing.Point(1, 1);
+            this.panelDetail.MouseBack = null;
+            this.panelDetail.Name = "panelDetail";
+            this.panelDetail.NormlBack = null;
+            this.panelDetail.Size = new System.Drawing.Size(360, 572);
+            this.panelDetail.TabIndex = 0;
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(900, 600);
+            this.ClientSize = new System.Drawing.Size(900, 680);
             this.Controls.Add(this.skinPanel1);
             this.Controls.Add(this.skinTabControl1);
             this.ForeColor = System.Drawing.Color.White;
@@ -272,6 +289,7 @@
             this.skinPanel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.skinPictureBox1)).EndInit();
             this.skinTabControl1.ResumeLayout(false);
+            this.tabPage1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -291,6 +309,7 @@
         private CCWin.SkinControl.SkinLabel skinLabel3;
         private CCWin.SkinControl.SkinLabel skinLabel2;
         private CCWin.SkinControl.SkinLabel skinLabel1;
+        private CCWin.SkinControl.SkinPanel panelDetail;
 
     }
 }

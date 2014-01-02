@@ -11,7 +11,7 @@ namespace Teleware.ZPG.Client.Web.res
 {
 
 
-    public partial class TradePrice
+    public partial class Affiche
     {
 
         /// <summary>

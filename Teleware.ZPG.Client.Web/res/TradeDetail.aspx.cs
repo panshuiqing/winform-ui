@@ -7,7 +7,7 @@ using System.Web.UI.WebControls;
 
 namespace Teleware.ZPG.Client.Web.res
 {
-    public partial class LandNews : System.Web.UI.Page
+    public partial class TradeDetail : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
