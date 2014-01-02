@@ -44,6 +44,7 @@
             this.skinPictureBox1 = new CCWin.SkinControl.SkinPictureBox();
             this.skinLabel1 = new CCWin.SkinControl.SkinLabel();
             this.skinButton2 = new CCWin.SkinControl.SkinButton();
+            this.menuUsers = new CCWin.SkinControl.SkinContextMenuStrip();
             this.pnlTX.SuspendLayout();
             this.txtId.SuspendLayout();
             this.txtPwd.SuspendLayout();
@@ -134,6 +135,9 @@
             this.btnId.Size = new System.Drawing.Size(22, 24);
             this.btnId.TabIndex = 5;
             this.btnId.UseVisualStyleBackColor = false;
+            this.btnId.MouseDown += new System.Windows.Forms.MouseEventHandler(this.btnId_MouseDown);
+            this.btnId.MouseEnter += new System.EventHandler(this.btnId_MouseEnter);
+            this.btnId.MouseLeave += new System.EventHandler(this.btnId_MouseLeave);
             // 
             // btnZc
             // 
@@ -343,6 +347,37 @@
             this.skinButton2.UseVisualStyleBackColor = false;
             this.skinButton2.Click += new System.EventHandler(this.skinButton2_Click);
             // 
+            // menuUsers
+            // 
+            this.menuUsers.Arrow = System.Drawing.Color.Black;
+            this.menuUsers.AutoSize = false;
+            this.menuUsers.Back = System.Drawing.Color.White;
+            this.menuUsers.BackRadius = 4;
+            this.menuUsers.Base = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(200)))), ((int)(((byte)(254)))));
+            this.menuUsers.DropDownImageSeparator = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(148)))), ((int)(((byte)(212)))));
+            this.menuUsers.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.menuUsers.Fore = System.Drawing.Color.Black;
+            this.menuUsers.HoverFore = System.Drawing.Color.White;
+            this.menuUsers.ImageScalingSize = new System.Drawing.Size(2, 2);
+            this.menuUsers.ItemAnamorphosis = false;
+            this.menuUsers.ItemBorder = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(148)))), ((int)(((byte)(212)))));
+            this.menuUsers.ItemBorderShow = false;
+            this.menuUsers.ItemHover = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(148)))), ((int)(((byte)(212)))));
+            this.menuUsers.ItemPressed = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(148)))), ((int)(((byte)(212)))));
+            this.menuUsers.ItemRadius = 4;
+            this.menuUsers.ItemRadiusStyle = CCWin.SkinClass.RoundStyle.None;
+            this.menuUsers.ItemSplitter = System.Drawing.Color.FromArgb(((int)(((byte)(197)))), ((int)(((byte)(197)))), ((int)(((byte)(197)))));
+            this.menuUsers.Name = "menuUsers";
+            this.menuUsers.RadiusStyle = CCWin.SkinClass.RoundStyle.None;
+            this.menuUsers.ShowImageMargin = false;
+            this.menuUsers.Size = new System.Drawing.Size(183, 4);
+            this.menuUsers.SkinAllColor = false;
+            this.menuUsers.TitleAnamorphosis = false;
+            this.menuUsers.TitleColor = System.Drawing.Color.White;
+            this.menuUsers.TitleRadius = 4;
+            this.menuUsers.TitleRadiusStyle = CCWin.SkinClass.RoundStyle.None;
+            this.menuUsers.Closing += new System.Windows.Forms.ToolStripDropDownClosingEventHandler(this.menuUsers_Closing);
+            // 
             // LoginForm
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -409,6 +444,7 @@
         private CCWin.SkinControl.SkinLabel skinLabel1;
         private CCWin.SkinControl.SkinButton skinButton2;
         private CCWin.SkinControl.SkinPictureBox skinPictureBox1;
+        private CCWin.SkinControl.SkinContextMenuStrip menuUsers;
 
     }
 }

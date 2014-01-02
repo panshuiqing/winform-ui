@@ -34,8 +34,7 @@
             // SkinForm
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
-            this.Back = global::Teleware.ZPG.Client.Properties.Resources.Back;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(165)))), ((int)(((byte)(59)))));
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(137)))), ((int)(((byte)(192)))));
             this.BackPalace = global::Teleware.ZPG.Client.Properties.Resources.BackPalace2;
             this.BackShade = false;
             this.BorderPalace = global::Teleware.ZPG.Client.Properties.Resources.BackPalace;
@@ -49,7 +48,7 @@
             this.ControlBoxOffset = new System.Drawing.Point(-2, -1);
             this.DropBack = false;
             this.EffectCaption = CCWin.TitleType.Title;
-            this.Font = CCWin.Localization.Localizer.DefaultFont;
+            this.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(0);
             this.MaxDownBack = global::Teleware.ZPG.Client.Properties.Resources.form_max_down;
@@ -60,12 +59,10 @@
             this.MiniMouseBack = global::Teleware.ZPG.Client.Properties.Resources.form_min_hover;
             this.MiniNormlBack = global::Teleware.ZPG.Client.Properties.Resources.form_min_normal;
             this.MiniSize = new System.Drawing.Size(28, 20);
-            this.Mobile = CCWin.MobileStyle.Mobile;
             this.Name = "SkinForm";
             this.RestoreDownBack = global::Teleware.ZPG.Client.Properties.Resources.form_restore_down;
             this.RestoreMouseBack = global::Teleware.ZPG.Client.Properties.Resources.form_restore_hover;
             this.RestoreNormlBack = global::Teleware.ZPG.Client.Properties.Resources.form_restore_normal;
-            this.RoundStyle = CCWin.SkinClass.RoundStyle.All;
             this.ShowBorder = false;
             this.ShowDrawIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
