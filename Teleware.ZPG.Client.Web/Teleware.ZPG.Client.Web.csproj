@@ -54,6 +54,7 @@
     <Content Include="css\main.css" />
     <Content Include="Global.asax" />
     <Content Include="res\Affiche.aspx" />
+    <Content Include="res\LandInfo.aspx" />
     <Content Include="res\MainInfo.aspx" />
     <Content Include="res\TradeDetail.aspx" />
   </ItemGroup>
@@ -68,6 +69,13 @@
     </Compile>
     <Compile Include="res\Affiche.aspx.designer.cs">
       <DependentUpon>Affiche.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="res\LandInfo.aspx.cs">
+      <DependentUpon>LandInfo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="res\LandInfo.aspx.designer.cs">
+      <DependentUpon>LandInfo.aspx</DependentUpon>
     </Compile>
     <Compile Include="res\MainInfo.aspx.cs">
       <DependentUpon>MainInfo.aspx</DependentUpon>

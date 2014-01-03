@@ -7,12 +7,20 @@
     color: #000000;
     text-align: left;
 }
+.container
+{
+    position:absolute;
+    left:2px;
+    right:2px;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
 .table-field
 {
     border: 1px solid #bfd8e7;
     border-collapse: collapse;
-    margin: 2px;
-    width:99%;
+    width:100%;
+    margin-top:2px;
 }
 .table-field td
 {

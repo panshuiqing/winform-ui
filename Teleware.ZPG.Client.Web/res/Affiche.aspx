@@ -8,7 +8,7 @@
 </head>
 <body>
     <form id="form1" runat="server">
-    <div>
+    <div class="container">
         <table class="table-field" border="0" cellpadding="0" cellspacing="0">
             <thead>
                 <tr class="Header">
@@ -98,7 +98,7 @@
                 </tr>
             </tbody>
         </table>
-        <table width="100%" align="center" border="0" cellspacing="0" cellpadding="0" class="table-field">
+        <table width="100%" align="center" border="0" cellspacing="0" cellpadding="0">
             <tbody>
                 <tr>
                     <td align="center">
@@ -170,11 +170,11 @@
                 </tr>
             </tbody>
         </table>
-        <div style="margin:3px">&nbsp;附 表</div>
-        <div style="font-size: 20px; font-weight: bold; text-align:center;margin:3px">挂牌出让地块的基本情况和规划指标要求</div>
+        <div>附 表</div>
+        <div style="font-size: 20px; font-weight: bold; text-align:center;">挂牌出让地块的基本情况和规划指标要求</div>
         <table class="table-field" align="center" border="0" cellspacing="0" cellpadding="0">
             <tbody>
-                <tr>
+                <tr class="Header">
                     <th rowspan="2">
                         序号
                     </th>
@@ -185,7 +185,7 @@
                         土地位置
                     </th>
                     <th rowspan="2">
-                        土地面积(平方米)
+                        土地面积<br />(平方米)
                     </th>
                     <th rowspan="2">
                         土地用途及出让年限
@@ -194,25 +194,19 @@
                         规划指标要求
                     </th>
                     <th rowspan="2">
-                        履约保证金(万元)
+                        履约保证金<br />(万元)
                     </th>
                     <th rowspan="2">
-                        起始价(万元)
+                        起始价<br />(万元)
                     </th>
                     <th rowspan="2">
-                        挂牌阶段加价最低幅度(万元)
+                        挂牌阶段<br />加价最低幅度<br />(万元)
                     </th>
                     <th rowspan="2">
-                        拍卖阶段加价最低幅度(万元)
-                    </th>
-                    <th rowspan="2">
-                        其它条件
-                    </th>
-                    <th rowspan="2">
-                        备注
+                        拍卖阶段<br />加价最低幅度<br />(万元)
                     </th>
                 </tr>
-                <tr>
+                <tr class="Header">
                     <th>
                         容积率
                     </th>
@@ -260,12 +254,6 @@
                     <td class="me">
                         60.0&nbsp;
                     </td>
-                    <td class="me">
-                        &nbsp;
-                    </td>
-                    <td class="me">
-                        &nbsp;
-                    </td>
                 </tr>
             </tbody>
         </table>
@@ -273,3 +261,4 @@
     </form>
 </body>
 </html>
+
