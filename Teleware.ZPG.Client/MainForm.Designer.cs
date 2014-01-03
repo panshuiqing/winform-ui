@@ -30,7 +30,7 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
-            CCWin.SkinControl.Animation animation1 = new CCWin.SkinControl.Animation();
+            CCWin.SkinControl.Animation animation2 = new CCWin.SkinControl.Animation();
             this.toolbarImages = new System.Windows.Forms.ImageList(this.components);
             this.skinPanel1 = new CCWin.SkinControl.SkinPanel();
             this.skinLabel3 = new CCWin.SkinControl.SkinLabel();
@@ -39,12 +39,12 @@
             this.skinLabel1 = new CCWin.SkinControl.SkinLabel();
             this.skinTabControl1 = new CCWin.SkinControl.SkinTabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.panelDetail = new CCWin.SkinControl.SkinPanel();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.tabPage5 = new System.Windows.Forms.TabPage();
             this.tabPage6 = new System.Windows.Forms.TabPage();
             this.tabPage7 = new System.Windows.Forms.TabPage();
             this.tabPage3 = new System.Windows.Forms.TabPage();
-            this.panelDetail = new CCWin.SkinControl.SkinPanel();
             this.skinPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.skinPictureBox1)).BeginInit();
             this.skinTabControl1.SuspendLayout();
@@ -79,13 +79,12 @@
             this.skinPanel1.Palace = true;
             this.skinPanel1.Radius = 6;
             this.skinPanel1.RoundStyle = CCWin.SkinClass.RoundStyle.All;
-            this.skinPanel1.Size = new System.Drawing.Size(298, 70);
+            this.skinPanel1.Size = new System.Drawing.Size(306, 70);
             this.skinPanel1.TabIndex = 4;
             // 
             // skinLabel3
             // 
             this.skinLabel3.ArtTextStyle = CCWin.SkinControl.ArtTextStyle.None;
-            this.skinLabel3.AutoSize = true;
             this.skinLabel3.BackColor = System.Drawing.Color.Transparent;
             this.skinLabel3.BorderColor = System.Drawing.Color.White;
             this.skinLabel3.BorderSize = 0;
@@ -93,9 +92,9 @@
             this.skinLabel3.ForeColor = System.Drawing.Color.White;
             this.skinLabel3.Location = new System.Drawing.Point(66, 46);
             this.skinLabel3.Name = "skinLabel3";
-            this.skinLabel3.Size = new System.Drawing.Size(217, 17);
+            this.skinLabel3.Size = new System.Drawing.Size(236, 17);
             this.skinLabel3.TabIndex = 6;
-            this.skinLabel3.Text = "竞买宗地号：福州市宗地00120140033";
+            this.skinLabel3.Text = "宗地号：福州市宗地0012088143";
             // 
             // skinLabel2
             // 
@@ -141,22 +140,22 @@
             // 
             // skinTabControl1
             // 
-            animation1.AnimateOnlyDifferences = true;
-            animation1.BlindCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.BlindCoeff")));
-            animation1.LeafCoeff = 1F;
-            animation1.MaxTime = 1F;
-            animation1.MinTime = 0F;
-            animation1.MosaicCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.MosaicCoeff")));
-            animation1.MosaicShift = ((System.Drawing.PointF)(resources.GetObject("animation1.MosaicShift")));
-            animation1.MosaicSize = 0;
-            animation1.Padding = new System.Windows.Forms.Padding(0, 0, 0, 0);
-            animation1.RotateCoeff = 0F;
-            animation1.RotateLimit = 0F;
-            animation1.ScaleCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.ScaleCoeff")));
-            animation1.SlideCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.SlideCoeff")));
-            animation1.TimeCoeff = 0F;
-            animation1.TransparencyCoeff = 0F;
-            this.skinTabControl1.Animation = animation1;
+            animation2.AnimateOnlyDifferences = true;
+            animation2.BlindCoeff = ((System.Drawing.PointF)(resources.GetObject("animation2.BlindCoeff")));
+            animation2.LeafCoeff = 1F;
+            animation2.MaxTime = 1F;
+            animation2.MinTime = 0F;
+            animation2.MosaicCoeff = ((System.Drawing.PointF)(resources.GetObject("animation2.MosaicCoeff")));
+            animation2.MosaicShift = ((System.Drawing.PointF)(resources.GetObject("animation2.MosaicShift")));
+            animation2.MosaicSize = 0;
+            animation2.Padding = new System.Windows.Forms.Padding(0, 0, 0, 0);
+            animation2.RotateCoeff = 0F;
+            animation2.RotateLimit = 0F;
+            animation2.ScaleCoeff = ((System.Drawing.PointF)(resources.GetObject("animation2.ScaleCoeff")));
+            animation2.SlideCoeff = ((System.Drawing.PointF)(resources.GetObject("animation2.SlideCoeff")));
+            animation2.TimeCoeff = 0F;
+            animation2.TransparencyCoeff = 0F;
+            this.skinTabControl1.Animation = animation2;
             this.skinTabControl1.AnimationStart = false;
             this.skinTabControl1.AnimatorType = CCWin.SkinControl.AnimationType.Leaf;
             this.skinTabControl1.CloseRect = new System.Drawing.Rectangle(2, 2, 12, 12);
@@ -203,62 +202,6 @@
             this.tabPage1.Text = "交易大厅";
             this.tabPage1.Click += new System.EventHandler(this.tabPage1_Click);
             // 
-            // tabPage2
-            // 
-            this.tabPage2.ForeColor = System.Drawing.Color.White;
-            this.tabPage2.ImageIndex = 1;
-            this.tabPage2.Location = new System.Drawing.Point(0, 75);
-            this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(898, 494);
-            this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "交易详情";
-            this.tabPage2.UseVisualStyleBackColor = true;
-            // 
-            // tabPage5
-            // 
-            this.tabPage5.ForeColor = System.Drawing.Color.White;
-            this.tabPage5.ImageIndex = 2;
-            this.tabPage5.Location = new System.Drawing.Point(0, 75);
-            this.tabPage5.Name = "tabPage5";
-            this.tabPage5.Size = new System.Drawing.Size(898, 494);
-            this.tabPage5.TabIndex = 2;
-            this.tabPage5.Text = "公告内容";
-            this.tabPage5.UseVisualStyleBackColor = true;
-            // 
-            // tabPage6
-            // 
-            this.tabPage6.ForeColor = System.Drawing.Color.White;
-            this.tabPage6.ImageIndex = 3;
-            this.tabPage6.Location = new System.Drawing.Point(0, 75);
-            this.tabPage6.Name = "tabPage6";
-            this.tabPage6.Size = new System.Drawing.Size(898, 494);
-            this.tabPage6.TabIndex = 3;
-            this.tabPage6.Text = "结果公示";
-            this.tabPage6.UseVisualStyleBackColor = true;
-            // 
-            // tabPage7
-            // 
-            this.tabPage7.ForeColor = System.Drawing.Color.White;
-            this.tabPage7.ImageIndex = 4;
-            this.tabPage7.Location = new System.Drawing.Point(0, 75);
-            this.tabPage7.Name = "tabPage7";
-            this.tabPage7.Size = new System.Drawing.Size(898, 494);
-            this.tabPage7.TabIndex = 4;
-            this.tabPage7.Text = "个人中心";
-            this.tabPage7.UseVisualStyleBackColor = true;
-            // 
-            // tabPage3
-            // 
-            this.tabPage3.ForeColor = System.Drawing.Color.White;
-            this.tabPage3.ImageIndex = 2;
-            this.tabPage3.Location = new System.Drawing.Point(0, 75);
-            this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Size = new System.Drawing.Size(898, 494);
-            this.tabPage3.TabIndex = 5;
-            this.tabPage3.Text = "注销登录";
-            this.tabPage3.UseVisualStyleBackColor = true;
-            // 
             // panelDetail
             // 
             this.panelDetail.BackColor = System.Drawing.Color.Transparent;
@@ -272,6 +215,62 @@
             this.panelDetail.NormlBack = null;
             this.panelDetail.Size = new System.Drawing.Size(360, 572);
             this.panelDetail.TabIndex = 0;
+            // 
+            // tabPage2
+            // 
+            this.tabPage2.ForeColor = System.Drawing.Color.White;
+            this.tabPage2.ImageIndex = 1;
+            this.tabPage2.Location = new System.Drawing.Point(0, 75);
+            this.tabPage2.Name = "tabPage2";
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage2.Size = new System.Drawing.Size(898, 574);
+            this.tabPage2.TabIndex = 1;
+            this.tabPage2.Text = "交易详情";
+            this.tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // tabPage5
+            // 
+            this.tabPage5.ForeColor = System.Drawing.Color.White;
+            this.tabPage5.ImageIndex = 2;
+            this.tabPage5.Location = new System.Drawing.Point(0, 75);
+            this.tabPage5.Name = "tabPage5";
+            this.tabPage5.Size = new System.Drawing.Size(898, 574);
+            this.tabPage5.TabIndex = 2;
+            this.tabPage5.Text = "公告内容";
+            this.tabPage5.UseVisualStyleBackColor = true;
+            // 
+            // tabPage6
+            // 
+            this.tabPage6.ForeColor = System.Drawing.Color.White;
+            this.tabPage6.ImageIndex = 3;
+            this.tabPage6.Location = new System.Drawing.Point(0, 75);
+            this.tabPage6.Name = "tabPage6";
+            this.tabPage6.Size = new System.Drawing.Size(898, 574);
+            this.tabPage6.TabIndex = 3;
+            this.tabPage6.Text = "结果公示";
+            this.tabPage6.UseVisualStyleBackColor = true;
+            // 
+            // tabPage7
+            // 
+            this.tabPage7.ForeColor = System.Drawing.Color.White;
+            this.tabPage7.ImageIndex = 4;
+            this.tabPage7.Location = new System.Drawing.Point(0, 75);
+            this.tabPage7.Name = "tabPage7";
+            this.tabPage7.Size = new System.Drawing.Size(898, 574);
+            this.tabPage7.TabIndex = 4;
+            this.tabPage7.Text = "个人中心";
+            this.tabPage7.UseVisualStyleBackColor = true;
+            // 
+            // tabPage3
+            // 
+            this.tabPage3.ForeColor = System.Drawing.Color.White;
+            this.tabPage3.ImageIndex = 2;
+            this.tabPage3.Location = new System.Drawing.Point(0, 75);
+            this.tabPage3.Name = "tabPage3";
+            this.tabPage3.Size = new System.Drawing.Size(898, 574);
+            this.tabPage3.TabIndex = 5;
+            this.tabPage3.Text = "注销登录";
+            this.tabPage3.UseVisualStyleBackColor = true;
             // 
             // MainForm
             // 
