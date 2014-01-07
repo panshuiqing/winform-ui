@@ -54,9 +54,10 @@
     <Content Include="css\main.css" />
     <Content Include="Global.asax" />
     <Content Include="res\Affiche.aspx" />
-    <Content Include="res\LandInfo.aspx" />
+    <Content Include="res\ApplyInfo.aspx" />
     <Content Include="res\MainInfo.aspx" />
     <Content Include="res\TradeDetail.aspx" />
+    <Content Include="res\TradeResult.aspx" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Global.asax.cs">
@@ -70,12 +71,12 @@
     <Compile Include="res\Affiche.aspx.designer.cs">
       <DependentUpon>Affiche.aspx</DependentUpon>
     </Compile>
-    <Compile Include="res\LandInfo.aspx.cs">
-      <DependentUpon>LandInfo.aspx</DependentUpon>
+    <Compile Include="res\ApplyInfo.aspx.cs">
+      <DependentUpon>ApplyInfo.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="res\LandInfo.aspx.designer.cs">
-      <DependentUpon>LandInfo.aspx</DependentUpon>
+    <Compile Include="res\ApplyInfo.aspx.designer.cs">
+      <DependentUpon>ApplyInfo.aspx</DependentUpon>
     </Compile>
     <Compile Include="res\MainInfo.aspx.cs">
       <DependentUpon>MainInfo.aspx</DependentUpon>
@@ -91,9 +92,18 @@
     <Compile Include="res\TradeDetail.aspx.designer.cs">
       <DependentUpon>TradeDetail.aspx</DependentUpon>
     </Compile>
+    <Compile Include="res\TradeResult.aspx.cs">
+      <DependentUpon>TradeResult.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="res\TradeResult.aspx.designer.cs">
+      <DependentUpon>TradeResult.aspx</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="images\" />
+    <Folder Include="js\" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />

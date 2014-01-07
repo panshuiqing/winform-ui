@@ -15,6 +15,7 @@
     overflow-y: auto;
     overflow-x: hidden;
 }
+/* 表格样式 */
 .table-field
 {
     border: 1px solid #bfd8e7;
@@ -53,4 +54,103 @@
    border-left: none;
    border-top: none;
    border-bottom: none;
+}
+/* 搜索框样式 */
+.search
+{
+    position: relative;
+    padding: 0;
+    margin: 20px auto;
+    text-align:center;
+}
+.search .text
+{
+    border:1px solid #ccc;
+    padding-left:8px;
+    width:380px;
+    height:30px;
+    font-size:16px;
+    line-height:30px;
+}
+.search .button
+{
+    width:80px;
+    height:32px;
+    line-height:32px;
+    border:none;
+    border:1px solid #F17F21;
+    background-color: #F17F21;
+    color:#FFFFFF;
+    font-size:16px;
+    font-weight:bold;
+}
+.search .button-h
+{
+    border:1px solid #F16C00;
+    background-color: #F16C00;
+}
+
+/* 分页样式 */
+.pagination
+{
+    padding-right: 0px;
+    padding-left: 0px;
+    font-size: 13px;
+    padding-bottom: 4px;
+    color: #313031;
+    padding-top: 4px;
+    background-color: #fff;
+    text-align: right;
+    margin:10px auto;
+}
+.pagination a
+{
+    border-right: #b7d8ee 1px solid;
+    padding-right: 6px;
+    border-top: #b7d8ee 1px solid;
+    padding-left: 5px;
+    padding-bottom: 4px;
+    margin-left: 3px;
+    border-left: #b7d8ee 1px solid;
+    color: #0030ce;
+    padding-top: 5px;
+    border-bottom: #b7d8ee 1px solid;
+    text-decoration: none;
+}
+.pagination a:hover
+{
+    border-right: #b7d8ee 1px solid;
+    border-top: #b7d8ee 1px solid;
+    border-left: #b7d8ee 1px solid;
+    color: #0066a7;
+    border-bottom: #b7d8ee 1px solid;
+    background-color: #d2eaf6;
+}
+.pagination a:active
+{
+    border-right: #b7d8ee 1px solid;
+    border-top: #b7d8ee 1px solid;
+    border-left: #b7d8ee 1px solid;
+    color: #0066a7;
+    border-bottom: #b7d8ee 1px solid;
+    background-color: #d2eaf6;
+}
+.pagination span.current
+{
+    border-right: #b7d8ee 1px solid;
+    padding-right: 6px;
+    border-top: #b7d8ee 1px solid;
+    padding-left: 5px;
+    font-weight: bold;
+    padding-bottom: 4px;
+    margin-left: 3px;
+    border-left: #b7d8ee 1px solid;
+    color: #444444;
+    padding-top: 5px;
+    border-bottom: #b7d8ee 1px solid;
+    background-color: #d2eaf6;
+}
+.pagination span.disabled
+{
+    display: none;
 }
