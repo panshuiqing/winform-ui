@@ -18,17 +18,17 @@
     <div class="container">
         <div class="search">
             <input type="text" name="kw" id="kw" maxlength="30" class="text" />
-            <input type="submit" value="查  询" onmouseout="this.className='button'" onmouseover="this.className='button button-h'" class="button" />
+            <input type="submit" value="查 询" onmouseout="this.className='button'" onmouseover="this.className='button button-h'" class="button" />
         </div>
         <table class="table-field" border="0" cellpadding="0" cellspacing="0">
             <thead>
                 <tr class="Header">
-                    <td style="width:10%;">序号</td>
+                    <td style="width:6%;">序号</td>
                     <td style="width:20%">宗地号</td>
-                    <td style="width:10%">面积（平方米）</td>
-                    <td style="width:10%">成交价（万元）</td>
+                    <td style="width:15%">面积（平方米）</td>
+                    <td style="width:15%">成交价（万元）</td>
                     <td style="width:15%">竞得人</td>
-                    <td style="width:20%">成交日期</td>
+                    <td style="width:20%">成交时间</td>
                     <td>状态</td>
                 </tr>
             </thead>

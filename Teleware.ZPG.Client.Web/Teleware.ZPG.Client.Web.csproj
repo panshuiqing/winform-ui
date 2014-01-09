@@ -58,6 +58,7 @@
     <Content Include="res\MainInfo.aspx" />
     <Content Include="res\TradeDetail.aspx" />
     <Content Include="res\TradeResult.aspx" />
+    <Content Include="res\ApplyInfo1.aspx" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Global.asax.cs">
@@ -98,6 +99,13 @@
     </Compile>
     <Compile Include="res\TradeResult.aspx.designer.cs">
       <DependentUpon>TradeResult.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="res\ApplyInfo1.aspx.cs">
+      <DependentUpon>ApplyInfo1.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="res\ApplyInfo1.aspx.designer.cs">
+      <DependentUpon>ApplyInfo1.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

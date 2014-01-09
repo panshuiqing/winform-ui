@@ -3,15 +3,14 @@
     padding: 0px;
     margin: 0px;
     font-family: 微软雅黑, Verdana, Arial, Helvetica, sans-serif;
-    font-size: 9pt;
+    font-size: 12px;
     color: #000000;
     text-align: left;
 }
 .container
 {
-    position:absolute;
-    left:2px;
-    right:2px;
+    margin:0;
+    height:572px;
     overflow-y: auto;
     overflow-x: hidden;
 }
@@ -45,7 +44,7 @@
 {
     border:none;
     margin:0;
-    width:99%;
+    width:100%;
 }
 
 .table-sub td

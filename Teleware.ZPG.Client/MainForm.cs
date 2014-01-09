@@ -13,15 +13,33 @@ namespace Teleware.ZPG.Client
         public MainForm()
         {
             InitializeComponent();
+            this.Load += new EventHandler(MainForm_Load);
         }
 
-        private void skinLabel1_Click(object sender, EventArgs e)
+        void MainForm_Load(object sender, EventArgs e)
         {
-
+            webBrowser_main.Navigate(Common.MainInfoUrl);
         }
 
-        private void tabPage1_Click(object sender, EventArgs e)
+        private void skinTabControl1_SelectedIndexChanged(object sender, EventArgs e)
         {
+            switch (skinTabControl1.SelectedIndex)
+            {
+                case 0:
+                    break;
+                case 1:
+                    webBrowser_tradeDetail.Navigate(Common.TradeDetailUrl);
+                    break;
+                case 2:
+                    webBrowser_affiche.Navigate(Common.AfficheUrl);
+                    break;
+                case 3:
+                    webBrowser_tradeResult.Navigate(Common.TradeResultUrl);
+                    break;
+                case 4:
+                    webBrowser_applyInfo.Navigate(Common.ApplyInfoUrl);
+                    break;
+            }
 
         }
     }

@@ -43,6 +43,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Common.cs" />
+    <Compile Include="Controls\WebBrowserEx.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Languages.cs" />
     <Compile Include="LoginForm.cs">
       <SubType>Form</SubType>

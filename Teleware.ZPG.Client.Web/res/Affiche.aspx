@@ -175,83 +175,77 @@
         <table class="table-field" align="center" border="0" cellspacing="0" cellpadding="0">
             <tbody>
                 <tr class="Header">
-                    <th rowspan="2">
+                    <td rowspan="2" style="text-align:center">
                         序号
-                    </th>
-                    <th rowspan="2">
+                    </td>
+                    <td rowspan="2" style="text-align:center">
                         宗地号
-                    </th>
-                    <th rowspan="2">
+                    </td>
+                    <td rowspan="2" style="text-align:center">
                         土地位置
-                    </th>
-                    <th rowspan="2">
+                    </td>
+                    <td rowspan="2" style="text-align:center">
                         土地面积<br />(平方米)
-                    </th>
-                    <th rowspan="2">
-                        土地用途及出让年限
-                    </th>
-                    <th colspan="3">
+                    </td>
+                    <td colspan="3" style="text-align:center">
                         规划指标要求
-                    </th>
-                    <th rowspan="2">
+                    </td>
+                    <td rowspan="2" style="text-align:center">
                         履约保证金<br />(万元)
-                    </th>
-                    <th rowspan="2">
+                    </td>
+                    <td rowspan="2" style="text-align:center">
                         起始价<br />(万元)
-                    </th>
-                    <th rowspan="2">
+                    </td>
+                    <td rowspan="2" style="text-align:center">
                         挂牌阶段<br />加价最低幅度<br />(万元)
-                    </th>
-                    <th rowspan="2">
+                    </td>
+                    <td rowspan="2" style="text-align:center">
                         拍卖阶段<br />加价最低幅度<br />(万元)
-                    </th>
+                    </td>
                 </tr>
                 <tr class="Header">
-                    <th>
+                    <td style="text-align:center">
                         容积率
-                    </th>
-                    <th>
+                    </td>
+                    <td style="text-align:center">
                         建筑密度
-                    </th>
-                    <th>
+                    </td>
+                    <td style="text-align:center">
                         绿地率
-                    </th>
+                    </td>
                 </tr>
                 <tr>
-                    <td class="me" style="width: 10px;">
+                    <td style="width: 10px; text-align:center">
                         1&nbsp;
                     </td>
-                    <td class="me">
+                    <td style="text-align:center">
                         福州2012年33次1号&nbsp;
                     </td>
-                    <td class="me">
+                    <td style="text-align:center">
                         罗源县某镇某村&nbsp;
                     </td>
-                    <td class="me">
+                    <td style="text-align:center">
                         1000.00&nbsp;
                     </td>
-                    <td class="me">
-                        工业用地(造纸及纸制品业：面积 1000平方米、出让年限 50年);&nbsp;
-                    </td>
-                    <td class="me">
+                    <td style="text-align:center">
                         5&nbsp;
                     </td>
-                    <td class="me">
+                    <td style="text-align:center">
                         25&nbsp;
                     </td>
-                    <td class="me">
+                    <td style="text-align:center">
                         35&nbsp;
                     </td>
-                    <td class="me">
+                    <td style="text-align:center">
                         &nbsp;
                     </td>
-                    <td class="me">
+                    <td style="text-align:center">
                         1600.0&nbsp;
                     </td>
-                    <td class="me">
+                    <td style="text-align:center">
                         20.0&nbsp;
                     </td>
-                    <td class="me">
+                    <td style="text-align:center">
                         60.0&nbsp;
                     </td>
                 </tr>
