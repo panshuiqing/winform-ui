@@ -4,6 +4,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <title>交易结果公示</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=7" />
     <link href="../css/main.css" rel="stylesheet" type="text/css" />
     <style type="text/css">
         td
@@ -16,11 +17,12 @@
 <body>
     <form id="form1" runat="server">
     <div class="container">
+        <div class="content">
         <div class="search">
             <input type="text" name="kw" id="kw" maxlength="30" class="text" />
             <input type="submit" value="查 询" onmouseout="this.className='button'" onmouseover="this.className='button button-h'" class="button" />
         </div>
-        <table class="table-field" border="0" cellpadding="0" cellspacing="0">
+        <table class="table-grid" cellpadding="0" cellspacing="0">
             <thead>
                 <tr class="Header">
                     <td style="width:6%;">序号</td>
@@ -269,6 +271,7 @@
             <span class="disabled">< Prev</span><span class="current">1</span><a href="#">2</a><a
                 href="#">3</a><a href="#">4</a><a href="#">5</a><a href="#">6</a><a href="#">7</a>...<a
                     href="#">199</a><a href="#">200</a><a href="#">Next > </a>
+        </div>
         </div>
     </div>
     </form>

@@ -18,7 +18,7 @@ namespace Teleware.ZPG.Client
 
         void MainForm_Load(object sender, EventArgs e)
         {
-            webBrowser_main.Navigate(Common.MainInfoUrl);
+            
         }
 
         private void skinTabControl1_SelectedIndexChanged(object sender, EventArgs e)

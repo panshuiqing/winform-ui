@@ -55,10 +55,8 @@
     <Content Include="Global.asax" />
     <Content Include="res\Affiche.aspx" />
     <Content Include="res\ApplyInfo.aspx" />
-    <Content Include="res\MainInfo.aspx" />
     <Content Include="res\TradeDetail.aspx" />
     <Content Include="res\TradeResult.aspx" />
-    <Content Include="res\ApplyInfo1.aspx" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Global.asax.cs">
@@ -79,13 +77,6 @@
     <Compile Include="res\ApplyInfo.aspx.designer.cs">
       <DependentUpon>ApplyInfo.aspx</DependentUpon>
     </Compile>
-    <Compile Include="res\MainInfo.aspx.cs">
-      <DependentUpon>MainInfo.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="res\MainInfo.aspx.designer.cs">
-      <DependentUpon>MainInfo.aspx</DependentUpon>
-    </Compile>
     <Compile Include="res\TradeDetail.aspx.cs">
       <DependentUpon>TradeDetail.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -99,13 +90,6 @@
     </Compile>
     <Compile Include="res\TradeResult.aspx.designer.cs">
       <DependentUpon>TradeResult.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="res\ApplyInfo1.aspx.cs">
-      <DependentUpon>ApplyInfo1.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="res\ApplyInfo1.aspx.designer.cs">
-      <DependentUpon>ApplyInfo1.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
