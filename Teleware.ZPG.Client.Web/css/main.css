@@ -9,17 +9,14 @@
 }
 .container
 {
-    height: 494px;
+    height: 488px;
     width: 898px;
     overflow-y: auto;
     overflow-x: auto;
 }
 .container .content
 {
-    
-    margin-left:15px;
-    margin-top:3px;
-   
+    margin:3px;
 }
 /* 表格样式 */
 .table-field
@@ -91,7 +88,8 @@
 {
     position: relative;
     padding: 0;
-    margin: 20px auto;
+    margin-top:38px;
+    margin-bottom:13px;
     text-align:center;
 }
 .search .text

@@ -42,5 +42,18 @@ namespace Teleware.ZPG.Client
             }
 
         }
+
+        private void skinButton1_Click(object sender, EventArgs e)
+        {
+            Teleware.ZPG.Client.Controls.LoadingForm.ShowLoading(this, "正在加载...正在加载...正在加载...\r\n正在加载...   ",false);
+            //new System.Threading.Thread(() =>
+            //{
+            //    System.Threading.Thread.Sleep(2000);
+            //    this.Invoke(new Action<int>(delegate
+            //    {
+            //        Teleware.ZPG.Client.Controls.LoadingForm.CloseLoading();
+            //    }));
+            //}).Start();
+        }
     }
 }

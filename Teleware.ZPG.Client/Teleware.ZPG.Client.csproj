@@ -44,6 +44,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Common.cs" />
+    <Compile Include="Controls\LoadingForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Controls\LoadingForm.Designer.cs">
+      <DependentUpon>LoadingForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Controls\WebBrowserEx.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -68,6 +74,9 @@
     <Compile Include="SkinForm.Designer.cs">
       <DependentUpon>SkinForm.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Controls\LoadingForm.resx">
+      <DependentUpon>LoadingForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -545,6 +554,7 @@
     <None Include="Resources\MiniDownBack.png" />
     <None Include="Resources\MiniMouseBack.png" />
     <None Include="Resources\MiniNormlBack.png" />
+    <None Include="Resources\loader.gif" />
     <Content Include="Resources\pnlTX.BackgroundImage.png" />
     <None Include="Resources\RestoreDownBack.png" />
     <None Include="Resources\RestoreMouseBack.png" />

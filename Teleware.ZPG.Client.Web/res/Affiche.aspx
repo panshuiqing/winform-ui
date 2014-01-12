@@ -262,7 +262,6 @@
                     </tr>
                 </tbody>
             </table>
-            <div style="height:4px;"></div>
         </div>
     </div>
     </form>

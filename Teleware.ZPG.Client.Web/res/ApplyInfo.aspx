@@ -526,12 +526,12 @@
             <table class="table-grid" border="0" style="text-align: center" cellpadding="0" cellspacing="0"
                 style="margin: 5px auto;">
                 <tbody>
-                    <tr>
+                    <tr class="Header">
                         <td colspan="3">
                             上传资料
                         </td>
                     </tr>
-                    <tr class="Header">
+                    <tr>
                         <td style="width: 150px; text-align: center;">
                             附件类型
                         </td>
@@ -566,7 +566,6 @@
                     </tr>
                 </tbody>
             </table>
-            <div style="height:4px;"></div>
         </div>
     </div>
     </form>

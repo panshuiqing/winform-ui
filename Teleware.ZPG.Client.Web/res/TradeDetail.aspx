@@ -14,17 +14,17 @@
             <table class="table-field" cellpadding="0" cellspacing="0">
                 <thead>
                     <tr class="Header">
-                        <td colspan="4">
+                        <td colspan="2">
                             宗地信息
                         </td>
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
-                        <td>
+                        <td style="width:150px;">
                             项目名称：
                         </td>
-                        <td colspan="3">
+                        <td>
                             福州项目名称项目名称项目名称项目
                         </td>
                     </tr>
@@ -32,7 +32,7 @@
                         <td>
                             宗地号：
                         </td>
-                        <td colspan="3">
+                        <td>
                             福州市0000110001
                         </td>
                     </tr>
@@ -40,18 +40,28 @@
                         <td>
                             位置：
                         </td>
-                        <td colspan="3">
+                        <td>
                             位置位置位置位置位置位置
                         </td>
                     </tr>
                     <tr>
-                        <td style="width: 150px;">
+                    <td>
+                            面积：
+                        </td>
+                        <td>
+                            888 平方米
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
                             建筑容积率：
                         </td>
-                        <td style="width: 350px;">
+                        <td>
                             55%
                         </td>
-                        <td style="width: 80px;">
+                    </tr>
+                    <tr>
+                    <td>
                             建筑密度：
                         </td>
                         <td>
@@ -65,18 +75,12 @@
                         <td>
                             66%
                         </td>
-                        <td>
-                            面积：
-                        </td>
-                        <td>
-                            888 平方米
-                        </td>
                     </tr>
                     <tr>
                         <td>
                             四至范围：
                         </td>
-                        <td colspan="3">
+                        <td>
                             四至范围四至范围四至范围四至范围四至范围四至范围
                         </td>
                     </tr>
@@ -84,7 +88,7 @@
                         <td>
                             土地现状：
                         </td>
-                        <td colspan="3">
+                        <td>
                             土地现状土地现状土地现状 土地现状土地现状土地现状 土地现状土地现状土地现状
                         </td>
                     </tr>
@@ -92,7 +96,7 @@
                         <td>
                             土地用途及出让年限：
                         </td>
-                        <td colspan="3">
+                        <td>
                             土地用途及出让年限
                         </td>
                     </tr>
@@ -100,7 +104,7 @@
                         <td>
                             备注：
                         </td>
-                        <td colspan="3">
+                        <td>
                             备注备注备注备注备注备注备注备注备注备注备注备注
                         </td>
                     </tr>
@@ -185,7 +189,7 @@
                 </thead>
                 <tbody>
                     <tr>
-                        <td style="width: 20%;">
+                        <td style="width: 30%;">
                             标题1标题1
                         </td>
                         <td>
@@ -202,7 +206,6 @@
                     </tr>
                 </tbody>
             </table>
-            <div style="height:4px;"></div>
         </div>
     </div>
     </form>

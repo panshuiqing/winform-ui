@@ -39,6 +39,7 @@
             this.skinLabel1 = new CCWin.SkinControl.SkinLabel();
             this.skinTabControl1 = new CCWin.SkinControl.SkinTabControl();
             this.tabPage_tradeCenter = new System.Windows.Forms.TabPage();
+            this.skinButton1 = new CCWin.SkinControl.SkinButton();
             this.listView1 = new System.Windows.Forms.ListView();
             this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -202,6 +203,7 @@
             // tabPage_tradeCenter
             // 
             this.tabPage_tradeCenter.BackColor = System.Drawing.Color.White;
+            this.tabPage_tradeCenter.Controls.Add(this.skinButton1);
             this.tabPage_tradeCenter.Controls.Add(this.listView1);
             this.tabPage_tradeCenter.ForeColor = System.Drawing.Color.White;
             this.tabPage_tradeCenter.ImageIndex = 5;
@@ -210,6 +212,23 @@
             this.tabPage_tradeCenter.Size = new System.Drawing.Size(898, 494);
             this.tabPage_tradeCenter.TabIndex = 0;
             this.tabPage_tradeCenter.Text = "交易大厅";
+            // 
+            // skinButton1
+            // 
+            this.skinButton1.BackColor = System.Drawing.Color.Transparent;
+            this.skinButton1.ControlState = CCWin.SkinClass.ControlState.Normal;
+            this.skinButton1.DownBack = null;
+            this.skinButton1.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.skinButton1.ForeColor = System.Drawing.Color.Black;
+            this.skinButton1.Location = new System.Drawing.Point(322, 119);
+            this.skinButton1.MouseBack = null;
+            this.skinButton1.Name = "skinButton1";
+            this.skinButton1.NormlBack = null;
+            this.skinButton1.Size = new System.Drawing.Size(118, 23);
+            this.skinButton1.TabIndex = 2;
+            this.skinButton1.Text = "显示loading";
+            this.skinButton1.UseVisualStyleBackColor = false;
+            this.skinButton1.Click += new System.EventHandler(this.skinButton1_Click);
             // 
             // listView1
             // 
@@ -289,7 +308,7 @@
             this.webBrowser_affiche.Margin = new System.Windows.Forms.Padding(0);
             this.webBrowser_affiche.Name = "webBrowser_affiche";
             this.webBrowser_affiche.ScrollBarsEnabled = false;
-            this.webBrowser_affiche.Size = new System.Drawing.Size(898, 494);
+            this.webBrowser_affiche.Size = new System.Drawing.Size(200, 25);
             this.webBrowser_affiche.TabIndex = 0;
             // 
             // tabPage_tradeResult
@@ -387,6 +406,7 @@
         private System.Windows.Forms.ColumnHeader columnHeader2;
         private System.Windows.Forms.ColumnHeader columnHeader3;
         private System.Windows.Forms.ColumnHeader columnHeader4;
+        private CCWin.SkinControl.SkinButton skinButton1;
 
     }
 }
