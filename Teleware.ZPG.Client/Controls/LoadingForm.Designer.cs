@@ -47,8 +47,10 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.White;
             this.BackShade = false;
             this.BackToColor = false;
+            this.BorderPalace = null;
             this.CaptionHeight = 4;
             this.ClientSize = new System.Drawing.Size(300, 90);
             this.ControlBox = false;
@@ -57,7 +59,8 @@
             this.MinimizeBox = false;
             this.Mobile = CCWin.MobileStyle.None;
             this.Name = "LoadingForm";
-            this.Radius = 4;
+            this.Radius = 1;
+            this.RoundStyle = CCWin.SkinClass.RoundStyle.None;
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "";
