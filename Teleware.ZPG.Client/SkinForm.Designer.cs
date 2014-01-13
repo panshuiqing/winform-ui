@@ -35,11 +35,11 @@
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(103)))), ((int)(((byte)(181)))), ((int)(((byte)(229)))));
-            this.BackPalace = global::Teleware.ZPG.Client.Properties.Resources.BackPalace2;
+            this.BackPalace = global::Teleware.ZPG.Client.Properties.Resources.msg_icon_check;
             this.BorderPalace = global::Teleware.ZPG.Client.Properties.Resources.BackPalace;
             this.CanResize = false;
             this.CaptionHeight = 30;
-            this.ClientSize = new System.Drawing.Size(458, 340);
+            this.ClientSize = new System.Drawing.Size(405, 408);
             this.CloseBoxSize = new System.Drawing.Size(39, 20);
             this.CloseDownBack = global::Teleware.ZPG.Client.Properties.Resources.form_close_down;
             this.CloseMouseBack = global::Teleware.ZPG.Client.Properties.Resources.form_close_hover;
