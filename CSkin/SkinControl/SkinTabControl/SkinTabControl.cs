@@ -151,7 +151,7 @@ namespace CCWin.SkinControl
 
 
 
-        private Image pageCloseHover = Properties.Resources.close_over;
+        private Image pageCloseHover = Properties.Resources.tab_close_over;
         [CategoryAttribute("PageClose")]
         [Description("Page关闭按钮悬浮时图像")]
         public Image PageCloseHover
@@ -164,7 +164,7 @@ namespace CCWin.SkinControl
             }
         }
 
-        private Image pageCloseNormal = Properties.Resources.close_normal;
+        private Image pageCloseNormal = Properties.Resources.tab_close_normal;
         [CategoryAttribute("PageClose")]
         [Description("Page关闭按钮默认图像")]
         public Image PageCloseNormal
@@ -286,7 +286,7 @@ namespace CCWin.SkinControl
             }
         }
 
-        private Image pageArrowHover = Properties.Resources.main_tabbtn_highlight;
+        private Image pageArrowHover = Properties.Resources.pagearrow_hover;
         [CategoryAttribute("PageArrow")]
         [Description("PageArrow菜单箭头悬浮时背景")]
         public Image PageArrowHover
@@ -299,7 +299,7 @@ namespace CCWin.SkinControl
             }
         }
 
-        private Image pageArrowDown = Properties.Resources.main_tabbtn_down;
+        private Image pageArrowDown = Properties.Resources.pagearrow_down;
         [CategoryAttribute("PageArrow")]
         [Description("PageArrow菜单箭头按下时背景")]
         public Image PageArrowDown
@@ -339,7 +339,7 @@ namespace CCWin.SkinControl
             }
         }
 
-        private Image pageHover = Properties.Resources.main_tab_check;
+        private Image pageHover = Properties.Resources.tabpage_hover;
         [CategoryAttribute("Page")]
         [Description("Page标签悬浮时背景")]
         public Image PageHover
@@ -352,7 +352,7 @@ namespace CCWin.SkinControl
             }
         }
 
-        private Image pageDown = Properties.Resources.main_tab_highlight;
+        private Image pageDown = Properties.Resources.tabpage_down;
         [CategoryAttribute("Page")]
         [Description("Page标签按下时背景")]
         public Image PageDown

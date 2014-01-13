@@ -184,9 +184,19 @@ namespace CCWin.SkinControl
         }
         #endregion
 
+        [DefaultValue("关闭")]
+        [Category("Skin")]
+        [Description("关闭按钮鼠标提示文本")]
+        public string CloseButtonText
+        {
+            get;
+            set;
+        }
+
         #region 窗体加载时
         private void PassKey_Load(object sender, EventArgs e)
         {
+            this.toolShow.SetToolTip(this.btnClose, CloseButtonText ?? "关闭");
             this.Location = new Point(X, Y);
             //开始窗体动画
             NativeMethods.AnimateWindow(this.Handle, 0, AW.AW_SLIDE + AW.AW_BLEND);

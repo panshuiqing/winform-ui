@@ -60,8 +60,8 @@ namespace CCWin.SkinControl
         private bool _baseForeAnamorphosis = false;
         private int _baseForeAnamorphosisBorder = 4;
         private Color _baseForeAnamorphosisColor = Color.White;
-        private Image _baseItemMouse = Properties.Resources.allbtn_highlight;
-        private Image _baseItemDown = Properties.Resources.allbtn_down;
+        private Image _baseItemMouse = Properties.Resources.btn_mousedown;
+        private Image _baseItemDown = Properties.Resources.btn_mousedown;
         private Rectangle _backrectangle = new Rectangle(10, 10, 10, 10);
         private Point _baseForeOffset = new Point(0,0);
         private bool _skinAllColor = true;

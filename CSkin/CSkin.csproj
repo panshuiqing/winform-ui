@@ -79,13 +79,13 @@
     <Compile Include="Form\CCSkin\CustomSysButtonCollection.cs" />
     <Compile Include="Form\CCSkin\SysBottomEventArgs.cs" />
     <Compile Include="Form\CCSkin\TitleType.cs" />
-    <Compile Include="Form\MessageBox\MessageBoxEx.cs" />
-    <Compile Include="Form\MessageBox\MessageBoxForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Include="Form\CCSkin\MobileStyle.cs" />
-    <Compile Include="Localization\Languages.cs" />
     <Compile Include="Localization\Localizer.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
     <Compile Include="SkinClass\ControlPaintEx.cs" />
     <Compile Include="SkinClass\DesktopIcon.cs" />
     <Compile Include="SkinClass\GraphicsPathHelper.cs" />
@@ -108,11 +108,6 @@
     <Compile Include="Form\CCSkin\SkinFormProfessionalRenderer.cs" />
     <Compile Include="Form\CCSkin\SkinFormRenderer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Properties\Resources.Designer.cs">
-      <DependentUpon>Resources.resx</DependentUpon>
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-    </Compile>
     <Compile Include="SkinClass\ControlState.cs" />
     <Compile Include="SkinClass\DrawHelper.cs" />
     <Compile Include="SkinClass\ImageDrawRect.cs">
@@ -137,7 +132,6 @@
     </Compile>
     <Compile Include="SkinControl\Animator\PointFConverter.cs" />
     <Compile Include="SkinControl\Animator\TransfromHelper.cs" />
-    <Compile Include="SkinControl\ChatListBox\PlatformType.cs" />
     <Compile Include="SkinControl\ProgressIndicator\ProgressIndicator.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -227,40 +221,6 @@
     <Compile Include="SkinControl\SkinPictureBox\SkinPictureBox.Designer.cs">
       <DependentUpon>SkinPictureBox.cs</DependentUpon>
     </Compile>
-    <Compile Include="SkinControl\SkinPrintScreen\ColorBox.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="SkinControl\SkinPrintScreen\ColorBox.designer.cs">
-      <DependentUpon>ColorBox.cs</DependentUpon>
-    </Compile>
-    <Compile Include="SkinControl\SkinPrintScreen\ColorBoxDesginer.cs" />
-    <Compile Include="SkinControl\SkinPrintScreen\FrmCapture.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="SkinControl\SkinPrintScreen\FrmCapture.designer.cs">
-      <DependentUpon>FrmCapture.cs</DependentUpon>
-    </Compile>
-    <Compile Include="SkinControl\SkinPrintScreen\FrmOut.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="SkinControl\SkinPrintScreen\FrmOut.designer.cs">
-      <DependentUpon>FrmOut.cs</DependentUpon>
-    </Compile>
-    <Compile Include="SkinControl\SkinPrintScreen\FrmSize.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="SkinControl\SkinPrintScreen\FrmSize.designer.cs">
-      <DependentUpon>FrmSize.cs</DependentUpon>
-    </Compile>
-    <Compile Include="SkinControl\SkinPrintScreen\ImageProcessBox.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="SkinControl\SkinPrintScreen\ImageProcessBox.designer.cs">
-      <DependentUpon>ImageProcessBox.cs</DependentUpon>
-    </Compile>
-    <Compile Include="SkinControl\SkinPrintScreen\MouseHook.cs">
-      <SubType>Code</SubType>
-    </Compile>
     <Compile Include="SkinClass\ImageDc.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -271,13 +231,6 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="SkinClass\InterpolationModeGraphics.cs" />
-    <Compile Include="SkinControl\SkinPrintScreen\ToolButton.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="SkinControl\SkinPrintScreen\ToolButton.designer.cs">
-      <DependentUpon>ToolButton.cs</DependentUpon>
-    </Compile>
-    <Compile Include="SkinControl\SkinPrintScreen\ToolButtonDesigner.cs" />
     <Compile Include="SkinControl\SkinProgressBar\BackStyle.cs" />
     <Compile Include="SkinControl\SkinProgressBar\ControlPaintEx.cs" />
     <Compile Include="SkinControl\SkinProgressBar\RenderHelper.cs" />
@@ -400,21 +353,6 @@
     </Compile>
     <Compile Include="SkinControl\SkinLabel\ArtTextStyle.cs" />
     <Compile Include="SkinClass\TextRenderingHintGraphics.cs" />
-    <Compile Include="SkinControl\ChatListBox\ChatListBox.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="SkinControl\ChatListBox\ChatListBox.Designer.cs">
-      <DependentUpon>ChatListBox.cs</DependentUpon>
-    </Compile>
-    <Compile Include="SkinControl\ChatListBox\ChatListEventArgs.cs" />
-    <Compile Include="SkinControl\ChatListBox\ChatListItem.cs" />
-    <Compile Include="SkinControl\ChatListBox\ChatListItemCollection.cs" />
-    <Compile Include="SkinControl\ChatListBox\ChatListItemConverter.cs" />
-    <Compile Include="SkinControl\ChatListBox\ChatListItemIcon.cs" />
-    <Compile Include="SkinControl\ChatListBox\ChatListSubItem.cs" />
-    <Compile Include="SkinControl\ChatListBox\ChatListSubItemConverter.cs" />
-    <Compile Include="SkinControl\ChatListBox\ChatListVScroll.cs" />
-    <Compile Include="SkinControl\ChatListBox\DragListEventArgs.cs" />
     <Compile Include="SkinControl\SkinStrip\SkinMenuStrip\SkinMenuStrip.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -571,13 +509,10 @@
     <EmbeddedResource Include="Form\CCSkin\CCSkinForm.resx">
       <DependentUpon>CCSkinForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form\MessageBox\MessageBoxForm.resx">
-      <DependentUpon>MessageBoxForm.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="SkinControl\ProgressIndicator\ProgressIndicator.resx">
       <DependentUpon>ProgressIndicator.cs</DependentUpon>
@@ -597,21 +532,6 @@
     <EmbeddedResource Include="SkinControl\SkinKey\KeyBoardForm.resx">
       <DependentUpon>KeyBoardForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="SkinControl\ChatListBox\ChatListBox.resx">
-      <DependentUpon>ChatListBox.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="SkinControl\SkinPrintScreen\ColorBox.resx">
-      <DependentUpon>ColorBox.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="SkinControl\SkinPrintScreen\FrmCapture.resx">
-      <DependentUpon>FrmCapture.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="SkinControl\SkinPrintScreen\FrmOut.resx">
-      <DependentUpon>FrmOut.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="SkinControl\SkinPrintScreen\FrmSize.resx">
-      <DependentUpon>FrmSize.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="SkinControl\SkinTabControl\SkinTabControl.resx">
       <DependentUpon>SkinTabControl.cs</DependentUpon>
     </EmbeddedResource>
@@ -620,406 +540,21 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\tips_light_bkg.png" />
-    <None Include="SkinControl\ChatListBox\ClassDiagram1.cd" />
+    <Content Include="Resources\btn_mousedown.png" />
+    <Content Include="Resources\btn_mousehover.png" />
+    <Content Include="Resources\keyboard_btn_close.png" />
+    <Content Include="Resources\keyboard_btn_mousedown.png" />
+    <Content Include="Resources\keyboard_btn_mousehover.png" />
+    <Content Include="Resources\keyborad_normal.png" />
+    <Content Include="Resources\pagearrow_down.png" />
+    <Content Include="Resources\pagearrow_hover.png" />
+    <Content Include="Resources\tab_close_normal.png" />
+    <Content Include="Resources\tab_close_over.png" />
+    <Content Include="Resources\tabpage_down.png" />
+    <Content Include="Resources\tabpage_hover.png" />
+    <Content Include="Resources\textbox_mousedown.png" />
+    <Content Include="Resources\textbox_normal.png" />
   </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\main_bluelight_bkg.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\main_light_bkg.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Dont Disturb.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\MainPanel_ContactHeadSelect_paddingDraw.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\OffLine.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\OnLine.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\inputbox.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\inputbox_hover.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\frameBorderEffect_mouseDownDraw.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\texture.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\keyboard.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\pushed.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\BtnClose_hight.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\hight.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Norml.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\1_100.gif" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\frameBorderEffect_normalDraw.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\main_tab_background.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\main_tab_check.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\main_tabbtn_down.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\main_tabbtn_highlight.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\allbtn_highlight.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\allbtn_down.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\main_light_bkg_top123.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\arrow.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\brush.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\cancel.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\close.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\color.bmp" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\ellips.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\large.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\middle.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\none.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\ok.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\rect.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\save.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\separator.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\small.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\text.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\tab_dots_down.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\tab_dots_mouseover.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\tab_dots_normal.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Error.ico" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Information.ico" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Question.ico" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Warning.ico" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\out.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Small-busy.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Small-imoffline.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Small-imonline.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Small-ImQQAway.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Small-ImQQOnline.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Small-invisible.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Small-IPhoneQQ_Head_Small.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Small-MobilePhoneQQOn.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Small-MobileWapQQBusy.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Small-MobileWapQQOn.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Small-mute.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Small-Qme.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Small-QQForPad_Head_Small.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Small-away.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\MobileWapQQOn.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\mute.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Qme.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\QQForPad_Head_Big.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\WebQQAway.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\WebQQBusy.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\WebQQMute.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\WebQQOnline.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\WebQQQme.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\away.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\busy.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\imoffline.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\imonline.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\ImQQAway.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\ImQQBusy.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\ImQQMute.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\ImQQOnline.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\ImQQQme.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\invisible.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\IPhoneQQ_Head_Big.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\MobilePhoneQQAway.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\MobilePhoneQQBusy.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\MobilePhoneQQOn.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\MobileWapQQAway.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Open.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Outdent.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Paste.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Preview.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Print.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Redo.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\RemoveFormat.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\ShowHTML.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\SpellCheck.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\StrikeThrough.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Subscript .png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Superscript .png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Time.gif" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Underline.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Undo.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Unlink.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Wordclean.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\wordcount.gif" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\AutoLayout.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\BackColor.bmp" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Bold.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Copy.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\CreateLink.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Cut.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Date.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Delete.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Find.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\ForeColor.bmp" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\HTML.bmp" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\HtmlSave.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Indent.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\InsertHorizontalRule.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\InsertImage.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\InsertOrderedList.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\InsertTable.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\InsertUnorderedList.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Italic.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\JustifyCenter.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\JustifyFull.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\JustifyLeft.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\JustifyRight.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\New.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\pictureBox1.Image.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\main_tab_highlight.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\close_over.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\close_normal.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\close_down.png" />
-  </ItemGroup>
-  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

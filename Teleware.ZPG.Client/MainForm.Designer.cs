@@ -285,7 +285,7 @@
             this.webBrowser_tradeDetail.MinimumSize = new System.Drawing.Size(20, 20);
             this.webBrowser_tradeDetail.Name = "webBrowser_tradeDetail";
             this.webBrowser_tradeDetail.ScrollBarsEnabled = false;
-            this.webBrowser_tradeDetail.Size = new System.Drawing.Size(200, 25);
+            this.webBrowser_tradeDetail.Size = new System.Drawing.Size(898, 494);
             this.webBrowser_tradeDetail.TabIndex = 0;
             // 
             // tabPage_affiche
@@ -308,7 +308,7 @@
             this.webBrowser_affiche.Margin = new System.Windows.Forms.Padding(0);
             this.webBrowser_affiche.Name = "webBrowser_affiche";
             this.webBrowser_affiche.ScrollBarsEnabled = false;
-            this.webBrowser_affiche.Size = new System.Drawing.Size(200, 25);
+            this.webBrowser_affiche.Size = new System.Drawing.Size(898, 494);
             this.webBrowser_affiche.TabIndex = 0;
             // 
             // tabPage_tradeResult
@@ -331,7 +331,7 @@
             this.webBrowser_tradeResult.MinimumSize = new System.Drawing.Size(20, 20);
             this.webBrowser_tradeResult.Name = "webBrowser_tradeResult";
             this.webBrowser_tradeResult.ScrollBarsEnabled = false;
-            this.webBrowser_tradeResult.Size = new System.Drawing.Size(200, 25);
+            this.webBrowser_tradeResult.Size = new System.Drawing.Size(898, 494);
             this.webBrowser_tradeResult.TabIndex = 0;
             // 
             // tabPage_applyInfo
@@ -354,7 +354,7 @@
             this.webBrowser_applyInfo.MinimumSize = new System.Drawing.Size(20, 20);
             this.webBrowser_applyInfo.Name = "webBrowser_applyInfo";
             this.webBrowser_applyInfo.ScrollBarsEnabled = false;
-            this.webBrowser_applyInfo.Size = new System.Drawing.Size(200, 25);
+            this.webBrowser_applyInfo.Size = new System.Drawing.Size(898, 494);
             this.webBrowser_applyInfo.TabIndex = 0;
             // 
             // MainForm
@@ -367,7 +367,8 @@
             this.ForeColor = System.Drawing.Color.White;
             this.MaximizeBox = false;
             this.Name = "MainForm";
-            this.RoundStyle = CCWin.SkinClass.RoundStyle.Top;
+            this.Radius = 3;
+            this.ShadowWidth = 6;
             this.Text = "福建省国有土地使用权出让交易系统";
             this.TitleOffset = new System.Drawing.Point(2, 0);
             this.skinPanel1.ResumeLayout(false);

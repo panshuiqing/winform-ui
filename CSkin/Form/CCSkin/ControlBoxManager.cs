@@ -282,7 +282,7 @@ namespace CCWin
                     {
                         if (CloseBoxState != ControlBoxState.Hover)
                         {
-                            toolTip = Languages.Form.CloseButton;
+                            toolTip = _owner.CloseButtonToolTip;
                         }
                         CloseBoxState = ControlBoxState.Hover;
                     }
@@ -319,7 +319,7 @@ namespace CCWin
                     {
                         if (MinimizeBoxState != ControlBoxState.Hover)
                         {
-                            toolTip = Languages.Form.MinButton;
+                            toolTip = _owner.MinButtonToolTip;
                         }
                         MinimizeBoxState = ControlBoxState.Hover;
                     }
@@ -358,7 +358,7 @@ namespace CCWin
                         {
                             bool maximize =
                                 _owner.WindowState == FormWindowState.Maximized;
-                            toolTip = maximize ? Languages.Form.RestoreButton : Languages.Form.MaxButton;
+                            toolTip = maximize ? _owner.RestoreButtonToolTip : _owner.MaxButtonToolTip;
                         }
                         MaximizeBoxState = ControlBoxState.Hover;
                     }

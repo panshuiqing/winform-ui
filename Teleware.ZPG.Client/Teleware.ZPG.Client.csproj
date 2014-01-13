@@ -53,7 +53,6 @@
     <Compile Include="Controls\WebBrowserEx.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Languages.cs" />
     <Compile Include="LoginForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -66,11 +65,9 @@
     <Compile Include="MainForm.Designer.cs">
       <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="MessageBox\MessageBoxEx.cs" />
     <Compile Include="MessageBox\MessageBoxForm.cs">
       <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="MessageBox\MessageBoxForm.Designer.cs">
-      <DependentUpon>MessageBoxForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -570,6 +567,11 @@
     <None Include="Resources\msg_icon_check.png" />
     <None Include="Resources\msg_icon_error.png" />
     <None Include="Resources\msg_icon_info.png" />
+    <None Include="Resources\msg_warning.png" />
+    <None Include="Resources\msg_info.png" />
+    <None Include="Resources\msg_question.png" />
+    <None Include="Resources\msg_error.png" />
+    <None Include="Resources\msg_ok.png" />
     <Content Include="Resources\pnlTX.BackgroundImage.png" />
     <None Include="Resources\RestoreDownBack.png" />
     <None Include="Resources\RestoreMouseBack.png" />

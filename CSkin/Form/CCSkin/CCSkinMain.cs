@@ -1037,6 +1037,38 @@ namespace CCWin
             get { return _canResize; }
             set { _canResize = value; }
         }
+        [DefaultValue("关闭")]
+        [Category("Skin")]
+        [Description("关闭按钮鼠标提示文本")]
+        public string CloseButtonToolTip
+        {
+            get;
+            set;
+        }
+        [DefaultValue("最小化")]
+        [Category("Skin")]
+        [Description("最小化按钮鼠标提示文本")]
+        public string MinButtonToolTip
+        {
+            get;
+            set;
+        }
+        [DefaultValue("最大化")]
+        [Category("Skin")]
+        [Description("最大化按钮鼠标提示文本")]
+        public string MaxButtonToolTip
+        {
+            get;
+            set;
+        }
+        [DefaultValue("还原")]
+        [Category("Skin")]
+        [Description("还原按钮鼠标提示文本")]
+        public string RestoreButtonToolTip
+        {
+            get;
+            set;
+        }
 
         [DefaultValue(typeof(Padding), "0")]
         public new Padding Padding

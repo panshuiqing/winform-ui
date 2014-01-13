@@ -251,8 +251,8 @@ namespace CCWin.SkinControl
             base.OnPaint(e);
             Graphics g = e.Graphics;
             g.SmoothingMode = SmoothingMode.AntiAlias;
-            Bitmap mouse = MouseBack == null ? Properties.Resources.frameBorderEffect_mouseDownDraw : MouseBack;
-            Bitmap norml = NormlBack == null ? Properties.Resources.frameBorderEffect_normalDraw : NormlBack;
+            Bitmap mouse = MouseBack == null ? Properties.Resources.textbox_mousedown : MouseBack;
+            Bitmap norml = NormlBack == null ? Properties.Resources.textbox_normal : NormlBack;
             Bitmap btm = this._mouseState == ControlState.Hover ? mouse : norml;
             if (btm != null)
             {
