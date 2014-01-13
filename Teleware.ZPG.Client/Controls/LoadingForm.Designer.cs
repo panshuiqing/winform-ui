@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LoadingForm));
             this.skinPictureBox1 = new CCWin.SkinControl.SkinPictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.skinPictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -36,10 +37,10 @@
             // 
             this.skinPictureBox1.BackColor = System.Drawing.Color.Transparent;
             this.skinPictureBox1.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.skinPictureBox1.Image = global::Teleware.ZPG.Client.Properties.Resources.loading;
+            this.skinPictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("skinPictureBox1.Image")));
             this.skinPictureBox1.Location = new System.Drawing.Point(108, 20);
             this.skinPictureBox1.Name = "skinPictureBox1";
-            this.skinPictureBox1.Size = new System.Drawing.Size(31, 31);
+            this.skinPictureBox1.Size = new System.Drawing.Size(32, 32);
             this.skinPictureBox1.TabIndex = 0;
             this.skinPictureBox1.TabStop = false;
             // 
@@ -47,20 +48,24 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.White;
+            this.BackColor = System.Drawing.Color.Lavender;
+            this.BackPalace = null;
             this.BackShade = false;
             this.BackToColor = false;
-            this.BorderPalace = null;
+            this.BorderPalace = global::Teleware.ZPG.Client.Properties.Resources.BackPalace;
             this.CaptionHeight = 4;
             this.ClientSize = new System.Drawing.Size(300, 90);
             this.ControlBox = false;
             this.Controls.Add(this.skinPictureBox1);
+            this.ForeColor = System.Drawing.Color.White;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Mobile = CCWin.MobileStyle.None;
             this.Name = "LoadingForm";
             this.Radius = 1;
             this.RoundStyle = CCWin.SkinClass.RoundStyle.None;
+            this.Shadow = false;
+            this.ShowIcon = false;
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "";

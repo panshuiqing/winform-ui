@@ -22,11 +22,6 @@ namespace Teleware.ZPG.Client.Controls
 
         public static void ShowLoading(Form owner, string text)
         {
-            ShowLoading(owner, text, true);
-        }
-
-        public static void ShowLoading(Form owner, string text, bool modal)
-        {
             lock (locker)
             {
                 CloseLoading();
@@ -54,15 +49,8 @@ namespace Teleware.ZPG.Client.Controls
                     var top = (ownerForm.Height - loadingForm.Height) / 2 + ownerForm.Location.Y;
                     loadingForm.Location = new Point(left, top);
                 }
-                if (modal)
-                {
-                    loadingForm.ShowDialog(ownerForm);
-                }
-                else
-                {
-                    loadingForm.TopMost = true;
-                    loadingForm.Show(ownerForm);
-                }
+                loadingForm.TopMost = true;
+                loadingForm.Show(ownerForm);
             }
         }
 
@@ -77,18 +65,17 @@ namespace Teleware.ZPG.Client.Controls
 
         protected override void OnPaint(PaintEventArgs e)
         {
+            base.OnPaint(e);
             var g = e.Graphics;
             var fontSize = g.MeasureString(this.loadingText, this.Font);
             var loadingImage = Teleware.ZPG.Client.Properties.Resources.loading;
             //图片与文字的水平间隔
             int imageTextSpace = 10;
-            var left = Math.Max(0, (this.Width - (loadingImage.Width + (int)fontSize.Width + imageTextSpace)) / 2);
-            var imageTop = Math.Max(0, (this.Height - loadingImage.Height) / 2);
-            var textTop = Math.Max(0, (this.Height - (int)fontSize.Height) / 2);
+            var left = Math.Max(10, (this.Width - (loadingImage.Width + (int)fontSize.Width + imageTextSpace)) / 2);
+            var imageTop = Math.Max(3, (this.Height - loadingImage.Height) / 2);
+            var textTop = Math.Max(3, (this.Height - (int)fontSize.Height) / 2);
             this.skinPictureBox1.Location = new Point(left,imageTop);
             g.DrawString(this.loadingText, this.Font, Brushes.Black, new RectangleF(left + loadingImage.Width + imageTextSpace, textTop, fontSize.Width, fontSize.Height), new StringFormat(StringFormatFlags.MeasureTrailingSpaces));
-
-            base.OnPaint(e);
         }
     }
 }

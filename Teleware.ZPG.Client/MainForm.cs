@@ -45,7 +45,8 @@ namespace Teleware.ZPG.Client
 
         private void skinButton1_Click(object sender, EventArgs e)
         {
-            Teleware.ZPG.Client.Controls.LoadingForm.ShowLoading(this, "正在加载...正在加载...正在加载...\r\n正在加载...   ",false);
+            Teleware.ZPG.Client.Controls.LoadingForm.ShowLoading(this, "正在加载...正在加载...正在加载...\r\n正在加载...   ");
+            CCWin.MessageBoxEx.Show("dfgdfg");
             //new System.Threading.Thread(() =>
             //{
             //    System.Threading.Thread.Sleep(2000);
