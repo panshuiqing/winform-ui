@@ -10,6 +10,9 @@ namespace Teleware.ZPG.Client
 {
     public partial class MainForm : SkinForm
     {
+        private Controls.NetDisconnectControl netDisconnectControl;
+
+
         public MainForm()
         {
             InitializeComponent();
@@ -66,6 +69,39 @@ namespace Teleware.ZPG.Client
         private void skinButton4_Click(object sender, EventArgs e)
         {
             NotifyBox.Notify(this, "正在加载正在加", NotifyBoxIcon.Info, 3000);
+        }
+
+        private void skinButton5_Click(object sender, EventArgs e)
+        {
+            if (netDisconnectControl == null)
+            {
+                netDisconnectControl = new Controls.NetDisconnectControl();
+                panel_info.Controls.Add(netDisconnectControl);
+            }
+            foreach (Control item in panel_info.Controls)
+            {
+                if (item != netDisconnectControl)
+                {
+                    item.Visible = false;
+                }
+            }
+            netDisconnectControl.Visible = true;
+            panel_info.BringToFront();
+        }
+
+        private void skinButton6_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void skinButton7_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void skinButton8_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

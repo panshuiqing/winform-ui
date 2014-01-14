@@ -35,7 +35,7 @@
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(103)))), ((int)(((byte)(181)))), ((int)(((byte)(229)))));
-            this.BackPalace = global::Teleware.ZPG.Client.Properties.Resources.Norml;
+            this.BackPalace = global::Teleware.ZPG.Client.Properties.Resources.background;
             this.BorderPalace = global::Teleware.ZPG.Client.Properties.Resources.BackPalace;
             this.CanResize = false;
             this.CaptionHeight = 30;

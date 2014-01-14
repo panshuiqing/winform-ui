@@ -60,177 +60,9 @@ namespace Teleware.ZPG.Client.Properties {
             }
         }
         
-        internal static System.Drawing.Bitmap _1_100 {
+        internal static System.Drawing.Bitmap background {
             get {
-                object obj = ResourceManager.GetObject("_1_100", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        internal static System.Drawing.Icon _2221 {
-            get {
-                object obj = ResourceManager.GetObject("_2221", resourceCulture);
-                return ((System.Drawing.Icon)(obj));
-            }
-        }
-        
-        internal static System.Drawing.Bitmap afternoon {
-            get {
-                object obj = ResourceManager.GetObject("afternoon", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        internal static System.Drawing.Bitmap aio_head_normal {
-            get {
-                object obj = ResourceManager.GetObject("aio_head_normal", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        internal static System.Drawing.Bitmap aio_quickbar_cut {
-            get {
-                object obj = ResourceManager.GetObject("aio_quickbar_cut", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        internal static System.Drawing.Bitmap aio_quickbar_face {
-            get {
-                object obj = ResourceManager.GetObject("aio_quickbar_face", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        internal static System.Drawing.Bitmap aio_quickbar_flirtationface {
-            get {
-                object obj = ResourceManager.GetObject("aio_quickbar_flirtationface", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        internal static System.Drawing.Bitmap aio_quickbar_font {
-            get {
-                object obj = ResourceManager.GetObject("aio_quickbar_font", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        internal static System.Drawing.Bitmap aio_quickbar_inputassist {
-            get {
-                object obj = ResourceManager.GetObject("aio_quickbar_inputassist", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        internal static System.Drawing.Bitmap aio_quickbar_more {
-            get {
-                object obj = ResourceManager.GetObject("aio_quickbar_more", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        internal static System.Drawing.Bitmap aio_quickbar_register {
-            get {
-                object obj = ResourceManager.GetObject("aio_quickbar_register", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        internal static System.Drawing.Bitmap aio_quickbar_richface {
-            get {
-                object obj = ResourceManager.GetObject("aio_quickbar_richface", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        internal static System.Drawing.Bitmap aio_quickbar_screen1 {
-            get {
-                object obj = ResourceManager.GetObject("aio_quickbar_screen1", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        internal static System.Drawing.Bitmap aio_quickbar_screen2 {
-            get {
-                object obj = ResourceManager.GetObject("aio_quickbar_screen2", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        internal static System.Drawing.Bitmap aio_quickbar_sendpic {
-            get {
-                object obj = ResourceManager.GetObject("aio_quickbar_sendpic", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        internal static System.Drawing.Bitmap aio_quickbar_twitter {
-            get {
-                object obj = ResourceManager.GetObject("aio_quickbar_twitter", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        internal static System.Drawing.Bitmap AIO_SetBtn_down {
-            get {
-                object obj = ResourceManager.GetObject("AIO_SetBtn_down", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        internal static System.Drawing.Bitmap AIO_SetBtn_highlight {
-            get {
-                object obj = ResourceManager.GetObject("AIO_SetBtn_highlight", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        internal static System.Drawing.Bitmap AIO_SetBtn_highlight_normal {
-            get {
-                object obj = ResourceManager.GetObject("AIO_SetBtn_highlight_normal", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        internal static System.Drawing.Bitmap AIO_SetBtn_normal {
-            get {
-                object obj = ResourceManager.GetObject("AIO_SetBtn_normal", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        internal static System.Drawing.Bitmap all_inside_bkg {
-            get {
-                object obj = ResourceManager.GetObject("all_inside_bkg", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        internal static System.Drawing.Bitmap allbtn_down {
-            get {
-                object obj = ResourceManager.GetObject("allbtn_down", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        internal static System.Drawing.Bitmap allbtn_highlight {
-            get {
-                object obj = ResourceManager.GetObject("allbtn_highlight", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        internal static System.Drawing.Bitmap away__2_ {
-            get {
-                object obj = ResourceManager.GetObject("away__2_", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        internal static System.Drawing.Bitmap Back {
-            get {
-                object obj = ResourceManager.GetObject("Back", resourceCulture);
+                object obj = ResourceManager.GetObject("background", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -242,30 +74,30 @@ namespace Teleware.ZPG.Client.Properties {
             }
         }
         
-        internal static System.Drawing.Bitmap BackPalace2 {
+        internal static System.Drawing.Bitmap border_background {
             get {
-                object obj = ResourceManager.GetObject("BackPalace2", resourceCulture);
+                object obj = ResourceManager.GetObject("border_background", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        internal static System.Drawing.Icon BCF_Title32 {
-            get {
-                object obj = ResourceManager.GetObject("BCF_Title32", resourceCulture);
-                return ((System.Drawing.Icon)(obj));
-            }
-        }
-        
-        internal static System.Drawing.Icon BCF_Title321 {
-            get {
-                object obj = ResourceManager.GetObject("BCF_Title321", resourceCulture);
-                return ((System.Drawing.Icon)(obj));
             }
         }
         
         internal static System.Drawing.Bitmap btn_down {
             get {
                 object obj = ResourceManager.GetObject("btn_down", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap btn_down_hover {
+            get {
+                object obj = ResourceManager.GetObject("btn_down_hover", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap btn_down_normal {
+            get {
+                object obj = ResourceManager.GetObject("btn_down_normal", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -277,6 +109,55 @@ namespace Teleware.ZPG.Client.Properties {
             }
         }
         
+        internal static System.Drawing.Bitmap btn_keyboard {
+            get {
+                object obj = ResourceManager.GetObject("btn_keyboard", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap btn_login_down {
+            get {
+                object obj = ResourceManager.GetObject("btn_login_down", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap btn_login_hover {
+            get {
+                object obj = ResourceManager.GetObject("btn_login_hover", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap btn_login_normal {
+            get {
+                object obj = ResourceManager.GetObject("btn_login_normal", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap btn_mima_hover {
+            get {
+                object obj = ResourceManager.GetObject("btn_mima_hover", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap btn_mima_normal {
+            get {
+                object obj = ResourceManager.GetObject("btn_mima_normal", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap btn_mima_press {
+            get {
+                object obj = ResourceManager.GetObject("btn_mima_press", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
         internal static System.Drawing.Bitmap btn_normal {
             get {
                 object obj = ResourceManager.GetObject("btn_normal", resourceCulture);
@@ -284,51 +165,30 @@ namespace Teleware.ZPG.Client.Properties {
             }
         }
         
-        internal static System.Drawing.Bitmap btnDl_DownBack {
+        internal static System.Drawing.Bitmap btn_up {
             get {
-                object obj = ResourceManager.GetObject("btnDl_DownBack", resourceCulture);
+                object obj = ResourceManager.GetObject("btn_up", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
         
-        internal static System.Drawing.Bitmap btnDl_MouseBack {
+        internal static System.Drawing.Bitmap btn_zhuce_hover {
             get {
-                object obj = ResourceManager.GetObject("btnDl_MouseBack", resourceCulture);
+                object obj = ResourceManager.GetObject("btn_zhuce_hover", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
         
-        internal static System.Drawing.Bitmap btnDl_NormlBack {
+        internal static System.Drawing.Bitmap btn_zhuce_normal {
             get {
-                object obj = ResourceManager.GetObject("btnDl_NormlBack", resourceCulture);
+                object obj = ResourceManager.GetObject("btn_zhuce_normal", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
         
-        internal static System.Drawing.Bitmap busy__2_ {
+        internal static System.Drawing.Bitmap btn_zhuce_press {
             get {
-                object obj = ResourceManager.GetObject("busy__2_", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        internal static System.Drawing.Bitmap button_login_down {
-            get {
-                object obj = ResourceManager.GetObject("button_login_down", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        internal static System.Drawing.Bitmap button_login_hover {
-            get {
-                object obj = ResourceManager.GetObject("button_login_hover", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        internal static System.Drawing.Bitmap button_login_normal {
-            get {
-                object obj = ResourceManager.GetObject("button_login_normal", resourceCulture);
+                object obj = ResourceManager.GetObject("btn_zhuce_press", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -371,132 +231,6 @@ namespace Teleware.ZPG.Client.Properties {
         internal static System.Drawing.Bitmap checkbox_tick_pushed {
             get {
                 object obj = ResourceManager.GetObject("checkbox_tick_pushed", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        internal static System.Drawing.Bitmap CloseDownBack {
-            get {
-                object obj = ResourceManager.GetObject("CloseDownBack", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        internal static System.Drawing.Bitmap CloseMouseBack {
-            get {
-                object obj = ResourceManager.GetObject("CloseMouseBack", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        internal static System.Drawing.Bitmap CloseNormlBack {
-            get {
-                object obj = ResourceManager.GetObject("CloseNormlBack", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        internal static System.Drawing.Bitmap corner_back {
-            get {
-                object obj = ResourceManager.GetObject("corner_back", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        internal static System.Drawing.Bitmap corner_back_hover {
-            get {
-                object obj = ResourceManager.GetObject("corner_back_hover", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        internal static System.Drawing.Bitmap corner_back_press {
-            get {
-                object obj = ResourceManager.GetObject("corner_back_press", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        internal static System.Drawing.Bitmap corner_left {
-            get {
-                object obj = ResourceManager.GetObject("corner_left", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        internal static System.Drawing.Bitmap corner_left_hover {
-            get {
-                object obj = ResourceManager.GetObject("corner_left_hover", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        internal static System.Drawing.Bitmap corner_left_press {
-            get {
-                object obj = ResourceManager.GetObject("corner_left_press", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        internal static System.Drawing.Bitmap corner_right {
-            get {
-                object obj = ResourceManager.GetObject("corner_right", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        internal static System.Drawing.Bitmap corner_right_hover {
-            get {
-                object obj = ResourceManager.GetObject("corner_right_hover", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        internal static System.Drawing.Bitmap corner_right_press {
-            get {
-                object obj = ResourceManager.GetObject("corner_right_press", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        internal static System.Drawing.Bitmap duozhanghao1 {
-            get {
-                object obj = ResourceManager.GetObject("duozhanghao1", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        internal static System.Drawing.Bitmap duozhanghao2 {
-            get {
-                object obj = ResourceManager.GetObject("duozhanghao2", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        internal static System.Drawing.Bitmap duozhanghao3 {
-            get {
-                object obj = ResourceManager.GetObject("duozhanghao3", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        internal static System.Drawing.Bitmap duozhanghao4 {
-            get {
-                object obj = ResourceManager.GetObject("duozhanghao4", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        internal static System.Drawing.Bitmap duozhanghao5 {
-            get {
-                object obj = ResourceManager.GetObject("duozhanghao5", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        internal static System.Drawing.Bitmap duozhanghao6 {
-            get {
-                object obj = ResourceManager.GetObject("duozhanghao6", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -585,101 +319,31 @@ namespace Teleware.ZPG.Client.Properties {
             }
         }
         
-        internal static System.Drawing.Bitmap form_set_down {
+        internal static System.Drawing.Bitmap head {
             get {
-                object obj = ResourceManager.GetObject("form_set_down", resourceCulture);
+                object obj = ResourceManager.GetObject("head", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
         
-        internal static System.Drawing.Bitmap form_set_hover {
+        internal static System.Drawing.Bitmap head_60x60 {
             get {
-                object obj = ResourceManager.GetObject("form_set_hover", resourceCulture);
+                object obj = ResourceManager.GetObject("head_60x60", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
         
-        internal static System.Drawing.Bitmap form_set_normal {
+        internal static System.Drawing.Icon ico {
             get {
-                object obj = ResourceManager.GetObject("form_set_normal", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
+                object obj = ResourceManager.GetObject("ico", resourceCulture);
+                return ((System.Drawing.Icon)(obj));
             }
         }
         
-        internal static System.Drawing.Bitmap form_Skin_down {
+        internal static System.Drawing.Icon ico1 {
             get {
-                object obj = ResourceManager.GetObject("form_Skin_down", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        internal static System.Drawing.Bitmap form_Skin_hover {
-            get {
-                object obj = ResourceManager.GetObject("form_Skin_hover", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        internal static System.Drawing.Bitmap form_Skin_normal {
-            get {
-                object obj = ResourceManager.GetObject("form_Skin_normal", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        internal static System.Drawing.Bitmap frameBorderEffect_mouseDownDraw {
-            get {
-                object obj = ResourceManager.GetObject("frameBorderEffect_mouseDownDraw", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        internal static System.Drawing.Bitmap frameBorderEffect_normalDraw {
-            get {
-                object obj = ResourceManager.GetObject("frameBorderEffect_normalDraw", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        internal static System.Drawing.Bitmap Full_close_down {
-            get {
-                object obj = ResourceManager.GetObject("Full_close_down", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        internal static System.Drawing.Bitmap Full_close_hover {
-            get {
-                object obj = ResourceManager.GetObject("Full_close_hover", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        internal static System.Drawing.Bitmap Full_close_normal {
-            get {
-                object obj = ResourceManager.GetObject("Full_close_normal", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        internal static System.Drawing.Bitmap icon_close_down {
-            get {
-                object obj = ResourceManager.GetObject("icon_close_down", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        internal static System.Drawing.Bitmap icon_close_hover {
-            get {
-                object obj = ResourceManager.GetObject("icon_close_hover", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        internal static System.Drawing.Bitmap icon_close_normal {
-            get {
-                object obj = ResourceManager.GetObject("icon_close_normal", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
+                object obj = ResourceManager.GetObject("ico1", resourceCulture);
+                return ((System.Drawing.Icon)(obj));
             }
         }
         
@@ -690,44 +354,23 @@ namespace Teleware.ZPG.Client.Properties {
             }
         }
         
-        internal static System.Drawing.Bitmap imgRjp_BackgroundImage {
+        internal static System.Drawing.Bitmap imgLoadding {
             get {
-                object obj = ResourceManager.GetObject("imgRjp_BackgroundImage", resourceCulture);
+                object obj = ResourceManager.GetObject("imgLoadding", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
         
-        internal static System.Drawing.Bitmap imoffline__2_ {
+        internal static System.Drawing.Bitmap jyjs {
             get {
-                object obj = ResourceManager.GetObject("imoffline__2_", resourceCulture);
+                object obj = ResourceManager.GetObject("jyjs", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
         
-        internal static System.Drawing.Bitmap imonline__2_ {
+        internal static System.Drawing.Bitmap jywks {
             get {
-                object obj = ResourceManager.GetObject("imonline__2_", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        internal static System.Drawing.Bitmap inputbox {
-            get {
-                object obj = ResourceManager.GetObject("inputbox", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        internal static System.Drawing.Bitmap inputbox_hover {
-            get {
-                object obj = ResourceManager.GetObject("inputbox_hover", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        internal static System.Drawing.Bitmap invisible__2_ {
-            get {
-                object obj = ResourceManager.GetObject("invisible__2_", resourceCulture);
+                object obj = ResourceManager.GetObject("jywks", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -735,188 +378,6 @@ namespace Teleware.ZPG.Client.Properties {
         internal static System.Drawing.Bitmap loading {
             get {
                 object obj = ResourceManager.GetObject("loading", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        internal static System.Drawing.Bitmap login_inputbtn_down {
-            get {
-                object obj = ResourceManager.GetObject("login_inputbtn_down", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        internal static System.Drawing.Bitmap login_inputbtn_highlight {
-            get {
-                object obj = ResourceManager.GetObject("login_inputbtn_highlight", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        internal static System.Drawing.Bitmap login_inputbtn_normal {
-            get {
-                object obj = ResourceManager.GetObject("login_inputbtn_normal", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        internal static System.Drawing.Bitmap main_1 {
-            get {
-                object obj = ResourceManager.GetObject("main_1", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        internal static System.Drawing.Bitmap main_10 {
-            get {
-                object obj = ResourceManager.GetObject("main_10", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        internal static System.Drawing.Bitmap main_2 {
-            get {
-                object obj = ResourceManager.GetObject("main_2", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        internal static System.Drawing.Bitmap main_3 {
-            get {
-                object obj = ResourceManager.GetObject("main_3", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        internal static System.Drawing.Bitmap main_4 {
-            get {
-                object obj = ResourceManager.GetObject("main_4", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        internal static System.Drawing.Bitmap main_5 {
-            get {
-                object obj = ResourceManager.GetObject("main_5", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        internal static System.Drawing.Bitmap main_6 {
-            get {
-                object obj = ResourceManager.GetObject("main_6", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        internal static System.Drawing.Bitmap main_7 {
-            get {
-                object obj = ResourceManager.GetObject("main_7", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        internal static System.Drawing.Bitmap main_8 {
-            get {
-                object obj = ResourceManager.GetObject("main_8", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        internal static System.Drawing.Bitmap main_9 {
-            get {
-                object obj = ResourceManager.GetObject("main_9", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        internal static System.Drawing.Bitmap MaxDownBack {
-            get {
-                object obj = ResourceManager.GetObject("MaxDownBack", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        internal static System.Drawing.Bitmap MaxMouseBack {
-            get {
-                object obj = ResourceManager.GetObject("MaxMouseBack", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        internal static System.Drawing.Bitmap MaxNormlBack {
-            get {
-                object obj = ResourceManager.GetObject("MaxNormlBack", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        internal static System.Drawing.Bitmap menu_btn_highlight {
-            get {
-                object obj = ResourceManager.GetObject("menu_btn_highlight", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        internal static System.Drawing.Bitmap menu_btn_normal {
-            get {
-                object obj = ResourceManager.GetObject("menu_btn_normal", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        internal static System.Drawing.Bitmap menu_check {
-            get {
-                object obj = ResourceManager.GetObject("menu_check", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        internal static System.Drawing.Bitmap mima {
-            get {
-                object obj = ResourceManager.GetObject("mima", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        internal static System.Drawing.Bitmap mima_hover {
-            get {
-                object obj = ResourceManager.GetObject("mima_hover", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        internal static System.Drawing.Bitmap mima_press {
-            get {
-                object obj = ResourceManager.GetObject("mima_press", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        internal static System.Drawing.Bitmap MiniDownBack {
-            get {
-                object obj = ResourceManager.GetObject("MiniDownBack", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        internal static System.Drawing.Bitmap MiniMouseBack {
-            get {
-                object obj = ResourceManager.GetObject("MiniMouseBack", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        internal static System.Drawing.Bitmap MiniNormlBack {
-            get {
-                object obj = ResourceManager.GetObject("MiniNormlBack", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        internal static System.Drawing.Bitmap morning {
-            get {
-                object obj = ResourceManager.GetObject("morning", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -956,34 +417,6 @@ namespace Teleware.ZPG.Client.Properties {
             }
         }
         
-        internal static System.Drawing.Bitmap mute__2_ {
-            get {
-                object obj = ResourceManager.GetObject("mute__2_", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        internal static System.Drawing.Bitmap night {
-            get {
-                object obj = ResourceManager.GetObject("night", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        internal static System.Drawing.Bitmap noon {
-            get {
-                object obj = ResourceManager.GetObject("noon", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        internal static System.Drawing.Bitmap Norml {
-            get {
-                object obj = ResourceManager.GetObject("Norml", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
         internal static System.Drawing.Bitmap notify_fail {
             get {
                 object obj = ResourceManager.GetObject("notify_fail", resourceCulture);
@@ -1005,212 +438,23 @@ namespace Teleware.ZPG.Client.Properties {
             }
         }
         
-        internal static System.Drawing.Bitmap pictureBox1_Image {
+        internal static System.Drawing.Bitmap tab_PageDown {
             get {
-                object obj = ResourceManager.GetObject("pictureBox1_Image", resourceCulture);
+                object obj = ResourceManager.GetObject("tab_PageDown", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
         
-        internal static System.Drawing.Bitmap Qme__2_ {
+        internal static System.Drawing.Bitmap tab_PageHover {
             get {
-                object obj = ResourceManager.GetObject("Qme__2_", resourceCulture);
+                object obj = ResourceManager.GetObject("tab_PageHover", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
         
-        internal static System.Drawing.Bitmap RestoreDownBack {
+        internal static System.Drawing.Bitmap wlzd {
             get {
-                object obj = ResourceManager.GetObject("RestoreDownBack", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        internal static System.Drawing.Bitmap RestoreMouseBack {
-            get {
-                object obj = ResourceManager.GetObject("RestoreMouseBack", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        internal static System.Drawing.Bitmap RestoreNormlBack {
-            get {
-                object obj = ResourceManager.GetObject("RestoreNormlBack", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        internal static System.Drawing.Bitmap set_icon {
-            get {
-                object obj = ResourceManager.GetObject("set_icon", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        internal static System.Drawing.Bitmap skinTabControl_PageArrowDown {
-            get {
-                object obj = ResourceManager.GetObject("skinTabControl_PageArrowDown", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        internal static System.Drawing.Bitmap skinTabControl_PageArrowHover {
-            get {
-                object obj = ResourceManager.GetObject("skinTabControl_PageArrowHover", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        internal static System.Drawing.Bitmap skinTabControl_PageCloseHover {
-            get {
-                object obj = ResourceManager.GetObject("skinTabControl_PageCloseHover", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        internal static System.Drawing.Bitmap skinTabControl_PageCloseNormal {
-            get {
-                object obj = ResourceManager.GetObject("skinTabControl_PageCloseNormal", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        internal static System.Drawing.Bitmap skinTabControl_PageDown {
-            get {
-                object obj = ResourceManager.GetObject("skinTabControl_PageDown", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        internal static System.Drawing.Bitmap skinTabControl_PageHover {
-            get {
-                object obj = ResourceManager.GetObject("skinTabControl_PageHover", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        internal static System.Drawing.Bitmap Small_1 {
-            get {
-                object obj = ResourceManager.GetObject("Small_1", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        internal static System.Drawing.Bitmap Small_10 {
-            get {
-                object obj = ResourceManager.GetObject("Small_10", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        internal static System.Drawing.Bitmap Small_2 {
-            get {
-                object obj = ResourceManager.GetObject("Small_2", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        internal static System.Drawing.Bitmap Small_3 {
-            get {
-                object obj = ResourceManager.GetObject("Small_3", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        internal static System.Drawing.Bitmap Small_4 {
-            get {
-                object obj = ResourceManager.GetObject("Small_4", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        internal static System.Drawing.Bitmap Small_5 {
-            get {
-                object obj = ResourceManager.GetObject("Small_5", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        internal static System.Drawing.Bitmap Small_6 {
-            get {
-                object obj = ResourceManager.GetObject("Small_6", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        internal static System.Drawing.Bitmap Small_7 {
-            get {
-                object obj = ResourceManager.GetObject("Small_7", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        internal static System.Drawing.Bitmap Small_8 {
-            get {
-                object obj = ResourceManager.GetObject("Small_8", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        internal static System.Drawing.Bitmap Small_9 {
-            get {
-                object obj = ResourceManager.GetObject("Small_9", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        internal static System.Drawing.Bitmap spin_normal_down {
-            get {
-                object obj = ResourceManager.GetObject("spin_normal_down", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        internal static System.Drawing.Bitmap texture {
-            get {
-                object obj = ResourceManager.GetObject("texture", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        internal static System.Drawing.Bitmap texture2 {
-            get {
-                object obj = ResourceManager.GetObject("texture2", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        internal static System.Drawing.Bitmap ToolbarBtnDown {
-            get {
-                object obj = ResourceManager.GetObject("ToolbarBtnDown", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        internal static System.Drawing.Bitmap ToolbarBtnNormal {
-            get {
-                object obj = ResourceManager.GetObject("ToolbarBtnNormal", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        internal static System.Drawing.Bitmap zhuce {
-            get {
-                object obj = ResourceManager.GetObject("zhuce", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        internal static System.Drawing.Bitmap zhuce_hover {
-            get {
-                object obj = ResourceManager.GetObject("zhuce_hover", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        internal static System.Drawing.Bitmap zhuce_press {
-            get {
-                object obj = ResourceManager.GetObject("zhuce_press", resourceCulture);
+                object obj = ResourceManager.GetObject("wlzd", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
