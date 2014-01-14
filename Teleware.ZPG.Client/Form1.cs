@@ -8,7 +8,7 @@ using System.Windows.Forms;
 
 namespace Teleware.ZPG.Client
 {
-    public partial class Form1 : SkinForm
+    public partial class Form1 : CCWin.CCSkinMain
     {
         public Form1()
         {
