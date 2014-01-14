@@ -348,9 +348,13 @@ namespace Teleware.ZPG.Client
         private SkinButton InnerCreateButton(string text, DialogResult result)
         {
             SkinButton button = new SkinButton();
+            button.DownBack = Properties.Resources.btn_down;
+            button.MouseBack = Properties.Resources.btn_hover;
+            button.NormlBack = Properties.Resources.btn_normal;
+            button.DrawType = CCWin.SkinControl.DrawStyle.Img;
+            button.Palace = true;
             button.Size = new Size(60, 26);
             button.UseVisualStyleBackColor = false;
-            button.RoundStyle = CCWin.SkinClass.RoundStyle.All;
             button.InheritColor = true;
             button.ForeColorSuit = true;
             button.Text = text;
@@ -496,7 +500,15 @@ namespace Teleware.ZPG.Client
                 buttonsTop = Height - _innerButtons[0].Height - BorderPadding.Bottom - 3;
             }
 
-            int nextButtonPos = BorderPadding.Left + (DisplayRectangle.Width - buttonsTotalWidth) / 2;
+            //int nextButtonPos = BorderPadding.Left + (DisplayRectangle.Width - buttonsTotalWidth) / 2;
+
+            //for (int i = 0; i < _innerButtons.Length; ++i)
+            //{
+            //    _innerButtons[i].Location = new Point(nextButtonPos, buttonsTop + 2);
+            //    nextButtonPos += _innerButtons[i].Width + Spacing;
+            //}
+
+            int nextButtonPos = BorderPadding.Right + (DisplayRectangle.Width - buttonsTotalWidth);
 
             for (int i = 0; i < _innerButtons.Length; ++i)
             {
@@ -525,10 +537,12 @@ namespace Teleware.ZPG.Client
             // 
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(97)))), ((int)(((byte)(159)))), ((int)(((byte)(215)))));
             this.BackLayout = false;
-            this.ClientSize = new System.Drawing.Size(310, 150);
+            this.ClientSize = new System.Drawing.Size(260, 150);
             this.ControlBoxOffset = new System.Drawing.Point(0, -1);
             this.InheritBack = true;
             this.KeyPreview = true;
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "MessageBoxForm";
             this.Text = "提示";
             this.TitleSuitColor = true;

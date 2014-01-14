@@ -39,6 +39,8 @@
             this.skinLabel1 = new CCWin.SkinControl.SkinLabel();
             this.skinTabControl1 = new CCWin.SkinControl.SkinTabControl();
             this.tabPage_tradeCenter = new System.Windows.Forms.TabPage();
+            this.skinButton3 = new CCWin.SkinControl.SkinButton();
+            this.skinButton2 = new CCWin.SkinControl.SkinButton();
             this.skinButton1 = new CCWin.SkinControl.SkinButton();
             this.listView1 = new System.Windows.Forms.ListView();
             this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -203,6 +205,8 @@
             // tabPage_tradeCenter
             // 
             this.tabPage_tradeCenter.BackColor = System.Drawing.Color.White;
+            this.tabPage_tradeCenter.Controls.Add(this.skinButton3);
+            this.tabPage_tradeCenter.Controls.Add(this.skinButton2);
             this.tabPage_tradeCenter.Controls.Add(this.skinButton1);
             this.tabPage_tradeCenter.Controls.Add(this.listView1);
             this.tabPage_tradeCenter.ForeColor = System.Drawing.Color.White;
@@ -213,18 +217,54 @@
             this.tabPage_tradeCenter.TabIndex = 0;
             this.tabPage_tradeCenter.Text = "交易大厅";
             // 
+            // skinButton3
+            // 
+            this.skinButton3.BackColor = System.Drawing.Color.Transparent;
+            this.skinButton3.ControlState = CCWin.SkinClass.ControlState.Normal;
+            this.skinButton3.DownBack = null;
+            this.skinButton3.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.skinButton3.ForeColor = System.Drawing.Color.Black;
+            this.skinButton3.Location = new System.Drawing.Point(312, 298);
+            this.skinButton3.MouseBack = null;
+            this.skinButton3.Name = "skinButton3";
+            this.skinButton3.NormlBack = null;
+            this.skinButton3.Size = new System.Drawing.Size(146, 23);
+            this.skinButton3.TabIndex = 3;
+            this.skinButton3.Text = "messagebox";
+            this.skinButton3.UseVisualStyleBackColor = false;
+            this.skinButton3.Click += new System.EventHandler(this.skinButton3_Click);
+            // 
+            // skinButton2
+            // 
+            this.skinButton2.BackColor = System.Drawing.Color.Transparent;
+            this.skinButton2.ControlState = CCWin.SkinClass.ControlState.Normal;
+            this.skinButton2.DownBack = null;
+            this.skinButton2.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.skinButton2.ForeColor = System.Drawing.Color.Black;
+            this.skinButton2.Location = new System.Drawing.Point(269, 219);
+            this.skinButton2.MouseBack = null;
+            this.skinButton2.Name = "skinButton2";
+            this.skinButton2.NormlBack = null;
+            this.skinButton2.Size = new System.Drawing.Size(118, 23);
+            this.skinButton2.TabIndex = 2;
+            this.skinButton2.Text = "关闭loading";
+            this.skinButton2.UseVisualStyleBackColor = false;
+            this.skinButton2.Click += new System.EventHandler(this.skinButton2_Click);
+            // 
             // skinButton1
             // 
             this.skinButton1.BackColor = System.Drawing.Color.Transparent;
             this.skinButton1.ControlState = CCWin.SkinClass.ControlState.Normal;
-            this.skinButton1.DownBack = null;
+            this.skinButton1.DownBack = global::Teleware.ZPG.Client.Properties.Resources.btn_down;
+            this.skinButton1.DrawType = CCWin.SkinControl.DrawStyle.Img;
             this.skinButton1.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.skinButton1.ForeColor = System.Drawing.Color.Black;
-            this.skinButton1.Location = new System.Drawing.Point(322, 119);
-            this.skinButton1.MouseBack = null;
+            this.skinButton1.Location = new System.Drawing.Point(269, 146);
+            this.skinButton1.MouseBack = global::Teleware.ZPG.Client.Properties.Resources.btn_hover;
             this.skinButton1.Name = "skinButton1";
-            this.skinButton1.NormlBack = null;
-            this.skinButton1.Size = new System.Drawing.Size(118, 23);
+            this.skinButton1.NormlBack = global::Teleware.ZPG.Client.Properties.Resources.btn_normal;
+            this.skinButton1.Palace = true;
+            this.skinButton1.Size = new System.Drawing.Size(118, 42);
             this.skinButton1.TabIndex = 2;
             this.skinButton1.Text = "显示loading";
             this.skinButton1.UseVisualStyleBackColor = false;
@@ -238,12 +278,13 @@
             this.columnHeader3,
             this.columnHeader4});
             this.listView1.FullRowSelect = true;
-            this.listView1.Location = new System.Drawing.Point(586, 17);
+            this.listView1.Location = new System.Drawing.Point(588, 23);
             this.listView1.Name = "listView1";
             this.listView1.Size = new System.Drawing.Size(300, 253);
             this.listView1.TabIndex = 1;
             this.listView1.UseCompatibleStateImageBehavior = false;
             this.listView1.View = System.Windows.Forms.View.Details;
+            this.listView1.SelectedIndexChanged += new System.EventHandler(this.listView1_SelectedIndexChanged);
             // 
             // columnHeader1
             // 
@@ -285,7 +326,7 @@
             this.webBrowser_tradeDetail.MinimumSize = new System.Drawing.Size(20, 20);
             this.webBrowser_tradeDetail.Name = "webBrowser_tradeDetail";
             this.webBrowser_tradeDetail.ScrollBarsEnabled = false;
-            this.webBrowser_tradeDetail.Size = new System.Drawing.Size(898, 494);
+            this.webBrowser_tradeDetail.Size = new System.Drawing.Size(200, 25);
             this.webBrowser_tradeDetail.TabIndex = 0;
             // 
             // tabPage_affiche
@@ -308,7 +349,7 @@
             this.webBrowser_affiche.Margin = new System.Windows.Forms.Padding(0);
             this.webBrowser_affiche.Name = "webBrowser_affiche";
             this.webBrowser_affiche.ScrollBarsEnabled = false;
-            this.webBrowser_affiche.Size = new System.Drawing.Size(898, 494);
+            this.webBrowser_affiche.Size = new System.Drawing.Size(200, 25);
             this.webBrowser_affiche.TabIndex = 0;
             // 
             // tabPage_tradeResult
@@ -331,7 +372,7 @@
             this.webBrowser_tradeResult.MinimumSize = new System.Drawing.Size(20, 20);
             this.webBrowser_tradeResult.Name = "webBrowser_tradeResult";
             this.webBrowser_tradeResult.ScrollBarsEnabled = false;
-            this.webBrowser_tradeResult.Size = new System.Drawing.Size(898, 494);
+            this.webBrowser_tradeResult.Size = new System.Drawing.Size(200, 25);
             this.webBrowser_tradeResult.TabIndex = 0;
             // 
             // tabPage_applyInfo
@@ -354,7 +395,7 @@
             this.webBrowser_applyInfo.MinimumSize = new System.Drawing.Size(20, 20);
             this.webBrowser_applyInfo.Name = "webBrowser_applyInfo";
             this.webBrowser_applyInfo.ScrollBarsEnabled = false;
-            this.webBrowser_applyInfo.Size = new System.Drawing.Size(898, 494);
+            this.webBrowser_applyInfo.Size = new System.Drawing.Size(200, 25);
             this.webBrowser_applyInfo.TabIndex = 0;
             // 
             // MainForm
@@ -408,6 +449,8 @@
         private System.Windows.Forms.ColumnHeader columnHeader3;
         private System.Windows.Forms.ColumnHeader columnHeader4;
         private CCWin.SkinControl.SkinButton skinButton1;
+        private CCWin.SkinControl.SkinButton skinButton2;
+        private CCWin.SkinControl.SkinButton skinButton3;
 
     }
 }

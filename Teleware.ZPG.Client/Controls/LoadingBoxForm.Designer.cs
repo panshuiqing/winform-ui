@@ -1,6 +1,6 @@
 ﻿namespace Teleware.ZPG.Client.Controls
 {
-    partial class LoadingForm
+    partial class LoadingBoxForm
     {
         /// <summary>
         /// Required designer variable.
@@ -28,23 +28,21 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LoadingForm));
-            this.skinPictureBox1 = new CCWin.SkinControl.SkinPictureBox();
-            ((System.ComponentModel.ISupportInitialize)(this.skinPictureBox1)).BeginInit();
+            this.pic_loading = new CCWin.SkinControl.SkinPictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.pic_loading)).BeginInit();
             this.SuspendLayout();
             // 
-            // skinPictureBox1
+            // pic_loading
             // 
-            this.skinPictureBox1.BackColor = System.Drawing.Color.Transparent;
-            this.skinPictureBox1.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.skinPictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("skinPictureBox1.Image")));
-            this.skinPictureBox1.Location = new System.Drawing.Point(108, 20);
-            this.skinPictureBox1.Name = "skinPictureBox1";
-            this.skinPictureBox1.Size = new System.Drawing.Size(32, 32);
-            this.skinPictureBox1.TabIndex = 0;
-            this.skinPictureBox1.TabStop = false;
+            this.pic_loading.BackColor = System.Drawing.Color.Transparent;
+            this.pic_loading.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.pic_loading.Location = new System.Drawing.Point(48, 24);
+            this.pic_loading.Name = "pic_loading";
+            this.pic_loading.Size = new System.Drawing.Size(32, 32);
+            this.pic_loading.TabIndex = 0;
+            this.pic_loading.TabStop = false;
             // 
-            // LoadingForm
+            // LoadingBoxForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -54,14 +52,14 @@
             this.BackToColor = false;
             this.BorderPalace = global::Teleware.ZPG.Client.Properties.Resources.BackPalace;
             this.CaptionHeight = 4;
-            this.ClientSize = new System.Drawing.Size(300, 90);
+            this.ClientSize = new System.Drawing.Size(200, 90);
             this.ControlBox = false;
-            this.Controls.Add(this.skinPictureBox1);
-            this.ForeColor = System.Drawing.Color.White;
+            this.Controls.Add(this.pic_loading);
+            this.ForeColor = System.Drawing.Color.Black;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Mobile = CCWin.MobileStyle.None;
-            this.Name = "LoadingForm";
+            this.Name = "LoadingBoxForm";
             this.Radius = 1;
             this.RoundStyle = CCWin.SkinClass.RoundStyle.None;
             this.Shadow = false;
@@ -69,14 +67,14 @@
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "";
-            ((System.ComponentModel.ISupportInitialize)(this.skinPictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pic_loading)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private CCWin.SkinControl.SkinPictureBox skinPictureBox1;
+        private CCWin.SkinControl.SkinPictureBox pic_loading;
 
 
     }

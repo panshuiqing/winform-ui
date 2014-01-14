@@ -45,16 +45,22 @@ namespace Teleware.ZPG.Client
 
         private void skinButton1_Click(object sender, EventArgs e)
         {
-            Teleware.ZPG.Client.Controls.LoadingForm.ShowLoading(this, "正在加载...正在加载...正在加载...\r\n正在加载...   ");
-            MessageBoxEx.Show("dfgdfg");
-            //new System.Threading.Thread(() =>
-            //{
-            //    System.Threading.Thread.Sleep(2000);
-            //    this.Invoke(new Action<int>(delegate
-            //    {
-            //        Teleware.ZPG.Client.Controls.LoadingForm.CloseLoading();
-            //    }));
-            //}).Start();
+            Teleware.ZPG.Client.Controls.LoadingBox.ShowLoading(null, "正在加载正在加");
+        }
+
+        private void listView1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void skinButton2_Click(object sender, EventArgs e)
+        {
+            Teleware.ZPG.Client.Controls.LoadingBox.CloseLoading();
+        }
+
+        private void skinButton3_Click(object sender, EventArgs e)
+        {
+            MessageBoxEx.Show(this, "正在加载正在加正在加载正在加", "提示", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button1);
         }
     }
 }

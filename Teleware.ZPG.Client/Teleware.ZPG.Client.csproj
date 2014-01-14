@@ -44,11 +44,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Common.cs" />
-    <Compile Include="Controls\LoadingForm.cs">
+    <Compile Include="Controls\LoadingBox.cs" />
+    <Compile Include="Controls\LoadingBoxForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Controls\LoadingForm.Designer.cs">
-      <DependentUpon>LoadingForm.cs</DependentUpon>
+    <Compile Include="Controls\LoadingBoxForm.Designer.cs">
+      <DependentUpon>LoadingBoxForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Controls\WebBrowserEx.cs">
       <SubType>Component</SubType>
@@ -77,8 +78,8 @@
     <Compile Include="SkinForm.Designer.cs">
       <DependentUpon>SkinForm.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Controls\LoadingForm.resx">
-      <DependentUpon>LoadingForm.cs</DependentUpon>
+    <EmbeddedResource Include="Controls\LoadingBoxForm.resx">
+      <DependentUpon>LoadingBoxForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>
@@ -536,7 +537,6 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Resources\%24this.BorderPalace.png" />
-    <None Include="Resources\zjbb_item_bkg.png" />
     <None Include="Resources\Tooltip.png" />
     <None Include="Resources\skinTabControl1.PageHover.png" />
     <None Include="Resources\skinTabControl1.PageDown.png" />
@@ -555,6 +555,10 @@
     <None Include="Resources\CloseMouseBack.png" />
     <None Include="Resources\CloseNormlBack.png" />
     <None Include="Resources\icon_info.png" />
+    <None Include="Resources\closeframe_warningFile.png" />
+    <None Include="Resources\btn_normal.png" />
+    <None Include="Resources\btn_down.png" />
+    <None Include="Resources\btn_hover.png" />
     <Content Include="Resources\imgLoadding.Image.gif" />
     <None Include="Resources\MaxDownBack.png" />
     <None Include="Resources\MaxMouseBack.png" />
@@ -562,11 +566,7 @@
     <None Include="Resources\MiniDownBack.png" />
     <None Include="Resources\MiniMouseBack.png" />
     <None Include="Resources\MiniNormlBack.png" />
-    <None Include="Resources\loader.gif" />
     <None Include="Resources\loading.gif" />
-    <None Include="Resources\msg_icon_check.png" />
-    <None Include="Resources\msg_icon_error.png" />
-    <None Include="Resources\msg_icon_info.png" />
     <None Include="Resources\msg_warning.png" />
     <None Include="Resources\msg_info.png" />
     <None Include="Resources\msg_question.png" />
@@ -576,7 +576,6 @@
     <None Include="Resources\RestoreDownBack.png" />
     <None Include="Resources\RestoreMouseBack.png" />
     <None Include="Resources\RestoreNormlBack.png" />
-    <None Include="Resources\SearchBackGround.png" />
     <Content Include="Resources\skinButton2.DownBack.png" />
     <Content Include="Resources\skinButton2.MouseBack.png" />
     <Content Include="Resources\skinButton2.NormlBack.png" />
