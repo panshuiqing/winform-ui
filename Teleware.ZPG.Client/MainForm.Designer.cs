@@ -57,6 +57,7 @@
             this.webBrowser_tradeResult = new Teleware.ZPG.Client.Controls.WebBrowserEx();
             this.tabPage_applyInfo = new System.Windows.Forms.TabPage();
             this.webBrowser_applyInfo = new Teleware.ZPG.Client.Controls.WebBrowserEx();
+            this.skinButton9 = new CCWin.SkinControl.SkinButton();
             this.panel_user.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.skinPictureBox1)).BeginInit();
             this.skinTabControl1.SuspendLayout();
@@ -222,6 +223,7 @@
             // 
             this.panel_main.BackColor = System.Drawing.Color.Transparent;
             this.panel_main.Controls.Add(this.skinButton7);
+            this.panel_main.Controls.Add(this.skinButton9);
             this.panel_main.Controls.Add(this.skinButton8);
             this.panel_main.Controls.Add(this.skinButton1);
             this.panel_main.Controls.Add(this.skinButton2);
@@ -255,7 +257,7 @@
             this.skinButton7.Palace = true;
             this.skinButton7.Size = new System.Drawing.Size(149, 37);
             this.skinButton7.TabIndex = 3;
-            this.skinButton7.Text = "交易结束界面";
+            this.skinButton7.Text = "交易已结束界面";
             this.skinButton7.UseVisualStyleBackColor = false;
             this.skinButton7.Click += new System.EventHandler(this.skinButton7_Click);
             // 
@@ -274,7 +276,7 @@
             this.skinButton8.Palace = true;
             this.skinButton8.Size = new System.Drawing.Size(149, 37);
             this.skinButton8.TabIndex = 3;
-            this.skinButton8.Text = "交易结束界面(竞得人)";
+            this.skinButton8.Text = "交易已结束界面(竞得人)";
             this.skinButton8.UseVisualStyleBackColor = false;
             this.skinButton8.Click += new System.EventHandler(this.skinButton8_Click);
             // 
@@ -426,7 +428,7 @@
             this.webBrowser_tradeDetail.MinimumSize = new System.Drawing.Size(20, 20);
             this.webBrowser_tradeDetail.Name = "webBrowser_tradeDetail";
             this.webBrowser_tradeDetail.ScrollBarsEnabled = false;
-            this.webBrowser_tradeDetail.Size = new System.Drawing.Size(200, 25);
+            this.webBrowser_tradeDetail.Size = new System.Drawing.Size(898, 494);
             this.webBrowser_tradeDetail.TabIndex = 0;
             // 
             // tabPage_affiche
@@ -449,7 +451,7 @@
             this.webBrowser_affiche.Margin = new System.Windows.Forms.Padding(0);
             this.webBrowser_affiche.Name = "webBrowser_affiche";
             this.webBrowser_affiche.ScrollBarsEnabled = false;
-            this.webBrowser_affiche.Size = new System.Drawing.Size(200, 25);
+            this.webBrowser_affiche.Size = new System.Drawing.Size(898, 494);
             this.webBrowser_affiche.TabIndex = 0;
             // 
             // tabPage_tradeResult
@@ -472,7 +474,7 @@
             this.webBrowser_tradeResult.MinimumSize = new System.Drawing.Size(20, 20);
             this.webBrowser_tradeResult.Name = "webBrowser_tradeResult";
             this.webBrowser_tradeResult.ScrollBarsEnabled = false;
-            this.webBrowser_tradeResult.Size = new System.Drawing.Size(200, 25);
+            this.webBrowser_tradeResult.Size = new System.Drawing.Size(898, 494);
             this.webBrowser_tradeResult.TabIndex = 0;
             // 
             // tabPage_applyInfo
@@ -495,8 +497,27 @@
             this.webBrowser_applyInfo.MinimumSize = new System.Drawing.Size(20, 20);
             this.webBrowser_applyInfo.Name = "webBrowser_applyInfo";
             this.webBrowser_applyInfo.ScrollBarsEnabled = false;
-            this.webBrowser_applyInfo.Size = new System.Drawing.Size(200, 25);
+            this.webBrowser_applyInfo.Size = new System.Drawing.Size(898, 494);
             this.webBrowser_applyInfo.TabIndex = 0;
+            // 
+            // skinButton9
+            // 
+            this.skinButton9.BackColor = System.Drawing.Color.Transparent;
+            this.skinButton9.ControlState = CCWin.SkinClass.ControlState.Normal;
+            this.skinButton9.DownBack = global::Teleware.ZPG.Client.Properties.Resources.btn_down;
+            this.skinButton9.DrawType = CCWin.SkinControl.DrawStyle.Img;
+            this.skinButton9.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.skinButton9.ForeColor = System.Drawing.Color.Black;
+            this.skinButton9.Location = new System.Drawing.Point(420, 30);
+            this.skinButton9.MouseBack = global::Teleware.ZPG.Client.Properties.Resources.btn_hover;
+            this.skinButton9.Name = "skinButton9";
+            this.skinButton9.NormlBack = global::Teleware.ZPG.Client.Properties.Resources.btn_normal;
+            this.skinButton9.Palace = true;
+            this.skinButton9.Size = new System.Drawing.Size(173, 37);
+            this.skinButton9.TabIndex = 3;
+            this.skinButton9.Text = "等待交易结束界面";
+            this.skinButton9.UseVisualStyleBackColor = false;
+            this.skinButton9.Click += new System.EventHandler(this.skinButton8_Click);
             // 
             // MainForm
             // 
@@ -553,6 +574,7 @@
         private CCWin.SkinControl.SkinButton skinButton6;
         private CCWin.SkinControl.SkinPanel panel_main;
         private CCWin.SkinControl.SkinPanel panel_info;
+        private CCWin.SkinControl.SkinButton skinButton9;
 
     }
 }
