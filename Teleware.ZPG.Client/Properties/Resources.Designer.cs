@@ -984,6 +984,27 @@ namespace Teleware.ZPG.Client.Properties {
             }
         }
         
+        internal static System.Drawing.Bitmap notify_fail {
+            get {
+                object obj = ResourceManager.GetObject("notify_fail", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap notify_info {
+            get {
+                object obj = ResourceManager.GetObject("notify_info", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap notify_success {
+            get {
+                object obj = ResourceManager.GetObject("notify_success", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
         internal static System.Drawing.Bitmap pictureBox1_Image {
             get {
                 object obj = ResourceManager.GetObject("pictureBox1_Image", resourceCulture);

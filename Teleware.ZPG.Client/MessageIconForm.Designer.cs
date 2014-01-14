@@ -1,6 +1,6 @@
-﻿namespace Teleware.ZPG.Client.Controls
+﻿namespace Teleware.ZPG.Client
 {
-    partial class LoadingBoxForm
+    partial class MessageIconForm
     {
         /// <summary>
         /// Required designer variable.
@@ -65,6 +65,7 @@
             this.Shadow = false;
             this.ShowIcon = false;
             this.ShowInTaskbar = false;
+            this.SkinOpacity = 0.8D;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "";
             ((System.ComponentModel.ISupportInitialize)(this.pic_loading)).EndInit();

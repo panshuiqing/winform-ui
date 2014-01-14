@@ -5,10 +5,12 @@ using System.Data;
 using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
+using CCWin.Win32;
+using CCWin.Win32.Const;
 
-namespace Teleware.ZPG.Client.Controls
+namespace Teleware.ZPG.Client
 {
-    public partial class LoadingBoxForm : SkinForm
+    public partial class MessageIconForm : SkinForm
     {
         private TextFormatFlags flags = TextFormatFlags.HidePrefix | TextFormatFlags.ExternalLeading | TextFormatFlags.WordBreak | TextFormatFlags.EndEllipsis;
         private int maxWidth = 400;
@@ -19,13 +21,14 @@ namespace Teleware.ZPG.Client.Controls
         private int textImageSpacing = 4;
         private LoadingBoxArgs loadingBoxArgs;
 
-        public LoadingBoxForm()
+        public MessageIconForm()
         {
             InitializeComponent();
         }
 
         public void ShowLoading(LoadingBoxArgs loadingBoxArgs)
         {
+            if (loadingBoxArgs == null) throw new ArgumentNullException("loadingBoxArgs");
             this.loadingBoxArgs = loadingBoxArgs;
             this.pic_loading.Size = new Size(loadingBoxArgs.LoadingImage.Width, loadingBoxArgs.LoadingImage.Height);
             this.pic_loading.Image = loadingBoxArgs.LoadingImage;
@@ -79,18 +82,46 @@ namespace Teleware.ZPG.Client.Controls
         protected override void OnPaint(PaintEventArgs e)
         {
             base.OnPaint(e);
-            var g = e.Graphics;
-            var fontSize = g.MeasureString(this.loadingBoxArgs.LoadingText, this.Font);
-            var loadingImage = Properties.Resources.loading;
-            var left = Math.Max(spacing, (this.Width - (loadingImage.Width + (int)fontSize.Width + textImageSpacing)) / 2);
-            var imageTop = (this.Height - loadingImage.Height) / 2;
-            var textTop = Math.Max(this.spacing, (this.Height - (int)fontSize.Height) / 2);
-            this.pic_loading.Location = new Point(left,imageTop);
-            var textLeft = left + loadingImage.Width + textImageSpacing;
-            var textWidth = Math.Min((int)fontSize.Width, this.Width - textLeft - spacing);
-            var textHeight = Math.Min((int)fontSize.Height, this.Height - spacing - spacing);
-            var rect = new Rectangle(textLeft, textTop, textWidth, textHeight);
-            TextRenderer.DrawText(g, this.loadingBoxArgs.LoadingText, this.Font, rect, this.ForeColor, flags);
+            if (this.loadingBoxArgs != null)
+            {
+                var g = e.Graphics;
+                var fontSize = g.MeasureString(this.loadingBoxArgs.LoadingText, this.Font);
+                var loadingImage = this.loadingBoxArgs.LoadingImage;
+                var left = Math.Max(spacing, (this.Width - (loadingImage.Width + (int)fontSize.Width + textImageSpacing)) / 2);
+                var imageTop = (this.Height - loadingImage.Height) / 2;
+                var textTop = Math.Max(this.spacing, (this.Height - (int)fontSize.Height) / 2);
+                this.pic_loading.Location = new Point(left, imageTop);
+                var textLeft = left + loadingImage.Width + textImageSpacing;
+                var textWidth = Math.Min((int)fontSize.Width, this.Width - textLeft - spacing);
+                var textHeight = Math.Min((int)fontSize.Height, this.Height - spacing - spacing);
+                var rect = new Rectangle(textLeft, textTop, textWidth, textHeight);
+                TextRenderer.DrawText(g, this.loadingBoxArgs.LoadingText, this.Font, rect, this.ForeColor, flags);
+            }
+        }
+
+        protected override void OnClosed(EventArgs e)
+        {
+            if (ShowSpecialOnClosed)
+            {
+                this.Special = false;
+                this.SkinOpacity = 1;
+            }
+            base.OnClosed(e);
+        }
+
+        protected override void OnFormClosing(FormClosingEventArgs e)
+        {
+            if (ShowSpecialOnClosed)
+            {
+                NativeMethods.AnimateWindow(this.Handle, 3000, AW.AW_BLEND | AW.AW_HIDE | AW.AW_SLIDE);
+            }
+            base.OnFormClosing(e);
+        }
+
+        public bool ShowSpecialOnClosed
+        {
+            get;
+            set;
         }
     }
 }

@@ -44,15 +44,15 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Common.cs" />
-    <Compile Include="Controls\LoadingBox.cs" />
-    <Compile Include="Controls\LoadingBoxForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Controls\LoadingBoxForm.Designer.cs">
-      <DependentUpon>LoadingBoxForm.cs</DependentUpon>
-    </Compile>
+    <Compile Include="LoadingBox\LoadingBox.cs" />
     <Compile Include="Controls\WebBrowserEx.cs">
       <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="MessageIconForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MessageIconForm.Designer.cs">
+      <DependentUpon>MessageIconForm.cs</DependentUpon>
     </Compile>
     <Compile Include="LoginForm.cs">
       <SubType>Form</SubType>
@@ -70,6 +70,8 @@
     <Compile Include="MessageBox\MessageBoxForm.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="NotifyBox\NotifyBox.cs" />
+    <Compile Include="NotifyBox\NotifyBoxIcon.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SkinForm.cs">
@@ -78,8 +80,8 @@
     <Compile Include="SkinForm.Designer.cs">
       <DependentUpon>SkinForm.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Controls\LoadingBoxForm.resx">
-      <DependentUpon>LoadingBoxForm.cs</DependentUpon>
+    <EmbeddedResource Include="MessageIconForm.resx">
+      <DependentUpon>MessageIconForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>
@@ -97,6 +99,7 @@
     <EmbeddedResource Include="SkinForm.resx">
       <DependentUpon>SkinForm.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="app.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -572,6 +575,9 @@
     <None Include="Resources\msg_question.png" />
     <None Include="Resources\msg_error.png" />
     <None Include="Resources\msg_ok.png" />
+    <None Include="Resources\notify_fail.png" />
+    <None Include="Resources\notify_info.png" />
+    <None Include="Resources\notify_success.png" />
     <Content Include="Resources\pnlTX.BackgroundImage.png" />
     <None Include="Resources\RestoreDownBack.png" />
     <None Include="Resources\RestoreMouseBack.png" />

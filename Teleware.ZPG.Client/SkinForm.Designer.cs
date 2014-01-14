@@ -62,6 +62,7 @@
             this.RestoreDownBack = global::Teleware.ZPG.Client.Properties.Resources.form_restore_down;
             this.RestoreMouseBack = global::Teleware.ZPG.Client.Properties.Resources.form_restore_hover;
             this.RestoreNormlBack = global::Teleware.ZPG.Client.Properties.Resources.form_restore_normal;
+            this.ShadowWidth = 6;
             this.ShowBorder = false;
             this.ShowDrawIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

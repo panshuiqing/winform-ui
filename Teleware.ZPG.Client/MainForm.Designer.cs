@@ -55,6 +55,7 @@
             this.webBrowser_tradeResult = new Teleware.ZPG.Client.Controls.WebBrowserEx();
             this.tabPage_applyInfo = new System.Windows.Forms.TabPage();
             this.webBrowser_applyInfo = new Teleware.ZPG.Client.Controls.WebBrowserEx();
+            this.skinButton4 = new CCWin.SkinControl.SkinButton();
             this.skinPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.skinPictureBox1)).BeginInit();
             this.skinTabControl1.SuspendLayout();
@@ -205,6 +206,7 @@
             // tabPage_tradeCenter
             // 
             this.tabPage_tradeCenter.BackColor = System.Drawing.Color.White;
+            this.tabPage_tradeCenter.Controls.Add(this.skinButton4);
             this.tabPage_tradeCenter.Controls.Add(this.skinButton3);
             this.tabPage_tradeCenter.Controls.Add(this.skinButton2);
             this.tabPage_tradeCenter.Controls.Add(this.skinButton1);
@@ -221,14 +223,16 @@
             // 
             this.skinButton3.BackColor = System.Drawing.Color.Transparent;
             this.skinButton3.ControlState = CCWin.SkinClass.ControlState.Normal;
-            this.skinButton3.DownBack = null;
+            this.skinButton3.DownBack = global::Teleware.ZPG.Client.Properties.Resources.btn_down;
+            this.skinButton3.DrawType = CCWin.SkinControl.DrawStyle.Img;
             this.skinButton3.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.skinButton3.ForeColor = System.Drawing.Color.Black;
-            this.skinButton3.Location = new System.Drawing.Point(312, 298);
-            this.skinButton3.MouseBack = null;
+            this.skinButton3.Location = new System.Drawing.Point(269, 286);
+            this.skinButton3.MouseBack = global::Teleware.ZPG.Client.Properties.Resources.btn_hover;
             this.skinButton3.Name = "skinButton3";
-            this.skinButton3.NormlBack = null;
-            this.skinButton3.Size = new System.Drawing.Size(146, 23);
+            this.skinButton3.NormlBack = global::Teleware.ZPG.Client.Properties.Resources.btn_normal;
+            this.skinButton3.Palace = true;
+            this.skinButton3.Size = new System.Drawing.Size(118, 37);
             this.skinButton3.TabIndex = 3;
             this.skinButton3.Text = "messagebox";
             this.skinButton3.UseVisualStyleBackColor = false;
@@ -238,14 +242,16 @@
             // 
             this.skinButton2.BackColor = System.Drawing.Color.Transparent;
             this.skinButton2.ControlState = CCWin.SkinClass.ControlState.Normal;
-            this.skinButton2.DownBack = null;
+            this.skinButton2.DownBack = global::Teleware.ZPG.Client.Properties.Resources.btn_down;
+            this.skinButton2.DrawType = CCWin.SkinControl.DrawStyle.Img;
             this.skinButton2.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.skinButton2.ForeColor = System.Drawing.Color.Black;
             this.skinButton2.Location = new System.Drawing.Point(269, 219);
-            this.skinButton2.MouseBack = null;
+            this.skinButton2.MouseBack = global::Teleware.ZPG.Client.Properties.Resources.btn_hover;
             this.skinButton2.Name = "skinButton2";
-            this.skinButton2.NormlBack = null;
-            this.skinButton2.Size = new System.Drawing.Size(118, 23);
+            this.skinButton2.NormlBack = global::Teleware.ZPG.Client.Properties.Resources.btn_normal;
+            this.skinButton2.Palace = true;
+            this.skinButton2.Size = new System.Drawing.Size(118, 41);
             this.skinButton2.TabIndex = 2;
             this.skinButton2.Text = "关闭loading";
             this.skinButton2.UseVisualStyleBackColor = false;
@@ -398,6 +404,25 @@
             this.webBrowser_applyInfo.Size = new System.Drawing.Size(200, 25);
             this.webBrowser_applyInfo.TabIndex = 0;
             // 
+            // skinButton4
+            // 
+            this.skinButton4.BackColor = System.Drawing.Color.Transparent;
+            this.skinButton4.ControlState = CCWin.SkinClass.ControlState.Normal;
+            this.skinButton4.DownBack = global::Teleware.ZPG.Client.Properties.Resources.btn_down;
+            this.skinButton4.DrawType = CCWin.SkinControl.DrawStyle.Img;
+            this.skinButton4.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.skinButton4.ForeColor = System.Drawing.Color.Black;
+            this.skinButton4.Location = new System.Drawing.Point(269, 344);
+            this.skinButton4.MouseBack = global::Teleware.ZPG.Client.Properties.Resources.btn_hover;
+            this.skinButton4.Name = "skinButton4";
+            this.skinButton4.NormlBack = global::Teleware.ZPG.Client.Properties.Resources.btn_normal;
+            this.skinButton4.Palace = true;
+            this.skinButton4.Size = new System.Drawing.Size(118, 37);
+            this.skinButton4.TabIndex = 3;
+            this.skinButton4.Text = "Notify";
+            this.skinButton4.UseVisualStyleBackColor = false;
+            this.skinButton4.Click += new System.EventHandler(this.skinButton4_Click);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
@@ -409,7 +434,6 @@
             this.MaximizeBox = false;
             this.Name = "MainForm";
             this.Radius = 3;
-            this.ShadowWidth = 6;
             this.Text = "福建省国有土地使用权出让交易系统";
             this.TitleOffset = new System.Drawing.Point(2, 0);
             this.skinPanel1.ResumeLayout(false);
@@ -451,6 +475,7 @@
         private CCWin.SkinControl.SkinButton skinButton1;
         private CCWin.SkinControl.SkinButton skinButton2;
         private CCWin.SkinControl.SkinButton skinButton3;
+        private CCWin.SkinControl.SkinButton skinButton4;
 
     }
 }

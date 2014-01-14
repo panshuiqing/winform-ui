@@ -4,11 +4,11 @@ using System.Text;
 using System.Windows.Forms;
 using System.Drawing;
 
-namespace Teleware.ZPG.Client.Controls
+namespace Teleware.ZPG.Client
 {
     public static class LoadingBox
     {
-        private static LoadingBoxForm form;
+        private static MessageIconForm form;
 
         public static void ShowLoading(string text)
         {
@@ -24,7 +24,7 @@ namespace Teleware.ZPG.Client.Controls
         {
             CloseLoading();
             LoadingBoxArgs args = new LoadingBoxArgs(owner, text, loadingImage);
-            form = new LoadingBoxForm();
+            form = new MessageIconForm();
             form.ShowLoading(args);
         }
 

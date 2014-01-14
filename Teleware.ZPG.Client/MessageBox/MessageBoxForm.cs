@@ -40,7 +40,7 @@ namespace Teleware.ZPG.Client
         private Rectangle _iconRect;
         private Rectangle _messageRect;
         private Button[] _innerButtons;
-        private const int Spacing = 12;
+        private const int Spacing = 6;
         #endregion
 
         #region 无参构造函数
@@ -500,16 +500,7 @@ namespace Teleware.ZPG.Client
                 buttonsTop = Height - _innerButtons[0].Height - BorderPadding.Bottom - 3;
             }
 
-            //int nextButtonPos = BorderPadding.Left + (DisplayRectangle.Width - buttonsTotalWidth) / 2;
-
-            //for (int i = 0; i < _innerButtons.Length; ++i)
-            //{
-            //    _innerButtons[i].Location = new Point(nextButtonPos, buttonsTop + 2);
-            //    nextButtonPos += _innerButtons[i].Width + Spacing;
-            //}
-
-            int nextButtonPos = BorderPadding.Right + (DisplayRectangle.Width - buttonsTotalWidth);
-
+            int nextButtonPos = DisplayRectangle.Width - buttonsTotalWidth;
             for (int i = 0; i < _innerButtons.Length; ++i)
             {
                 _innerButtons[i].Location = new Point(nextButtonPos, buttonsTop + 2);
