@@ -208,6 +208,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\form_border.png" />
+    <None Include="Resources\AV_WM_Loading.gif" />
     <Content Include="Resources\btn_down_hover.png" />
     <Content Include="Resources\btn_down_normal.png" />
     <Content Include="Resources\btn_keyboard.png" />

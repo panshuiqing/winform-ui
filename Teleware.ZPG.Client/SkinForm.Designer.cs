@@ -40,6 +40,7 @@
             this.CaptionHeight = 30;
             this.ClientSize = new System.Drawing.Size(405, 408);
             this.CloseBoxSize = new System.Drawing.Size(39, 20);
+            this.CloseButtonToolTip = "关闭";
             this.CloseDownBack = global::Teleware.ZPG.Client.Properties.Resources.form_close_down;
             this.CloseMouseBack = global::Teleware.ZPG.Client.Properties.Resources.form_close_hover;
             this.CloseNormlBack = global::Teleware.ZPG.Client.Properties.Resources.form_close_normal;
@@ -49,15 +50,18 @@
             this.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(0);
+            this.MaxButtonToolTip = "最大化";
             this.MaxDownBack = global::Teleware.ZPG.Client.Properties.Resources.form_max_down;
             this.MaxMouseBack = global::Teleware.ZPG.Client.Properties.Resources.form_max_hover;
             this.MaxNormlBack = global::Teleware.ZPG.Client.Properties.Resources.form_max_normal;
             this.MaxSize = new System.Drawing.Size(28, 20);
+            this.MinButtonToolTip = "最小化";
             this.MiniDownBack = global::Teleware.ZPG.Client.Properties.Resources.form_min_down;
             this.MiniMouseBack = global::Teleware.ZPG.Client.Properties.Resources.form_min_hover;
             this.MiniNormlBack = global::Teleware.ZPG.Client.Properties.Resources.form_min_normal;
             this.MiniSize = new System.Drawing.Size(28, 20);
             this.Name = "SkinForm";
+            this.RestoreButtonToolTip = "还原";
             this.RestoreDownBack = global::Teleware.ZPG.Client.Properties.Resources.form_restore_down;
             this.RestoreMouseBack = global::Teleware.ZPG.Client.Properties.Resources.form_restore_hover;
             this.RestoreNormlBack = global::Teleware.ZPG.Client.Properties.Resources.form_restore_normal;

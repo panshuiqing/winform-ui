@@ -83,6 +83,7 @@ namespace Teleware.ZPG.Client
             }
             netDisconnectControl.Visible = true;
             panel_info.BringToFront();
+            skinTabControl1.SelectedIndex = 0;
         }
 
         private void skinButton6_Click(object sender, EventArgs e)

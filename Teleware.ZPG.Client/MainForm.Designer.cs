@@ -39,8 +39,8 @@
             this.skinLabel1 = new CCWin.SkinControl.SkinLabel();
             this.skinTabControl1 = new CCWin.SkinControl.SkinTabControl();
             this.tabPage_tradeCenter = new System.Windows.Forms.TabPage();
-            this.panel_main = new CCWin.SkinControl.SkinPanel();
             this.panel_info = new CCWin.SkinControl.SkinPanel();
+            this.panel_main = new CCWin.SkinControl.SkinPanel();
             this.tabPage_tradeDetail = new System.Windows.Forms.TabPage();
             this.webBrowser_tradeDetail = new Teleware.ZPG.Client.Controls.WebBrowserEx();
             this.tabPage_affiche = new System.Windows.Forms.TabPage();
@@ -63,6 +63,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.skinPictureBox1)).BeginInit();
             this.skinTabControl1.SuspendLayout();
             this.tabPage_tradeCenter.SuspendLayout();
+            this.panel_info.SuspendLayout();
             this.tabPage_tradeDetail.SuspendLayout();
             this.tabPage_affiche.SuspendLayout();
             this.tabPage_tradeResult.SuspendLayout();
@@ -187,11 +188,11 @@
             this.skinTabControl1.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Bold);
             this.skinTabControl1.ImageList = this.toolbarImages;
             this.skinTabControl1.ImgSize = new System.Drawing.Size(48, 48);
+            this.skinTabControl1.ImgTxtSpace = 0;
             this.skinTabControl1.ItemSize = new System.Drawing.Size(80, 75);
             this.skinTabControl1.Location = new System.Drawing.Point(1, 30);
             this.skinTabControl1.Margin = new System.Windows.Forms.Padding(0);
             this.skinTabControl1.Name = "skinTabControl1";
-            this.skinTabControl1.Padding = new System.Drawing.Point(10, 3);
             this.skinTabControl1.PageArrowDown = null;
             this.skinTabControl1.PageArrowHover = null;
             this.skinTabControl1.PageCloseHover = null;
@@ -211,7 +212,6 @@
             // tabPage_tradeCenter
             // 
             this.tabPage_tradeCenter.BackColor = System.Drawing.Color.White;
-            this.tabPage_tradeCenter.Controls.Add(this.panel_main);
             this.tabPage_tradeCenter.Controls.Add(this.panel_info);
             this.tabPage_tradeCenter.ForeColor = System.Drawing.Color.White;
             this.tabPage_tradeCenter.ImageIndex = 5;
@@ -221,23 +221,10 @@
             this.tabPage_tradeCenter.TabIndex = 0;
             this.tabPage_tradeCenter.Text = "交易大厅";
             // 
-            // panel_main
-            // 
-            this.panel_main.BackColor = System.Drawing.Color.Transparent;
-            this.panel_main.ControlState = CCWin.SkinClass.ControlState.Normal;
-            this.panel_main.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel_main.DownBack = null;
-            this.panel_main.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.panel_main.Location = new System.Drawing.Point(0, 0);
-            this.panel_main.MouseBack = null;
-            this.panel_main.Name = "panel_main";
-            this.panel_main.NormlBack = null;
-            this.panel_main.Size = new System.Drawing.Size(898, 494);
-            this.panel_main.TabIndex = 4;
-            // 
             // panel_info
             // 
             this.panel_info.BackColor = System.Drawing.Color.Transparent;
+            this.panel_info.Controls.Add(this.panel_main);
             this.panel_info.ControlState = CCWin.SkinClass.ControlState.Normal;
             this.panel_info.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel_info.DownBack = null;
@@ -248,6 +235,23 @@
             this.panel_info.NormlBack = null;
             this.panel_info.Size = new System.Drawing.Size(898, 494);
             this.panel_info.TabIndex = 4;
+            // 
+            // panel_main
+            // 
+            this.panel_main.BackColor = System.Drawing.Color.Transparent;
+            this.panel_main.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.panel_main.BackRectangle = new System.Drawing.Rectangle(2, 2, 1, 1);
+            this.panel_main.ControlState = CCWin.SkinClass.ControlState.Normal;
+            this.panel_main.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel_main.DownBack = null;
+            this.panel_main.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.panel_main.Location = new System.Drawing.Point(0, 0);
+            this.panel_main.MouseBack = null;
+            this.panel_main.Name = "panel_main";
+            this.panel_main.NormlBack = null;
+            this.panel_main.Palace = true;
+            this.panel_main.Size = new System.Drawing.Size(898, 494);
+            this.panel_main.TabIndex = 0;
             // 
             // tabPage_tradeDetail
             // 
@@ -269,7 +273,7 @@
             this.webBrowser_tradeDetail.MinimumSize = new System.Drawing.Size(20, 20);
             this.webBrowser_tradeDetail.Name = "webBrowser_tradeDetail";
             this.webBrowser_tradeDetail.ScrollBarsEnabled = false;
-            this.webBrowser_tradeDetail.Size = new System.Drawing.Size(200, 25);
+            this.webBrowser_tradeDetail.Size = new System.Drawing.Size(898, 494);
             this.webBrowser_tradeDetail.TabIndex = 0;
             // 
             // tabPage_affiche
@@ -292,7 +296,7 @@
             this.webBrowser_affiche.Margin = new System.Windows.Forms.Padding(0);
             this.webBrowser_affiche.Name = "webBrowser_affiche";
             this.webBrowser_affiche.ScrollBarsEnabled = false;
-            this.webBrowser_affiche.Size = new System.Drawing.Size(200, 25);
+            this.webBrowser_affiche.Size = new System.Drawing.Size(898, 494);
             this.webBrowser_affiche.TabIndex = 0;
             // 
             // tabPage_tradeResult
@@ -315,7 +319,7 @@
             this.webBrowser_tradeResult.MinimumSize = new System.Drawing.Size(20, 20);
             this.webBrowser_tradeResult.Name = "webBrowser_tradeResult";
             this.webBrowser_tradeResult.ScrollBarsEnabled = false;
-            this.webBrowser_tradeResult.Size = new System.Drawing.Size(200, 25);
+            this.webBrowser_tradeResult.Size = new System.Drawing.Size(898, 494);
             this.webBrowser_tradeResult.TabIndex = 0;
             // 
             // tabPage_applyInfo
@@ -338,7 +342,7 @@
             this.webBrowser_applyInfo.MinimumSize = new System.Drawing.Size(20, 20);
             this.webBrowser_applyInfo.Name = "webBrowser_applyInfo";
             this.webBrowser_applyInfo.ScrollBarsEnabled = false;
-            this.webBrowser_applyInfo.Size = new System.Drawing.Size(200, 25);
+            this.webBrowser_applyInfo.Size = new System.Drawing.Size(898, 494);
             this.webBrowser_applyInfo.TabIndex = 0;
             // 
             // tabPage1
@@ -548,6 +552,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.skinPictureBox1)).EndInit();
             this.skinTabControl1.ResumeLayout(false);
             this.tabPage_tradeCenter.ResumeLayout(false);
+            this.panel_info.ResumeLayout(false);
             this.tabPage_tradeDetail.ResumeLayout(false);
             this.tabPage_affiche.ResumeLayout(false);
             this.tabPage_tradeResult.ResumeLayout(false);
@@ -575,7 +580,6 @@
         private Teleware.ZPG.Client.Controls.WebBrowserEx webBrowser_tradeResult;
         private Teleware.ZPG.Client.Controls.WebBrowserEx webBrowser_applyInfo;
         private System.Windows.Forms.TabPage tabPage_applyInfo;
-        private CCWin.SkinControl.SkinPanel panel_main;
         private CCWin.SkinControl.SkinPanel panel_info;
         private System.Windows.Forms.TabPage tabPage1;
         private CCWin.SkinControl.SkinButton skinButton7;
@@ -587,6 +591,7 @@
         private CCWin.SkinControl.SkinButton skinButton3;
         private CCWin.SkinControl.SkinButton skinButton5;
         private CCWin.SkinControl.SkinButton skinButton4;
+        private CCWin.SkinControl.SkinPanel panel_main;
 
     }
 }
