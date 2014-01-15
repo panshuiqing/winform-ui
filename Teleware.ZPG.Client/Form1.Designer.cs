@@ -30,7 +30,6 @@
         {
             this.skinLabel1 = new CCWin.SkinControl.SkinLabel();
             this.skinPictureBox1 = new CCWin.SkinControl.SkinPictureBox();
-            this.netDisconnectControl1 = new Teleware.ZPG.Client.Controls.NetDisconnectControl();
             ((System.ComponentModel.ISupportInitialize)(this.skinPictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -58,21 +57,11 @@
             this.skinPictureBox1.TabIndex = 2;
             this.skinPictureBox1.TabStop = false;
             // 
-            // netDisconnectControl1
-            // 
-            this.netDisconnectControl1.BackColor = System.Drawing.Color.Transparent;
-            this.netDisconnectControl1.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.netDisconnectControl1.Location = new System.Drawing.Point(140, 193);
-            this.netDisconnectControl1.Name = "netDisconnectControl1";
-            this.netDisconnectControl1.Size = new System.Drawing.Size(340, 140);
-            this.netDisconnectControl1.TabIndex = 4;
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(630, 596);
-            this.Controls.Add(this.netDisconnectControl1);
             this.Controls.Add(this.skinLabel1);
             this.Controls.Add(this.skinPictureBox1);
             this.Name = "Form1";
@@ -86,7 +75,6 @@
 
         private CCWin.SkinControl.SkinLabel skinLabel1;
         private CCWin.SkinControl.SkinPictureBox skinPictureBox1;
-        private Controls.NetDisconnectControl netDisconnectControl1;
 
     }
 }

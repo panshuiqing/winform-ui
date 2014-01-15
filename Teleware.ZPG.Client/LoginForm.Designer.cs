@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LoginForm));
             this.pnlTX = new CCWin.SkinControl.SkinPanel();
             this.pnlImgTX = new CCWin.SkinControl.SkinPanel();
             this.txtId = new CCWin.SkinControl.SkinTextBox();
@@ -72,7 +71,7 @@
             // pnlImgTX
             // 
             this.pnlImgTX.BackColor = System.Drawing.Color.Transparent;
-            this.pnlImgTX.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pnlImgTX.BackgroundImage")));
+            this.pnlImgTX.BackgroundImage = global::Teleware.ZPG.Client.Properties.Resources.head;
             this.pnlImgTX.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pnlImgTX.ControlState = CCWin.SkinClass.ControlState.Normal;
             this.pnlImgTX.DownBack = null;
@@ -214,17 +213,17 @@
             this.skinCheckBox1.BackColor = System.Drawing.Color.Transparent;
             this.skinCheckBox1.ControlState = CCWin.SkinClass.ControlState.Normal;
             this.skinCheckBox1.DefaultCheckButtonWidth = 15;
-            this.skinCheckBox1.DownBack = ((System.Drawing.Image)(resources.GetObject("skinCheckBox1.DownBack")));
+            this.skinCheckBox1.DownBack = null;
             this.skinCheckBox1.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.skinCheckBox1.ForeColor = System.Drawing.Color.Black;
             this.skinCheckBox1.LightEffect = false;
             this.skinCheckBox1.Location = new System.Drawing.Point(112, 208);
-            this.skinCheckBox1.MouseBack = ((System.Drawing.Image)(resources.GetObject("skinCheckBox1.MouseBack")));
+            this.skinCheckBox1.MouseBack = null;
             this.skinCheckBox1.Name = "skinCheckBox1";
-            this.skinCheckBox1.NormlBack = ((System.Drawing.Image)(resources.GetObject("skinCheckBox1.NormlBack")));
-            this.skinCheckBox1.SelectedDownBack = ((System.Drawing.Image)(resources.GetObject("skinCheckBox1.SelectedDownBack")));
-            this.skinCheckBox1.SelectedMouseBack = ((System.Drawing.Image)(resources.GetObject("skinCheckBox1.SelectedMouseBack")));
-            this.skinCheckBox1.SelectedNormlBack = ((System.Drawing.Image)(resources.GetObject("skinCheckBox1.SelectedNormlBack")));
+            this.skinCheckBox1.NormlBack = null;
+            this.skinCheckBox1.SelectedDownBack = null;
+            this.skinCheckBox1.SelectedMouseBack = null;
+            this.skinCheckBox1.SelectedNormlBack = null;
             this.skinCheckBox1.Size = new System.Drawing.Size(75, 21);
             this.skinCheckBox1.TabIndex = 3;
             this.skinCheckBox1.Text = "记住密码";
@@ -236,17 +235,17 @@
             this.skinCheckBox2.BackColor = System.Drawing.Color.Transparent;
             this.skinCheckBox2.ControlState = CCWin.SkinClass.ControlState.Normal;
             this.skinCheckBox2.DefaultCheckButtonWidth = 15;
-            this.skinCheckBox2.DownBack = ((System.Drawing.Image)(resources.GetObject("skinCheckBox2.DownBack")));
+            this.skinCheckBox2.DownBack = null;
             this.skinCheckBox2.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.skinCheckBox2.ForeColor = System.Drawing.Color.Black;
             this.skinCheckBox2.LightEffect = false;
             this.skinCheckBox2.Location = new System.Drawing.Point(193, 208);
-            this.skinCheckBox2.MouseBack = ((System.Drawing.Image)(resources.GetObject("skinCheckBox2.MouseBack")));
+            this.skinCheckBox2.MouseBack = null;
             this.skinCheckBox2.Name = "skinCheckBox2";
-            this.skinCheckBox2.NormlBack = ((System.Drawing.Image)(resources.GetObject("skinCheckBox2.NormlBack")));
-            this.skinCheckBox2.SelectedDownBack = ((System.Drawing.Image)(resources.GetObject("skinCheckBox2.SelectedDownBack")));
-            this.skinCheckBox2.SelectedMouseBack = ((System.Drawing.Image)(resources.GetObject("skinCheckBox2.SelectedMouseBack")));
-            this.skinCheckBox2.SelectedNormlBack = ((System.Drawing.Image)(resources.GetObject("skinCheckBox2.SelectedNormlBack")));
+            this.skinCheckBox2.NormlBack = null;
+            this.skinCheckBox2.SelectedDownBack = null;
+            this.skinCheckBox2.SelectedMouseBack = null;
+            this.skinCheckBox2.SelectedNormlBack = null;
             this.skinCheckBox2.Size = new System.Drawing.Size(75, 21);
             this.skinCheckBox2.TabIndex = 4;
             this.skinCheckBox2.Text = "自动登录";
@@ -256,7 +255,7 @@
             // 
             this.imgLoadding.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(21)))), ((int)(((byte)(26)))));
             this.imgLoadding.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.imgLoadding.Image = ((System.Drawing.Image)(resources.GetObject("imgLoadding.Image")));
+            this.imgLoadding.Image = global::Teleware.ZPG.Client.Properties.Resources.imgLoadding;
             this.imgLoadding.Location = new System.Drawing.Point(1, 242);
             this.imgLoadding.Margin = new System.Windows.Forms.Padding(0);
             this.imgLoadding.Name = "imgLoadding";
@@ -308,7 +307,7 @@
             // skinPictureBox1
             // 
             this.skinPictureBox1.BackColor = System.Drawing.Color.Transparent;
-            this.skinPictureBox1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("skinPictureBox1.BackgroundImage")));
+            this.skinPictureBox1.BackgroundImage = global::Teleware.ZPG.Client.Properties.Resources.icon_info;
             this.skinPictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.skinPictureBox1.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.skinPictureBox1.Location = new System.Drawing.Point(3, 6);
@@ -380,12 +379,8 @@
             // LoginForm
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
-            this.BackPalace = ((System.Drawing.Image)(resources.GetObject("$this.BackPalace")));
-            this.BorderPalace = ((System.Drawing.Image)(resources.GetObject("$this.BorderPalace")));
+            this.BackPalace = global::Teleware.ZPG.Client.Properties.Resources.BackPalace;
             this.ClientSize = new System.Drawing.Size(380, 292);
-            this.CloseDownBack = ((System.Drawing.Image)(resources.GetObject("$this.CloseDownBack")));
-            this.CloseMouseBack = ((System.Drawing.Image)(resources.GetObject("$this.CloseMouseBack")));
-            this.CloseNormlBack = ((System.Drawing.Image)(resources.GetObject("$this.CloseNormlBack")));
             this.Controls.Add(this.panelError);
             this.Controls.Add(this.btnDl);
             this.Controls.Add(this.imgLoadding);
@@ -397,18 +392,8 @@
             this.Controls.Add(this.btnId);
             this.Controls.Add(this.txtId);
             this.Controls.Add(this.pnlTX);
-            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.MaxDownBack = ((System.Drawing.Image)(resources.GetObject("$this.MaxDownBack")));
             this.MaximizeBox = false;
-            this.MaxMouseBack = ((System.Drawing.Image)(resources.GetObject("$this.MaxMouseBack")));
-            this.MaxNormlBack = ((System.Drawing.Image)(resources.GetObject("$this.MaxNormlBack")));
-            this.MiniDownBack = ((System.Drawing.Image)(resources.GetObject("$this.MiniDownBack")));
-            this.MiniMouseBack = ((System.Drawing.Image)(resources.GetObject("$this.MiniMouseBack")));
-            this.MiniNormlBack = ((System.Drawing.Image)(resources.GetObject("$this.MiniNormlBack")));
             this.Name = "LoginForm";
-            this.RestoreDownBack = ((System.Drawing.Image)(resources.GetObject("$this.RestoreDownBack")));
-            this.RestoreMouseBack = ((System.Drawing.Image)(resources.GetObject("$this.RestoreMouseBack")));
-            this.RestoreNormlBack = ((System.Drawing.Image)(resources.GetObject("$this.RestoreNormlBack")));
             this.ShowInTaskbar = false;
             this.Text = "";
             this.TopMost = true;

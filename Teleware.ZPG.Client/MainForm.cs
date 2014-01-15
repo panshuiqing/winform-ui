@@ -51,11 +51,6 @@ namespace Teleware.ZPG.Client
             Teleware.ZPG.Client.LoadingBox.ShowLoading(null, "正在加载正在加");
         }
 
-        private void listView1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void skinButton2_Click(object sender, EventArgs e)
         {
             Teleware.ZPG.Client.LoadingBox.CloseLoading();
@@ -76,6 +71,7 @@ namespace Teleware.ZPG.Client
             if (netDisconnectControl == null)
             {
                 netDisconnectControl = new Controls.NetDisconnectControl();
+                netDisconnectControl.Dock = DockStyle.Fill;
                 panel_info.Controls.Add(netDisconnectControl);
             }
             foreach (Control item in panel_info.Controls)

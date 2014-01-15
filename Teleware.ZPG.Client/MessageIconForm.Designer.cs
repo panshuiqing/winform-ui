@@ -42,15 +42,14 @@
             this.pic_loading.TabIndex = 0;
             this.pic_loading.TabStop = false;
             // 
-            // LoadingBoxForm
+            // MessageIconForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Lavender;
-            this.BackPalace = null;
             this.BackShade = false;
             this.BackToColor = false;
-            this.BorderPalace = global::Teleware.ZPG.Client.Properties.Resources.BackPalace;
+            this.BorderPalace = global::Teleware.ZPG.Client.Properties.Resources.border_background;
             this.CaptionHeight = 4;
             this.ClientSize = new System.Drawing.Size(200, 90);
             this.ControlBox = false;
@@ -59,10 +58,11 @@
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Mobile = CCWin.MobileStyle.None;
-            this.Name = "LoadingBoxForm";
+            this.Name = "MessageIconForm";
             this.Radius = 1;
             this.RoundStyle = CCWin.SkinClass.RoundStyle.None;
             this.Shadow = false;
+            this.ShowBorder = false;
             this.ShowIcon = false;
             this.ShowInTaskbar = false;
             this.SkinOpacity = 0.8D;
