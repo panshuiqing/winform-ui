@@ -201,16 +201,13 @@
     <None Include="Resources\checkbox_tick_pushed.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\background.png" />
-  </ItemGroup>
-  <ItemGroup>
     <ProjectReference Include="..\CSkin\CSkin.csproj">
       <Project>{7F988DDA-955F-42F2-82EB-D6058FB7FF75}</Project>
       <Name>CSkin</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Resources\border_background.png" />
+    <None Include="Resources\form_border.png" />
     <Content Include="Resources\btn_down_hover.png" />
     <Content Include="Resources\btn_down_normal.png" />
     <Content Include="Resources\btn_keyboard.png" />

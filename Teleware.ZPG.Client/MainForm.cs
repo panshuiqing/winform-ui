@@ -48,7 +48,7 @@ namespace Teleware.ZPG.Client
 
         private void skinButton1_Click(object sender, EventArgs e)
         {
-            Teleware.ZPG.Client.LoadingBox.ShowLoading(null, "正在加载正在加");
+            Teleware.ZPG.Client.LoadingBox.ShowLoading(null, "正在加载数据，请稍后......");
         }
 
         private void skinButton2_Click(object sender, EventArgs e)

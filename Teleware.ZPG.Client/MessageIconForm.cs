@@ -10,19 +10,28 @@ using CCWin.Win32.Const;
 
 namespace Teleware.ZPG.Client
 {
+    /// <summary>
+    /// 左边显示图片，右边显示文字的窗体
+    /// <para>图片文字四周的空白距离固定，并且文字始终在垂直方向和水平方向居中对齐</para>
+    /// </summary>
     public partial class MessageIconForm : SkinForm
     {
-        private TextFormatFlags flags = TextFormatFlags.HidePrefix | TextFormatFlags.ExternalLeading | TextFormatFlags.WordBreak | TextFormatFlags.EndEllipsis;
-        private int maxWidth = 400;
-        private int minWidth = 200;
-        private int fixHeight = 90;
-        private Size maxTextSize = new Size(370, 90);
-        private int spacing = 10;
-        private int textImageSpacing = 4;
+        //图片或者文字相对窗体的margin值
+        private static int SPACING = 20;
+        //文字修饰
+        private TextFormatFlags TEXT_FLAGS = TextFormatFlags.HidePrefix | TextFormatFlags.ExternalLeading | TextFormatFlags.WordBreak | TextFormatFlags.EndEllipsis;
+        //窗体最大大小
+        private static Size MAX_SIZE = new Size(400, 180);
+        //最小大小
+        private static Size MIN_SIZE = new Size(180, 70);
+        //图片与文字水平间隔
+        private static int TEXT_IMAGE_SPACING = 4;
+
         private LoadingBoxArgs loadingBoxArgs;
 
         public MessageIconForm()
         {
+            this.FadeOutSecond = 2;
             InitializeComponent();
         }
 
@@ -30,10 +39,26 @@ namespace Teleware.ZPG.Client
         {
             if (loadingBoxArgs == null) throw new ArgumentNullException("loadingBoxArgs");
             this.loadingBoxArgs = loadingBoxArgs;
-            this.pic_loading.Size = new Size(loadingBoxArgs.LoadingImage.Width, loadingBoxArgs.LoadingImage.Height);
-            this.pic_loading.Image = loadingBoxArgs.LoadingImage;
             var ownerForm = loadingBoxArgs.Owner;
-
+            if (this.loadingBoxArgs.LoadingImage != null)
+            {
+                this.pic_loading.Size = new Size(loadingBoxArgs.LoadingImage.Width, loadingBoxArgs.LoadingImage.Height);
+                this.pic_loading.Image = loadingBoxArgs.LoadingImage;
+                this.pic_loading.Visible = true;
+                if (this.pic_loading.Width > MAX_SIZE.Width)
+                {
+                    this.pic_loading.Width = MAX_SIZE.Width;
+                }
+                if (this.pic_loading.Height > MAX_SIZE.Height)
+                {
+                    this.pic_loading.Height = MAX_SIZE.Height;
+                }
+            }
+            else
+            {
+                this.pic_loading.Visible = false;
+            }
+            this.CalcFinalSizes();
             if (ownerForm == null)
             {
                 Form activeForm = Form.ActiveForm;
@@ -42,7 +67,6 @@ namespace Teleware.ZPG.Client
                     ownerForm = activeForm;
                 }
             }
-
             if (ownerForm == null)
             {
                 this.StartPosition = FormStartPosition.CenterScreen;
@@ -55,28 +79,54 @@ namespace Teleware.ZPG.Client
                 var top = (ctrl.Height - this.Height) / 2 + ctrl.Location.Y;
                 this.Location = new Point(left, top);
             }
-            this.CalcFinalSizes();
             this.TopMost = true;
             this.Show(ownerForm);
         }
 
+        private Size GetTextSize()
+        {
+            if (string.IsNullOrEmpty(this.loadingBoxArgs.LoadingText)) return Size.Empty;
+            int maxTextWidth = MAX_SIZE.Width - 2 * SPACING;
+            int maxTextHeight = MAX_SIZE.Height - (2 * SPACING);
+            if (this.loadingBoxArgs.LoadingImage != null)
+            {
+                maxTextWidth -= (this.loadingBoxArgs.LoadingImage.Width + TEXT_IMAGE_SPACING);
+            }
+            Size textSize = TextRenderer.MeasureText(this.loadingBoxArgs.LoadingText, this.Font, new Size(maxTextWidth, maxTextHeight), TEXT_FLAGS);
+            return textSize;
+        }
+
         private void CalcFinalSizes()
         {
-            if (!string.IsNullOrEmpty(this.loadingBoxArgs.LoadingText))
+            Size textSize = GetTextSize();
+            var width = 2 * SPACING + textSize.Width;
+            var height = 2 * SPACING + textSize.Height;
+            var loadingImage = this.loadingBoxArgs.LoadingImage;
+            if (loadingImage != null)
             {
-                Size textSize = TextRenderer.MeasureText(this.loadingBoxArgs.LoadingText, this.Font, this.maxTextSize, this.flags);
-                Size imgSize = this.pic_loading.Size;
-                var width = this.spacing + imgSize.Width + this.textImageSpacing + textSize.Width + spacing;
-                if (width > this.maxWidth)
+                width += loadingImage.Width + TEXT_IMAGE_SPACING;
+                if (loadingImage.Height > textSize.Height)
                 {
-                    width = this.maxWidth;
+                    height = 2 * SPACING + loadingImage.Height;
                 }
-                else if (width < this.minWidth)
-                {
-                    width = this.minWidth;
-                }
-                this.Size = new Size(width, fixHeight);
             }
+            if (width > MAX_SIZE.Width)
+            {
+                width = MAX_SIZE.Width;
+            }
+            else if (width < MIN_SIZE.Width)
+            {
+                width = MIN_SIZE.Width;
+            }
+            if (height > MAX_SIZE.Height)
+            {
+                height = MAX_SIZE.Height;
+            }
+            else if (height < MIN_SIZE.Height)
+            {
+                height = MIN_SIZE.Height;
+            }
+            this.Size = new Size(width, height);
         }
 
         protected override void OnPaint(PaintEventArgs e)
@@ -85,40 +135,54 @@ namespace Teleware.ZPG.Client
             if (this.loadingBoxArgs != null)
             {
                 var g = e.Graphics;
-                var fontSize = g.MeasureString(this.loadingBoxArgs.LoadingText, this.Font);
                 var loadingImage = this.loadingBoxArgs.LoadingImage;
-                var left = Math.Max(spacing, (this.Width - (loadingImage.Width + (int)fontSize.Width + textImageSpacing)) / 2);
-                var imageTop = (this.Height - loadingImage.Height) / 2;
-                var textTop = Math.Max(this.spacing, (this.Height - (int)fontSize.Height) / 2);
-                this.pic_loading.Location = new Point(left, imageTop);
-                var textLeft = left + loadingImage.Width + textImageSpacing;
-                var textWidth = Math.Min((int)fontSize.Width, this.Width - textLeft - spacing);
-                var textHeight = Math.Min((int)fontSize.Height, this.Height - spacing - spacing);
-                var rect = new Rectangle(textLeft, textTop, textWidth, textHeight);
-                TextRenderer.DrawText(g, this.loadingBoxArgs.LoadingText, this.Font, rect, this.ForeColor, flags);
-            }
-        }
+                var textSize = GetTextSize();
+                var imageLeft = SPACING;
+                var imageTop = 0;
+                var textTop = 0;
+                var textLeft = 0;
+                var textWidth = Math.Min(this.Width - 2 * SPACING, (int)textSize.Width);
+                var textHeight = Math.Min(this.Height - 2 * SPACING, (int)textSize.Height);
 
-        protected override void OnClosed(EventArgs e)
-        {
-            if (ShowSpecialOnClosed)
-            {
-                this.Special = false;
-                this.SkinOpacity = 1;
+                if (loadingImage == null)
+                {
+                    textLeft = Math.Max(SPACING, (this.Width - textSize.Width) / 2);
+                    textTop = Math.Max(SPACING, (this.Height - textSize.Height) / 2);
+                    this.pic_loading.Visible = false;
+                }
+                else
+                {
+                    textLeft = SPACING + loadingImage.Width + TEXT_IMAGE_SPACING;
+                    if (loadingImage.Height > textSize.Height)
+                    {
+                        imageTop = SPACING;
+                        textTop = (this.Height - textSize.Height) / 2;
+                    }
+                    else
+                    {
+                        textTop = SPACING;
+                        imageTop = (this.Height - loadingImage.Height) / 2;
+                    }
+                    this.pic_loading.Visible = true;
+                    this.pic_loading.Location = new Point(imageLeft, imageTop);
+                    
+                }
+
+                var rect = new Rectangle(textLeft, textTop, textWidth, textHeight);
+                TextRenderer.DrawText(g, this.loadingBoxArgs.LoadingText, this.Font, rect, this.ForeColor, TEXT_FLAGS);
             }
-            base.OnClosed(e);
         }
 
         protected override void OnFormClosing(FormClosingEventArgs e)
         {
-            if (ShowSpecialOnClosed)
-            {
-                NativeMethods.AnimateWindow(this.Handle, 3000, AW.AW_BLEND | AW.AW_HIDE | AW.AW_SLIDE);
-            }
+            NativeMethods.AnimateWindow(this.Handle, FadeOutSecond * 1000, AW.AW_BLEND | AW.AW_HIDE | AW.AW_SLIDE);
             base.OnFormClosing(e);
         }
 
-        public bool ShowSpecialOnClosed
+        /// <summary>
+        /// 淡出的时间 秒
+        /// </summary>
+        public int FadeOutSecond
         {
             get;
             set;

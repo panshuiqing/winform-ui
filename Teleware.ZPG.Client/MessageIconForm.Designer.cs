@@ -46,15 +46,14 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.Lavender;
-            this.BackShade = false;
-            this.BackToColor = false;
-            this.BorderPalace = global::Teleware.ZPG.Client.Properties.Resources.border_background;
+            this.BackColor = System.Drawing.Color.White;
+            this.BorderPalace = global::Teleware.ZPG.Client.Properties.Resources.form_border;
             this.CaptionHeight = 4;
-            this.ClientSize = new System.Drawing.Size(200, 90);
+            this.ClientSize = new System.Drawing.Size(180, 70);
             this.ControlBox = false;
             this.Controls.Add(this.pic_loading);
             this.ForeColor = System.Drawing.Color.Black;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Mobile = CCWin.MobileStyle.None;
@@ -62,10 +61,9 @@
             this.Radius = 1;
             this.RoundStyle = CCWin.SkinClass.RoundStyle.None;
             this.Shadow = false;
-            this.ShowBorder = false;
             this.ShowIcon = false;
             this.ShowInTaskbar = false;
-            this.SkinOpacity = 0.8D;
+            this.Special = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "";
             ((System.ComponentModel.ISupportInitialize)(this.pic_loading)).EndInit();

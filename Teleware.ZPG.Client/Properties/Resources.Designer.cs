@@ -60,23 +60,9 @@ namespace Teleware.ZPG.Client.Properties {
             }
         }
         
-        internal static System.Drawing.Bitmap background {
-            get {
-                object obj = ResourceManager.GetObject("background", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
         internal static System.Drawing.Bitmap BackPalace {
             get {
                 object obj = ResourceManager.GetObject("BackPalace", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        internal static System.Drawing.Bitmap border_background {
-            get {
-                object obj = ResourceManager.GetObject("border_background", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -231,6 +217,13 @@ namespace Teleware.ZPG.Client.Properties {
         internal static System.Drawing.Bitmap checkbox_tick_pushed {
             get {
                 object obj = ResourceManager.GetObject("checkbox_tick_pushed", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap form_border {
+            get {
+                object obj = ResourceManager.GetObject("form_border", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

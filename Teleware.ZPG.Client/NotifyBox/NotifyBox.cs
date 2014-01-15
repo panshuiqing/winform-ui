@@ -30,7 +30,6 @@ namespace Teleware.ZPG.Client
             form = new MessageIconForm();
             form.Special = false;
             form.SkinOpacity = 1;
-            form.ShowSpecialOnClosed = true;
             form.ShowLoading(args);
             StartTimer(interval);
         }
