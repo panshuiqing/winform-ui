@@ -35,6 +35,8 @@
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(103)))), ((int)(((byte)(181)))), ((int)(((byte)(229)))));
+            this.BackgroundImage = global::Teleware.ZPG.Client.Properties.Resources.bg_default;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.BorderPalace = global::Teleware.ZPG.Client.Properties.Resources.form_border;
             this.CanResize = false;
             this.CaptionHeight = 30;
@@ -48,6 +50,7 @@
             this.DropBack = false;
             this.EffectCaption = CCWin.TitleType.Title;
             this.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.ForeColor = System.Drawing.Color.Black;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(0);
             this.MaxButtonToolTip = "最大化";
@@ -65,6 +68,7 @@
             this.RestoreDownBack = global::Teleware.ZPG.Client.Properties.Resources.form_restore_down;
             this.RestoreMouseBack = global::Teleware.ZPG.Client.Properties.Resources.form_restore_hover;
             this.RestoreNormlBack = global::Teleware.ZPG.Client.Properties.Resources.form_restore_normal;
+            this.Shadow = false;
             this.ShadowWidth = 6;
             this.ShowDrawIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

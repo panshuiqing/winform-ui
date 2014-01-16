@@ -11,6 +11,7 @@ namespace Teleware.ZPG.Client
     public partial class MainForm : SkinForm
     {
         private Controls.NetDisconnectControl netDisconnectControl;
+        private Controls.TradeUnStartControl tradeUnStartControl;
 
 
         public MainForm()
@@ -72,6 +73,7 @@ namespace Teleware.ZPG.Client
             {
                 netDisconnectControl = new Controls.NetDisconnectControl();
                 netDisconnectControl.Dock = DockStyle.Fill;
+                netDisconnectControl.ForeColor = Color.Black;
                 panel_info.Controls.Add(netDisconnectControl);
             }
             foreach (Control item in panel_info.Controls)
@@ -88,7 +90,23 @@ namespace Teleware.ZPG.Client
 
         private void skinButton6_Click(object sender, EventArgs e)
         {
-
+            if (tradeUnStartControl == null)
+            {
+                tradeUnStartControl = new Controls.TradeUnStartControl();
+                tradeUnStartControl.Dock = DockStyle.Fill;
+                tradeUnStartControl.ForeColor = Color.Black;
+                panel_info.Controls.Add(tradeUnStartControl);
+            }
+            foreach (Control item in panel_info.Controls)
+            {
+                if (item != tradeUnStartControl)
+                {
+                    item.Visible = false;
+                }
+            }
+            tradeUnStartControl.Visible = true;
+            panel_info.BringToFront();
+            skinTabControl1.SelectedIndex = 0;
         }
 
         private void skinButton7_Click(object sender, EventArgs e)

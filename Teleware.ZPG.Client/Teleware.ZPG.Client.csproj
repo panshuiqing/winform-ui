@@ -50,11 +50,20 @@
     <Compile Include="Controls\NetDisconnectControl.Designer.cs">
       <DependentUpon>NetDisconnectControl.cs</DependentUpon>
     </Compile>
-    <Compile Include="Controls\UnStartControl.cs">
+    <Compile Include="Controls\TradeFinishControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Controls\UnStartControl.Designer.cs">
-      <DependentUpon>UnStartControl.cs</DependentUpon>
+    <Compile Include="Controls\TradeFinishControl.Designer.cs">
+      <DependentUpon>TradeFinishControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\TradeUnStartControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\TradeUnStartControl.Designer.cs">
+      <DependentUpon>TradeUnStartControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\xCheckBox.cs">
+      <SubType>Component</SubType>
     </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
@@ -101,8 +110,11 @@
     <EmbeddedResource Include="Controls\NetDisconnectControl.resx">
       <DependentUpon>NetDisconnectControl.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Controls\UnStartControl.resx">
-      <DependentUpon>UnStartControl.cs</DependentUpon>
+    <EmbeddedResource Include="Controls\TradeFinishControl.resx">
+      <DependentUpon>TradeFinishControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\TradeUnStartControl.resx">
+      <DependentUpon>TradeUnStartControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
@@ -183,7 +195,7 @@
     <None Include="Resources\form_restore_normal.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\checkbox_hightlight.png" />
+    <None Include="Resources\checkbox_hover.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\checkbox_normal.png" />
@@ -192,7 +204,7 @@
     <None Include="Resources\checkbox_pushed.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\checkbox_tick_highlight.png" />
+    <None Include="Resources\checkbox_tick_hover.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\checkbox_tick_normal.png" />
@@ -207,10 +219,14 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\tipicon.png" />
+    <None Include="Resources\note_remind_local.png" />
     <None Include="Resources\form_border.png" />
-    <None Include="Resources\AV_WM_Loading.gif" />
-    <Content Include="Resources\btn_down_hover.png" />
-    <Content Include="Resources\btn_down_normal.png" />
+    <None Include="Resources\loading20x20.gif" />
+    <None Include="Resources\bg_default.jpg" />
+    <Content Include="Resources\btn_allow_down_hover.png" />
+    <Content Include="Resources\btn_allow_down_normal.png" />
+    <Content Include="Resources\btn_allow_up.png" />
     <Content Include="Resources\btn_keyboard.png" />
     <Content Include="Resources\btn_login_down.png" />
     <Content Include="Resources\btn_login_hover.png" />
@@ -218,10 +234,13 @@
     <Content Include="Resources\btn_mima_hover.png" />
     <Content Include="Resources\btn_mima_normal.png" />
     <Content Include="Resources\btn_mima_press.png" />
-    <Content Include="Resources\btn_up.png" />
     <Content Include="Resources\btn_zhuce_hover.png" />
     <Content Include="Resources\btn_zhuce_normal.png" />
     <Content Include="Resources\btn_zhuce_press.png" />
+    <None Include="Resources\close_down.png" />
+    <None Include="Resources\close_hover.png" />
+    <None Include="Resources\close_n.png" />
+    <Content Include="Resources\ellipsis.gif" />
     <Content Include="Resources\jyjs.png" />
     <Content Include="Resources\jywks.png" />
     <None Include="Resources\tab_PageHover.png" />

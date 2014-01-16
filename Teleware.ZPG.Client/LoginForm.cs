@@ -25,7 +25,8 @@ namespace Teleware.ZPG.Client
         Random rnd = new Random();
         private void SetLoginUsers()
         {
-            int menuItemHeight = 26;
+            menuUsers.Height = 6;
+            int menuItemHeight = 30;
             for (int i = 0; i < 6; i++)
             {
                 ToolStripMenuItem item = new ToolStripMenuItem();
@@ -33,6 +34,7 @@ namespace Teleware.ZPG.Client
                 item.Size = new System.Drawing.Size(182, menuItemHeight);
                 item.Tag = rnd.Next(1000, 10000).ToString();
                 item.Text = item.Tag.ToString();
+                item.TextAlign = ContentAlignment.BottomCenter;
                 item.Click += new EventHandler(item_Click);
                 menuUsers.Height += menuItemHeight;
                 menuUsers.Items.Add(item);
@@ -46,18 +48,41 @@ namespace Teleware.ZPG.Client
             txtId.SkinTxt.Text = item.Tag.ToString();
         }
 
+        private bool loginFlag = true;
         private void btnDl_Click(object sender, EventArgs e)
         {
-            this.Size = new Size(380, 326);
-            this.panelError.Visible = true;
-            this.Hide();
-            new MainForm().Show();
+            if (loginFlag)
+            {
+                this.InvalidateWhenLoginError();
+            }
+            else
+            {
+                this.InvalidateWhenLoginSuccess();
+            }
+            
+            loginFlag = !loginFlag;
         }
 
-        private void skinButton2_Click(object sender, EventArgs e)
+        private void InvalidateWhenLoginSuccess()
         {
             this.Size = new Size(380, 292);
             this.panelError.Visible = false;
+            this.imgLoadding.Visible = true;
+        }
+
+        private void InvalidateWhenLoginError()
+        {
+            this.Size = new Size(380, 334);
+            this.imgLoadding.Visible = false;
+            this.panelError.Visible = true;
+            this.panelError.Location = new Point(2, 292);
+            this.BackRectangle = new Rectangle(10, 246, 10, 10);
+        }
+
+        private void btn_allowUp_Click(object sender, EventArgs e)
+        {
+            this.InvalidateWhenLoginSuccess();
+            loginFlag = !loginFlag;
         }
 
         private bool keyBoardFormShow = false;

@@ -127,12 +127,6 @@
   <data name="btn_down" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\resources\btn_down.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="btn_down_hover" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\resources\btn_down_hover.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="btn_down_normal" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\resources\btn_down_normal.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="btn_hover" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\resources\btn_hover.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -160,9 +154,6 @@
   <data name="btn_normal" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\resources\btn_normal.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="btn_up" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\resources\btn_up.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="btn_zhuce_hover" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\resources\btn_zhuce_hover.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -172,17 +163,11 @@
   <data name="btn_zhuce_press" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\resources\btn_zhuce_press.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="checkbox_hightlight" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\resources\checkbox_hightlight.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="checkbox_normal" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\resources\checkbox_normal.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="checkbox_pushed" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\resources\checkbox_pushed.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="checkbox_tick_highlight" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\resources\checkbox_tick_highlight.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="checkbox_tick_normal" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\resources\checkbox_tick_normal.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -235,9 +220,6 @@
   <data name="ico1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\resources\ico.ico;System.Drawing.Icon, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="icon_info" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\resources\icon_info.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="imgLoadding" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\resources\imgloadding.gif;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -286,8 +268,44 @@
   <data name="form_border" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\resources\form_border.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="loading20x20" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\loading20x20.gif;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ellipsis" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\ellipsis.gif;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="bg_default" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\bg_default.jpg;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="note_remind_local" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\note_remind_local.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="checkbox_hover" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\checkbox_hover.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="checkbox_tick_hover" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\checkbox_tick_hover.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="close_down" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\close_down.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="close_hover" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\close_hover.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="close_n" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\close_n.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="tipicon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\tipicon.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="AV_WM_Loading" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\AV_WM_Loading.gif;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="btn_allow_down_hover" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\btn_allow_down_hover.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="btn_allow_down_normal" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\btn_allow_down_normal.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="btn_allow_up" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\btn_allow_up.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

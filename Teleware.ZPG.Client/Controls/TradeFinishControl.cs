@@ -8,9 +8,9 @@ using System.Windows.Forms;
 
 namespace Teleware.ZPG.Client.Controls
 {
-    public partial class UnStartControl : UserControl
+    public partial class TradeFinishControl : UserControl
     {
-        public UnStartControl()
+        public TradeFinishControl()
         {
             InitializeComponent();
         }
