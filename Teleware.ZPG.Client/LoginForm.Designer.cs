@@ -345,6 +345,7 @@
             this.Controls.Add(this.panelError);
             this.MaximizeBox = false;
             this.Name = "LoginForm";
+            this.Shadow = true;
             this.ShowInTaskbar = false;
             this.Text = "";
             this.TopMost = true;
