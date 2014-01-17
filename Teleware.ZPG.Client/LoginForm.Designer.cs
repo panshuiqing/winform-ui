@@ -38,7 +38,6 @@
             this.panelError = new CCWin.SkinControl.SkinPanel();
             this.pic_icon = new CCWin.SkinControl.SkinPictureBox();
             this.lab_info = new CCWin.SkinControl.SkinLabel();
-            this.btn_allowUp = new CCWin.SkinControl.SkinButton();
             this.btn_mima = new CCWin.SkinControl.SkinButton();
             this.btnZc = new CCWin.SkinControl.SkinButton();
             this.txtId = new CCWin.SkinControl.SkinTextBox();
@@ -127,11 +126,11 @@
             this.panel_login_btn.ControlState = CCWin.SkinClass.ControlState.Normal;
             this.panel_login_btn.DownBack = null;
             this.panel_login_btn.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.panel_login_btn.Location = new System.Drawing.Point(0, 218);
+            this.panel_login_btn.Location = new System.Drawing.Point(2, 240);
             this.panel_login_btn.MouseBack = null;
             this.panel_login_btn.Name = "panel_login_btn";
             this.panel_login_btn.NormlBack = null;
-            this.panel_login_btn.Size = new System.Drawing.Size(358, 50);
+            this.panel_login_btn.Size = new System.Drawing.Size(356, 50);
             this.panel_login_btn.TabIndex = 36;
             // 
             // imgLoadding
@@ -143,7 +142,7 @@
             this.imgLoadding.Location = new System.Drawing.Point(0, 0);
             this.imgLoadding.Margin = new System.Windows.Forms.Padding(0);
             this.imgLoadding.Name = "imgLoadding";
-            this.imgLoadding.Size = new System.Drawing.Size(358, 2);
+            this.imgLoadding.Size = new System.Drawing.Size(356, 2);
             this.imgLoadding.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.imgLoadding.TabIndex = 34;
             this.imgLoadding.TabStop = false;
@@ -160,7 +159,7 @@
             this.btnDl.DownBack = global::Teleware.ZPG.Client.Properties.Resources.btn_login_down;
             this.btnDl.DrawType = CCWin.SkinControl.DrawStyle.Img;
             this.btnDl.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.btnDl.Location = new System.Drawing.Point(112, 6);
+            this.btnDl.Location = new System.Drawing.Point(111, 6);
             this.btnDl.Margin = new System.Windows.Forms.Padding(0);
             this.btnDl.MouseBack = global::Teleware.ZPG.Client.Properties.Resources.btn_login_hover;
             this.btnDl.Name = "btnDl";
@@ -209,16 +208,15 @@
             this.panelError.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(243)))), ((int)(((byte)(212)))));
             this.panelError.Controls.Add(this.pic_icon);
             this.panelError.Controls.Add(this.lab_info);
-            this.panelError.Controls.Add(this.btn_allowUp);
             this.panelError.ControlState = CCWin.SkinClass.ControlState.Normal;
             this.panelError.DownBack = null;
             this.panelError.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.panelError.Location = new System.Drawing.Point(2, 292);
+            this.panelError.Location = new System.Drawing.Point(2, 211);
             this.panelError.MouseBack = null;
             this.panelError.Name = "panelError";
             this.panelError.NormlBack = null;
             this.panelError.Padding = new System.Windows.Forms.Padding(0, 4, 0, 0);
-            this.panelError.Size = new System.Drawing.Size(376, 40);
+            this.panelError.Size = new System.Drawing.Size(356, 28);
             this.panelError.TabIndex = 35;
             // 
             // pic_icon
@@ -227,7 +225,7 @@
             this.pic_icon.BackgroundImage = global::Teleware.ZPG.Client.Properties.Resources.tipicon;
             this.pic_icon.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pic_icon.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.pic_icon.Location = new System.Drawing.Point(3, 4);
+            this.pic_icon.Location = new System.Drawing.Point(3, 6);
             this.pic_icon.Name = "pic_icon";
             this.pic_icon.Size = new System.Drawing.Size(16, 16);
             this.pic_icon.TabIndex = 2;
@@ -239,28 +237,11 @@
             this.lab_info.BackColor = System.Drawing.Color.Transparent;
             this.lab_info.BorderColor = System.Drawing.Color.White;
             this.lab_info.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.lab_info.Location = new System.Drawing.Point(23, 4);
+            this.lab_info.Location = new System.Drawing.Point(23, 6);
             this.lab_info.Name = "lab_info";
-            this.lab_info.Size = new System.Drawing.Size(286, 36);
+            this.lab_info.Size = new System.Drawing.Size(286, 16);
             this.lab_info.TabIndex = 0;
             this.lab_info.Text = "登录失败，用户名或密码错误";
-            // 
-            // btn_allowUp
-            // 
-            this.btn_allowUp.BackColor = System.Drawing.Color.Transparent;
-            this.btn_allowUp.ControlState = CCWin.SkinClass.ControlState.Normal;
-            this.btn_allowUp.DownBack = global::Teleware.ZPG.Client.Properties.Resources.close_down;
-            this.btn_allowUp.DrawType = CCWin.SkinControl.DrawStyle.Img;
-            this.btn_allowUp.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.btn_allowUp.ImageSize = new System.Drawing.Size(17, 17);
-            this.btn_allowUp.Location = new System.Drawing.Point(352, 4);
-            this.btn_allowUp.MouseBack = global::Teleware.ZPG.Client.Properties.Resources.close_hover;
-            this.btn_allowUp.Name = "btn_allowUp";
-            this.btn_allowUp.NormlBack = global::Teleware.ZPG.Client.Properties.Resources.close_n;
-            this.btn_allowUp.Size = new System.Drawing.Size(17, 17);
-            this.btn_allowUp.TabIndex = 1;
-            this.btn_allowUp.UseVisualStyleBackColor = false;
-            this.btn_allowUp.Click += new System.EventHandler(this.btn_allowUp_Click);
             // 
             // btn_mima
             // 
@@ -334,7 +315,7 @@
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackPalace = global::Teleware.ZPG.Client.Properties.Resources.BackPalace;
-            this.ClientSize = new System.Drawing.Size(360, 270);
+            this.ClientSize = new System.Drawing.Size(360, 292);
             this.Controls.Add(this.panel_login_btn);
             this.Controls.Add(this.pnlImgTX);
             this.Controls.Add(this.txtPwd);
@@ -373,7 +354,6 @@
         private CCWin.SkinControl.SkinButton btnDl;
         private CCWin.SkinControl.SkinPanel panelError;
         private CCWin.SkinControl.SkinLabel lab_info;
-        private CCWin.SkinControl.SkinButton btn_allowUp;
         private CCWin.SkinControl.SkinPictureBox pic_icon;
         private CCWin.SkinControl.SkinContextMenuStrip menuUsers;
         private CCWin.SkinControl.SkinPanel panel_login_btn;

@@ -79,7 +79,7 @@ namespace CCWin.SkinControl
                 LinearGradientMode mode =
                     toolStrip.Orientation == Orientation.Horizontal ?
                     LinearGradientMode.Vertical : LinearGradientMode.Horizontal;
-                RenderHelperStrip.RenderBackgroundInternal(
+                RenderHelperStrip.RenderBackgroundInternal3(
                     g,
                     bounds,
                     ColorTable.Base,
@@ -89,7 +89,7 @@ namespace CCWin.SkinControl
                     ColorTable.BackRadius,
                     .35f,
                     false,
-                    false,
+                    ColorTable.ItemAnamorphosis,
                     mode);
             }
         }
@@ -222,7 +222,7 @@ namespace CCWin.SkinControl
                     LinearGradientMode.Vertical : LinearGradientMode.Horizontal;
                 if (item.Selected)
                 {
-                    RenderHelperStrip.RenderBackgroundInternal(
+                    RenderHelperStrip.RenderBackgroundInternal2(
                         g,
                         rect,
                         ColorTable.ItemHover,
@@ -231,12 +231,12 @@ namespace CCWin.SkinControl
                         ColorTable.BaseItemRadiusStyle,
                         ColorTable.BaseItemRadius,
                         true,
-                        true,
+                        ColorTable.ItemAnamorphosis,
                         mode);
                 }
                 else if (item.Pressed)
                 {
-                    RenderHelperStrip.RenderBackgroundInternal(
+                    RenderHelperStrip.RenderBackgroundInternal2(
                        g,
                        rect,
                        ColorTable.ItemPressed,
@@ -245,7 +245,7 @@ namespace CCWin.SkinControl
                        ColorTable.BaseItemRadiusStyle,
                        ColorTable.BaseItemRadius,
                        true,
-                       true,
+                       ColorTable.ItemAnamorphosis,
                        mode);
                 }
                 else
@@ -270,7 +270,7 @@ namespace CCWin.SkinControl
                 if (item.Selected)
                 {
                     //Item
-                    RenderHelperStrip.RenderBackgroundInternal(
+                    RenderHelperStrip.RenderBackgroundInternal2(
                       g,
                       rect,
                       ColorTable.ItemHover,
@@ -337,7 +337,7 @@ namespace CCWin.SkinControl
         {
             ToolStrip toolStrip = e.ToolStrip;
             ToolStripItem item = e.Item;
-            e.TextRectangle = new Rectangle(new Point(e.TextRectangle.X + ColorTable.BaseForeOffset.X, e.TextRectangle.Y + ColorTable.BaseForeOffset.Y), e.TextRectangle.Size);
+            e.TextRectangle = new Rectangle(new Point(e.TextRectangle.X + ColorTable.BaseForeOffset.X + e.Item.Padding.Left, e.TextRectangle.Y + ColorTable.BaseForeOffset.Y + e.Item.Padding.Top), e.TextRectangle.Size);
             //����ͳһ����ɫ�任ģʽ
             if (ColorTable.SkinAllColor) {
                 if (toolStrip is ToolStripDropDown) {
@@ -506,7 +506,7 @@ namespace CCWin.SkinControl
                             {
                                 color = ColorTable.BaseItemPressed;
                             }
-                            RenderHelperStrip.RenderBackgroundInternal(
+                            RenderHelperStrip.RenderBackgroundInternal2(
                                 g,
                                 bounds,
                                 color,
@@ -548,7 +548,7 @@ namespace CCWin.SkinControl
 
                     if (btm == null)
                     {
-                        RenderHelperStrip.RenderBackgroundInternal(
+                        RenderHelperStrip.RenderBackgroundInternal2(
                             g,
                             bounds,
                             color,
@@ -592,7 +592,7 @@ namespace CCWin.SkinControl
                     }
                     else
                     {
-                        RenderHelperStrip.RenderBackgroundInternal(
+                        RenderHelperStrip.RenderBackgroundInternal2(
                           g,
                           bounds,
                           ColorTable.BaseItemPressed,
@@ -613,7 +613,7 @@ namespace CCWin.SkinControl
                     }
                     else
                     {
-                        RenderHelperStrip.RenderBackgroundInternal(
+                        RenderHelperStrip.RenderBackgroundInternal2(
                           g,
                           bounds,
                           ColorTable.BaseItemHover,
@@ -684,7 +684,7 @@ namespace CCWin.SkinControl
                         Padding padding = (item.RightToLeft == RightToLeft.Yes) ?
                             new Padding(0, 1, 1, 1) : new Padding(1, 1, 0, 1);
                         buttonBounds = LayoutUtils.DeflateRect(buttonBounds, padding);
-                        RenderHelperStrip.RenderBackgroundInternal(
+                        RenderHelperStrip.RenderBackgroundInternal2(
                            g,
                            bounds,
                            ColorTable.BaseItemHover,
@@ -698,7 +698,7 @@ namespace CCWin.SkinControl
 
                         buttonBounds.Inflate(-1, -1);
                         g.SetClip(buttonBounds);
-                        RenderHelperStrip.RenderBackgroundInternal(
+                        RenderHelperStrip.RenderBackgroundInternal1(
                            g,
                            buttonBounds,
                            ColorTable.BaseItemPressed,
@@ -706,7 +706,7 @@ namespace CCWin.SkinControl
                            ColorTable.Back,
                            RoundStyle.Left,
                            false,
-                           true,
+                           ColorTable.ItemAnamorphosis,
                            mode);
                         g.ResetClip();
 
@@ -738,7 +738,7 @@ namespace CCWin.SkinControl
                     }
                     else
                     {
-                        RenderHelperStrip.RenderBackgroundInternal(
+                        RenderHelperStrip.RenderBackgroundInternal2(
                           g,
                           bounds,
                           ColorTable.BaseItemPressed,
@@ -768,7 +768,7 @@ namespace CCWin.SkinControl
                     }
                     else
                     {
-                        RenderHelperStrip.RenderBackgroundInternal(
+                        RenderHelperStrip.RenderBackgroundInternal2(
                           g,
                           bounds,
                           ColorTable.BaseItemHover,
@@ -1055,7 +1055,7 @@ namespace CCWin.SkinControl
             LinearGradientMode mode = bHorizontal ?
                 LinearGradientMode.Vertical : LinearGradientMode.Horizontal;
 
-            RenderHelperStrip.RenderBackgroundInternal(
+            RenderHelperStrip.RenderBackgroundInternal3(
                 g,
                 bounds,
                 color,
@@ -1065,7 +1065,7 @@ namespace CCWin.SkinControl
                 0,
                 .35f,
                 false,
-                false,
+                ColorTable.ItemAnamorphosis,
                 mode);
 
             if (bParentIsMenuStrip)

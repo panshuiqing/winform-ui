@@ -30,7 +30,7 @@ namespace CCWin.SkinControl
 {
     internal class RenderHelperStrip
     {
-        internal static void RenderBackgroundInternal(
+        internal static void RenderBackgroundInternal1(
             Graphics g,
             Rectangle rect,
             Color baseColor,
@@ -41,7 +41,7 @@ namespace CCWin.SkinControl
             bool drawGlass,
             LinearGradientMode mode)
         {
-            RenderBackgroundInternal(
+            RenderBackgroundInternal2(
                 g,
                 rect,
                 baseColor,
@@ -54,7 +54,7 @@ namespace CCWin.SkinControl
                 mode);
         }
 
-        internal static void RenderBackgroundInternal(
+        internal static void RenderBackgroundInternal2(
            Graphics g,
            Rectangle rect,
            Color baseColor,
@@ -66,7 +66,7 @@ namespace CCWin.SkinControl
            bool drawGlass,
            LinearGradientMode mode)
         {
-            RenderBackgroundInternal(
+            RenderBackgroundInternal3(
                  g,
                  rect,
                  baseColor,
@@ -80,7 +80,28 @@ namespace CCWin.SkinControl
                  mode);
         }
 
-        internal static void RenderBackgroundInternal(
+        private static void FillBrush(LinearGradientBrush brush, Color baseColor, Color borderColor, float basePosition, bool gradual)
+        {
+            if (gradual)
+            {
+                Color[] colors = new Color[4];
+                colors[0] = GetColor(baseColor, 0, 35, 24, 9);
+                colors[1] = GetColor(baseColor, 0, 13, 8, 3);
+                colors[2] = baseColor;
+                colors[3] = GetColor(baseColor, 0, 35, 24, 9);
+
+                ColorBlend blend = new ColorBlend();
+                blend.Positions = new float[] { 0.0f, basePosition, basePosition + 0.05f, 1.0f };
+                blend.Colors = colors;
+                brush.InterpolationColors = blend;
+            }
+            else
+            {
+                brush.LinearColors = new Color[] { baseColor, baseColor };
+            }
+        }
+
+        internal static void RenderBackgroundInternal3(
            Graphics g,
            Rectangle rect,
            Color baseColor,
@@ -102,16 +123,7 @@ namespace CCWin.SkinControl
             using (LinearGradientBrush brush = new LinearGradientBrush(
                 rect, Color.Transparent, Color.Transparent, mode))
             {
-                Color[] colors = new Color[4];
-                colors[0] = GetColor(baseColor, 0, 35, 24, 9);
-                colors[1] = GetColor(baseColor, 0, 13, 8, 3);
-                colors[2] = baseColor;
-                colors[3] = GetColor(baseColor, 0, 35, 24, 9);
-
-                ColorBlend blend = new ColorBlend();
-                blend.Positions = new float[] { 0.0f, basePosition, basePosition + 0.05f, 1.0f };
-                blend.Colors = colors;
-                brush.InterpolationColors = blend;
+                FillBrush(brush, baseColor, borderColor, basePosition, drawGlass);
                 if (style != RoundStyle.None)
                 {
                     using (GraphicsPath path =

@@ -31,6 +31,7 @@ namespace Teleware.ZPG.Client
             {
                 ToolStripMenuItem item = new ToolStripMenuItem();
                 item.AutoSize = false;
+                item.Padding = new System.Windows.Forms.Padding(0, 5, 0, 0);
                 item.Size = new System.Drawing.Size(182, menuItemHeight);
                 item.Tag = rnd.Next(1000, 10000).ToString();
                 item.Text = item.Tag.ToString();
@@ -65,18 +66,14 @@ namespace Teleware.ZPG.Client
 
         private void InvalidateWhenLoginSuccess()
         {
-            this.Size = new Size(380, 292);
             this.panelError.Visible = false;
             this.imgLoadding.Visible = true;
         }
 
         private void InvalidateWhenLoginError()
         {
-            this.Size = new Size(380, 334);
             this.imgLoadding.Visible = false;
             this.panelError.Visible = true;
-            this.panelError.Location = new Point(2, 292);
-            this.BackRectangle = new Rectangle(10, 246, 10, 10);
         }
 
         private void btn_allowUp_Click(object sender, EventArgs e)
