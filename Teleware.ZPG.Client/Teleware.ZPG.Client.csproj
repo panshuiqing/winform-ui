@@ -34,6 +34,10 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>
+    </ApplicationIcon>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Data" />
@@ -56,11 +60,23 @@
     <Compile Include="Controls\TradeFinishControl.Designer.cs">
       <DependentUpon>TradeFinishControl.cs</DependentUpon>
     </Compile>
+    <Compile Include="Controls\TradeReadyControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\TradeReadyControl.Designer.cs">
+      <DependentUpon>TradeReadyControl.cs</DependentUpon>
+    </Compile>
     <Compile Include="Controls\TradeUnStartControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="Controls\TradeUnStartControl.Designer.cs">
       <DependentUpon>TradeUnStartControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\WaitControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\WaitControl.Designer.cs">
+      <DependentUpon>WaitControl.cs</DependentUpon>
     </Compile>
     <Compile Include="Controls\xCheckBox.cs">
       <SubType>Component</SubType>
@@ -113,8 +129,14 @@
     <EmbeddedResource Include="Controls\TradeFinishControl.resx">
       <DependentUpon>TradeFinishControl.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Controls\TradeReadyControl.resx">
+      <DependentUpon>TradeReadyControl.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Controls\TradeUnStartControl.resx">
       <DependentUpon>TradeUnStartControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\WaitControl.resx">
+      <DependentUpon>WaitControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
@@ -224,6 +246,18 @@
     <None Include="Resources\form_border.png" />
     <None Include="Resources\loading20x20.gif" />
     <None Include="Resources\bg_default.jpg" />
+    <None Include="Resources\aio_quickbar_cut.png" />
+    <None Include="Resources\9.png" />
+    <None Include="Resources\0.png" />
+    <None Include="Resources\1.png" />
+    <None Include="Resources\2.png" />
+    <None Include="Resources\3.png" />
+    <None Include="Resources\4.png" />
+    <None Include="Resources\5.png" />
+    <None Include="Resources\6.png" />
+    <None Include="Resources\7.png" />
+    <None Include="Resources\8.png" />
+    <Content Include="0101.ico" />
     <Content Include="Resources\btn_allow_down_hover.png" />
     <Content Include="Resources\btn_allow_down_normal.png" />
     <Content Include="Resources\btn_allow_up.png" />
@@ -241,18 +275,16 @@
     <None Include="Resources\close_hover.png" />
     <None Include="Resources\close_n.png" />
     <Content Include="Resources\ellipsis.gif" />
+    <Content Include="Resources\head.png" />
     <Content Include="Resources\jyjs.png" />
     <Content Include="Resources\jywks.png" />
     <None Include="Resources\tab_PageHover.png" />
     <None Include="Resources\tab_PageDown.png" />
     <None Include="Resources\wlzd.png" />
-    <Content Include="Resources\ico.ico" />
     <None Include="Resources\icon_info.png" />
     <None Include="Resources\btn_normal.png" />
     <None Include="Resources\btn_down.png" />
     <None Include="Resources\btn_hover.png" />
-    <Content Include="Resources\head.gif" />
-    <Content Include="Resources\head_60x60.gif" />
     <Content Include="Resources\imgLoadding.gif" />
     <None Include="Resources\loading.gif" />
     <None Include="Resources\msg_warning.png" />

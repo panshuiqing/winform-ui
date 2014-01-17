@@ -12,6 +12,7 @@ namespace Teleware.ZPG.Client
     {
         private Controls.NetDisconnectControl netDisconnectControl;
         private Controls.TradeUnStartControl tradeUnStartControl;
+        private Controls.TradeFinishControl tradeFinishControl;
 
 
         public MainForm()
@@ -111,7 +112,23 @@ namespace Teleware.ZPG.Client
 
         private void skinButton7_Click(object sender, EventArgs e)
         {
-
+            if (tradeFinishControl == null)
+            {
+                tradeFinishControl = new Controls.TradeFinishControl();
+                tradeFinishControl.Dock = DockStyle.Fill;
+                tradeFinishControl.ForeColor = Color.Black;
+                panel_info.Controls.Add(tradeFinishControl);
+            }
+            foreach (Control item in panel_info.Controls)
+            {
+                if (item != tradeFinishControl)
+                {
+                    item.Visible = false;
+                }
+            }
+            tradeFinishControl.Visible = true;
+            panel_info.BringToFront();
+            skinTabControl1.SelectedIndex = 0;
         }
 
         private void skinButton8_Click(object sender, EventArgs e)

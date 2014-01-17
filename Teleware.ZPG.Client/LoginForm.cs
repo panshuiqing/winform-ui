@@ -62,6 +62,9 @@ namespace Teleware.ZPG.Client
             }
             
             loginFlag = !loginFlag;
+
+            new MainForm().Show();
+            this.Hide();
         }
 
         private void InvalidateWhenLoginSuccess()

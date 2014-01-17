@@ -103,7 +103,7 @@
             // pnlImgTX
             // 
             this.pnlImgTX.BackColor = System.Drawing.Color.Transparent;
-            this.pnlImgTX.BackgroundImage = global::Teleware.ZPG.Client.Properties.Resources.head_60x60;
+            this.pnlImgTX.BackgroundImage = global::Teleware.ZPG.Client.Properties.Resources.head;
             this.pnlImgTX.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pnlImgTX.ControlState = CCWin.SkinClass.ControlState.Normal;
             this.pnlImgTX.DownBack = null;
@@ -158,7 +158,7 @@
             this.btnDl.ControlState = CCWin.SkinClass.ControlState.Normal;
             this.btnDl.DownBack = global::Teleware.ZPG.Client.Properties.Resources.btn_login_down;
             this.btnDl.DrawType = CCWin.SkinControl.DrawStyle.Img;
-            this.btnDl.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.btnDl.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.btnDl.Location = new System.Drawing.Point(111, 6);
             this.btnDl.Margin = new System.Windows.Forms.Padding(0);
             this.btnDl.MouseBack = global::Teleware.ZPG.Client.Properties.Resources.btn_login_hover;

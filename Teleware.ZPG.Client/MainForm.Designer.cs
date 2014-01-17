@@ -133,7 +133,7 @@
             // skinPictureBox1
             // 
             this.skinPictureBox1.BackColor = System.Drawing.Color.Transparent;
-            this.skinPictureBox1.BackgroundImage = global::Teleware.ZPG.Client.Properties.Resources.head_60x60;
+            this.skinPictureBox1.BackgroundImage = global::Teleware.ZPG.Client.Properties.Resources.head;
             this.skinPictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.skinPictureBox1.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.skinPictureBox1.Location = new System.Drawing.Point(2, 5);
@@ -225,6 +225,7 @@
             // 
             this.panel_main.BackColor = System.Drawing.Color.Transparent;
             this.panel_main.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.panel_main.BackRectangle = new System.Drawing.Rectangle(1, 1, 1, 1);
             this.panel_main.ControlState = CCWin.SkinClass.ControlState.Normal;
             this.panel_main.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel_main.DownBack = null;
