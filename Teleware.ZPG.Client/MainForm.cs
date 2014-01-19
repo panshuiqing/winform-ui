@@ -23,7 +23,28 @@ namespace Teleware.ZPG.Client
 
         void MainForm_Load(object sender, EventArgs e)
         {
-            
+            this.panel_main.BringToFront();
+            this.skinDataGridView1.DataSource = Model.Create();
+        }
+
+        private class Model
+        {
+            public string Num { get; set; }
+            public string Number { get; set; }
+            public string Price { get; set; }
+            public string Date { get; set; }
+
+            public static List<Model> Create()
+            {
+                List<Model> list = new List<Model>();
+                list.Add(new Model() { Date = "14-01-01 12:34:45", Num = "10000", Number = "088340", Price = "37488883.3" });
+                list.Add(new Model() { Date = "14-01-01 12:34:45", Num = "20000", Number = "014770", Price = "34488883.3" });
+                list.Add(new Model() { Date = "14-01-01 12:34:45", Num = "30000", Number = "035770", Price = "34088883.3" });
+                list.Add(new Model() { Date = "14-01-01 12:34:45", Num = "40000", Number = "045540", Price = "34288883.3" });
+                list.Add(new Model() { Date = "14-01-01 12:34:45", Num = "50000", Number = "055540", Price = "34888893.3" });
+                list.Add(new Model() { Date = "14-01-01 12:34:45", Num = "60000", Number = "036664", Price = "34868853.3" });
+                return list;
+            }
         }
 
         private void skinTabControl1_SelectedIndexChanged(object sender, EventArgs e)
@@ -75,9 +96,9 @@ namespace Teleware.ZPG.Client
                 netDisconnectControl = new Controls.NetDisconnectControl();
                 netDisconnectControl.Dock = DockStyle.Fill;
                 netDisconnectControl.ForeColor = Color.Black;
-                panel_info.Controls.Add(netDisconnectControl);
+                panel_switch.Controls.Add(netDisconnectControl);
             }
-            foreach (Control item in panel_info.Controls)
+            foreach (Control item in panel_switch.Controls)
             {
                 if (item != netDisconnectControl)
                 {
@@ -85,7 +106,7 @@ namespace Teleware.ZPG.Client
                 }
             }
             netDisconnectControl.Visible = true;
-            panel_info.BringToFront();
+            panel_switch.BringToFront();
             skinTabControl1.SelectedIndex = 0;
         }
 
@@ -96,9 +117,9 @@ namespace Teleware.ZPG.Client
                 tradeUnStartControl = new Controls.TradeUnStartControl();
                 tradeUnStartControl.Dock = DockStyle.Fill;
                 tradeUnStartControl.ForeColor = Color.Black;
-                panel_info.Controls.Add(tradeUnStartControl);
+                panel_switch.Controls.Add(tradeUnStartControl);
             }
-            foreach (Control item in panel_info.Controls)
+            foreach (Control item in panel_switch.Controls)
             {
                 if (item != tradeUnStartControl)
                 {
@@ -106,7 +127,7 @@ namespace Teleware.ZPG.Client
                 }
             }
             tradeUnStartControl.Visible = true;
-            panel_info.BringToFront();
+            panel_switch.BringToFront();
             skinTabControl1.SelectedIndex = 0;
         }
 
@@ -117,9 +138,9 @@ namespace Teleware.ZPG.Client
                 tradeFinishControl = new Controls.TradeFinishControl();
                 tradeFinishControl.Dock = DockStyle.Fill;
                 tradeFinishControl.ForeColor = Color.Black;
-                panel_info.Controls.Add(tradeFinishControl);
+                panel_switch.Controls.Add(tradeFinishControl);
             }
-            foreach (Control item in panel_info.Controls)
+            foreach (Control item in panel_switch.Controls)
             {
                 if (item != tradeFinishControl)
                 {
@@ -127,13 +148,18 @@ namespace Teleware.ZPG.Client
                 }
             }
             tradeFinishControl.Visible = true;
-            panel_info.BringToFront();
+            panel_switch.BringToFront();
             skinTabControl1.SelectedIndex = 0;
         }
 
         private void skinButton8_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void skinButton9_Click(object sender, EventArgs e)
+        {
+            
         }
     }
 }
