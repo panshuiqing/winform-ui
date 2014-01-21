@@ -11,7 +11,8 @@ namespace Teleware.ZPG.Client.Web.res
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            
         }
     }
+    
 }

@@ -35,8 +35,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup>
-    <ApplicationIcon>
-    </ApplicationIcon>
+    <ApplicationIcon>0101.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -48,6 +47,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Common.cs" />
+    <Compile Include="Controls\ListViewEx.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Controls\NetDisconnectControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -241,6 +243,7 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\window_shadow.png" />
     <None Include="Resources\tipicon.png" />
     <None Include="Resources\note_remind_local.png" />
     <None Include="Resources\form_border.png" />

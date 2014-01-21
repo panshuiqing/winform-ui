@@ -13,8 +13,7 @@ namespace Teleware.ZPG.Client
         private Controls.NetDisconnectControl netDisconnectControl;
         private Controls.TradeUnStartControl tradeUnStartControl;
         private Controls.TradeFinishControl tradeFinishControl;
-
-
+        
         public MainForm()
         {
             InitializeComponent();
@@ -23,8 +22,27 @@ namespace Teleware.ZPG.Client
 
         void MainForm_Load(object sender, EventArgs e)
         {
+            var list = Model.Create();
+            this.listView1.SuspendLayout();
+            foreach (var item in list)
+            {
+                var viewItem = new ListViewItem();
+                viewItem.Tag = item;
+                viewItem.Text = item.Num;
+                var subItem = new ListViewItem.ListViewSubItem();
+                subItem.Text = item.Number;
+                viewItem.SubItems.Add(subItem);
+                subItem = new ListViewItem.ListViewSubItem();
+                subItem.Text = item.Price;
+                viewItem.SubItems.Add(subItem);
+                subItem = new ListViewItem.ListViewSubItem();
+                subItem.Text = item.Date;
+                viewItem.SubItems.Add(subItem);
+                
+                this.listView1.Items.Add(viewItem);
+            }
+            this.listView1.ResumeLayout();
             this.panel_main.BringToFront();
-            this.skinDataGridView1.DataSource = Model.Create();
         }
 
         private class Model
@@ -37,12 +55,12 @@ namespace Teleware.ZPG.Client
             public static List<Model> Create()
             {
                 List<Model> list = new List<Model>();
-                list.Add(new Model() { Date = "14-01-01 12:34:45", Num = "10000", Number = "088340", Price = "37488883.3" });
-                list.Add(new Model() { Date = "14-01-01 12:34:45", Num = "20000", Number = "014770", Price = "34488883.3" });
-                list.Add(new Model() { Date = "14-01-01 12:34:45", Num = "30000", Number = "035770", Price = "34088883.3" });
-                list.Add(new Model() { Date = "14-01-01 12:34:45", Num = "40000", Number = "045540", Price = "34288883.3" });
-                list.Add(new Model() { Date = "14-01-01 12:34:45", Num = "50000", Number = "055540", Price = "34888893.3" });
-                list.Add(new Model() { Date = "14-01-01 12:34:45", Num = "60000", Number = "036664", Price = "34868853.3" });
+                list.Add(new Model() { Date = "14-01-01 12:34", Num = "1000", Number = "088340", Price = "37488883.3" });
+                list.Add(new Model() { Date = "14-01-01 12:34", Num = "2000", Number = "014770", Price = "34488883.3" });
+                list.Add(new Model() { Date = "14-01-01 12:34", Num = "3000", Number = "035770", Price = "34088883.3" });
+                list.Add(new Model() { Date = "14-01-01 12:34", Num = "4000", Number = "045540", Price = "34288883.3" });
+                list.Add(new Model() { Date = "14-01-01 12:34", Num = "5000", Number = "055540", Price = "34888893.3" });
+                list.Add(new Model() { Date = "14-01-01 12:34", Num = "6000", Number = "036664", Price = "34868853.3" });
                 return list;
             }
         }

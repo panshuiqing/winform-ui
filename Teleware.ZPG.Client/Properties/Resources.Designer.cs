@@ -550,6 +550,13 @@ namespace Teleware.ZPG.Client.Properties {
             }
         }
         
+        internal static System.Drawing.Bitmap window_shadow {
+            get {
+                object obj = ResourceManager.GetObject("window_shadow", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
         internal static System.Drawing.Bitmap wlzd {
             get {
                 object obj = ResourceManager.GetObject("wlzd", resourceCulture);
