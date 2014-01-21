@@ -243,6 +243,16 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\r9.png" />
+    <None Include="Resources\r8.png" />
+    <None Include="Resources\r7.png" />
+    <None Include="Resources\r6.png" />
+    <None Include="Resources\r5.png" />
+    <None Include="Resources\r4.png" />
+    <None Include="Resources\r3.png" />
+    <None Include="Resources\r2.png" />
+    <None Include="Resources\r1.png" />
+    <None Include="Resources\r0.png" />
     <None Include="Resources\window_shadow.png" />
     <None Include="Resources\tipicon.png" />
     <None Include="Resources\note_remind_local.png" />
@@ -277,6 +287,7 @@
     <Content Include="Resources\7.png" />
     <Content Include="Resources\8.png" />
     <Content Include="Resources\9.png" />
+    <None Include="Resources\countdown.png" />
     <Content Include="Resources\ellipsis.gif" />
     <Content Include="Resources\head.png" />
     <Content Include="Resources\jyjs.png" />

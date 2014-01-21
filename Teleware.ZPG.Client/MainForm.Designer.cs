@@ -46,14 +46,6 @@
             this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.skinPanel2 = new CCWin.SkinControl.SkinPanel();
-            this.skinPanel3 = new CCWin.SkinControl.SkinPanel();
-            this.skinPanel1 = new CCWin.SkinControl.SkinPanel();
-            this.panel_price = new CCWin.SkinControl.SkinPanel();
-            this.btnDl = new CCWin.SkinControl.SkinButton();
-            this.skinTextBox2 = new CCWin.SkinControl.SkinTextBox();
-            this.skinTextBox1 = new CCWin.SkinControl.SkinTextBox();
-            this.skinLabel11 = new CCWin.SkinControl.SkinLabel();
-            this.skinLabel7 = new CCWin.SkinControl.SkinLabel();
             this.panel_info = new CCWin.SkinControl.SkinPanel();
             this.skinLabel10 = new CCWin.SkinControl.SkinLabel();
             this.skinLabel9 = new CCWin.SkinControl.SkinLabel();
@@ -80,14 +72,12 @@
             this.skinButton3 = new CCWin.SkinControl.SkinButton();
             this.skinButton5 = new CCWin.SkinControl.SkinButton();
             this.skinButton4 = new CCWin.SkinControl.SkinButton();
+            this.skinPanel1 = new CCWin.SkinControl.SkinPanel();
             this.panel_user.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.skinPictureBox1)).BeginInit();
             this.skinTabControl1.SuspendLayout();
             this.tabPage_tradeCenter.SuspendLayout();
             this.panel_main.SuspendLayout();
-            this.panel_price.SuspendLayout();
-            this.skinTextBox2.SuspendLayout();
-            this.skinTextBox1.SuspendLayout();
             this.panel_info.SuspendLayout();
             this.tabPage_tradeDetail.SuspendLayout();
             this.tabPage_affiche.SuspendLayout();
@@ -253,10 +243,8 @@
             this.panel_main.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.panel_main.BackRectangle = new System.Drawing.Rectangle(1, 1, 1, 1);
             this.panel_main.Controls.Add(this.listView1);
-            this.panel_main.Controls.Add(this.skinPanel2);
-            this.panel_main.Controls.Add(this.skinPanel3);
             this.panel_main.Controls.Add(this.skinPanel1);
-            this.panel_main.Controls.Add(this.panel_price);
+            this.panel_main.Controls.Add(this.skinPanel2);
             this.panel_main.Controls.Add(this.panel_info);
             this.panel_main.ControlState = CCWin.SkinClass.ControlState.Normal;
             this.panel_main.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -284,7 +272,7 @@
             this.listView1.Location = new System.Drawing.Point(3, 212);
             this.listView1.MultiSelect = false;
             this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(319, 218);
+            this.listView1.Size = new System.Drawing.Size(327, 218);
             this.listView1.TabIndex = 5;
             this.listView1.UseCompatibleStateImageBehavior = false;
             this.listView1.View = System.Windows.Forms.View.Details;
@@ -315,171 +303,15 @@
             // skinPanel2
             // 
             this.skinPanel2.BackColor = System.Drawing.Color.Transparent;
-            this.skinPanel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.skinPanel2.ControlState = CCWin.SkinClass.ControlState.Normal;
             this.skinPanel2.DownBack = null;
             this.skinPanel2.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.skinPanel2.Location = new System.Drawing.Point(705, 125);
+            this.skinPanel2.Location = new System.Drawing.Point(680, 13);
             this.skinPanel2.MouseBack = null;
             this.skinPanel2.Name = "skinPanel2";
             this.skinPanel2.NormlBack = null;
-            this.skinPanel2.Size = new System.Drawing.Size(183, 358);
+            this.skinPanel2.Size = new System.Drawing.Size(212, 470);
             this.skinPanel2.TabIndex = 4;
-            // 
-            // skinPanel3
-            // 
-            this.skinPanel3.BackColor = System.Drawing.Color.Transparent;
-            this.skinPanel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.skinPanel3.ControlState = CCWin.SkinClass.ControlState.Normal;
-            this.skinPanel3.DownBack = null;
-            this.skinPanel3.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.skinPanel3.Location = new System.Drawing.Point(360, 125);
-            this.skinPanel3.MouseBack = null;
-            this.skinPanel3.Name = "skinPanel3";
-            this.skinPanel3.NormlBack = null;
-            this.skinPanel3.Size = new System.Drawing.Size(339, 135);
-            this.skinPanel3.TabIndex = 4;
-            // 
-            // skinPanel1
-            // 
-            this.skinPanel1.BackColor = System.Drawing.Color.Transparent;
-            this.skinPanel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.skinPanel1.ControlState = CCWin.SkinClass.ControlState.Normal;
-            this.skinPanel1.DownBack = null;
-            this.skinPanel1.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.skinPanel1.Location = new System.Drawing.Point(360, 5);
-            this.skinPanel1.MouseBack = null;
-            this.skinPanel1.Name = "skinPanel1";
-            this.skinPanel1.NormlBack = null;
-            this.skinPanel1.Size = new System.Drawing.Size(528, 100);
-            this.skinPanel1.TabIndex = 4;
-            // 
-            // panel_price
-            // 
-            this.panel_price.BackColor = System.Drawing.Color.Transparent;
-            this.panel_price.Controls.Add(this.btnDl);
-            this.panel_price.Controls.Add(this.skinTextBox2);
-            this.panel_price.Controls.Add(this.skinTextBox1);
-            this.panel_price.Controls.Add(this.skinLabel11);
-            this.panel_price.Controls.Add(this.skinLabel7);
-            this.panel_price.ControlState = CCWin.SkinClass.ControlState.Normal;
-            this.panel_price.DownBack = null;
-            this.panel_price.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.panel_price.Location = new System.Drawing.Point(395, 321);
-            this.panel_price.MouseBack = null;
-            this.panel_price.Name = "panel_price";
-            this.panel_price.NormlBack = null;
-            this.panel_price.Size = new System.Drawing.Size(279, 131);
-            this.panel_price.TabIndex = 2;
-            // 
-            // btnDl
-            // 
-            this.btnDl.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnDl.BackColor = System.Drawing.Color.Transparent;
-            this.btnDl.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.btnDl.BackRectangle = new System.Drawing.Rectangle(50, 23, 50, 23);
-            this.btnDl.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(21)))), ((int)(((byte)(26)))));
-            this.btnDl.ControlState = CCWin.SkinClass.ControlState.Normal;
-            this.btnDl.DownBack = global::Teleware.ZPG.Client.Properties.Resources.btn_login_down;
-            this.btnDl.DrawType = CCWin.SkinControl.DrawStyle.Img;
-            this.btnDl.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.btnDl.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.btnDl.Location = new System.Drawing.Point(64, 88);
-            this.btnDl.Margin = new System.Windows.Forms.Padding(0);
-            this.btnDl.MouseBack = global::Teleware.ZPG.Client.Properties.Resources.btn_login_hover;
-            this.btnDl.Name = "btnDl";
-            this.btnDl.NormlBack = global::Teleware.ZPG.Client.Properties.Resources.btn_login_normal;
-            this.btnDl.Palace = true;
-            this.btnDl.Size = new System.Drawing.Size(162, 38);
-            this.btnDl.TabIndex = 9;
-            this.btnDl.Text = "提交报价";
-            this.btnDl.UseVisualStyleBackColor = false;
-            // 
-            // skinTextBox2
-            // 
-            this.skinTextBox2.BackColor = System.Drawing.Color.Transparent;
-            this.skinTextBox2.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.skinTextBox2.Icon = null;
-            this.skinTextBox2.IconIsButton = false;
-            this.skinTextBox2.IconMouseState = CCWin.SkinClass.ControlState.Normal;
-            this.skinTextBox2.Location = new System.Drawing.Point(90, 47);
-            this.skinTextBox2.Margin = new System.Windows.Forms.Padding(0);
-            this.skinTextBox2.MinimumSize = new System.Drawing.Size(28, 28);
-            this.skinTextBox2.MouseBack = null;
-            this.skinTextBox2.MouseState = CCWin.SkinClass.ControlState.Normal;
-            this.skinTextBox2.Name = "skinTextBox2";
-            this.skinTextBox2.NormlBack = null;
-            this.skinTextBox2.Padding = new System.Windows.Forms.Padding(5);
-            this.skinTextBox2.Size = new System.Drawing.Size(185, 28);
-            // 
-            // skinTextBox2.BaseText
-            // 
-            this.skinTextBox2.SkinTxt.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.skinTextBox2.SkinTxt.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.skinTextBox2.SkinTxt.Font = new System.Drawing.Font("微软雅黑", 9.75F);
-            this.skinTextBox2.SkinTxt.Location = new System.Drawing.Point(5, 5);
-            this.skinTextBox2.SkinTxt.Name = "BaseText";
-            this.skinTextBox2.SkinTxt.Size = new System.Drawing.Size(175, 18);
-            this.skinTextBox2.SkinTxt.TabIndex = 0;
-            this.skinTextBox2.SkinTxt.WaterColor = System.Drawing.Color.FromArgb(((int)(((byte)(127)))), ((int)(((byte)(127)))), ((int)(((byte)(127)))));
-            this.skinTextBox2.SkinTxt.WaterText = "";
-            this.skinTextBox2.TabIndex = 1;
-            // 
-            // skinTextBox1
-            // 
-            this.skinTextBox1.BackColor = System.Drawing.Color.Transparent;
-            this.skinTextBox1.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.skinTextBox1.Icon = null;
-            this.skinTextBox1.IconIsButton = false;
-            this.skinTextBox1.IconMouseState = CCWin.SkinClass.ControlState.Normal;
-            this.skinTextBox1.Location = new System.Drawing.Point(90, 3);
-            this.skinTextBox1.Margin = new System.Windows.Forms.Padding(0);
-            this.skinTextBox1.MinimumSize = new System.Drawing.Size(28, 28);
-            this.skinTextBox1.MouseBack = null;
-            this.skinTextBox1.MouseState = CCWin.SkinClass.ControlState.Normal;
-            this.skinTextBox1.Name = "skinTextBox1";
-            this.skinTextBox1.NormlBack = null;
-            this.skinTextBox1.Padding = new System.Windows.Forms.Padding(5);
-            this.skinTextBox1.Size = new System.Drawing.Size(185, 28);
-            // 
-            // skinTextBox1.BaseText
-            // 
-            this.skinTextBox1.SkinTxt.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.skinTextBox1.SkinTxt.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.skinTextBox1.SkinTxt.Font = new System.Drawing.Font("微软雅黑", 9.75F);
-            this.skinTextBox1.SkinTxt.Location = new System.Drawing.Point(5, 5);
-            this.skinTextBox1.SkinTxt.Name = "BaseText";
-            this.skinTextBox1.SkinTxt.Size = new System.Drawing.Size(175, 18);
-            this.skinTextBox1.SkinTxt.TabIndex = 0;
-            this.skinTextBox1.SkinTxt.WaterColor = System.Drawing.Color.FromArgb(((int)(((byte)(127)))), ((int)(((byte)(127)))), ((int)(((byte)(127)))));
-            this.skinTextBox1.SkinTxt.WaterText = "";
-            this.skinTextBox1.TabIndex = 1;
-            // 
-            // skinLabel11
-            // 
-            this.skinLabel11.ArtTextStyle = CCWin.SkinControl.ArtTextStyle.None;
-            this.skinLabel11.BackColor = System.Drawing.Color.Transparent;
-            this.skinLabel11.BorderColor = System.Drawing.Color.White;
-            this.skinLabel11.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.skinLabel11.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.skinLabel11.Location = new System.Drawing.Point(3, 52);
-            this.skinLabel11.Name = "skinLabel11";
-            this.skinLabel11.Size = new System.Drawing.Size(85, 23);
-            this.skinLabel11.TabIndex = 0;
-            this.skinLabel11.Text = "确认报价:";
-            // 
-            // skinLabel7
-            // 
-            this.skinLabel7.ArtTextStyle = CCWin.SkinControl.ArtTextStyle.None;
-            this.skinLabel7.BackColor = System.Drawing.Color.Transparent;
-            this.skinLabel7.BorderColor = System.Drawing.Color.White;
-            this.skinLabel7.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.skinLabel7.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.skinLabel7.Location = new System.Drawing.Point(3, 3);
-            this.skinLabel7.Name = "skinLabel7";
-            this.skinLabel7.Size = new System.Drawing.Size(85, 23);
-            this.skinLabel7.TabIndex = 0;
-            this.skinLabel7.Text = "竞买报价:";
             // 
             // panel_info
             // 
@@ -876,6 +708,19 @@
             this.skinButton4.UseVisualStyleBackColor = false;
             this.skinButton4.Click += new System.EventHandler(this.skinButton4_Click);
             // 
+            // skinPanel1
+            // 
+            this.skinPanel1.BackColor = System.Drawing.Color.Transparent;
+            this.skinPanel1.ControlState = CCWin.SkinClass.ControlState.Normal;
+            this.skinPanel1.DownBack = null;
+            this.skinPanel1.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.skinPanel1.Location = new System.Drawing.Point(337, 13);
+            this.skinPanel1.MouseBack = null;
+            this.skinPanel1.Name = "skinPanel1";
+            this.skinPanel1.NormlBack = null;
+            this.skinPanel1.Size = new System.Drawing.Size(340, 470);
+            this.skinPanel1.TabIndex = 4;
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
@@ -896,11 +741,6 @@
             this.skinTabControl1.ResumeLayout(false);
             this.tabPage_tradeCenter.ResumeLayout(false);
             this.panel_main.ResumeLayout(false);
-            this.panel_price.ResumeLayout(false);
-            this.skinTextBox2.ResumeLayout(false);
-            this.skinTextBox2.PerformLayout();
-            this.skinTextBox1.ResumeLayout(false);
-            this.skinTextBox1.PerformLayout();
             this.panel_info.ResumeLayout(false);
             this.tabPage_tradeDetail.ResumeLayout(false);
             this.tabPage_affiche.ResumeLayout(false);
@@ -948,20 +788,13 @@
         private CCWin.SkinControl.SkinLabel skinLabel10;
         private CCWin.SkinControl.SkinLabel skinLabel9;
         private CCWin.SkinControl.SkinLabel skinLabel8;
-        private CCWin.SkinControl.SkinPanel panel_price;
-        private CCWin.SkinControl.SkinLabel skinLabel11;
-        private CCWin.SkinControl.SkinLabel skinLabel7;
-        private CCWin.SkinControl.SkinTextBox skinTextBox2;
-        private CCWin.SkinControl.SkinTextBox skinTextBox1;
-        private CCWin.SkinControl.SkinButton btnDl;
         private CCWin.SkinControl.SkinPanel skinPanel2;
-        private CCWin.SkinControl.SkinPanel skinPanel3;
-        private CCWin.SkinControl.SkinPanel skinPanel1;
         private Teleware.ZPG.Client.Controls.ListViewEx listView1;
         private System.Windows.Forms.ColumnHeader columnHeader2;
         private System.Windows.Forms.ColumnHeader columnHeader3;
         private System.Windows.Forms.ColumnHeader columnHeader4;
         private System.Windows.Forms.ColumnHeader columnHeader5;
+        private CCWin.SkinControl.SkinPanel skinPanel1;
 
     }
 }

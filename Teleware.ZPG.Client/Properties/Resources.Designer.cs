@@ -326,6 +326,13 @@ namespace Teleware.ZPG.Client.Properties {
             }
         }
         
+        internal static System.Drawing.Bitmap countdown {
+            get {
+                object obj = ResourceManager.GetObject("countdown", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
         internal static System.Drawing.Bitmap ellipsis {
             get {
                 object obj = ResourceManager.GetObject("ellipsis", resourceCulture);
@@ -525,6 +532,76 @@ namespace Teleware.ZPG.Client.Properties {
         internal static System.Drawing.Bitmap notify_success {
             get {
                 object obj = ResourceManager.GetObject("notify_success", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap r0 {
+            get {
+                object obj = ResourceManager.GetObject("r0", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap r1 {
+            get {
+                object obj = ResourceManager.GetObject("r1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap r2 {
+            get {
+                object obj = ResourceManager.GetObject("r2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap r3 {
+            get {
+                object obj = ResourceManager.GetObject("r3", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap r4 {
+            get {
+                object obj = ResourceManager.GetObject("r4", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap r5 {
+            get {
+                object obj = ResourceManager.GetObject("r5", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap r6 {
+            get {
+                object obj = ResourceManager.GetObject("r6", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap r7 {
+            get {
+                object obj = ResourceManager.GetObject("r7", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap r8 {
+            get {
+                object obj = ResourceManager.GetObject("r8", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap r9 {
+            get {
+                object obj = ResourceManager.GetObject("r9", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
