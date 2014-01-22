@@ -110,7 +110,7 @@ namespace Teleware.ZPG.Client
 
         private void skinButton3_Click(object sender, EventArgs e)
         {
-            MessageBoxEx.Show(this, "正在加载正在加正在加载正在加", "提示", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button1);
+            MessageBoxEx.Show(this, "正在加载正在加正在加载正在加正在加正在加正在加正在加正在加正在加正在加正在加载正在加正在加载正在加正在加正在加正在加正在加正在加正在加正在加正在加载正在加正在加载正在加正在加正在加正在加正在加正在加正在加正在加345335444", "提示", MessageBoxButtons.YesNo, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button1);
         }
 
         private void skinButton4_Click(object sender, EventArgs e)

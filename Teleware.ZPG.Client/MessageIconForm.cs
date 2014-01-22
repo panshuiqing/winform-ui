@@ -139,17 +139,19 @@ namespace Teleware.ZPG.Client
             var imageTop = 0;
             var textTop = 0;
             var textLeft = 0;
-            var textWidth = Math.Min(this.Width - 2 * SPACING, (int)textSize.Width);
+            var textWidth = 0;
             var textHeight = Math.Min(this.Height - 2 * SPACING, (int)textSize.Height);
 
             if (loadingImage == null)
             {
+                textWidth = Math.Min(this.Width - 2 * SPACING, (int)textSize.Width);
                 textLeft = Math.Max(SPACING, (this.Width - textSize.Width) / 2);
                 textTop = Math.Max(SPACING, (this.Height - textSize.Height) / 2);
                 this.pic_loading.Visible = false;
             }
             else
             {
+                textWidth = Math.Min(this.Width - (2 * SPACING + TEXT_IMAGE_SPACING + loadingImage.Width), (int)textSize.Width);
                 textLeft = SPACING + loadingImage.Width + TEXT_IMAGE_SPACING;
                 if (loadingImage.Height > textSize.Height)
                 {

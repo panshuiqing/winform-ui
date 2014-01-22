@@ -36,15 +36,18 @@ namespace Teleware.ZPG.Client
     public class MessageBoxForm : SkinForm
     {
         #region 变量
-        private MessageBoxArgs _message;
+        private MessageBoxArgs message;
         private Rectangle imageRect;
         private Rectangle textRect;
-        private Button[] _innerButtons;
         private int SPACING = 12;
+        //按钮底部高度
+        private int BOTTOM_HEIGHT = 40;
+        //按钮高度
+        private int BUTTON_HEIGHT = 28;
         //图片与文字水平间隔
         private int TEXT_IMAGE_SPACING = 4;
-        private Size MIN_SIZE = new Size(260, 160);
-        private Size MAX_SIZE = new Size(365, 240);
+        private Size MIN_SIZE = new Size(270, 160);
+        private Size MAX_SIZE = new Size(370, 240);
         private TextFormatFlags TEXT_FLAGS =
                     TextFormatFlags.HidePrefix | TextFormatFlags.ExternalLeading |
                     TextFormatFlags.WordBreak | TextFormatFlags.EndEllipsis;
@@ -60,37 +63,7 @@ namespace Teleware.ZPG.Client
         }
         #endregion
 
-        #region 属性
-        /// <summary>
-        /// 获取消息对话框的参数对象。
-        /// </summary>
-        protected MessageBoxArgs Message
-        {
-            get { return _message; }
-        }
-
-        /// <summary>
-        /// 获取消息文本的位置与大小。
-        /// </summary>
-        protected Rectangle MessageRect
-        {
-            get { return textRect; }
-        }
-
-        /// <summary>
-        /// 获取消息图标的位置与大小。
-        /// </summary>
-        protected new Rectangle IconRect
-        {
-            get { return imageRect; }
-        }
-        #endregion
-
         #region 重载事件
-        protected override void OnCreateControl()
-        {
-            base.OnCreateControl();
-        }
 
         /// <summary>
         /// 使用 <see cref="MessageBoxArgs"/> 消息对话框参数显示窗体。
@@ -99,7 +72,7 @@ namespace Teleware.ZPG.Client
         /// <returns></returns>
         public DialogResult ShowMessageBoxDialog(MessageBoxArgs message)
         {
-            _message = message;
+            this.message = message;
             return ShowMessageBoxDialog();
         }
 
@@ -109,8 +82,8 @@ namespace Teleware.ZPG.Client
             if (e.KeyChar == '\x03')
             {
                 e.Handled = true;
-                Clipboard.SetDataObject(_message.Caption + Environment.NewLine +
-                    Environment.NewLine + _message.Text, true);
+                Clipboard.SetDataObject(message.Caption + Environment.NewLine +
+                    Environment.NewLine + message.Text, true);
             }
             base.OnKeyPress(e);
         }
@@ -127,24 +100,23 @@ namespace Teleware.ZPG.Client
         private void MessageBoxForm_Paint(object sender, PaintEventArgs e)
         {
             Graphics g = e.Graphics;
-            int bottomHeight = 40;
             //绘制中间白色分割条
             using (Pen whitePen = new Pen(Color.FromArgb(255, Color.White), 0.1f))
             {
-                g.DrawLine(whitePen, new Point(0, this.Height - bottomHeight), new Point(this.Width, this.Height - bottomHeight));
+                g.DrawLine(whitePen, new Point(0, this.Height - BOTTOM_HEIGHT), new Point(this.Width, this.Height - BOTTOM_HEIGHT));
             }
             //画图标
-            if (Message.Image != null)
+            if (message.Image != null)
             {
-                g.DrawImage(Message.Image, imageRect);
+                g.DrawImage(message.Image, imageRect);
             }
             //画字
-            if (!string.IsNullOrEmpty(Message.Text))
+            if (!string.IsNullOrEmpty(message.Text))
             {
                 TextFormatFlags flags =
                     TextFormatFlags.HidePrefix | TextFormatFlags.ExternalLeading |
                     TextFormatFlags.WordBreak | TextFormatFlags.EndEllipsis;
-                TextRenderer.DrawText(g, Message.Text, Font, textRect, ForeColor, flags);
+                TextRenderer.DrawText(g, message.Text, Font, textRect, ForeColor, flags);
             }
         }
 
@@ -164,11 +136,11 @@ namespace Teleware.ZPG.Client
         #region 实现方法
         DialogResult ShowMessageBoxDialog()
         {
-            Text = Message.Caption;
+            Text = message.Caption;
             FormBorderStyle = FormBorderStyle.FixedDialog;
             MinimizeBox = false;
             MaximizeBox = false;
-            IWin32Window owner = Message.Owner;
+            IWin32Window owner = message.Owner;
 
             if (owner == null)
             {
@@ -215,11 +187,8 @@ namespace Teleware.ZPG.Client
                 ShowInTaskbar = false;
                 StartPosition = FormStartPosition.CenterParent;
             }
-
-            CreateButtons();
             CalcFinalSizes();
-            //CalcIconBounds();
-            //CalcMessageBounds();
+            CreateButtons();
             CalcBounds();
             Form frm = owner as Form;
             if (frm != null && frm.TopMost)
@@ -232,9 +201,10 @@ namespace Teleware.ZPG.Client
 
         private void CreateButtons()
         {
-            MessageBoxButtons btns = Message.Buttons;
-            MessageBoxDefaultButton defaultBtn = Message.DefaultButton;
+            MessageBoxButtons btns = message.Buttons;
+            MessageBoxDefaultButton defaultBtn = message.DefaultButton;
             Button[] buttonArray = null;
+            int buttonsTotalWidth = 0;
             switch (btns)
             {
                 case MessageBoxButtons.OKCancel:
@@ -300,7 +270,21 @@ namespace Teleware.ZPG.Client
                     }
                     break;
             }
-            _innerButtons = buttonArray;
+
+            foreach (SkinButton button in buttonArray)
+            {
+                if (buttonsTotalWidth != 0)
+                {
+                    buttonsTotalWidth += SPACING;
+                }
+                buttonsTotalWidth += button.Width;
+            }
+            int nextButtonPos = DisplayRectangle.Width - buttonsTotalWidth;
+            for (int i = 0; i < buttonArray.Length; ++i)
+            {
+                buttonArray[i].Location = new Point(nextButtonPos, this.Height - buttonArray[i].Height - 6);
+                nextButtonPos += buttonArray[i].Width + SPACING;
+            }
         }
 
         private SkinButton InnerCreateButton(string text, DialogResult result)
@@ -311,7 +295,7 @@ namespace Teleware.ZPG.Client
             button.NormlBack = Properties.Resources.btn_normal;
             button.DrawType = CCWin.SkinControl.DrawStyle.Img;
             button.Palace = true;
-            button.Size = new Size(70, 28);
+            button.Size = new Size(70, BUTTON_HEIGHT);
             button.UseVisualStyleBackColor = false;
             button.InheritColor = true;
             button.ForeColorSuit = true;
@@ -328,79 +312,6 @@ namespace Teleware.ZPG.Client
             base.Close();
         }
 
-        private void CalcIconBounds()
-        {
-            int x = BorderPadding.Left + SPACING;
-            int y = 0;
-            if (Message.Image != null)
-            {
-                y = (this.Height - Message.Image.Height) / 2;
-                imageRect = new Rectangle(x, y, Message.Image.Width, Message.Image.Height);
-            }
-            else
-            {
-                imageRect = new Rectangle(x, y, 0, 0);
-            }
-        }
-
-        private void CalcMessageBounds()
-        {
-            int messageTop, messageLeft, messageWidth, messageHeight;
-            messageTop = imageRect.Y;
-            messageLeft = (Message.Image == null) ?
-                BorderPadding.Left + SPACING : (imageRect.Right + SPACING);
-            Rectangle workRect = SystemInformation.WorkingArea;
-            Size maxSize = MaximumSizeFromMaximinClientSize();
-            Size maxTextSize = maxSize;
-
-            if (maxTextSize.Width <= 0)
-            {
-                maxTextSize.Width = workRect.Width / 3 * 2;
-            }
-
-            if (maxTextSize.Height <= 0)
-            {
-                maxTextSize.Height = workRect.Height;
-            }
-
-            maxTextSize.Width -= (BorderPadding.Horizontal + SPACING + messageLeft);
-            maxTextSize.Height = int.MaxValue;
-
-            if (maxTextSize.Width < 10)
-            {
-                maxTextSize.Width = 10;
-            }
-
-            TextFormatFlags flags =
-                TextFormatFlags.HidePrefix | TextFormatFlags.ExternalLeading |
-                TextFormatFlags.WordBreak | TextFormatFlags.EndEllipsis;
-            SizeF textSize = TextRenderer.MeasureText(Message.Text, Font, maxTextSize, flags);
-            messageWidth = (int)Math.Ceiling(textSize.Width);
-            int maxTextHeight = maxSize.Height;
-
-            if (maxTextHeight <= 0)
-            {
-                maxTextHeight = workRect.Height;
-            }
-
-            maxTextHeight -= (BorderPadding.Horizontal + CaptionHeight +
-                messageTop + SPACING + _innerButtons[0].Height);
-
-            if (maxTextHeight < 10)
-            {
-                maxTextHeight = 10;
-            }
-
-            messageHeight = (int)Math.Ceiling(textSize.Height);
-
-            if (messageHeight > maxTextHeight)
-            {
-                messageHeight = maxTextHeight;
-            }
-
-            textRect = new Rectangle(messageLeft, messageTop, messageWidth, messageHeight);
-        }
-
         private void CalcBounds()
         {
             var textSize = GetTextSize();
@@ -408,44 +319,61 @@ namespace Teleware.ZPG.Client
             var imageTop = 0;
             var textTop = 0;
             var textLeft = 0;
-            var textWidth = Math.Min(this.Width - 2 * SPACING, (int)textSize.Width);
-            var textHeight = Math.Min(this.Height - 2 * SPACING, (int)textSize.Height);
-
-            if (this.Message.Image == null)
+            var textWidth = 0;
+            var textHeight = Math.Min(this.Height - (2 * SPACING + BOTTOM_HEIGHT + CaptionHeight), (int)textSize.Height);
+            if (this.message.Image == null)
             {
+                textWidth = Math.Min(this.Width - 2 * SPACING, (int)textSize.Width);
                 textLeft = Math.Max(SPACING, (this.Width - textSize.Width) / 2);
-                textTop = Math.Max(SPACING, (this.Height - textSize.Height) / 2);
+                textTop = Math.Max(CaptionHeight + SPACING, CaptionHeight + (this.Height - (textSize.Height + BOTTOM_HEIGHT + CaptionHeight)) / 2);
+                this.imageRect = new Rectangle(0, 0, 0, 0);
             }
             else
             {
-                textLeft = SPACING + this.Message.Image.Width + TEXT_IMAGE_SPACING;
-                if (this.Message.Image.Height > textSize.Height)
+                textWidth = Math.Min(this.Width - (2 * SPACING + TEXT_IMAGE_SPACING + this.message.Image.Width), (int)textSize.Width);
+                textLeft = SPACING + this.message.Image.Width + TEXT_IMAGE_SPACING;
+                if ((int)textSize.Height < this.Height - (2 * SPACING + BOTTOM_HEIGHT + CaptionHeight))
                 {
-                    imageTop = SPACING;
-                    textTop = (this.Height - textSize.Height) / 2;
+                    textTop = CaptionHeight + (this.Height - (textSize.Height + BOTTOM_HEIGHT + CaptionHeight)) / 2;
                 }
                 else
                 {
-                    textTop = SPACING;
-                    imageTop = (this.Height - this.Message.Image.Height) / 2;
+                    textTop = CaptionHeight + SPACING;
                 }
-                this.imageRect = new Rectangle(imageLeft, imageTop, this.Message.Image.Width, this.Message.Image.Height);
+                if (this.message.Image.Height > textSize.Height)
+                {
+                    imageTop = Math.Max(CaptionHeight + SPACING, CaptionHeight + (this.Height - (this.message.Image.Height + BOTTOM_HEIGHT + CaptionHeight)) / 2);
+                }
+                else
+                {
+                    imageTop = textTop;
+                }
+                this.imageRect = new Rectangle(imageLeft, imageTop, this.message.Image.Width, this.message.Image.Height);
             }
             this.textRect = new Rectangle(textLeft, textTop, textWidth, textHeight);
+
+            var rightWidth = this.Width - (SPACING * 2 + this.imageRect.Width + TEXT_IMAGE_SPACING + this.textRect.Width);
+            if (rightWidth > 2)
+            {
+                if (this.message.Image != null)
+                {
+                    this.imageRect = new Rectangle(imageLeft + rightWidth / 2, imageTop, this.message.Image.Width, this.message.Image.Height);
+                }
+                this.textRect = new Rectangle(textLeft + rightWidth / 2, textTop, textWidth, textHeight);
+            }
         }
 
         private void CalcFinalSizes()
         {
             Size textSize = GetTextSize();
             var width = 2 * SPACING + textSize.Width;
-            var height = 2 * SPACING + textSize.Height;
-            var loadingImage = this.Message.Image;
-            if (loadingImage != null)
+            var height = 2 * SPACING + textSize.Height + CaptionHeight + BOTTOM_HEIGHT;
+            if (this.message.Image != null)
             {
-                width += loadingImage.Width + TEXT_IMAGE_SPACING;
-                if (loadingImage.Height > textSize.Height)
+                width += this.message.Image.Width + TEXT_IMAGE_SPACING;
+                if (this.message.Image.Height > textSize.Height)
                 {
-                    height = 2 * SPACING + loadingImage.Height;
+                    height = 2 * SPACING + this.message.Image.Height;
                 }
             }
             if (width > MAX_SIZE.Width)
@@ -467,92 +395,16 @@ namespace Teleware.ZPG.Client
             this.Size = new Size(width, height);
         }
 
-        //private void CalcFinalSizes()
-        //{
-        //    int buttonsTotalWidth = 0;
-        //    foreach (SkinButton button in _innerButtons)
-        //    {
-        //        if (buttonsTotalWidth != 0)
-        //        {
-        //            buttonsTotalWidth += SPACING;
-        //        }
-        //        buttonsTotalWidth += button.Width;
-        //    }
-
-        //    int buttonsTop = _messageRect.Bottom + SPACING;
-
-        //    if (Message.Image != null && _iconRect.Bottom + SPACING > buttonsTop)
-        //    {
-        //        buttonsTop = _iconRect.Bottom + SPACING;
-        //    }
-        //    Size minSize = new System.Drawing.Size(300, 180);
-        //    int wantedFormWidth = minSize.Width;
-        //    if (wantedFormWidth == 0)
-        //    {
-        //        wantedFormWidth = SystemInformation.MinimumWindowSize.Width;
-        //    }
-
-        //    if (wantedFormWidth < _messageRect.Right + SPACING)
-        //    {
-        //        wantedFormWidth = _messageRect.Right + SPACING;
-        //    }
-
-        //    if (wantedFormWidth < buttonsTotalWidth + SPACING + SPACING)
-        //    {
-        //        wantedFormWidth = buttonsTotalWidth + SPACING + SPACING;
-        //    }
-
-        //    int maxCaptionForcedWidth = SystemInformation.WorkingArea.Width / 3 * 2;
-        //    int captionTextWidth = TextRenderer.MeasureText(Text, CaptionFont,
-        //        new Size(maxCaptionForcedWidth, CaptionHeight),
-        //        TextFormatFlags.EndEllipsis | TextFormatFlags.NoPrefix |
-        //        TextFormatFlags.SingleLine).Width;
-
-        //    int captionTextWidthWithButtonsAndSpacing = captionTextWidth + AllButtonWidth(false);
-        //    int captionWidth = Math.Min(maxCaptionForcedWidth, captionTextWidthWithButtonsAndSpacing);
-
-        //    if (wantedFormWidth < captionWidth)
-        //    {
-        //        wantedFormWidth = captionWidth;
-        //    }
-
-        //    Width = wantedFormWidth + BorderPadding.Right;
-        //    Height = buttonsTop + _innerButtons[0].Height + BorderPadding.Bottom + 3;
-
-        //    if (Height < minSize.Height)
-        //    {
-        //        Height = minSize.Height;
-        //        buttonsTop = Height - _innerButtons[0].Height - BorderPadding.Bottom - 3;
-        //    }
-
-        //    int nextButtonPos = DisplayRectangle.Width - buttonsTotalWidth;
-        //    for (int i = 0; i < _innerButtons.Length; ++i)
-        //    {
-        //        _innerButtons[i].Location = new Point(nextButtonPos, buttonsTop + 2);
-        //        nextButtonPos += _innerButtons[i].Width + SPACING;
-        //    }
-
-        //    if (Message.Image == null)
-        //    {
-        //        _messageRect.Offset((wantedFormWidth - (_messageRect.Right + SPACING)) / 2, 0);
-        //    }
-
-        //    if (Message.Image != null && _messageRect.Height < _iconRect.Height)
-        //    {
-        //        _messageRect.Offset(0, (_iconRect.Height - _messageRect.Height) / 2);
-        //    }
-        //}
-
         private Size GetTextSize()
         {
-            if (string.IsNullOrEmpty(this.Message.Text)) return Size.Empty;
+            if (string.IsNullOrEmpty(this.message.Text)) return Size.Empty;
             int maxTextWidth = MAX_SIZE.Width - 2 * SPACING;
             int maxTextHeight = MAX_SIZE.Height - (2 * SPACING);
-            if (this.Message.Image != null)
+            if (this.message.Image != null)
             {
-                maxTextWidth -= (this.Message.Image.Width + TEXT_IMAGE_SPACING);
+                maxTextWidth -= (this.message.Image.Width + TEXT_IMAGE_SPACING);
             }
-            Size textSize = TextRenderer.MeasureText(this.Message.Text, this.Font, new Size(maxTextWidth, maxTextHeight), TEXT_FLAGS);
+            Size textSize = TextRenderer.MeasureText(this.message.Text, this.Font, new Size(maxTextWidth, maxTextHeight), TEXT_FLAGS);
             return textSize;
         }
         #endregion
@@ -567,11 +419,9 @@ namespace Teleware.ZPG.Client
             this.Back = global::Teleware.ZPG.Client.Properties.Resources.background_blue;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(239)))), ((int)(((byte)(249)))));
             this.BackgroundImage = null;
-            this.BackLayout = false;
-            this.ClientSize = new System.Drawing.Size(365, 240);
+            this.ClientSize = new System.Drawing.Size(270, 160);
             this.ControlBoxOffset = new System.Drawing.Point(0, -1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
-            this.InheritBack = true;
             this.KeyPreview = true;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
