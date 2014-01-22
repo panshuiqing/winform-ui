@@ -45,6 +45,8 @@
             this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.imageList1 = new System.Windows.Forms.ImageList(this.components);
+            this.skinPanel1 = new CCWin.SkinControl.SkinPanel();
             this.skinPanel2 = new CCWin.SkinControl.SkinPanel();
             this.panel_info = new CCWin.SkinControl.SkinPanel();
             this.skinLabel10 = new CCWin.SkinControl.SkinLabel();
@@ -72,7 +74,6 @@
             this.skinButton3 = new CCWin.SkinControl.SkinButton();
             this.skinButton5 = new CCWin.SkinControl.SkinButton();
             this.skinButton4 = new CCWin.SkinControl.SkinButton();
-            this.skinPanel1 = new CCWin.SkinControl.SkinPanel();
             this.panel_user.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.skinPictureBox1)).BeginInit();
             this.skinTabControl1.SuspendLayout();
@@ -90,12 +91,12 @@
             // 
             this.toolbarImages.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("toolbarImages.ImageStream")));
             this.toolbarImages.TransparentColor = System.Drawing.Color.Transparent;
-            this.toolbarImages.Images.SetKeyName(0, "0.png");
-            this.toolbarImages.Images.SetKeyName(1, "4.png");
-            this.toolbarImages.Images.SetKeyName(2, "6.png");
-            this.toolbarImages.Images.SetKeyName(3, "7.png");
-            this.toolbarImages.Images.SetKeyName(4, "10.png");
-            this.toolbarImages.Images.SetKeyName(5, "11.png");
+            this.toolbarImages.Images.SetKeyName(0, "4.png");
+            this.toolbarImages.Images.SetKeyName(1, "6.png");
+            this.toolbarImages.Images.SetKeyName(2, "7.png");
+            this.toolbarImages.Images.SetKeyName(3, "10.png");
+            this.toolbarImages.Images.SetKeyName(4, "11.png");
+            this.toolbarImages.Images.SetKeyName(5, "down_shamuma_new.png");
             // 
             // panel_user
             // 
@@ -183,7 +184,7 @@
             animation1.MosaicCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.MosaicCoeff")));
             animation1.MosaicShift = ((System.Drawing.PointF)(resources.GetObject("animation1.MosaicShift")));
             animation1.MosaicSize = 0;
-            animation1.Padding = new System.Windows.Forms.Padding(0, 0, 0, 0);
+            animation1.Padding = new System.Windows.Forms.Padding(0);
             animation1.RotateCoeff = 0F;
             animation1.RotateLimit = 0F;
             animation1.ScaleCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.ScaleCoeff")));
@@ -230,7 +231,7 @@
             this.tabPage_tradeCenter.Controls.Add(this.panel_main);
             this.tabPage_tradeCenter.Controls.Add(this.panel_switch);
             this.tabPage_tradeCenter.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.tabPage_tradeCenter.ImageIndex = 5;
+            this.tabPage_tradeCenter.ImageIndex = 0;
             this.tabPage_tradeCenter.Location = new System.Drawing.Point(0, 75);
             this.tabPage_tradeCenter.Name = "tabPage_tradeCenter";
             this.tabPage_tradeCenter.Size = new System.Drawing.Size(898, 494);
@@ -261,18 +262,20 @@
             // 
             // listView1
             // 
+            this.listView1.AllowChangeHeaderWidth = false;
             this.listView1.AllowColumnReorder = true;
+            this.listView1.BackColor = System.Drawing.SystemColors.Window;
             this.listView1.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.columnHeader2,
             this.columnHeader3,
             this.columnHeader4,
             this.columnHeader5});
             this.listView1.FullRowSelect = true;
-            this.listView1.GridLines = true;
-            this.listView1.Location = new System.Drawing.Point(3, 212);
+            this.listView1.Location = new System.Drawing.Point(6, 200);
             this.listView1.MultiSelect = false;
             this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(327, 218);
+            this.listView1.Size = new System.Drawing.Size(327, 284);
+            this.listView1.SmallImageList = this.imageList1;
             this.listView1.TabIndex = 5;
             this.listView1.UseCompatibleStateImageBehavior = false;
             this.listView1.View = System.Windows.Forms.View.Details;
@@ -280,7 +283,6 @@
             // columnHeader2
             // 
             this.columnHeader2.Text = " 轮次";
-            this.columnHeader2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.columnHeader2.Width = 45;
             // 
             // columnHeader3
@@ -300,13 +302,32 @@
             this.columnHeader5.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.columnHeader5.Width = 100;
             // 
+            // imageList1
+            // 
+            this.imageList1.ColorDepth = System.Windows.Forms.ColorDepth.Depth8Bit;
+            this.imageList1.ImageSize = new System.Drawing.Size(1, 24);
+            this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
+            // 
+            // skinPanel1
+            // 
+            this.skinPanel1.BackColor = System.Drawing.Color.Transparent;
+            this.skinPanel1.ControlState = CCWin.SkinClass.ControlState.Normal;
+            this.skinPanel1.DownBack = null;
+            this.skinPanel1.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.skinPanel1.Location = new System.Drawing.Point(337, 10);
+            this.skinPanel1.MouseBack = null;
+            this.skinPanel1.Name = "skinPanel1";
+            this.skinPanel1.NormlBack = null;
+            this.skinPanel1.Size = new System.Drawing.Size(340, 70);
+            this.skinPanel1.TabIndex = 4;
+            // 
             // skinPanel2
             // 
             this.skinPanel2.BackColor = System.Drawing.Color.Transparent;
             this.skinPanel2.ControlState = CCWin.SkinClass.ControlState.Normal;
             this.skinPanel2.DownBack = null;
             this.skinPanel2.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.skinPanel2.Location = new System.Drawing.Point(680, 13);
+            this.skinPanel2.Location = new System.Drawing.Point(680, 10);
             this.skinPanel2.MouseBack = null;
             this.skinPanel2.Name = "skinPanel2";
             this.skinPanel2.NormlBack = null;
@@ -323,14 +344,14 @@
             this.panel_info.Controls.Add(this.skinLabel5);
             this.panel_info.Controls.Add(this.skinLabel4);
             this.panel_info.ControlState = CCWin.SkinClass.ControlState.Normal;
-            this.panel_info.DownBack = global::Teleware.ZPG.Client.Properties.Resources.window_shadow;
+            this.panel_info.DownBack = null;
             this.panel_info.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.panel_info.Location = new System.Drawing.Point(0, 3);
-            this.panel_info.MouseBack = global::Teleware.ZPG.Client.Properties.Resources.window_shadow;
+            this.panel_info.Location = new System.Drawing.Point(6, 10);
+            this.panel_info.MouseBack = null;
             this.panel_info.Name = "panel_info";
-            this.panel_info.NormlBack = global::Teleware.ZPG.Client.Properties.Resources.window_shadow;
+            this.panel_info.NormlBack = null;
             this.panel_info.Palace = true;
-            this.panel_info.Size = new System.Drawing.Size(330, 186);
+            this.panel_info.Size = new System.Drawing.Size(327, 186);
             this.panel_info.TabIndex = 0;
             // 
             // skinLabel10
@@ -340,7 +361,7 @@
             this.skinLabel10.BorderColor = System.Drawing.Color.White;
             this.skinLabel10.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.skinLabel10.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.skinLabel10.Location = new System.Drawing.Point(5, 150);
+            this.skinLabel10.Location = new System.Drawing.Point(3, 150);
             this.skinLabel10.Name = "skinLabel10";
             this.skinLabel10.Size = new System.Drawing.Size(300, 20);
             this.skinLabel10.TabIndex = 0;
@@ -353,7 +374,7 @@
             this.skinLabel9.BorderColor = System.Drawing.Color.White;
             this.skinLabel9.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.skinLabel9.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.skinLabel9.Location = new System.Drawing.Point(5, 122);
+            this.skinLabel9.Location = new System.Drawing.Point(3, 122);
             this.skinLabel9.Name = "skinLabel9";
             this.skinLabel9.Size = new System.Drawing.Size(300, 20);
             this.skinLabel9.TabIndex = 0;
@@ -366,7 +387,7 @@
             this.skinLabel8.BorderColor = System.Drawing.Color.White;
             this.skinLabel8.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.skinLabel8.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.skinLabel8.Location = new System.Drawing.Point(5, 94);
+            this.skinLabel8.Location = new System.Drawing.Point(3, 94);
             this.skinLabel8.Name = "skinLabel8";
             this.skinLabel8.Size = new System.Drawing.Size(300, 20);
             this.skinLabel8.TabIndex = 0;
@@ -379,7 +400,7 @@
             this.skinLabel6.BorderColor = System.Drawing.Color.White;
             this.skinLabel6.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.skinLabel6.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.skinLabel6.Location = new System.Drawing.Point(5, 66);
+            this.skinLabel6.Location = new System.Drawing.Point(3, 66);
             this.skinLabel6.Name = "skinLabel6";
             this.skinLabel6.Size = new System.Drawing.Size(300, 20);
             this.skinLabel6.TabIndex = 0;
@@ -392,7 +413,7 @@
             this.skinLabel5.BorderColor = System.Drawing.Color.White;
             this.skinLabel5.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.skinLabel5.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.skinLabel5.Location = new System.Drawing.Point(5, 38);
+            this.skinLabel5.Location = new System.Drawing.Point(3, 38);
             this.skinLabel5.Name = "skinLabel5";
             this.skinLabel5.Size = new System.Drawing.Size(300, 20);
             this.skinLabel5.TabIndex = 0;
@@ -405,7 +426,7 @@
             this.skinLabel4.BorderColor = System.Drawing.Color.White;
             this.skinLabel4.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.skinLabel4.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.skinLabel4.Location = new System.Drawing.Point(5, 10);
+            this.skinLabel4.Location = new System.Drawing.Point(3, 10);
             this.skinLabel4.Name = "skinLabel4";
             this.skinLabel4.Size = new System.Drawing.Size(300, 20);
             this.skinLabel4.TabIndex = 0;
@@ -446,7 +467,7 @@
             this.webBrowser_tradeDetail.MinimumSize = new System.Drawing.Size(20, 20);
             this.webBrowser_tradeDetail.Name = "webBrowser_tradeDetail";
             this.webBrowser_tradeDetail.ScrollBarsEnabled = false;
-            this.webBrowser_tradeDetail.Size = new System.Drawing.Size(200, 64);
+            this.webBrowser_tradeDetail.Size = new System.Drawing.Size(898, 494);
             this.webBrowser_tradeDetail.TabIndex = 0;
             // 
             // tabPage_affiche
@@ -469,7 +490,7 @@
             this.webBrowser_affiche.Margin = new System.Windows.Forms.Padding(0);
             this.webBrowser_affiche.Name = "webBrowser_affiche";
             this.webBrowser_affiche.ScrollBarsEnabled = false;
-            this.webBrowser_affiche.Size = new System.Drawing.Size(200, 64);
+            this.webBrowser_affiche.Size = new System.Drawing.Size(898, 494);
             this.webBrowser_affiche.TabIndex = 0;
             // 
             // tabPage_tradeResult
@@ -492,14 +513,14 @@
             this.webBrowser_tradeResult.MinimumSize = new System.Drawing.Size(20, 20);
             this.webBrowser_tradeResult.Name = "webBrowser_tradeResult";
             this.webBrowser_tradeResult.ScrollBarsEnabled = false;
-            this.webBrowser_tradeResult.Size = new System.Drawing.Size(200, 64);
+            this.webBrowser_tradeResult.Size = new System.Drawing.Size(898, 494);
             this.webBrowser_tradeResult.TabIndex = 0;
             // 
             // tabPage_applyInfo
             // 
             this.tabPage_applyInfo.Controls.Add(this.webBrowser_applyInfo);
             this.tabPage_applyInfo.ForeColor = System.Drawing.Color.White;
-            this.tabPage_applyInfo.ImageIndex = 2;
+            this.tabPage_applyInfo.ImageIndex = 4;
             this.tabPage_applyInfo.Location = new System.Drawing.Point(0, 75);
             this.tabPage_applyInfo.Name = "tabPage_applyInfo";
             this.tabPage_applyInfo.Size = new System.Drawing.Size(898, 494);
@@ -515,7 +536,7 @@
             this.webBrowser_applyInfo.MinimumSize = new System.Drawing.Size(20, 20);
             this.webBrowser_applyInfo.Name = "webBrowser_applyInfo";
             this.webBrowser_applyInfo.ScrollBarsEnabled = false;
-            this.webBrowser_applyInfo.Size = new System.Drawing.Size(200, 64);
+            this.webBrowser_applyInfo.Size = new System.Drawing.Size(898, 494);
             this.webBrowser_applyInfo.TabIndex = 0;
             // 
             // tabPage1
@@ -708,19 +729,6 @@
             this.skinButton4.UseVisualStyleBackColor = false;
             this.skinButton4.Click += new System.EventHandler(this.skinButton4_Click);
             // 
-            // skinPanel1
-            // 
-            this.skinPanel1.BackColor = System.Drawing.Color.Transparent;
-            this.skinPanel1.ControlState = CCWin.SkinClass.ControlState.Normal;
-            this.skinPanel1.DownBack = null;
-            this.skinPanel1.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.skinPanel1.Location = new System.Drawing.Point(337, 13);
-            this.skinPanel1.MouseBack = null;
-            this.skinPanel1.Name = "skinPanel1";
-            this.skinPanel1.NormlBack = null;
-            this.skinPanel1.Size = new System.Drawing.Size(340, 470);
-            this.skinPanel1.TabIndex = 4;
-            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
@@ -795,6 +803,7 @@
         private System.Windows.Forms.ColumnHeader columnHeader4;
         private System.Windows.Forms.ColumnHeader columnHeader5;
         private CCWin.SkinControl.SkinPanel skinPanel1;
+        private System.Windows.Forms.ImageList imageList1;
 
     }
 }

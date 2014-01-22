@@ -37,10 +37,17 @@ namespace Teleware.ZPG.Client
     {
         #region 变量
         private MessageBoxArgs _message;
-        private Rectangle _iconRect;
-        private Rectangle _messageRect;
+        private Rectangle imageRect;
+        private Rectangle textRect;
         private Button[] _innerButtons;
-        private const int Spacing = 6;
+        private int SPACING = 12;
+        //图片与文字水平间隔
+        private int TEXT_IMAGE_SPACING = 4;
+        private Size MIN_SIZE = new Size(260, 160);
+        private Size MAX_SIZE = new Size(365, 240);
+        private TextFormatFlags TEXT_FLAGS =
+                    TextFormatFlags.HidePrefix | TextFormatFlags.ExternalLeading |
+                    TextFormatFlags.WordBreak | TextFormatFlags.EndEllipsis;
         #endregion
 
         #region 无参构造函数
@@ -67,7 +74,7 @@ namespace Teleware.ZPG.Client
         /// </summary>
         protected Rectangle MessageRect
         {
-            get { return _messageRect; }
+            get { return textRect; }
         }
 
         /// <summary>
@@ -75,7 +82,7 @@ namespace Teleware.ZPG.Client
         /// </summary>
         protected new Rectangle IconRect
         {
-            get { return _iconRect; }
+            get { return imageRect; }
         }
         #endregion
 
@@ -120,12 +127,16 @@ namespace Teleware.ZPG.Client
         private void MessageBoxForm_Paint(object sender, PaintEventArgs e)
         {
             Graphics g = e.Graphics;
-            //画渐变层
-            DrawAlphaPart(this, g);
-            //画图标
-            if (Message.Icon != null)
+            int bottomHeight = 40;
+            //绘制中间白色分割条
+            using (Pen whitePen = new Pen(Color.FromArgb(255, Color.White), 0.1f))
             {
-                g.DrawImage(Message.Icon, _iconRect);
+                g.DrawLine(whitePen, new Point(0, this.Height - bottomHeight), new Point(this.Width, this.Height - bottomHeight));
+            }
+            //画图标
+            if (Message.Image != null)
+            {
+                g.DrawImage(Message.Image, imageRect);
             }
             //画字
             if (!string.IsNullOrEmpty(Message.Text))
@@ -133,60 +144,7 @@ namespace Teleware.ZPG.Client
                 TextFormatFlags flags =
                     TextFormatFlags.HidePrefix | TextFormatFlags.ExternalLeading |
                     TextFormatFlags.WordBreak | TextFormatFlags.EndEllipsis;
-                TextRenderer.DrawText(g, Message.Text, Font, _messageRect, ForeColor, flags);
-            }
-        }
-
-        //画渐变层
-        public void DrawAlphaPart(Form form, Graphics g)
-        {
-            //LinearGradientBrush brush = new LinearGradientBrush(
-
-            //    this.ClientRectangle, Color.Transparent,
-
-            //     Color.White, LinearGradientMode.Vertical);
-
-            //brush.SetSigmaBellShape(0.4f);
-            //g.FillRectangle(brush, this.ClientRectangle);
-            //brush.SetSigmaBellShape(0.6f);
-            //g.FillRectangle(brush, this.ClientRectangle); 
-            Color[] colors = 
-            {
-               Color.FromArgb(0, Color.White),
-               Color.FromArgb(225,Color.White),
-               Color.FromArgb(240, Color.White)
-            };
-
-            float[] pos = 
-            {
-                0.0f,
-                0.38f,
-                1.0f                       
-            };
-
-            ColorBlend colorBlend = new ColorBlend(3);
-            colorBlend.Colors = colors;
-            colorBlend.Positions = pos;
-
-            int bottomHeight = 35;  //底部未渐变部分的高度
-            RectangleF destRect = new RectangleF(0, 0, form.Width, form.Height - bottomHeight);
-
-            //绘制上部白色渐变层
-            using (LinearGradientBrush lBrushUp = new LinearGradientBrush(destRect, Color.White, Color.Black, LinearGradientMode.Vertical))
-            {
-                lBrushUp.InterpolationColors = colorBlend;
-                g.FillRectangle(lBrushUp, destRect);
-            }
-            //绘制中间白色分割条
-            using (Pen whitePen = new Pen(Color.FromArgb(255, Color.White), 0.1f))
-            {
-                g.DrawLine(whitePen, new Point(0, form.Height - bottomHeight), new Point(form.Width, form.Height - bottomHeight));
-            }
-
-            //绘制下部白色固体画刷层
-            using (SolidBrush sBrushDown = new SolidBrush(Color.FromArgb(205, Color.White)))
-            {
-                g.FillRectangle(sBrushDown, new Rectangle(0, form.Height - bottomHeight + 1, form.Width, form.Height - bottomHeight + 1));
+                TextRenderer.DrawText(g, Message.Text, Font, textRect, ForeColor, flags);
             }
         }
 
@@ -259,10 +217,10 @@ namespace Teleware.ZPG.Client
             }
 
             CreateButtons();
-            CalcIconBounds();
-            CalcMessageBounds();
             CalcFinalSizes();
-
+            //CalcIconBounds();
+            //CalcMessageBounds();
+            CalcBounds();
             Form frm = owner as Form;
             if (frm != null && frm.TopMost)
             {
@@ -353,7 +311,7 @@ namespace Teleware.ZPG.Client
             button.NormlBack = Properties.Resources.btn_normal;
             button.DrawType = CCWin.SkinControl.DrawStyle.Img;
             button.Palace = true;
-            button.Size = new Size(60, 26);
+            button.Size = new Size(70, 28);
             button.UseVisualStyleBackColor = false;
             button.InheritColor = true;
             button.ForeColorSuit = true;
@@ -372,24 +330,25 @@ namespace Teleware.ZPG.Client
 
         private void CalcIconBounds()
         {
-            int x = BorderPadding.Left + Spacing;
-            int y = BorderPadding.Top + CaptionHeight + Spacing;
-            if (Message.Icon != null)
+            int x = BorderPadding.Left + SPACING;
+            int y = 0;
+            if (Message.Image != null)
             {
-                _iconRect = new Rectangle(x, y, Message.Icon.Width, Message.Icon.Height);
+                y = (this.Height - Message.Image.Height) / 2;
+                imageRect = new Rectangle(x, y, Message.Image.Width, Message.Image.Height);
             }
             else
             {
-                _iconRect = new Rectangle(x, y, 0, 0);
+                imageRect = new Rectangle(x, y, 0, 0);
             }
         }
 
         private void CalcMessageBounds()
         {
             int messageTop, messageLeft, messageWidth, messageHeight;
-            messageTop = _iconRect.Y;
-            messageLeft = (Message.Icon == null) ?
-                BorderPadding.Left + Spacing : (_iconRect.Right + Spacing);
+            messageTop = imageRect.Y;
+            messageLeft = (Message.Image == null) ?
+                BorderPadding.Left + SPACING : (imageRect.Right + SPACING);
             Rectangle workRect = SystemInformation.WorkingArea;
             Size maxSize = MaximumSizeFromMaximinClientSize();
             Size maxTextSize = maxSize;
@@ -404,7 +363,7 @@ namespace Teleware.ZPG.Client
                 maxTextSize.Height = workRect.Height;
             }
 
-            maxTextSize.Width -= (BorderPadding.Horizontal + Spacing + messageLeft);
+            maxTextSize.Width -= (BorderPadding.Horizontal + SPACING + messageLeft);
             maxTextSize.Height = int.MaxValue;
 
             if (maxTextSize.Width < 10)
@@ -425,7 +384,7 @@ namespace Teleware.ZPG.Client
             }
 
             maxTextHeight -= (BorderPadding.Horizontal + CaptionHeight +
-                messageTop + Spacing + _innerButtons[0].Height);
+                messageTop + SPACING + _innerButtons[0].Height);
 
             if (maxTextHeight < 10)
             {
@@ -439,83 +398,162 @@ namespace Teleware.ZPG.Client
                 messageHeight = maxTextHeight;
             }
 
-            _messageRect = new Rectangle(messageLeft, messageTop, messageWidth, messageHeight);
+            textRect = new Rectangle(messageLeft, messageTop, messageWidth, messageHeight);
+        }
+
+        private void CalcBounds()
+        {
+            var textSize = GetTextSize();
+            var imageLeft = SPACING;
+            var imageTop = 0;
+            var textTop = 0;
+            var textLeft = 0;
+            var textWidth = Math.Min(this.Width - 2 * SPACING, (int)textSize.Width);
+            var textHeight = Math.Min(this.Height - 2 * SPACING, (int)textSize.Height);
+
+            if (this.Message.Image == null)
+            {
+                textLeft = Math.Max(SPACING, (this.Width - textSize.Width) / 2);
+                textTop = Math.Max(SPACING, (this.Height - textSize.Height) / 2);
+            }
+            else
+            {
+                textLeft = SPACING + this.Message.Image.Width + TEXT_IMAGE_SPACING;
+                if (this.Message.Image.Height > textSize.Height)
+                {
+                    imageTop = SPACING;
+                    textTop = (this.Height - textSize.Height) / 2;
+                }
+                else
+                {
+                    textTop = SPACING;
+                    imageTop = (this.Height - this.Message.Image.Height) / 2;
+                }
+                this.imageRect = new Rectangle(imageLeft, imageTop, this.Message.Image.Width, this.Message.Image.Height);
+            }
+            this.textRect = new Rectangle(textLeft, textTop, textWidth, textHeight);
         }
 
         private void CalcFinalSizes()
         {
-            int buttonsTotalWidth = 0;
-            foreach (SkinButton button in _innerButtons)
+            Size textSize = GetTextSize();
+            var width = 2 * SPACING + textSize.Width;
+            var height = 2 * SPACING + textSize.Height;
+            var loadingImage = this.Message.Image;
+            if (loadingImage != null)
             {
-                if (buttonsTotalWidth != 0)
+                width += loadingImage.Width + TEXT_IMAGE_SPACING;
+                if (loadingImage.Height > textSize.Height)
                 {
-                    buttonsTotalWidth += Spacing;
+                    height = 2 * SPACING + loadingImage.Height;
                 }
-                buttonsTotalWidth += button.Width;
             }
-
-            int buttonsTop = _messageRect.Bottom + Spacing;
-
-            if (Message.Icon != null && _iconRect.Bottom + Spacing > buttonsTop)
+            if (width > MAX_SIZE.Width)
             {
-                buttonsTop = _iconRect.Bottom + Spacing;
+                width = MAX_SIZE.Width;
             }
-            Size minSize = MinimumSizeFromMiniminClientSize();
-            int wantedFormWidth = minSize.Width;
-            if (wantedFormWidth == 0)
+            else if (width < MIN_SIZE.Width)
             {
-                wantedFormWidth = SystemInformation.MinimumWindowSize.Width;
+                width = MIN_SIZE.Width;
             }
-
-            if (wantedFormWidth < _messageRect.Right + Spacing)
+            if (height > MAX_SIZE.Height)
             {
-                wantedFormWidth = _messageRect.Right + Spacing;
+                height = MAX_SIZE.Height;
             }
-
-            if (wantedFormWidth < buttonsTotalWidth + Spacing + Spacing)
+            else if (height < MIN_SIZE.Height)
             {
-                wantedFormWidth = buttonsTotalWidth + Spacing + Spacing;
+                height = MIN_SIZE.Height;
             }
+            this.Size = new Size(width, height);
+        }
 
-            int maxCaptionForcedWidth = SystemInformation.WorkingArea.Width / 3 * 2;
-            int captionTextWidth = TextRenderer.MeasureText(Text, CaptionFont,
-                new Size(maxCaptionForcedWidth, CaptionHeight),
-                TextFormatFlags.EndEllipsis | TextFormatFlags.NoPrefix |
-                TextFormatFlags.SingleLine).Width;
+        //private void CalcFinalSizes()
+        //{
+        //    int buttonsTotalWidth = 0;
+        //    foreach (SkinButton button in _innerButtons)
+        //    {
+        //        if (buttonsTotalWidth != 0)
+        //        {
+        //            buttonsTotalWidth += SPACING;
+        //        }
+        //        buttonsTotalWidth += button.Width;
+        //    }
 
-            int captionTextWidthWithButtonsAndSpacing = captionTextWidth + AllButtonWidth(false);
-            int captionWidth = Math.Min(maxCaptionForcedWidth, captionTextWidthWithButtonsAndSpacing);
+        //    int buttonsTop = _messageRect.Bottom + SPACING;
 
-            if (wantedFormWidth < captionWidth)
+        //    if (Message.Image != null && _iconRect.Bottom + SPACING > buttonsTop)
+        //    {
+        //        buttonsTop = _iconRect.Bottom + SPACING;
+        //    }
+        //    Size minSize = new System.Drawing.Size(300, 180);
+        //    int wantedFormWidth = minSize.Width;
+        //    if (wantedFormWidth == 0)
+        //    {
+        //        wantedFormWidth = SystemInformation.MinimumWindowSize.Width;
+        //    }
+
+        //    if (wantedFormWidth < _messageRect.Right + SPACING)
+        //    {
+        //        wantedFormWidth = _messageRect.Right + SPACING;
+        //    }
+
+        //    if (wantedFormWidth < buttonsTotalWidth + SPACING + SPACING)
+        //    {
+        //        wantedFormWidth = buttonsTotalWidth + SPACING + SPACING;
+        //    }
+
+        //    int maxCaptionForcedWidth = SystemInformation.WorkingArea.Width / 3 * 2;
+        //    int captionTextWidth = TextRenderer.MeasureText(Text, CaptionFont,
+        //        new Size(maxCaptionForcedWidth, CaptionHeight),
+        //        TextFormatFlags.EndEllipsis | TextFormatFlags.NoPrefix |
+        //        TextFormatFlags.SingleLine).Width;
+
+        //    int captionTextWidthWithButtonsAndSpacing = captionTextWidth + AllButtonWidth(false);
+        //    int captionWidth = Math.Min(maxCaptionForcedWidth, captionTextWidthWithButtonsAndSpacing);
+
+        //    if (wantedFormWidth < captionWidth)
+        //    {
+        //        wantedFormWidth = captionWidth;
+        //    }
+
+        //    Width = wantedFormWidth + BorderPadding.Right;
+        //    Height = buttonsTop + _innerButtons[0].Height + BorderPadding.Bottom + 3;
+
+        //    if (Height < minSize.Height)
+        //    {
+        //        Height = minSize.Height;
+        //        buttonsTop = Height - _innerButtons[0].Height - BorderPadding.Bottom - 3;
+        //    }
+
+        //    int nextButtonPos = DisplayRectangle.Width - buttonsTotalWidth;
+        //    for (int i = 0; i < _innerButtons.Length; ++i)
+        //    {
+        //        _innerButtons[i].Location = new Point(nextButtonPos, buttonsTop + 2);
+        //        nextButtonPos += _innerButtons[i].Width + SPACING;
+        //    }
+
+        //    if (Message.Image == null)
+        //    {
+        //        _messageRect.Offset((wantedFormWidth - (_messageRect.Right + SPACING)) / 2, 0);
+        //    }
+
+        //    if (Message.Image != null && _messageRect.Height < _iconRect.Height)
+        //    {
+        //        _messageRect.Offset(0, (_iconRect.Height - _messageRect.Height) / 2);
+        //    }
+        //}
+
+        private Size GetTextSize()
+        {
+            if (string.IsNullOrEmpty(this.Message.Text)) return Size.Empty;
+            int maxTextWidth = MAX_SIZE.Width - 2 * SPACING;
+            int maxTextHeight = MAX_SIZE.Height - (2 * SPACING);
+            if (this.Message.Image != null)
             {
-                wantedFormWidth = captionWidth;
+                maxTextWidth -= (this.Message.Image.Width + TEXT_IMAGE_SPACING);
             }
-
-            Width = wantedFormWidth + BorderPadding.Right;
-            Height = buttonsTop + _innerButtons[0].Height + BorderPadding.Bottom + 3;
-
-            if (Height < minSize.Height)
-            {
-                Height = minSize.Height;
-                buttonsTop = Height - _innerButtons[0].Height - BorderPadding.Bottom - 3;
-            }
-
-            int nextButtonPos = DisplayRectangle.Width - buttonsTotalWidth;
-            for (int i = 0; i < _innerButtons.Length; ++i)
-            {
-                _innerButtons[i].Location = new Point(nextButtonPos, buttonsTop + 2);
-                nextButtonPos += _innerButtons[i].Width + Spacing;
-            }
-
-            if (Message.Icon == null)
-            {
-                _messageRect.Offset((wantedFormWidth - (_messageRect.Right + Spacing)) / 2, 0);
-            }
-
-            if (Message.Icon != null && _messageRect.Height < _iconRect.Height)
-            {
-                _messageRect.Offset(0, (_iconRect.Height - _messageRect.Height) / 2);
-            }
+            Size textSize = TextRenderer.MeasureText(this.Message.Text, this.Font, new Size(maxTextWidth, maxTextHeight), TEXT_FLAGS);
+            return textSize;
         }
         #endregion
 
@@ -526,10 +564,13 @@ namespace Teleware.ZPG.Client
             // 
             // MessageBoxForm
             // 
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(97)))), ((int)(((byte)(159)))), ((int)(((byte)(215)))));
+            this.Back = global::Teleware.ZPG.Client.Properties.Resources.background_blue;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(239)))), ((int)(((byte)(249)))));
+            this.BackgroundImage = null;
             this.BackLayout = false;
-            this.ClientSize = new System.Drawing.Size(260, 150);
+            this.ClientSize = new System.Drawing.Size(365, 240);
             this.ControlBoxOffset = new System.Drawing.Point(0, -1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.InheritBack = true;
             this.KeyPreview = true;
             this.MaximizeBox = false;
@@ -609,7 +650,7 @@ namespace Teleware.ZPG.Client
             set { _buttons = value; }
         }
 
-        public Bitmap Icon
+        public Bitmap Image
         {
             get { return _icon; }
             set { _icon = value; }

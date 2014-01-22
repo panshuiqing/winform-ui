@@ -24,6 +24,7 @@ namespace Teleware.ZPG.Client
         {
             var list = Model.Create();
             this.listView1.SuspendLayout();
+            int i=1;
             foreach (var item in list)
             {
                 var viewItem = new ListViewItem();
@@ -38,7 +39,17 @@ namespace Teleware.ZPG.Client
                 subItem = new ListViewItem.ListViewSubItem();
                 subItem.Text = item.Date;
                 viewItem.SubItems.Add(subItem);
-                
+
+
+                if (i == 1)
+                {
+                    viewItem.ForeColor = Color.Red;
+                }
+                if (i % 2 == 0)
+                {
+                    viewItem.ForeColor = Color.Green;
+                }
+                i++;
                 this.listView1.Items.Add(viewItem);
             }
             this.listView1.ResumeLayout();

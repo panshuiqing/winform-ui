@@ -243,6 +243,9 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\SubItemBack.png" />
+    <None Include="Resources\SubItemHoverBack.png" />
+    <None Include="Resources\news_bg.png" />
     <None Include="Resources\r9.png" />
     <None Include="Resources\r8.png" />
     <None Include="Resources\r7.png" />
@@ -253,7 +256,6 @@
     <None Include="Resources\r2.png" />
     <None Include="Resources\r1.png" />
     <None Include="Resources\r0.png" />
-    <None Include="Resources\window_shadow.png" />
     <None Include="Resources\tipicon.png" />
     <None Include="Resources\note_remind_local.png" />
     <None Include="Resources\form_border.png" />
@@ -261,6 +263,8 @@
     <None Include="Resources\bg_default.jpg" />
     <None Include="Resources\aio_quickbar_cut.png" />
     <Content Include="0101.ico" />
+    <None Include="Resources\AreaMainPanel.png" />
+    <None Include="Resources\background_blue.png" />
     <Content Include="Resources\btn_allow_down_hover.png" />
     <Content Include="Resources\btn_allow_down_normal.png" />
     <Content Include="Resources\btn_allow_up.png" />
@@ -290,6 +294,7 @@
     <None Include="Resources\countdown.png" />
     <Content Include="Resources\ellipsis.gif" />
     <Content Include="Resources\head.png" />
+    <None Include="Resources\hot_background.png" />
     <Content Include="Resources\jyjs.png" />
     <Content Include="Resources\jywks.png" />
     <None Include="Resources\tab_PageHover.png" />

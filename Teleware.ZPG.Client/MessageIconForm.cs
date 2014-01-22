@@ -21,11 +21,12 @@ namespace Teleware.ZPG.Client
         //文字修饰
         private TextFormatFlags TEXT_FLAGS = TextFormatFlags.HidePrefix | TextFormatFlags.ExternalLeading | TextFormatFlags.WordBreak | TextFormatFlags.EndEllipsis;
         //窗体最大大小
-        private static Size MAX_SIZE = new Size(400, 180);
+        private Size MAX_SIZE = new Size(400, 180);
         //最小大小
-        private static Size MIN_SIZE = new Size(180, 70);
+        private Size MIN_SIZE = new Size(180, 70);
         //图片与文字水平间隔
-        private static int TEXT_IMAGE_SPACING = 4;
+        private int TEXT_IMAGE_SPACING = 4;
+        private Rectangle textRect;
 
         private LoadingBoxArgs loadingBoxArgs;
 
@@ -59,6 +60,7 @@ namespace Teleware.ZPG.Client
                 this.pic_loading.Visible = false;
             }
             this.CalcFinalSizes();
+            this.CalcBounds();
             if (ownerForm == null)
             {
                 Form activeForm = Form.ActiveForm;
@@ -129,47 +131,50 @@ namespace Teleware.ZPG.Client
             this.Size = new Size(width, height);
         }
 
+        private void CalcBounds()
+        {
+            var loadingImage = this.loadingBoxArgs.LoadingImage;
+            var textSize = GetTextSize();
+            var imageLeft = SPACING;
+            var imageTop = 0;
+            var textTop = 0;
+            var textLeft = 0;
+            var textWidth = Math.Min(this.Width - 2 * SPACING, (int)textSize.Width);
+            var textHeight = Math.Min(this.Height - 2 * SPACING, (int)textSize.Height);
+
+            if (loadingImage == null)
+            {
+                textLeft = Math.Max(SPACING, (this.Width - textSize.Width) / 2);
+                textTop = Math.Max(SPACING, (this.Height - textSize.Height) / 2);
+                this.pic_loading.Visible = false;
+            }
+            else
+            {
+                textLeft = SPACING + loadingImage.Width + TEXT_IMAGE_SPACING;
+                if (loadingImage.Height > textSize.Height)
+                {
+                    imageTop = SPACING;
+                    textTop = (this.Height - textSize.Height) / 2;
+                }
+                else
+                {
+                    textTop = SPACING;
+                    imageTop = (this.Height - loadingImage.Height) / 2;
+                }
+                this.pic_loading.Visible = true;
+                this.pic_loading.Location = new Point(imageLeft, imageTop);
+
+            }
+
+            this.textRect = new Rectangle(textLeft, textTop, textWidth, textHeight);
+        }
+
         protected override void OnPaint(PaintEventArgs e)
         {
             base.OnPaint(e);
             if (this.loadingBoxArgs != null)
             {
-                var g = e.Graphics;
-                var loadingImage = this.loadingBoxArgs.LoadingImage;
-                var textSize = GetTextSize();
-                var imageLeft = SPACING;
-                var imageTop = 0;
-                var textTop = 0;
-                var textLeft = 0;
-                var textWidth = Math.Min(this.Width - 2 * SPACING, (int)textSize.Width);
-                var textHeight = Math.Min(this.Height - 2 * SPACING, (int)textSize.Height);
-
-                if (loadingImage == null)
-                {
-                    textLeft = Math.Max(SPACING, (this.Width - textSize.Width) / 2);
-                    textTop = Math.Max(SPACING, (this.Height - textSize.Height) / 2);
-                    this.pic_loading.Visible = false;
-                }
-                else
-                {
-                    textLeft = SPACING + loadingImage.Width + TEXT_IMAGE_SPACING;
-                    if (loadingImage.Height > textSize.Height)
-                    {
-                        imageTop = SPACING;
-                        textTop = (this.Height - textSize.Height) / 2;
-                    }
-                    else
-                    {
-                        textTop = SPACING;
-                        imageTop = (this.Height - loadingImage.Height) / 2;
-                    }
-                    this.pic_loading.Visible = true;
-                    this.pic_loading.Location = new Point(imageLeft, imageTop);
-                    
-                }
-
-                var rect = new Rectangle(textLeft, textTop, textWidth, textHeight);
-                TextRenderer.DrawText(g, this.loadingBoxArgs.LoadingText, this.Font, rect, this.ForeColor, TEXT_FLAGS);
+                TextRenderer.DrawText(e.Graphics, this.loadingBoxArgs.LoadingText, this.Font, this.textRect, this.ForeColor, TEXT_FLAGS);
             }
         }
 

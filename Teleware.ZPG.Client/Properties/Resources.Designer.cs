@@ -137,6 +137,13 @@ namespace Teleware.ZPG.Client.Properties {
             }
         }
         
+        internal static System.Drawing.Bitmap background_blue {
+            get {
+                object obj = ResourceManager.GetObject("background_blue", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
         internal static System.Drawing.Bitmap BackPalace {
             get {
                 object obj = ResourceManager.GetObject("BackPalace", resourceCulture);
@@ -606,6 +613,13 @@ namespace Teleware.ZPG.Client.Properties {
             }
         }
         
+        internal static System.Drawing.Bitmap SubItemBack {
+            get {
+                object obj = ResourceManager.GetObject("SubItemBack", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
         internal static System.Drawing.Bitmap tab_PageDown {
             get {
                 object obj = ResourceManager.GetObject("tab_PageDown", resourceCulture);
@@ -623,13 +637,6 @@ namespace Teleware.ZPG.Client.Properties {
         internal static System.Drawing.Bitmap tipicon {
             get {
                 object obj = ResourceManager.GetObject("tipicon", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        internal static System.Drawing.Bitmap window_shadow {
-            get {
-                object obj = ResourceManager.GetObject("window_shadow", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
