@@ -52,18 +52,19 @@ namespace Teleware.ZPG.Client
         private bool loginFlag = true;
         private void btnDl_Click(object sender, EventArgs e)
         {
-            if (loginFlag)
-            {
-                this.InvalidateWhenLoginError();
-            }
-            else
-            {
-                this.InvalidateWhenLoginSuccess();
-            }
+            this.txtId.SkinTxt.Focus();
+            //if (loginFlag)
+            //{
+            //    this.InvalidateWhenLoginError();
+            //}
+            //else
+            //{
+            //    this.InvalidateWhenLoginSuccess();
+            //}
             
-            loginFlag = !loginFlag;
-            this.Hide();
-            new MainForm().Show();
+            //loginFlag = !loginFlag;
+            //this.Hide();
+            //new MainForm().Show();
             
         }
 
