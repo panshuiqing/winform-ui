@@ -243,6 +243,33 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <None Include="切图\小版天.png" />
+    <None Include="切图\小版时.png" />
+    <None Include="切图\小版秒.png" />
+    <None Include="切图\小版分.png" />
+    <None Include="切图\小版9.png" />
+    <None Include="切图\小版8.png" />
+    <None Include="切图\小版7.png" />
+    <None Include="切图\小版6.png" />
+    <None Include="切图\小版5.png" />
+    <None Include="切图\小版4.png" />
+    <None Include="切图\小版3.png" />
+    <None Include="切图\小版2.png" />
+    <None Include="切图\小版1.png" />
+    <None Include="切图\小版0.png" />
+    <None Include="切图\大版秒.png" />
+    <None Include="切图\大版分.png" />
+    <None Include="切图\大版9.png" />
+    <None Include="切图\大版8.png" />
+    <None Include="切图\大版7.png" />
+    <None Include="切图\大版6.png" />
+    <None Include="切图\大版5.png" />
+    <None Include="切图\大版4.png" />
+    <None Include="切图\大版3.png" />
+    <None Include="切图\大版2.png" />
+    <None Include="切图\大版1.png" />
+    <None Include="切图\大版0.png" />
+    <None Include="切图\背景.png" />
     <None Include="Resources\SubItemBack.png" />
     <None Include="Resources\SubItemHoverBack.png" />
     <None Include="Resources\news_bg.png" />
