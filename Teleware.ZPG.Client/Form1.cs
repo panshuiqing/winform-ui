@@ -23,8 +23,12 @@ namespace Teleware.ZPG.Client
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            this.toolTip1.SetToolTip(this.textBox1, "情登录");
-            this.skinToolTip1.SetToolTip(this.textBox2, "情登录1111");
+            this.toolTipEx1.SetToolTip(this.textBox1, "请登录");
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            
         }
     }
 }

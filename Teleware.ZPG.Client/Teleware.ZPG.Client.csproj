@@ -56,6 +56,9 @@
     <Compile Include="Controls\NetDisconnectControl.Designer.cs">
       <DependentUpon>NetDisconnectControl.cs</DependentUpon>
     </Compile>
+    <Compile Include="Controls\ToolTipEx.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Controls\TradeFinishControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
