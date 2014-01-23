@@ -4,9 +4,9 @@ using System.Text;
 
 namespace Teleware.ZPG.Client.Controls
 {
-    public class xCheckBox:CCWin.SkinControl.SkinCheckBox
+    public class CheckBoxEx:CCWin.SkinControl.SkinCheckBox
     {
-        public xCheckBox()
+        public CheckBoxEx()
         {
             this.SelectedDownBack = Properties.Resources.checkbox_tick_pushed;
             this.SelectedMouseBack = Properties.Resources.checkbox_tick_hover;

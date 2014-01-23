@@ -52,7 +52,8 @@ namespace Teleware.ZPG.Client
         private bool loginFlag = true;
         private void btnDl_Click(object sender, EventArgs e)
         {
-            this.txtId.SkinTxt.Focus();
+            //skinToolTip1.SetToolTip(this.txtId, "输入竞买号后再登录");
+            toolTip1.SetToolTip(this.txtId, "输入竞买号后再登录");
             //if (loginFlag)
             //{
             //    this.InvalidateWhenLoginError();
@@ -61,11 +62,10 @@ namespace Teleware.ZPG.Client
             //{
             //    this.InvalidateWhenLoginSuccess();
             //}
-            
+
             //loginFlag = !loginFlag;
             //this.Hide();
             //new MainForm().Show();
-            
         }
 
         private void InvalidateWhenLoginSuccess()

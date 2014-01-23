@@ -161,6 +161,25 @@ namespace CCWin
             }
         }
 
+        private bool allowBackStretch;
+        /// <summary>
+        /// 背景是否九宫格绘制
+        /// </summary>
+        [Category("Skin")]
+        [Description("是否从左绘制背景")]
+        public bool AllowBackStretch
+        {
+            get { return allowBackStretch; }
+            set
+            {
+                if (allowBackStretch != value)
+                {
+                    allowBackStretch = value;
+                    this.Invalidate();
+                }
+            }
+        }
+
         private bool backLayout = true;
         /// <summary>
         /// 是否从左绘制背景
@@ -1581,44 +1600,55 @@ namespace CCWin
             Graphics g = e.Graphics;
             g.SmoothingMode = SmoothingMode.HighQuality; //高质量
             g.PixelOffsetMode = PixelOffsetMode.HighQuality;
+
+
             if (Back != null)
             {
-                if (BackLayout)
+                if (AllowBackStretch)
                 {
-                    g.DrawImage(Back, 0, 0, Back.Width, Back.Height);
+                    ImageDrawRect.DrawRect(g, (Bitmap)Back, ClientRectangle, Rectangle.FromLTRB(BackRectangle.X, BackRectangle.Y, BackRectangle.Width, BackRectangle.Height), 1, 1);
                 }
                 else
                 {
-                    g.DrawImage(Back, -(Back.Width - Width), 0, Back.Width, Back.Height);
+                    if (BackLayout)
+                    {
+                        g.DrawImage(Back, 0, 0, Back.Width, Back.Height);
+                    }
+                    else
+                    {
+                        g.DrawImage(Back, -(Back.Width - Width), 0, Back.Width, Back.Height);
+                    }
+
+                    //渐变背景
+                    if (BackShade)
+                    {
+                        //背景从左绘制，阴影右画
+                        if (BackLayout)
+                        {
+                            LinearGradientBrush brush = new LinearGradientBrush(
+                                new Rectangle(Back.Width - 50, 0, 50, Back.Height), BackColor,
+                                Color.Transparent, 180);
+                            LinearGradientBrush brushTwo = new LinearGradientBrush(
+                                new Rectangle(0, Back.Height - 50, Back.Width, 50), BackColor,
+                                Color.Transparent, 270);
+                            g.FillRectangle(brush, Back.Width - brush.Rectangle.Width + 1, 0, brush.Rectangle.Width, brush.Rectangle.Height);
+                            g.FillRectangle(brushTwo, 0, Back.Height - brushTwo.Rectangle.Height + 1, brushTwo.Rectangle.Width, brushTwo.Rectangle.Height);
+                        }
+                        else //背景从右绘制，阴影左画
+                        {
+                            LinearGradientBrush brush = new LinearGradientBrush(
+                                new Rectangle(-(Back.Width - Width), 0, 50, Back.Height), BackColor,
+                                Color.Transparent, 360);
+                            LinearGradientBrush brushTwo = new LinearGradientBrush(
+                                new Rectangle(-(Back.Width - Width), Back.Height - 50, Back.Width, 50), BackColor,
+                                Color.Transparent, 270);
+                            g.FillRectangle(brush, -(Back.Width - Width), 0, brush.Rectangle.Width, brush.Rectangle.Height);
+                            g.FillRectangle(brushTwo, -(Back.Width - Width), Back.Height - 50, brushTwo.Rectangle.Width, brushTwo.Rectangle.Height);
+                        }
+                    }
                 }
             }
-            //渐变背景
-            if (Back != null && BackShade)
-            {
-                //背景从左绘制，阴影右画
-                if (BackLayout)
-                {
-                    LinearGradientBrush brush = new LinearGradientBrush(
-                        new Rectangle(Back.Width - 50, 0, 50, Back.Height), BackColor,
-                        Color.Transparent, 180);
-                    LinearGradientBrush brushTwo = new LinearGradientBrush(
-                        new Rectangle(0, Back.Height - 50, Back.Width, 50), BackColor,
-                        Color.Transparent, 270);
-                    g.FillRectangle(brush, Back.Width - brush.Rectangle.Width + 1, 0, brush.Rectangle.Width, brush.Rectangle.Height);
-                    g.FillRectangle(brushTwo, 0, Back.Height - brushTwo.Rectangle.Height + 1, brushTwo.Rectangle.Width, brushTwo.Rectangle.Height);
-                }
-                else //背景从右绘制，阴影左画
-                {
-                    LinearGradientBrush brush = new LinearGradientBrush(
-                        new Rectangle(-(Back.Width - Width), 0, 50, Back.Height), BackColor,
-                        Color.Transparent, 360);
-                    LinearGradientBrush brushTwo = new LinearGradientBrush(
-                        new Rectangle(-(Back.Width - Width), Back.Height - 50, Back.Width, 50), BackColor,
-                        Color.Transparent, 270);
-                    g.FillRectangle(brush, -(Back.Width - Width), 0, brush.Rectangle.Width, brush.Rectangle.Height);
-                    g.FillRectangle(brushTwo, -(Back.Width - Width), Back.Height - 50, brushTwo.Rectangle.Width, brushTwo.Rectangle.Height);
-                }
-            }
+            
             base.OnPaint(e);
             Rectangle rect = ClientRectangle;
             SkinFormRenderer renderer = Renderer;

@@ -28,25 +28,28 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.menuUsers = new CCWin.SkinControl.SkinContextMenuStrip();
-            this.btnId = new CCWin.SkinControl.SkinButton();
-            this.pnlImgTX = new CCWin.SkinControl.SkinPanel();
+            this.skinToolTip1 = new CCWin.SkinToolTip(this.components);
             this.panel_login_btn = new CCWin.SkinControl.SkinPanel();
             this.imgLoadding = new CCWin.SkinControl.SkinPictureBox();
             this.btnDl = new CCWin.SkinControl.SkinButton();
+            this.pnlImgTX = new CCWin.SkinControl.SkinPanel();
             this.txtPwd = new CCWin.SkinControl.SkinTextBox();
+            this.btn_mima = new CCWin.SkinControl.SkinButton();
+            this.btnZc = new CCWin.SkinControl.SkinButton();
+            this.btnId = new CCWin.SkinControl.SkinButton();
+            this.txtId = new CCWin.SkinControl.SkinTextBox();
             this.panelError = new CCWin.SkinControl.SkinPanel();
             this.pic_icon = new CCWin.SkinControl.SkinPictureBox();
             this.lab_info = new CCWin.SkinControl.SkinLabel();
-            this.btn_mima = new CCWin.SkinControl.SkinButton();
-            this.btnZc = new CCWin.SkinControl.SkinButton();
-            this.txtId = new CCWin.SkinControl.SkinTextBox();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.panel_login_btn.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.imgLoadding)).BeginInit();
             this.txtPwd.SuspendLayout();
+            this.txtId.SuspendLayout();
             this.panelError.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pic_icon)).BeginInit();
-            this.txtId.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuUsers
@@ -80,43 +83,16 @@
             this.menuUsers.TitleRadiusStyle = CCWin.SkinClass.RoundStyle.None;
             this.menuUsers.Closing += new System.Windows.Forms.ToolStripDropDownClosingEventHandler(this.menuUsers_Closing);
             // 
-            // btnId
+            // skinToolTip1
             // 
-            this.btnId.BackColor = System.Drawing.Color.White;
-            this.btnId.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.btnId.ControlState = CCWin.SkinClass.ControlState.Normal;
-            this.btnId.DownBack = global::Teleware.ZPG.Client.Properties.Resources.btn_allow_up;
-            this.btnId.DrawType = CCWin.SkinControl.DrawStyle.Img;
-            this.btnId.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.btnId.Location = new System.Drawing.Point(255, 141);
-            this.btnId.Margin = new System.Windows.Forms.Padding(0);
-            this.btnId.MouseBack = global::Teleware.ZPG.Client.Properties.Resources.btn_allow_down_hover;
-            this.btnId.Name = "btnId";
-            this.btnId.NormlBack = global::Teleware.ZPG.Client.Properties.Resources.btn_allow_down_normal;
-            this.btnId.Size = new System.Drawing.Size(22, 24);
-            this.btnId.TabIndex = 37;
-            this.btnId.UseVisualStyleBackColor = false;
-            this.btnId.MouseDown += new System.Windows.Forms.MouseEventHandler(this.btnId_MouseDown);
-            this.btnId.MouseEnter += new System.EventHandler(this.btnId_MouseEnter);
-            this.btnId.MouseLeave += new System.EventHandler(this.btnId_MouseLeave);
-            // 
-            // pnlImgTX
-            // 
-            this.pnlImgTX.BackColor = System.Drawing.Color.Transparent;
-            this.pnlImgTX.BackgroundImage = global::Teleware.ZPG.Client.Properties.Resources.head;
-            this.pnlImgTX.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pnlImgTX.ControlState = CCWin.SkinClass.ControlState.Normal;
-            this.pnlImgTX.DownBack = null;
-            this.pnlImgTX.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.pnlImgTX.Location = new System.Drawing.Point(24, 139);
-            this.pnlImgTX.Margin = new System.Windows.Forms.Padding(0);
-            this.pnlImgTX.MouseBack = null;
-            this.pnlImgTX.Name = "pnlImgTX";
-            this.pnlImgTX.NormlBack = null;
-            this.pnlImgTX.Radius = 4;
-            this.pnlImgTX.RoundStyle = CCWin.SkinClass.RoundStyle.All;
-            this.pnlImgTX.Size = new System.Drawing.Size(60, 60);
-            this.pnlImgTX.TabIndex = 11;
+            this.skinToolTip1.AutoPopDelay = 5000;
+            this.skinToolTip1.Image = global::Teleware.ZPG.Client.Properties.Resources.store_guide_bkg;
+            this.skinToolTip1.InitialDelay = 500;
+            this.skinToolTip1.OwnerDraw = true;
+            this.skinToolTip1.ReshowDelay = 800;
+            this.skinToolTip1.TitleFont = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Bold);
+            this.skinToolTip1.ToolTipIcon = System.Windows.Forms.ToolTipIcon.Info;
+            this.skinToolTip1.ToolTipTitle = "111";
             // 
             // panel_login_btn
             // 
@@ -171,6 +147,24 @@
             this.btnDl.UseVisualStyleBackColor = false;
             this.btnDl.Click += new System.EventHandler(this.btnDl_Click);
             // 
+            // pnlImgTX
+            // 
+            this.pnlImgTX.BackColor = System.Drawing.Color.Transparent;
+            this.pnlImgTX.BackgroundImage = global::Teleware.ZPG.Client.Properties.Resources.head;
+            this.pnlImgTX.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pnlImgTX.ControlState = CCWin.SkinClass.ControlState.Normal;
+            this.pnlImgTX.DownBack = null;
+            this.pnlImgTX.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.pnlImgTX.Location = new System.Drawing.Point(24, 139);
+            this.pnlImgTX.Margin = new System.Windows.Forms.Padding(0);
+            this.pnlImgTX.MouseBack = null;
+            this.pnlImgTX.Name = "pnlImgTX";
+            this.pnlImgTX.NormlBack = null;
+            this.pnlImgTX.Radius = 4;
+            this.pnlImgTX.RoundStyle = CCWin.SkinClass.RoundStyle.All;
+            this.pnlImgTX.Size = new System.Drawing.Size(60, 60);
+            this.pnlImgTX.TabIndex = 11;
+            // 
             // txtPwd
             // 
             this.txtPwd.BackColor = System.Drawing.Color.Transparent;
@@ -202,6 +196,94 @@
             this.txtPwd.SkinTxt.WaterText = "密码";
             this.txtPwd.TabIndex = 33;
             this.txtPwd.IconClick += new System.EventHandler(this.txtPwd_IconClick);
+            // 
+            // btn_mima
+            // 
+            this.btn_mima.BackColor = System.Drawing.Color.Transparent;
+            this.btn_mima.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(21)))), ((int)(((byte)(26)))));
+            this.btn_mima.ControlState = CCWin.SkinClass.ControlState.Normal;
+            this.btn_mima.Create = true;
+            this.btn_mima.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_mima.DownBack = global::Teleware.ZPG.Client.Properties.Resources.btn_mima_press;
+            this.btn_mima.DrawType = CCWin.SkinControl.DrawStyle.Img;
+            this.btn_mima.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.btn_mima.Location = new System.Drawing.Point(287, 180);
+            this.btn_mima.Margin = new System.Windows.Forms.Padding(0);
+            this.btn_mima.MouseBack = global::Teleware.ZPG.Client.Properties.Resources.btn_mima_hover;
+            this.btn_mima.Name = "btn_mima";
+            this.btn_mima.NormlBack = global::Teleware.ZPG.Client.Properties.Resources.btn_mima_normal;
+            this.btn_mima.Size = new System.Drawing.Size(51, 16);
+            this.btn_mima.TabIndex = 6;
+            this.btn_mima.UseVisualStyleBackColor = false;
+            // 
+            // btnZc
+            // 
+            this.btnZc.BackColor = System.Drawing.Color.Transparent;
+            this.btnZc.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(21)))), ((int)(((byte)(26)))));
+            this.btnZc.ControlState = CCWin.SkinClass.ControlState.Normal;
+            this.btnZc.Create = true;
+            this.btnZc.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnZc.DownBack = global::Teleware.ZPG.Client.Properties.Resources.btn_zhuce_press;
+            this.btnZc.DrawType = CCWin.SkinControl.DrawStyle.Img;
+            this.btnZc.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.btnZc.Location = new System.Drawing.Point(288, 145);
+            this.btnZc.Margin = new System.Windows.Forms.Padding(0);
+            this.btnZc.MouseBack = global::Teleware.ZPG.Client.Properties.Resources.btn_zhuce_hover;
+            this.btnZc.Name = "btnZc";
+            this.btnZc.NormlBack = global::Teleware.ZPG.Client.Properties.Resources.btn_zhuce_normal;
+            this.btnZc.Size = new System.Drawing.Size(51, 16);
+            this.btnZc.TabIndex = 6;
+            this.btnZc.UseVisualStyleBackColor = false;
+            // 
+            // btnId
+            // 
+            this.btnId.BackColor = System.Drawing.Color.White;
+            this.btnId.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btnId.ControlState = CCWin.SkinClass.ControlState.Normal;
+            this.btnId.DownBack = global::Teleware.ZPG.Client.Properties.Resources.btn_allow_up;
+            this.btnId.DrawType = CCWin.SkinControl.DrawStyle.Img;
+            this.btnId.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.btnId.Location = new System.Drawing.Point(255, 141);
+            this.btnId.Margin = new System.Windows.Forms.Padding(0);
+            this.btnId.MouseBack = global::Teleware.ZPG.Client.Properties.Resources.btn_allow_down_hover;
+            this.btnId.Name = "btnId";
+            this.btnId.NormlBack = global::Teleware.ZPG.Client.Properties.Resources.btn_allow_down_normal;
+            this.btnId.Size = new System.Drawing.Size(22, 24);
+            this.btnId.TabIndex = 37;
+            this.btnId.UseVisualStyleBackColor = false;
+            this.btnId.MouseDown += new System.Windows.Forms.MouseEventHandler(this.btnId_MouseDown);
+            this.btnId.MouseEnter += new System.EventHandler(this.btnId_MouseEnter);
+            this.btnId.MouseLeave += new System.EventHandler(this.btnId_MouseLeave);
+            // 
+            // txtId
+            // 
+            this.txtId.BackColor = System.Drawing.Color.Transparent;
+            this.txtId.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.txtId.Icon = null;
+            this.txtId.IconIsButton = false;
+            this.txtId.IconMouseState = CCWin.SkinClass.ControlState.Normal;
+            this.txtId.Location = new System.Drawing.Point(94, 139);
+            this.txtId.Margin = new System.Windows.Forms.Padding(0);
+            this.txtId.MinimumSize = new System.Drawing.Size(28, 28);
+            this.txtId.MouseBack = null;
+            this.txtId.MouseState = CCWin.SkinClass.ControlState.Normal;
+            this.txtId.Name = "txtId";
+            this.txtId.NormlBack = null;
+            this.txtId.Padding = new System.Windows.Forms.Padding(5, 5, 28, 5);
+            this.txtId.Size = new System.Drawing.Size(185, 28);
+            // 
+            // txtId.BaseText
+            // 
+            this.txtId.SkinTxt.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtId.SkinTxt.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.txtId.SkinTxt.Font = new System.Drawing.Font("微软雅黑", 9.75F);
+            this.txtId.SkinTxt.Location = new System.Drawing.Point(5, 5);
+            this.txtId.SkinTxt.Name = "BaseText";
+            this.txtId.SkinTxt.Size = new System.Drawing.Size(152, 18);
+            this.txtId.SkinTxt.TabIndex = 0;
+            this.txtId.SkinTxt.WaterColor = System.Drawing.Color.FromArgb(((int)(((byte)(127)))), ((int)(((byte)(127)))), ((int)(((byte)(127)))));
+            this.txtId.SkinTxt.WaterText = "竞买号";
+            this.txtId.TabIndex = 32;
             // 
             // panelError
             // 
@@ -243,74 +325,6 @@
             this.lab_info.TabIndex = 0;
             this.lab_info.Text = "登录失败，用户名或密码错误";
             // 
-            // btn_mima
-            // 
-            this.btn_mima.BackColor = System.Drawing.Color.Transparent;
-            this.btn_mima.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(21)))), ((int)(((byte)(26)))));
-            this.btn_mima.ControlState = CCWin.SkinClass.ControlState.Normal;
-            this.btn_mima.Create = true;
-            this.btn_mima.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_mima.DownBack = global::Teleware.ZPG.Client.Properties.Resources.btn_mima_press;
-            this.btn_mima.DrawType = CCWin.SkinControl.DrawStyle.Img;
-            this.btn_mima.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.btn_mima.Location = new System.Drawing.Point(287, 180);
-            this.btn_mima.Margin = new System.Windows.Forms.Padding(0);
-            this.btn_mima.MouseBack = global::Teleware.ZPG.Client.Properties.Resources.btn_mima_hover;
-            this.btn_mima.Name = "btn_mima";
-            this.btn_mima.NormlBack = global::Teleware.ZPG.Client.Properties.Resources.btn_mima_normal;
-            this.btn_mima.Size = new System.Drawing.Size(51, 16);
-            this.btn_mima.TabIndex = 6;
-            this.btn_mima.UseVisualStyleBackColor = false;
-            // 
-            // btnZc
-            // 
-            this.btnZc.BackColor = System.Drawing.Color.Transparent;
-            this.btnZc.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(21)))), ((int)(((byte)(26)))));
-            this.btnZc.ControlState = CCWin.SkinClass.ControlState.Normal;
-            this.btnZc.Create = true;
-            this.btnZc.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnZc.DownBack = global::Teleware.ZPG.Client.Properties.Resources.btn_zhuce_press;
-            this.btnZc.DrawType = CCWin.SkinControl.DrawStyle.Img;
-            this.btnZc.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.btnZc.Location = new System.Drawing.Point(288, 145);
-            this.btnZc.Margin = new System.Windows.Forms.Padding(0);
-            this.btnZc.MouseBack = global::Teleware.ZPG.Client.Properties.Resources.btn_zhuce_hover;
-            this.btnZc.Name = "btnZc";
-            this.btnZc.NormlBack = global::Teleware.ZPG.Client.Properties.Resources.btn_zhuce_normal;
-            this.btnZc.Size = new System.Drawing.Size(51, 16);
-            this.btnZc.TabIndex = 6;
-            this.btnZc.UseVisualStyleBackColor = false;
-            // 
-            // txtId
-            // 
-            this.txtId.BackColor = System.Drawing.Color.Transparent;
-            this.txtId.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.txtId.Icon = null;
-            this.txtId.IconIsButton = false;
-            this.txtId.IconMouseState = CCWin.SkinClass.ControlState.Normal;
-            this.txtId.Location = new System.Drawing.Point(94, 139);
-            this.txtId.Margin = new System.Windows.Forms.Padding(0);
-            this.txtId.MinimumSize = new System.Drawing.Size(28, 28);
-            this.txtId.MouseBack = null;
-            this.txtId.MouseState = CCWin.SkinClass.ControlState.Normal;
-            this.txtId.Name = "txtId";
-            this.txtId.NormlBack = null;
-            this.txtId.Padding = new System.Windows.Forms.Padding(5, 5, 28, 5);
-            this.txtId.Size = new System.Drawing.Size(185, 28);
-            // 
-            // txtId.BaseText
-            // 
-            this.txtId.SkinTxt.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtId.SkinTxt.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txtId.SkinTxt.Font = new System.Drawing.Font("微软雅黑", 9.75F);
-            this.txtId.SkinTxt.Location = new System.Drawing.Point(5, 5);
-            this.txtId.SkinTxt.Name = "BaseText";
-            this.txtId.SkinTxt.Size = new System.Drawing.Size(152, 18);
-            this.txtId.SkinTxt.TabIndex = 0;
-            this.txtId.SkinTxt.WaterColor = System.Drawing.Color.FromArgb(((int)(((byte)(127)))), ((int)(((byte)(127)))), ((int)(((byte)(127)))));
-            this.txtId.SkinTxt.WaterText = "竞买号";
-            this.txtId.TabIndex = 32;
-            // 
             // LoginForm
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -335,10 +349,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.imgLoadding)).EndInit();
             this.txtPwd.ResumeLayout(false);
             this.txtPwd.PerformLayout();
-            this.panelError.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pic_icon)).EndInit();
             this.txtId.ResumeLayout(false);
             this.txtId.PerformLayout();
+            this.panelError.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pic_icon)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -358,6 +372,8 @@
         private CCWin.SkinControl.SkinContextMenuStrip menuUsers;
         private CCWin.SkinControl.SkinPanel panel_login_btn;
         private CCWin.SkinControl.SkinButton btnId;
+        private CCWin.SkinToolTip skinToolTip1;
+        private System.Windows.Forms.ToolTip toolTip1;
 
     }
 }

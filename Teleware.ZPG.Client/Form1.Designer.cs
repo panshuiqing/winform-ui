@@ -28,32 +28,87 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.unStartControl1 = new Teleware.ZPG.Client.Controls.TradeUnStartControl();
+            this.components = new System.ComponentModel.Container();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.button1 = new System.Windows.Forms.Button();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.skinToolTip1 = new CCWin.SkinToolTip(this.components);
+            this.textBox3 = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
-            // unStartControl1
+            // toolTip1
             // 
-            this.unStartControl1.BackColor = System.Drawing.Color.Transparent;
-            this.unStartControl1.Location = new System.Drawing.Point(46, 81);
-            this.unStartControl1.Name = "unStartControl1";
-            this.unStartControl1.Size = new System.Drawing.Size(898, 494);
-            this.unStartControl1.TabIndex = 0;
+            this.toolTip1.BackColor = System.Drawing.Color.DarkGreen;
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(341, 179);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(100, 21);
+            this.textBox1.TabIndex = 0;
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(415, 319);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 1;
+            this.button1.Text = "button1";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // textBox2
+            // 
+            this.textBox2.Location = new System.Drawing.Point(493, 179);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(100, 21);
+            this.textBox2.TabIndex = 0;
+            // 
+            // skinToolTip1
+            // 
+            this.skinToolTip1.AutoPopDelay = 5000;
+            this.skinToolTip1.Image = global::Teleware.ZPG.Client.Properties.Resources.store_guide_bkg;
+            this.skinToolTip1.InitialDelay = 500;
+            this.skinToolTip1.Opacity = 0.65D;
+            this.skinToolTip1.OwnerDraw = true;
+            this.skinToolTip1.ReshowDelay = 800;
+            this.skinToolTip1.TitleFont = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Bold);
+            this.skinToolTip1.ToolTipIcon = System.Windows.Forms.ToolTipIcon.Info;
+            // 
+            // textBox3
+            // 
+            this.textBox3.Location = new System.Drawing.Point(638, 179);
+            this.textBox3.Name = "textBox3";
+            this.textBox3.Size = new System.Drawing.Size(100, 21);
+            this.textBox3.TabIndex = 0;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1038, 722);
-            this.Controls.Add(this.unStartControl1);
+            this.Controls.Add(this.button1);
+            this.Controls.Add(this.textBox3);
+            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.textBox1);
             this.Name = "Form1";
             this.Text = "Form1";
+            this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
 
-        private Controls.TradeUnStartControl unStartControl1;
+        private System.Windows.Forms.ToolTip toolTip1;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Button button1;
+        private CCWin.SkinToolTip skinToolTip1;
+        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox textBox3;
+
 
 
     }

@@ -41,13 +41,13 @@ namespace Teleware.ZPG.Client
         private Rectangle textRect;
         private int SPACING = 12;
         //按钮底部高度
-        private int BOTTOM_HEIGHT = 40;
+        private int BOTTOM_HEIGHT = 35;
         //按钮高度
-        private int BUTTON_HEIGHT = 28;
+        private int BUTTON_HEIGHT = 26;
         //图片与文字水平间隔
         private int TEXT_IMAGE_SPACING = 4;
-        private Size MIN_SIZE = new Size(270, 160);
-        private Size MAX_SIZE = new Size(370, 240);
+        private Size MIN_SIZE = new Size(260, 160);
+        private Size MAX_SIZE = new Size(400, 230);
         private TextFormatFlags TEXT_FLAGS =
                     TextFormatFlags.HidePrefix | TextFormatFlags.ExternalLeading |
                     TextFormatFlags.WordBreak | TextFormatFlags.EndEllipsis;
@@ -100,11 +100,6 @@ namespace Teleware.ZPG.Client
         private void MessageBoxForm_Paint(object sender, PaintEventArgs e)
         {
             Graphics g = e.Graphics;
-            //绘制中间白色分割条
-            using (Pen whitePen = new Pen(Color.FromArgb(255, Color.White), 0.1f))
-            {
-                g.DrawLine(whitePen, new Point(0, this.Height - BOTTOM_HEIGHT), new Point(this.Width, this.Height - BOTTOM_HEIGHT));
-            }
             //画图标
             if (message.Image != null)
             {
@@ -113,10 +108,7 @@ namespace Teleware.ZPG.Client
             //画字
             if (!string.IsNullOrEmpty(message.Text))
             {
-                TextFormatFlags flags =
-                    TextFormatFlags.HidePrefix | TextFormatFlags.ExternalLeading |
-                    TextFormatFlags.WordBreak | TextFormatFlags.EndEllipsis;
-                TextRenderer.DrawText(g, message.Text, Font, textRect, ForeColor, flags);
+                TextRenderer.DrawText(g, message.Text, this.Font, this.textRect, this.ForeColor, TEXT_FLAGS);
             }
         }
 
@@ -282,7 +274,7 @@ namespace Teleware.ZPG.Client
             int nextButtonPos = DisplayRectangle.Width - buttonsTotalWidth;
             for (int i = 0; i < buttonArray.Length; ++i)
             {
-                buttonArray[i].Location = new Point(nextButtonPos, this.Height - buttonArray[i].Height - 6);
+                buttonArray[i].Location = new Point(nextButtonPos, this.Height - buttonArray[i].Height - 4);
                 nextButtonPos += buttonArray[i].Width + SPACING;
             }
         }
@@ -295,7 +287,7 @@ namespace Teleware.ZPG.Client
             button.NormlBack = Properties.Resources.btn_normal;
             button.DrawType = CCWin.SkinControl.DrawStyle.Img;
             button.Palace = true;
-            button.Size = new Size(70, BUTTON_HEIGHT);
+            button.Size = new Size(60, BUTTON_HEIGHT);
             button.UseVisualStyleBackColor = false;
             button.InheritColor = true;
             button.ForeColorSuit = true;
@@ -416,10 +408,14 @@ namespace Teleware.ZPG.Client
             // 
             // MessageBoxForm
             // 
-            this.Back = global::Teleware.ZPG.Client.Properties.Resources.background_blue;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(239)))), ((int)(((byte)(249)))));
+            this.AllowBackStretch = true;
+            this.Back = global::Teleware.ZPG.Client.Properties.Resources.bluebase;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(218)))), ((int)(((byte)(234)))), ((int)(((byte)(245)))));
             this.BackgroundImage = null;
-            this.ClientSize = new System.Drawing.Size(270, 160);
+            this.BackRectangle = new System.Drawing.Rectangle(50, 30, 200, 100);
+            this.BackShade = false;
+            this.BorderPalace = null;
+            this.ClientSize = new System.Drawing.Size(400, 230);
             this.ControlBoxOffset = new System.Drawing.Point(0, -1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.KeyPreview = true;
