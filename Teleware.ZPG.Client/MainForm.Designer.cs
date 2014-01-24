@@ -258,8 +258,7 @@
             // panel_main
             // 
             this.panel_main.BackColor = System.Drawing.Color.White;
-            this.panel_main.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.panel_main.BackRectangle = new System.Drawing.Rectangle(1, 1, 1, 1);
+            this.panel_main.BackRectangle = new System.Drawing.Rectangle(5, 5, 10, 10);
             this.panel_main.Controls.Add(this.skinLabel11);
             this.panel_main.Controls.Add(this.skinLabel7);
             this.panel_main.Controls.Add(this.listView1);
@@ -596,7 +595,7 @@
             this.webBrowser_tradeDetail.MinimumSize = new System.Drawing.Size(20, 20);
             this.webBrowser_tradeDetail.Name = "webBrowser_tradeDetail";
             this.webBrowser_tradeDetail.ScrollBarsEnabled = false;
-            this.webBrowser_tradeDetail.Size = new System.Drawing.Size(898, 494);
+            this.webBrowser_tradeDetail.Size = new System.Drawing.Size(200, 64);
             this.webBrowser_tradeDetail.TabIndex = 0;
             // 
             // tabPage_affiche
@@ -619,7 +618,7 @@
             this.webBrowser_affiche.Margin = new System.Windows.Forms.Padding(0);
             this.webBrowser_affiche.Name = "webBrowser_affiche";
             this.webBrowser_affiche.ScrollBarsEnabled = false;
-            this.webBrowser_affiche.Size = new System.Drawing.Size(898, 494);
+            this.webBrowser_affiche.Size = new System.Drawing.Size(200, 64);
             this.webBrowser_affiche.TabIndex = 0;
             // 
             // tabPage_tradeResult
@@ -642,7 +641,7 @@
             this.webBrowser_tradeResult.MinimumSize = new System.Drawing.Size(20, 20);
             this.webBrowser_tradeResult.Name = "webBrowser_tradeResult";
             this.webBrowser_tradeResult.ScrollBarsEnabled = false;
-            this.webBrowser_tradeResult.Size = new System.Drawing.Size(898, 494);
+            this.webBrowser_tradeResult.Size = new System.Drawing.Size(200, 64);
             this.webBrowser_tradeResult.TabIndex = 0;
             // 
             // tabPage_applyInfo
@@ -665,7 +664,7 @@
             this.webBrowser_applyInfo.MinimumSize = new System.Drawing.Size(20, 20);
             this.webBrowser_applyInfo.Name = "webBrowser_applyInfo";
             this.webBrowser_applyInfo.ScrollBarsEnabled = false;
-            this.webBrowser_applyInfo.Size = new System.Drawing.Size(898, 494);
+            this.webBrowser_applyInfo.Size = new System.Drawing.Size(200, 64);
             this.webBrowser_applyInfo.TabIndex = 0;
             // 
             // tabPage1

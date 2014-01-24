@@ -15,20 +15,21 @@ namespace Teleware.ZPG.Client
             InitializeComponent();
         }
 
-      
+        ToolTipForm tipForm = null;
+
         private void button1_Click(object sender, EventArgs e)
         {
-            
+            if (tipForm != null)
+            {
+                tipForm.Close();
+            }
+            tipForm = new ToolTipForm();
+            tipForm.SetToolTip(this.textBox1, "登录登录");
         }
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            this.toolTipEx1.SetToolTip(this.textBox1, "请登录");
-        }
 
-        private void button2_Click(object sender, EventArgs e)
-        {
-            
         }
     }
 }

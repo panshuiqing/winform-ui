@@ -10,20 +10,21 @@ namespace Teleware.ZPG.Client
 {
     public partial class ToolTipForm : SkinForm
     {
-        private Size MIN_SIZE = new Size(181,37);
-        private Size MAX_SIZE = new Size(181, 87);
+        private Size MIN_SIZE = new Size(121,45);
+        private Size MAX_SIZE = new Size(300, 80);
         private int SPACING = 4;
         private TextFormatFlags TEXT_FLAGS =
                     TextFormatFlags.HidePrefix | TextFormatFlags.ExternalLeading |
                     TextFormatFlags.WordBreak | TextFormatFlags.EndEllipsis;
         private string caption;
         private Rectangle textRect;
-        private int timeout = 0;
 
         public ToolTipForm()
         {
             InitializeComponent();
         }
+
+
     
         public void SetToolTip(Control control,string caption)
         {
@@ -32,10 +33,10 @@ namespace Teleware.ZPG.Client
             CalcFinalSizes();
             var point = control.Parent.PointToScreen(control.Location);
             int x = point.X + (control.Width / 2) - (this.Width / 2);
-            int y = point.Y - this.Height;
+            int y = point.Y - this.Height - 2;
             this.Location = new Point(x, y);
             this.StartPosition = FormStartPosition.Manual;
-            this.Show(control);
+            this.Show();
         }
 
         protected override void OnDeactivate(EventArgs e)

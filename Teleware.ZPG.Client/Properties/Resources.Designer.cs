@@ -347,6 +347,13 @@ namespace Teleware.ZPG.Client.Properties {
             }
         }
         
+        internal static System.Drawing.Bitmap Edit_Tips_3 {
+            get {
+                object obj = ResourceManager.GetObject("Edit_Tips_3", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
         internal static System.Drawing.Bitmap ellipsis {
             get {
                 object obj = ResourceManager.GetObject("ellipsis", resourceCulture);
@@ -616,6 +623,13 @@ namespace Teleware.ZPG.Client.Properties {
         internal static System.Drawing.Bitmap r9 {
             get {
                 object obj = ResourceManager.GetObject("r9", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap skin_tip {
+            get {
+                object obj = ResourceManager.GetObject("skin_tip", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

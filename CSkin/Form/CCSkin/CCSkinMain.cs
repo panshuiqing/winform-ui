@@ -1601,7 +1601,6 @@ namespace CCWin
             g.SmoothingMode = SmoothingMode.HighQuality; //高质量
             g.PixelOffsetMode = PixelOffsetMode.HighQuality;
 
-
             if (Back != null)
             {
                 if (AllowBackStretch)

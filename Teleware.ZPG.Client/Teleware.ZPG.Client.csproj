@@ -46,6 +46,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BackgroundPanel.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Common.cs" />
     <Compile Include="Controls\ListViewEx.cs">
       <SubType>Component</SubType>
@@ -56,8 +59,11 @@
     <Compile Include="Controls\NetDisconnectControl.Designer.cs">
       <DependentUpon>NetDisconnectControl.cs</DependentUpon>
     </Compile>
-    <Compile Include="Controls\ToolTipEx.cs">
-      <SubType>Component</SubType>
+    <Compile Include="Controls\ToolTipControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\ToolTipControl.Designer.cs">
+      <DependentUpon>ToolTipControl.cs</DependentUpon>
     </Compile>
     <Compile Include="Controls\TradeFinishControl.cs">
       <SubType>UserControl</SubType>
@@ -136,6 +142,9 @@
     </Compile>
     <EmbeddedResource Include="Controls\NetDisconnectControl.resx">
       <DependentUpon>NetDisconnectControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\ToolTipControl.resx">
+      <DependentUpon>ToolTipControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Controls\TradeFinishControl.resx">
       <DependentUpon>TradeFinishControl.cs</DependentUpon>
@@ -255,6 +264,9 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\skin_tip.png" />
+    <None Include="Resources\toolbar_normal.png" />
+    <None Include="Resources\safe_subtab_btn1.png" />
     <None Include="Resources\store_guide_bkg.png" />
     <None Include="切图\小版天.png" />
     <None Include="切图\小版时.png" />
@@ -306,6 +318,8 @@
     <None Include="Resources\AreaMainPanel.png" />
     <None Include="Resources\background_blue.png" />
     <None Include="Resources\bluebase.png" />
+    <None Include="Resources\5-120601092207.gif" />
+    <None Include="Resources\5-120601092234.gif" />
     <Content Include="Resources\btn_allow_down_hover.png" />
     <Content Include="Resources\btn_allow_down_normal.png" />
     <Content Include="Resources\btn_allow_up.png" />
@@ -333,6 +347,7 @@
     <Content Include="Resources\8.png" />
     <Content Include="Resources\9.png" />
     <None Include="Resources\countdown.png" />
+    <None Include="Resources\Edit_Tips_3.png" />
     <Content Include="Resources\ellipsis.gif" />
     <Content Include="Resources\head.png" />
     <None Include="Resources\hot_background.png" />

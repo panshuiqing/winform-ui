@@ -35,13 +35,13 @@
             this.AllowBackStretch = true;
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Back = global::Teleware.ZPG.Client.Properties.Resources.store_guide_bkg;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(189)))), ((int)(((byte)(201)))), ((int)(((byte)(206)))));
+            this.Back = global::Teleware.ZPG.Client.Properties.Resources.skin_tip;
+            this.BackColor = System.Drawing.Color.White;
             this.BackgroundImage = null;
-            this.BackRectangle = new System.Drawing.Rectangle(10, 15, 100, 15);
+            this.BackRectangle = new System.Drawing.Rectangle(10, 10, 100, 10);
             this.BorderPalace = null;
             this.CaptionHeight = 4;
-            this.ClientSize = new System.Drawing.Size(488, 103);
+            this.ClientSize = new System.Drawing.Size(121, 45);
             this.CloseDownBack = null;
             this.CloseMouseBack = null;
             this.CloseNormlBack = null;
@@ -66,7 +66,6 @@
             this.ShowBorder = false;
             this.ShowIcon = false;
             this.ShowInTaskbar = false;
-            this.Special = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "";
             this.TopMost = true;
