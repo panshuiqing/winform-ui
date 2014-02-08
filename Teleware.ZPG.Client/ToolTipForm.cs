@@ -10,39 +10,41 @@ namespace Teleware.ZPG.Client
 {
     public partial class ToolTipForm : SkinForm
     {
-        private Size MIN_SIZE = new Size(121,45);
-        private Size MAX_SIZE = new Size(300, 80);
+        private string caption;
         private int SPACING = 4;
+        private Size MIN_SIZE = new Size(181, 37);
+        private Size MAX_SIZE = new Size(400, 160);
+        private Rectangle textRect = Rectangle.Empty;
         private TextFormatFlags TEXT_FLAGS =
                     TextFormatFlags.HidePrefix | TextFormatFlags.ExternalLeading |
                     TextFormatFlags.WordBreak | TextFormatFlags.EndEllipsis;
-        private string caption;
-        private Rectangle textRect;
 
         public ToolTipForm()
         {
             InitializeComponent();
         }
 
-
-    
-        public void SetToolTip(Control control,string caption)
+        public void Show(string text, Control control)
         {
-            if (caption == null) throw new ArgumentNullException("control");
-            this.caption = caption;
+            this.Show(text, control, 0);
+        }
+
+        public void Show(string text, Control control, int duration)
+        {
+            if (text == null) throw new ArgumentNullException("control");
+            this.caption = text;
             CalcFinalSizes();
-            var point = control.Parent.PointToScreen(control.Location);
-            int x = point.X + (control.Width / 2) - (this.Width / 2);
-            int y = point.Y - this.Height - 2;
-            this.Location = new Point(x, y);
-            this.StartPosition = FormStartPosition.Manual;
+            var point = control.PointToScreen(control.Location);
+            int x = point.X;
+            int y = point.Y - this.Height;
+            this.Location = new Point(x, 200);
             this.Show();
         }
 
         protected override void OnDeactivate(EventArgs e)
         {
-            //this.Close();
             base.OnDeactivate(e);
+            //this.Close();
         }
 
         protected override void OnPaint(PaintEventArgs e)
@@ -59,7 +61,7 @@ namespace Teleware.ZPG.Client
         {
             Size textSize = GetTextSize();
             var width = 2 * SPACING + textSize.Width;
-            var height = 2 * SPACING + textSize.Height;
+            var height = 2 * SPACING + textSize.Height + 6;
             if (width > MAX_SIZE.Width)
             {
                 width = MAX_SIZE.Width;
@@ -77,11 +79,10 @@ namespace Teleware.ZPG.Client
                 height = MIN_SIZE.Height;
             }
             this.Size = new Size(width, height);
-            this.TopMost = true;
             var textWidth = Math.Min(this.Width - 2 * SPACING, textSize.Width);
             var textHeight = Math.Min(this.Height - 2 * SPACING, textSize.Height);
             var textLeft = (this.Width - textWidth) / 2;
-            var textTop = (this.Height - textHeight) / 2;
+            var textTop = (this.Height - textHeight - 6) / 2;
             this.textRect = new Rectangle(textLeft, textTop, textWidth, textHeight);
         }
 

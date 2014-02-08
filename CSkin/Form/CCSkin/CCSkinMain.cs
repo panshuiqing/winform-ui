@@ -161,20 +161,21 @@ namespace CCWin
             }
         }
 
-        private bool allowBackStretch;
+        private Rectangle backrectangle = Rectangle.Empty;
         /// <summary>
-        /// 背景是否九宫格绘制
+        /// 背景九宫绘画区域
         /// </summary>
         [Category("Skin")]
-        [Description("是否从左绘制背景")]
-        public bool AllowBackStretch
+        [DefaultValue(typeof(Rectangle), "10,10,10,10")]
+        [Description("背景九宫绘画区域")]
+        public Rectangle BackRectangle
         {
-            get { return allowBackStretch; }
+            get { return backrectangle; }
             set
             {
-                if (allowBackStretch != value)
+                if (backrectangle != value)
                 {
-                    allowBackStretch = value;
+                    backrectangle = value;
                     this.Invalidate();
                 }
             }
@@ -359,21 +360,21 @@ namespace CCWin
             }
         }
 
-        private Rectangle backrectangle = new Rectangle(10, 10, 10, 10);
+        private Rectangle backPalaceRectangle = new Rectangle(10, 10, 10, 10);
         /// <summary>
         /// 质感层九宫绘画区域
         /// </summary>
         [Category("Skin")]
         [DefaultValue(typeof(Rectangle), "10,10,10,10")]
         [Description("质感层九宫绘画区域")]
-        public Rectangle BackRectangle
+        public Rectangle BackPalaceRectangle
         {
-            get { return backrectangle; }
+            get { return backPalaceRectangle; }
             set
             {
-                if (backrectangle != value)
+                if (backPalaceRectangle != value)
                 {
-                    backrectangle = value;
+                    backPalaceRectangle = value;
                     this.Invalidate();
                 }
             }
@@ -1603,7 +1604,7 @@ namespace CCWin
 
             if (Back != null)
             {
-                if (AllowBackStretch)
+                if (BackRectangle != Rectangle.Empty)
                 {
                     ImageDrawRect.DrawRect(g, (Bitmap)Back, ClientRectangle, Rectangle.FromLTRB(BackRectangle.X, BackRectangle.Y, BackRectangle.Width, BackRectangle.Height), 1, 1);
                 }
@@ -1617,33 +1618,32 @@ namespace CCWin
                     {
                         g.DrawImage(Back, -(Back.Width - Width), 0, Back.Width, Back.Height);
                     }
-
-                    //渐变背景
-                    if (BackShade)
+                }
+                //渐变背景
+                if (BackShade)
+                {
+                    //背景从左绘制，阴影右画
+                    if (BackLayout)
                     {
-                        //背景从左绘制，阴影右画
-                        if (BackLayout)
-                        {
-                            LinearGradientBrush brush = new LinearGradientBrush(
-                                new Rectangle(Back.Width - 50, 0, 50, Back.Height), BackColor,
-                                Color.Transparent, 180);
-                            LinearGradientBrush brushTwo = new LinearGradientBrush(
-                                new Rectangle(0, Back.Height - 50, Back.Width, 50), BackColor,
-                                Color.Transparent, 270);
-                            g.FillRectangle(brush, Back.Width - brush.Rectangle.Width + 1, 0, brush.Rectangle.Width, brush.Rectangle.Height);
-                            g.FillRectangle(brushTwo, 0, Back.Height - brushTwo.Rectangle.Height + 1, brushTwo.Rectangle.Width, brushTwo.Rectangle.Height);
-                        }
-                        else //背景从右绘制，阴影左画
-                        {
-                            LinearGradientBrush brush = new LinearGradientBrush(
-                                new Rectangle(-(Back.Width - Width), 0, 50, Back.Height), BackColor,
-                                Color.Transparent, 360);
-                            LinearGradientBrush brushTwo = new LinearGradientBrush(
-                                new Rectangle(-(Back.Width - Width), Back.Height - 50, Back.Width, 50), BackColor,
-                                Color.Transparent, 270);
-                            g.FillRectangle(brush, -(Back.Width - Width), 0, brush.Rectangle.Width, brush.Rectangle.Height);
-                            g.FillRectangle(brushTwo, -(Back.Width - Width), Back.Height - 50, brushTwo.Rectangle.Width, brushTwo.Rectangle.Height);
-                        }
+                        LinearGradientBrush brush = new LinearGradientBrush(
+                            new Rectangle(Back.Width - 50, 0, 50, Back.Height), BackColor,
+                            Color.Transparent, 180);
+                        LinearGradientBrush brushTwo = new LinearGradientBrush(
+                            new Rectangle(0, Back.Height - 50, Back.Width, 50), BackColor,
+                            Color.Transparent, 270);
+                        g.FillRectangle(brush, Back.Width - brush.Rectangle.Width + 1, 0, brush.Rectangle.Width, brush.Rectangle.Height);
+                        g.FillRectangle(brushTwo, 0, Back.Height - brushTwo.Rectangle.Height + 1, brushTwo.Rectangle.Width, brushTwo.Rectangle.Height);
+                    }
+                    else //背景从右绘制，阴影左画
+                    {
+                        LinearGradientBrush brush = new LinearGradientBrush(
+                            new Rectangle(-(Back.Width - Width), 0, 50, Back.Height), BackColor,
+                            Color.Transparent, 360);
+                        LinearGradientBrush brushTwo = new LinearGradientBrush(
+                            new Rectangle(-(Back.Width - Width), Back.Height - 50, Back.Width, 50), BackColor,
+                            Color.Transparent, 270);
+                        g.FillRectangle(brush, -(Back.Width - Width), 0, brush.Rectangle.Width, brush.Rectangle.Height);
+                        g.FillRectangle(brushTwo, -(Back.Width - Width), Back.Height - 50, brushTwo.Rectangle.Width, brushTwo.Rectangle.Height);
                     }
                 }
             }
@@ -1713,7 +1713,7 @@ namespace CCWin
             //画九宫质感层
             if (BackPalace != null)
             {
-                ImageDrawRect.DrawRect(g, (Bitmap)BackPalace, new Rectangle(ClientRectangle.X - 5, ClientRectangle.Y - 5, ClientRectangle.Width + 10, ClientRectangle.Height + 10), Rectangle.FromLTRB(BackRectangle.X, BackRectangle.Y, BackRectangle.Width, BackRectangle.Height), 1, 1);
+                ImageDrawRect.DrawRect(g, (Bitmap)BackPalace, new Rectangle(ClientRectangle.X - 5, ClientRectangle.Y - 5, ClientRectangle.Width + 10, ClientRectangle.Height + 10), Rectangle.FromLTRB(BackPalaceRectangle.X, BackPalaceRectangle.Y, BackPalaceRectangle.Width, BackPalaceRectangle.Height), 1, 1);
             }
             //画边框质感层
             if (BorderPalace != null)

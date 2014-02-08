@@ -307,7 +307,7 @@
             this.pic_icon.BackgroundImage = global::Teleware.ZPG.Client.Properties.Resources.tipicon;
             this.pic_icon.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pic_icon.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.pic_icon.Location = new System.Drawing.Point(3, 6);
+            this.pic_icon.Location = new System.Drawing.Point(3, 7);
             this.pic_icon.Name = "pic_icon";
             this.pic_icon.Size = new System.Drawing.Size(16, 16);
             this.pic_icon.TabIndex = 2;
@@ -319,7 +319,7 @@
             this.lab_info.BackColor = System.Drawing.Color.Transparent;
             this.lab_info.BorderColor = System.Drawing.Color.White;
             this.lab_info.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.lab_info.Location = new System.Drawing.Point(23, 6);
+            this.lab_info.Location = new System.Drawing.Point(20, 6);
             this.lab_info.Name = "lab_info";
             this.lab_info.Size = new System.Drawing.Size(286, 16);
             this.lab_info.TabIndex = 0;
@@ -341,6 +341,7 @@
             this.MaximizeBox = false;
             this.Name = "LoginForm";
             this.Shadow = true;
+            this.ShadowWidth = 1;
             this.ShowInTaskbar = false;
             this.Text = "";
             this.TopMost = true;

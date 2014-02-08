@@ -408,7 +408,6 @@ namespace Teleware.ZPG.Client
             // 
             // MessageBoxForm
             // 
-            this.AllowBackStretch = true;
             this.Back = global::Teleware.ZPG.Client.Properties.Resources.bluebase;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(218)))), ((int)(((byte)(234)))), ((int)(((byte)(245)))));
             this.BackgroundImage = null;

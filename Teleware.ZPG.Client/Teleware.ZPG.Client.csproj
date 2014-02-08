@@ -46,9 +46,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BackgroundPanel.cs">
-      <SubType>Component</SubType>
-    </Compile>
     <Compile Include="Common.cs" />
     <Compile Include="Controls\ListViewEx.cs">
       <SubType>Component</SubType>
@@ -98,6 +95,12 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="ToolTipForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ToolTipForm.Designer.cs">
+      <DependentUpon>ToolTipForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="LoadingBox\LoadingBox.cs" />
     <Compile Include="Controls\WebBrowserEx.cs">
       <SubType>Component</SubType>
@@ -134,12 +137,6 @@
     <Compile Include="SkinForm.Designer.cs">
       <DependentUpon>SkinForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="ToolTipForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="ToolTipForm.Designer.cs">
-      <DependentUpon>ToolTipForm.cs</DependentUpon>
-    </Compile>
     <EmbeddedResource Include="Controls\NetDisconnectControl.resx">
       <DependentUpon>NetDisconnectControl.cs</DependentUpon>
     </EmbeddedResource>
@@ -161,6 +158,9 @@
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ToolTipForm.resx">
+      <DependentUpon>ToolTipForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -180,9 +180,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="SkinForm.resx">
       <DependentUpon>SkinForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="ToolTipForm.resx">
-      <DependentUpon>ToolTipForm.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="app.config" />
     <None Include="Properties\Settings.settings">
@@ -264,9 +261,6 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\skin_tip.png" />
-    <None Include="Resources\toolbar_normal.png" />
-    <None Include="Resources\safe_subtab_btn1.png" />
     <None Include="Resources\store_guide_bkg.png" />
     <None Include="切图\小版天.png" />
     <None Include="切图\小版时.png" />
@@ -318,8 +312,6 @@
     <None Include="Resources\AreaMainPanel.png" />
     <None Include="Resources\background_blue.png" />
     <None Include="Resources\bluebase.png" />
-    <None Include="Resources\5-120601092207.gif" />
-    <None Include="Resources\5-120601092234.gif" />
     <Content Include="Resources\btn_allow_down_hover.png" />
     <Content Include="Resources\btn_allow_down_normal.png" />
     <Content Include="Resources\btn_allow_up.png" />
@@ -347,8 +339,11 @@
     <Content Include="Resources\8.png" />
     <Content Include="Resources\9.png" />
     <None Include="Resources\countdown.png" />
-    <None Include="Resources\Edit_Tips_3.png" />
+    <None Include="Resources\buddytips_arrow_down.png" />
+    <None Include="Resources\buddytips_arrow_up.png" />
+    <None Include="Resources\Edit_Tips_1.png" />
     <Content Include="Resources\ellipsis.gif" />
+    <None Include="Resources\glyphicons_309_comments.png" />
     <Content Include="Resources\head.png" />
     <None Include="Resources\hot_background.png" />
     <Content Include="Resources\jyjs.png" />
