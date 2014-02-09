@@ -120,6 +120,19 @@ namespace CCWin.SkinControl
             get { return this.BaseText; }
         }
 
+        [Description("文本。"), Category("Skin")]
+        public string Text
+        {
+            get
+            {
+                return this.SkinTxt.Text;
+            }
+            set
+            {
+                this.SkinTxt.Text = value;
+            }
+        }
+
         [Description("悬浮时背景框。"), Category("Skin")]
         public Bitmap MouseBack
         {

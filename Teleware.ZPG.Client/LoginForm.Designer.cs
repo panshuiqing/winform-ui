@@ -28,9 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             this.menuUsers = new CCWin.SkinControl.SkinContextMenuStrip();
-            this.skinToolTip1 = new CCWin.SkinToolTip(this.components);
             this.panel_login_btn = new CCWin.SkinControl.SkinPanel();
             this.imgLoadding = new CCWin.SkinControl.SkinPictureBox();
             this.btnDl = new CCWin.SkinControl.SkinButton();
@@ -43,7 +41,6 @@
             this.panelError = new CCWin.SkinControl.SkinPanel();
             this.pic_icon = new CCWin.SkinControl.SkinPictureBox();
             this.lab_info = new CCWin.SkinControl.SkinLabel();
-            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.panel_login_btn.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.imgLoadding)).BeginInit();
             this.txtPwd.SuspendLayout();
@@ -82,17 +79,6 @@
             this.menuUsers.TitleRadius = 4;
             this.menuUsers.TitleRadiusStyle = CCWin.SkinClass.RoundStyle.None;
             this.menuUsers.Closing += new System.Windows.Forms.ToolStripDropDownClosingEventHandler(this.menuUsers_Closing);
-            // 
-            // skinToolTip1
-            // 
-            this.skinToolTip1.AutoPopDelay = 5000;
-            this.skinToolTip1.Image = global::Teleware.ZPG.Client.Properties.Resources.store_guide_bkg;
-            this.skinToolTip1.InitialDelay = 500;
-            this.skinToolTip1.OwnerDraw = true;
-            this.skinToolTip1.ReshowDelay = 800;
-            this.skinToolTip1.TitleFont = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Bold);
-            this.skinToolTip1.ToolTipIcon = System.Windows.Forms.ToolTipIcon.Info;
-            this.skinToolTip1.ToolTipTitle = "111";
             // 
             // panel_login_btn
             // 
@@ -373,8 +359,6 @@
         private CCWin.SkinControl.SkinContextMenuStrip menuUsers;
         private CCWin.SkinControl.SkinPanel panel_login_btn;
         private CCWin.SkinControl.SkinButton btnId;
-        private CCWin.SkinToolTip skinToolTip1;
-        private System.Windows.Forms.ToolTip toolTip1;
 
     }
 }

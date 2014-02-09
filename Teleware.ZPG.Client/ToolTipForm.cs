@@ -18,6 +18,8 @@ namespace Teleware.ZPG.Client
         private TextFormatFlags TEXT_FLAGS =
                     TextFormatFlags.HidePrefix | TextFormatFlags.ExternalLeading |
                     TextFormatFlags.WordBreak | TextFormatFlags.EndEllipsis;
+        private int duration = 7000;
+        private System.Threading.Timer timer;
 
         public ToolTipForm()
         {
@@ -26,25 +28,51 @@ namespace Teleware.ZPG.Client
 
         public void Show(string text, Control control)
         {
-            this.Show(text, control, 0);
+            this.Show(text, control, duration);
         }
 
         public void Show(string text, Control control, int duration)
         {
-            if (text == null) throw new ArgumentNullException("control");
+            if (control == null) throw new ArgumentNullException("control");
             this.caption = text;
+            this.duration = duration;
             CalcFinalSizes();
-            var point = control.PointToScreen(control.Location);
-            int x = point.X;
-            int y = point.Y - this.Height;
-            this.Location = new Point(x, 200);
-            this.Show();
+            var point = control.FindForm().PointToScreen(control.Location);
+            int x = point.X + control.Width - 96;
+            int y = point.Y - this.Height - 4;
+            this.Location = new Point(x, y);
+            this.Show(control);
+            this.SetTimer();
         }
 
-        protected override void OnDeactivate(EventArgs e)
+        private void SetTimer()
         {
-            base.OnDeactivate(e);
-            //this.Close();
+            this.DisposedTimer();
+            this.timer = new System.Threading.Timer(TimerCallback, null, this.duration, this.duration);
+        }
+
+        private void DisposedTimer()
+        {
+            if (this.timer != null)
+            {
+                timer.Dispose();
+                timer = null;
+            }
+        }
+
+        private void TimerCallback(object state)
+        {
+            this.DisposedTimer();
+            this.Invoke(new MethodInvoker(delegate
+            {
+                this.Close();
+            }));
+        }
+
+        protected override void OnFormClosed(FormClosedEventArgs e)
+        {
+            this.DisposedTimer();
+            base.OnFormClosed(e);
         }
 
         protected override void OnPaint(PaintEventArgs e)

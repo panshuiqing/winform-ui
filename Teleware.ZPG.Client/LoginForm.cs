@@ -46,26 +46,34 @@ namespace Teleware.ZPG.Client
         void item_Click(object sender, EventArgs e)
         {
             ToolStripMenuItem item = (ToolStripMenuItem)sender;
-            txtId.SkinTxt.Text = item.Tag.ToString();
+            txtId.Text = item.Tag.ToString();
         }
 
         private bool loginFlag = true;
         private void btnDl_Click(object sender, EventArgs e)
         {
-            //skinToolTip1.SetToolTip(this.txtId, "输入竞买号后再登录");
-            toolTip1.SetToolTip(this.txtId, "输入竞买号后再登录");
-            //if (loginFlag)
-            //{
-            //    this.InvalidateWhenLoginError();
-            //}
-            //else
-            //{
-            //    this.InvalidateWhenLoginSuccess();
-            //}
+            if (string.IsNullOrEmpty(this.txtId.Text))
+            {
+                new ToolTipForm().Show("请您输入竞买号后再登录", this.txtId);
+                return;
+            }
+            if (string.IsNullOrEmpty(this.txtPwd.Text))
+            {
+                new ToolTipForm().Show("请您输入密码后再登录", this.txtPwd);
+                return;
+            }
+            if (loginFlag)
+            {
+                this.InvalidateWhenLoginError();
+            }
+            else
+            {
+                this.InvalidateWhenLoginSuccess();
+            }
 
-            //loginFlag = !loginFlag;
-            //this.Hide();
-            //new MainForm().Show();
+            loginFlag = !loginFlag;
+            this.Hide();
+            new MainForm().Show();
         }
 
         private void InvalidateWhenLoginSuccess()

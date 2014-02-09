@@ -18,12 +18,14 @@ namespace Teleware.ZPG.Client
         ToolTipForm tip;
         private void button1_Click(object sender, EventArgs e)
         {
+            Console.WriteLine("button1_Click");
+            //new Form2().Show();
             if (tip != null)
             {
                 tip.Close();
             }
             tip = new ToolTipForm();
-            tip.Show("谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢谢123", this.textBox2, 3);
+            tip.Show("请输入用户名再登陆123", this.textBox2); this.textBox2.Focus();
         }
 
         private void Form1_Load(object sender, EventArgs e)

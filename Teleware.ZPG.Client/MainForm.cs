@@ -83,16 +83,16 @@ namespace Teleware.ZPG.Client
                 case 0:
                     break;
                 case 1:
-                    webBrowser_tradeDetail.Navigate(Common.TradeDetailUrl);
+                    webBrowser_tradeDetail.Navigate(WebUrls.TradeDetailUrl);
                     break;
                 case 2:
-                    webBrowser_affiche.Navigate(Common.AfficheUrl);
+                    webBrowser_affiche.Navigate(WebUrls.AfficheUrl);
                     break;
                 case 3:
-                    webBrowser_tradeResult.Navigate(Common.TradeResultUrl);
+                    webBrowser_tradeResult.Navigate(WebUrls.TradeResultUrl);
                     break;
                 case 4:
-                    webBrowser_applyInfo.Navigate(Common.ApplyInfoUrl);
+                    webBrowser_applyInfo.Navigate(WebUrls.ApplyInfoUrl);
                     break;
             }
 
