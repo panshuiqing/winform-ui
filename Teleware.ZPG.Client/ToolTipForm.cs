@@ -8,81 +8,42 @@ using System.Windows.Forms;
 
 namespace Teleware.ZPG.Client
 {
-    public partial class ToolTipForm : SkinForm
+    public partial class ToolTipForm : Form
     {
-        private string caption;
+        private string tooltipText;
         private int SPACING = 4;
-        private Size MIN_SIZE = new Size(181, 37);
+        private Size MIN_SIZE = new Size(121, 45);
         private Size MAX_SIZE = new Size(400, 160);
         private Rectangle textRect = Rectangle.Empty;
         private TextFormatFlags TEXT_FLAGS =
                     TextFormatFlags.HidePrefix | TextFormatFlags.ExternalLeading |
                     TextFormatFlags.WordBreak | TextFormatFlags.EndEllipsis;
-        private int duration = 7000;
-        private System.Threading.Timer timer;
+        //背景图三角左边宽度
+        private const int offsetX = 50;
 
         public ToolTipForm()
         {
+            SetStyle(ControlStyles.SupportsTransparentBackColor, true);
             InitializeComponent();
         }
 
         public void Show(string text, Control control)
         {
-            this.Show(text, control, duration);
-        }
-
-        public void Show(string text, Control control, int duration)
-        {
             if (control == null) throw new ArgumentNullException("control");
-            this.caption = text;
-            this.duration = duration;
+            this.tooltipText = text;
             CalcFinalSizes();
             var point = control.FindForm().PointToScreen(control.Location);
-            int x = point.X + control.Width - 96;
-            int y = point.Y - this.Height - 4;
+            int x = point.X - offsetX;
+            int y = point.Y - this.Height;
             this.Location = new Point(x, y);
             this.Show(control);
-            this.SetTimer();
+            control.Focus();
+            control.LostFocus += new EventHandler(control_LostFocus);
         }
-
-        private void SetTimer()
+        
+        void control_LostFocus(object sender, EventArgs e)
         {
-            this.DisposedTimer();
-            this.timer = new System.Threading.Timer(TimerCallback, null, this.duration, this.duration);
-        }
-
-        private void DisposedTimer()
-        {
-            if (this.timer != null)
-            {
-                timer.Dispose();
-                timer = null;
-            }
-        }
-
-        private void TimerCallback(object state)
-        {
-            this.DisposedTimer();
-            this.Invoke(new MethodInvoker(delegate
-            {
-                this.Close();
-            }));
-        }
-
-        protected override void OnFormClosed(FormClosedEventArgs e)
-        {
-            this.DisposedTimer();
-            base.OnFormClosed(e);
-        }
-
-        protected override void OnPaint(PaintEventArgs e)
-        {
-            base.OnPaint(e);
-            //画字
-            if (!string.IsNullOrEmpty(this.caption))
-            {
-                TextRenderer.DrawText(e.Graphics, this.caption, this.Font, textRect, this.ForeColor, TEXT_FLAGS);
-            }
+            this.Close();
         }
 
         private void CalcFinalSizes()
@@ -116,11 +77,35 @@ namespace Teleware.ZPG.Client
 
         private Size GetTextSize()
         {
-            if (string.IsNullOrEmpty(this.caption)) return Size.Empty;
+            if (string.IsNullOrEmpty(this.tooltipText)) return Size.Empty;
             int maxTextWidth = MAX_SIZE.Width - 2 * SPACING;
             int maxTextHeight = MAX_SIZE.Height - (2 * SPACING);
-            Size textSize = TextRenderer.MeasureText(this.caption, this.Font, new Size(maxTextWidth, maxTextHeight), TEXT_FLAGS);
+            Size textSize = TextRenderer.MeasureText(this.tooltipText, this.Font, new Size(maxTextWidth, maxTextHeight), TEXT_FLAGS);
             return textSize;
+        }
+
+        private void ToolTipForm_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void ToolTipForm_DoubleClick(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void panelEx1_Paint(object sender, PaintEventArgs e)
+        {
+            //画字
+            if (!string.IsNullOrEmpty(this.tooltipText))
+            {
+                TextRenderer.DrawText(e.Graphics, this.tooltipText, this.Font, textRect, this.ForeColor, TEXT_FLAGS);
+            }
+        }
+
+        private void panelEx1_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

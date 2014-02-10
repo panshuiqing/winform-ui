@@ -47,6 +47,8 @@ namespace Teleware.ZPG.Client
         {
             ToolStripMenuItem item = (ToolStripMenuItem)sender;
             txtId.Text = item.Tag.ToString();
+            txtId.Focus();
+            txtId.SkinTxt.SelectAll();
         }
 
         private bool loginFlag = true;
@@ -54,12 +56,12 @@ namespace Teleware.ZPG.Client
         {
             if (string.IsNullOrEmpty(this.txtId.Text))
             {
-                new ToolTipForm().Show("请您输入竞买号后再登录", this.txtId);
+                ToolTipEx.ShowToolTip("请您输入竞买号后再登录", this.txtId);
                 return;
             }
             if (string.IsNullOrEmpty(this.txtPwd.Text))
             {
-                new ToolTipForm().Show("请您输入密码后再登录", this.txtPwd);
+                ToolTipEx.ShowToolTip("请您输入密码后再登录", this.txtPwd);
                 return;
             }
             if (loginFlag)
@@ -129,6 +131,22 @@ namespace Teleware.ZPG.Client
             btnId.Enabled = true;
             btnId.StopState = StopStates.NoStop;
             btnId.ControlState = txtId.MouseState = CCWin.SkinClass.ControlState.Normal;
+        }
+
+        private void txtId_SkinTxt_TextChanged(object sender, EventArgs e)
+        {
+            if (txtId.Text != string.Empty)
+            {
+                ToolTipEx.CloseToolTip();
+            }
+        }
+
+        private void txtPwd_SkinTxt_TextChanged(object sender, EventArgs e)
+        {
+            if (txtPwd.Text != string.Empty)
+            {
+                ToolTipEx.CloseToolTip();
+            }
         }
     }
 }

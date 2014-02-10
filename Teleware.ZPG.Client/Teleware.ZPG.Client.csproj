@@ -46,6 +46,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controls\TradeHangControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\TradeHangControl.Designer.cs">
+      <DependentUpon>TradeHangControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ToolTipEx.cs" />
+    <Compile Include="Utils.cs" />
     <Compile Include="WebUrls.cs" />
     <Compile Include="Controls\ListViewEx.cs">
       <SubType>Component</SubType>
@@ -152,6 +160,9 @@
     <EmbeddedResource Include="Controls\TradeFinishControl.resx">
       <DependentUpon>TradeFinishControl.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Controls\TradeHangControl.resx">
+      <DependentUpon>TradeHangControl.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Controls\TradeReadyControl.resx">
       <DependentUpon>TradeReadyControl.cs</DependentUpon>
     </EmbeddedResource>
@@ -191,6 +202,9 @@
       <DependentUpon>SkinForm.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="app.config" />
+    <Compile Include="Controls\PanelEx.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -270,6 +284,12 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\baojia_normal.png" />
+    <None Include="Resources\baojia_down.png" />
+    <None Include="Resources\baojia_hover.png" />
+    <Content Include="Resources\skin_tip.png" />
+    <None Include="Resources\tabbtn_bgk_pushed_150.png" />
+    <None Include="Resources\tabbtn_bgk_pushed_84.png" />
     <None Include="Resources\store_guide_bkg.png" />
     <None Include="切图\小版天.png" />
     <None Include="切图\小版时.png" />

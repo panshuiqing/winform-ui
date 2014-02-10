@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Teleware.ZPG.Client
 {
-    public sealed class WebUrls
+    public static class WebUrls
     {
         /// <summary>
         /// 基地址

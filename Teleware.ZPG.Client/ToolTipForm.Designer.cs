@@ -1,4 +1,5 @@
-﻿namespace Teleware.ZPG.Client
+﻿using Teleware.ZPG.Client.Controls;
+namespace Teleware.ZPG.Client
 {
     partial class ToolTipForm
     {
@@ -28,36 +29,50 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.panelEx1 = new Teleware.ZPG.Client.Controls.PanelEx();
             this.SuspendLayout();
+            // 
+            // panelEx1
+            // 
+            this.panelEx1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panelEx1.BackgroundImage = global::Teleware.ZPG.Client.Properties.Resources.skin_tip;
+            this.panelEx1.BackgroundImageRectangle = new System.Drawing.Rectangle(80, 10, 10, 10);
+            this.panelEx1.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.panelEx1.Location = new System.Drawing.Point(0, 0);
+            this.panelEx1.Margin = new System.Windows.Forms.Padding(0);
+            this.panelEx1.Name = "panelEx1";
+            this.panelEx1.Size = new System.Drawing.Size(104, 32);
+            this.panelEx1.TabIndex = 0;
+            this.panelEx1.Click += new System.EventHandler(this.panelEx1_Click);
+            this.panelEx1.Paint += new System.Windows.Forms.PaintEventHandler(this.panelEx1_Paint);
             // 
             // ToolTipForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Back = global::Teleware.ZPG.Client.Properties.Resources.store_guide_bkg;
             this.BackColor = System.Drawing.Color.White;
-            this.BackgroundImage = null;
-            this.BackRectangle = new System.Drawing.Rectangle(120, 10, 10, 10);
-            this.BackShade = false;
-            this.BorderPalace = null;
-            this.ClientSize = new System.Drawing.Size(181, 37);
+            this.ClientSize = new System.Drawing.Size(104, 32);
             this.ControlBox = false;
+            this.Controls.Add(this.panelEx1);
+            this.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Mobile = CCWin.MobileStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(3, 1, 3, 1);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "ToolTipForm";
-            this.RoundStyle = CCWin.SkinClass.RoundStyle.None;
-            this.ShowBorder = false;
             this.ShowIcon = false;
             this.ShowInTaskbar = false;
-            this.SkinOpacity = 100D;
-            this.Special = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
-            this.Text = "";
-            this.TransparencyKey = System.Drawing.Color.White;
+            this.Click += new System.EventHandler(this.ToolTipForm_Click);
+            this.DoubleClick += new System.EventHandler(this.ToolTipForm_DoubleClick);
             this.ResumeLayout(false);
 
         }
 
         #endregion
+
+        private PanelEx panelEx1;
     }
 }

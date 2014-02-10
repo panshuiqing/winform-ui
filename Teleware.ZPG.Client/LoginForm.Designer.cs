@@ -141,7 +141,7 @@
             this.pnlImgTX.ControlState = CCWin.SkinClass.ControlState.Normal;
             this.pnlImgTX.DownBack = null;
             this.pnlImgTX.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.pnlImgTX.Location = new System.Drawing.Point(24, 139);
+            this.pnlImgTX.Location = new System.Drawing.Point(24, 125);
             this.pnlImgTX.Margin = new System.Windows.Forms.Padding(0);
             this.pnlImgTX.MouseBack = null;
             this.pnlImgTX.Name = "pnlImgTX";
@@ -158,7 +158,7 @@
             this.txtPwd.Icon = global::Teleware.ZPG.Client.Properties.Resources.btn_keyboard;
             this.txtPwd.IconIsButton = true;
             this.txtPwd.IconMouseState = CCWin.SkinClass.ControlState.Normal;
-            this.txtPwd.Location = new System.Drawing.Point(94, 174);
+            this.txtPwd.Location = new System.Drawing.Point(94, 160);
             this.txtPwd.Margin = new System.Windows.Forms.Padding(0);
             this.txtPwd.MinimumSize = new System.Drawing.Size(0, 28);
             this.txtPwd.MouseBack = null;
@@ -180,6 +180,7 @@
             this.txtPwd.SkinTxt.TabIndex = 0;
             this.txtPwd.SkinTxt.WaterColor = System.Drawing.Color.FromArgb(((int)(((byte)(127)))), ((int)(((byte)(127)))), ((int)(((byte)(127)))));
             this.txtPwd.SkinTxt.WaterText = "密码";
+            this.txtPwd.SkinTxt.TextChanged += new System.EventHandler(this.txtPwd_SkinTxt_TextChanged);
             this.txtPwd.TabIndex = 33;
             this.txtPwd.IconClick += new System.EventHandler(this.txtPwd_IconClick);
             // 
@@ -193,7 +194,7 @@
             this.btn_mima.DownBack = global::Teleware.ZPG.Client.Properties.Resources.btn_mima_press;
             this.btn_mima.DrawType = CCWin.SkinControl.DrawStyle.Img;
             this.btn_mima.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.btn_mima.Location = new System.Drawing.Point(287, 180);
+            this.btn_mima.Location = new System.Drawing.Point(287, 166);
             this.btn_mima.Margin = new System.Windows.Forms.Padding(0);
             this.btn_mima.MouseBack = global::Teleware.ZPG.Client.Properties.Resources.btn_mima_hover;
             this.btn_mima.Name = "btn_mima";
@@ -212,7 +213,7 @@
             this.btnZc.DownBack = global::Teleware.ZPG.Client.Properties.Resources.btn_zhuce_press;
             this.btnZc.DrawType = CCWin.SkinControl.DrawStyle.Img;
             this.btnZc.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.btnZc.Location = new System.Drawing.Point(288, 145);
+            this.btnZc.Location = new System.Drawing.Point(288, 131);
             this.btnZc.Margin = new System.Windows.Forms.Padding(0);
             this.btnZc.MouseBack = global::Teleware.ZPG.Client.Properties.Resources.btn_zhuce_hover;
             this.btnZc.Name = "btnZc";
@@ -229,7 +230,7 @@
             this.btnId.DownBack = global::Teleware.ZPG.Client.Properties.Resources.btn_allow_up;
             this.btnId.DrawType = CCWin.SkinControl.DrawStyle.Img;
             this.btnId.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.btnId.Location = new System.Drawing.Point(255, 141);
+            this.btnId.Location = new System.Drawing.Point(255, 127);
             this.btnId.Margin = new System.Windows.Forms.Padding(0);
             this.btnId.MouseBack = global::Teleware.ZPG.Client.Properties.Resources.btn_allow_down_hover;
             this.btnId.Name = "btnId";
@@ -248,7 +249,7 @@
             this.txtId.Icon = null;
             this.txtId.IconIsButton = false;
             this.txtId.IconMouseState = CCWin.SkinClass.ControlState.Normal;
-            this.txtId.Location = new System.Drawing.Point(94, 139);
+            this.txtId.Location = new System.Drawing.Point(94, 125);
             this.txtId.Margin = new System.Windows.Forms.Padding(0);
             this.txtId.MinimumSize = new System.Drawing.Size(28, 28);
             this.txtId.MouseBack = null;
@@ -269,6 +270,7 @@
             this.txtId.SkinTxt.TabIndex = 0;
             this.txtId.SkinTxt.WaterColor = System.Drawing.Color.FromArgb(((int)(((byte)(127)))), ((int)(((byte)(127)))), ((int)(((byte)(127)))));
             this.txtId.SkinTxt.WaterText = "竞买号";
+            this.txtId.SkinTxt.TextChanged += new System.EventHandler(this.txtId_SkinTxt_TextChanged);
             this.txtId.TabIndex = 32;
             // 
             // panelError
@@ -329,7 +331,7 @@
             this.Shadow = true;
             this.ShadowWidth = 1;
             this.ShowInTaskbar = false;
-            this.Text = "";
+            this.Text = "福建省国有建设用地使用权出让系统";
             this.TopMost = true;
             this.Load += new System.EventHandler(this.LoginForm_Load);
             this.panel_login_btn.ResumeLayout(false);
