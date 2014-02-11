@@ -8,7 +8,7 @@ using System.Windows.Forms;
 using CCWin.Win32;
 using CCWin.Win32.Const;
 
-namespace Teleware.ZPG.Client.Controls
+namespace Teleware.ZPG.Client
 {
     /// <summary>
     /// 左边显示图片，右边显示文字的窗体

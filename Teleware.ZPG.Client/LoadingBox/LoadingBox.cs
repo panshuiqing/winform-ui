@@ -37,37 +37,4 @@ namespace Teleware.ZPG.Client
             }
         }
     }
-
-    public class LoadingBoxArgs
-    {
-        public LoadingBoxArgs()
-        {
-        }
-
-        public LoadingBoxArgs(IWin32Window owner, string loadingText, Image loadingImage)
-        {
-            this.Owner = owner;
-            this.LoadingText = loadingText;
-            this.LoadingImage = loadingImage;
-        }
-
-
-        public IWin32Window Owner
-        {
-            get;
-            set;
-        }
-
-        public string LoadingText
-        {
-            get;
-            set;
-        }
-
-        public Image LoadingImage
-        {
-            get;
-            set;
-        }
-    }
 }

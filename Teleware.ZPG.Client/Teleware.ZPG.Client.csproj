@@ -46,13 +46,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="LoadingBox\LoadingBoxArgs.cs" />
     <Compile Include="Module\TradeHangControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="Module\TradeHangControl.Designer.cs">
       <DependentUpon>TradeHangControl.cs</DependentUpon>
     </Compile>
-    <Compile Include="ToolTipEx\ToolTipEx.cs" />
+    <Compile Include="ToolTip\ToolTipEx.cs" />
     <Compile Include="Utils.cs" />
     <Compile Include="WebUrls.cs" />
     <Compile Include="Controls\ListViewEx.cs">
@@ -103,10 +104,10 @@
     <Compile Include="Form2.Designer.cs">
       <DependentUpon>Form2.cs</DependentUpon>
     </Compile>
-    <Compile Include="Controls\ToolTipForm.cs">
+    <Compile Include="ToolTip\ToolTipForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Controls\ToolTipForm.Designer.cs">
+    <Compile Include="ToolTip\ToolTipForm.Designer.cs">
       <DependentUpon>ToolTipForm.cs</DependentUpon>
     </Compile>
     <Compile Include="LoadingBox\LoadingBox.cs" />
@@ -119,10 +120,10 @@
     <Compile Include="LoginForm.Designer.cs">
       <DependentUpon>LoginForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Controls\MessageIconForm.cs">
+    <Compile Include="MessageBox\MessageIconForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Controls\MessageIconForm.Designer.cs">
+    <Compile Include="MessageBox\MessageIconForm.Designer.cs">
       <DependentUpon>MessageIconForm.cs</DependentUpon>
     </Compile>
     <Compile Include="MainForm.cs">
@@ -169,13 +170,13 @@
     <EmbeddedResource Include="Form2.resx">
       <DependentUpon>Form2.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Controls\ToolTipForm.resx">
+    <EmbeddedResource Include="ToolTip\ToolTipForm.resx">
       <DependentUpon>ToolTipForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Controls\MessageIconForm.resx">
+    <EmbeddedResource Include="MessageBox\MessageIconForm.resx">
       <DependentUpon>MessageIconForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MainForm.resx">
@@ -386,9 +387,7 @@
     <None Include="Resources\notify_info.png" />
     <None Include="Resources\notify_success.png" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="data\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

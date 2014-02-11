@@ -1,4 +1,4 @@
-﻿namespace Teleware.ZPG.Client.Controls
+﻿namespace Teleware.ZPG.Client
 {
     partial class ToolTipForm
     {
@@ -72,6 +72,6 @@
 
         #endregion
 
-        private PanelEx panelEx1;
+        private Teleware.ZPG.Client.Controls.PanelEx panelEx1;
     }
 }

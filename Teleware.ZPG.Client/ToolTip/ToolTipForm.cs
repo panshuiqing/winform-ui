@@ -6,7 +6,7 @@ using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
 
-namespace Teleware.ZPG.Client.Controls
+namespace Teleware.ZPG.Client
 {
     public partial class ToolTipForm : Form
     {

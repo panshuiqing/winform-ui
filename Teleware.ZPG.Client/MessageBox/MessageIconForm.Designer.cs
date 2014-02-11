@@ -1,4 +1,4 @@
-﻿namespace Teleware.ZPG.Client.Controls
+﻿namespace Teleware.ZPG.Client
 {
     partial class MessageIconForm
     {
