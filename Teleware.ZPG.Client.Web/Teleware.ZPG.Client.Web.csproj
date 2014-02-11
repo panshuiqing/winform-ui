@@ -57,6 +57,116 @@
     <Content Include="res\ApplyInfo.aspx" />
     <Content Include="res\TradeDetail.aspx" />
     <Content Include="res\TradeResult.aspx" />
+    <Content Include="web\css\Index.css" />
+    <Content Include="web\css\NewTabImages\close.gif" />
+    <Content Include="web\css\NewTabImages\ggxx.gif" />
+    <Content Include="web\css\NewTabImages\hover_tab_bg.gif" />
+    <Content Include="web\css\NewTabImages\hover_tab_left_icon.gif" />
+    <Content Include="web\css\NewTabImages\hover_tab_right_icon.gif" />
+    <Content Include="web\css\NewTabImages\hyb.gif" />
+    <Content Include="web\css\NewTabImages\jmrz.gif" />
+    <Content Include="web\css\NewTabImages\jytj.gif" />
+    <Content Include="web\css\NewTabImages\jyxz.gif" />
+    <Content Include="web\css\NewTabImages\selected_tab_bg.gif" />
+    <Content Include="web\css\NewTabImages\selected_tab_left_icon.gif" />
+    <Content Include="web\css\NewTabImages\selected_tab_right_icon.gif" />
+    <Content Include="web\css\NewTabImages\tab_bg.gif" />
+    <Content Include="web\css\NewTabImages\tab_left_icon.gif" />
+    <Content Include="web\css\NewTabImages\tab_right_icon.gif" />
+    <Content Include="web\css\NewTabImages\zdxx.gif" />
+    <Content Include="web\css\NewTabStyle.css" />
+    <Content Include="web\Default.aspx" />
+    <Content Include="web\images\address_bg.jpg" />
+    <Content Include="web\images\banner.jpg" />
+    <Content Include="web\images\banner_bg.jpg" />
+    <Content Include="web\images\Bottom_bg.jpg" />
+    <Content Include="web\images\Button_bg.jpg" />
+    <Content Include="web\images\Button_bg_red.jpg" />
+    <Content Include="web\images\button_index.jpg" />
+    <Content Include="web\images\buy_top.jpg" />
+    <Content Include="web\images\City\三明.jpg" />
+    <Content Include="web\images\City\南平.jpg" />
+    <Content Include="web\images\City\厦门.jpg" />
+    <Content Include="web\images\City\宁德.jpg" />
+    <Content Include="web\images\City\泉州.jpg" />
+    <Content Include="web\images\City\漳州.jpg" />
+    <Content Include="web\images\City\福州.jpg" />
+    <Content Include="web\images\City\莆田.jpg" />
+    <Content Include="web\images\City\龙岩.jpg" />
+    <Content Include="web\images\cjwtjd.jpg" />
+    <Content Include="web\images\close.jpg" />
+    <Content Include="web\images\End_bg.jpg" />
+    <Content Include="web\images\End_top.jpg" />
+    <Content Include="web\images\flash01.gif" />
+    <Content Include="web\images\gray.gif" />
+    <Content Include="web\images\index_bg.jpg" />
+    <Content Include="web\images\jmrczbz.jpg" />
+    <Content Include="web\images\jmrczbz_bg.jpg" />
+    <Content Include="web\images\jmrczbz_icon.gif" />
+    <Content Include="web\images\jmrczbz_line.jpg" />
+    <Content Include="web\images\jmsqjgcx.jpg" />
+    <Content Include="web\images\jmsq_bg.jpg" />
+    <Content Include="web\images\jmsq_bottom.jpg" />
+    <Content Include="web\images\jmsq_FU.jpg" />
+    <Content Include="web\images\jmsq_title_bg.jpg" />
+    <Content Include="web\images\jmsq_title_left.jpg" />
+    <Content Include="web\images\jmsq_top.jpg" />
+    <Content Include="web\images\jy_top.jpg" />
+    <Content Include="web\images\Links\1.jpg" />
+    <Content Include="web\images\Links\2.jpg" />
+    <Content Include="web\images\Links\3.jpg" />
+    <Content Include="web\images\Links\4.jpg" />
+    <Content Include="web\images\Links\5.jpg" />
+    <Content Include="web\images\Links\6.jpg" />
+    <Content Include="web\images\Links\yqlj_bottom5.gif" />
+    <Content Include="web\images\list_head.jpg" />
+    <Content Include="web\images\list_line.jpg" />
+    <Content Include="web\images\list_sl_head.jpg" />
+    <Content Include="web\images\Lm_bg.jpg" />
+    <Content Include="web\images\Lm_rightbg.jpg" />
+    <Content Include="web\images\logo.jpg" />
+    <Content Include="web\images\menu_bg.jpg" />
+    <Content Include="web\images\menu_left.jpg" />
+    <Content Include="web\images\menu_line.jpg" />
+    <Content Include="web\images\menu_right.jpg" />
+    <Content Include="web\images\menu_sl_bg.jpg" />
+    <Content Include="web\images\Navigation_BG.jpg" />
+    <Content Include="web\images\Navigation_Left.jpg" />
+    <Content Include="web\images\Navigation_Right.jpg" />
+    <Content Include="web\images\new.gif" />
+    <Content Include="web\images\news_head.jpg" />
+    <Content Include="web\images\news_head_long.jpg" />
+    <Content Include="web\images\policy_bg.jpg" />
+    <Content Include="web\images\policy_house.jpg" />
+    <Content Include="web\images\policy_left.jpg" />
+    <Content Include="web\images\policy_right.jpg" />
+    <Content Include="web\images\send_no.jpg" />
+    <Content Include="web\images\send_ok.jpg" />
+    <Content Include="web\images\SL_bg.jpg" />
+    <Content Include="web\images\SL_bottom.jpg" />
+    <Content Include="web\images\SL_content.jpg" />
+    <Content Include="web\images\SL_top.jpg" />
+    <Content Include="web\images\sss.jpg" />
+    <Content Include="web\images\TableResult_Bottom_left.jpg" />
+    <Content Include="web\images\TableResult_Bottom_right.jpg" />
+    <Content Include="web\images\TableResult_Header_left.jpg" />
+    <Content Include="web\images\TableResult_Header_right.jpg" />
+    <Content Include="web\images\table_top_bg.jpg" />
+    <Content Include="web\images\table_top_left.jpg" />
+    <Content Include="web\images\table_top_right.jpg" />
+    <Content Include="web\images\tdcrjggg.jpg" />
+    <Content Include="web\images\top_bg.gif" />
+    <Content Include="web\images\top_bg.jpg" />
+    <Content Include="web\images\Top_left_pic.png" />
+    <Content Include="web\images\wstdcrgg.jpg" />
+    <Content Include="web\images\wstdcrjggs.jpg" />
+    <Content Include="web\images\yellow.gif" />
+    <Content Include="web\images\zcfg.jpg" />
+    <Content Include="web\images\zmrj.jpg" />
+    <Content Include="web\images\zswd.jpg" />
+    <Content Include="web\images\zxly.jpg" />
+    <Content Include="web\js\jquery-1.7.1.min.js" />
+    <Content Include="web\WebForm1.aspx" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Global.asax.cs">
@@ -90,6 +200,20 @@
     </Compile>
     <Compile Include="res\TradeResult.aspx.designer.cs">
       <DependentUpon>TradeResult.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="web\Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="web\Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="web\WebForm1.aspx.cs">
+      <DependentUpon>WebForm1.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="web\WebForm1.aspx.designer.cs">
+      <DependentUpon>WebForm1.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
