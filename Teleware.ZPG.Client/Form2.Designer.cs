@@ -29,7 +29,7 @@ namespace Teleware.ZPG.Client
         /// </summary>
         private void InitializeComponent()
         {
-            this.tradeHangControl1 = new Teleware.ZPG.Client.Controls.TradeHangControl();
+            this.tradeHangControl1 = new Teleware.ZPG.Client.Module.TradeHangControl();
             this.SuspendLayout();
             // 
             // tradeHangControl1
@@ -61,7 +61,7 @@ namespace Teleware.ZPG.Client
 
         #endregion
 
-        private TradeHangControl tradeHangControl1;
+        private Teleware.ZPG.Client.Module.TradeHangControl tradeHangControl1;
 
 
     }

@@ -6,11 +6,11 @@ using System.Data;
 using System.Text;
 using System.Windows.Forms;
 
-namespace Teleware.ZPG.Client.Controls
+namespace Teleware.ZPG.Client.Module
 {
-    public partial class TradeUnStartControl : UserControl
+    public partial class TradeReadyControl : UserControl
     {
-        public TradeUnStartControl()
+        public TradeReadyControl()
         {
             InitializeComponent();
         }

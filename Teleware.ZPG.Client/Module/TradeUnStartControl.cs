@@ -6,14 +6,11 @@ using System.Data;
 using System.Text;
 using System.Windows.Forms;
 
-namespace Teleware.ZPG.Client.Controls
+namespace Teleware.ZPG.Client.Module
 {
-    /// <summary>
-    /// 网络连接断开控件
-    /// </summary>
-    public partial class NetDisconnectControl : UserControl
+    public partial class TradeUnStartControl : UserControl
     {
-        public NetDisconnectControl()
+        public TradeUnStartControl()
         {
             InitializeComponent();
         }

@@ -1,4 +1,4 @@
-﻿namespace Teleware.ZPG.Client.Controls
+﻿namespace Teleware.ZPG.Client.Module
 {
     partial class TradeHangControl
     {
@@ -29,6 +29,8 @@
         private void InitializeComponent()
         {
             this.skinPanel2 = new CCWin.SkinControl.SkinPanel();
+            this.skinLabel2 = new CCWin.SkinControl.SkinLabel();
+            this.skinLabel1 = new CCWin.SkinControl.SkinLabel();
             this.skinButton1 = new CCWin.SkinControl.SkinButton();
             this.skinTextBox2 = new CCWin.SkinControl.SkinTextBox();
             this.skinTextBox1 = new CCWin.SkinControl.SkinTextBox();
@@ -49,8 +51,6 @@
             this.skinLabel6 = new CCWin.SkinControl.SkinLabel();
             this.skinLabel5 = new CCWin.SkinControl.SkinLabel();
             this.skinLabel4 = new CCWin.SkinControl.SkinLabel();
-            this.skinLabel1 = new CCWin.SkinControl.SkinLabel();
-            this.skinLabel2 = new CCWin.SkinControl.SkinLabel();
             this.listView1 = new Teleware.ZPG.Client.Controls.ListViewEx();
             this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -86,6 +86,34 @@
             this.skinPanel2.NormlBack = null;
             this.skinPanel2.Size = new System.Drawing.Size(340, 258);
             this.skinPanel2.TabIndex = 16;
+            // 
+            // skinLabel2
+            // 
+            this.skinLabel2.ArtTextStyle = CCWin.SkinControl.ArtTextStyle.None;
+            this.skinLabel2.AutoSize = true;
+            this.skinLabel2.BackColor = System.Drawing.Color.Transparent;
+            this.skinLabel2.BorderColor = System.Drawing.Color.White;
+            this.skinLabel2.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.skinLabel2.ForeColor = System.Drawing.Color.Black;
+            this.skinLabel2.Location = new System.Drawing.Point(23, 110);
+            this.skinLabel2.Name = "skinLabel2";
+            this.skinLabel2.Size = new System.Drawing.Size(68, 17);
+            this.skinLabel2.TabIndex = 17;
+            this.skinLabel2.Text = "确认报价：";
+            // 
+            // skinLabel1
+            // 
+            this.skinLabel1.ArtTextStyle = CCWin.SkinControl.ArtTextStyle.None;
+            this.skinLabel1.AutoSize = true;
+            this.skinLabel1.BackColor = System.Drawing.Color.Transparent;
+            this.skinLabel1.BorderColor = System.Drawing.Color.White;
+            this.skinLabel1.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.skinLabel1.ForeColor = System.Drawing.Color.Black;
+            this.skinLabel1.Location = new System.Drawing.Point(23, 57);
+            this.skinLabel1.Name = "skinLabel1";
+            this.skinLabel1.Size = new System.Drawing.Size(68, 17);
+            this.skinLabel1.TabIndex = 16;
+            this.skinLabel1.Text = "竞买报价：";
             // 
             // skinButton1
             // 
@@ -384,34 +412,6 @@
             this.skinLabel4.TabIndex = 0;
             this.skinLabel4.Text = "宗地号:福州市0001宗地";
             // 
-            // skinLabel1
-            // 
-            this.skinLabel1.ArtTextStyle = CCWin.SkinControl.ArtTextStyle.None;
-            this.skinLabel1.AutoSize = true;
-            this.skinLabel1.BackColor = System.Drawing.Color.Transparent;
-            this.skinLabel1.BorderColor = System.Drawing.Color.White;
-            this.skinLabel1.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.skinLabel1.ForeColor = System.Drawing.Color.Black;
-            this.skinLabel1.Location = new System.Drawing.Point(23, 57);
-            this.skinLabel1.Name = "skinLabel1";
-            this.skinLabel1.Size = new System.Drawing.Size(68, 17);
-            this.skinLabel1.TabIndex = 16;
-            this.skinLabel1.Text = "竞买报价：";
-            // 
-            // skinLabel2
-            // 
-            this.skinLabel2.ArtTextStyle = CCWin.SkinControl.ArtTextStyle.None;
-            this.skinLabel2.AutoSize = true;
-            this.skinLabel2.BackColor = System.Drawing.Color.Transparent;
-            this.skinLabel2.BorderColor = System.Drawing.Color.White;
-            this.skinLabel2.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.skinLabel2.ForeColor = System.Drawing.Color.Black;
-            this.skinLabel2.Location = new System.Drawing.Point(23, 110);
-            this.skinLabel2.Name = "skinLabel2";
-            this.skinLabel2.Size = new System.Drawing.Size(68, 17);
-            this.skinLabel2.TabIndex = 17;
-            this.skinLabel2.Text = "确认报价：";
-            // 
             // listView1
             // 
             this.listView1.AllowChangeHeaderWidth = false;
@@ -493,7 +493,7 @@
 
         private CCWin.SkinControl.SkinLabel skinLabel11;
         private CCWin.SkinControl.SkinLabel skinLabel7;
-        private ListViewEx listView1;
+        private Teleware.ZPG.Client.Controls.ListViewEx listView1;
         private System.Windows.Forms.ColumnHeader columnHeader2;
         private System.Windows.Forms.ColumnHeader columnHeader3;
         private System.Windows.Forms.ColumnHeader columnHeader4;

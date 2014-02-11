@@ -40,7 +40,7 @@
             this.skinTabControl1 = new CCWin.SkinControl.SkinTabControl();
             this.tabPage_tradeCenter = new System.Windows.Forms.TabPage();
             this.panel_main = new CCWin.SkinControl.SkinPanel();
-            this.tradeHangControl1 = new Teleware.ZPG.Client.Controls.TradeHangControl();
+            this.tradeHangControl1 = new Teleware.ZPG.Client.Module.TradeHangControl();
             this.panel_switch = new CCWin.SkinControl.SkinPanel();
             this.tabPage_tradeDetail = new System.Windows.Forms.TabPage();
             this.webBrowser_tradeDetail = new Teleware.ZPG.Client.Controls.WebBrowserEx();
@@ -627,7 +627,7 @@
         private System.Windows.Forms.ImageList imageList1;
         private System.Windows.Forms.TabPage tabPage2;
         private CCWin.SkinControl.SkinPanel panel_switch;
-        private Controls.TradeHangControl tradeHangControl1;
+        private Teleware.ZPG.Client.Module.TradeHangControl tradeHangControl1;
 
     }
 }

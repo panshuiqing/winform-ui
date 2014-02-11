@@ -1,5 +1,4 @@
-﻿using Teleware.ZPG.Client.Controls;
-namespace Teleware.ZPG.Client
+﻿namespace Teleware.ZPG.Client.Controls
 {
     partial class ToolTipForm
     {

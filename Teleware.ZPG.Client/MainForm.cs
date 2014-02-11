@@ -5,14 +5,15 @@ using System.Data;
 using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
+using Teleware.ZPG.Client.Module;
 
 namespace Teleware.ZPG.Client
 {
     public partial class MainForm : SkinForm
     {
-        private Controls.NetDisconnectControl netDisconnectControl;
-        private Controls.TradeUnStartControl tradeUnStartControl;
-        private Controls.TradeFinishControl tradeFinishControl;
+        private NetDisconnectControl netDisconnectControl;
+        private TradeUnStartControl tradeUnStartControl;
+        private TradeFinishControl tradeFinishControl;
         
         public MainForm()
         {
@@ -71,7 +72,7 @@ namespace Teleware.ZPG.Client
         {
             if (netDisconnectControl == null)
             {
-                netDisconnectControl = new Controls.NetDisconnectControl();
+                netDisconnectControl = new NetDisconnectControl();
                 netDisconnectControl.Dock = DockStyle.Fill;
                 netDisconnectControl.ForeColor = Color.Black;
                 panel_switch.Controls.Add(netDisconnectControl);
@@ -94,7 +95,7 @@ namespace Teleware.ZPG.Client
         {
             if (tradeUnStartControl == null)
             {
-                tradeUnStartControl = new Controls.TradeUnStartControl();
+                tradeUnStartControl = new TradeUnStartControl();
                 tradeUnStartControl.Dock = DockStyle.Fill;
                 tradeUnStartControl.ForeColor = Color.Black;
                 panel_switch.Controls.Add(tradeUnStartControl);
@@ -117,7 +118,7 @@ namespace Teleware.ZPG.Client
         {
             if (tradeFinishControl == null)
             {
-                tradeFinishControl = new Controls.TradeFinishControl();
+                tradeFinishControl = new TradeFinishControl();
                 tradeFinishControl.Dock = DockStyle.Fill;
                 tradeFinishControl.ForeColor = Color.Black;
                 panel_switch.Controls.Add(tradeFinishControl);

@@ -46,46 +46,40 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Controls\TradeHangControl.cs">
+    <Compile Include="Module\TradeHangControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Controls\TradeHangControl.Designer.cs">
+    <Compile Include="Module\TradeHangControl.Designer.cs">
       <DependentUpon>TradeHangControl.cs</DependentUpon>
     </Compile>
-    <Compile Include="ToolTipEx.cs" />
+    <Compile Include="ToolTipEx\ToolTipEx.cs" />
     <Compile Include="Utils.cs" />
     <Compile Include="WebUrls.cs" />
     <Compile Include="Controls\ListViewEx.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Controls\NetDisconnectControl.cs">
+    <Compile Include="Module\NetDisconnectControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Controls\NetDisconnectControl.Designer.cs">
+    <Compile Include="Module\NetDisconnectControl.Designer.cs">
       <DependentUpon>NetDisconnectControl.cs</DependentUpon>
     </Compile>
-    <Compile Include="Controls\ToolTipControl.cs">
+    <Compile Include="Module\TradeFinishControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Controls\ToolTipControl.Designer.cs">
-      <DependentUpon>ToolTipControl.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Controls\TradeFinishControl.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Controls\TradeFinishControl.Designer.cs">
+    <Compile Include="Module\TradeFinishControl.Designer.cs">
       <DependentUpon>TradeFinishControl.cs</DependentUpon>
     </Compile>
-    <Compile Include="Controls\TradeReadyControl.cs">
+    <Compile Include="Module\TradeReadyControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Controls\TradeReadyControl.Designer.cs">
+    <Compile Include="Module\TradeReadyControl.Designer.cs">
       <DependentUpon>TradeReadyControl.cs</DependentUpon>
     </Compile>
-    <Compile Include="Controls\TradeUnStartControl.cs">
+    <Compile Include="Module\TradeUnStartControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Controls\TradeUnStartControl.Designer.cs">
+    <Compile Include="Module\TradeUnStartControl.Designer.cs">
       <DependentUpon>TradeUnStartControl.cs</DependentUpon>
     </Compile>
     <Compile Include="Controls\WaitControl.cs">
@@ -109,10 +103,10 @@
     <Compile Include="Form2.Designer.cs">
       <DependentUpon>Form2.cs</DependentUpon>
     </Compile>
-    <Compile Include="ToolTipForm.cs">
+    <Compile Include="Controls\ToolTipForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ToolTipForm.Designer.cs">
+    <Compile Include="Controls\ToolTipForm.Designer.cs">
       <DependentUpon>ToolTipForm.cs</DependentUpon>
     </Compile>
     <Compile Include="LoadingBox\LoadingBox.cs" />
@@ -125,10 +119,10 @@
     <Compile Include="LoginForm.Designer.cs">
       <DependentUpon>LoginForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="MessageIconForm.cs">
+    <Compile Include="Controls\MessageIconForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="MessageIconForm.Designer.cs">
+    <Compile Include="Controls\MessageIconForm.Designer.cs">
       <DependentUpon>MessageIconForm.cs</DependentUpon>
     </Compile>
     <Compile Include="MainForm.cs">
@@ -151,22 +145,19 @@
     <Compile Include="SkinForm.Designer.cs">
       <DependentUpon>SkinForm.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Controls\NetDisconnectControl.resx">
+    <EmbeddedResource Include="Module\NetDisconnectControl.resx">
       <DependentUpon>NetDisconnectControl.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Controls\ToolTipControl.resx">
-      <DependentUpon>ToolTipControl.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Controls\TradeFinishControl.resx">
+    <EmbeddedResource Include="Module\TradeFinishControl.resx">
       <DependentUpon>TradeFinishControl.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Controls\TradeHangControl.resx">
+    <EmbeddedResource Include="Module\TradeHangControl.resx">
       <DependentUpon>TradeHangControl.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Controls\TradeReadyControl.resx">
+    <EmbeddedResource Include="Module\TradeReadyControl.resx">
       <DependentUpon>TradeReadyControl.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Controls\TradeUnStartControl.resx">
+    <EmbeddedResource Include="Module\TradeUnStartControl.resx">
       <DependentUpon>TradeUnStartControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Controls\WaitControl.resx">
@@ -178,13 +169,13 @@
     <EmbeddedResource Include="Form2.resx">
       <DependentUpon>Form2.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ToolTipForm.resx">
+    <EmbeddedResource Include="Controls\ToolTipForm.resx">
       <DependentUpon>ToolTipForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="MessageIconForm.resx">
+    <EmbeddedResource Include="Controls\MessageIconForm.resx">
       <DependentUpon>MessageIconForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MainForm.resx">
