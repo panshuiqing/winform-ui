@@ -14,6 +14,7 @@ namespace Teleware.ZPG.Client
         private NetDisconnectControl netDisconnectControl;
         private TradeUnStartControl tradeUnStartControl;
         private TradeFinishControl tradeFinishControl;
+        private TradeReadyControl tradeReadyControl;
         
         public MainForm()
         {
@@ -139,12 +140,27 @@ namespace Teleware.ZPG.Client
 
         private void skinButton8_Click(object sender, EventArgs e)
         {
-
+            if (tradeReadyControl == null)
+            {
+                tradeReadyControl = new TradeReadyControl();
+                tradeReadyControl.Dock = DockStyle.Fill;
+                tradeReadyControl.ForeColor = Color.Black;
+                panel_switch.Controls.Add(tradeReadyControl);
+            }
+            foreach (Control item in panel_switch.Controls)
+            {
+                if (item != tradeReadyControl)
+                {
+                    item.Visible = false;
+                }
+            }
+            tradeReadyControl.Visible = true;
+            panel_main.Visible = false;
+            panel_switch.Visible = true;
+            panel_switch.BringToFront();
+            skinTabControl1.SelectedIndex = 0;
         }
 
-        private void skinButton9_Click(object sender, EventArgs e)
-        {
-            
-        }
+       
     }
 }

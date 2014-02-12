@@ -20,24 +20,24 @@
             $('#TabStrip table').hover(function () {
                 if (!$(this).hasClass('SelectedTab')) {
                     $(this).removeClass('DefaultTab').addClass('DefaultTabHover');
-                    $('td:first img', this).attr('src', 'css/NewTabImages/hover_tab_left_icon.gif');
-                    $('td:last img', this).attr('src', 'css/NewTabImages/hover_tab_right_icon.gif');
+                    $('td:first img', this).attr('src', '/css/NewTabImages/hover_tab_left_icon.gif');
+                    $('td:last img', this).attr('src', '/css/NewTabImages/hover_tab_right_icon.gif');
                 }
             }, function () {
                 if (!$(this).hasClass('SelectedTab')) {
                     $(this).removeClass('DefaultTabHover').addClass('DefaultTab');
-                    $('td:first img', this).attr('src', 'css/NewTabImages/tab_left_icon.gif');
-                    $('td:last img', this).attr('src', 'css/NewTabImages/tab_right_icon.gif');
+                    $('td:first img', this).attr('src', '/css/NewTabImages/tab_left_icon.gif');
+                    $('td:last img', this).attr('src', '/css/NewTabImages/tab_right_icon.gif');
                 }
             }).click(function () {
                 if (!$(this).hasClass('SelectedTab')) {
                     var selectedTab = $('table.SelectedTab');
-                    $('td:first img', selectedTab).attr('src', 'css/NewTabImages/tab_left_icon.gif');
-                    $('td:last img', selectedTab).attr('src', 'css/NewTabImages/tab_right_icon.gif');
+                    $('td:first img', selectedTab).attr('src', '/css/NewTabImages/tab_left_icon.gif');
+                    $('td:last img', selectedTab).attr('src', '/css/NewTabImages/tab_right_icon.gif');
                     $('table.SelectedTab').removeClass('SelectedTab').addClass('DefaultTab');
                     $(this).removeClass('DefaultTabHover').addClass('SelectedTab');
-                    $('td:first img', this).attr('src', 'css/NewTabImages/selected_tab_left_icon.gif');
-                    $('td:last img', this).attr('src', 'css/NewTabImages/selected_tab_right_icon.gif');
+                    $('td:first img', this).attr('src', '/css/NewTabImages/selected_tab_left_icon.gif');
+                    $('td:last img', this).attr('src', '/css/NewTabImages/selected_tab_right_icon.gif');
                     $('.MultiPage table').hide();
                     var id = $(this).attr('pageView');
                     $('.MultiPage #' + id).show();

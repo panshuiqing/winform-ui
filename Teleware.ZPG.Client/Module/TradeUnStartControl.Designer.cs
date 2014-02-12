@@ -32,30 +32,26 @@
             this.skinLabel2 = new CCWin.SkinControl.SkinLabel();
             this.skinLabel3 = new CCWin.SkinControl.SkinLabel();
             this.panel_info = new CCWin.SkinControl.SkinPanel();
+            this.skinPictureBox1 = new CCWin.SkinControl.SkinPictureBox();
             this.skinLabel4 = new CCWin.SkinControl.SkinLabel();
             this.panel_time = new CCWin.SkinControl.SkinPanel();
-            this.skinPictureBox1 = new CCWin.SkinControl.SkinPictureBox();
             this.skinPictureBox2 = new CCWin.SkinControl.SkinPictureBox();
-            this.panel_loading = new CCWin.SkinControl.SkinPanel();
-            this.skinPictureBox3 = new CCWin.SkinControl.SkinPictureBox();
-            this.skinLabel5 = new CCWin.SkinControl.SkinLabel();
             this.panel_info.SuspendLayout();
-            this.panel_time.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.skinPictureBox1)).BeginInit();
+            this.panel_time.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.skinPictureBox2)).BeginInit();
-            this.panel_loading.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.skinPictureBox3)).BeginInit();
             this.SuspendLayout();
             // 
             // skinLabel1
             // 
             this.skinLabel1.ArtTextStyle = CCWin.SkinControl.ArtTextStyle.None;
+            this.skinLabel1.AutoSize = true;
             this.skinLabel1.BackColor = System.Drawing.Color.Transparent;
             this.skinLabel1.BorderColor = System.Drawing.Color.White;
             this.skinLabel1.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.skinLabel1.Location = new System.Drawing.Point(84, 13);
             this.skinLabel1.Name = "skinLabel1";
-            this.skinLabel1.Size = new System.Drawing.Size(330, 20);
+            this.skinLabel1.Size = new System.Drawing.Size(218, 21);
             this.skinLabel1.TabIndex = 3;
             this.skinLabel1.Text = "交易还未开始，请耐心等待。";
             this.skinLabel1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -63,6 +59,7 @@
             // skinLabel2
             // 
             this.skinLabel2.ArtTextStyle = CCWin.SkinControl.ArtTextStyle.None;
+            this.skinLabel2.AutoSize = true;
             this.skinLabel2.BackColor = System.Drawing.Color.Transparent;
             this.skinLabel2.BorderColor = System.Drawing.Color.White;
             this.skinLabel2.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
@@ -103,6 +100,19 @@
             this.panel_info.Size = new System.Drawing.Size(418, 80);
             this.panel_info.TabIndex = 4;
             // 
+            // skinPictureBox1
+            // 
+            this.skinPictureBox1.BackColor = System.Drawing.Color.Transparent;
+            this.skinPictureBox1.BackgroundImage = global::Teleware.ZPG.Client.Properties.Resources.jywks;
+            this.skinPictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.skinPictureBox1.Dock = System.Windows.Forms.DockStyle.Left;
+            this.skinPictureBox1.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.skinPictureBox1.Location = new System.Drawing.Point(0, 0);
+            this.skinPictureBox1.Name = "skinPictureBox1";
+            this.skinPictureBox1.Size = new System.Drawing.Size(80, 80);
+            this.skinPictureBox1.TabIndex = 2;
+            this.skinPictureBox1.TabStop = false;
+            // 
             // skinLabel4
             // 
             this.skinLabel4.ArtTextStyle = CCWin.SkinControl.ArtTextStyle.None;
@@ -132,19 +142,6 @@
             this.panel_time.Size = new System.Drawing.Size(418, 40);
             this.panel_time.TabIndex = 5;
             // 
-            // skinPictureBox1
-            // 
-            this.skinPictureBox1.BackColor = System.Drawing.Color.Transparent;
-            this.skinPictureBox1.BackgroundImage = global::Teleware.ZPG.Client.Properties.Resources.jywks;
-            this.skinPictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.skinPictureBox1.Dock = System.Windows.Forms.DockStyle.Left;
-            this.skinPictureBox1.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.skinPictureBox1.Location = new System.Drawing.Point(0, 0);
-            this.skinPictureBox1.Name = "skinPictureBox1";
-            this.skinPictureBox1.Size = new System.Drawing.Size(80, 80);
-            this.skinPictureBox1.TabIndex = 2;
-            this.skinPictureBox1.TabStop = false;
-            // 
             // skinPictureBox2
             // 
             this.skinPictureBox2.BackColor = System.Drawing.Color.Transparent;
@@ -156,60 +153,19 @@
             this.skinPictureBox2.TabIndex = 6;
             this.skinPictureBox2.TabStop = false;
             // 
-            // panel_loading
-            // 
-            this.panel_loading.BackColor = System.Drawing.Color.Transparent;
-            this.panel_loading.Controls.Add(this.skinPictureBox3);
-            this.panel_loading.Controls.Add(this.skinLabel5);
-            this.panel_loading.ControlState = CCWin.SkinClass.ControlState.Normal;
-            this.panel_loading.DownBack = null;
-            this.panel_loading.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.panel_loading.Location = new System.Drawing.Point(241, 270);
-            this.panel_loading.MouseBack = null;
-            this.panel_loading.Name = "panel_loading";
-            this.panel_loading.NormlBack = null;
-            this.panel_loading.Size = new System.Drawing.Size(418, 40);
-            this.panel_loading.TabIndex = 6;
-            // 
-            // skinPictureBox3
-            // 
-            this.skinPictureBox3.BackColor = System.Drawing.Color.Transparent;
-            this.skinPictureBox3.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.skinPictureBox3.Image = global::Teleware.ZPG.Client.Properties.Resources.loading;
-            this.skinPictureBox3.Location = new System.Drawing.Point(1, 4);
-            this.skinPictureBox3.Name = "skinPictureBox3";
-            this.skinPictureBox3.Size = new System.Drawing.Size(32, 32);
-            this.skinPictureBox3.TabIndex = 7;
-            this.skinPictureBox3.TabStop = false;
-            // 
-            // skinLabel5
-            // 
-            this.skinLabel5.ArtTextStyle = CCWin.SkinControl.ArtTextStyle.None;
-            this.skinLabel5.BackColor = System.Drawing.Color.Transparent;
-            this.skinLabel5.BorderColor = System.Drawing.Color.White;
-            this.skinLabel5.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.skinLabel5.Location = new System.Drawing.Point(35, 10);
-            this.skinLabel5.Name = "skinLabel5";
-            this.skinLabel5.Size = new System.Drawing.Size(361, 20);
-            this.skinLabel5.TabIndex = 3;
-            this.skinLabel5.Text = "交易开始，正在加载数据......";
-            this.skinLabel5.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
             // TradeUnStartControl
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.Transparent;
-            this.Controls.Add(this.panel_loading);
             this.Controls.Add(this.panel_time);
             this.Controls.Add(this.panel_info);
             this.Name = "TradeUnStartControl";
             this.Size = new System.Drawing.Size(898, 494);
             this.panel_info.ResumeLayout(false);
-            this.panel_time.ResumeLayout(false);
+            this.panel_info.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.skinPictureBox1)).EndInit();
+            this.panel_time.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.skinPictureBox2)).EndInit();
-            this.panel_loading.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.skinPictureBox3)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -224,8 +180,5 @@
         private CCWin.SkinControl.SkinLabel skinLabel4;
         private CCWin.SkinControl.SkinPanel panel_time;
         private CCWin.SkinControl.SkinPictureBox skinPictureBox2;
-        private CCWin.SkinControl.SkinPanel panel_loading;
-        private CCWin.SkinControl.SkinPictureBox skinPictureBox3;
-        private CCWin.SkinControl.SkinLabel skinLabel5;
     }
 }

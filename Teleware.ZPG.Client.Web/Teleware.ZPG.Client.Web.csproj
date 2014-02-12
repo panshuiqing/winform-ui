@@ -76,6 +76,7 @@
     <Content Include="web\css\NewTabImages\zdxx.gif" />
     <Content Include="web\css\NewTabStyle.css" />
     <Content Include="web\Default.aspx" />
+    <Content Include="web\GuestBook.aspx" />
     <Content Include="web\images\address_bg.jpg" />
     <Content Include="web\images\banner.jpg" />
     <Content Include="web\images\banner_bg.jpg" />
@@ -166,6 +167,8 @@
     <Content Include="web\images\zswd.jpg" />
     <Content Include="web\images\zxly.jpg" />
     <Content Include="web\js\jquery-1.7.1.min.js" />
+    <Content Include="web\js\TabStrip.js" />
+    <Content Include="web\Questions.aspx" />
     <Content Include="web\WebForm1.aspx" />
   </ItemGroup>
   <ItemGroup>
@@ -207,6 +210,20 @@
     </Compile>
     <Compile Include="web\Default.aspx.designer.cs">
       <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="web\GuestBook.aspx.cs">
+      <DependentUpon>GuestBook.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="web\GuestBook.aspx.designer.cs">
+      <DependentUpon>GuestBook.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="web\Questions.aspx.cs">
+      <DependentUpon>Questions.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="web\Questions.aspx.designer.cs">
+      <DependentUpon>Questions.aspx</DependentUpon>
     </Compile>
     <Compile Include="web\WebForm1.aspx.cs">
       <DependentUpon>WebForm1.aspx</DependentUpon>

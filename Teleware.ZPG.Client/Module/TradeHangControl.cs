@@ -17,6 +17,20 @@ namespace Teleware.ZPG.Client.Module
 
         private void TradeHangControl_Load(object sender, EventArgs e)
         {
+            this.panelMain.Visible = false;
+            this.panelLoading.Visible = true;
+            new System.Threading.Thread(delegate() {
+                System.Threading.Thread.Sleep(6000);
+                Utils.InvokeEx(new MethodInvoker(delegate {
+                    this.InitData();
+                    this.panelMain.Visible = true;
+                    this.panelLoading.Visible = false;
+                }), this);
+            }).Start();
+        }
+
+        private void InitData()
+        {
             var list = Model.Create();
             this.listView1.SuspendLayout();
             int i = 1;
