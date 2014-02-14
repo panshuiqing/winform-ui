@@ -88,13 +88,7 @@ namespace Teleware.ZPG.Client
         private Size GetTextSize()
         {
             if (string.IsNullOrEmpty(this.loadingBoxArgs.LoadingText)) return Size.Empty;
-            int maxTextWidth = MAX_SIZE.Width - 2 * SPACING;
-            int maxTextHeight = MAX_SIZE.Height - (2 * SPACING);
-            if (this.loadingBoxArgs.LoadingImage != null)
-            {
-                maxTextWidth -= (this.loadingBoxArgs.LoadingImage.Width + TEXT_IMAGE_SPACING);
-            }
-            Size textSize = TextRenderer.MeasureText(this.loadingBoxArgs.LoadingText, this.Font, new Size(maxTextWidth, maxTextHeight), TEXT_FLAGS);
+            Size textSize = TextRenderer.MeasureText(this.loadingBoxArgs.LoadingText, this.Font, new Size(int.MaxValue, int.MaxValue), TEXT_FLAGS);
             return textSize;
         }
 

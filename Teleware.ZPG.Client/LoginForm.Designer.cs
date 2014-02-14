@@ -331,7 +331,7 @@
             this.Shadow = true;
             this.ShadowWidth = 1;
             this.ShowInTaskbar = false;
-            this.Text = "福建省国有建设用地使用权出让系统";
+            this.Text = "";
             this.TopMost = true;
             this.Load += new System.EventHandler(this.LoginForm_Load);
             this.panel_login_btn.ResumeLayout(false);

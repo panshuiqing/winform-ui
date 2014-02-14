@@ -28,7 +28,7 @@ input.Button
     font-family: 宋体, Verdana, Arial, Helvetica, sans-serif;
     padding: 0px 8px;
     font-weight: bold;
-    background: url(images/button_bg.jpg) repeat-x left top;
+    background: url(../images/button_bg.jpg) repeat-x left top;
     height: 24px;
     border: 1px solid #C0D7E7;
     cursor: pointer;

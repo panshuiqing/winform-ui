@@ -39,23 +39,25 @@
             this.panelEx1.BackgroundImage = global::Teleware.ZPG.Client.Properties.Resources.skin_tip;
             this.panelEx1.BackgroundImageRectangle = new System.Drawing.Rectangle(80, 10, 10, 10);
             this.panelEx1.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.panelEx1.ForeColor = System.Drawing.SystemColors.ControlText;
             this.panelEx1.Location = new System.Drawing.Point(0, 0);
             this.panelEx1.Margin = new System.Windows.Forms.Padding(0);
             this.panelEx1.Name = "panelEx1";
-            this.panelEx1.Size = new System.Drawing.Size(104, 32);
+            this.panelEx1.Size = new System.Drawing.Size(121, 45);
             this.panelEx1.TabIndex = 0;
             this.panelEx1.Click += new System.EventHandler(this.panelEx1_Click);
             this.panelEx1.Paint += new System.Windows.Forms.PaintEventHandler(this.panelEx1_Paint);
             // 
             // ToolTipForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(104, 32);
+            this.ClientSize = new System.Drawing.Size(121, 45);
             this.ControlBox = false;
             this.Controls.Add(this.panelEx1);
-            this.Cursor = System.Windows.Forms.Cursors.Arrow;
+            this.Cursor = System.Windows.Forms.Cursors.Default;
+            this.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(3, 1, 3, 1);
             this.MaximizeBox = false;

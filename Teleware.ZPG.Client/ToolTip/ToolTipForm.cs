@@ -78,9 +78,7 @@ namespace Teleware.ZPG.Client
         private Size GetTextSize()
         {
             if (string.IsNullOrEmpty(this.tooltipText)) return Size.Empty;
-            int maxTextWidth = MAX_SIZE.Width - 2 * SPACING;
-            int maxTextHeight = MAX_SIZE.Height - (2 * SPACING);
-            Size textSize = TextRenderer.MeasureText(this.tooltipText, this.Font, new Size(maxTextWidth, maxTextHeight), TEXT_FLAGS);
+            Size textSize = TextRenderer.MeasureText(this.tooltipText, this.Font, new Size(int.MaxValue, int.MaxValue), TEXT_FLAGS);
             return textSize;
         }
 
@@ -99,7 +97,7 @@ namespace Teleware.ZPG.Client
             //画字
             if (!string.IsNullOrEmpty(this.tooltipText))
             {
-                TextRenderer.DrawText(e.Graphics, this.tooltipText, this.Font, textRect, this.ForeColor, TEXT_FLAGS);
+                TextRenderer.DrawText(e.Graphics, this.tooltipText, this.panelEx1.Font, textRect, this.panelEx1.ForeColor, TEXT_FLAGS);
             }
         }
 
