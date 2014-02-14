@@ -1,0 +1,627 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>出让公告查询 </title>
+    <link type="text/css" href="css/Index.css" rel="Stylesheet" />
+    <style type="text/css">
+        .DItem1
+        {
+            font-size: 12px;
+            color: #2969b9;
+            line-height: 22px;
+            border-right-width: 1px;
+            border-bottom-width: 1px;
+            border-right-style: solid;
+            border-bottom-style: solid;
+            border-right-color: #459ffd;
+            border-bottom-color: #459ffd;
+            font-weight: bold;
+            padding-left: 10px;
+            background-color: #f2faff;
+        }
+    </style>
+</head>
+<body>
+    <form>
+    <link href="http://localhost:7905/Tlw.ZPG.PublicWeb/Resource/images/calendar/calendarStyle.css"
+        type="text/css" rel="stylesheet" />
+    <div class="divAll">
+        <div class="divLogo">
+        </div>
+        <div class="divMenu">
+            <div class="left">
+                <ul class="right">
+                    <li><a id="http://localhost:7905/Tlw.ZPG.PublicWeb/Index.aspx" href="http://localhost:7905/Tlw.ZPG.PublicWeb/Index.aspx"
+                        title="首 页">首 页 </a></li>
+                    <li class='line'></li>
+                    <li><a id="http://localhost:7905/Tlw.ZPG.PublicWeb/Index.aspx" href="http://localhost:7905/Tlw.ZPG.PublicWeb/PublicSysMsg/TradeRule.aspx"
+                        title="交易规则" target="_blank">交易规则 </a></li>
+                    <li class='line'></li>
+                    <li><a id="http://localhost:7905/Tlw.ZPG.PublicWeb/Index.aspx" href="http://localhost:7905/Tlw.ZPG.PublicWeb/PublicSysMsg/TradeFlow.aspx"
+                        title="交易流程" target="_blank">交易流程 </a></li>
+                    <li class='line'></li>
+                    <li><a id="http://localhost:7905/Tlw.ZPG.PublicWeb/Index.aspx" href="http://localhost:7905/Tlw.ZPG.PublicWeb/PublicSysMsg/ApplyInstruction.aspx"
+                        title="竞买申请" target="_blank">竞买申请 </a></li>
+                    <li class='line'></li>
+                    <li><a id="http://localhost:7905/Tlw.ZPG.PublicWeb/Index.aspx" href="http://localhost:7905/Tlw.ZPG.PublicWeb/PublicSysMsg/TradeInfoQueryView.aspx"
+                        title="出让宗地查询">出让宗地查询 </a></li>
+                    <li class='line'></li>
+                    <li><a id="http://localhost:7905/Tlw.ZPG.PublicWeb/Index.aspx" href="http://localhost:7905/Tlw.ZPG.PublicWeb/PublicSysMsg/InfomationQuery.aspx?InfomationBigTypeId=3"
+                        title="政策法规资讯">政策法规资讯 </a></li>
+                    <li class='line'></li>
+                    <li><a id="http://localhost:7905/Tlw.ZPG.PublicWeb/Index.aspx" href="http://localhost:7905/Tlw.ZPG.PublicWeb/PublicSysMsg/FormatFileDownload.aspx"
+                        title="格式文书下载">格式文书下载 </a></li>
+                    <li class='line'></li>
+                    <li><a id="http://localhost:7905/Tlw.ZPG.PublicWeb/Index.aspx" href="http://localhost:7905/Tlw.ZPG.PublicWeb/PublicSysMsg/FileDownload.aspx"
+                        title="交易软件下载">交易软件下载 </a></li>
+                    <li class='line'></li>
+                </ul>
+                <div style="font-size: 15px; color: #FF0000; font-weight: bold; text-align: center;">
+                    竞买端软件升级，请各竞买人重新<a href="http://fjgpjy.fjgtzy.gov.cn/zpgpublicweb/Resource/ClientTool/福建省国有建设用地使用权出让网上交易系统(竞买软件)v1.011.exe"
+                        style="font-size: 15px; color: #FF0000; font-weight: bold; text-align: center;
+                        text-decoration: underline;">下载安装</a>(如已安装，请先卸载后再安装)。
+                </div>
+            </div>
+        </div>
+        <table class="tableInfo">
+            <tr>
+                <td class="left">
+                    <div style="padding-top: 7px">
+                        <table width="225px" border="0" cellspacing="0" cellpadding="0">
+                            <tr>
+                                <td>
+                                    <img src="images/Lm_bg.jpg" width="224" height="237" border="0" usemap="#Map" />
+                                </td>
+                            </tr>
+                            <tr>
+                                <td height="4px">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="LM" style="vertical-align: middle;">
+                                        <table cellpadding="0" cellspacing="0" border="0" width="219px" height="85px" style="vertical-align: middle">
+                                            <tr>
+                                                <td width="2px">
+                                                </td>
+                                                <td width="100px" align="right">
+                                                    <a href="OnlineQuestion.aspx"><span style="font-size: 14px; position: relative; top: 20px">
+                                                        &nbsp;&nbsp;在线留言</span></a>
+                                                </td>
+                                                <td width="10px">
+                                                </td>
+                                                <td width="100px" align="right">
+                                                    <a href="../Resource/ClientTool/福建省国有建设用地使用权出让网上交易系统(竞买软件).exe"><span style="font-size: 14px;
+                                                        position: relative; top: 20px">&nbsp;&nbsp;&nbsp;&nbsp;竞买软件</span></a>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td width="2px">
+                                                </td>
+                                                <td width="100px" align="right">
+                                                    <a href="InfomationQuery.aspx?InfomationBigTypeId=4"><span style="font-size: 14px;
+                                                        position: relative; top: 22px">&nbsp;&nbsp;知识问答</span></a>
+                                                </td>
+                                                <td width="10px">
+                                                </td>
+                                                <td width="110px" align="right">
+                                                    <a href="InfomationQuery.aspx?InfomationBigTypeId=3"><span style="font-size: 14px;
+                                                        position: relative; top: 22px">&nbsp;&nbsp;&nbsp;&nbsp;政策法规</span></a>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td height="8px">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="jmrczbz">
+                                        <ul>
+                                            <li><a href="../resource/OnlineDemo/OnlineDemoBM/3.htm" target="_blank"><span style="font-size: 14px">
+                                                注册演示</span></a></li>
+                                            <li><a href="../resource/OnlineDemo/OnlineDemoPM/1.htm" target="_blank"><span style="font-size: 14px">
+                                                挂牌交易演示</span></a></li>
+                                            <li><a href="../resource/OnlineDemo/OnlineDemoGP/2.htm" target="_blank"><span style="font-size: 14px">
+                                                网上拍卖演示</span></a></li>
+                                            <li class="wu"><a href="../Resource/ClientTool/竞买软件操作手册.doc" target="_blank"><span
+                                                style="font-size: 14px">竞买人操作手册下载</span></a></li>
+                                        </ul>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td height="8px">
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                    <map name="Map" id="Map">
+                        <area shape="rect" coords="42,12,194,45" href="../PublicSysMsg/TradeAffiche.aspx?AfficheFashionId=53" />
+                        <area shape="rect" coords="42,57,194,89" href="../PublicSysMsg/TradeResultListView.aspx" />
+                        <area shape="rect" coords="45,101,216,132" href="../PublicSysMsg/TradeResultListView.aspx?ResultId=139" />
+                        <area shape="rect" coords="45,148,213,178" href="../PublicSysMsg/UserRegisterQuery.aspx"
+                            target="_blank" />
+                        <area shape="rect" coords="44,194,180,224" href="../PublicSysMsg/FamiliarQuestion.aspx" />
+                    </map>
+                </td>
+                <td class="right">
+                    <table width="769px" border="0" cellspacing="0" cellpadding="0" style="float: right">
+                        <tr>
+                            <td>
+                                <ul class="divNavigation">
+                                    <li class="left"></li>
+                                    <li class="title">出让公告查询</li>
+                                    <li class="right"></li>
+                                </ul>
+                                <table border="0" cellspacing="0" cellpadding="0" style="width: 100%; float: right"
+                                    class="TableBody">
+                                    <tr>
+                                        <td height="25" class="leftTd" align="right" style="width: 100px">
+                                            标题
+                                        </td>
+                                        <td align="left" colspan="3">
+                                            <input name="_ctl0:ContentPlaceHolder1:txtSearchContent" type="text" id="_ctl0_ContentPlaceHolder1_txtSearchContent"
+                                                style="width: 85%" maxlength="20" />
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td align="right" class="leftTd">
+                                            所在设区市
+                                        </td>
+                                        <td>
+                                            <select name="_ctl0:ContentPlaceHolder1:lstBigCounty" id="_ctl0_ContentPlaceHolder1_lstBigCounty"
+                                                onchange="javascript:LoadSmallCounty(this);" style="width: 120px;">
+                                                <option selected="selected" value="">全部</option>
+                                                <option value="2">福州</option>
+                                                <option value="3">厦门</option>
+                                                <option value="5">泉州</option>
+                                                <option value="6">漳州</option>
+                                                <option value="4">莆田</option>
+                                                <option value="10">三明</option>
+                                                <option value="7">南平</option>
+                                                <option value="8">龙岩</option>
+                                                <option value="9">宁德</option>
+                                            </select>
+                                        </td>
+                                        <td class="leftTd" align="right">
+                                            所辖县(市、区)
+                                        </td>
+                                        <td>
+                                            <select name="_ctl0:ContentPlaceHolder1:lstSmallCounty" id="_ctl0_ContentPlaceHolder1_lstSmallCounty"
+                                                style="width: 120px;">
+                                                <option selected="selected" value="">全部</option>
+                                            </select>
+                                            <input name="_ctl0:ContentPlaceHolder1:HiddenlstSmallCounty" type="text" id="_ctl0_ContentPlaceHolder1_HiddenlstSmallCounty"
+                                                style="display: none;" />
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="leftTd" align="right" style="width: 120px;">
+                                            公告时间
+                                        </td>
+                                        <td colspan="3">
+                                            <table cellspacing="0" cellpadding="0" border="0" class="childtable">
+                                                <tr>
+                                                    <td style="width: 65px;">
+                                                        &nbsp;开始时间&nbsp;
+                                                    </td>
+                                                    <td>
+                                                        <table cellspacing="0" cellpadding="0" border="0" style="width: 70px">
+                                                            <tr>
+                                                                <td>
+                                                                    <input name="_ctl0:ContentPlaceHolder1:TimeControl1:txtCalendar" type="text" id="_ctl0_ContentPlaceHolder1_TimeControl1_txtCalendar"
+                                                                        class="field_input" size="15" onfocus="this.oldvalue=this.value" onblur="CheckTime(this);"
+                                                                        maxlength="20" /><input name="_ctl0:ContentPlaceHolder1:TimeControl1:BeginDate" type="text"
+                                                                            id="_ctl0_ContentPlaceHolder1_TimeControl1_BeginDate" style="display: none;"
+                                                                            size="19" onclick="calendar(this,false);" />
+                                                                </td>
+                                                                <td style="font-size: 10px; width: 167px;">
+                                                                    <script src="/Tlw.ZPG.PublicWeb/WebResource.axd?d=rB8QnIgoazLk3LwD_E0DyM8kfeYa4hHrdbq5SOmFdiKjikOAcW8d2ucFnvujUFpQGtEBg-yfsZqgHExUL3KVde2yC-7kpQQHon295MGEVved17Td4u3TUYq-GEDyHEWWWAwN-FvR9wlRJfnU6ck-nL42-NlEsCpV-xFmColFJ5I1&amp;t=635216647590314742"
+                                                                        type="text/javascript"></script>
+                                                                    <script src="/Tlw.ZPG.PublicWeb/WebResource.axd?d=f5d4WNJle3d_yR6dfXuCyAYENIC0S6edUQTNjyzme9e4yXbcfV8c8UfIyGUx7pqIITuq4DGyA_DoeZI2llR2xdjElhyOvLZqjTLDQ62MAOVu7xHhcPVqwtCfqKnoWPRpqOQ_UpF-BvHFCsUnZvgcrHr11ttG2EKLY1hJU3xQGhQ1&amp;t=635216647590314742"
+                                                                        type="text/javascript"></script>
+                                                                    <script src="/Tlw.ZPG.PublicWeb/WebResource.axd?d=OhJaD6ffARh5fzgMYTF0xy3ppDVKHyTYJeGdanAxoyNgkOnQ0rw-FuvD9lLdlQa79uMnwqOTBn2Qsjz5fio0iCFrRqlIsW93gty8uLZGpK-CgZgLnVr8mXGTAI0xL-2NHennOzjstDEkSv0frYTTs3FDUBHZCVXBsSLnfFdyk_preBs2bFobrKJ9o0xjboZS0&amp;t=635216647590314742"
+                                                                        type="text/javascript"></script>
+                                                                    <script src="/Tlw.ZPG.PublicWeb/WebResource.axd?d=5hSZPOE2qk7jz-T2-T9W5DDyAKPlnPGZ7pJop8HI6gjVsH9HRgv_gS_tmcyuT-MaULi50xIxY8nRXGrIn0zaVtYuw4-wppYeMl68yDBD1_SpBsVb7njYHCQoYt8vtTvSF5cUvze_pOn4fVG-IHkFMsrMhmEI5rUgJi2hP_Xh3OoVQsyFn8YcQ3dJxC4RmVKz0&amp;t=635216647590314742"
+                                                                        type="text/javascript"></script>
+                                                                    <input type="hidden" id="_ctl0_ContentPlaceHolder1_TimeControl1_CalendarTo_selecteddates"
+                                                                        name="_ctl0_ContentPlaceHolder1_TimeControl1_CalendarTo_selecteddates" value="2005.12.17" /><input
+                                                                            type="hidden" id="_ctl0_ContentPlaceHolder1_TimeControl1_CalendarTo_visibledate"
+                                                                            name="_ctl0_ContentPlaceHolder1_TimeControl1_CalendarTo_visibledate" value="2005.12.17" /><div
+                                                                                style="display: none" id="_ctl0_ContentPlaceHolder1_TimeControl1_CalendarTo">
+                                                                            </div>
+                                                                </td>
+                                                                <td style="width: 29px">
+                                                                    <img src="http://localhost:7905/Tlw.ZPG.PublicWeb/resource/images/calendar/images/btn_calendar.gif"
+                                                                        id="_ctl0_ContentPlaceHolder1_TimeControl1_txtCalendarImg" onclick="ButtonTo_OnClick(this.parentNode.parentNode.firstChild.firstChild)"
+                                                                        onmouseup="ButtonTo_OnMouseUp(event)" class="calendar_button" />
+                                                                </td>
+                                                            </tr>
+                                                        </table>
+                                                    </td>
+                                                    <td>
+                                                        &nbsp;结束时间
+                                                    </td>
+                                                    <td>
+                                                        <table cellspacing="0" cellpadding="0" border="0" style="width: 70px">
+                                                            <tr>
+                                                                <td>
+                                                                    <input name="_ctl0:ContentPlaceHolder1:TimeControl1:txtCalendarToEnd" type="text"
+                                                                        id="_ctl0_ContentPlaceHolder1_TimeControl1_txtCalendarToEnd" class="field_input"
+                                                                        size="15" onfocus="this.oldvalue=this.value" onblur="CheckTime(this);" maxlength="20" /><input
+                                                                            name="_ctl0:ContentPlaceHolder1:TimeControl1:EndDate" type="text" id="_ctl0_ContentPlaceHolder1_TimeControl1_EndDate"
+                                                                            style="display: none;" size="19" onclick="calendar(this,false);" />
+                                                                </td>
+                                                                <td style="font-size: 10px; width: 167px;">
+                                                                    <input type="hidden" id="_ctl0_ContentPlaceHolder1_TimeControl1_CalendarToEnd_selecteddates"
+                                                                        name="_ctl0_ContentPlaceHolder1_TimeControl1_CalendarToEnd_selecteddates" value="2005.12.17" /><input
+                                                                            type="hidden" id="_ctl0_ContentPlaceHolder1_TimeControl1_CalendarToEnd_visibledate"
+                                                                            name="_ctl0_ContentPlaceHolder1_TimeControl1_CalendarToEnd_visibledate" value="2005.12.17" /><div
+                                                                                style="display: none" id="_ctl0_ContentPlaceHolder1_TimeControl1_CalendarToEnd">
+                                                                            </div>
+                                                                </td>
+                                                                <td style="width: 29px">
+                                                                    <img src="http://localhost:7905/Tlw.ZPG.PublicWeb/resource/images/calendar/images/btn_calendar.gif"
+                                                                        id="_ctl0_ContentPlaceHolder1_TimeControl1_txtCalendarToEndImg" onclick="ButtonTo_OnClick(this.parentNode.parentNode.firstChild.firstChild)"
+                                                                        onmouseup="ButtonTo_OnMouseUp(event)" class="calendar_button" />
+                                                                </td>
+                                                            </tr>
+                                                        </table>
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                            <span controltovalidate="_ctl0_ContentPlaceHolder1_TimeControl1_EndDate" errormessage=" 开始时间应小于结束时间"
+                                                display="Dynamic" id="_ctl0_ContentPlaceHolder1_TimeControl1_CompareValidator1"
+                                                evaluationfunction="CompareValidatorEvaluateIsValid" controltocompare="_ctl0_ContentPlaceHolder1_TimeControl1_BeginDate"
+                                                controlhookup="_ctl0_ContentPlaceHolder1_TimeControl1_BeginDate" operator="GreaterThan"
+                                                style="color: Red; display: none;">开始时间应小于结束时间</span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="4" style="text-align: center">
+                                            <input type="image"
+                                                class="button_align" src="images/search.gif"
+                                                style="border-width: 0px;" />
+                                        </td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td valign="top" class="line" style="height: 10px;">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td valign="top">
+                                <table class="TableList" cellspacing="0" cellpadding="0" rules="all" border="1" id="_ctl0_ContentPlaceHolder1_dgrdList"
+                                    style="width: 100%; border-collapse: collapse;">
+                                    <tr class="Header">
+                                        <td nowrap="nowrap" style="width: 35px;">
+                                            序号
+                                        </td>
+                                        <td>
+                                            公告标题
+                                        </td>
+                                        <td nowrap="nowrap" style="width: 120px;">
+                                            所在市县
+                                        </td>
+                                        <td nowrap="nowrap" style="width: 70px;">
+                                            公告时间
+                                        </td>
+                                        <td nowrap="nowrap" style="width: 80px;">
+                                            状 态
+                                        </td>
+                                    </tr>
+                                    <tr class="field_gridItem" onmouseout="this.className = this.getAttribute(&#39;BKC&#39;);"
+                                        onmouseover="this.setAttribute(&#39;BKC&#39;,this.className); this.className=&#39;field_gridMouseover&#39;"
+                                        onclick="javascript:OpenNewWindow(&#39;TradeAffiche/AfficheView.aspx?AfficheId=1564&amp;TempId=0&amp;ViewId=1199&#39;,false,700,400,&#39;NewWin&#39;);"
+                                        style="cursor: hand">
+                                        <td align="center">
+                                            1
+                                        </td>
+                                        <td class="field_gridCell" align="left">
+                                            tesat
+                                        </td>
+                                        <td class="field_gridCell" align="center">
+                                            福州
+                                        </td>
+                                        <td align="center">
+                                            2014-01-22
+                                        </td>
+                                        <td class="field_gridCell" align="center">
+                                            报名已结束
+                                        </td>
+                                    </tr>
+                                    <tr class="rowColor" onmouseout="this.className = this.getAttribute(&#39;BKC&#39;);"
+                                        onmouseover="this.setAttribute(&#39;BKC&#39;,this.className); this.className=&#39;field_gridMouseover&#39;"
+                                        onclick="javascript:OpenNewWindow(&#39;TradeAffiche/AfficheView.aspx?AfficheId=1563&amp;TempId=0&amp;ViewId=1198&#39;,false,700,400,&#39;NewWin&#39;);"
+                                        style="cursor: hand">
+                                        <td align="center">
+                                            2
+                                        </td>
+                                        <td class="field_gridCell" align="left">
+                                            bbb
+                                        </td>
+                                        <td class="field_gridCell" align="center">
+                                            福州
+                                        </td>
+                                        <td align="center">
+                                            2014-01-21
+                                        </td>
+                                        <td class="field_gridCell" align="center">
+                                            报名已结束
+                                        </td>
+                                    </tr>
+                                    <tr class="field_gridItem" onmouseout="this.className = this.getAttribute(&#39;BKC&#39;);"
+                                        onmouseover="this.setAttribute(&#39;BKC&#39;,this.className); this.className=&#39;field_gridMouseover&#39;"
+                                        onclick="javascript:OpenNewWindow(&#39;TradeAffiche/AfficheView.aspx?AfficheId=1562&amp;TempId=0&amp;ViewId=1197&#39;,false,700,400,&#39;NewWin&#39;);"
+                                        style="cursor: hand">
+                                        <td align="center">
+                                            3
+                                        </td>
+                                        <td class="field_gridCell" align="left">
+                                            2014年新
+                                        </td>
+                                        <td class="field_gridCell" align="center">
+                                            福州
+                                        </td>
+                                        <td align="center">
+                                            2014-01-21
+                                        </td>
+                                        <td class="field_gridCell" align="center">
+                                            报名已结束
+                                        </td>
+                                    </tr>
+                                    <tr class="rowColor" onmouseout="this.className = this.getAttribute(&#39;BKC&#39;);"
+                                        onmouseover="this.setAttribute(&#39;BKC&#39;,this.className); this.className=&#39;field_gridMouseover&#39;"
+                                        onclick="javascript:OpenNewWindow(&#39;TradeAffiche/AfficheView.aspx?AfficheId=1561&amp;TempId=0&amp;ViewId=1196&#39;,false,700,400,&#39;NewWin&#39;);"
+                                        style="cursor: hand">
+                                        <td align="center">
+                                            4
+                                        </td>
+                                        <td class="field_gridCell" align="left">
+                                            aaa
+                                        </td>
+                                        <td class="field_gridCell" align="center">
+                                            福州
+                                        </td>
+                                        <td align="center">
+                                            2014-01-14
+                                        </td>
+                                        <td class="field_gridCell" align="center">
+                                            报名已结束
+                                        </td>
+                                    </tr>
+                                    <tr class="field_gridItem" onmouseout="this.className = this.getAttribute(&#39;BKC&#39;);"
+                                        onmouseover="this.setAttribute(&#39;BKC&#39;,this.className); this.className=&#39;field_gridMouseover&#39;"
+                                        onclick="javascript:OpenNewWindow(&#39;TradeAffiche/AfficheView.aspx?AfficheId=1560&amp;TempId=0&amp;ViewId=1195&#39;,false,700,400,&#39;NewWin&#39;);"
+                                        style="cursor: hand">
+                                        <td align="center">
+                                            5
+                                        </td>
+                                        <td class="field_gridCell" align="left">
+                                            ccc
+                                        </td>
+                                        <td class="field_gridCell" align="center">
+                                            福州
+                                        </td>
+                                        <td align="center">
+                                            2014-01-14
+                                        </td>
+                                        <td class="field_gridCell" align="center">
+                                            报名已结束
+                                        </td>
+                                    </tr>
+                                    <tr class="rowColor" onmouseout="this.className = this.getAttribute(&#39;BKC&#39;);"
+                                        onmouseover="this.setAttribute(&#39;BKC&#39;,this.className); this.className=&#39;field_gridMouseover&#39;"
+                                        onclick="javascript:OpenNewWindow(&#39;TradeAffiche/AfficheView.aspx?AfficheId=1559&amp;TempId=0&amp;ViewId=1194&#39;,false,700,400,&#39;NewWin&#39;);"
+                                        style="cursor: hand">
+                                        <td align="center">
+                                            6
+                                        </td>
+                                        <td class="field_gridCell" align="left">
+                                            aaa
+                                        </td>
+                                        <td class="field_gridCell" align="center">
+                                            福州
+                                        </td>
+                                        <td align="center">
+                                            2014-01-13
+                                        </td>
+                                        <td class="field_gridCell" align="center">
+                                            报名已结束
+                                        </td>
+                                    </tr>
+                                    <tr class="field_gridItem" onmouseout="this.className = this.getAttribute(&#39;BKC&#39;);"
+                                        onmouseover="this.setAttribute(&#39;BKC&#39;,this.className); this.className=&#39;field_gridMouseover&#39;"
+                                        onclick="javascript:OpenNewWindow(&#39;TradeAffiche/AfficheView.aspx?AfficheId=1558&amp;TempId=0&amp;ViewId=1193&#39;,false,700,400,&#39;NewWin&#39;);"
+                                        style="cursor: hand">
+                                        <td align="center">
+                                            7
+                                        </td>
+                                        <td class="field_gridCell" align="left">
+                                            bbb
+                                        </td>
+                                        <td class="field_gridCell" align="center">
+                                            福州
+                                        </td>
+                                        <td align="center">
+                                            2014-01-13
+                                        </td>
+                                        <td class="field_gridCell" align="center">
+                                            报名已结束
+                                        </td>
+                                    </tr>
+                                    <tr class="rowColor" onmouseout="this.className = this.getAttribute(&#39;BKC&#39;);"
+                                        onmouseover="this.setAttribute(&#39;BKC&#39;,this.className); this.className=&#39;field_gridMouseover&#39;"
+                                        onclick="javascript:OpenNewWindow(&#39;TradeAffiche/AfficheView.aspx?AfficheId=1557&amp;TempId=0&amp;ViewId=1192&#39;,false,700,400,&#39;NewWin&#39;);"
+                                        style="cursor: hand">
+                                        <td align="center">
+                                            8
+                                        </td>
+                                        <td class="field_gridCell" align="left">
+                                            testa
+                                        </td>
+                                        <td class="field_gridCell" align="center">
+                                            福州
+                                        </td>
+                                        <td align="center">
+                                            2014-01-10
+                                        </td>
+                                        <td class="field_gridCell" align="center">
+                                            报名已结束
+                                        </td>
+                                    </tr>
+                                    <tr class="field_gridItem" onmouseout="this.className = this.getAttribute(&#39;BKC&#39;);"
+                                        onmouseover="this.setAttribute(&#39;BKC&#39;,this.className); this.className=&#39;field_gridMouseover&#39;"
+                                        onclick="javascript:OpenNewWindow(&#39;TradeAffiche/AfficheView.aspx?AfficheId=1556&amp;TempId=0&amp;ViewId=1191&#39;,false,700,400,&#39;NewWin&#39;);"
+                                        style="cursor: hand">
+                                        <td align="center">
+                                            9
+                                        </td>
+                                        <td class="field_gridCell" align="left">
+                                            test1
+                                        </td>
+                                        <td class="field_gridCell" align="center">
+                                            福州
+                                        </td>
+                                        <td align="center">
+                                            2014-01-10
+                                        </td>
+                                        <td class="field_gridCell" align="center">
+                                            报名已结束
+                                        </td>
+                                    </tr>
+                                    <tr class="rowColor" onmouseout="this.className = this.getAttribute(&#39;BKC&#39;);"
+                                        onmouseover="this.setAttribute(&#39;BKC&#39;,this.className); this.className=&#39;field_gridMouseover&#39;"
+                                        onclick="javascript:OpenNewWindow(&#39;TradeAffiche/AfficheView.aspx?AfficheId=1555&amp;TempId=0&amp;ViewId=1190&#39;,false,700,400,&#39;NewWin&#39;);"
+                                        style="cursor: hand">
+                                        <td align="center">
+                                            10
+                                        </td>
+                                        <td class="field_gridCell" align="left">
+                                            bbb
+                                        </td>
+                                        <td class="field_gridCell" align="center">
+                                            福州
+                                        </td>
+                                        <td align="center">
+                                            2014-01-10
+                                        </td>
+                                        <td class="field_gridCell" align="center">
+                                            报名已结束
+                                        </td>
+                                    </tr>
+                                    <tr class="field_gridItem" onmouseout="this.className = this.getAttribute(&#39;BKC&#39;);"
+                                        onmouseover="this.setAttribute(&#39;BKC&#39;,this.className); this.className=&#39;field_gridMouseover&#39;"
+                                        onclick="javascript:OpenNewWindow(&#39;TradeAffiche/AfficheView.aspx?AfficheId=1554&amp;TempId=0&amp;ViewId=1189&#39;,false,700,400,&#39;NewWin&#39;);"
+                                        style="cursor: hand">
+                                        <td align="center">
+                                            11
+                                        </td>
+                                        <td class="field_gridCell" align="left">
+                                            222
+                                        </td>
+                                        <td class="field_gridCell" align="center">
+                                            福州
+                                        </td>
+                                        <td align="center">
+                                            2014-01-10
+                                        </td>
+                                        <td class="field_gridCell" align="center">
+                                            报名已结束
+                                        </td>
+                                    </tr>
+                                    <tr class="rowColor" onmouseout="this.className = this.getAttribute(&#39;BKC&#39;);"
+                                        onmouseover="this.setAttribute(&#39;BKC&#39;,this.className); this.className=&#39;field_gridMouseover&#39;"
+                                        onclick="javascript:OpenNewWindow(&#39;TradeAffiche/AfficheView.aspx?AfficheId=1553&amp;TempId=0&amp;ViewId=1188&#39;,false,700,400,&#39;NewWin&#39;);"
+                                        style="cursor: hand">
+                                        <td align="center">
+                                            12
+                                        </td>
+                                        <td class="field_gridCell" align="left">
+                                            测试001-0109
+                                        </td>
+                                        <td class="field_gridCell" align="center">
+                                            福州
+                                        </td>
+                                        <td align="center">
+                                            2014-01-09
+                                        </td>
+                                        <td class="field_gridCell" align="center">
+                                            报名已结束
+                                        </td>
+                                    </tr>
+                                    <tr class="field_gridItem" onmouseout="this.className = this.getAttribute(&#39;BKC&#39;);"
+                                        onmouseover="this.setAttribute(&#39;BKC&#39;,this.className); this.className=&#39;field_gridMouseover&#39;"
+                                        onclick="javascript:OpenNewWindow(&#39;TradeAffiche/AfficheView.aspx?AfficheId=1552&amp;TempId=0&amp;ViewId=1187&#39;,false,700,400,&#39;NewWin&#39;);"
+                                        style="cursor: hand">
+                                        <td align="center">
+                                            13
+                                        </td>
+                                        <td class="field_gridCell" align="left">
+                                            test0109-1
+                                        </td>
+                                        <td class="field_gridCell" align="center">
+                                            福州
+                                        </td>
+                                        <td align="center">
+                                            2014-01-09
+                                        </td>
+                                        <td class="field_gridCell" align="center">
+                                            报名已结束
+                                        </td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td align="right" style="line-height: 24px;">
+                                <!-- AspNetPager V6.0.0 for VS2005  Copyright:2003-2006 Webdiyer (www.webdiyer.com) -->
+                                <div id="_ctl0_ContentPlaceHolder1_pagination">
+                                    <a disabled="true" style="margin-right: 5px;">&lt;&lt;</a><a disabled="true" style="margin-right: 5px;">&lt;</a><span
+                                        style="margin-right: 5px; font-weight: Bold; color: red;">1</span><a href="javascript:__doPostBack(&#39;_ctl0$ContentPlaceHolder1$pagination&#39;,&#39;2&#39;)"
+                                            style="margin-right: 5px;">2</a><a href="javascript:__doPostBack(&#39;_ctl0$ContentPlaceHolder1$pagination&#39;,&#39;3&#39;)"
+                                                style="margin-right: 5px;">3</a><a href="javascript:__doPostBack(&#39;_ctl0$ContentPlaceHolder1$pagination&#39;,&#39;4&#39;)"
+                                                    style="margin-right: 5px;">4</a><a href="javascript:__doPostBack(&#39;_ctl0$ContentPlaceHolder1$pagination&#39;,&#39;5&#39;)"
+                                                        style="margin-right: 5px;">5</a><a href="javascript:__doPostBack(&#39;_ctl0$ContentPlaceHolder1$pagination&#39;,&#39;6&#39;)"
+                                                            style="margin-right: 5px;">6</a><a href="javascript:__doPostBack(&#39;_ctl0$ContentPlaceHolder1$pagination&#39;,&#39;7&#39;)"
+                                                                style="margin-right: 5px;">7</a><a href="javascript:__doPostBack(&#39;_ctl0$ContentPlaceHolder1$pagination&#39;,&#39;8&#39;)"
+                                                                    style="margin-right: 5px;">8</a><a href="javascript:__doPostBack(&#39;_ctl0$ContentPlaceHolder1$pagination&#39;,&#39;2&#39;)"
+                                                                        style="margin-right: 5px;">&gt;</a><a href="javascript:__doPostBack(&#39;_ctl0$ContentPlaceHolder1$pagination&#39;,&#39;8&#39;)"
+                                                                            style="margin-right: 5px;">&gt;&gt;</a>
+                                </div>
+                                <!-- AspNetPager V6.0.0 for VS2005 End -->
+                            </td>
+                        </tr>
+                    </table>
+                    <input type="submit" name="_ctl0:ContentPlaceHolder1:StatusButton" value="" onclick="javascript:WebForm_DoPostBackWithOptions(new WebForm_PostBackOptions(&quot;_ctl0:ContentPlaceHolder1:StatusButton&quot;, &quot;&quot;, true, &quot;&quot;, &quot;&quot;, false, false))"
+                        language="javascript" id="_ctl0_ContentPlaceHolder1_StatusButton" style="display: none;" />
+                </td>
+            </tr>
+        </table>
+        <div class="bottom_menu">
+            <div class="title1">
+                <a href="http://localhost:7905/Tlw.ZPG.PublicWeb/Index.aspx">首 页</a> | <a href="http://localhost:7905/Tlw.ZPG.PublicWeb/PublicSysMsg/TradeRule.aspx"
+                    target="_blank">交易规则</a> | <a href="http://localhost:7905/Tlw.ZPG.PublicWeb/PublicSysMsg/TradeFlow.aspx"
+                        target="_blank">交易流程</a> | <a href="http://localhost:7905/Tlw.ZPG.PublicWeb/PublicSysMsg/ApplyInstruction.aspx"
+                            target="_blank">竞买申请</a> | <a href="http://localhost:7905/Tlw.ZPG.PublicWeb/PublicSysMsg/TradeInfoQueryView.aspx">
+                                出让宗地查询</a> | <a href="http://localhost:7905/Tlw.ZPG.PublicWeb/PublicSysMsg/InfomationQuery.aspx?InfomationBigTypeId=3">
+                                    政策法规资讯</a> | <a href="http://localhost:7905/Tlw.ZPG.PublicWeb/PublicSysMsg/FormatFileDownload.aspx">
+                                        格式文书下载</a> | <a href="http://localhost:7905/Tlw.ZPG.PublicWeb/PublicSysMsg/FileDownload.aspx">
+                                            交易软件下载</a></div>
+        </div>
+        <div class="bottom_bg">
+            <div class="write">
+                版权所有 @ 福建省国土资源厅&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;地址：福建省福州市金泉路38号&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;电话：<span
+                    style="color: Red;">0591-87660970 0591-87665795</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;备案序号：<span
+                        style="color: Red;">闽ICP备030063号</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 技术支持：福州特力惠电子有限公司&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;电话：0591-87541518</div>
+        </div>
+    </div>
+    </form>
+</body>
+</html>

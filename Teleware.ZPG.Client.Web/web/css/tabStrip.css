@@ -1,0 +1,76 @@
+.TopGroup
+{
+  z-index:99;
+  position:relative;
+}
+.DefaultTab1
+{
+  color:black; 
+  background-color: #E8E8E7;
+  background: url(../images/tabStrip/tab_bg.gif) repeat-x left 1px;  
+  line-height:22px;
+  cursor:pointer;
+}
+.DefaultTabHover1 
+{
+  color:black; 
+  background-color: #E8E8E7;
+  background: url(../images/tabStrip/hover_tab_bg.gif) repeat-x left 1px;
+ line-height:22px;
+  font-family: Verdana; 
+  font-size: 11px; 
+  cursor:pointer;
+}
+
+.SelectedTab1 
+{
+  color:black; 
+  background-color: #FFFFFF;
+  background: url(../images/tabStrip/selected_tab_bg.gif) repeat-x left 1px;
+  border-bottom-width: 0px;
+  color:#ffffff;
+   line-height:22px;
+  cursor:pointer;
+}
+.DefaultTab 
+{
+  color:black; 
+  background-color: #E8E8E7;
+  background-image: url(../images/tabStrip/tab_bg.gif);  
+  line-height:22px;
+  cursor:pointer;
+}
+.DefaultTabHover 
+{
+  color:black; 
+  background-color: #E8E8E7;
+  background-image: url(../images/tabStrip/hover_tab_bg.gif);
+ line-height:22px;
+  font-family: Verdana; 
+  font-size: 11px; 
+  cursor:pointer;
+}
+.SelectedTab 
+{
+  color:black; 
+  background-color: #FFFFFF;
+  background-image: url(../images/tabStrip/selected_tab_bg.gif);
+  border-bottom-width: 0px;
+  color:#ffffff;
+   line-height:22px;
+  cursor:pointer;
+}
+
+.MultiPage
+{
+  background-color:White;
+border:0px solid #9FD1F6;
+  width:100%;
+  height:auto;
+  z-index:98;
+}
+.PageContent
+{
+  font-family:MS Sans Serif, Verdana; 
+  font-size:10px; 
+}
