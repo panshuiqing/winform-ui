@@ -46,6 +46,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="KeyBoardForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="KeyBoardForm.Designer.cs">
+      <DependentUpon>KeyBoardForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="LoadingBox\LoadingBoxArgs.cs" />
     <Compile Include="Module\TradeHangControl.cs">
       <SubType>UserControl</SubType>
@@ -146,6 +152,27 @@
     <Compile Include="SkinForm.Designer.cs">
       <DependentUpon>SkinForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="LoginForm1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LoginForm1.Designer.cs">
+      <DependentUpon>LoginForm1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MainForm1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainForm1.Designer.cs">
+      <DependentUpon>MainForm1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SkinForm1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SkinForm1.Designer.cs">
+      <DependentUpon>SkinForm1.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="KeyBoardForm.resx">
+      <DependentUpon>KeyBoardForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Module\NetDisconnectControl.resx">
       <DependentUpon>NetDisconnectControl.cs</DependentUpon>
     </EmbeddedResource>
@@ -192,6 +219,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="SkinForm.resx">
       <DependentUpon>SkinForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LoginForm1.resx">
+      <DependentUpon>LoginForm1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainForm1.resx">
+      <DependentUpon>MainForm1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SkinForm1.resx">
+      <DependentUpon>SkinForm1.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="app.config" />
     <Compile Include="Controls\PanelEx.cs">
@@ -279,6 +315,19 @@
     <None Include="Resources\baojia_normal.png" />
     <None Include="Resources\baojia_down.png" />
     <None Include="Resources\baojia_hover.png" />
+    <None Include="Resources\background_mainwnd.png" />
+    <None Include="Resources\RestoreNormlBack.png" />
+    <None Include="Resources\CloseMouseBack.png" />
+    <None Include="Resources\CloseNormlBack.png" />
+    <None Include="Resources\MaxDownBack.png" />
+    <None Include="Resources\CloseDownBack.png" />
+    <None Include="Resources\MaxMouseBack.png" />
+    <None Include="Resources\MaxNormlBack.png" />
+    <None Include="Resources\MiniDownBack.png" />
+    <None Include="Resources\MiniMouseBack.png" />
+    <None Include="Resources\MiniNormlBack.png" />
+    <None Include="Resources\RestoreDownBack.png" />
+    <None Include="Resources\RestoreMouseBack.png" />
     <Content Include="Resources\skin_tip.png" />
     <None Include="Resources\tabbtn_bgk_pushed_150.png" />
     <None Include="Resources\tabbtn_bgk_pushed_84.png" />

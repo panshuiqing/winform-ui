@@ -5,13 +5,14 @@ using System.Data;
 using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
+using CCWin.SkinControl;
 
 namespace Teleware.ZPG.Client
 {
-    public partial class ToolTipForm : Form
+    public partial class ToolTipForm : SkinForm
     {
         private string tooltipText;
-        private int SPACING = 4;
+        private int SPACING = 2;
         private Size MIN_SIZE = new Size(121, 45);
         private Size MAX_SIZE = new Size(400, 160);
         private Rectangle textRect = Rectangle.Empty;
@@ -31,7 +32,8 @@ namespace Teleware.ZPG.Client
         {
             if (control == null) throw new ArgumentNullException("control");
             this.tooltipText = text;
-            CalcFinalSizes();
+            this.CalcFinalSizes();
+            this.SetLabel();
             var point = control.FindForm().PointToScreen(control.Location);
             int x = point.X - offsetX;
             int y = point.Y - this.Height;
@@ -39,6 +41,16 @@ namespace Teleware.ZPG.Client
             this.Show(control);
             control.Focus();
             control.LostFocus += new EventHandler(control_LostFocus);
+        }
+
+        private void SetLabel()
+        {
+            this.skinLabel1.ArtTextStyle = ArtTextStyle.None;
+            this.skinLabel1.AutoSize = false;
+            this.skinLabel1.TextAlign = ContentAlignment.MiddleCenter;
+            this.skinLabel1.Text = this.tooltipText;
+            this.skinLabel1.Location = new Point(this.textRect.X, this.textRect.Y);
+            this.skinLabel1.Size = new Size(this.textRect.Width, this.textRect.Height);
         }
         
         void control_LostFocus(object sender, EventArgs e)
@@ -78,32 +90,14 @@ namespace Teleware.ZPG.Client
         private Size GetTextSize()
         {
             if (string.IsNullOrEmpty(this.tooltipText)) return Size.Empty;
-            Size textSize = TextRenderer.MeasureText(this.tooltipText, this.Font, new Size(int.MaxValue, int.MaxValue), TEXT_FLAGS);
+            Size textSize = TextRenderer.MeasureText(this.tooltipText, this.skinLabel1.Font, new Size(int.MaxValue, int.MaxValue), TEXT_FLAGS);
             return textSize;
-        }
-
-        private void ToolTipForm_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
-
-        private void ToolTipForm_DoubleClick(object sender, EventArgs e)
-        {
-            this.Close();
-        }
-
-        private void panelEx1_Paint(object sender, PaintEventArgs e)
-        {
-            //画字
-            if (!string.IsNullOrEmpty(this.tooltipText))
-            {
-                TextRenderer.DrawText(e.Graphics, this.tooltipText, this.panelEx1.Font, textRect, this.panelEx1.ForeColor, TEXT_FLAGS);
-            }
         }
 
         private void panelEx1_Click(object sender, EventArgs e)
         {
             this.Close();
         }
+
     }
 }

@@ -540,6 +540,7 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\bg_KeyBoard.png" />
     <Content Include="Resources\btn_mousedown.png" />
     <Content Include="Resources\btn_mousehover.png" />
     <Content Include="Resources\keyboard_btn_close.png" />

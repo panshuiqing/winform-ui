@@ -9,14 +9,14 @@ using Teleware.ZPG.Client.Module;
 
 namespace Teleware.ZPG.Client
 {
-    public partial class MainForm : SkinForm
+    public partial class MainForm1 : SkinForm1
     {
         private NetDisconnectControl netDisconnectControl;
         private TradeUnStartControl tradeUnStartControl;
         private TradeFinishControl tradeFinishControl;
         private TradeReadyControl tradeReadyControl;
         
-        public MainForm()
+        public MainForm1()
         {
             InitializeComponent();
             this.Load += new EventHandler(MainForm_Load);

@@ -144,6 +144,13 @@ namespace Teleware.ZPG.Client.Properties {
             }
         }
         
+        internal static System.Drawing.Bitmap background_mainwnd {
+            get {
+                object obj = ResourceManager.GetObject("background_mainwnd", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
         internal static System.Drawing.Bitmap BackPalace {
             get {
                 object obj = ResourceManager.GetObject("BackPalace", resourceCulture);
@@ -361,6 +368,27 @@ namespace Teleware.ZPG.Client.Properties {
             }
         }
         
+        internal static System.Drawing.Bitmap CloseDownBack {
+            get {
+                object obj = ResourceManager.GetObject("CloseDownBack", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap CloseMouseBack {
+            get {
+                object obj = ResourceManager.GetObject("CloseMouseBack", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap CloseNormlBack {
+            get {
+                object obj = ResourceManager.GetObject("CloseNormlBack", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
         internal static System.Drawing.Bitmap countdown {
             get {
                 object obj = ResourceManager.GetObject("countdown", resourceCulture);
@@ -522,6 +550,48 @@ namespace Teleware.ZPG.Client.Properties {
             }
         }
         
+        internal static System.Drawing.Bitmap MaxDownBack {
+            get {
+                object obj = ResourceManager.GetObject("MaxDownBack", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap MaxMouseBack {
+            get {
+                object obj = ResourceManager.GetObject("MaxMouseBack", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap MaxNormlBack {
+            get {
+                object obj = ResourceManager.GetObject("MaxNormlBack", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap MiniDownBack {
+            get {
+                object obj = ResourceManager.GetObject("MiniDownBack", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap MiniMouseBack {
+            get {
+                object obj = ResourceManager.GetObject("MiniMouseBack", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap MiniNormlBack {
+            get {
+                object obj = ResourceManager.GetObject("MiniNormlBack", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
         internal static System.Drawing.Bitmap msg_error {
             get {
                 object obj = ResourceManager.GetObject("msg_error", resourceCulture);
@@ -651,6 +721,27 @@ namespace Teleware.ZPG.Client.Properties {
         internal static System.Drawing.Bitmap r9 {
             get {
                 object obj = ResourceManager.GetObject("r9", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap RestoreDownBack {
+            get {
+                object obj = ResourceManager.GetObject("RestoreDownBack", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap RestoreMouseBack {
+            get {
+                object obj = ResourceManager.GetObject("RestoreMouseBack", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap RestoreNormlBack {
+            get {
+                object obj = ResourceManager.GetObject("RestoreNormlBack", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

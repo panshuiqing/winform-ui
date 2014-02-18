@@ -910,18 +910,7 @@ namespace CCWin.SkinControl
             textRect = Rectangle.Empty;
             //判断图像是否为空，为空则直接返回文本的范围
 
-            Image image = null;
-            if (ImageList != null)
-            {
-                if (page.ImageIndex != -1)
-                {
-                    image = ImageList.Images[page.ImageIndex];
-                }
-                else if (page.ImageKey != null)
-                {
-                    image = ImageList.Images[page.ImageKey];
-                }
-            }
+            Image image = GetImageByTabPage(page);
             if (image == null)
             {
                 textRect = tabRect;
@@ -1350,18 +1339,7 @@ namespace CCWin.SkinControl
                     break;
             }
 
-            Image image = null;
-            if (ImageList != null)
-            {
-                if (page.ImageIndex != -1)
-                {
-                    image = ImageList.Images[page.ImageIndex];
-                }
-                else if (page.ImageKey != null)
-                {
-                    image = ImageList.Images[page.ImageKey];
-                }
-            }
+            Image image = GetImageByTabPage(page);
             if ((PageImagePosition == ePageImagePosition.Left || PageImagePosition == ePageImagePosition.Right) && image != null)
             {
                 flags = TextFormatFlags.Left;
@@ -1581,15 +1559,7 @@ namespace CCWin.SkinControl
         {
             if (ImageList != null)
             {
-                Image image = null;
-                if (page.ImageIndex != -1)
-                {
-                    image = ImageList.Images[page.ImageIndex];
-                }
-                else if (page.ImageKey != null)
-                {
-                    image = ImageList.Images[page.ImageKey];
-                }
+                Image image = GetImageByTabPage(page);
                 if (image != null)
                 {
                     g.DrawImage(image, rect);
@@ -1735,6 +1705,22 @@ namespace CCWin.SkinControl
             return Color.FromArgb(a, r, g, b);
         }
 
+        private Image GetImageByTabPage(TabPage page)
+        {
+            Image image = null;
+            if (ImageList != null)
+            {
+                if (!string.IsNullOrEmpty(page.ImageKey))
+                {
+                    image = ImageList.Images[page.ImageKey];
+                }
+                else if (page.ImageIndex != -1)
+                {
+                    image = ImageList.Images[page.ImageIndex];
+                }
+            }
+            return image;
+        }
         #endregion
 
         #region UpDownButtonNativeWindow

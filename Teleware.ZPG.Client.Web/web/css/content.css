@@ -1,4 +1,4 @@
-/*----   Login   ----*/
+﻿/*----   Login   ----*/
 body
 {
 	margin-left: 0px;
@@ -41,8 +41,7 @@ a:hover
 	height:100%;
     text-align:center;
     background:url(../images/SL_bg.jpg) repeat-y left top;
-   
-	}
+}
 
 .divContent div.topbg
 {
@@ -112,7 +111,7 @@ a:hover
 {
 	width:125px;
 	height: 40px;
-	background: url(../images/close.jpg) no-repeat center top;	
+	background: url(../images/btn_close.jpg) no-repeat center top;	
 	text-align:center;
 	
 }
@@ -292,7 +291,7 @@ background:expression('Transparent');}
 	 height:18px;
 	 background: url(../images/jmsq_bottom.jpg) no-repeat left bottom;
 }
-.button{
+.button-ok{
 	font-family:宋体, Arial;
 	font-size: 9pt;
 	height: 22px;
@@ -306,7 +305,7 @@ background:expression('Transparent');}
 	width:210px;
 	float:left;
 }
-.button1{
+.button-no{
 	font-family:宋体, Arial;
 	font-size: 9pt;
 	height: 22px;
@@ -350,6 +349,7 @@ background:expression('Transparent');}
     border-collapse: collapse;
     
 }
+/*
 .TableReadOnly td.leftTd,.TableReadOnly td.leftTd1
 {
 	background-color:#e4f3fc;
@@ -357,6 +357,7 @@ background:expression('Transparent');}
 	padding-top:2px;
 	white-space:nowrap;
 }
+*/
 .TableReadOnly td.leftTdB
 {
 	background-color:#e4f3fc;
@@ -365,10 +366,12 @@ background:expression('Transparent');}
 	white-space:nowrap;
 	font-weight:bold;
 }
+/*
 .TableReadOnly td.leftTd1
 {
 	text-align:right;
 }
+*/
 .RegisterUl,.RegisterUl li
 {
   text-align:left;

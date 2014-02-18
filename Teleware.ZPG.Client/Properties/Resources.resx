@@ -478,7 +478,6 @@
   <data name="tabbtn_bgk_pushed_84" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\tabbtn_bgk_pushed_84.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="baojia_down" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\baojia_down.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -487,5 +486,45 @@
   </data>
   <data name="baojia_normal" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\baojia_normal.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="background_mainwnd" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\background_mainwnd.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="CloseDownBack" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\CloseDownBack.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="CloseMouseBack" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\CloseMouseBack.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="CloseNormlBack" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\CloseNormlBack.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="MaxDownBack" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\MaxDownBack.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="MaxMouseBack" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\MaxMouseBack.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="MaxNormlBack" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\MaxNormlBack.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="MiniDownBack" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\MiniDownBack.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="MiniMouseBack" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\MiniMouseBack.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="MiniNormlBack" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\MiniNormlBack.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="RestoreDownBack" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\RestoreDownBack.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="RestoreMouseBack" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\RestoreMouseBack.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="RestoreNormlBack" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\RestoreNormlBack.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

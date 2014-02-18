@@ -1,0 +1,488 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head id="Head1">
+    <title>注册页面 </title>
+    <link href="css/style.css" type="text/css" rel="stylesheet" />
+    <link href="css/content.css" type="text/css" rel="Stylesheet" />
+</head>
+<body>
+    <form name="form1">
+    <div id='editDiv'>
+    </div>
+    <div id='newDiv'>
+    </div>
+    <table width="100%" border="0" cellspacing="0" cellpadding="0" style="background-color: #dfecf5">
+        <tr>
+            <td width="100%" height="100%" align="center" valign="top">
+                <div class="divJmsq">
+                    <div class="topbg">
+                    </div>
+                    <table id="UserRegisterTable" cellspacing="0" width="770px" align="center" border="0">
+                        <tr>
+                            <td>
+                                <div>
+                                    <table class="TableReadOnly" cellpadding="3" cellspacing="0" cellpadding="0" border="0"
+                                        align="center">
+                                        <tr>
+                                            <td class="leftTdB" colspan="4">
+                                                提示：带有“<font color="red">*</font>”的项目必须填写
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="leftTdB" colspan="4">
+                                                竞买人基本信息
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="leftTd" style="width: 100px; height: 25px">
+                                                竞买宗地号
+                                            </td>
+                                            <td class="EditItem4" colspan="3">
+                                                <input name="lstUserRegisterId" type="text" id="lstUserRegisterId" readonly="" class="field_input" />&nbsp;
+                                                <font color="red">*</font><input name="ScriptLabel" type="hidden" id="ScriptLabel"
+                                                    class="field_input" /><img alt="选择宗地" class="button_align" src="images/btn_xzzd.gif"
+                                                        onclick="javascript:getpurposeValue('LandNumCheck.aspx')" />
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="leftTd">
+                                                申请类型
+                                            </td>
+                                            <td class="EditItem4" colspan="3">
+                                                <select name="lstCompanyOrIndividual" id="lstCompanyOrIndividual" onchange="javascript:changeTxt(this);"
+                                                    style="width: 137px;">
+                                                    <option value="法人">法人</option>
+                                                    <option value="自然人">自然人</option>
+                                                    <option value="联合竞买">联合竞买</option>
+                                                    <option value="其它组织">其它组织</option>
+                                                </select>
+                                                &nbsp;<span style="color: #ff0000">*</span><a href="#"><input id="lbllhjm" class="field_button"
+                                                    style="display: none; color: Blue;" onclick="openNewDiv('newDiv');return false;"
+                                                    value="添加联合竞买人" type="button" /></a>
+                                            </td>
+                                        </tr>
+                                        <tr id="lhjmmc" style="display: none">
+                                            <td class="leftTd">
+                                                联合竞买人
+                                            </td>
+                                            <td class="EditItem4" colspan="3">
+                                                <textarea name="txtLHJMName" id="txtLHJMName" rows="3" style="background-color: Silver;"
+                                                    class="field_input" readonly="readonly" cols="90"></textarea>
+                                            </td>
+                                        </tr>
+                                        <tr id="dwname">
+                                            <td class="leftTd">
+                                                (单位)名称
+                                            </td>
+                                            <td class="EditItem4" style="width: 176px" colspan="3">
+                                                <input name="txtCompanyName" type="text" id="txtCompanyName" maxlength="50" class="field_input" />&nbsp;&nbsp;<span
+                                                    style="color: #ff0000">*</span>
+                                            </td>
+                                        </tr>
+                                        <tr id="dwzcdm">
+                                            <td class="leftTd">
+                                                (单位)注册代码
+                                            </td>
+                                            <td class="EditItem4" style="width: 176px" colspan="3">
+                                                <input name="txtCompanyCode" type="text" id="txtCompanyCode" maxlength="50" class="field_input" />&nbsp;&nbsp;<span
+                                                    style="color: #ff0000">*</span>
+                                            </td>
+                                        </tr>
+                                        <tr id="grname" style="display: none">
+                                            <td class="leftTd">
+                                                姓 名
+                                            </td>
+                                            <td class="EditItem4" style="width: 176px" colspan="3">
+                                                <input name="txtIndividualName" type="text" id="txtIndividualName" maxlength="10"
+                                                    class="field_input" />&nbsp;&nbsp;<span style="color: #ff0000">*</span>
+                                            </td>
+                                        </tr>
+                                        <tr id="grfashion" style="display: none">
+                                            <td class="leftTd">
+                                                证件类型
+                                            </td>
+                                            <td class="EditItem4" style="width: 176px" colspan="3">
+                                                <select name="lstIndividualFashion:CodeList" id="lstIndividualFashion_CodeList" class="field_select"
+                                                    style="width: 140px;">
+                                                    <option selected="selected" value="81">身份证</option>
+                                                    <option value="82">护照</option>
+                                                    <option value="83">其它</option>
+                                                </select>
+                                                &nbsp;&nbsp;<span style="color: #ff0000">*</span>
+                                            </td>
+                                        </tr>
+                                        <tr id="grfashionname" style="display: none">
+                                            <td class="leftTd">
+                                                证件号码
+                                            </td>
+                                            <td class="EditItem4" style="width: 176px" colspan="3">
+                                                <input name="txtIndividualFashionName" type="text" id="txtIndividualFashionName"
+                                                    maxlength="20" class="field_input" />&nbsp;&nbsp;<span style="color: #ff0000">*</span>
+                                            </td>
+                                        </tr>
+                                        <tr id="grcompany" style="display: none">
+                                            <td class="leftTd">
+                                                单 位
+                                            </td>
+                                            <td class="EditItem4" style="width: 176px" colspan="3">
+                                                <input name="txtIndividualCompany" type="text" id="txtIndividualCompany" maxlength="50"
+                                                    class="field_input" />&nbsp;&nbsp;
+                                            </td>
+                                        </tr>
+                                        <tr id="grtel" style="display: none">
+                                            <td class="leftTd">
+                                                电 话
+                                            </td>
+                                            <td class="EditItem4" style="width: 176px" colspan="3">
+                                                <input name="txtIndividualTel" type="text" id="txtIndividualTel" maxlength="20" class="field_input" />&nbsp;&nbsp;<span
+                                                    style="color: #ff0000">*</span>
+                                            </td>
+                                        </tr>
+                                        <tr id="dz">
+                                            <td class="leftTd">
+                                                地址
+                                            </td>
+                                            <td class="EditItem4" style="width: 176px" colspan="3">
+                                                <input name="txtCompanyOrIndividualAddress" type="text" id="txtCompanyOrIndividualAddress"
+                                                    maxlength="50" class="field_input" />&nbsp;&nbsp;<span style="color: #ff0000">*</span>
+                                            </td>
+                                        </tr>
+                                        <tr id="yb">
+                                            <td class="leftTd">
+                                                邮编
+                                            </td>
+                                            <td class="EditItem4" style="width: 176px" colspan="3">
+                                                <input name="txtCompanyOrIndividualCode" type="text" id="txtCompanyOrIndividualCode"
+                                                    onkeyup="keyupdo(this)" maxlength="6" class="field_input" />&nbsp;&nbsp;<span style="color: #ff0000">*</span>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </div>
+                                <br />
+                                <div id="divLHJM" style="display: none">
+                                    <span id="lbldivLHJM" style="cursor: default"></span>
+                                </div>
+                                <br />
+                                <div id="fddbr" style="display: inline">
+                                    <table class="TableReadOnly" cellspacing="0" cellpadding="3" width="90%" border="0"
+                                        align="center">
+                                        <tr>
+                                            <td class="leftTdB" colspan="2">
+                                                法定代表人
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="leftTd" style="width: 100px">
+                                                姓名
+                                            </td>
+                                            <td class="EditItem4" style="width: 170px;">
+                                                <input name="txtStatutoryname" type="text" id="txtStatutoryname" maxlength="50" class="field_input" />&nbsp;&nbsp;<span
+                                                    style="color: #ff0000">*</span> <span controltovalidate="txtStatutoryname" errormessage=" 长度已超过10位！"
+                                                        display="Dynamic" id="evalrtxtStatutoryname" evaluationfunction="RegularExpressionValidatorEvaluateIsValid"
+                                                        validationexpression="(\w|\W){0,10}" style="color: Red; display: none;">长度已超过10位！</span>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="leftTd">
+                                                证件类型
+                                            </td>
+                                            <td class="EditItem4">
+                                                <select name="lstStatutoryFashion:CodeList" id="lstStatutoryFashion_CodeList" class="field_select"
+                                                    style="width: 140px;">
+                                                    <option selected="selected" value="81">身份证</option>
+                                                    <option value="82">护照</option>
+                                                    <option value="83">其它</option>
+                                                </select>
+                                                <span style="color: #ff0000">*</span>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="leftTd">
+                                                证件号码
+                                            </td>
+                                            <td class="EditItem4">
+                                                <input name="txtStatutorypapersnumber" type="text" id="txtStatutorypapersnumber"
+                                                    class="field_input" />&nbsp;&nbsp;<span style="color: #ff0000">*</span> <span controltovalidate="txtStatutorypapersnumber"
+                                                        errormessage=" 长度已超过25位！" display="Dynamic" id="evalrtxtStatutorypapersnumber"
+                                                        evaluationfunction="RegularExpressionValidatorEvaluateIsValid" validationexpression="(\w|\W){0,25}"
+                                                        style="color: Red; display: none;">长度已超过25位！</span>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="leftTd">
+                                                职务
+                                            </td>
+                                            <td class="EditItem4">
+                                                <input name="txtStatutorypost" type="text" id="txtStatutorypost" class="field_input" />
+                                                <span controltovalidate="txtStatutorypost" errormessage=" 长度已超过25位！" display="Dynamic"
+                                                    id="evalrtxtStatutorypost" evaluationfunction="RegularExpressionValidatorEvaluateIsValid"
+                                                    validationexpression="(\w|\W){0,25}" style="color: Red; display: none;">长度已超过25位！</span>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="leftTd">
+                                                地址
+                                            </td>
+                                            <td class="EditItem4">
+                                                <input name="txtStatutoryaddress" type="text" id="txtStatutoryaddress" class="field_input" />&nbsp;&nbsp;<span
+                                                    style="color: #ff0000">*</span> <span controltovalidate="txtStatutoryaddress" errormessage=" 长度已超过50位！"
+                                                        display="Dynamic" id="evalrtxtStatutoryaddress" evaluationfunction="RegularExpressionValidatorEvaluateIsValid"
+                                                        validationexpression="(\w|\W){0,50}" style="color: Red; display: none;">长度已超过50位！</span>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="leftTd">
+                                                电话
+                                            </td>
+                                            <td class="EditItem4">
+                                                <input name="txtStatutorytelphone" type="text" id="txtStatutorytelphone" onkeyup="keyupdo(this)"
+                                                    class="field_input" />&nbsp;&nbsp;<span style="color: #ff0000">*</span> <span controltovalidate="txtStatutorytelphone"
+                                                        errormessage=" 长度已超过25位！" display="Dynamic" id="evalrtxtStatutorytelphone" evaluationfunction="RegularExpressionValidatorEvaluateIsValid"
+                                                        validationexpression="(\w|\W){0,25}" style="color: Red; display: none;">长度已超过25位！</span>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="leftTd">
+                                                邮编
+                                            </td>
+                                            <td class="EditItem4">
+                                                <input name="txtStatutoryzipcode" type="text" id="txtStatutoryzipcode" onkeyup="keyupdo(this)"
+                                                    maxlength="6" class="field_input" />&nbsp;&nbsp;<span style="color: #ff0000">*</span>
+                                                <span controltovalidate="txtStatutoryzipcode" errormessage=" 邮编输入不正确！" display="Dynamic"
+                                                    id="evalrtxtStatutoryzipcode" evaluationfunction="RegularExpressionValidatorEvaluateIsValid"
+                                                    validationexpression="[1-9]\d{5}(?!\d)" style="color: Red; display: none;">邮编输入不正确！</span>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                    <br />
+                                </div>
+                                <div>
+                                    <font style="color: red; margin-left: 20px;">注：如申请人非本人办理，须填写以下信息。</font>
+                                    <table class="TableReadOnly" cellspacing="0" cellpadding="3" width="90%" border="0"
+                                        align="center">
+                                        <tr>
+                                            <td class="leftTdB" colspan="2">
+                                                委托代理人
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="leftTd" style="width: 100px">
+                                                姓名
+                                            </td>
+                                            <td class="EditItem4" style="width: 170px;">
+                                                <input name="txtEntrustname" type="text" id="txtEntrustname" maxlength="50" class="field_input" />&nbsp;&nbsp;
+                                                <span id="startxtEntrustname" style="color: #ff0000; display: none;">*</span> <span
+                                                    id="spEntrustname" style="display: none"><font color="red">请输入姓名</font></span>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="leftTd">
+                                                证件类型
+                                            </td>
+                                            <td class="EditItem4">
+                                                <select name="lstEntrustFashion:CodeList" id="lstEntrustFashion_CodeList" class="field_select"
+                                                    style="width: 140px;">
+                                                    <option selected="selected" value="81">身份证</option>
+                                                    <option value="82">护照</option>
+                                                    <option value="83">其它</option>
+                                                </select>
+                                                <span id="starlstEntrustFashion" style="color: #ff0000; display: none;">*</span>
+                                                <span id="spEntrustFashion" style="display: none"><font color="red">请选择证件类型</font></span>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="leftTd">
+                                                证件号码
+                                            </td>
+                                            <td class="EditItem4">
+                                                <input name="txtEntrustpapersnumber" type="text" id="txtEntrustpapersnumber" maxlength="25"
+                                                    class="field_input" />&nbsp;&nbsp;<span id="startxtEntrustpapersnumber" style="color: #ff0000;
+                                                        display: none;">*</span> <span id="spEntrustpapersnumber" style="display: none"><font
+                                                            color="red">请输入证件号码</font></span>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="leftTd">
+                                                单位
+                                            </td>
+                                            <td class="EditItem4">
+                                                <input name="txtEntrustcompany" type="text" id="txtEntrustcompany" class="field_input" />
+                                                <span controltovalidate="txtEntrustcompany" errormessage=" 长度已超过50位！" display="Dynamic"
+                                                    id="evalrtxtEntrustcompany" evaluationfunction="RegularExpressionValidatorEvaluateIsValid"
+                                                    validationexpression="(\w|\W){0,50}" style="color: Red; display: none;">长度已超过50位！</span>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="leftTd">
+                                                地址
+                                            </td>
+                                            <td class="EditItem4">
+                                                <input name="txtEntrustaddress" type="text" id="txtEntrustaddress" maxlength="250"
+                                                    class="field_input" />&nbsp;&nbsp;<span id="startxtEntrustaddress" style="color: #ff0000;
+                                                        display: none;">*</span> <span id="spEntrustaddress" style="display: none"><font
+                                                            color="red">请输入地址</font></span>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="leftTd">
+                                                电话
+                                            </td>
+                                            <td class="EditItem4">
+                                                <input name="txtEntrusttelphone" type="text" id="txtEntrusttelphone" onkeyup="keyupdo(this)"
+                                                    maxlength="25" class="field_input" />&nbsp;&nbsp;<span id="startxtEntrusttelphone"
+                                                        style="color: #ff0000; display: none;">*</span> <span id="spEntrusttelphone" style="display: none">
+                                                            <font color="red">请输入电话</font></span>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="leftTd">
+                                                邮编
+                                            </td>
+                                            <td class="EditItem4">
+                                                <input name="txtEntrustzipcode" type="text" id="txtEntrustzipcode" onkeyup="keyupdo(this)"
+                                                    maxlength="6" class="field_input" />&nbsp;&nbsp;<span id="startxtEntrustzipcode"
+                                                        style="color: #ff0000; display: none;">*</span> <span id="spEntrustzipcode" style="display: none">
+                                                            <font color="red">请输入邮编</font></span>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </div>
+                                <br />
+                                <div>
+                                    <table class="TableReadOnly" cellspacing="0" cellpadding="3" width="90%" border="0"
+                                        align="center">
+                                        <tr>
+                                            <td class="leftTdB" colspan="2" style="height: 20px">
+                                                联系人
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="leftTd" style="width: 100px">
+                                                姓 名
+                                            </td>
+                                            <td class="EditItem4" style="width: 170px;">
+                                                <input name="txtLinkname" type="text" id="txtLinkname" class="field_input" />&nbsp;&nbsp;<span
+                                                    style="color: #ff0000">*</span><span controltovalidate="txtLinkname" errormessage=" 长度已超过25位！"
+                                                        display="Dynamic" id="evalrtxtLinkname" evaluationfunction="RegularExpressionValidatorEvaluateIsValid"
+                                                        validationexpression="(\w|\W){0,25}" style="color: Red; display: none;"> 长度已超过25位！</span>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="leftTd">
+                                                固定电话
+                                            </td>
+                                            <td class="EditItem4">
+                                                <input name="txtcounty" type="text" id="txtcounty" style="width: 30px" onkeyup="keyupdo(this)"
+                                                    maxlength="4" value="86" class="field_input" />-
+                                                <input name="txtarea" type="text" id="txtarea" style="width: 40px" maxlength="4"
+                                                    onkeyup="keyupdo(this)" class="field_input" />(区号)-
+                                                <input name="txtTelphone" type="text" id="txtTelphone" maxlength="8" onkeyup="keyupdo(this)"
+                                                    style="width: 80px" class="field_input" />(电话号码)&nbsp;&nbsp;<span style="color: #ff0000">*</span>
+                                                <span controltovalidate="txtTelphone" errormessage=" 长度已超过25位！" display="Dynamic"
+                                                    id="RegularExpressionValidator3" evaluationfunction="RegularExpressionValidatorEvaluateIsValid"
+                                                    validationexpression="(\w|\W){0,25}" style="color: Red; display: none;">长度已超过25位！</span>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="leftTd">
+                                                电话号码
+                                            </td>
+                                            <td class="EditItem4">
+                                                <input name="txtLinktelphone" type="text" id="txtLinktelphone" onkeyup="keyupdo(this)"
+                                                    class="field_input" />&nbsp;&nbsp;<span style="color: #ff0000">*</span><br />
+                                                <span style="color: #ff0000">注：该号码用于接收挂牌人发送的短信（目前支持移动，联通，电信的号码）！</span> <span controltovalidate="txtLinktelphone"
+                                                    errormessage=" 长度已超过25位！" display="Dynamic" id="evalrtxtLinktelphone" evaluationfunction="RegularExpressionValidatorEvaluateIsValid"
+                                                    validationexpression="(\w|\W){0,25}" style="color: Red; display: none;">长度已超过25位！</span>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="leftTd" style="height: 30px">
+                                                电子邮箱
+                                            </td>
+                                            <td class="EditItem4" style="height: 30px">
+                                                <input name="txtLinkEmail" type="text" id="txtLinkEmail" class="field_input" />
+                                                <span controltovalidate="txtLinkEmail" errormessage=" 长度已超过50位！" display="Dynamic"
+                                                    id="RegularExpressionValidator5" evaluationfunction="RegularExpressionValidatorEvaluateIsValid"
+                                                    validationexpression="(\w|\W){0,100}" style="color: Red; display: none;">长度已超过50位！</span>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="leftTd">
+                                                单 位
+                                            </td>
+                                            <td class="EditItem4">
+                                                <input name="txtLinkcompany" type="text" id="txtLinkcompany" class="field_input" />
+                                                <span controltovalidate="txtLinkcompany" errormessage=" 长度已超过100位！" display="Dynamic"
+                                                    id="evalrtxtLinkcompany" evaluationfunction="RegularExpressionValidatorEvaluateIsValid"
+                                                    validationexpression="(\w|\W){0,100}" style="color: Red; display: none;">长度已超过100位！</span>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="leftTd">
+                                                地 址
+                                            </td>
+                                            <td class="EditItem4">
+                                                <input name="txtLinkaddress" type="text" id="txtLinkaddress" class="field_input" />&nbsp;&nbsp;<span
+                                                    style="color: #ff0000">*</span><span controltovalidate="txtLinkaddress" errormessage=" 长度已超过250位！"
+                                                        display="Dynamic" id="evalrtxtLinkaddress" evaluationfunction="RegularExpressionValidatorEvaluateIsValid"
+                                                        validationexpression="(\w|\W){0,250}" style="color: Red; display: none;"> 长度已超过250位！</span>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="leftTd">
+                                                邮 编
+                                            </td>
+                                            <td class="EditItem4">
+                                                <input name="txtLinkzipcode" type="text" id="txtLinkzipcode" maxlength="6" onkeyup="keyupdo(this)"
+                                                    class="field_input" />&nbsp;&nbsp;<span style="color: #ff0000">*</span> <span controltovalidate="txtLinkzipcode"
+                                                        errormessage=" 邮编输入不正确！" display="Dynamic" id="evalrtxtLinkzipcode" evaluationfunction="RegularExpressionValidatorEvaluateIsValid"
+                                                        validationexpression="[1-9]\d{5}(?!\d)" style="color: Red; display: none;">邮编输入不正确！</span>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                    <br />
+                                    <table class="TableReadOnly" style="display: none" cellspacing="0" cellpadding="3"
+                                        width="90%" border="0" align="center">
+                                        <tr>
+                                            <td class="leftTd" colspan="4" style="height: 20px">
+                                                附件操作
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="leftTd" style="height: 20px; width: 100px">
+                                                操作说明
+                                            </td>
+                                            <td class="EditItem4" style="height: 20px; width: 550px;">
+                                                <span id="lblMsg">请上传法人的相关证件</span>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td colspan="2">
+                                                <iframe id="eWebEditor1" src="AdjunctUpLoad.aspx" frameborder="0" scrolling="no"
+                                                    width="100%" height="250"></iframe>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                    <table id="btnid" class="EditTable" cellspacing="0" cellpadding="3" width="90%" border="0"
+                                        align="center">
+                                        <tr>
+                                            <td colspan="4" align="center" style="height: 30px">
+                                                <input onclick="if (typeof(Page_ClientValidate) == 'function') Page_ClientValidate(''); __doPostBack('btnSave','')"
+                                                    name="btnSave" type="button" id="btnSave" style="display: none" />
+                                                <img id="btnAdd" class="button_align" onclick="Javascript:CheckDate();" src="images/btn_submit.gif" />
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </div>
+                            </td>
+                        </tr>
+                    </table>
+                    <div class="bottombg">
+                    </div>
+                </div>
+            </td>
+        </tr>
+    </table>
+    </form>
+</body>
+</html>

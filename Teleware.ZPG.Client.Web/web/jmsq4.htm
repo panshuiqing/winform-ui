@@ -1,0 +1,280 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>管理页面 </title>
+    <link href="css/content.css" type="text/css" rel="stylesheet" />
+    <link href='css/default.css' type='text/css' rel='stylesheet'>
+    <style>
+        .EditTable td.silver
+        {
+            background-color: #EAEAEA;
+            padding: 6px;
+        }
+        .EditTable td.right
+        {
+            text-align: right;
+        }
+        .gridItem
+        {
+            font-family: 宋体;
+            font-size: 12px;
+            padding-top: 1px;
+            padding-left: 5px;
+            margin-bottom: 1px;
+            text-align: left;
+            height: 22px;
+            border-bottom-style: dotted;
+            border-bottom-width: 1px;
+            border-bottom-color: #E9E7D7;
+            background-repeat: repeat-x;
+            background-position: center bottom;
+        }
+    </style>
+    <body style="background-color: #dfecf5">
+        <form>
+        <table width="100%" border="0" cellspacing="0" cellpadding="0">
+            <tr>
+                <td width="100%" height="100%" align="center" valign="top">
+                    <div class="divJmsq">
+                        <div class="topbg">
+                        </div>
+                        <div id="neednotprint" class="neednotprint">
+                            <table cellpadding="0" cellspacing="0" class="neednotprintTable">
+                                <tr>
+                                    <td valign="bottom" width="220px">
+                                        <ul class="RegisterUl">
+                                            <li id="up" class="fontBlack">需上传附件</li>
+                                            <li id="check">已提交审核</li>
+                                        </ul>
+                                    </td>
+                                    <td align="right" valign="bottom">
+                                        <input type="submit" name="ButtonMemo" value="查看竞买申请审核结果" id="ButtonMemo" class="field_button" />
+                                        <input type="submit" name="ButtonSn" value="查看打印注册流水号" onclick="alert(&#39;注册流水号用于查看竞买申请审核结果、补充上传附件扫描资料、查看竞买号及初始交易密码等，请妥善保管您的注册流水号，以防泄密。&#39;);"
+                                            language="javascript" id="ButtonSn" class="field_button" />
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td colspan="2">
+                                        <div class="TableResult" style="width: 700px;">
+                                            <div class="LeftTop">
+                                            </div>
+                                            <div class="RightTop">
+                                            </div>
+                                            <div class="LeftBottom">
+                                            </div>
+                                            <div class="RightBottom">
+                                            </div>
+                                            <div class="content">
+                                                <span id="Label1">您已注册成功，但仍未提交审核。</span>
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </table>
+                            <table align="center" width="700">
+                                <tr>
+                                    <td style="width: 688px; text-align: left;">
+                                        <table class="EditTable" width="100%">
+                                            <tr>
+                                                <td class="EditItem2">
+                                                    <table>
+                                                        <tr>
+                                                            <td class="DItem1 right" style="width: 17%">
+                                                                <font size="2">申请人:</font>
+                                                            </td>
+                                                            <td class="EditItem2" style="width: 29%">
+                                                                <span id="upcl1_lblUserName"><font size="2">345</font></span>
+                                                            </td>
+                                                            <td class="DItem1 right" style="width: 17%">
+                                                                <font size="2">宗地号:</font>
+                                                            </td>
+                                                            <td class="EditItem2" style="width: 37%">
+                                                                <span id="upcl1_lblAppNum">漳州芗城区-zz002</span>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td class="DItem1 right">
+                                                                <font size="2">报名截止时间:</font>
+                                                            </td>
+                                                            <td class="EditItem2">
+                                                                <span id="upcl1_lblRegisterStart">2014-03-01</span>
+                                                            </td>
+                                                            <td class="DItem1 right">
+                                                                <font size="2">交易起始时间:</font>
+                                                            </td>
+                                                            <td class="EditItem2">
+                                                                <span id="upcl1_lblTradeStart">2014-01-01</span>
+                                                            </td>
+                                                        </tr>
+                                                        <tr id="upcl1_FileType" style="display: block;">
+                                                            <td class="DItem1 right">
+                                                                <span style="font-family: 宋体"><font size="2">附件类型:</font></span>
+                                                            </td>
+                                                            <td colspan="3">
+                                                                <input name="upcl1:txtType" type="text" id="upcl1_txtType" mark="type" readonly=""
+                                                                    style="width: 265px; height: 20px;" class="field_input" value="身份证" />
+                                                                <input id="btnType" type="button" class="field_button" onclick="javascript:getpurposeValue('ShowType.aspx')"
+                                                                    value="..." /><font color="red">&nbsp; *</font>
+                                                                <input name="upcl1:txtTemp" type="hidden" id="upcl1_txtTemp" value="3140" />
+                                                            </td>
+                                                        </tr>
+                                                        <tr id="upcl1_upFile" style="display: block;">
+                                                            <td class="DItem1 right">
+                                                                <span style="font-family: 宋体"><font size="2">单文件上传:</font></span>
+                                                            </td>
+                                                            <td colspan="3" class="EditItem2">
+                                                                <input type="file" name="upcl1:File1" id="upcl1_File1" class="field_file" mark="file"
+                                                                    style="height: 22px; width: 200px;" />
+                                                                <input id="Button2" type="button" value="添 加" onclick="javascript:addAdjunct();" />
+                                                                <input type="submit" name="upcl1:Button1" value="Button" id="upcl1_Button1" mark="button1"
+                                                                    style="display: none" />
+                                                                <font color="red">*</font><font color="blue"> 扩展名为(*.gif; *.png; *.jpg; *.jpeg; *.bmp;
+                                                                    *.doc; *.rar)</font>
+                                                                <br />
+                                                                <span id="upcl1_Radprogressmanager1" style="display: inline-block; width: 90%;">
+                                                                </span>
+                                                                <div id="upcl1_progressArea1" style="display: none; width: 90%;">
+                                                                    <!-- 2.3.0 -->
+                                                                    <span id="upcl1_progressArea1StyleSheetHolder" style="display: none;"></span>
+                                                                    <div id="upcl1_progressArea1_Panel">
+                                                                        <div class="RadUploadProgressArea">
+                                                                            <table class="RadUploadProgressTable" style="width: 100%; height: 100%;">
+                                                                                <tr>
+                                                                                    <td class="RadUploadProgressBarHolder">
+                                                                                        <img src="/Tlw.ZPG.PublicWeb/WebResource.axd?d=SCpxvz3bkcEJxPjdPhnPCBboNns2_zI3lHvGdluLORJrRjR1JkAKSUMP-2KV0Dfc80TePVlcSgAqyu25XS5CErbL6SgdAjWjafgtcIOgCBIv6KdbZyULsXjX7B2u1s9NtpQlMG7n4COchapQMffYFltLeY9Xr3LavQQFH3PJgxxdZ-c8lOordUv2wQH3yrtH0&amp;t=635216647589974723"
+                                                                                            id="upcl1_progressArea1_Panel_PrimaryProgressBar" alt="Progress bar" style="width: 0%;" />
+                                                                                    </td>
+                                                                                </tr>
+                                                                                <tr>
+                                                                                    <td class="RadUploadTotalProgressData">
+                                                                                        完成 <span id="upcl1_progressArea1_Panel_PrimaryPercent"></span>%&nbsp;(<span id="upcl1_progressArea1_Panel_PrimaryValue"></span>)&nbsp;<span
+                                                                                            id="upcl1_progressArea1_Panel_PrimaryTotal"></span>
+                                                                                    </td>
+                                                                                </tr>
+                                                                                <tr>
+                                                                                    <td class="RadUploadProgressBarHolder2">
+                                                                                        <img src="/Tlw.ZPG.PublicWeb/WebResource.axd?d=SCpxvz3bkcEJxPjdPhnPCBboNns2_zI3lHvGdluLORJrRjR1JkAKSUMP-2KV0Dfc80TePVlcSgAqyu25XS5CErbL6SgdAjWjafgtcIOgCBIv6KdbZyULsXjX7B2u1s9NtpQlMG7n4COchapQMffYFltLeY9Xr3LavQQFH3PJgxxdZ-c8lOordUv2wQH3yrtH0&amp;t=635216647589974723"
+                                                                                            id="upcl1_progressArea1_Panel_SecondaryProgressBar" alt="Progress bar" style="width: 0%;" />
+                                                                                    </td>
+                                                                                </tr>
+                                                                                <tr>
+                                                                                    <td class="RadUploadCurrentFileName">
+                                                                                        路径：<span id="upcl1_progressArea1_Panel_CurrentOperation"></span>
+                                                                                    </td>
+                                                                                </tr>
+                                                                                <tr>
+                                                                                    <td class="RadUploadTotalProgressData">
+                                                                                        用时：<span id="upcl1_progressArea1_Panel_TimeElapsed"></span>&nbsp;预计时间：<span id="upcl1_progressArea1_Panel_TimeEstimated"></span>&nbsp;速度：<span
+                                                                                            id="upcl1_progressArea1_Panel_Speed"></span>
+                                                                                    </td>
+                                                                                </tr>
+                                                                            </table>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </td>
+                                                        </tr>
+                                                        <tr id="upcl1_Tr1" style="display: block;">
+                                                            <td class="DItem1 right">
+                                                                <span style="font-family: 宋体"><font size="2">多文件上传:</font></span>
+                                                            </td>
+                                                            <td colspan="3" class="EditItem2">
+                                                                &nbsp;<a class="inline" id="addFile" href="#inline_content">添加附件 </a><font color="red">
+                                                                    *</font><font color="blue"> 扩展名为(*.gif; *.png; *.jpg; *.jpeg; *.bmp; *.doc; *.rar)</font>
+                                                                <div style="display: none;">
+                                                                    <a id="upcl1_LinkButton1" href="javascript:__doPostBack(&#39;upcl1$LinkButton1&#39;,&#39;&#39;)">
+                                                                        LinkButton</a>
+                                                                </div>
+                                                            </td>
+                                                        </tr>
+                                                        <tr id="upcl1_Notice" style="display: none;">
+                                                            <td class="DItem1">
+                                                                <span style="font-family: 宋体"><font size="2">提示:</font></span>
+                                                            </td>
+                                                            <td colspan="3" class="DItem1 right">
+                                                                <span id="upcl1_lblNotice">已经超过截止时间,只允许查看附件！</span>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td colspan="4">
+                                                                <div style="overflow: auto; width: 100%; text-align: right;">
+                                                                    <table cellspacing="0" cellpadding="3" rules="all" bordercolor="White" border="1"
+                                                                        id="upcl1_dgAdjunct" style="border-color: White; border-width: 1px; border-style: solid;
+                                                                        width: 100%; border-collapse: collapse;">
+                                                                        <tr align="center" valign="middle" style="color: #444444; background-color: #E3EFFB;
+                                                                            font-weight: bold; height: 20px;">
+                                                                            <td>
+                                                                                状 态
+                                                                            </td>
+                                                                            <td>
+                                                                                序 号
+                                                                            </td>
+                                                                            <td>
+                                                                                附件类型
+                                                                            </td>
+                                                                            <td>
+                                                                                查看
+                                                                            </td>
+                                                                            <td>
+                                                                                删除
+                                                                            </td>
+                                                                        </tr>
+                                                                        <tr style="height: 15px;">
+                                                                            <td align="center" style="width: 4%;">
+                                                                                <img src="images/icon_warning.jpg" id="upcl1_dgAdjunct__ctl3_imgstatus" title="审核未通过！" />
+                                                                            </td>
+                                                                            <td align="center" style="width: 4%;">
+                                                                                <span id="upcl1_dgAdjunct__ctl3_lblxh">1</span>
+                                                                            </td>
+                                                                            <td align="center" style="width: 40%;">
+                                                                                竞买申请表
+                                                                            </td>
+                                                                            <td align="center" style="width: 3%;">
+                                                                                <a id="upcl1_dgAdjunct__ctl3_HLinkEdit" title="查看" href="javascript:OpenFullWindowPublic(&#39;FramePictureTN.aspx?pid=2312&#39;,800,600);">
+                                                                                    <img title="查看" src="images/download.gif" alt="" border="0" /></a>
+                                                                            </td>
+                                                                            <td align="center" style="width: 3%;">
+                                                                                <input type="image" name="upcl1:dgAdjunct:_ctl3:ImageButton1" id="upcl1_dgAdjunct__ctl3_ImageButton1"
+                                                                                    src="images/DeleteIco-1.gif" onclick=" return checkDel();" language="javascript"
+                                                                                    style="border-width: 0px;" />
+                                                                            </td>
+                                                                        </tr>
+                                                                    </table>
+                                                                    <br />
+                                                                    <input name="upcl1:lblpath" type="hidden" id="upcl1_lblpath" mark="lblpath" />
+                                                                </div>
+                                                            </td>
+                                                        </tr>
+                                                    </table>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                </tr>
+                            </table>
+                            <input type="hidden" name="jinmaihao" id="jinmaihao" value="您拟参加竞买的宗地为：（漳州芗城区-zz002），" />
+                            <br />
+                            <input type="submit" name="ButtonSubmit" value="下一步：提交审核" onclick="if(!confirm( &#39;请竞买申请人在点击“提交审核”按钮前上传有关附件、资料，上传的次数不设限制，但提交审核后不可更改，请认真核对无误后提交。所有附件的上传及意见的反馈必须点击“提交审核”才传送至挂牌人审核。是否继续？ &#39;))return　false;"
+                                language="javascript" id="ButtonSubmit" class="field_button" />&nbsp;&nbsp;
+                            <input onclick="window.close()" type="button" value="关闭" class="field_button" />
+                            <div class="notice">
+                                <span style="font-size: 14px; color: Red;">注意:</span><br />
+                                （1）注册流水号用于查看竞买申请审核结果、补充上传附件扫描资料、获取竞买号及初始交易密码等，请妥善保管您的注册流水号，以防泄密。<br />
+                                （2）请竞买申请人在点击“提交审核”按钮前上传附件，上传附件的次数不设限制，但提交审核后不可更改，请认真核对无误后提交，所有附件的上传及意见的反馈必须点击“提交审核”才传送至出让方审核。<br />
+                                （3）经挂牌人审核反馈意见后，竞买申请人凭注册流水号登录本网站，可修改、补充上传有关附件，点击“提交审核”将修改、补充的有关文件、资料传送挂牌人审核。<br />
+                                （4）竞买申请获得审核通过后，请尽快缴纳竞买保证金，并将竞买保证金的缴纳凭证尽快扫描上传挂牌人。经挂牌人审核同意后，发放竞买号及初始交易密码。<br />
+                                （5）交易起始时间前两天，禁止上传附件与提交审核。
+                            </div>
+                        </div>
+                        <div id="tobeprinted" style="display: none;">
+                            <span id="Label2">流水号:485433590386</span>
+                        </div>
+                        <div class="bottombg">
+                        </div>
+                    </div>
+                </td>
+            </tr>
+        </table>
+        </form>
+    </body>
+</html>

@@ -1,0 +1,41 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" style="overflow: hidden;">
+<head>
+    <title>查看打印页面 </title>
+    <link href="css/style.css" type="text/css" rel="stylesheet" />
+</head>
+<body>
+    <form name="form1">
+    <div class="XcContainer">
+        <div class="Header">
+            注册流水号
+        </div>
+        <div class="Content">
+            <table cellpadding="5" cellspacing="5" class="Ctable">
+                <tr>
+                    <td style="width: 90%; text-align: left; height: 33px;">
+                        <span id="Label1" style="font-size: 12pt;">您拟参加竞买的宗地为：（漳州芗城区-zz002），您的注册流水号为：485433590386
+                            。请妥善保管您的注册流水号，以防泄密。</span>&nbsp;<br />
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <div id="neednotprint">
+                            <input type="submit" name="Button3" value="复制" onclick="Javascript:doCopy();" language="javascript"
+                                id="Button3" class="field_button" />
+                            &nbsp; &nbsp; &nbsp;<input type="submit" name="Button1" value="打印" onclick="Javascript:doprint();"
+                                language="javascript" id="Button1" class="field_button" />
+                            &nbsp; &nbsp; &nbsp;
+                            <input type="submit" name="Button2" value="关闭" onclick="Javascript:window.close();"
+                                language="javascript" id="Button2" class="field_button" />
+                        </div>
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <div class="Bottom">
+        </div>
+    </div>
+    </form>
+</body>
+</html>

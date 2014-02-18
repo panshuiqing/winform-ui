@@ -36,24 +36,25 @@
             // 
             this.pic_loading.BackColor = System.Drawing.Color.Transparent;
             this.pic_loading.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.pic_loading.Location = new System.Drawing.Point(48, 24);
+            this.pic_loading.Location = new System.Drawing.Point(55, 28);
+            this.pic_loading.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.pic_loading.Name = "pic_loading";
-            this.pic_loading.Size = new System.Drawing.Size(32, 32);
+            this.pic_loading.Size = new System.Drawing.Size(37, 38);
             this.pic_loading.TabIndex = 0;
             this.pic_loading.TabStop = false;
             // 
             // MessageIconForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.BackgroundImage = null;
             this.BorderPalace = global::Teleware.ZPG.Client.Properties.Resources.form_border;
             this.CaptionHeight = 4;
-            this.ClientSize = new System.Drawing.Size(180, 70);
+            this.ClientSize = new System.Drawing.Size(206, 82);
             this.ControlBox = false;
             this.Controls.Add(this.pic_loading);
-            this.ForeColor = System.Drawing.Color.Black;
+            this.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
@@ -61,7 +62,6 @@
             this.Name = "MessageIconForm";
             this.Radius = 1;
             this.RoundStyle = CCWin.SkinClass.RoundStyle.None;
-            this.Shadow = false;
             this.ShowIcon = false;
             this.ShowInTaskbar = false;
             this.Special = false;

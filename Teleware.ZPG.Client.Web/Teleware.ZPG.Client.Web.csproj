@@ -57,11 +57,14 @@
     <Content Include="res\ApplyInfo.aspx" />
     <Content Include="res\TradeDetail.aspx" />
     <Content Include="res\TradeResult.aspx" />
-    <Content Include="web\affiche.htm" />
     <Content Include="web\css\content.css" />
+    <Content Include="web\dylsh.htm" />
+    <Content Include="web\ggxx.htm" />
     <Content Include="web\css\default.css" />
     <Content Include="web\css\Index.css" />
+    <Content Include="web\download.htm" />
     <Content Include="web\ggcx.htm" />
+    <Content Include="web\images\icon_yes.jpg" />
     <Content Include="web\images\tabStrip\close.gif" />
     <Content Include="web\images\tabStrip\ggxx.gif" />
     <Content Include="web\images\tabStrip\hover_tab_bg.gif" />
@@ -144,7 +147,6 @@
     <Content Include="web\images\city\莆田.jpg" />
     <Content Include="web\images\city\龙岩.jpg" />
     <Content Include="web\images\cjwtjd.jpg" />
-    <Content Include="web\images\close.jpg" />
     <Content Include="web\images\ContentTitle.gif" />
     <Content Include="web\images\contextMenu\add_action.gif" />
     <Content Include="web\images\contextMenu\add_obj.gif" />
@@ -265,7 +267,6 @@
     <Content Include="web\images\loading_background.png" />
     <Content Include="web\images\logo.gif" />
     <Content Include="web\images\logo.jpg" />
-    <Content Include="web\images\logo.swf" />
     <Content Include="web\images\logo1.gif" />
     <Content Include="web\images\menu_bg.jpg" />
     <Content Include="web\images\menu_left.jpg" />
@@ -317,7 +318,6 @@
     <Content Include="web\images\R1CTitleIconR.gif" />
     <Content Include="web\images\refresh_off.gif" />
     <Content Include="web\images\refresh_on.gif" />
-    <Content Include="web\images\right.swf" />
     <Content Include="web\images\save.gif" />
     <Content Include="web\images\save_off.gif" />
     <Content Include="web\images\save_on.gif" />
@@ -330,7 +330,6 @@
     <Content Include="web\images\SL_content.jpg" />
     <Content Include="web\images\SL_top.jpg" />
     <Content Include="web\images\sss.jpg" />
-    <Content Include="web\images\star.swf" />
     <Content Include="web\images\TableResult_Bottom_left.jpg" />
     <Content Include="web\images\TableResult_Bottom_right.jpg" />
     <Content Include="web\images\TableResult_Header_left.jpg" />
@@ -347,6 +346,7 @@
     <Content Include="web\images\userlogin.gif" />
     <Content Include="web\images\view_off.gif" />
     <Content Include="web\images\view_on.gif" />
+    <Content Include="web\images\icon_warning.jpg" />
     <Content Include="web\images\wstdcrgg.jpg" />
     <Content Include="web\images\wstdcrjggs.jpg" />
     <Content Include="web\images\XcContainer_Bottom.gif" />
@@ -361,13 +361,19 @@
     <Content Include="web\images\zxly.jpg" />
     <Content Include="web\images\Zxt.gif" />
     <Content Include="web\index.htm" />
+    <Content Include="web\jggs.htm" />
+    <Content Include="web\jmsq1.htm" />
+    <Content Include="web\jmsq2.htm" />
+    <Content Include="web\jmsq4.htm" />
     <Content Include="web\js\jquery-1.7.1.min.js" />
     <Content Include="web\js\TabStrip.js" />
     <Content Include="web\jygz.htm" />
     <Content Include="web\jylc.htm" />
     <Content Include="web\qa.htm" />
     <Content Include="web\qa_content.htm" />
-    <Content Include="web\Questions.htm" />
+    <Content Include="web\questions.htm" />
+    <Content Include="web\zdxx.htm" />
+    <Content Include="web\jmrz.htm" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Global.asax.cs">

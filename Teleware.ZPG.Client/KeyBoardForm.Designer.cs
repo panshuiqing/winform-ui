@@ -1,24 +1,5 @@
-/********************************************************************
- * *
- * * 使本项目源码或本项目生成的DLL前请仔细阅读以下协议内容，如果你同意以下协议才能使用本项目所有的功能，
- * * 否则如果你违反了以下协议，有可能陷入法律纠纷和赔偿，作者保留追究法律责任的权利。
- * *
- * * 1、你可以在开发的软件产品中使用和修改本项目的源码和DLL，但是请保留所有相关的版权信息。
- * * 2、不能将本项目源码与作者的其他项目整合作为一个单独的软件售卖给他人使用。
- * * 3、不能传播本项目的源码和DLL，包括上传到网上、拷贝给他人等方式。
- * * 4、以上协议暂时定制，由于还不完善，作者保留以后修改协议的权利。
- * *
- * * Copyright (C) 2013-? cskin Corporation All rights reserved.
- * * 网站：CSkin界面库 http://www.cskin.net
- * * 作者： 乔克斯 QQ：345015918 .Net项目技术组群：306485590
- * * 请保留以上版权信息，否则作者将保留追究法律责任。
- * *
- * * 创建时间：2013-12-08
- * * 说明：PassKey.Designer.cs
- * *
-********************************************************************/
-
-namespace CCWin.SkinControl
+using CCWin.SkinControl;
+namespace Teleware.ZPG.Client
 {
     partial class KeyBoardForm
     {
@@ -49,6 +30,7 @@ namespace CCWin.SkinControl
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(KeyBoardForm));
             this.toolShow = new System.Windows.Forms.ToolTip(this.components);
             this.btnhx2 = new CCWin.SkinControl.SkinButton();
             this.btndh = new CCWin.SkinControl.SkinButton();
@@ -103,24 +85,26 @@ namespace CCWin.SkinControl
             this.btnDelet = new CCWin.SkinControl.SkinButton();
             this.SuspendLayout();
             // 
+            // toolShow
+            // 
+            this.toolShow.BackColor = System.Drawing.Color.White;
+            // 
             // btnhx2
             // 
-            this.btnhx2.BackColor = System.Drawing.Color.Transparent;
-            this.btnhx2.BackgroundImage = global::CCWin.Properties.Resources.keyborad_normal;
+            this.btnhx2.BackColor = System.Drawing.Color.White;
+            this.btnhx2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnhx2.BackgroundImage")));
             this.btnhx2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.btnhx2.BackRectangle = new System.Drawing.Rectangle(4, 4, 4, 4);
             this.btnhx2.ControlState = CCWin.SkinClass.ControlState.Normal;
-            this.btnhx2.DownBack = global::CCWin.Properties.Resources.keyboard_btn_mousedown;
+            this.btnhx2.DownBack = ((System.Drawing.Image)(resources.GetObject("btnhx2.DownBack")));
             this.btnhx2.DrawType = CCWin.SkinControl.DrawStyle.Img;
-            this.btnhx2.Font = new System.Drawing.Font("微软雅黑", 8.5F);
+            this.btnhx2.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.btnhx2.Location = new System.Drawing.Point(268, 30);
             this.btnhx2.Margin = new System.Windows.Forms.Padding(0);
-            this.btnhx2.MouseBack = global::CCWin.Properties.Resources.keyboard_btn_mousehover;
+            this.btnhx2.MouseBack = ((System.Drawing.Image)(resources.GetObject("btnhx2.MouseBack")));
             this.btnhx2.Name = "btnhx2";
-            this.btnhx2.NormlBack = global::CCWin.Properties.Resources.keyborad_normal;
-            this.btnhx2.Palace = true;
+            this.btnhx2.NormlBack = ((System.Drawing.Image)(resources.GetObject("btnhx2.NormlBack")));
             this.btnhx2.Radius = 4;
-            this.btnhx2.RoundStyle = CCWin.SkinClass.RoundStyle.All;
             this.btnhx2.Size = new System.Drawing.Size(24, 24);
             this.btnhx2.TabIndex = 50;
             this.btnhx2.Tag = "1|\\";
@@ -131,22 +115,20 @@ namespace CCWin.SkinControl
             // 
             // btndh
             // 
-            this.btndh.BackColor = System.Drawing.Color.Transparent;
-            this.btndh.BackgroundImage = global::CCWin.Properties.Resources.keyborad_normal;
+            this.btndh.BackColor = System.Drawing.Color.White;
+            this.btndh.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btndh.BackgroundImage")));
             this.btndh.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.btndh.BackRectangle = new System.Drawing.Rectangle(4, 4, 4, 4);
             this.btndh.ControlState = CCWin.SkinClass.ControlState.Normal;
-            this.btndh.DownBack = global::CCWin.Properties.Resources.keyboard_btn_mousedown;
+            this.btndh.DownBack = ((System.Drawing.Image)(resources.GetObject("btndh.DownBack")));
             this.btndh.DrawType = CCWin.SkinControl.DrawStyle.Img;
-            this.btndh.Font = new System.Drawing.Font("微软雅黑", 8.5F);
+            this.btndh.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.btndh.Location = new System.Drawing.Point(243, 30);
             this.btndh.Margin = new System.Windows.Forms.Padding(0);
-            this.btndh.MouseBack = global::CCWin.Properties.Resources.keyboard_btn_mousehover;
+            this.btndh.MouseBack = ((System.Drawing.Image)(resources.GetObject("btndh.MouseBack")));
             this.btndh.Name = "btndh";
-            this.btndh.NormlBack = global::CCWin.Properties.Resources.keyborad_normal;
-            this.btndh.Palace = true;
+            this.btndh.NormlBack = ((System.Drawing.Image)(resources.GetObject("btndh.NormlBack")));
             this.btndh.Radius = 4;
-            this.btndh.RoundStyle = CCWin.SkinClass.RoundStyle.All;
             this.btndh.Size = new System.Drawing.Size(24, 24);
             this.btndh.TabIndex = 49;
             this.btndh.Tag = "1+=";
@@ -157,22 +139,20 @@ namespace CCWin.SkinControl
             // 
             // btnjh
             // 
-            this.btnjh.BackColor = System.Drawing.Color.Transparent;
-            this.btnjh.BackgroundImage = global::CCWin.Properties.Resources.keyborad_normal;
+            this.btnjh.BackColor = System.Drawing.Color.White;
+            this.btnjh.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnjh.BackgroundImage")));
             this.btnjh.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.btnjh.BackRectangle = new System.Drawing.Rectangle(4, 4, 4, 4);
             this.btnjh.ControlState = CCWin.SkinClass.ControlState.Normal;
-            this.btnjh.DownBack = global::CCWin.Properties.Resources.keyboard_btn_mousedown;
+            this.btnjh.DownBack = ((System.Drawing.Image)(resources.GetObject("btnjh.DownBack")));
             this.btnjh.DrawType = CCWin.SkinControl.DrawStyle.Img;
-            this.btnjh.Font = new System.Drawing.Font("微软雅黑", 8.5F);
+            this.btnjh.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.btnjh.Location = new System.Drawing.Point(218, 30);
             this.btnjh.Margin = new System.Windows.Forms.Padding(0);
-            this.btnjh.MouseBack = global::CCWin.Properties.Resources.keyboard_btn_mousehover;
+            this.btnjh.MouseBack = ((System.Drawing.Image)(resources.GetObject("btnjh.MouseBack")));
             this.btnjh.Name = "btnjh";
-            this.btnjh.NormlBack = global::CCWin.Properties.Resources.keyborad_normal;
-            this.btnjh.Palace = true;
+            this.btnjh.NormlBack = ((System.Drawing.Image)(resources.GetObject("btnjh.NormlBack")));
             this.btnjh.Radius = 4;
-            this.btnjh.RoundStyle = CCWin.SkinClass.RoundStyle.All;
             this.btnjh.Size = new System.Drawing.Size(24, 24);
             this.btnjh.TabIndex = 48;
             this.btnjh.Tag = "1_-";
@@ -183,22 +163,20 @@ namespace CCWin.SkinControl
             // 
             // btnhx
             // 
-            this.btnhx.BackColor = System.Drawing.Color.Transparent;
-            this.btnhx.BackgroundImage = global::CCWin.Properties.Resources.keyborad_normal;
+            this.btnhx.BackColor = System.Drawing.Color.White;
+            this.btnhx.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnhx.BackgroundImage")));
             this.btnhx.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.btnhx.BackRectangle = new System.Drawing.Rectangle(4, 4, 4, 4);
             this.btnhx.ControlState = CCWin.SkinClass.ControlState.Normal;
-            this.btnhx.DownBack = global::CCWin.Properties.Resources.keyboard_btn_mousedown;
+            this.btnhx.DownBack = ((System.Drawing.Image)(resources.GetObject("btnhx.DownBack")));
             this.btnhx.DrawType = CCWin.SkinControl.DrawStyle.Img;
-            this.btnhx.Font = new System.Drawing.Font("微软雅黑", 8.5F);
+            this.btnhx.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.btnhx.Location = new System.Drawing.Point(193, 30);
             this.btnhx.Margin = new System.Windows.Forms.Padding(0);
-            this.btnhx.MouseBack = global::CCWin.Properties.Resources.keyboard_btn_mousehover;
+            this.btnhx.MouseBack = ((System.Drawing.Image)(resources.GetObject("btnhx.MouseBack")));
             this.btnhx.Name = "btnhx";
-            this.btnhx.NormlBack = global::CCWin.Properties.Resources.keyborad_normal;
-            this.btnhx.Palace = true;
+            this.btnhx.NormlBack = ((System.Drawing.Image)(resources.GetObject("btnhx.NormlBack")));
             this.btnhx.Radius = 4;
-            this.btnhx.RoundStyle = CCWin.SkinClass.RoundStyle.All;
             this.btnhx.Size = new System.Drawing.Size(24, 24);
             this.btnhx.TabIndex = 47;
             this.btnhx.Tag = "1?/";
@@ -209,22 +187,20 @@ namespace CCWin.SkinControl
             // 
             // btnd4
             // 
-            this.btnd4.BackColor = System.Drawing.Color.Transparent;
-            this.btnd4.BackgroundImage = global::CCWin.Properties.Resources.keyborad_normal;
+            this.btnd4.BackColor = System.Drawing.Color.White;
+            this.btnd4.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnd4.BackgroundImage")));
             this.btnd4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.btnd4.BackRectangle = new System.Drawing.Rectangle(4, 4, 4, 4);
             this.btnd4.ControlState = CCWin.SkinClass.ControlState.Normal;
-            this.btnd4.DownBack = global::CCWin.Properties.Resources.keyboard_btn_mousedown;
+            this.btnd4.DownBack = ((System.Drawing.Image)(resources.GetObject("btnd4.DownBack")));
             this.btnd4.DrawType = CCWin.SkinControl.DrawStyle.Img;
-            this.btnd4.Font = new System.Drawing.Font("微软雅黑", 8.5F);
+            this.btnd4.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.btnd4.Location = new System.Drawing.Point(168, 30);
             this.btnd4.Margin = new System.Windows.Forms.Padding(0);
-            this.btnd4.MouseBack = global::CCWin.Properties.Resources.keyboard_btn_mousehover;
+            this.btnd4.MouseBack = ((System.Drawing.Image)(resources.GetObject("btnd4.MouseBack")));
             this.btnd4.Name = "btnd4";
-            this.btnd4.NormlBack = global::CCWin.Properties.Resources.keyborad_normal;
-            this.btnd4.Palace = true;
+            this.btnd4.NormlBack = ((System.Drawing.Image)(resources.GetObject("btnd4.NormlBack")));
             this.btnd4.Radius = 4;
-            this.btnd4.RoundStyle = CCWin.SkinClass.RoundStyle.All;
             this.btnd4.Size = new System.Drawing.Size(24, 24);
             this.btnd4.TabIndex = 46;
             this.btnd4.Tag = "1>.";
@@ -235,22 +211,20 @@ namespace CCWin.SkinControl
             // 
             // btnd3
             // 
-            this.btnd3.BackColor = System.Drawing.Color.Transparent;
-            this.btnd3.BackgroundImage = global::CCWin.Properties.Resources.keyborad_normal;
+            this.btnd3.BackColor = System.Drawing.Color.White;
+            this.btnd3.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnd3.BackgroundImage")));
             this.btnd3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.btnd3.BackRectangle = new System.Drawing.Rectangle(4, 4, 4, 4);
             this.btnd3.ControlState = CCWin.SkinClass.ControlState.Normal;
-            this.btnd3.DownBack = global::CCWin.Properties.Resources.keyboard_btn_mousedown;
+            this.btnd3.DownBack = ((System.Drawing.Image)(resources.GetObject("btnd3.DownBack")));
             this.btnd3.DrawType = CCWin.SkinControl.DrawStyle.Img;
-            this.btnd3.Font = new System.Drawing.Font("微软雅黑", 8.5F);
+            this.btnd3.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.btnd3.Location = new System.Drawing.Point(143, 30);
             this.btnd3.Margin = new System.Windows.Forms.Padding(0);
-            this.btnd3.MouseBack = global::CCWin.Properties.Resources.keyboard_btn_mousehover;
+            this.btnd3.MouseBack = ((System.Drawing.Image)(resources.GetObject("btnd3.MouseBack")));
             this.btnd3.Name = "btnd3";
-            this.btnd3.NormlBack = global::CCWin.Properties.Resources.keyborad_normal;
-            this.btnd3.Palace = true;
+            this.btnd3.NormlBack = ((System.Drawing.Image)(resources.GetObject("btnd3.NormlBack")));
             this.btnd3.Radius = 4;
-            this.btnd3.RoundStyle = CCWin.SkinClass.RoundStyle.All;
             this.btnd3.Size = new System.Drawing.Size(24, 24);
             this.btnd3.TabIndex = 45;
             this.btnd3.Tag = "1<,";
@@ -261,22 +235,20 @@ namespace CCWin.SkinControl
             // 
             // btnd2
             // 
-            this.btnd2.BackColor = System.Drawing.Color.Transparent;
-            this.btnd2.BackgroundImage = global::CCWin.Properties.Resources.keyborad_normal;
+            this.btnd2.BackColor = System.Drawing.Color.White;
+            this.btnd2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnd2.BackgroundImage")));
             this.btnd2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.btnd2.BackRectangle = new System.Drawing.Rectangle(4, 4, 4, 4);
             this.btnd2.ControlState = CCWin.SkinClass.ControlState.Normal;
-            this.btnd2.DownBack = global::CCWin.Properties.Resources.keyboard_btn_mousedown;
+            this.btnd2.DownBack = ((System.Drawing.Image)(resources.GetObject("btnd2.DownBack")));
             this.btnd2.DrawType = CCWin.SkinControl.DrawStyle.Img;
-            this.btnd2.Font = new System.Drawing.Font("微软雅黑", 8.5F);
+            this.btnd2.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.btnd2.Location = new System.Drawing.Point(118, 30);
             this.btnd2.Margin = new System.Windows.Forms.Padding(0);
-            this.btnd2.MouseBack = global::CCWin.Properties.Resources.keyboard_btn_mousehover;
+            this.btnd2.MouseBack = ((System.Drawing.Image)(resources.GetObject("btnd2.MouseBack")));
             this.btnd2.Name = "btnd2";
-            this.btnd2.NormlBack = global::CCWin.Properties.Resources.keyborad_normal;
-            this.btnd2.Palace = true;
+            this.btnd2.NormlBack = ((System.Drawing.Image)(resources.GetObject("btnd2.NormlBack")));
             this.btnd2.Radius = 4;
-            this.btnd2.RoundStyle = CCWin.SkinClass.RoundStyle.All;
             this.btnd2.Size = new System.Drawing.Size(24, 24);
             this.btnd2.TabIndex = 44;
             this.btnd2.Tag = "1\"\'";
@@ -287,22 +259,20 @@ namespace CCWin.SkinControl
             // 
             // btnMh
             // 
-            this.btnMh.BackColor = System.Drawing.Color.Transparent;
-            this.btnMh.BackgroundImage = global::CCWin.Properties.Resources.keyborad_normal;
+            this.btnMh.BackColor = System.Drawing.Color.White;
+            this.btnMh.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnMh.BackgroundImage")));
             this.btnMh.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.btnMh.BackRectangle = new System.Drawing.Rectangle(4, 4, 4, 4);
             this.btnMh.ControlState = CCWin.SkinClass.ControlState.Normal;
-            this.btnMh.DownBack = global::CCWin.Properties.Resources.keyboard_btn_mousedown;
+            this.btnMh.DownBack = ((System.Drawing.Image)(resources.GetObject("btnMh.DownBack")));
             this.btnMh.DrawType = CCWin.SkinControl.DrawStyle.Img;
-            this.btnMh.Font = new System.Drawing.Font("微软雅黑", 8.5F);
+            this.btnMh.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.btnMh.Location = new System.Drawing.Point(93, 30);
             this.btnMh.Margin = new System.Windows.Forms.Padding(0);
-            this.btnMh.MouseBack = global::CCWin.Properties.Resources.keyboard_btn_mousehover;
+            this.btnMh.MouseBack = ((System.Drawing.Image)(resources.GetObject("btnMh.MouseBack")));
             this.btnMh.Name = "btnMh";
-            this.btnMh.NormlBack = global::CCWin.Properties.Resources.keyborad_normal;
-            this.btnMh.Palace = true;
+            this.btnMh.NormlBack = ((System.Drawing.Image)(resources.GetObject("btnMh.NormlBack")));
             this.btnMh.Radius = 4;
-            this.btnMh.RoundStyle = CCWin.SkinClass.RoundStyle.All;
             this.btnMh.Size = new System.Drawing.Size(24, 24);
             this.btnMh.TabIndex = 43;
             this.btnMh.Tag = "1:;";
@@ -313,22 +283,20 @@ namespace CCWin.SkinControl
             // 
             // btnKh2
             // 
-            this.btnKh2.BackColor = System.Drawing.Color.Transparent;
-            this.btnKh2.BackgroundImage = global::CCWin.Properties.Resources.keyborad_normal;
+            this.btnKh2.BackColor = System.Drawing.Color.White;
+            this.btnKh2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnKh2.BackgroundImage")));
             this.btnKh2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.btnKh2.BackRectangle = new System.Drawing.Rectangle(4, 4, 4, 4);
             this.btnKh2.ControlState = CCWin.SkinClass.ControlState.Normal;
-            this.btnKh2.DownBack = global::CCWin.Properties.Resources.keyboard_btn_mousedown;
+            this.btnKh2.DownBack = ((System.Drawing.Image)(resources.GetObject("btnKh2.DownBack")));
             this.btnKh2.DrawType = CCWin.SkinControl.DrawStyle.Img;
-            this.btnKh2.Font = new System.Drawing.Font("微软雅黑", 8.5F);
+            this.btnKh2.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.btnKh2.Location = new System.Drawing.Point(68, 30);
             this.btnKh2.Margin = new System.Windows.Forms.Padding(0);
-            this.btnKh2.MouseBack = global::CCWin.Properties.Resources.keyboard_btn_mousehover;
+            this.btnKh2.MouseBack = ((System.Drawing.Image)(resources.GetObject("btnKh2.MouseBack")));
             this.btnKh2.Name = "btnKh2";
-            this.btnKh2.NormlBack = global::CCWin.Properties.Resources.keyborad_normal;
-            this.btnKh2.Palace = true;
+            this.btnKh2.NormlBack = ((System.Drawing.Image)(resources.GetObject("btnKh2.NormlBack")));
             this.btnKh2.Radius = 4;
-            this.btnKh2.RoundStyle = CCWin.SkinClass.RoundStyle.All;
             this.btnKh2.Size = new System.Drawing.Size(24, 24);
             this.btnKh2.TabIndex = 42;
             this.btnKh2.Tag = "1}]";
@@ -339,22 +307,20 @@ namespace CCWin.SkinControl
             // 
             // btnKh1
             // 
-            this.btnKh1.BackColor = System.Drawing.Color.Transparent;
-            this.btnKh1.BackgroundImage = global::CCWin.Properties.Resources.keyborad_normal;
+            this.btnKh1.BackColor = System.Drawing.Color.White;
+            this.btnKh1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnKh1.BackgroundImage")));
             this.btnKh1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.btnKh1.BackRectangle = new System.Drawing.Rectangle(4, 4, 4, 4);
             this.btnKh1.ControlState = CCWin.SkinClass.ControlState.Normal;
-            this.btnKh1.DownBack = global::CCWin.Properties.Resources.keyboard_btn_mousedown;
+            this.btnKh1.DownBack = ((System.Drawing.Image)(resources.GetObject("btnKh1.DownBack")));
             this.btnKh1.DrawType = CCWin.SkinControl.DrawStyle.Img;
-            this.btnKh1.Font = new System.Drawing.Font("微软雅黑", 8.5F);
+            this.btnKh1.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.btnKh1.Location = new System.Drawing.Point(43, 30);
             this.btnKh1.Margin = new System.Windows.Forms.Padding(0);
-            this.btnKh1.MouseBack = global::CCWin.Properties.Resources.keyboard_btn_mousehover;
+            this.btnKh1.MouseBack = ((System.Drawing.Image)(resources.GetObject("btnKh1.MouseBack")));
             this.btnKh1.Name = "btnKh1";
-            this.btnKh1.NormlBack = global::CCWin.Properties.Resources.keyborad_normal;
-            this.btnKh1.Palace = true;
+            this.btnKh1.NormlBack = ((System.Drawing.Image)(resources.GetObject("btnKh1.NormlBack")));
             this.btnKh1.Radius = 4;
-            this.btnKh1.RoundStyle = CCWin.SkinClass.RoundStyle.All;
             this.btnKh1.Size = new System.Drawing.Size(24, 24);
             this.btnKh1.TabIndex = 41;
             this.btnKh1.Tag = "1{[";
@@ -365,21 +331,20 @@ namespace CCWin.SkinControl
             // 
             // btny
             // 
-            this.btny.BackColor = System.Drawing.Color.Transparent;
-            this.btny.BackgroundImage = global::CCWin.Properties.Resources.keyborad_normal;
+            this.btny.BackColor = System.Drawing.Color.White;
+            this.btny.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btny.BackgroundImage")));
             this.btny.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.btny.BackRectangle = new System.Drawing.Rectangle(4, 4, 4, 4);
             this.btny.ControlState = CCWin.SkinClass.ControlState.Normal;
-            this.btny.DownBack = global::CCWin.Properties.Resources.keyboard_btn_mousedown;
+            this.btny.DownBack = ((System.Drawing.Image)(resources.GetObject("btny.DownBack")));
             this.btny.DrawType = CCWin.SkinControl.DrawStyle.Img;
-            this.btny.Font = new System.Drawing.Font("微软雅黑", 8.5F);
+            this.btny.Font = new System.Drawing.Font("微软雅黑", 9F);
             this.btny.Location = new System.Drawing.Point(323, 82);
             this.btny.Margin = new System.Windows.Forms.Padding(0);
-            this.btny.MouseBack = global::CCWin.Properties.Resources.keyboard_btn_mousehover;
+            this.btny.MouseBack = ((System.Drawing.Image)(resources.GetObject("btny.MouseBack")));
             this.btny.Name = "btny";
-            this.btny.NormlBack = global::CCWin.Properties.Resources.keyborad_normal;
-            this.btny.Radius = 4;
-            this.btny.RoundStyle = CCWin.SkinClass.RoundStyle.All;
+            this.btny.NormlBack = ((System.Drawing.Image)(resources.GetObject("btny.NormlBack")));
+            this.btny.Radius = 6;
             this.btny.Size = new System.Drawing.Size(25, 24);
             this.btny.TabIndex = 40;
             this.btny.Tag = "2";
@@ -390,21 +355,20 @@ namespace CCWin.SkinControl
             // 
             // btnx
             // 
-            this.btnx.BackColor = System.Drawing.Color.Transparent;
-            this.btnx.BackgroundImage = global::CCWin.Properties.Resources.keyborad_normal;
+            this.btnx.BackColor = System.Drawing.Color.White;
+            this.btnx.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnx.BackgroundImage")));
             this.btnx.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.btnx.BackRectangle = new System.Drawing.Rectangle(4, 4, 4, 4);
             this.btnx.ControlState = CCWin.SkinClass.ControlState.Normal;
-            this.btnx.DownBack = global::CCWin.Properties.Resources.keyboard_btn_mousedown;
+            this.btnx.DownBack = ((System.Drawing.Image)(resources.GetObject("btnx.DownBack")));
             this.btnx.DrawType = CCWin.SkinControl.DrawStyle.Img;
-            this.btnx.Font = new System.Drawing.Font("微软雅黑", 8.5F);
+            this.btnx.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.btnx.Location = new System.Drawing.Point(297, 82);
             this.btnx.Margin = new System.Windows.Forms.Padding(0);
-            this.btnx.MouseBack = global::CCWin.Properties.Resources.keyboard_btn_mousehover;
+            this.btnx.MouseBack = ((System.Drawing.Image)(resources.GetObject("btnx.MouseBack")));
             this.btnx.Name = "btnx";
-            this.btnx.NormlBack = global::CCWin.Properties.Resources.keyborad_normal;
+            this.btnx.NormlBack = ((System.Drawing.Image)(resources.GetObject("btnx.NormlBack")));
             this.btnx.Radius = 4;
-            this.btnx.RoundStyle = CCWin.SkinClass.RoundStyle.All;
             this.btnx.Size = new System.Drawing.Size(25, 24);
             this.btnx.TabIndex = 39;
             this.btnx.Tag = "2";
@@ -415,21 +379,20 @@ namespace CCWin.SkinControl
             // 
             // btnw
             // 
-            this.btnw.BackColor = System.Drawing.Color.Transparent;
-            this.btnw.BackgroundImage = global::CCWin.Properties.Resources.keyborad_normal;
+            this.btnw.BackColor = System.Drawing.Color.White;
+            this.btnw.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnw.BackgroundImage")));
             this.btnw.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.btnw.BackRectangle = new System.Drawing.Rectangle(4, 4, 4, 4);
             this.btnw.ControlState = CCWin.SkinClass.ControlState.Normal;
-            this.btnw.DownBack = global::CCWin.Properties.Resources.keyboard_btn_mousedown;
+            this.btnw.DownBack = ((System.Drawing.Image)(resources.GetObject("btnw.DownBack")));
             this.btnw.DrawType = CCWin.SkinControl.DrawStyle.Img;
-            this.btnw.Font = new System.Drawing.Font("微软雅黑", 8.5F);
+            this.btnw.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.btnw.Location = new System.Drawing.Point(271, 82);
             this.btnw.Margin = new System.Windows.Forms.Padding(0);
-            this.btnw.MouseBack = global::CCWin.Properties.Resources.keyboard_btn_mousehover;
+            this.btnw.MouseBack = ((System.Drawing.Image)(resources.GetObject("btnw.MouseBack")));
             this.btnw.Name = "btnw";
-            this.btnw.NormlBack = global::CCWin.Properties.Resources.keyborad_normal;
+            this.btnw.NormlBack = ((System.Drawing.Image)(resources.GetObject("btnw.NormlBack")));
             this.btnw.Radius = 4;
-            this.btnw.RoundStyle = CCWin.SkinClass.RoundStyle.All;
             this.btnw.Size = new System.Drawing.Size(25, 24);
             this.btnw.TabIndex = 38;
             this.btnw.Tag = "2";
@@ -440,21 +403,20 @@ namespace CCWin.SkinControl
             // 
             // btnv
             // 
-            this.btnv.BackColor = System.Drawing.Color.Transparent;
-            this.btnv.BackgroundImage = global::CCWin.Properties.Resources.keyborad_normal;
+            this.btnv.BackColor = System.Drawing.Color.White;
+            this.btnv.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnv.BackgroundImage")));
             this.btnv.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.btnv.BackRectangle = new System.Drawing.Rectangle(4, 4, 4, 4);
             this.btnv.ControlState = CCWin.SkinClass.ControlState.Normal;
-            this.btnv.DownBack = global::CCWin.Properties.Resources.keyboard_btn_mousedown;
+            this.btnv.DownBack = ((System.Drawing.Image)(resources.GetObject("btnv.DownBack")));
             this.btnv.DrawType = CCWin.SkinControl.DrawStyle.Img;
-            this.btnv.Font = new System.Drawing.Font("微软雅黑", 8.5F);
+            this.btnv.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.btnv.Location = new System.Drawing.Point(245, 82);
             this.btnv.Margin = new System.Windows.Forms.Padding(0);
-            this.btnv.MouseBack = global::CCWin.Properties.Resources.keyboard_btn_mousehover;
+            this.btnv.MouseBack = ((System.Drawing.Image)(resources.GetObject("btnv.MouseBack")));
             this.btnv.Name = "btnv";
-            this.btnv.NormlBack = global::CCWin.Properties.Resources.keyborad_normal;
+            this.btnv.NormlBack = ((System.Drawing.Image)(resources.GetObject("btnv.NormlBack")));
             this.btnv.Radius = 4;
-            this.btnv.RoundStyle = CCWin.SkinClass.RoundStyle.All;
             this.btnv.Size = new System.Drawing.Size(25, 24);
             this.btnv.TabIndex = 37;
             this.btnv.Tag = "2";
@@ -465,21 +427,20 @@ namespace CCWin.SkinControl
             // 
             // btnu
             // 
-            this.btnu.BackColor = System.Drawing.Color.Transparent;
-            this.btnu.BackgroundImage = global::CCWin.Properties.Resources.keyborad_normal;
+            this.btnu.BackColor = System.Drawing.Color.White;
+            this.btnu.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnu.BackgroundImage")));
             this.btnu.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.btnu.BackRectangle = new System.Drawing.Rectangle(4, 4, 4, 4);
             this.btnu.ControlState = CCWin.SkinClass.ControlState.Normal;
-            this.btnu.DownBack = global::CCWin.Properties.Resources.keyboard_btn_mousedown;
+            this.btnu.DownBack = ((System.Drawing.Image)(resources.GetObject("btnu.DownBack")));
             this.btnu.DrawType = CCWin.SkinControl.DrawStyle.Img;
-            this.btnu.Font = new System.Drawing.Font("微软雅黑", 8.5F);
+            this.btnu.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.btnu.Location = new System.Drawing.Point(219, 82);
             this.btnu.Margin = new System.Windows.Forms.Padding(0);
-            this.btnu.MouseBack = global::CCWin.Properties.Resources.keyboard_btn_mousehover;
+            this.btnu.MouseBack = ((System.Drawing.Image)(resources.GetObject("btnu.MouseBack")));
             this.btnu.Name = "btnu";
-            this.btnu.NormlBack = global::CCWin.Properties.Resources.keyborad_normal;
+            this.btnu.NormlBack = ((System.Drawing.Image)(resources.GetObject("btnu.NormlBack")));
             this.btnu.Radius = 4;
-            this.btnu.RoundStyle = CCWin.SkinClass.RoundStyle.All;
             this.btnu.Size = new System.Drawing.Size(25, 24);
             this.btnu.TabIndex = 36;
             this.btnu.Tag = "2";
@@ -490,21 +451,20 @@ namespace CCWin.SkinControl
             // 
             // btnt
             // 
-            this.btnt.BackColor = System.Drawing.Color.Transparent;
-            this.btnt.BackgroundImage = global::CCWin.Properties.Resources.keyborad_normal;
+            this.btnt.BackColor = System.Drawing.Color.White;
+            this.btnt.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnt.BackgroundImage")));
             this.btnt.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.btnt.BackRectangle = new System.Drawing.Rectangle(4, 4, 4, 4);
             this.btnt.ControlState = CCWin.SkinClass.ControlState.Normal;
-            this.btnt.DownBack = global::CCWin.Properties.Resources.keyboard_btn_mousedown;
+            this.btnt.DownBack = ((System.Drawing.Image)(resources.GetObject("btnt.DownBack")));
             this.btnt.DrawType = CCWin.SkinControl.DrawStyle.Img;
-            this.btnt.Font = new System.Drawing.Font("微软雅黑", 8.5F);
+            this.btnt.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.btnt.Location = new System.Drawing.Point(193, 82);
             this.btnt.Margin = new System.Windows.Forms.Padding(0);
-            this.btnt.MouseBack = global::CCWin.Properties.Resources.keyboard_btn_mousehover;
+            this.btnt.MouseBack = ((System.Drawing.Image)(resources.GetObject("btnt.MouseBack")));
             this.btnt.Name = "btnt";
-            this.btnt.NormlBack = global::CCWin.Properties.Resources.keyborad_normal;
+            this.btnt.NormlBack = ((System.Drawing.Image)(resources.GetObject("btnt.NormlBack")));
             this.btnt.Radius = 4;
-            this.btnt.RoundStyle = CCWin.SkinClass.RoundStyle.All;
             this.btnt.Size = new System.Drawing.Size(25, 24);
             this.btnt.TabIndex = 35;
             this.btnt.Tag = "2";
@@ -515,21 +475,20 @@ namespace CCWin.SkinControl
             // 
             // btns
             // 
-            this.btns.BackColor = System.Drawing.Color.Transparent;
-            this.btns.BackgroundImage = global::CCWin.Properties.Resources.keyborad_normal;
+            this.btns.BackColor = System.Drawing.Color.White;
+            this.btns.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btns.BackgroundImage")));
             this.btns.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.btns.BackRectangle = new System.Drawing.Rectangle(4, 4, 4, 4);
             this.btns.ControlState = CCWin.SkinClass.ControlState.Normal;
-            this.btns.DownBack = global::CCWin.Properties.Resources.keyboard_btn_mousedown;
+            this.btns.DownBack = ((System.Drawing.Image)(resources.GetObject("btns.DownBack")));
             this.btns.DrawType = CCWin.SkinControl.DrawStyle.Img;
-            this.btns.Font = new System.Drawing.Font("微软雅黑", 8.5F);
+            this.btns.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.btns.Location = new System.Drawing.Point(167, 82);
             this.btns.Margin = new System.Windows.Forms.Padding(0);
-            this.btns.MouseBack = global::CCWin.Properties.Resources.keyboard_btn_mousehover;
+            this.btns.MouseBack = ((System.Drawing.Image)(resources.GetObject("btns.MouseBack")));
             this.btns.Name = "btns";
-            this.btns.NormlBack = global::CCWin.Properties.Resources.keyborad_normal;
+            this.btns.NormlBack = ((System.Drawing.Image)(resources.GetObject("btns.NormlBack")));
             this.btns.Radius = 4;
-            this.btns.RoundStyle = CCWin.SkinClass.RoundStyle.All;
             this.btns.Size = new System.Drawing.Size(25, 24);
             this.btns.TabIndex = 34;
             this.btns.Tag = "2";
@@ -540,21 +499,20 @@ namespace CCWin.SkinControl
             // 
             // btnr
             // 
-            this.btnr.BackColor = System.Drawing.Color.Transparent;
-            this.btnr.BackgroundImage = global::CCWin.Properties.Resources.keyborad_normal;
+            this.btnr.BackColor = System.Drawing.Color.White;
+            this.btnr.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnr.BackgroundImage")));
             this.btnr.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.btnr.BackRectangle = new System.Drawing.Rectangle(4, 4, 4, 4);
             this.btnr.ControlState = CCWin.SkinClass.ControlState.Normal;
-            this.btnr.DownBack = global::CCWin.Properties.Resources.keyboard_btn_mousedown;
+            this.btnr.DownBack = ((System.Drawing.Image)(resources.GetObject("btnr.DownBack")));
             this.btnr.DrawType = CCWin.SkinControl.DrawStyle.Img;
-            this.btnr.Font = new System.Drawing.Font("微软雅黑", 8.5F);
+            this.btnr.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.btnr.Location = new System.Drawing.Point(141, 82);
             this.btnr.Margin = new System.Windows.Forms.Padding(0);
-            this.btnr.MouseBack = global::CCWin.Properties.Resources.keyboard_btn_mousehover;
+            this.btnr.MouseBack = ((System.Drawing.Image)(resources.GetObject("btnr.MouseBack")));
             this.btnr.Name = "btnr";
-            this.btnr.NormlBack = global::CCWin.Properties.Resources.keyborad_normal;
+            this.btnr.NormlBack = ((System.Drawing.Image)(resources.GetObject("btnr.NormlBack")));
             this.btnr.Radius = 4;
-            this.btnr.RoundStyle = CCWin.SkinClass.RoundStyle.All;
             this.btnr.Size = new System.Drawing.Size(25, 24);
             this.btnr.TabIndex = 33;
             this.btnr.Tag = "2";
@@ -565,21 +523,20 @@ namespace CCWin.SkinControl
             // 
             // btnq
             // 
-            this.btnq.BackColor = System.Drawing.Color.Transparent;
-            this.btnq.BackgroundImage = global::CCWin.Properties.Resources.keyborad_normal;
+            this.btnq.BackColor = System.Drawing.Color.White;
+            this.btnq.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnq.BackgroundImage")));
             this.btnq.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.btnq.BackRectangle = new System.Drawing.Rectangle(4, 4, 4, 4);
             this.btnq.ControlState = CCWin.SkinClass.ControlState.Normal;
-            this.btnq.DownBack = global::CCWin.Properties.Resources.keyboard_btn_mousedown;
+            this.btnq.DownBack = ((System.Drawing.Image)(resources.GetObject("btnq.DownBack")));
             this.btnq.DrawType = CCWin.SkinControl.DrawStyle.Img;
-            this.btnq.Font = new System.Drawing.Font("微软雅黑", 8.5F);
+            this.btnq.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.btnq.Location = new System.Drawing.Point(115, 82);
             this.btnq.Margin = new System.Windows.Forms.Padding(0);
-            this.btnq.MouseBack = global::CCWin.Properties.Resources.keyboard_btn_mousehover;
+            this.btnq.MouseBack = ((System.Drawing.Image)(resources.GetObject("btnq.MouseBack")));
             this.btnq.Name = "btnq";
-            this.btnq.NormlBack = global::CCWin.Properties.Resources.keyborad_normal;
+            this.btnq.NormlBack = ((System.Drawing.Image)(resources.GetObject("btnq.NormlBack")));
             this.btnq.Radius = 4;
-            this.btnq.RoundStyle = CCWin.SkinClass.RoundStyle.All;
             this.btnq.Size = new System.Drawing.Size(25, 24);
             this.btnq.TabIndex = 32;
             this.btnq.Tag = "2";
@@ -590,21 +547,20 @@ namespace CCWin.SkinControl
             // 
             // btnp
             // 
-            this.btnp.BackColor = System.Drawing.Color.Transparent;
-            this.btnp.BackgroundImage = global::CCWin.Properties.Resources.keyborad_normal;
+            this.btnp.BackColor = System.Drawing.Color.White;
+            this.btnp.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnp.BackgroundImage")));
             this.btnp.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.btnp.BackRectangle = new System.Drawing.Rectangle(4, 4, 4, 4);
             this.btnp.ControlState = CCWin.SkinClass.ControlState.Normal;
-            this.btnp.DownBack = global::CCWin.Properties.Resources.keyboard_btn_mousedown;
+            this.btnp.DownBack = ((System.Drawing.Image)(resources.GetObject("btnp.DownBack")));
             this.btnp.DrawType = CCWin.SkinControl.DrawStyle.Img;
-            this.btnp.Font = new System.Drawing.Font("微软雅黑", 8.5F);
+            this.btnp.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.btnp.Location = new System.Drawing.Point(89, 82);
             this.btnp.Margin = new System.Windows.Forms.Padding(0);
-            this.btnp.MouseBack = global::CCWin.Properties.Resources.keyboard_btn_mousehover;
+            this.btnp.MouseBack = ((System.Drawing.Image)(resources.GetObject("btnp.MouseBack")));
             this.btnp.Name = "btnp";
-            this.btnp.NormlBack = global::CCWin.Properties.Resources.keyborad_normal;
+            this.btnp.NormlBack = ((System.Drawing.Image)(resources.GetObject("btnp.NormlBack")));
             this.btnp.Radius = 4;
-            this.btnp.RoundStyle = CCWin.SkinClass.RoundStyle.All;
             this.btnp.Size = new System.Drawing.Size(25, 24);
             this.btnp.TabIndex = 31;
             this.btnp.Tag = "2";
@@ -615,21 +571,20 @@ namespace CCWin.SkinControl
             // 
             // btno
             // 
-            this.btno.BackColor = System.Drawing.Color.Transparent;
-            this.btno.BackgroundImage = global::CCWin.Properties.Resources.keyborad_normal;
+            this.btno.BackColor = System.Drawing.Color.White;
+            this.btno.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btno.BackgroundImage")));
             this.btno.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.btno.BackRectangle = new System.Drawing.Rectangle(4, 4, 4, 4);
             this.btno.ControlState = CCWin.SkinClass.ControlState.Normal;
-            this.btno.DownBack = global::CCWin.Properties.Resources.keyboard_btn_mousedown;
+            this.btno.DownBack = ((System.Drawing.Image)(resources.GetObject("btno.DownBack")));
             this.btno.DrawType = CCWin.SkinControl.DrawStyle.Img;
-            this.btno.Font = new System.Drawing.Font("微软雅黑", 8.5F);
+            this.btno.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.btno.Location = new System.Drawing.Point(63, 82);
             this.btno.Margin = new System.Windows.Forms.Padding(0);
-            this.btno.MouseBack = global::CCWin.Properties.Resources.keyboard_btn_mousehover;
+            this.btno.MouseBack = ((System.Drawing.Image)(resources.GetObject("btno.MouseBack")));
             this.btno.Name = "btno";
-            this.btno.NormlBack = global::CCWin.Properties.Resources.keyborad_normal;
+            this.btno.NormlBack = ((System.Drawing.Image)(resources.GetObject("btno.NormlBack")));
             this.btno.Radius = 4;
-            this.btno.RoundStyle = CCWin.SkinClass.RoundStyle.All;
             this.btno.Size = new System.Drawing.Size(25, 24);
             this.btno.TabIndex = 30;
             this.btno.Tag = "2";
@@ -640,21 +595,20 @@ namespace CCWin.SkinControl
             // 
             // btnn
             // 
-            this.btnn.BackColor = System.Drawing.Color.Transparent;
-            this.btnn.BackgroundImage = global::CCWin.Properties.Resources.keyborad_normal;
+            this.btnn.BackColor = System.Drawing.Color.White;
+            this.btnn.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnn.BackgroundImage")));
             this.btnn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.btnn.BackRectangle = new System.Drawing.Rectangle(4, 4, 4, 4);
             this.btnn.ControlState = CCWin.SkinClass.ControlState.Normal;
-            this.btnn.DownBack = global::CCWin.Properties.Resources.keyboard_btn_mousedown;
+            this.btnn.DownBack = ((System.Drawing.Image)(resources.GetObject("btnn.DownBack")));
             this.btnn.DrawType = CCWin.SkinControl.DrawStyle.Img;
-            this.btnn.Font = new System.Drawing.Font("微软雅黑", 8.5F);
+            this.btnn.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.btnn.Location = new System.Drawing.Point(37, 82);
             this.btnn.Margin = new System.Windows.Forms.Padding(0);
-            this.btnn.MouseBack = global::CCWin.Properties.Resources.keyboard_btn_mousehover;
+            this.btnn.MouseBack = ((System.Drawing.Image)(resources.GetObject("btnn.MouseBack")));
             this.btnn.Name = "btnn";
-            this.btnn.NormlBack = global::CCWin.Properties.Resources.keyborad_normal;
+            this.btnn.NormlBack = ((System.Drawing.Image)(resources.GetObject("btnn.NormlBack")));
             this.btnn.Radius = 4;
-            this.btnn.RoundStyle = CCWin.SkinClass.RoundStyle.All;
             this.btnn.Size = new System.Drawing.Size(25, 24);
             this.btnn.TabIndex = 29;
             this.btnn.Tag = "2";
@@ -665,21 +619,20 @@ namespace CCWin.SkinControl
             // 
             // btnz
             // 
-            this.btnz.BackColor = System.Drawing.Color.Transparent;
-            this.btnz.BackgroundImage = global::CCWin.Properties.Resources.keyborad_normal;
+            this.btnz.BackColor = System.Drawing.Color.White;
+            this.btnz.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnz.BackgroundImage")));
             this.btnz.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.btnz.BackRectangle = new System.Drawing.Rectangle(4, 4, 4, 4);
             this.btnz.ControlState = CCWin.SkinClass.ControlState.Normal;
-            this.btnz.DownBack = global::CCWin.Properties.Resources.keyboard_btn_mousedown;
+            this.btnz.DownBack = ((System.Drawing.Image)(resources.GetObject("btnz.DownBack")));
             this.btnz.DrawType = CCWin.SkinControl.DrawStyle.Img;
-            this.btnz.Font = new System.Drawing.Font("微软雅黑", 8.5F);
+            this.btnz.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.btnz.Location = new System.Drawing.Point(11, 82);
             this.btnz.Margin = new System.Windows.Forms.Padding(0);
-            this.btnz.MouseBack = global::CCWin.Properties.Resources.keyboard_btn_mousehover;
+            this.btnz.MouseBack = ((System.Drawing.Image)(resources.GetObject("btnz.MouseBack")));
             this.btnz.Name = "btnz";
-            this.btnz.NormlBack = global::CCWin.Properties.Resources.keyborad_normal;
+            this.btnz.NormlBack = ((System.Drawing.Image)(resources.GetObject("btnz.NormlBack")));
             this.btnz.Radius = 4;
-            this.btnz.RoundStyle = CCWin.SkinClass.RoundStyle.All;
             this.btnz.Size = new System.Drawing.Size(25, 24);
             this.btnz.TabIndex = 28;
             this.btnz.Tag = "2";
@@ -690,21 +643,20 @@ namespace CCWin.SkinControl
             // 
             // btna
             // 
-            this.btna.BackColor = System.Drawing.Color.Transparent;
-            this.btna.BackgroundImage = global::CCWin.Properties.Resources.keyborad_normal;
+            this.btna.BackColor = System.Drawing.Color.White;
+            this.btna.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btna.BackgroundImage")));
             this.btna.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.btna.BackRectangle = new System.Drawing.Rectangle(4, 4, 4, 4);
             this.btna.ControlState = CCWin.SkinClass.ControlState.Normal;
-            this.btna.DownBack = global::CCWin.Properties.Resources.keyboard_btn_mousedown;
+            this.btna.DownBack = ((System.Drawing.Image)(resources.GetObject("btna.DownBack")));
             this.btna.DrawType = CCWin.SkinControl.DrawStyle.Img;
-            this.btna.Font = new System.Drawing.Font("微软雅黑", 8.5F);
+            this.btna.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.btna.Location = new System.Drawing.Point(323, 56);
             this.btna.Margin = new System.Windows.Forms.Padding(0);
-            this.btna.MouseBack = global::CCWin.Properties.Resources.keyboard_btn_mousehover;
+            this.btna.MouseBack = ((System.Drawing.Image)(resources.GetObject("btna.MouseBack")));
             this.btna.Name = "btna";
-            this.btna.NormlBack = global::CCWin.Properties.Resources.keyborad_normal;
+            this.btna.NormlBack = ((System.Drawing.Image)(resources.GetObject("btna.NormlBack")));
             this.btna.Radius = 4;
-            this.btna.RoundStyle = CCWin.SkinClass.RoundStyle.All;
             this.btna.Size = new System.Drawing.Size(25, 24);
             this.btna.TabIndex = 27;
             this.btna.Tag = "2";
@@ -715,21 +667,20 @@ namespace CCWin.SkinControl
             // 
             // btnm
             // 
-            this.btnm.BackColor = System.Drawing.Color.Transparent;
-            this.btnm.BackgroundImage = global::CCWin.Properties.Resources.keyborad_normal;
+            this.btnm.BackColor = System.Drawing.Color.White;
+            this.btnm.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnm.BackgroundImage")));
             this.btnm.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.btnm.BackRectangle = new System.Drawing.Rectangle(4, 4, 4, 4);
             this.btnm.ControlState = CCWin.SkinClass.ControlState.Normal;
-            this.btnm.DownBack = global::CCWin.Properties.Resources.keyboard_btn_mousedown;
+            this.btnm.DownBack = ((System.Drawing.Image)(resources.GetObject("btnm.DownBack")));
             this.btnm.DrawType = CCWin.SkinControl.DrawStyle.Img;
-            this.btnm.Font = new System.Drawing.Font("微软雅黑", 8.5F);
+            this.btnm.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.btnm.Location = new System.Drawing.Point(297, 56);
             this.btnm.Margin = new System.Windows.Forms.Padding(0);
-            this.btnm.MouseBack = global::CCWin.Properties.Resources.keyboard_btn_mousehover;
+            this.btnm.MouseBack = ((System.Drawing.Image)(resources.GetObject("btnm.MouseBack")));
             this.btnm.Name = "btnm";
-            this.btnm.NormlBack = global::CCWin.Properties.Resources.keyborad_normal;
+            this.btnm.NormlBack = ((System.Drawing.Image)(resources.GetObject("btnm.NormlBack")));
             this.btnm.Radius = 4;
-            this.btnm.RoundStyle = CCWin.SkinClass.RoundStyle.All;
             this.btnm.Size = new System.Drawing.Size(25, 24);
             this.btnm.TabIndex = 26;
             this.btnm.Tag = "2";
@@ -740,21 +691,20 @@ namespace CCWin.SkinControl
             // 
             // btnl
             // 
-            this.btnl.BackColor = System.Drawing.Color.Transparent;
-            this.btnl.BackgroundImage = global::CCWin.Properties.Resources.keyborad_normal;
+            this.btnl.BackColor = System.Drawing.Color.White;
+            this.btnl.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnl.BackgroundImage")));
             this.btnl.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.btnl.BackRectangle = new System.Drawing.Rectangle(4, 4, 4, 4);
             this.btnl.ControlState = CCWin.SkinClass.ControlState.Normal;
-            this.btnl.DownBack = global::CCWin.Properties.Resources.keyboard_btn_mousedown;
+            this.btnl.DownBack = ((System.Drawing.Image)(resources.GetObject("btnl.DownBack")));
             this.btnl.DrawType = CCWin.SkinControl.DrawStyle.Img;
-            this.btnl.Font = new System.Drawing.Font("微软雅黑", 8.5F);
+            this.btnl.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.btnl.Location = new System.Drawing.Point(271, 56);
             this.btnl.Margin = new System.Windows.Forms.Padding(0);
-            this.btnl.MouseBack = global::CCWin.Properties.Resources.keyboard_btn_mousehover;
+            this.btnl.MouseBack = ((System.Drawing.Image)(resources.GetObject("btnl.MouseBack")));
             this.btnl.Name = "btnl";
-            this.btnl.NormlBack = global::CCWin.Properties.Resources.keyborad_normal;
+            this.btnl.NormlBack = ((System.Drawing.Image)(resources.GetObject("btnl.NormlBack")));
             this.btnl.Radius = 4;
-            this.btnl.RoundStyle = CCWin.SkinClass.RoundStyle.All;
             this.btnl.Size = new System.Drawing.Size(25, 24);
             this.btnl.TabIndex = 25;
             this.btnl.Tag = "2";
@@ -765,21 +715,20 @@ namespace CCWin.SkinControl
             // 
             // btnk
             // 
-            this.btnk.BackColor = System.Drawing.Color.Transparent;
-            this.btnk.BackgroundImage = global::CCWin.Properties.Resources.keyborad_normal;
+            this.btnk.BackColor = System.Drawing.Color.White;
+            this.btnk.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnk.BackgroundImage")));
             this.btnk.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.btnk.BackRectangle = new System.Drawing.Rectangle(4, 4, 4, 4);
             this.btnk.ControlState = CCWin.SkinClass.ControlState.Normal;
-            this.btnk.DownBack = global::CCWin.Properties.Resources.keyboard_btn_mousedown;
+            this.btnk.DownBack = ((System.Drawing.Image)(resources.GetObject("btnk.DownBack")));
             this.btnk.DrawType = CCWin.SkinControl.DrawStyle.Img;
-            this.btnk.Font = new System.Drawing.Font("微软雅黑", 8.5F);
+            this.btnk.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.btnk.Location = new System.Drawing.Point(245, 56);
             this.btnk.Margin = new System.Windows.Forms.Padding(0);
-            this.btnk.MouseBack = global::CCWin.Properties.Resources.keyboard_btn_mousehover;
+            this.btnk.MouseBack = ((System.Drawing.Image)(resources.GetObject("btnk.MouseBack")));
             this.btnk.Name = "btnk";
-            this.btnk.NormlBack = global::CCWin.Properties.Resources.keyborad_normal;
+            this.btnk.NormlBack = ((System.Drawing.Image)(resources.GetObject("btnk.NormlBack")));
             this.btnk.Radius = 4;
-            this.btnk.RoundStyle = CCWin.SkinClass.RoundStyle.All;
             this.btnk.Size = new System.Drawing.Size(25, 24);
             this.btnk.TabIndex = 24;
             this.btnk.Tag = "2";
@@ -790,21 +739,20 @@ namespace CCWin.SkinControl
             // 
             // btnj
             // 
-            this.btnj.BackColor = System.Drawing.Color.Transparent;
-            this.btnj.BackgroundImage = global::CCWin.Properties.Resources.keyborad_normal;
+            this.btnj.BackColor = System.Drawing.Color.White;
+            this.btnj.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnj.BackgroundImage")));
             this.btnj.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.btnj.BackRectangle = new System.Drawing.Rectangle(4, 4, 4, 4);
             this.btnj.ControlState = CCWin.SkinClass.ControlState.Normal;
-            this.btnj.DownBack = global::CCWin.Properties.Resources.keyboard_btn_mousedown;
+            this.btnj.DownBack = ((System.Drawing.Image)(resources.GetObject("btnj.DownBack")));
             this.btnj.DrawType = CCWin.SkinControl.DrawStyle.Img;
-            this.btnj.Font = new System.Drawing.Font("微软雅黑", 8.5F);
+            this.btnj.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.btnj.Location = new System.Drawing.Point(219, 56);
             this.btnj.Margin = new System.Windows.Forms.Padding(0);
-            this.btnj.MouseBack = global::CCWin.Properties.Resources.keyboard_btn_mousehover;
+            this.btnj.MouseBack = ((System.Drawing.Image)(resources.GetObject("btnj.MouseBack")));
             this.btnj.Name = "btnj";
-            this.btnj.NormlBack = global::CCWin.Properties.Resources.keyborad_normal;
+            this.btnj.NormlBack = ((System.Drawing.Image)(resources.GetObject("btnj.NormlBack")));
             this.btnj.Radius = 4;
-            this.btnj.RoundStyle = CCWin.SkinClass.RoundStyle.All;
             this.btnj.Size = new System.Drawing.Size(25, 24);
             this.btnj.TabIndex = 23;
             this.btnj.Tag = "2";
@@ -815,21 +763,20 @@ namespace CCWin.SkinControl
             // 
             // btni
             // 
-            this.btni.BackColor = System.Drawing.Color.Transparent;
-            this.btni.BackgroundImage = global::CCWin.Properties.Resources.keyborad_normal;
+            this.btni.BackColor = System.Drawing.Color.White;
+            this.btni.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btni.BackgroundImage")));
             this.btni.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.btni.BackRectangle = new System.Drawing.Rectangle(4, 4, 4, 4);
             this.btni.ControlState = CCWin.SkinClass.ControlState.Normal;
-            this.btni.DownBack = global::CCWin.Properties.Resources.keyboard_btn_mousedown;
+            this.btni.DownBack = ((System.Drawing.Image)(resources.GetObject("btni.DownBack")));
             this.btni.DrawType = CCWin.SkinControl.DrawStyle.Img;
-            this.btni.Font = new System.Drawing.Font("微软雅黑", 8.5F);
+            this.btni.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.btni.Location = new System.Drawing.Point(193, 56);
             this.btni.Margin = new System.Windows.Forms.Padding(0);
-            this.btni.MouseBack = global::CCWin.Properties.Resources.keyboard_btn_mousehover;
+            this.btni.MouseBack = ((System.Drawing.Image)(resources.GetObject("btni.MouseBack")));
             this.btni.Name = "btni";
-            this.btni.NormlBack = global::CCWin.Properties.Resources.keyborad_normal;
+            this.btni.NormlBack = ((System.Drawing.Image)(resources.GetObject("btni.NormlBack")));
             this.btni.Radius = 4;
-            this.btni.RoundStyle = CCWin.SkinClass.RoundStyle.All;
             this.btni.Size = new System.Drawing.Size(25, 24);
             this.btni.TabIndex = 22;
             this.btni.Tag = "2";
@@ -840,21 +787,20 @@ namespace CCWin.SkinControl
             // 
             // btnh
             // 
-            this.btnh.BackColor = System.Drawing.Color.Transparent;
-            this.btnh.BackgroundImage = global::CCWin.Properties.Resources.keyborad_normal;
+            this.btnh.BackColor = System.Drawing.Color.White;
+            this.btnh.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnh.BackgroundImage")));
             this.btnh.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.btnh.BackRectangle = new System.Drawing.Rectangle(4, 4, 4, 4);
             this.btnh.ControlState = CCWin.SkinClass.ControlState.Normal;
-            this.btnh.DownBack = global::CCWin.Properties.Resources.keyboard_btn_mousedown;
+            this.btnh.DownBack = ((System.Drawing.Image)(resources.GetObject("btnh.DownBack")));
             this.btnh.DrawType = CCWin.SkinControl.DrawStyle.Img;
-            this.btnh.Font = new System.Drawing.Font("微软雅黑", 8.5F);
+            this.btnh.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.btnh.Location = new System.Drawing.Point(167, 56);
             this.btnh.Margin = new System.Windows.Forms.Padding(0);
-            this.btnh.MouseBack = global::CCWin.Properties.Resources.keyboard_btn_mousehover;
+            this.btnh.MouseBack = ((System.Drawing.Image)(resources.GetObject("btnh.MouseBack")));
             this.btnh.Name = "btnh";
-            this.btnh.NormlBack = global::CCWin.Properties.Resources.keyborad_normal;
+            this.btnh.NormlBack = ((System.Drawing.Image)(resources.GetObject("btnh.NormlBack")));
             this.btnh.Radius = 4;
-            this.btnh.RoundStyle = CCWin.SkinClass.RoundStyle.All;
             this.btnh.Size = new System.Drawing.Size(25, 24);
             this.btnh.TabIndex = 21;
             this.btnh.Tag = "2";
@@ -865,21 +811,20 @@ namespace CCWin.SkinControl
             // 
             // btng
             // 
-            this.btng.BackColor = System.Drawing.Color.Transparent;
-            this.btng.BackgroundImage = global::CCWin.Properties.Resources.keyborad_normal;
+            this.btng.BackColor = System.Drawing.Color.White;
+            this.btng.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btng.BackgroundImage")));
             this.btng.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.btng.BackRectangle = new System.Drawing.Rectangle(4, 4, 4, 4);
             this.btng.ControlState = CCWin.SkinClass.ControlState.Normal;
-            this.btng.DownBack = global::CCWin.Properties.Resources.keyboard_btn_mousedown;
+            this.btng.DownBack = ((System.Drawing.Image)(resources.GetObject("btng.DownBack")));
             this.btng.DrawType = CCWin.SkinControl.DrawStyle.Img;
-            this.btng.Font = new System.Drawing.Font("微软雅黑", 8.5F);
+            this.btng.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.btng.Location = new System.Drawing.Point(141, 56);
             this.btng.Margin = new System.Windows.Forms.Padding(0);
-            this.btng.MouseBack = global::CCWin.Properties.Resources.keyboard_btn_mousehover;
+            this.btng.MouseBack = ((System.Drawing.Image)(resources.GetObject("btng.MouseBack")));
             this.btng.Name = "btng";
-            this.btng.NormlBack = global::CCWin.Properties.Resources.keyborad_normal;
+            this.btng.NormlBack = ((System.Drawing.Image)(resources.GetObject("btng.NormlBack")));
             this.btng.Radius = 4;
-            this.btng.RoundStyle = CCWin.SkinClass.RoundStyle.All;
             this.btng.Size = new System.Drawing.Size(25, 24);
             this.btng.TabIndex = 20;
             this.btng.Tag = "2";
@@ -890,21 +835,20 @@ namespace CCWin.SkinControl
             // 
             // btnf
             // 
-            this.btnf.BackColor = System.Drawing.Color.Transparent;
-            this.btnf.BackgroundImage = global::CCWin.Properties.Resources.keyborad_normal;
+            this.btnf.BackColor = System.Drawing.Color.White;
+            this.btnf.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnf.BackgroundImage")));
             this.btnf.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.btnf.BackRectangle = new System.Drawing.Rectangle(4, 4, 4, 4);
             this.btnf.ControlState = CCWin.SkinClass.ControlState.Normal;
-            this.btnf.DownBack = global::CCWin.Properties.Resources.keyboard_btn_mousedown;
+            this.btnf.DownBack = ((System.Drawing.Image)(resources.GetObject("btnf.DownBack")));
             this.btnf.DrawType = CCWin.SkinControl.DrawStyle.Img;
-            this.btnf.Font = new System.Drawing.Font("微软雅黑", 8.5F);
+            this.btnf.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.btnf.Location = new System.Drawing.Point(115, 56);
             this.btnf.Margin = new System.Windows.Forms.Padding(0);
-            this.btnf.MouseBack = global::CCWin.Properties.Resources.keyboard_btn_mousehover;
+            this.btnf.MouseBack = ((System.Drawing.Image)(resources.GetObject("btnf.MouseBack")));
             this.btnf.Name = "btnf";
-            this.btnf.NormlBack = global::CCWin.Properties.Resources.keyborad_normal;
+            this.btnf.NormlBack = ((System.Drawing.Image)(resources.GetObject("btnf.NormlBack")));
             this.btnf.Radius = 4;
-            this.btnf.RoundStyle = CCWin.SkinClass.RoundStyle.All;
             this.btnf.Size = new System.Drawing.Size(25, 24);
             this.btnf.TabIndex = 19;
             this.btnf.Tag = "2";
@@ -915,21 +859,20 @@ namespace CCWin.SkinControl
             // 
             // btne
             // 
-            this.btne.BackColor = System.Drawing.Color.Transparent;
-            this.btne.BackgroundImage = global::CCWin.Properties.Resources.keyborad_normal;
+            this.btne.BackColor = System.Drawing.Color.White;
+            this.btne.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btne.BackgroundImage")));
             this.btne.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.btne.BackRectangle = new System.Drawing.Rectangle(4, 4, 4, 4);
             this.btne.ControlState = CCWin.SkinClass.ControlState.Normal;
-            this.btne.DownBack = global::CCWin.Properties.Resources.keyboard_btn_mousedown;
+            this.btne.DownBack = ((System.Drawing.Image)(resources.GetObject("btne.DownBack")));
             this.btne.DrawType = CCWin.SkinControl.DrawStyle.Img;
-            this.btne.Font = new System.Drawing.Font("微软雅黑", 8.5F);
+            this.btne.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.btne.Location = new System.Drawing.Point(89, 56);
             this.btne.Margin = new System.Windows.Forms.Padding(0);
-            this.btne.MouseBack = global::CCWin.Properties.Resources.keyboard_btn_mousehover;
+            this.btne.MouseBack = ((System.Drawing.Image)(resources.GetObject("btne.MouseBack")));
             this.btne.Name = "btne";
-            this.btne.NormlBack = global::CCWin.Properties.Resources.keyborad_normal;
+            this.btne.NormlBack = ((System.Drawing.Image)(resources.GetObject("btne.NormlBack")));
             this.btne.Radius = 4;
-            this.btne.RoundStyle = CCWin.SkinClass.RoundStyle.All;
             this.btne.Size = new System.Drawing.Size(25, 24);
             this.btne.TabIndex = 18;
             this.btne.Tag = "2";
@@ -940,21 +883,20 @@ namespace CCWin.SkinControl
             // 
             // btnd
             // 
-            this.btnd.BackColor = System.Drawing.Color.Transparent;
-            this.btnd.BackgroundImage = global::CCWin.Properties.Resources.keyborad_normal;
+            this.btnd.BackColor = System.Drawing.Color.White;
+            this.btnd.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnd.BackgroundImage")));
             this.btnd.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.btnd.BackRectangle = new System.Drawing.Rectangle(4, 4, 4, 4);
             this.btnd.ControlState = CCWin.SkinClass.ControlState.Normal;
-            this.btnd.DownBack = global::CCWin.Properties.Resources.keyboard_btn_mousedown;
+            this.btnd.DownBack = ((System.Drawing.Image)(resources.GetObject("btnd.DownBack")));
             this.btnd.DrawType = CCWin.SkinControl.DrawStyle.Img;
-            this.btnd.Font = new System.Drawing.Font("微软雅黑", 8.5F);
+            this.btnd.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.btnd.Location = new System.Drawing.Point(63, 56);
             this.btnd.Margin = new System.Windows.Forms.Padding(0);
-            this.btnd.MouseBack = global::CCWin.Properties.Resources.keyboard_btn_mousehover;
+            this.btnd.MouseBack = ((System.Drawing.Image)(resources.GetObject("btnd.MouseBack")));
             this.btnd.Name = "btnd";
-            this.btnd.NormlBack = global::CCWin.Properties.Resources.keyborad_normal;
+            this.btnd.NormlBack = ((System.Drawing.Image)(resources.GetObject("btnd.NormlBack")));
             this.btnd.Radius = 4;
-            this.btnd.RoundStyle = CCWin.SkinClass.RoundStyle.All;
             this.btnd.Size = new System.Drawing.Size(25, 24);
             this.btnd.TabIndex = 17;
             this.btnd.Tag = "2";
@@ -965,21 +907,20 @@ namespace CCWin.SkinControl
             // 
             // btnc
             // 
-            this.btnc.BackColor = System.Drawing.Color.Transparent;
-            this.btnc.BackgroundImage = global::CCWin.Properties.Resources.keyborad_normal;
+            this.btnc.BackColor = System.Drawing.Color.White;
+            this.btnc.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnc.BackgroundImage")));
             this.btnc.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.btnc.BackRectangle = new System.Drawing.Rectangle(4, 4, 4, 4);
             this.btnc.ControlState = CCWin.SkinClass.ControlState.Normal;
-            this.btnc.DownBack = global::CCWin.Properties.Resources.keyboard_btn_mousedown;
+            this.btnc.DownBack = ((System.Drawing.Image)(resources.GetObject("btnc.DownBack")));
             this.btnc.DrawType = CCWin.SkinControl.DrawStyle.Img;
-            this.btnc.Font = new System.Drawing.Font("微软雅黑", 8.5F);
+            this.btnc.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.btnc.Location = new System.Drawing.Point(37, 56);
             this.btnc.Margin = new System.Windows.Forms.Padding(0);
-            this.btnc.MouseBack = global::CCWin.Properties.Resources.keyboard_btn_mousehover;
+            this.btnc.MouseBack = ((System.Drawing.Image)(resources.GetObject("btnc.MouseBack")));
             this.btnc.Name = "btnc";
-            this.btnc.NormlBack = global::CCWin.Properties.Resources.keyborad_normal;
+            this.btnc.NormlBack = ((System.Drawing.Image)(resources.GetObject("btnc.NormlBack")));
             this.btnc.Radius = 4;
-            this.btnc.RoundStyle = CCWin.SkinClass.RoundStyle.All;
             this.btnc.Size = new System.Drawing.Size(25, 24);
             this.btnc.TabIndex = 16;
             this.btnc.Tag = "2";
@@ -990,21 +931,20 @@ namespace CCWin.SkinControl
             // 
             // btnb
             // 
-            this.btnb.BackColor = System.Drawing.Color.Transparent;
-            this.btnb.BackgroundImage = global::CCWin.Properties.Resources.keyborad_normal;
+            this.btnb.BackColor = System.Drawing.Color.White;
+            this.btnb.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnb.BackgroundImage")));
             this.btnb.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.btnb.BackRectangle = new System.Drawing.Rectangle(4, 4, 4, 4);
             this.btnb.ControlState = CCWin.SkinClass.ControlState.Normal;
-            this.btnb.DownBack = global::CCWin.Properties.Resources.keyboard_btn_mousedown;
+            this.btnb.DownBack = ((System.Drawing.Image)(resources.GetObject("btnb.DownBack")));
             this.btnb.DrawType = CCWin.SkinControl.DrawStyle.Img;
-            this.btnb.Font = new System.Drawing.Font("微软雅黑", 8.5F);
+            this.btnb.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.btnb.Location = new System.Drawing.Point(11, 56);
             this.btnb.Margin = new System.Windows.Forms.Padding(0);
-            this.btnb.MouseBack = global::CCWin.Properties.Resources.keyboard_btn_mousehover;
+            this.btnb.MouseBack = ((System.Drawing.Image)(resources.GetObject("btnb.MouseBack")));
             this.btnb.Name = "btnb";
-            this.btnb.NormlBack = global::CCWin.Properties.Resources.keyborad_normal;
+            this.btnb.NormlBack = ((System.Drawing.Image)(resources.GetObject("btnb.NormlBack")));
             this.btnb.Radius = 4;
-            this.btnb.RoundStyle = CCWin.SkinClass.RoundStyle.All;
             this.btnb.Size = new System.Drawing.Size(25, 24);
             this.btnb.TabIndex = 15;
             this.btnb.Tag = "2";
@@ -1015,21 +955,20 @@ namespace CCWin.SkinControl
             // 
             // btn6
             // 
-            this.btn6.BackColor = System.Drawing.Color.Transparent;
-            this.btn6.BackgroundImage = global::CCWin.Properties.Resources.keyborad_normal;
+            this.btn6.BackColor = System.Drawing.Color.White;
+            this.btn6.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btn6.BackgroundImage")));
             this.btn6.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.btn6.BackRectangle = new System.Drawing.Rectangle(4, 4, 4, 4);
             this.btn6.ControlState = CCWin.SkinClass.ControlState.Normal;
-            this.btn6.DownBack = global::CCWin.Properties.Resources.keyboard_btn_mousedown;
+            this.btn6.DownBack = ((System.Drawing.Image)(resources.GetObject("btn6.DownBack")));
             this.btn6.DrawType = CCWin.SkinControl.DrawStyle.Img;
-            this.btn6.Font = new System.Drawing.Font("微软雅黑", 8.5F);
+            this.btn6.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.btn6.Location = new System.Drawing.Point(271, 4);
             this.btn6.Margin = new System.Windows.Forms.Padding(0);
-            this.btn6.MouseBack = global::CCWin.Properties.Resources.keyboard_btn_mousehover;
+            this.btn6.MouseBack = ((System.Drawing.Image)(resources.GetObject("btn6.MouseBack")));
             this.btn6.Name = "btn6";
-            this.btn6.NormlBack = global::CCWin.Properties.Resources.keyborad_normal;
+            this.btn6.NormlBack = ((System.Drawing.Image)(resources.GetObject("btn6.NormlBack")));
             this.btn6.Radius = 4;
-            this.btn6.RoundStyle = CCWin.SkinClass.RoundStyle.All;
             this.btn6.Size = new System.Drawing.Size(25, 24);
             this.btn6.TabIndex = 14;
             this.btn6.Tag = "1^6";
@@ -1040,21 +979,20 @@ namespace CCWin.SkinControl
             // 
             // btn5
             // 
-            this.btn5.BackColor = System.Drawing.Color.Transparent;
-            this.btn5.BackgroundImage = global::CCWin.Properties.Resources.keyborad_normal;
+            this.btn5.BackColor = System.Drawing.Color.White;
+            this.btn5.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btn5.BackgroundImage")));
             this.btn5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.btn5.BackRectangle = new System.Drawing.Rectangle(4, 4, 4, 4);
             this.btn5.ControlState = CCWin.SkinClass.ControlState.Normal;
-            this.btn5.DownBack = global::CCWin.Properties.Resources.keyboard_btn_mousedown;
+            this.btn5.DownBack = ((System.Drawing.Image)(resources.GetObject("btn5.DownBack")));
             this.btn5.DrawType = CCWin.SkinControl.DrawStyle.Img;
-            this.btn5.Font = new System.Drawing.Font("微软雅黑", 8.5F);
+            this.btn5.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.btn5.Location = new System.Drawing.Point(245, 4);
             this.btn5.Margin = new System.Windows.Forms.Padding(0);
-            this.btn5.MouseBack = global::CCWin.Properties.Resources.keyboard_btn_mousehover;
+            this.btn5.MouseBack = ((System.Drawing.Image)(resources.GetObject("btn5.MouseBack")));
             this.btn5.Name = "btn5";
-            this.btn5.NormlBack = global::CCWin.Properties.Resources.keyborad_normal;
+            this.btn5.NormlBack = ((System.Drawing.Image)(resources.GetObject("btn5.NormlBack")));
             this.btn5.Radius = 4;
-            this.btn5.RoundStyle = CCWin.SkinClass.RoundStyle.All;
             this.btn5.Size = new System.Drawing.Size(25, 24);
             this.btn5.TabIndex = 13;
             this.btn5.Tag = "1%5";
@@ -1065,21 +1003,20 @@ namespace CCWin.SkinControl
             // 
             // btn4
             // 
-            this.btn4.BackColor = System.Drawing.Color.Transparent;
-            this.btn4.BackgroundImage = global::CCWin.Properties.Resources.keyborad_normal;
+            this.btn4.BackColor = System.Drawing.Color.White;
+            this.btn4.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btn4.BackgroundImage")));
             this.btn4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.btn4.BackRectangle = new System.Drawing.Rectangle(4, 4, 4, 4);
             this.btn4.ControlState = CCWin.SkinClass.ControlState.Normal;
-            this.btn4.DownBack = global::CCWin.Properties.Resources.keyboard_btn_mousedown;
+            this.btn4.DownBack = ((System.Drawing.Image)(resources.GetObject("btn4.DownBack")));
             this.btn4.DrawType = CCWin.SkinControl.DrawStyle.Img;
-            this.btn4.Font = new System.Drawing.Font("微软雅黑", 8.5F);
+            this.btn4.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.btn4.Location = new System.Drawing.Point(219, 4);
             this.btn4.Margin = new System.Windows.Forms.Padding(0);
-            this.btn4.MouseBack = global::CCWin.Properties.Resources.keyboard_btn_mousehover;
+            this.btn4.MouseBack = ((System.Drawing.Image)(resources.GetObject("btn4.MouseBack")));
             this.btn4.Name = "btn4";
-            this.btn4.NormlBack = global::CCWin.Properties.Resources.keyborad_normal;
+            this.btn4.NormlBack = ((System.Drawing.Image)(resources.GetObject("btn4.NormlBack")));
             this.btn4.Radius = 4;
-            this.btn4.RoundStyle = CCWin.SkinClass.RoundStyle.All;
             this.btn4.Size = new System.Drawing.Size(25, 24);
             this.btn4.TabIndex = 12;
             this.btn4.Tag = "1$4";
@@ -1090,21 +1027,20 @@ namespace CCWin.SkinControl
             // 
             // btn3
             // 
-            this.btn3.BackColor = System.Drawing.Color.Transparent;
-            this.btn3.BackgroundImage = global::CCWin.Properties.Resources.keyborad_normal;
+            this.btn3.BackColor = System.Drawing.Color.White;
+            this.btn3.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btn3.BackgroundImage")));
             this.btn3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.btn3.BackRectangle = new System.Drawing.Rectangle(4, 4, 4, 4);
             this.btn3.ControlState = CCWin.SkinClass.ControlState.Normal;
-            this.btn3.DownBack = global::CCWin.Properties.Resources.keyboard_btn_mousedown;
+            this.btn3.DownBack = ((System.Drawing.Image)(resources.GetObject("btn3.DownBack")));
             this.btn3.DrawType = CCWin.SkinControl.DrawStyle.Img;
-            this.btn3.Font = new System.Drawing.Font("微软雅黑", 8.5F);
+            this.btn3.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.btn3.Location = new System.Drawing.Point(193, 4);
             this.btn3.Margin = new System.Windows.Forms.Padding(0);
-            this.btn3.MouseBack = global::CCWin.Properties.Resources.keyboard_btn_mousehover;
+            this.btn3.MouseBack = ((System.Drawing.Image)(resources.GetObject("btn3.MouseBack")));
             this.btn3.Name = "btn3";
-            this.btn3.NormlBack = global::CCWin.Properties.Resources.keyborad_normal;
+            this.btn3.NormlBack = ((System.Drawing.Image)(resources.GetObject("btn3.NormlBack")));
             this.btn3.Radius = 4;
-            this.btn3.RoundStyle = CCWin.SkinClass.RoundStyle.All;
             this.btn3.Size = new System.Drawing.Size(25, 24);
             this.btn3.TabIndex = 11;
             this.btn3.Tag = "1#3";
@@ -1115,21 +1051,20 @@ namespace CCWin.SkinControl
             // 
             // btn2
             // 
-            this.btn2.BackColor = System.Drawing.Color.Transparent;
-            this.btn2.BackgroundImage = global::CCWin.Properties.Resources.keyborad_normal;
+            this.btn2.BackColor = System.Drawing.Color.White;
+            this.btn2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btn2.BackgroundImage")));
             this.btn2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.btn2.BackRectangle = new System.Drawing.Rectangle(4, 4, 4, 4);
             this.btn2.ControlState = CCWin.SkinClass.ControlState.Normal;
-            this.btn2.DownBack = global::CCWin.Properties.Resources.keyboard_btn_mousedown;
+            this.btn2.DownBack = ((System.Drawing.Image)(resources.GetObject("btn2.DownBack")));
             this.btn2.DrawType = CCWin.SkinControl.DrawStyle.Img;
-            this.btn2.Font = new System.Drawing.Font("微软雅黑", 8.5F);
+            this.btn2.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.btn2.Location = new System.Drawing.Point(167, 4);
             this.btn2.Margin = new System.Windows.Forms.Padding(0);
-            this.btn2.MouseBack = global::CCWin.Properties.Resources.keyboard_btn_mousehover;
+            this.btn2.MouseBack = ((System.Drawing.Image)(resources.GetObject("btn2.MouseBack")));
             this.btn2.Name = "btn2";
-            this.btn2.NormlBack = global::CCWin.Properties.Resources.keyborad_normal;
+            this.btn2.NormlBack = ((System.Drawing.Image)(resources.GetObject("btn2.NormlBack")));
             this.btn2.Radius = 4;
-            this.btn2.RoundStyle = CCWin.SkinClass.RoundStyle.All;
             this.btn2.Size = new System.Drawing.Size(25, 24);
             this.btn2.TabIndex = 10;
             this.btn2.Tag = "1@2";
@@ -1140,21 +1075,20 @@ namespace CCWin.SkinControl
             // 
             // btn1
             // 
-            this.btn1.BackColor = System.Drawing.Color.Transparent;
-            this.btn1.BackgroundImage = global::CCWin.Properties.Resources.keyborad_normal;
+            this.btn1.BackColor = System.Drawing.Color.White;
+            this.btn1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btn1.BackgroundImage")));
             this.btn1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.btn1.BackRectangle = new System.Drawing.Rectangle(4, 4, 4, 4);
             this.btn1.ControlState = CCWin.SkinClass.ControlState.Normal;
-            this.btn1.DownBack = global::CCWin.Properties.Resources.keyboard_btn_mousedown;
+            this.btn1.DownBack = ((System.Drawing.Image)(resources.GetObject("btn1.DownBack")));
             this.btn1.DrawType = CCWin.SkinControl.DrawStyle.Img;
-            this.btn1.Font = new System.Drawing.Font("微软雅黑", 8.5F);
+            this.btn1.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.btn1.Location = new System.Drawing.Point(141, 4);
             this.btn1.Margin = new System.Windows.Forms.Padding(0);
-            this.btn1.MouseBack = global::CCWin.Properties.Resources.keyboard_btn_mousehover;
+            this.btn1.MouseBack = ((System.Drawing.Image)(resources.GetObject("btn1.MouseBack")));
             this.btn1.Name = "btn1";
-            this.btn1.NormlBack = global::CCWin.Properties.Resources.keyborad_normal;
+            this.btn1.NormlBack = ((System.Drawing.Image)(resources.GetObject("btn1.NormlBack")));
             this.btn1.Radius = 4;
-            this.btn1.RoundStyle = CCWin.SkinClass.RoundStyle.All;
             this.btn1.Size = new System.Drawing.Size(25, 24);
             this.btn1.TabIndex = 9;
             this.btn1.Tag = "1!1";
@@ -1165,21 +1099,20 @@ namespace CCWin.SkinControl
             // 
             // btnd1
             // 
-            this.btnd1.BackColor = System.Drawing.Color.Transparent;
-            this.btnd1.BackgroundImage = global::CCWin.Properties.Resources.keyborad_normal;
+            this.btnd1.BackColor = System.Drawing.Color.White;
+            this.btnd1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnd1.BackgroundImage")));
             this.btnd1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.btnd1.BackRectangle = new System.Drawing.Rectangle(4, 4, 4, 4);
             this.btnd1.ControlState = CCWin.SkinClass.ControlState.Normal;
-            this.btnd1.DownBack = global::CCWin.Properties.Resources.keyboard_btn_mousedown;
+            this.btnd1.DownBack = ((System.Drawing.Image)(resources.GetObject("btnd1.DownBack")));
             this.btnd1.DrawType = CCWin.SkinControl.DrawStyle.Img;
-            this.btnd1.Font = new System.Drawing.Font("微软雅黑", 8.5F);
+            this.btnd1.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.btnd1.Location = new System.Drawing.Point(115, 4);
             this.btnd1.Margin = new System.Windows.Forms.Padding(0);
-            this.btnd1.MouseBack = global::CCWin.Properties.Resources.keyboard_btn_mousehover;
+            this.btnd1.MouseBack = ((System.Drawing.Image)(resources.GetObject("btnd1.MouseBack")));
             this.btnd1.Name = "btnd1";
-            this.btnd1.NormlBack = global::CCWin.Properties.Resources.keyborad_normal;
+            this.btnd1.NormlBack = ((System.Drawing.Image)(resources.GetObject("btnd1.NormlBack")));
             this.btnd1.Radius = 4;
-            this.btnd1.RoundStyle = CCWin.SkinClass.RoundStyle.All;
             this.btnd1.Size = new System.Drawing.Size(25, 24);
             this.btnd1.TabIndex = 8;
             this.btnd1.Tag = "1~`";
@@ -1190,21 +1123,20 @@ namespace CCWin.SkinControl
             // 
             // btn0
             // 
-            this.btn0.BackColor = System.Drawing.Color.Transparent;
-            this.btn0.BackgroundImage = global::CCWin.Properties.Resources.keyborad_normal;
+            this.btn0.BackColor = System.Drawing.Color.White;
+            this.btn0.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btn0.BackgroundImage")));
             this.btn0.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.btn0.BackRectangle = new System.Drawing.Rectangle(4, 4, 4, 4);
             this.btn0.ControlState = CCWin.SkinClass.ControlState.Normal;
-            this.btn0.DownBack = global::CCWin.Properties.Resources.keyboard_btn_mousedown;
+            this.btn0.DownBack = ((System.Drawing.Image)(resources.GetObject("btn0.DownBack")));
             this.btn0.DrawType = CCWin.SkinControl.DrawStyle.Img;
-            this.btn0.Font = new System.Drawing.Font("微软雅黑", 8.5F);
+            this.btn0.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.btn0.Location = new System.Drawing.Point(89, 4);
             this.btn0.Margin = new System.Windows.Forms.Padding(0);
-            this.btn0.MouseBack = global::CCWin.Properties.Resources.keyboard_btn_mousehover;
+            this.btn0.MouseBack = ((System.Drawing.Image)(resources.GetObject("btn0.MouseBack")));
             this.btn0.Name = "btn0";
-            this.btn0.NormlBack = global::CCWin.Properties.Resources.keyborad_normal;
+            this.btn0.NormlBack = ((System.Drawing.Image)(resources.GetObject("btn0.NormlBack")));
             this.btn0.Radius = 4;
-            this.btn0.RoundStyle = CCWin.SkinClass.RoundStyle.All;
             this.btn0.Size = new System.Drawing.Size(25, 24);
             this.btn0.TabIndex = 7;
             this.btn0.Tag = "1)0";
@@ -1215,21 +1147,20 @@ namespace CCWin.SkinControl
             // 
             // btn9
             // 
-            this.btn9.BackColor = System.Drawing.Color.Transparent;
-            this.btn9.BackgroundImage = global::CCWin.Properties.Resources.keyborad_normal;
+            this.btn9.BackColor = System.Drawing.Color.White;
+            this.btn9.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btn9.BackgroundImage")));
             this.btn9.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.btn9.BackRectangle = new System.Drawing.Rectangle(4, 4, 4, 4);
             this.btn9.ControlState = CCWin.SkinClass.ControlState.Normal;
-            this.btn9.DownBack = global::CCWin.Properties.Resources.keyboard_btn_mousedown;
+            this.btn9.DownBack = ((System.Drawing.Image)(resources.GetObject("btn9.DownBack")));
             this.btn9.DrawType = CCWin.SkinControl.DrawStyle.Img;
-            this.btn9.Font = new System.Drawing.Font("微软雅黑", 8.5F);
+            this.btn9.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.btn9.Location = new System.Drawing.Point(63, 4);
             this.btn9.Margin = new System.Windows.Forms.Padding(0);
-            this.btn9.MouseBack = global::CCWin.Properties.Resources.keyboard_btn_mousehover;
+            this.btn9.MouseBack = ((System.Drawing.Image)(resources.GetObject("btn9.MouseBack")));
             this.btn9.Name = "btn9";
-            this.btn9.NormlBack = global::CCWin.Properties.Resources.keyborad_normal;
+            this.btn9.NormlBack = ((System.Drawing.Image)(resources.GetObject("btn9.NormlBack")));
             this.btn9.Radius = 4;
-            this.btn9.RoundStyle = CCWin.SkinClass.RoundStyle.All;
             this.btn9.Size = new System.Drawing.Size(25, 24);
             this.btn9.TabIndex = 6;
             this.btn9.Tag = "1(9";
@@ -1240,21 +1171,20 @@ namespace CCWin.SkinControl
             // 
             // btn8
             // 
-            this.btn8.BackColor = System.Drawing.Color.Transparent;
-            this.btn8.BackgroundImage = global::CCWin.Properties.Resources.keyborad_normal;
+            this.btn8.BackColor = System.Drawing.Color.White;
+            this.btn8.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btn8.BackgroundImage")));
             this.btn8.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.btn8.BackRectangle = new System.Drawing.Rectangle(4, 4, 4, 4);
             this.btn8.ControlState = CCWin.SkinClass.ControlState.Normal;
-            this.btn8.DownBack = global::CCWin.Properties.Resources.keyboard_btn_mousedown;
+            this.btn8.DownBack = ((System.Drawing.Image)(resources.GetObject("btn8.DownBack")));
             this.btn8.DrawType = CCWin.SkinControl.DrawStyle.Img;
-            this.btn8.Font = new System.Drawing.Font("微软雅黑", 8.5F);
+            this.btn8.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.btn8.Location = new System.Drawing.Point(37, 4);
             this.btn8.Margin = new System.Windows.Forms.Padding(0);
-            this.btn8.MouseBack = global::CCWin.Properties.Resources.keyboard_btn_mousehover;
+            this.btn8.MouseBack = ((System.Drawing.Image)(resources.GetObject("btn8.MouseBack")));
             this.btn8.Name = "btn8";
-            this.btn8.NormlBack = global::CCWin.Properties.Resources.keyborad_normal;
+            this.btn8.NormlBack = ((System.Drawing.Image)(resources.GetObject("btn8.NormlBack")));
             this.btn8.Radius = 4;
-            this.btn8.RoundStyle = CCWin.SkinClass.RoundStyle.All;
             this.btn8.Size = new System.Drawing.Size(25, 24);
             this.btn8.TabIndex = 5;
             this.btn8.Tag = "1*8";
@@ -1265,21 +1195,20 @@ namespace CCWin.SkinControl
             // 
             // btn7
             // 
-            this.btn7.BackColor = System.Drawing.Color.Transparent;
-            this.btn7.BackgroundImage = global::CCWin.Properties.Resources.keyborad_normal;
+            this.btn7.BackColor = System.Drawing.Color.White;
+            this.btn7.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btn7.BackgroundImage")));
             this.btn7.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.btn7.BackRectangle = new System.Drawing.Rectangle(4, 4, 4, 4);
             this.btn7.ControlState = CCWin.SkinClass.ControlState.Normal;
-            this.btn7.DownBack = global::CCWin.Properties.Resources.keyboard_btn_mousedown;
+            this.btn7.DownBack = ((System.Drawing.Image)(resources.GetObject("btn7.DownBack")));
             this.btn7.DrawType = CCWin.SkinControl.DrawStyle.Img;
-            this.btn7.Font = new System.Drawing.Font("微软雅黑", 8.5F);
+            this.btn7.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.btn7.Location = new System.Drawing.Point(11, 4);
             this.btn7.Margin = new System.Windows.Forms.Padding(0);
-            this.btn7.MouseBack = global::CCWin.Properties.Resources.keyboard_btn_mousehover;
+            this.btn7.MouseBack = ((System.Drawing.Image)(resources.GetObject("btn7.MouseBack")));
             this.btn7.Name = "btn7";
-            this.btn7.NormlBack = global::CCWin.Properties.Resources.keyborad_normal;
+            this.btn7.NormlBack = ((System.Drawing.Image)(resources.GetObject("btn7.NormlBack")));
             this.btn7.Radius = 4;
-            this.btn7.RoundStyle = CCWin.SkinClass.RoundStyle.All;
             this.btn7.Size = new System.Drawing.Size(25, 24);
             this.btn7.TabIndex = 4;
             this.btn7.Tag = "1&7";
@@ -1290,19 +1219,19 @@ namespace CCWin.SkinControl
             // 
             // btnShift
             // 
-            this.btnShift.BackColor = System.Drawing.Color.Transparent;
-            this.btnShift.BackgroundImage = global::CCWin.Properties.Resources.keyborad_normal;
+            this.btnShift.BackColor = System.Drawing.Color.White;
+            this.btnShift.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnShift.BackgroundImage")));
             this.btnShift.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.btnShift.BackRectangle = new System.Drawing.Rectangle(4, 4, 4, 4);
             this.btnShift.ControlState = CCWin.SkinClass.ControlState.Normal;
-            this.btnShift.DownBack = global::CCWin.Properties.Resources.keyboard_btn_mousedown;
+            this.btnShift.DownBack = ((System.Drawing.Image)(resources.GetObject("btnShift.DownBack")));
             this.btnShift.DrawType = CCWin.SkinControl.DrawStyle.Img;
-            this.btnShift.Font = new System.Drawing.Font("微软雅黑", 8.5F);
+            this.btnShift.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.btnShift.Location = new System.Drawing.Point(3, 30);
             this.btnShift.Margin = new System.Windows.Forms.Padding(0);
-            this.btnShift.MouseBack = global::CCWin.Properties.Resources.keyboard_btn_mousehover;
+            this.btnShift.MouseBack = ((System.Drawing.Image)(resources.GetObject("btnShift.MouseBack")));
             this.btnShift.Name = "btnShift";
-            this.btnShift.NormlBack = global::CCWin.Properties.Resources.keyborad_normal;
+            this.btnShift.NormlBack = ((System.Drawing.Image)(resources.GetObject("btnShift.NormlBack")));
             this.btnShift.Palace = true;
             this.btnShift.Radius = 4;
             this.btnShift.RoundStyle = CCWin.SkinClass.RoundStyle.All;
@@ -1316,18 +1245,19 @@ namespace CCWin.SkinControl
             // 
             // btnClose
             // 
-            this.btnClose.BackColor = System.Drawing.Color.Transparent;
-            this.btnClose.BackgroundImage = global::CCWin.Properties.Resources.keyborad_normal;
+            this.btnClose.BackColor = System.Drawing.Color.White;
+            this.btnClose.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnClose.BackgroundImage")));
             this.btnClose.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.btnClose.ControlState = CCWin.SkinClass.ControlState.Normal;
-            this.btnClose.DownBack = global::CCWin.Properties.Resources.keyboard_btn_close;
+            this.btnClose.DownBack = ((System.Drawing.Image)(resources.GetObject("btnClose.DownBack")));
             this.btnClose.DrawType = CCWin.SkinControl.DrawStyle.Img;
             this.btnClose.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.btnClose.Location = new System.Drawing.Point(344, 5);
             this.btnClose.Margin = new System.Windows.Forms.Padding(0);
-            this.btnClose.MouseBack = global::CCWin.Properties.Resources.keyboard_btn_close;
+            this.btnClose.MouseBack = ((System.Drawing.Image)(resources.GetObject("btnClose.MouseBack")));
             this.btnClose.Name = "btnClose";
-            this.btnClose.NormlBack = global::CCWin.Properties.Resources.keyborad_normal;
+            this.btnClose.NormlBack = ((System.Drawing.Image)(resources.GetObject("btnClose.NormlBack")));
+            this.btnClose.Radius = 4;
             this.btnClose.Size = new System.Drawing.Size(11, 11);
             this.btnClose.TabIndex = 2;
             this.btnClose.Tag = "3";
@@ -1336,22 +1266,20 @@ namespace CCWin.SkinControl
             // 
             // btnCapsLock
             // 
-            this.btnCapsLock.BackColor = System.Drawing.Color.Transparent;
-            this.btnCapsLock.BackgroundImage = global::CCWin.Properties.Resources.keyborad_normal;
+            this.btnCapsLock.BackColor = System.Drawing.Color.White;
+            this.btnCapsLock.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnCapsLock.BackgroundImage")));
             this.btnCapsLock.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.btnCapsLock.BackRectangle = new System.Drawing.Rectangle(4, 4, 4, 4);
             this.btnCapsLock.ControlState = CCWin.SkinClass.ControlState.Normal;
-            this.btnCapsLock.DownBack = global::CCWin.Properties.Resources.keyboard_btn_mousedown;
+            this.btnCapsLock.DownBack = ((System.Drawing.Image)(resources.GetObject("btnCapsLock.DownBack")));
             this.btnCapsLock.DrawType = CCWin.SkinControl.DrawStyle.Img;
-            this.btnCapsLock.Font = new System.Drawing.Font("微软雅黑", 8.5F);
+            this.btnCapsLock.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.btnCapsLock.Location = new System.Drawing.Point(293, 30);
             this.btnCapsLock.Margin = new System.Windows.Forms.Padding(0);
-            this.btnCapsLock.MouseBack = global::CCWin.Properties.Resources.keyboard_btn_mousehover;
+            this.btnCapsLock.MouseBack = ((System.Drawing.Image)(resources.GetObject("btnCapsLock.MouseBack")));
             this.btnCapsLock.Name = "btnCapsLock";
-            this.btnCapsLock.NormlBack = global::CCWin.Properties.Resources.keyborad_normal;
-            this.btnCapsLock.Palace = true;
+            this.btnCapsLock.NormlBack = ((System.Drawing.Image)(resources.GetObject("btnCapsLock.NormlBack")));
             this.btnCapsLock.Radius = 4;
-            this.btnCapsLock.RoundStyle = CCWin.SkinClass.RoundStyle.All;
             this.btnCapsLock.Size = new System.Drawing.Size(64, 24);
             this.btnCapsLock.TabIndex = 1;
             this.btnCapsLock.Tag = "3";
@@ -1362,22 +1290,20 @@ namespace CCWin.SkinControl
             // 
             // btnDelet
             // 
-            this.btnDelet.BackColor = System.Drawing.Color.Transparent;
-            this.btnDelet.BackgroundImage = global::CCWin.Properties.Resources.keyborad_normal;
+            this.btnDelet.BackColor = System.Drawing.Color.White;
+            this.btnDelet.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnDelet.BackgroundImage")));
             this.btnDelet.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.btnDelet.BackRectangle = new System.Drawing.Rectangle(4, 4, 4, 4);
             this.btnDelet.ControlState = CCWin.SkinClass.ControlState.Normal;
-            this.btnDelet.DownBack = global::CCWin.Properties.Resources.keyboard_btn_mousedown;
+            this.btnDelet.DownBack = ((System.Drawing.Image)(resources.GetObject("btnDelet.DownBack")));
             this.btnDelet.DrawType = CCWin.SkinControl.DrawStyle.Img;
-            this.btnDelet.Font = new System.Drawing.Font("微软雅黑", 8.5F);
+            this.btnDelet.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.btnDelet.Location = new System.Drawing.Point(297, 4);
             this.btnDelet.Margin = new System.Windows.Forms.Padding(0);
-            this.btnDelet.MouseBack = global::CCWin.Properties.Resources.keyboard_btn_mousehover;
+            this.btnDelet.MouseBack = ((System.Drawing.Image)(resources.GetObject("btnDelet.MouseBack")));
             this.btnDelet.Name = "btnDelet";
-            this.btnDelet.NormlBack = global::CCWin.Properties.Resources.keyborad_normal;
-            this.btnDelet.Palace = true;
+            this.btnDelet.NormlBack = ((System.Drawing.Image)(resources.GetObject("btnDelet.NormlBack")));
             this.btnDelet.Radius = 4;
-            this.btnDelet.RoundStyle = CCWin.SkinClass.RoundStyle.All;
             this.btnDelet.Size = new System.Drawing.Size(45, 24);
             this.btnDelet.TabIndex = 0;
             this.btnDelet.Tag = "3";
@@ -1388,10 +1314,9 @@ namespace CCWin.SkinControl
             // 
             // KeyBoardForm
             // 
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
-            this.BackColor = System.Drawing.Color.White;
-            this.BackgroundImage = global::CCWin.Properties.Resources.bg_KeyBoard;
-            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(67)))), ((int)(((byte)(173)))), ((int)(((byte)(72)))));
             this.ClientSize = new System.Drawing.Size(360, 110);
             this.ControlBox = false;
             this.Controls.Add(this.btnhx2);
@@ -1451,6 +1376,7 @@ namespace CCWin.SkinControl
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "KeyBoardForm";
+            this.Opacity = 0.7D;
             this.ShowIcon = false;
             this.ShowInTaskbar = false;
             this.Text = "QQ";

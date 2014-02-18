@@ -7,8 +7,12 @@ using System.ComponentModel;
 
 namespace Teleware.ZPG.Client.Controls
 {
-    public class PanelEx : Panel
+    public class PanelEx : CCWin.SkinControl.SkinPanel
     {
+        public PanelEx()
+        {
+            this.SetStyle(ControlStyles.OptimizedDoubleBuffer, false);// 取消双缓冲
+        }
 
         /// <summary>
         /// 背景图片九宫格绘制区域
@@ -28,6 +32,7 @@ namespace Teleware.ZPG.Client.Controls
 
         protected override void OnPaint(PaintEventArgs e)
         {
+            
             // 设置显示的效果质量属性
             e.Graphics.TextRenderingHint =
                 System.Drawing.Text.TextRenderingHint.AntiAlias;

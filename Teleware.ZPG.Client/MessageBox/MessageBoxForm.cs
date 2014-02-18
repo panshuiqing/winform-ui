@@ -410,6 +410,7 @@ namespace Teleware.ZPG.Client
             this.BorderPalace = null;
             this.ClientSize = new System.Drawing.Size(400, 230);
             this.ControlBoxOffset = new System.Drawing.Point(0, -1);
+            this.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.KeyPreview = true;
             this.MaximizeBox = false;
