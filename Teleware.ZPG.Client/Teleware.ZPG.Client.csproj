@@ -46,6 +46,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controls\WebBrowserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\WebBrowserControl.Designer.cs">
+      <DependentUpon>WebBrowserControl.cs</DependentUpon>
+    </Compile>
     <Compile Include="KeyBoardForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -170,6 +176,9 @@
     <Compile Include="SkinForm1.Designer.cs">
       <DependentUpon>SkinForm1.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Controls\WebBrowserControl.resx">
+      <DependentUpon>WebBrowserControl.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="KeyBoardForm.resx">
       <DependentUpon>KeyBoardForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -436,7 +445,17 @@
     <None Include="Resources\notify_info.png" />
     <None Include="Resources\notify_success.png" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <COMReference Include="SHDocVw">
+      <Guid>{EAB22AC0-30C1-11CF-A7EB-0000C05BAE0B}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>1</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

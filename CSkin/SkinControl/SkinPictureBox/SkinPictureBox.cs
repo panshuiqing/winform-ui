@@ -33,7 +33,6 @@ namespace CCWin.SkinControl
     {
         public SkinPictureBox()
         {
-            this.Font = CCWin.Localization.Localizer.DefaultFont;
             InitializeComponent();
             //初始化
             Init();
