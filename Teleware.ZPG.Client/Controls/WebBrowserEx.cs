@@ -14,6 +14,8 @@ namespace Teleware.ZPG.Client.Controls
             this.IsWebBrowserContextMenuEnabled = false;
             this.ScrollBarsEnabled = false;
             this.ScriptErrorsSuppressed = false;
+            this.WebBrowserShortcutsEnabled = false;
+            this.AllowWebBrowserDrop = false;
         }
         
         protected override void AttachInterfaces(object nativeActiveXObject)

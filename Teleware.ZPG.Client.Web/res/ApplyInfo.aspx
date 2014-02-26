@@ -5,7 +5,7 @@
 <head runat="server">
     <title>申请资料</title>
     <meta http-equiv="X-UA-Compatible" content="IE=7" />
-    <link href="../css/main.css" rel="stylesheet" type="text/css" />
+    <link href="css/main.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
     <form id="form1" runat="server">

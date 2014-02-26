@@ -22,7 +22,7 @@ namespace Teleware.ZPG.Client
 
         private void Form2_Load(object sender, EventArgs e)
         {
-            this.webBrowserControl1.WebBrowser.Navigate("http://wwww.baidu.com");
+            this.webBrowserControl1.WebBrowser.Navigate("http://wwww.cnblogs.com");
         }
 
         private void skinButton1_Click(object sender, EventArgs e)
@@ -32,7 +32,7 @@ namespace Teleware.ZPG.Client
 
         private void skinButton2_Click(object sender, EventArgs e)
         {
-            this.webBrowserControl1.WebBrowser.Navigate("http://wwww.google.com");
+            this.webBrowserControl1.WebBrowser.Navigate("http://www.qq.com");
         }
     }
 }

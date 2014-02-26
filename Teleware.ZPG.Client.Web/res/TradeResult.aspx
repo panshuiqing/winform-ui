@@ -5,7 +5,7 @@
 <head runat="server">
     <title>交易结果公示</title>
     <meta http-equiv="X-UA-Compatible" content="IE=7" />
-    <link href="../css/main.css" rel="stylesheet" type="text/css" />
+    <link href="css/main.css" rel="stylesheet" type="text/css" />
     <style type="text/css">
         td
         {

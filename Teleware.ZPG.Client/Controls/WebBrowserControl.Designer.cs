@@ -28,25 +28,26 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.picLoading = new CCWin.SkinControl.SkinPictureBox();
+            this.skinPictureBox1 = new CCWin.SkinControl.SkinPictureBox();
             this.webBrowserEx1 = new Teleware.ZPG.Client.Controls.WebBrowserEx();
-            ((System.ComponentModel.ISupportInitialize)(this.picLoading)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.skinPictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
-            // picLoading
+            // skinPictureBox1
             // 
-            this.picLoading.BackColor = System.Drawing.Color.Transparent;
-            this.picLoading.Dock = System.Windows.Forms.DockStyle.Top;
-            this.picLoading.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.picLoading.Image = global::Teleware.ZPG.Client.Properties.Resources.imgLoadding;
-            this.picLoading.Location = new System.Drawing.Point(0, 0);
-            this.picLoading.Name = "picLoading";
-            this.picLoading.Size = new System.Drawing.Size(373, 2);
-            this.picLoading.TabIndex = 1;
-            this.picLoading.TabStop = false;
+            this.skinPictureBox1.BackColor = System.Drawing.Color.Transparent;
+            this.skinPictureBox1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.skinPictureBox1.Image = global::Teleware.ZPG.Client.Properties.Resources.imgLoadding;
+            this.skinPictureBox1.Location = new System.Drawing.Point(0, 0);
+            this.skinPictureBox1.Name = "skinPictureBox1";
+            this.skinPictureBox1.Size = new System.Drawing.Size(373, 2);
+            this.skinPictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.skinPictureBox1.TabIndex = 2;
+            this.skinPictureBox1.TabStop = false;
             // 
             // webBrowserEx1
             // 
+            this.webBrowserEx1.AllowWebBrowserDrop = false;
             this.webBrowserEx1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.webBrowserEx1.IsWebBrowserContextMenuEnabled = false;
             this.webBrowserEx1.Location = new System.Drawing.Point(0, 0);
@@ -55,17 +56,18 @@
             this.webBrowserEx1.ScrollBarsEnabled = false;
             this.webBrowserEx1.Size = new System.Drawing.Size(373, 330);
             this.webBrowserEx1.TabIndex = 0;
+            this.webBrowserEx1.WebBrowserShortcutsEnabled = false;
             this.webBrowserEx1.DocumentCompleted += new System.Windows.Forms.WebBrowserDocumentCompletedEventHandler(this.webBrowserEx1_DocumentCompleted);
             // 
             // WebBrowserControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.picLoading);
+            this.Controls.Add(this.skinPictureBox1);
             this.Controls.Add(this.webBrowserEx1);
             this.Name = "WebBrowserControl";
             this.Size = new System.Drawing.Size(373, 330);
-            ((System.ComponentModel.ISupportInitialize)(this.picLoading)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.skinPictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -73,6 +75,6 @@
         #endregion
 
         private WebBrowserEx webBrowserEx1;
-        private CCWin.SkinControl.SkinPictureBox picLoading;
+        private CCWin.SkinControl.SkinPictureBox skinPictureBox1;
     }
 }

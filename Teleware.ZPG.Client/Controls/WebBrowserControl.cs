@@ -13,31 +13,16 @@ namespace Teleware.ZPG.Client.Controls
         public WebBrowserControl()
         {
             InitializeComponent();
-            this.picLoading.SizeMode= PictureBoxSizeMode.StretchImage;
-            this.webBrowserEx1.Navigated += new WebBrowserNavigatedEventHandler(webBrowserEx1_Navigated);
-            this.webBrowserEx1.Navigating += new WebBrowserNavigatingEventHandler(webBrowserEx1_Navigating);
-        }
-
-        void Window_Error(object sender, HtmlElementErrorEventArgs e)
-        {
-            this.picLoading.Visible = false;
         }
 
         void webBrowserEx1_Navigating(object sender, WebBrowserNavigatingEventArgs e)
         {
-            this.picLoading.Visible = true;
-        }
-
-        void webBrowserEx1_Navigated(object sender, WebBrowserNavigatedEventArgs e)
-        {
-            this.picLoading.Visible = true;
+            this.skinPictureBox1.Visible = true;
         }
 
         private void webBrowserEx1_DocumentCompleted(object sender, WebBrowserDocumentCompletedEventArgs e)
         {
-            this.picLoading.Visible = false;
-            this.webBrowserEx1.Document.Window.Error -= new HtmlElementErrorEventHandler(Window_Error); 
-            this.webBrowserEx1.Document.Window.Error += new HtmlElementErrorEventHandler(Window_Error);
+            this.skinPictureBox1.Visible = false;
         }
 
         public WebBrowser WebBrowser
