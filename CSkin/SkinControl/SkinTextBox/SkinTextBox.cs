@@ -121,7 +121,7 @@ namespace CCWin.SkinControl
         }
 
         [Description("文本。"), Category("Skin")]
-        public string Text
+        public new string Text
         {
             get
             {

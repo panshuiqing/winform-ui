@@ -7,8 +7,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Teleware.ZPG.Client", "Tele
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Teleware.ZPG.Client.Web", "Teleware.ZPG.Client.Web\Teleware.ZPG.Client.Web.csproj", "{3B05ED2D-4E79-4A9B-B539-F7F35DA8DE92}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LogTools", "LogTools\LogTools.csproj", "{9B55FAF1-9B9B-43C8-A4BC-9926F20801AC}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -49,16 +47,6 @@ Global
 		{3B05ED2D-4E79-4A9B-B539-F7F35DA8DE92}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
 		{3B05ED2D-4E79-4A9B-B539-F7F35DA8DE92}.Release|Mixed Platforms.Build.0 = Release|Any CPU
 		{3B05ED2D-4E79-4A9B-B539-F7F35DA8DE92}.Release|x86.ActiveCfg = Release|Any CPU
-		{9B55FAF1-9B9B-43C8-A4BC-9926F20801AC}.Debug|Any CPU.ActiveCfg = Debug|x86
-		{9B55FAF1-9B9B-43C8-A4BC-9926F20801AC}.Debug|Mixed Platforms.ActiveCfg = Debug|x86
-		{9B55FAF1-9B9B-43C8-A4BC-9926F20801AC}.Debug|Mixed Platforms.Build.0 = Debug|x86
-		{9B55FAF1-9B9B-43C8-A4BC-9926F20801AC}.Debug|x86.ActiveCfg = Debug|x86
-		{9B55FAF1-9B9B-43C8-A4BC-9926F20801AC}.Debug|x86.Build.0 = Debug|x86
-		{9B55FAF1-9B9B-43C8-A4BC-9926F20801AC}.Release|Any CPU.ActiveCfg = Release|x86
-		{9B55FAF1-9B9B-43C8-A4BC-9926F20801AC}.Release|Mixed Platforms.ActiveCfg = Release|x86
-		{9B55FAF1-9B9B-43C8-A4BC-9926F20801AC}.Release|Mixed Platforms.Build.0 = Release|x86
-		{9B55FAF1-9B9B-43C8-A4BC-9926F20801AC}.Release|x86.ActiveCfg = Release|x86
-		{9B55FAF1-9B9B-43C8-A4BC-9926F20801AC}.Release|x86.Build.0 = Release|x86
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
