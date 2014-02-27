@@ -1,0 +1,137 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>福建省国有建设用地使用权出让网上交易系统 </title>
+    <link href="css/login.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+    <form name="form1" method="post" action="" id="form1">
+    <div class="divSearch">
+        <table class="tableSearch">
+            <tbody>
+                <tr>
+                    <td class="MenuFunToolBar" height="27" valign="middle">
+                        <table border="0" cellspacing="0" cellpadding="0" height="23">
+                            <tbody>
+                                <tr>
+                                    <td class="MenufunBtnOff" title="新增交易结果" onclick='javascript:cleancontextMenu();ShowOperaModalDialog("NonOnlineAdd.aspx?r="+Math.random(),1000,650);'
+                                        valign="bottom" align="middle" img="imgClass">
+                                        <table class="img">
+                                            <tbody>
+                                                <tr>
+                                                    <td id="Td113" class="MenuFunTdCss">
+                                                        <img src="http://localhost:7908/Tlw.ZPG.Web/resource/css/style/icon/add.gif" width="16"
+                                                            height="16">
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                        <table class="txt">
+                                            <tbody>
+                                                <tr>
+                                                    <td>
+                                                        新增交易结果
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </td>
+                                    <td class="MenufunBtnOff" title="修改交易结果" onclick='javascript:cleancontextMenu();var ResultId=GetResultId();if(ResultId!=null&amp;&amp;ResultId!=""){ShowOperaModalDialog("NonOnlineEdit.aspx?ResultId="+ResultId+"&amp;r="+Math.random(),1000,720);}else{alert("请先选中要修改的宗地交易结果")};'
+                                        valign="bottom" align="middle" img="imgClass">
+                                        <table class="img">
+                                            <tbody>
+                                                <tr>
+                                                    <td id="Td114" class="MenuFunTdCss">
+                                                        <img src="http://localhost:7908/Tlw.ZPG.Web/resource/css/style/icon/edit.gif" width="16"
+                                                            height="16">
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                        <table class="txt">
+                                            <tbody>
+                                                <tr>
+                                                    <td>
+                                                        修改交易结果
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </td>
+                                    <td class="MenufunBtnOff" title="删除交易结果" onclick='javascript:cleancontextMenu();var ResultId=GetResultId();if(ResultId!=null&amp;&amp;ResultId!=""){if(confirm("你确定要删除吗？")){ShowOperaModalDialog("NonOnlineDelete.aspx?ResultId="+ResultId+"&amp;r="+Math.random(),220,120);}}else{alert("请先选中要删除的宗地交易结果")};'
+                                        valign="bottom" align="middle" img="imgClass">
+                                        <table class="img">
+                                            <tbody>
+                                                <tr>
+                                                    <td id="Td115" class="MenuFunTdCss">
+                                                        <img src="http://localhost:7908/Tlw.ZPG.Web/resource/css/style/icon/delete.gif" width="16"
+                                                            height="16">
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                        <table class="txt">
+                                            <tbody>
+                                                <tr>
+                                                    <td>
+                                                        删除交易结果
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </td>
+                                    <td class="MenufunBtnOff" title="发布交易结果" onclick='javascript:cleancontextMenu();var ResultId=GetResultId();if(ResultId!=null&amp;&amp;ResultId!=""){if(confirm("你确定要发布吗？")){ShowOperaModalDialog("NonOnlinePublish.aspx?ResultId="+ResultId+"&amp;r="+Math.random(),220,120);}}else{alert("请先选中要发布的宗地交易结果")};'
+                                        valign="bottom" align="middle" img="imgClass">
+                                        <table class="img">
+                                            <tbody>
+                                                <tr>
+                                                    <td id="Td116" class="MenuFunTdCss">
+                                                        <img src="http://localhost:7908/Tlw.ZPG.Web/resource/css/style/icon/configure.gif"
+                                                            width="16" height="16">
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                        <table class="txt">
+                                            <tbody>
+                                                <tr>
+                                                    <td>
+                                                        发布交易结果
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </td>
+                                    <td class="MenufunBtnOff" title="刷新交易结果" onclick="" javascript:document.location.href="document.location.href;cleancontextMenu();"
+                                        valign="bottom" align="middle" img="imgClass">
+                                        <table class="img">
+                                            <tbody>
+                                                <tr>
+                                                    <td id="Td117" class="MenuFunTdCss">
+                                                        <img src="http://localhost:7908/Tlw.ZPG.Web/resource/css/style/icon/refresh.gif"
+                                                            width="16" height="16">
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                        <table class="txt">
+                                            <tbody>
+                                                <tr>
+                                                    <td>
+                                                        刷新交易结果
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    </form>
+</body>
+</html>

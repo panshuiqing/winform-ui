@@ -1,0 +1,482 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>网上交易结果公示 </title>
+    <link href="css/default.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+    <form name="form1" method="post" action="" id="form1">
+    <div class="divSearch">
+        <table class="tableSearch">
+            <tbody>
+                <tr>
+                    <td class="MenuFunToolBar" height="27" valign="center">
+                        <table border="0" cellspacing="0" cellpadding="0" height="23">
+                            <tbody>
+                                <tr>
+                                    <td class="MenufunBtnOff" title="新增交易结果" onclick='javascript:cleancontextMenu();ShowOperaModalDialog("NonOnlineAdd.aspx?r="+Math.random(),1000,650);'
+                                        valign="bottom" align="middle" img="imgClass">
+                                        <table class="img">
+                                            <tbody>
+                                                <tr>
+                                                    <td id="Td113" class="MenuFunTdCss">
+                                                        <img src="http://localhost:7908/Tlw.ZPG.Web/resource/css/style/icon/add.gif" width="16"
+                                                            height="16">
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                        <table class="txt">
+                                            <tbody>
+                                                <tr>
+                                                    <td>
+                                                        新增交易结果
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </td>
+                                    <td class="MenufunBtnOn" title="修改交易结果" onclick='javascript:cleancontextMenu();var ResultId=GetResultId();if(ResultId!=null&amp;&amp;ResultId!=""){ShowOperaModalDialog("NonOnlineEdit.aspx?ResultId="+ResultId+"&amp;r="+Math.random(),1000,720);}else{alert("请先选中要修改的宗地交易结果")};'
+                                        valign="bottom" align="center" img="imgClass">
+                                        <table class="img">
+                                            <tbody>
+                                                <tr>
+                                                    <td id="Td114" class="MenuFunTdCss">
+                                                        <img src="http://localhost:7908/Tlw.ZPG.Web/resource/css/style/icon/edit.gif" width="16"
+                                                            height="16">
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                        <table class="txt">
+                                            <tbody>
+                                                <tr>
+                                                    <td>
+                                                        修改交易结果
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </td>
+                                    <td class="MenufunBtnOff" title="删除交易结果" onclick='javascript:cleancontextMenu();var ResultId=GetResultId();if(ResultId!=null&amp;&amp;ResultId!=""){if(confirm("你确定要删除吗？")){ShowOperaModalDialog("NonOnlineDelete.aspx?ResultId="+ResultId+"&amp;r="+Math.random(),220,120);}}else{alert("请先选中要删除的宗地交易结果")};'
+                                        valign="bottom" align="center" img="imgClass">
+                                        <table class="img">
+                                            <tbody>
+                                                <tr>
+                                                    <td id="Td115" class="MenuFunTdCss">
+                                                        <img src="http://localhost:7908/Tlw.ZPG.Web/resource/css/style/icon/delete.gif" width="16"
+                                                            height="16">
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                        <table class="txt">
+                                            <tbody>
+                                                <tr>
+                                                    <td>
+                                                        删除交易结果
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </td>
+                                    <td class="MenufunBtnOff" title="发布交易结果" onclick='javascript:cleancontextMenu();var ResultId=GetResultId();if(ResultId!=null&amp;&amp;ResultId!=""){if(confirm("你确定要发布吗？")){ShowOperaModalDialog("NonOnlinePublish.aspx?ResultId="+ResultId+"&amp;r="+Math.random(),220,120);}}else{alert("请先选中要发布的宗地交易结果")};'
+                                        valign="bottom" align="center" img="imgClass">
+                                        <table class="img">
+                                            <tbody>
+                                                <tr>
+                                                    <td id="Td116" class="MenuFunTdCss">
+                                                        <img src="http://localhost:7908/Tlw.ZPG.Web/resource/css/style/icon/configure.gif"
+                                                            width="16" height="16">
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                        <table class="txt">
+                                            <tbody>
+                                                <tr>
+                                                    <td>
+                                                        发布交易结果
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </td>
+                                    <td class="MenufunBtnOff" title="刷新交易结果" onclick="" javascript:document.location.href="document.location.href;cleancontextMenu();"
+                                        valign="bottom" align="center" img="imgClass">
+                                        <table class="img">
+                                            <tbody>
+                                                <tr>
+                                                    <td id="Td117" class="MenuFunTdCss">
+                                                        <img src="http://localhost:7908/Tlw.ZPG.Web/resource/css/style/icon/refresh.gif"
+                                                            width="16" height="16">
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                        <table class="txt">
+                                            <tbody>
+                                                <tr>
+                                                    <td>
+                                                        刷新交易结果
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div>
+        <table cellspacing="0" cellpadding="0" align="center" border="0" width="98%" height="100%">
+            <tr align="right">
+                <td>
+                    <table border="0" cellspacing="0" cellpadding="0" style="width: 100%" class="TableBody">
+                        <tr>
+                            <td class="SearchItemL" style="height: 20px">
+                                所在区域
+                            </td>
+                            <td class="SearchItemR" style="height: 20px; text-align: left;">
+                                <select class="field_select" style="width: 80px;">
+                                    <option selected="selected" value="2">福州</option>
+                                </select>
+                                <select class="field_select" style="width: 80px;">
+                                    <option selected="selected" value="">全部</option>
+                                    <option value="11">鼓楼区</option>
+                                    <option value="12">台江区</option>
+                                    <option value="23">仓山区</option>
+                                    <option value="13">马尾区</option>
+                                    <option value="14">晋安区</option>
+                                    <option value="15">闽侯县</option>
+                                    <option value="16">连江县</option>
+                                    <option value="17">罗源县</option>
+                                    <option value="18">闽清县</option>
+                                    <option value="19">永泰县</option>
+                                    <option value="20">平潭县</option>
+                                    <option value="21">福清市</option>
+                                    <option value="22">长乐市</option>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="SearchItemL" style="width: 100px;">
+                                宗地号
+                            </td>
+                            <td class="SearchItemR" align="left">
+                                <input name="txtSearchContent" type="text" id="txtSearchContent" class="field_input" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="SearchItemL" style="width: 110px;">
+                                网上交易供地方式
+                            </td>
+                            <td class="SearchItemR" align="left">
+                                <select>
+                                    <option>全部</option>
+                                    <option>网上出让挂牌方式</option>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="SearchItemL">
+                                时 间
+                            </td>
+                            <td class="SearchItemR" align="left">
+                                <table width="470px" border="0" cellpadding="0" cellspacing="1">
+                                    <tr>
+                                        <td style="width: 80px;">
+                                            <select name="TimeDiff1$FashionSelect" id="TimeDiff1_FashionSelect" class="field_select"
+                                                onchange="SetClear(this.value);">
+                                                <option selected="selected" value="RandomTime">任意时间</option>
+                                                <option value="YearListSelect">选择年份</option>
+                                                <option value="QuarterListSelect">选择季度</option>
+                                                <option value="MonthListSelect">选择月份</option>
+                                            </select>
+                                        </td>
+                                        <td align="left">
+                                            <table id="TimeDiff1_RandomTime" cellspacing="0" cellpadding="0" border="0" name="RandomTime"
+                                                style="display: ;">
+                                                <tr>
+                                                    <td style="width: 65px;">
+                                                        &nbsp;开始时间&nbsp;
+                                                    </td>
+                                                    <td>
+                                                        <table cellspacing="0" cellpadding="0" border="0" style="width: 70px">
+                                                            <tr>
+                                                                <td>
+                                                                    <input name="TimeDiff1$txtCalendar" type="text" id="TimeDiff1_txtCalendar" size="15"
+                                                                        onfocus="this.oldvalue=this.value;WdatePicker({startDate:&#39;%y-%M-01&#39;,dateFmt:&#39;yyyy-MM-dd&#39;})"
+                                                                        class="Wdate" onblur="CheckTime(this);" />
+                                                                    <input name="TimeDiff1$BeginDate" type="text" id="TimeDiff1_BeginDate" style="display: none;"
+                                                                        size="19" onclick="calendar(this,false);" />
+                                                                </td>
+                                                            </tr>
+                                                        </table>
+                                                    </td>
+                                                    <td>
+                                                        &nbsp;结束时间
+                                                    </td>
+                                                    <td>
+                                                        <table cellspacing="0" cellpadding="0" border="0" style="width: 70px">
+                                                            <tr>
+                                                                <td>
+                                                                    <input name="TimeDiff1$txtCalendarToEnd" type="text" id="TimeDiff1_txtCalendarToEnd"
+                                                                        size="15" onfocus="this.oldvalue=this.value;WdatePicker({startDate:&#39;%y-%M-01&#39;,dateFmt:&#39;yyyy-MM-dd&#39;})"
+                                                                        class="Wdate" onblur="CheckTime(this);" maxlength="20" /><input name="TimeDiff1$EndDate"
+                                                                            type="text" id="TimeDiff1_EndDate" style="display: none;" size="19" onclick="calendar(this,false);" />
+                                                                </td>
+                                                            </tr>
+                                                        </table>
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                            <span id="TimeDiff1_CompareValidator1" style="color: Red; display: none;">开始时间应在结束时间之前</span>
+                                            <select name="TimeDiff1$YearListSelect" id="TimeDiff1_YearListSelect" class="field_select"
+                                                style="display: none;">
+                                                <option value="2014">2014年</option>
+                                                <option value="2013">2013年</option>
+                                                <option value="2012">2012年</option>
+                                                <option value="2011">2011年</option>
+                                                <option value="2010">2010年</option>
+                                                <option value="2009">2009年</option>
+                                                <option value="2008">2008年</option>
+                                                <option value="2007">2007年</option>
+                                                <option value="2006">2006年</option>
+                                                <option value="2005">2005年</option>
+                                                <option value="2004">2004年</option>
+                                            </select>
+                                            <select name="TimeDiff1$QuarterListSelect" id="TimeDiff1_QuarterListSelect" class="field_select"
+                                                style="display: none;" onchange="Clear(this);QuarterList(this.value)">
+                                                <option value="1">第1季度</option>
+                                                <option value="2">第2季度</option>
+                                                <option value="3">第3季度</option>
+                                                <option value="4">第4季度</option>
+                                            </select>
+                                            <select name="TimeDiff1$MonthListSelect" id="TimeDiff1_MonthListSelect" class="field_select"
+                                                style="display: none;">
+                                                <option value="1">1月</option>
+                                                <option value="2">2月</option>
+                                                <option value="3">3月</option>
+                                                <option value="4">4月</option>
+                                                <option value="5">5月</option>
+                                                <option value="6">6月</option>
+                                                <option value="7">7月</option>
+                                                <option value="8">8月</option>
+                                                <option value="9">9月</option>
+                                                <option value="10">10月</option>
+                                                <option value="11">11月</option>
+                                                <option value="12">12月</option>
+                                            </select>
+                                            <span id="TimeDiff1_CharTo" style="display: none;">至</span>
+                                            <select name="TimeDiff1$MonthEndListSelect" id="TimeDiff1_MonthEndListSelect" class="field_select"
+                                                style="display: none;">
+                                                <option value="1">1月</option>
+                                                <option value="2">2月</option>
+                                                <option value="3">3月</option>
+                                                <option value="4">4月</option>
+                                                <option value="5">5月</option>
+                                                <option value="6">6月</option>
+                                                <option value="7">7月</option>
+                                                <option value="8">8月</option>
+                                                <option value="9">9月</option>
+                                                <option value="10">10月</option>
+                                                <option value="11">11月</option>
+                                                <option value="12">12月</option>
+                                            </select>
+                                            <span id="TimeDiff1_CompareValidator2" style="color: Red; display: none;">开始月份应小于结束月份</span>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="4" style="height: 35px;" align="center">
+                                <input type="submit" name="btnSearch" value="查询" id="btnSearch" class="Button" />
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            <tr style="height: 100%;">
+                <td valign="top" align="left">
+                    <table class="field_gridTable" cellspacing="0" cellpadding="0" rules="all" border="1"
+                        id="dgrdList" style="border-width: 1px; border-style: solid; width: 100%; border-collapse: collapse;">
+                        <tr class="field_gridHeader">
+                            <td style="width: 35px; white-space: nowrap;">
+                                选择
+                            </td>
+                            <td style="width: 35px; white-space: nowrap;">
+                                序号
+                            </td>
+                            <td style="white-space: nowrap;">
+                                宗地号
+                            </td>
+                            <td style="width: 150px; white-space: nowrap;">
+                                竞得人
+                            </td>
+                            <td style="width: 75px; white-space: nowrap;">
+                                面积(平方米)
+                            </td>
+                            <td style="width: 75px; white-space: nowrap;">
+                                成交价(万元)
+                            </td>
+                            <td style="width: 70px; white-space: nowrap;">
+                                成交时间
+                            </td>
+                            <td style="width: 100px; white-space: nowrap;">
+                                状态
+                            </td>
+                        </tr>
+                        <tr class="field_gridItem">
+                            <td align="center">
+                                <input type='checkbox' id='item1582CheckBox' title="请点击选择" style="cursor: hand">
+                            </td>
+                            <td align="center">
+                                1
+                            </td>
+                            <td title="福州罗源县-福州2012年33次1号" class="field_gridCell" align="center">
+                                <a href="">福州罗源县-福州2012年33次1号</a>
+                            </td>
+                            <td title="王五" class="field_gridCell" align="center">
+                                王五
+                            </td>
+                            <td class="field_gridCell" align="center">
+                                1000.00
+                            </td>
+                            <td align="center">
+                                1680.00
+                            </td>
+                            <td align="center">
+                                2012-11-07
+                            </td>
+                            <td align="center">
+                                已成交
+                            </td>
+                        </tr>
+                        <tr class="field_gridAlternatingItem">
+                            <td align="center">
+                                <input type='checkbox' id='item1581CheckBox' title="请点击选择" style="cursor: hand">
+                            </td>
+                            <td align="center">
+                                2
+                            </td>
+                            <td title="福州长乐市-福州2012年32次1号" class="field_gridCell" align="center">
+                                <a href="">福州长乐市-福州2012年32次1号</a>
+                            </td>
+                            <td title="小明" class="field_gridCell" align="center">
+                                小明
+                            </td>
+                            <td class="field_gridCell" align="center">
+                                2200.00
+                            </td>
+                            <td align="center">
+                                2330.00
+                            </td>
+                            <td align="center">
+                                2012-11-07
+                            </td>
+                            <td align="center">
+                                已成交
+                            </td>
+                        </tr>
+                        <tr class="field_gridAlternatingItem">
+                            <td align="center">
+                                <input type='checkbox' id='Checkbox1' title="请点击选择" style="cursor: hand">
+                            </td>
+                            <td align="center">
+                                2
+                            </td>
+                            <td title="福州长乐市-福州2012年32次1号" class="field_gridCell" align="center">
+                                <a href="">福州长乐市-福州2012年32次1号</a>
+                            </td>
+                            <td title="小明" class="field_gridCell" align="center">
+                                小明
+                            </td>
+                            <td class="field_gridCell" align="center">
+                                2200.00
+                            </td>
+                            <td align="center">
+                                2330.00
+                            </td>
+                            <td align="center">
+                                2012-11-07
+                            </td>
+                            <td align="center">
+                                已成交
+                            </td>
+                        </tr>
+                        <tr class="field_gridAlternatingItem">
+                            <td align="center">
+                                <input type='checkbox' id='Checkbox2' title="请点击选择" style="cursor: hand">
+                            </td>
+                            <td align="center">
+                                2
+                            </td>
+                            <td title="福州长乐市-福州2012年32次1号" class="field_gridCell" align="center">
+                                <a href="">福州长乐市-福州2012年32次1号</a>
+                            </td>
+                            <td title="小明" class="field_gridCell" align="center">
+                                小明
+                            </td>
+                            <td class="field_gridCell" align="center">
+                                2200.00
+                            </td>
+                            <td align="center">
+                                2330.00
+                            </td>
+                            <td align="center">
+                                2012-11-07
+                            </td>
+                            <td align="center">
+                                已成交
+                            </td>
+                        </tr>
+                        <tr class="field_gridAlternatingItem">
+                            <td align="center">
+                                <input type='checkbox' id='Checkbox3' title="请点击选择" style="cursor: hand">
+                            </td>
+                            <td align="center">
+                                2
+                            </td>
+                            <td title="福州长乐市-福州2012年32次1号" class="field_gridCell" align="center">
+                                <a href="">福州长乐市-福州2012年32次1号</a>
+                            </td>
+                            <td title="小明" class="field_gridCell" align="center">
+                                小明
+                            </td>
+                            <td class="field_gridCell" align="center">
+                                2200.00
+                            </td>
+                            <td align="center">
+                                2330.00
+                            </td>
+                            <td align="center">
+                                2012-11-07
+                            </td>
+                            <td align="center">
+                                已成交
+                            </td>
+                        </tr>
+                    </table>
+                    <div class="pagination" style="text-align: right;">
+                        <a disabled="true" style="margin-right: 5px;">&lt;&lt;</a><a disabled="true" style="margin-right: 5px;">&lt;</a><span
+                            style="margin-right: 5px; font-weight: Bold; color: red;">1</span><a href="javascript:__doPostBack(&#39;pagination&#39;,&#39;2&#39;)"
+                                style="margin-right: 5px;">2</a><a href="javascript:__doPostBack(&#39;pagination&#39;,&#39;3&#39;)"
+                                    style="margin-right: 5px;">3</a><a href="javascript:__doPostBack(&#39;pagination&#39;,&#39;4&#39;)"
+                                        style="margin-right: 5px;">4</a><a href="javascript:__doPostBack(&#39;pagination&#39;,&#39;5&#39;)"
+                                            style="margin-right: 5px;">5</a><a href="javascript:__doPostBack(&#39;pagination&#39;,&#39;2&#39;)"
+                                                style="margin-right: 5px;">&gt;</a><a href="javascript:__doPostBack(&#39;pagination&#39;,&#39;5&#39;)"
+                                                    style="margin-right: 5px;">&gt;&gt;</a>
+                    </div>
+                </td>
+            </tr>
+        </table>
+    </div>
+    </form>
+</body>
+</html>

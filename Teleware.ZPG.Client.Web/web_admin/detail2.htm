@@ -1,0 +1,110 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>查看留言</title>
+    <link href="css/default.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+    <form name="form1" method="post" action="OnlineQuestionLook.aspx" id="form1">
+    <table cellspacing="0" cellpadding="0" width="98%" border="0" align="center">
+        <tr>
+            <td class="DTitleIcon">
+                &nbsp;
+            </td>
+            <td class="DTitle">
+                <div id="TrAffiche" style="display: inline">
+                    查看在线留言
+                </div>
+                &nbsp;
+            </td>
+            <td class="DTitleIconR">
+                &nbsp;
+            </td>
+        </tr>
+    </table>
+    <table cellspacing="0" cellpadding="0" width="98%" border="0" align="center">
+        <tr>
+            <td>
+                <div style="width: 100%;">
+                    <table class="editTable" cellspacing="0" cellpadding="3" width="100%" border="0"
+                        align="center">
+                        <tr>
+                            <td class="EditItem1" width="150px">
+                                留言人姓名：
+                            </td>
+                            <td class="EditItem2" width="300px">
+                                <span id="lblName"></span>
+                            </td>
+                            <td class="EditItem1" width="120px">
+                                联系电话：
+                            </td>
+                            <td class="EditItem2" width="300px">
+                                <span id="lblTel"></span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="EditItem1" width="150px">
+                                所在设区市：
+                            </td>
+                            <td class="EditItem2" width="300px">
+                                <span id="lblBigcounty"></span>
+                            </td>
+                            <td class="EditItem1" width="120px">
+                                所辖县(市、区)：
+                            </td>
+                            <td class="EditItem2" width="300px">
+                                <span id="lblSmallcounty"></span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="EditItem1" width="120px">
+                                证件类型：
+                            </td>
+                            <td class="EditItem2">
+                                <span id="lblType"></span>
+                            </td>
+                            <td class="EditItem1" width="120px">
+                                证件号码：
+                            </td>
+                            <td class="EditItem2">
+                                <span id="lblNum"></span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="EditItem1">
+                                联系地址：
+                            </td>
+                            <td class="EditItem2" colspan="3">
+                                <span id="lblAddress"></span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="EditItem1" width="120px">
+                                留言标题:
+                            </td>
+                            <td class="EditItem2" colspan="3">
+                                <span id="lblTitle"></span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="EditItem1" width="120px">
+                                留言内容:
+                            </td>
+                            <td colspan="3" class="EditItem1">
+                                <textarea name="lblMsg" rows="2" cols="20" readonly="readonly" id="lblMsg" style="height: 300px;
+                                    width: 600px;"></textarea>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td align="center" height="40px">
+                <input id="Button1" type="button" class="field_button" value=" 关  闭 " onclick="window.close();" />
+            </td>
+        </tr>
+    </table>
+    </form>
+</body>
+</html>

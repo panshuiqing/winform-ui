@@ -1,0 +1,113 @@
+﻿/*内容页面样式*/
+.ContentBody{
+	border-right-width: 1px;
+	border-bottom-width: 5px;
+	border-left-width: 1px;
+	border-right-style: solid;
+	border-bottom-style: solid;
+	border-left-style: solid;
+	border-right-color: #1268bf;
+	border-bottom-color: #1268bf;
+	border-left-color: #1268bf;
+	background-color: #FFFFFF;
+	height: 600px;
+	width: 780px;
+}
+.ContentTitle{
+	background-color: #FFFFFF;
+	height: 25px;
+	width: 780px;
+	font-size: 12px;
+	color: #0235da;
+	background-attachment: fixed;
+	background-image: url(style/ContentTitle.gif);
+	background-repeat: no-repeat;
+	background-position: left top;
+	letter-spacing: 10px;
+	word-spacing: 10px;
+	padding-left: 25px;
+	text-align: left;
+}
+.ContentItem1{
+	background-color: #FFFFFF;
+	height: 30px;
+	width: 780px;
+	font-size: 14px;
+	color: #000000;
+	text-align: center;
+	padding-top: 10px;
+	font-weight: bold;
+}
+.ContentItem2{
+	background-color: #FFFFFF;
+	width: 780px;
+	font-size: 12px;
+	color: #000000;
+	text-align: left;
+	line-height: 25px;
+	padding-right: 50px;
+	padding-left: 50px;
+}
+.Contentbutton{
+	text-align: center;
+	height: 50px;
+}
+.EditStrongItem3{
+	background-color: #FFFFFF;
+	height: 30px;
+	width: 780px;
+	font-size: 15px;
+	color: #000000;
+	text-align: center;
+	padding-top: 10px;
+	font-weight:bold ;
+}
+th { 
+    font: bold 11px "Trebuchet MS", Verdana, Arial, Helvetica, sans-serif; 
+    color: #4f6b72; 
+    border-right: 1px solid #C1DAD7; 
+    border-bottom: 1px solid #C1DAD7; 
+    border-top: 1px solid #C1DAD7; 
+    letter-spacing: 2px; 
+    text-transform: uppercase; 
+    text-align: left; 
+    padding: 6px 6px 6px 12px; 
+    background: #CAE8EA url(images/bg_header.jpg) no-repeat; 
+} 
+
+th.nobg { 
+    border-top: 0; 
+    border-left: 0; 
+    border-right: 1px solid #C1DAD7; 
+    background: none; 
+} 
+
+td.me { 
+    border-right: 1px solid #C1DAD7; 
+    border-bottom: 1px solid #C1DAD7; 
+    background: #fff; 
+    font-size:11px; 
+    padding: 6px 6px 6px 12px; 
+    color: #4f6b72; 
+} 
+
+
+td.alt { 
+    background: #F5FAFA; 
+    color: #797268; 
+} 
+
+th.spec { 
+    border-left: 1px solid #C1DAD7; 
+    border-top: 0; 
+    background: #fff url(images/bullet1.gif) no-repeat; 
+    font: bold 10px "Trebuchet MS", Verdana, Arial, Helvetica, sans-serif; 
+} 
+
+th.specalt { 
+    border-left: 1px solid #C1DAD7; 
+    border-top: 0; 
+    background: #f5fafa url(images/bullet2.gif) no-repeat; 
+    font: bold 10px "Trebuchet MS", Verdana, Arial, Helvetica, sans-serif; 
+    color: #797268; 
+} 

@@ -1,0 +1,374 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head id="Head1">
+    <title>修改公告 </title>
+    <base target="_self" />
+    <link href="css/default.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+    <form name="form1" method="post" action="" id="form1">
+    <table cellspacing="0" cellpadding="0" align="center" border="0" width="100%">
+        <tr style="width: 99%">
+            <td>
+                <table class="EditTable" cellspacing="0" cellpadding="3" width="98%" border="0" align="center">
+                    <tr style="height: 80px">
+                        <td>
+                            <div id='showbtn' style="width: 100%; background-color: #c8e1fb; border: 1px solid #9fd6ff;
+                                position: absolute; z-index: 9999; height: 80px; top: 0px">
+                                <div id="wefwef">
+                                    <table class="tableClass" height="80px" cellspacing="0" cellpadding="0" width="100%"
+                                        align="center" border="0">
+                                        <tr>
+                                            <td style="height: 40px" align='center' class="SearchItemL">
+                                                <font style="font-size: 20px"><b>&nbsp;<br />
+                                                    公 告 信 息 录 入 </b></font>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="SearchItemL">
+                                                &nbsp;&nbsp;所在区域：<input name="szqyid" type="text" id="szqyid" class="field_input"
+                                                    value="福州" readonly="" style="background-color: gainsboro; width: 100px;" />
+                                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;挂牌人：<input name="hgprid" type="text" id="hgprid" class="field_input"
+                                                    value="福州市国土资源局" readonly="" style="background-color: gainsboro; width: 200px;" />
+                                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;录入者：<input name="hrlzname" type="text" id="hrlzname"
+                                                    class="field_input" readonly="" style="background-color: gainsboro" value="福州市挂牌人fzsj" />
+                                                &nbsp;&nbsp;&nbsp;&nbsp;<input id="butClient1" onclick="javascript:btnOk();" type="button"
+                                                    value="保  存" style="width: 75px; height: 24px" class="field_button" />
+                                                &nbsp;&nbsp;&nbsp;&nbsp;<input id="butClient2" onclick="javascript:look();" type="button"
+                                                    value="预  览" style="width: 75px; height: 24px" class="field_button" />
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="height: 20px">
+                            &nbsp;
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <table class="EditTable" cellspacing="0" cellpadding="0" width="100%" border="0"
+                                align="center">
+                                <tr>
+                                    <td class="SearchItemL" colspan="4" style="height: 40px" align="left">
+                                        <font style="font-size: 14px; font-weight: bold">一、公告基本信息</font>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="SearchItemL">
+                                        公告标题
+                                    </td>
+                                    <td class="SearchItemR">
+                                        <input name="txtTitle" type="text" id="txtTitle" style="width: 95%" class="field_input"
+                                            value="4564" />
+                                        <font color="red">*</font><span id="fvalrtxtTitle" style="color: Red; display: none;">
+                                            请输入内容！</span><span id="evalrtxtTitle" style="color: Red; display: none;"> 长度已超过150位！</span>
+                                    </td>
+                                    <td class="SearchItemL">
+                                        公告编号
+                                    </td>
+                                    <td class="SearchItemR">
+                                        <input name="txtAfficheNum" type="text" id="txtAfficheNum" maxlength="30" style="width: 80px"
+                                            class="filed_xhx" value="456" />[<select name="txtAfficheNumMidd" id="txtAfficheNumMidd"
+                                                class="field_select">
+                                                <option value="2000">2000</option>
+                                                <option value="2001">2001</option>
+                                                <option value="2002">2002</option>
+                                                <option value="2003">2003</option>
+                                                <option value="2004">2004</option>
+                                                <option value="2005">2005</option>
+                                                <option value="2006">2006</option>
+                                                <option value="2007">2007</option>
+                                                <option value="2008">2008</option>
+                                                <option value="2009">2009</option>
+                                                <option value="2010">2010</option>
+                                                <option value="2011">2011</option>
+                                                <option value="2012">2012</option>
+                                                <option value="2013">2013</option>
+                                                <option selected="selected" value="2014">2014</option>
+                                                <option value="2015">2015</option>
+                                                <option value="2016">2016</option>
+                                                <option value="2017">2017</option>
+                                                <option value="2018">2018</option>
+                                                <option value="2019">2019</option>
+                                                <option value="2020">2020</option>
+                                            </select>
+                                        ]
+                                        <input name="txtAfficheNumLast" type="text" id="txtAfficheNumLast" maxlength="30"
+                                            style="width: 50px" class="filed_xhx" value="45645" />号 <font color="red">*</font>
+                                        <span id="RequiredFieldValidator3" style="color: Red; display: none;">公告编号不完整！</span>
+                                        <span id="RequiredFieldValidator7" style="color: Red; display: none;">公告编号不完整！</span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="SearchItemL">
+                                        出让方案批准机关
+                                    </td>
+                                    <td class="SearchItemR">
+                                        <input name="txtPiZunJiGuan" type="text" id="txtPiZunJiGuan" maxlength="30" style="width: 150px"
+                                            class="filed_xhx" value="45645" />人民政府<font color="red">*</font><span id="RequiredFieldValidator6"
+                                                style="color: Red; display: none;"> 请输入批准机关！</span>
+                                    </td>
+                                    <td class="SearchItemL">
+                                        所在区域
+                                    </td>
+                                    <td class="SearchItemR">
+                                        <input name="txtCountyId$HiddenCountyId" type="text" id="txtCountyId_HiddenCountyId"
+                                            style="display: none; width: 0px;" value="2" />
+                                        <select name="txtCountyId$CountySelect" id="txtCountyId_CountySelect" class="field_select"
+                                            onchange="javascript:LoadCountySelectChild(this,txtCountyId_CountySelect.value,txtCountyId_CountySelectChild.id,&#39;True&#39;);"
+                                            style="width: 80px;">
+                                            <option selected="selected" value="2">福州</option>
+                                        </select>
+                                        <select name="txtCountyId$CountySelectChild" id="txtCountyId_CountySelectChild" class="field_select"
+                                            onchange="javascript:mSelectChange(this)" style="width: 80px;">
+                                            <option selected="selected" value="">全部</option>
+                                            <option value="11">鼓楼区</option>
+                                            <option value="12">台江区</option>
+                                            <option value="23">仓山区</option>
+                                            <option value="13">马尾区</option>
+                                            <option value="14">晋安区</option>
+                                            <option value="15">闽侯县</option>
+                                            <option value="16">连江县</option>
+                                            <option value="17">罗源县</option>
+                                            <option value="18">闽清县</option>
+                                            <option value="19">永泰县</option>
+                                            <option value="20">平潭县</option>
+                                            <option value="21">福清市</option>
+                                            <option value="22">长乐市</option>
+                                        </select>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="SearchItemL" style="width: 100px;">
+                                        公告类型
+                                    </td>
+                                    <td class="SearchItemR">
+                                        <input name="txtAfficheFashion" type="text" id="txtAfficheFashion" value="网上交易公告"
+                                            style="background-color: gainsboro; width: 150px" readonly="" class="field_input" />
+                                    </td>
+                                    <td class="SearchItemL" style="width: 100px;">
+                                        出让方式
+                                    </td>
+                                    <td class="SearchItemR">
+                                        <input name="Text1" type="text" id="Text1" value="网上挂牌" style="background-color: gainsboro;
+                                            width: 150px" readonly="" class="field_input" />
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="SearchItemL">
+                                        公告创建时间
+                                    </td>
+                                    <td class="SearchItemR">
+                                        <table cellpadding="0" cellspacing="0" width="100%">
+                                            <tr>
+                                                <td style="width: 130px;">
+                                                    <input name="txtCreateDatetime" type="text" id="txtCreateDatetime" class="field_input"
+                                                        style="width: 150px; font-size: 12px; background-color: gainsboro;" disabled="disabled"
+                                                        value="2014-02-20 14:43:57" />
+                                                </td>
+                                                <td>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                    <td class="SearchItemL">
+                                        公告发布时间
+                                    </td>
+                                    <td class="SearchItemR">
+                                        <table cellpadding="0" cellspacing="0" width="100%">
+                                            <tr>
+                                                <td style="width: 130px;">
+                                                    <input name="txtUpdateDatetime" type="text" id="txtUpdateDatetime" class="Wdate"
+                                                        onfocus="WdatePicker({readOnly:true,minDate:&#39;%y-%M-#&#39;,dateFmt:&#39;yyyy-MM-dd&#39;})"
+                                                        value="2014-02-21" />
+                                                </td>
+                                                <td>
+                                                    <font color="red">*</font><span id="fvalrtxtUpdateDatetime" style="color: Red; display: none;">
+                                                        请输入时间！</span>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="SearchItemL">
+                                        报名起始时间
+                                    </td>
+                                    <td class="SearchItemR">
+                                        <table cellpadding="0" cellspacing="0" width="100%">
+                                            <tr>
+                                                <td style="width: 130px;">
+                                                    <input name="txtSignBeginTime" type="text" id="txtSignBeginTime" class="Wdate" onfocus="WdatePicker({readOnly:true,minDate:&#39;%y-%M-#&#39;,dateFmt:&#39;yyyy-MM-dd HH:mm:ss&#39;})"
+                                                        value="2014-02-21 14:44:05" />
+                                                </td>
+                                                <td style="text-align: left">
+                                                    <font color="red">*</font><span id="RequiredFieldValidator1" style="color: Red; display: none;">
+                                                        请输入时间！</span> <span id="CompareValidator1" style="color: Red; display: none;">报名起始时间应在报名截止时间之前</span>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                    <td class="SearchItemL">
+                                        报名截止时间
+                                    </td>
+                                    <td class="SearchItemR">
+                                        <table cellpadding="0" cellspacing="0" width="100%">
+                                            <tr>
+                                                <td style="width: 130px;">
+                                                    <input name="txtSignEndTime" type="text" id="txtSignEndTime" class="Wdate" onfocus="WdatePicker({readOnly:true,minDate:&#39;%y-%M-#&#39;,dateFmt:&#39;yyyy-MM-dd HH:mm:ss&#39;})"
+                                                        value="2014-02-22 14:44:07" />
+                                                </td>
+                                                <td style="text-align: left">
+                                                    <font color="red">*</font>&nbsp;<span id="RequiredFieldValidator5" style="color: Red;
+                                                        display: none;"> 请输入时间！</span>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="SearchItemL">
+                                        交易起始时间
+                                    </td>
+                                    <td class="SearchItemR">
+                                        <table cellpadding="0" cellspacing="0" width="100%">
+                                            <tr>
+                                                <td style="width: 130px;">
+                                                    <input name="txtTradeBeginTime" type="text" id="txtTradeBeginTime" class="Wdate"
+                                                        onfocus="WdatePicker({readOnly:true,minDate:&#39;%y-%M-#&#39;,dateFmt:&#39;yyyy-MM-dd HH:mm:ss&#39;})"
+                                                        value="2014-02-24 14:44:13" />
+                                                </td>
+                                                <td style="text-align: left">
+                                                    <font color="red">*</font><span id="RequiredFieldValidator2" style="color: Red; display: none;">
+                                                        请输入时间！</span> <span id="CompareValidator2" style="color: Red; display: none;">交易起始时间应在挂牌交易截止时间之前</span>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                    <td class="SearchItemL">
+                                        挂牌交易截止时间
+                                    </td>
+                                    <td class="SearchItemR">
+                                        <table cellpadding="0" cellspacing="0" width="100%">
+                                            <tr>
+                                                <td style="width: 130px;">
+                                                    <input name="txtTradeEndTime" type="text" id="txtTradeEndTime" class="Wdate" onfocus="WdatePicker({readOnly:true,minDate:&#39;%y-%M-#&#39;,dateFmt:&#39;yyyy-MM-dd HH:mm:ss&#39;})"
+                                                        value="2014-02-26 14:44:17" />
+                                                </td>
+                                                <td style="text-align: left">
+                                                    <font color="red">*</font><span id="RequiredFieldValidator4" style="color: Red; display: none;">
+                                                        请输入时间！</span>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="height: 20px">
+                            &nbsp;
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <table class="EditTable" cellspacing="0" cellpadding="0" width="100%" border="0"
+                                align="center">
+                                <tr>
+                                    <td class="SearchItemL" colspan="4" style="height: 40px" align="left">
+                                        <font style="font-size: 14px; font-weight: bold">二、申请人范围及资格要求</font>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <textarea cols="50" rows="10" style="width:100%"></textarea>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <table class="EditTable" cellspacing="0" cellpadding="0" width="100%" border="0"
+                                align="center">
+                                <tr>
+                                    <td class="SearchItemL" colspan="4" style="height: 40px" align="left">
+                                        <font style="font-size: 14px; font-weight: bold">三、交易须知</font>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <textarea cols="50" rows="10" style="width:100%"></textarea>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="height: 20px">
+                            &nbsp;
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <table class="EditTable" cellspacing="0" cellpadding="0" width="100%" border="0"
+                                align="center">
+                                <tr>
+                                    <td class="SearchItemL" colspan="4" style="height: 40px" align="left">
+                                        <font style="font-size: 14px; font-weight: bold">四、挂牌方式及竞价办法&nbsp;</font>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td align="left">
+                                        <textarea cols="50" rows="10" style="width:99%"></textarea>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="height: 20px">
+                            &nbsp;
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <table class="EditTable" cellspacing="0" cellpadding="0" width="100%" border="0"
+                                align="center">
+                                <tr>
+                                    <td class="SearchItemL" colspan="4" style="height: 40px" align="left">
+                                        <font style="font-size: 14px; font-weight: bold">五、公告其它内容录入&nbsp;&nbsp;</font>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <textarea cols="50" rows="10" style="width:99%"></textarea>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td align="center">
+                            <input id="btndosave" onclick="javascript:btnOk();" type="button" class="field_button"
+                                value=" 保 存 " />
+                            <div style="display: none">
+                                <input type="submit" name="btnSave" value=" 保 存 " onclick="javascript:WebForm_DoPostBackWithOptions(new WebForm_PostBackOptions(&quot;btnSave&quot;, &quot;&quot;, true, &quot;&quot;, &quot;&quot;, false, false))"
+                                    id="btnSave" class="field_button" style="height: 24px; width: 75px;" /></div>
+                            &nbsp;&nbsp;&nbsp;
+                            <input name="btnLook" type="button" id="btnLook" value=" 预 览 " class="field_button"
+                                onclick="javascript:ShowOperaModalDialog(&#39;AfficheViewNew.aspx?AfficheId=1543&#39;,1020,720);" />
+                        </td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+    </table>
+    </form>
+</body>
+</html>
