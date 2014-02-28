@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
+using CCWin.SkinControl;
 
 namespace Teleware.ZPG.Client
 {
@@ -24,8 +25,10 @@ namespace Teleware.ZPG.Client
 
         private void Form1_Load(object sender, EventArgs e)
         {
-           
+            this.skinRichTextBox1.InsertLink("link");
+
         }
+
 
         private void button2_Click(object sender, EventArgs e)
         {
