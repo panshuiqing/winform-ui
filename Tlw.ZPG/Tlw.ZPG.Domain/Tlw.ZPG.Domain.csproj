@@ -1,0 +1,110 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{54F3A622-C20C-421C-9794-CE661C369C4F}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Tlw.ZPG.Domain</RootNamespace>
+    <AssemblyName>Tlw.ZPG.Domain</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=5.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\EntityFramework.5.0.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Enums\ButtonPosition.cs" />
+    <Compile Include="Enums\SellFashion.cs" />
+    <Compile Include="Enums\NewsType.cs" />
+    <Compile Include="Enums\TradeStage.cs" />
+    <Compile Include="Enums\TradeStatus.cs" />
+    <Compile Include="Enums\TradeType.cs" />
+    <Compile Include="Enums\OperateType.cs" />
+    <Compile Include="Models\Account.cs" />
+    <Compile Include="Models\AccountInfo.cs" />
+    <Compile Include="Enums\AccountStatus.cs" />
+    <Compile Include="Models\AccountVerify.cs" />
+    <Compile Include="Enums\AccountVerifyStatus.cs" />
+    <Compile Include="Models\Affiche.cs" />
+    <Compile Include="Models\AfficheFilter.cs" />
+    <Compile Include="Models\ApplyNumbers.cs" />
+    <Compile Include="Models\Button.cs" />
+    <Compile Include="Models\County.cs" />
+    <Compile Include="Models\Dictionary.cs" />
+    <Compile Include="Models\Download.cs" />
+    <Compile Include="Models\FeedBook.cs" />
+    <Compile Include="Models\GuestBook.cs" />
+    <Compile Include="Models\Land.cs" />
+    <Compile Include="Models\LandAttach.cs" />
+    <Compile Include="Models\Menu.cs" />
+    <Compile Include="Models\News.cs" />
+    <Compile Include="Models\Person.cs" />
+    <Compile Include="Models\Purpose.cs" />
+    <Compile Include="Models\Role.cs" />
+    <Compile Include="Models\SystemLog.cs" />
+    <Compile Include="Models\Trade.cs" />
+    <Compile Include="Models\TradeDetail.cs" />
+    <Compile Include="Models\TradeLog.cs" />
+    <Compile Include="Models\TradeMessage.cs" />
+    <Compile Include="Models\TradeResult.cs" />
+    <Compile Include="Models\TradeResultConfirm.cs" />
+    <Compile Include="Models\User.cs" />
+    <Compile Include="Models\ClientErrorLog.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Mapping\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.Config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
