@@ -57,6 +57,34 @@
     <Compile Include="Enums\TradeStatus.cs" />
     <Compile Include="Enums\TradeType.cs" />
     <Compile Include="Enums\OperateType.cs" />
+    <Compile Include="Mapping\AccountInfoMap.cs" />
+    <Compile Include="Mapping\AccountMap.cs" />
+    <Compile Include="Mapping\AccountVerifyMap.cs" />
+    <Compile Include="Mapping\AfficheFilterMap.cs" />
+    <Compile Include="Mapping\AfficheMap.cs" />
+    <Compile Include="Mapping\ApplyNumbersMap.cs" />
+    <Compile Include="Mapping\ButtonMap.cs" />
+    <Compile Include="Mapping\ClientErrorLogMap.cs" />
+    <Compile Include="Mapping\CountyMap.cs" />
+    <Compile Include="Mapping\DictionaryMap.cs" />
+    <Compile Include="Mapping\DownloadMap.cs" />
+    <Compile Include="Mapping\FeedBookMap.cs" />
+    <Compile Include="Mapping\GuestBookMap.cs" />
+    <Compile Include="Mapping\LandAttachMap.cs" />
+    <Compile Include="Mapping\LandMap.cs" />
+    <Compile Include="Mapping\MenuMap.cs" />
+    <Compile Include="Mapping\NewsMap.cs" />
+    <Compile Include="Mapping\PersonMap.cs" />
+    <Compile Include="Mapping\PurposeMap.cs" />
+    <Compile Include="Mapping\RoleMap.cs" />
+    <Compile Include="Mapping\SystemLogMap.cs" />
+    <Compile Include="Mapping\TradeDetailMap.cs" />
+    <Compile Include="Mapping\TradeLogMap.cs" />
+    <Compile Include="Mapping\TradeMap.cs" />
+    <Compile Include="Mapping\TradeMessageMap.cs" />
+    <Compile Include="Mapping\TradeResultConfirmMap.cs" />
+    <Compile Include="Mapping\TradeResultMap.cs" />
+    <Compile Include="Mapping\UserMap.cs" />
     <Compile Include="Models\Account.cs" />
     <Compile Include="Models\AccountInfo.cs" />
     <Compile Include="Enums\AccountStatus.cs" />
@@ -92,9 +120,7 @@
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Mapping\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <None Include="App.Config" />
     <None Include="packages.config" />

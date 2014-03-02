@@ -10,5 +10,6 @@ namespace Tlw.ZPG.Domain.Models
         public string DictionaryValue { get; set; }
         public string DictionaryCode { get; set; }
         public string Remark { get; set; }
+        public int OrderNum { get; set; }
     }
 }

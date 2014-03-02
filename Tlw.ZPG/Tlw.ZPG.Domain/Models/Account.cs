@@ -8,7 +8,6 @@ namespace Tlw.ZPG.Domain.Models
     {
         public int AccountId { get; set; }
         public int TradeId { get; set; }
-        public int AccountInfoId { get; set; }
         public string ApplyNumber { get; set; }
         public string Password { get; set; }
         public bool PasswordUpdated { get; set; }

@@ -170,6 +170,10 @@ namespace Tlw.ZPG.Domain.Models
 
         #endregion
 
+        /// 操作异常
+        /// </summary>
+        [Description("操作异常")]
+        Exception,
         /// 其他
         /// </summary>
         [Description("其他")]
