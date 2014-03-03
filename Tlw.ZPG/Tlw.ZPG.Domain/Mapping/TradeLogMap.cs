@@ -23,9 +23,9 @@ namespace Tlw.ZPG.Domain.Mapping
     {
         public TradeLogMap()
         {                        
-              this.HasKey(t => t.LogId);        
+              this.HasKey(t => t.ID);        
               this.ToTable("Z_TradeLog");
-              this.Property(t => t.LogId).HasColumnName("LogId");
+              this.Property(t => t.ID).HasColumnName("LogId");
               this.Property(t => t.TradeId).HasColumnName("TradeId");
               this.Property(t => t.LogType).HasColumnName("LogType");
               this.Property(t => t.Status).HasColumnName("Status");

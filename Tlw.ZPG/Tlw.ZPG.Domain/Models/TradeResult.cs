@@ -2,10 +2,10 @@ namespace Tlw.ZPG.Domain.Models
 {
     using System;
     using System.Collections.Generic;
-    
-    public partial class TradeResult
+    using Tlw.ZPG.Infrastructure;
+
+    public partial class TradeResult : EntityBase
     {
-        public int ResultId { get; set; }
         public int TradeId { get; set; }
         public string LandNumber { get; set; }
         public string LandPurpose { get; set; }

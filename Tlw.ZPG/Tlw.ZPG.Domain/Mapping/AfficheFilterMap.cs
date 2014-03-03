@@ -23,9 +23,9 @@ namespace Tlw.ZPG.Domain.Mapping
     {
         public AfficheFilterMap()
         {                        
-              this.HasKey(t => t.FilterId);        
+              this.HasKey(t => t.ID);        
               this.ToTable("Z_AfficheFilter");
-              this.Property(t => t.FilterId).HasColumnName("FilterId");
+              this.Property(t => t.ID).HasColumnName("FilterId");
               this.Property(t => t.FilterKeyword).HasColumnName("FilterKeyword").IsRequired().HasMaxLength(100);
               this.Property(t => t.Remark).HasColumnName("Remark").HasMaxLength(300);
               this.Property(t => t.ErrorMessage).HasColumnName("ErrorMessage").HasMaxLength(100);

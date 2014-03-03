@@ -23,9 +23,9 @@ namespace Tlw.ZPG.Domain.Mapping
     {
         public MenuMap()
         {                        
-              this.HasKey(t => t.MenuId);        
+              this.HasKey(t => t.ID);        
               this.ToTable("U_Menu");
-              this.Property(t => t.MenuId).HasColumnName("MenuId");
+              this.Property(t => t.ID).HasColumnName("MenuId");
               this.Property(t => t.MenuName).HasColumnName("MenuName").IsRequired().HasMaxLength(50);
               this.Property(t => t.MenuUrl).HasColumnName("MenuUrl").HasMaxLength(200);
               this.Property(t => t.ParentId).HasColumnName("ParentId");

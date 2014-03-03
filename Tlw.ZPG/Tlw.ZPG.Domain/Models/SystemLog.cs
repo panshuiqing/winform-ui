@@ -2,10 +2,10 @@ namespace Tlw.ZPG.Domain.Models
 {
     using System;
     using System.Collections.Generic;
-    
-    public partial class SystemLog
+    using Tlw.ZPG.Infrastructure;
+
+    public partial class SystemLog : EntityBase
     {
-        public int LogId { get; set; }
         public System.DateTime CreateTime { get; set; }
         public OperateType LogType { get; set; }
         public int UserId { get; set; }

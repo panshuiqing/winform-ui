@@ -23,9 +23,9 @@ namespace Tlw.ZPG.Domain.Mapping
     {
         public ButtonMap()
         {                        
-              this.HasKey(t => t.ButtonId);        
+              this.HasKey(t => t.ID);        
               this.ToTable("U_Button");
-              this.Property(t => t.ButtonId).HasColumnName("ButtonId");
+              this.Property(t => t.ID).HasColumnName("ButtonId");
               this.Property(t => t.ButtonName).HasColumnName("ButtonName").IsRequired().HasMaxLength(50);
               this.Property(t => t.ButtonIcon).HasColumnName("ButtonIcon").HasMaxLength(200);
               this.Property(t => t.ButtonCode).HasColumnName("ButtonCode").HasMaxLength(50);

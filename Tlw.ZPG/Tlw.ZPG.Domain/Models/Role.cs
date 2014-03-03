@@ -2,8 +2,9 @@ namespace Tlw.ZPG.Domain.Models
 {
     using System;
     using System.Collections.Generic;
-    
-    public partial class Role
+    using Tlw.ZPG.Infrastructure;
+
+    public partial class Role : EntityBase
     {
         public Role()
         {
@@ -12,7 +13,6 @@ namespace Tlw.ZPG.Domain.Models
             this.Users = new HashSet<User>();
         }
     
-        public int RoleId { get; set; }
         public string RoleName { get; set; }
     
         public virtual ICollection<Button> Buttons { get; set; }

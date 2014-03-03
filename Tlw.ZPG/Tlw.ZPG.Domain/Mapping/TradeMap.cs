@@ -23,9 +23,9 @@ namespace Tlw.ZPG.Domain.Mapping
     {
         public TradeMap()
         {                        
-              this.HasKey(t => t.TradeId);        
+              this.HasKey(t => t.ID);        
               this.ToTable("Z_Trade");
-              this.Property(t => t.TradeId).HasColumnName("TradeId");
+              this.Property(t => t.ID).HasColumnName("TradeId");
               this.Property(t => t.LandId).HasColumnName("LandId");
               this.Property(t => t.AfficheId).HasColumnName("AfficheId");
               this.Property(t => t.SignBeginTime).HasColumnName("SignBeginTime");

@@ -23,9 +23,9 @@ namespace Tlw.ZPG.Domain.Mapping
     {
         public NewsMap()
         {                        
-              this.HasKey(t => t.NewsId);        
+              this.HasKey(t => t.ID);        
               this.ToTable("C_News");
-              this.Property(t => t.NewsId).HasColumnName("NewsId");
+              this.Property(t => t.ID).HasColumnName("NewsId");
               this.Property(t => t.Title).HasColumnName("Title").IsRequired().HasMaxLength(100);
               this.Property(t => t.Content).HasColumnName("Content").IsRequired();
               this.Property(t => t.NewsType).HasColumnName("NewsType");

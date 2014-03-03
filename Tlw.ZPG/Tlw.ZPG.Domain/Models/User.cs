@@ -2,15 +2,15 @@ namespace Tlw.ZPG.Domain.Models
 {
     using System;
     using System.Collections.Generic;
-    
-    public partial class User
+    using Tlw.ZPG.Infrastructure;
+
+    public partial class User : EntityBase
     {
         public User()
         {
             this.Roles = new HashSet<Role>();
         }
     
-        public int UserId { get; set; }
         public int CountyId { get; set; }
         public string UserName { get; set; }
         public string Unit { get; set; }

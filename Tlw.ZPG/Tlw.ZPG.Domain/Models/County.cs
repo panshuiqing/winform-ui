@@ -2,10 +2,10 @@ namespace Tlw.ZPG.Domain.Models
 {
     using System;
     using System.Collections.Generic;
-    
-    public partial class County
+    using Tlw.ZPG.Infrastructure;
+
+    public partial class County : EntityBase
     {
-        public int CountyId { get; set; }
         public string CountyName { get; set; }
         public int ParentId { get; set; }
         public int OrderNo { get; set; }

@@ -23,9 +23,9 @@ namespace Tlw.ZPG.Domain.Mapping
     {
         public AfficheMap()
         {                        
-              this.HasKey(t => t.AfficheId);        
+              this.HasKey(t => t.ID);        
               this.ToTable("Z_Affiche");
-              this.Property(t => t.AfficheId).HasColumnName("AfficheId");
+              this.Property(t => t.ID).HasColumnName("AfficheId");
               this.Property(t => t.ParentId).HasColumnName("ParentId").HasMaxLength(50);
               this.Property(t => t.Title).HasColumnName("Title").IsRequired().HasMaxLength(200);
               this.Property(t => t.Content).HasColumnName("Content");

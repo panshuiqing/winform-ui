@@ -2,10 +2,10 @@ namespace Tlw.ZPG.Domain.Models
 {
     using System;
     using System.Collections.Generic;
-    
-    public partial class News
+    using Tlw.ZPG.Infrastructure;
+
+    public partial class News : EntityBase
     {
-        public int NewsId { get; set; }
         public string Title { get; set; }
         public string Content { get; set; }
         public NewsType NewsType { get; set; }

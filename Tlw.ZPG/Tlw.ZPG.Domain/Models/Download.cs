@@ -2,10 +2,10 @@ namespace Tlw.ZPG.Domain.Models
 {
     using System;
     using System.Collections.Generic;
-    
-    public partial class Download
+    using Tlw.ZPG.Infrastructure;
+
+    public partial class Download : EntityBase
     {
-        public int DownloadId { get; set; }
         public string FileName { get; set; }
         public string FilePath { get; set; }
         public System.DateTime CreateTime { get; set; }

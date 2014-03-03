@@ -2,10 +2,10 @@ namespace Tlw.ZPG.Domain.Models
 {
     using System;
     using System.Collections.Generic;
-    
-    public partial class TradeLog
+    using Tlw.ZPG.Infrastructure;
+
+    public partial class TradeLog : EntityBase
     {
-        public int LogId { get; set; }
         public int TradeId { get; set; }
         public TradeType LogType { get; set; }
         public int Status { get; set; }

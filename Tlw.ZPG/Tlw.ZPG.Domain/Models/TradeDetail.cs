@@ -2,10 +2,10 @@ namespace Tlw.ZPG.Domain.Models
 {
     using System;
     using System.Collections.Generic;
-    
-    public partial class TradeDetail
+    using Tlw.ZPG.Infrastructure;
+
+    public partial class TradeDetail : EntityBase
     {
-        public int DetailId { get; set; }
         public int TradeId { get; set; }
         public System.DateTime CreateTime { get; set; }
         public decimal Price { get; set; }

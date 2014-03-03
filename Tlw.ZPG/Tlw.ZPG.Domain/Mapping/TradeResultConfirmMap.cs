@@ -23,9 +23,9 @@ namespace Tlw.ZPG.Domain.Mapping
     {
         public TradeResultConfirmMap()
         {                        
-              this.HasKey(t => t.TradeId);        
+              this.HasKey(t => t.ID);        
               this.ToTable("Z_TradeResultConfirm");
-              this.Property(t => t.TradeId).HasColumnName("TradeId").HasDatabaseGeneratedOption(new Nullable<DatabaseGeneratedOption>(DatabaseGeneratedOption.None));
+              this.Property(t => t.ID).HasColumnName("TradeId").HasDatabaseGeneratedOption(new Nullable<DatabaseGeneratedOption>(DatabaseGeneratedOption.None));
               this.Property(t => t.CreateTime).HasColumnName("CreateTime");
               this.Property(t => t.ConfirmTime).HasColumnName("ConfirmTime");
               this.Property(t => t.ExpiredTime).HasColumnName("ExpiredTime");

@@ -23,9 +23,9 @@ namespace Tlw.ZPG.Domain.Mapping
     {
         public AccountInfoMap()
         {                        
-              this.HasKey(t => t.AccountInfoId);        
+              this.HasKey(t => t.ID);        
               this.ToTable("A_AccountInfo");
-              this.Property(t => t.AccountInfoId).HasColumnName("AccountInfoId");
+              this.Property(t => t.ID).HasColumnName("AccountInfoId");
               this.Property(t => t.RandomNumber).HasColumnName("RandomNumber").IsRequired().HasMaxLength(50);
               this.Property(t => t.CreateTime).HasColumnName("CreateTime");
               this.Property(t => t.TradeId).HasColumnName("TradeId");
@@ -38,6 +38,7 @@ namespace Tlw.ZPG.Domain.Mapping
               this.HasRequired(t => t.Contact).WithRequiredPrincipal();
               this.HasRequired(t => t.Corporation).WithRequiredPrincipal();
               this.HasRequired(t => t.Trade).WithMany();
+              this.HasMany(t => t.UnionBidPersons).WithOptional();
          }
     }
 }

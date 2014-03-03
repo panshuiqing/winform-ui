@@ -23,9 +23,9 @@ namespace Tlw.ZPG.Domain.Mapping
     {
         public TradeResultMap()
         {                        
-              this.HasKey(t => t.ResultId);        
+              this.HasKey(t => t.ID);        
               this.ToTable("Z_TradeResult");
-              this.Property(t => t.ResultId).HasColumnName("ResultId");
+              this.Property(t => t.ID).HasColumnName("ResultId");
               this.Property(t => t.TradeId).HasColumnName("TradeId");
               this.Property(t => t.LandNumber).HasColumnName("LandNumber").IsRequired().HasMaxLength(50);
               this.Property(t => t.LandPurpose).HasColumnName("LandPurpose").IsRequired().HasMaxLength(500);

@@ -23,11 +23,10 @@ namespace Tlw.ZPG.Domain.Mapping
     {
         public AccountMap()
         {                        
-              this.HasKey(t => t.AccountId);        
+              this.HasKey(t => t.ID);        
               this.ToTable("A_Account");
-              this.Property(t => t.AccountId).HasColumnName("AccountId");
+              this.Property(t => t.ID).HasColumnName("AccountId");
               this.Property(t => t.TradeId).HasColumnName("TradeId");
-              this.Property(t => t.AccountInfoId).HasColumnName("AccountInfoId");
               this.Property(t => t.ApplyNumber).HasColumnName("ApplyNumber").IsRequired().HasMaxLength(50);
               this.Property(t => t.Password).HasColumnName("Password").IsRequired().HasMaxLength(50);
               this.Property(t => t.PasswordUpdated).HasColumnName("PasswordUpdated");

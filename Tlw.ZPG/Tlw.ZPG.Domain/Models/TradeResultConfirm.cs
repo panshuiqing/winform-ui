@@ -2,10 +2,10 @@ namespace Tlw.ZPG.Domain.Models
 {
     using System;
     using System.Collections.Generic;
-    
-    public partial class TradeResultConfirm
+    using Tlw.ZPG.Infrastructure;
+
+    public partial class TradeResultConfirm : EntityBase
     {
-        public int TradeId { get; set; }
         public System.DateTime CreateTime { get; set; }
         public Nullable<System.DateTime> ConfirmTime { get; set; }
         public System.DateTime ExpiredTime { get; set; }

@@ -23,9 +23,9 @@ namespace Tlw.ZPG.Domain.Mapping
     {
         public RoleMap()
         {                        
-              this.HasKey(t => t.RoleId);        
+              this.HasKey(t => t.ID);        
               this.ToTable("U_Role");
-              this.Property(t => t.RoleId).HasColumnName("RoleId");
+              this.Property(t => t.ID).HasColumnName("RoleId");
               this.Property(t => t.RoleName).HasColumnName("RoleName").IsRequired().HasMaxLength(50);
          }
     }

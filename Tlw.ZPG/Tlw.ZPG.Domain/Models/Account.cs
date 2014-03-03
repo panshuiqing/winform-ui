@@ -3,10 +3,10 @@ namespace Tlw.ZPG.Domain.Models
     using System;
     using System.Collections.Generic;
     using Tlw.ZPG.Domain.Models.Enums;
-    
-    public partial class Account
+    using Tlw.ZPG.Infrastructure;
+
+    public partial class Account : EntityBase
     {
-        public int AccountId { get; set; }
         public int TradeId { get; set; }
         public string ApplyNumber { get; set; }
         public string Password { get; set; }

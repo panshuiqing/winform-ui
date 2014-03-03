@@ -23,9 +23,9 @@ namespace Tlw.ZPG.Domain.Mapping
     {
         public ClientErrorLogMap()
         {                        
-              this.HasKey(t => t.LogId);        
+              this.HasKey(t => t.ID);        
               this.ToTable("T_ClientErrorLog");
-              this.Property(t => t.LogId).HasColumnName("LogId");
+              this.Property(t => t.ID).HasColumnName("LogId");
               this.Property(t => t.Ip).HasColumnName("Ip").HasMaxLength(50);
               this.Property(t => t.StackTrace).HasColumnName("StackTrace");
               this.Property(t => t.Remark).HasColumnName("Remark").HasMaxLength(500);

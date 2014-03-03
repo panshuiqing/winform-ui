@@ -23,9 +23,9 @@ namespace Tlw.ZPG.Domain.Mapping
     {
         public LandMap()
         {                        
-              this.HasKey(t => t.LandId);        
+              this.HasKey(t => t.ID);        
               this.ToTable("Z_Land");
-              this.Property(t => t.LandId).HasColumnName("LandId");
+              this.Property(t => t.ID).HasColumnName("LandId");
               this.Property(t => t.CountyId).HasColumnName("CountyId");
               this.Property(t => t.CretorId).HasColumnName("CretorId");
               this.Property(t => t.CreateTime).HasColumnName("CreateTime");

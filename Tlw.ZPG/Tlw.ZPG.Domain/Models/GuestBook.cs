@@ -2,10 +2,10 @@ namespace Tlw.ZPG.Domain.Models
 {
     using System;
     using System.Collections.Generic;
-    
-    public partial class GuestBook
+    using Tlw.ZPG.Infrastructure;
+
+    public partial class GuestBook : EntityBase
     {
-        public int GuestBookId { get; set; }
         public string Tilte { get; set; }
         public string Content { get; set; }
         public string GuestName { get; set; }

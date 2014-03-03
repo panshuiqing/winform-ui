@@ -2,8 +2,9 @@ namespace Tlw.ZPG.Domain.Models
 {
     using System;
     using System.Collections.Generic;
-    
-    public partial class Trade
+    using Tlw.ZPG.Infrastructure;
+
+    public partial class Trade : EntityBase
     {
         public Trade()
         {
@@ -14,7 +15,6 @@ namespace Tlw.ZPG.Domain.Models
             this.TradeDetails = new HashSet<TradeDetail>();
         }
     
-        public int TradeId { get; set; }
         public int LandId { get; set; }
         public int AfficheId { get; set; }
         public System.DateTime SignBeginTime { get; set; }

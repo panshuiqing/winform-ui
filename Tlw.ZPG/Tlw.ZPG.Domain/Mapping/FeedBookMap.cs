@@ -23,9 +23,9 @@ namespace Tlw.ZPG.Domain.Mapping
     {
         public FeedBookMap()
         {                        
-              this.HasKey(t => t.FeedBookId);        
+              this.HasKey(t => t.ID);        
               this.ToTable("C_FeedBook");
-              this.Property(t => t.FeedBookId).HasColumnName("FeedBookId");
+              this.Property(t => t.ID).HasColumnName("FeedBookId");
               this.Property(t => t.CreateTime).HasColumnName("CreateTime");
               this.Property(t => t.Title).HasColumnName("Title").IsRequired().HasMaxLength(100);
               this.Property(t => t.Content).HasColumnName("Content").IsRequired().HasMaxLength(300);

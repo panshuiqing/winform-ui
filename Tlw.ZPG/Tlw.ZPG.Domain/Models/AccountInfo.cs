@@ -2,8 +2,9 @@ namespace Tlw.ZPG.Domain.Models
 {
     using System;
     using System.Collections.Generic;
-    
-    public partial class AccountInfo
+    using Tlw.ZPG.Infrastructure;
+
+    public partial class AccountInfo : EntityBase
     {
         public AccountInfo()
         {
@@ -11,7 +12,6 @@ namespace Tlw.ZPG.Domain.Models
             this.UnionBidPersons = new HashSet<Person>();
         }
     
-        public int AccountInfoId { get; set; }
         public string RandomNumber { get; set; }
         public System.DateTime CreateTime { get; set; }
         public int TradeId { get; set; }

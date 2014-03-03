@@ -23,9 +23,9 @@ namespace Tlw.ZPG.Domain.Mapping
     {
         public LandAttachMap()
         {                        
-              this.HasKey(t => t.AttachId);        
+              this.HasKey(t => t.ID);        
               this.ToTable("Z_LandAttach");
-              this.Property(t => t.AttachId).HasColumnName("AttachId");
+              this.Property(t => t.ID).HasColumnName("AttachId");
               this.Property(t => t.LandId).HasColumnName("LandId");
               this.Property(t => t.AttachPath).HasColumnName("AttachPath").IsRequired().HasMaxLength(200);
               this.Property(t => t.AttachType).HasColumnName("AttachType").IsRequired().HasMaxLength(50);

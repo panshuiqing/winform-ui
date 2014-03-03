@@ -3,9 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace Tlw.ZPG.Infrastructure.Domain
+namespace Tlw.ZPG.Infrastructure
 {
-    public class Class1
+    public interface IEntity<TID> : IValidatableEntity
     {
+        TID ID { get; }
     }
 }

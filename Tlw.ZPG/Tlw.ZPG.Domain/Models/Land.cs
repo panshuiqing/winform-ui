@@ -2,8 +2,9 @@ namespace Tlw.ZPG.Domain.Models
 {
     using System;
     using System.Collections.Generic;
-    
-    public partial class Land
+    using Tlw.ZPG.Infrastructure;
+
+    public partial class Land : EntityBase
     {
         public Land()
         {
@@ -11,7 +12,6 @@ namespace Tlw.ZPG.Domain.Models
             this.Purposes = new HashSet<Purpose>();
         }
     
-        public int LandId { get; set; }
         public int CountyId { get; set; }
         public int CretorId { get; set; }
         public System.DateTime CreateTime { get; set; }

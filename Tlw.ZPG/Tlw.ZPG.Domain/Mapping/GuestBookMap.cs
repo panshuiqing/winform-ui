@@ -23,9 +23,9 @@ namespace Tlw.ZPG.Domain.Mapping
     {
         public GuestBookMap()
         {                        
-              this.HasKey(t => t.GuestBookId);        
+              this.HasKey(t => t.ID);        
               this.ToTable("C_GuestBook");
-              this.Property(t => t.GuestBookId).HasColumnName("GuestBookId");
+              this.Property(t => t.ID).HasColumnName("GuestBookId");
               this.Property(t => t.Tilte).HasColumnName("Tilte").IsRequired().HasMaxLength(100);
               this.Property(t => t.Content).HasColumnName("Content").IsRequired().HasMaxLength(500);
               this.Property(t => t.GuestName).HasColumnName("GuestName").HasMaxLength(50);

@@ -23,9 +23,9 @@ namespace Tlw.ZPG.Domain.Mapping
     {
         public CountyMap()
         {                        
-              this.HasKey(t => t.CountyId);        
+              this.HasKey(t => t.ID);        
               this.ToTable("T_County");
-              this.Property(t => t.CountyId).HasColumnName("CountyId");
+              this.Property(t => t.ID).HasColumnName("CountyId");
               this.Property(t => t.CountyName).HasColumnName("CountyName").IsRequired().IsUnicode(false).HasMaxLength(20);
               this.Property(t => t.ParentId).HasColumnName("ParentId");
               this.Property(t => t.CountyCode).HasColumnName("CountyCode").HasMaxLength(50);

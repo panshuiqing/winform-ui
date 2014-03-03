@@ -23,9 +23,9 @@ namespace Tlw.ZPG.Domain.Mapping
     {
         public DownloadMap()
         {                        
-              this.HasKey(t => t.DownloadId);        
+              this.HasKey(t => t.ID);        
               this.ToTable("C_Download");
-              this.Property(t => t.DownloadId).HasColumnName("DownloadId");
+              this.Property(t => t.ID).HasColumnName("DownloadId");
               this.Property(t => t.FileName).HasColumnName("FileName").IsRequired().HasMaxLength(50);
               this.Property(t => t.FilePath).HasColumnName("FilePath").HasMaxLength(200);
               this.Property(t => t.CreateTime).HasColumnName("CreateTime");

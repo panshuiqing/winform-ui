@@ -23,9 +23,9 @@ namespace Tlw.ZPG.Domain.Mapping
     {
         public ApplyNumbersMap()
         {                        
-              this.HasKey(t => t.ApplyId);        
+              this.HasKey(t => t.ID);        
               this.ToTable("A_ApplyNumbers");
-              this.Property(t => t.ApplyId).HasColumnName("ApplyId");
+              this.Property(t => t.ID).HasColumnName("ApplyId");
               this.Property(t => t.ApplyNumber).HasColumnName("ApplyNumber").IsRequired().HasMaxLength(50);
               this.Property(t => t.IsUsed).HasColumnName("IsUsed");
               this.Property(t => t.UsedTime).HasColumnName("UsedTime");

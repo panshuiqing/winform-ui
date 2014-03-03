@@ -23,9 +23,9 @@ namespace Tlw.ZPG.Domain.Mapping
     {
         public DictionaryMap()
         {                        
-              this.HasKey(t => t.DictionaryId);        
+              this.HasKey(t => t.ID);        
               this.ToTable("T_Dictionary");
-              this.Property(t => t.DictionaryId).HasColumnName("DictionaryId");
+              this.Property(t => t.ID).HasColumnName("DictionaryId");
               this.Property(t => t.DictionaryName).HasColumnName("DictionaryName").HasMaxLength(50);
               this.Property(t => t.DictionaryValue).HasColumnName("DictionaryValue").HasMaxLength(500);
               this.Property(t => t.DictionaryCode).HasColumnName("DictionaryCode").HasMaxLength(50);

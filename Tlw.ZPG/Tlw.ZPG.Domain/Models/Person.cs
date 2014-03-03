@@ -2,10 +2,10 @@ namespace Tlw.ZPG.Domain.Models
 {
     using System;
     using System.Collections.Generic;
-    
-    public partial class Person
+    using Tlw.ZPG.Infrastructure;
+
+    public partial class Person : EntityBase
     {
-        public int PersonId { get; set; }
         public int AccountInfoId { get; set; }
         public string PersonName { get; set; }
         public string PassportType { get; set; }

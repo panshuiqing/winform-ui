@@ -23,9 +23,9 @@ namespace Tlw.ZPG.Domain.Mapping
     {
         public AccountVerifyMap()
         {                        
-              this.HasKey(t => t.VerifyId);        
+              this.HasKey(t => t.ID);        
               this.ToTable("A_AccountVerify");
-              this.Property(t => t.VerifyId).HasColumnName("VerifyId");
+              this.Property(t => t.ID).HasColumnName("VerifyId");
               this.Property(t => t.AccountInfoId).HasColumnName("AccountInfoId");
               this.Property(t => t.CreateTime).HasColumnName("CreateTime");
               this.Property(t => t.VerifyAccountId).HasColumnName("VerifyAccountId");

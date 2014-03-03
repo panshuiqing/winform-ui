@@ -2,10 +2,10 @@ namespace Tlw.ZPG.Domain.Models
 {
     using System;
     using System.Collections.Generic;
-    
-    public partial class Affiche
+    using Tlw.ZPG.Infrastructure;
+
+    public partial class Affiche : EntityBase
     {
-        public int AfficheId { get; set; }
         public string ParentId { get; set; }
         public string Title { get; set; }
         public string Content { get; set; }

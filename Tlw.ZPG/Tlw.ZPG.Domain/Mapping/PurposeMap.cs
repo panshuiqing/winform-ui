@@ -23,9 +23,9 @@ namespace Tlw.ZPG.Domain.Mapping
     {
         public PurposeMap()
         {                        
-              this.HasKey(t => t.PurposeId);        
+              this.HasKey(t => t.ID);        
               this.ToTable("Z_Purpose");
-              this.Property(t => t.PurposeId).HasColumnName("PurposeId");
+              this.Property(t => t.ID).HasColumnName("PurposeId");
               this.Property(t => t.LandId).HasColumnName("LandId");
               this.Property(t => t.PurposeName).HasColumnName("PurposeName").IsRequired().HasMaxLength(100);
               this.Property(t => t.ParentId).HasColumnName("ParentId");

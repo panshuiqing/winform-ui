@@ -2,10 +2,10 @@ namespace Tlw.ZPG.Domain.Models
 {
     using System;
     using System.Collections.Generic;
-    
-    public partial class LandAttach
+    using Tlw.ZPG.Infrastructure;
+
+    public partial class LandAttach : EntityBase
     {
-        public int AttachId { get; set; }
         public int LandId { get; set; }
         public string AttachPath { get; set; }
         public string AttachType { get; set; }

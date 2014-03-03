@@ -23,9 +23,9 @@ namespace Tlw.ZPG.Domain.Mapping
     {
         public UserMap()
         {                        
-              this.HasKey(t => t.UserId);        
+              this.HasKey(t => t.ID);        
               this.ToTable("U_User");
-              this.Property(t => t.UserId).HasColumnName("UserId");
+              this.Property(t => t.ID).HasColumnName("UserId");
               this.Property(t => t.CountyId).HasColumnName("CountyId");
               this.Property(t => t.UserName).HasColumnName("UserName").IsRequired().IsUnicode(false).HasMaxLength(20);
               this.Property(t => t.Unit).HasColumnName("Unit").IsUnicode(false).HasMaxLength(100);

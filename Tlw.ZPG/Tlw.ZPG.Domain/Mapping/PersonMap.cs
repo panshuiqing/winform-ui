@@ -23,9 +23,9 @@ namespace Tlw.ZPG.Domain.Mapping
     {
         public PersonMap()
         {                        
-              this.HasKey(t => t.PersonId);        
+              this.HasKey(t => t.ID);        
               this.ToTable("A_Person");
-              this.Property(t => t.PersonId).HasColumnName("PersonId");
+              this.Property(t => t.ID).HasColumnName("PersonId");
               this.Property(t => t.AccountInfoId).HasColumnName("AccountInfoId");
               this.Property(t => t.PersonName).HasColumnName("PersonName").HasMaxLength(50);
               this.Property(t => t.PassportType).HasColumnName("PassportType").HasMaxLength(50);
