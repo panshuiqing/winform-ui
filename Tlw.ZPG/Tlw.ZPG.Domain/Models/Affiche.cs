@@ -6,6 +6,12 @@ namespace Tlw.ZPG.Domain.Models
 
     public partial class Affiche : EntityBase
     {
+        public Affiche()
+        {
+            this.Trades = new HashSet<Trade>();
+            this.Nodes = new HashSet<Affiche>();
+        }
+
         public string ParentId { get; set; }
         public string Title { get; set; }
         public string Content { get; set; }
@@ -31,5 +37,8 @@ namespace Tlw.ZPG.Domain.Models
 
         public virtual County County { get; set; }
         public virtual User Creator { get; set; }
+        public virtual Affiche Parent { get; set; }
+        public virtual ICollection<Affiche> Nodes { get; set; }
+        public virtual ICollection<Trade> Trades { get; set; }
     }
 }
