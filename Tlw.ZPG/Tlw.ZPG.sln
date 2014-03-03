@@ -15,6 +15,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tlw.ZPG.Web", "Tlw.ZPG.Web\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tlw.ZPG.AdminWeb", "Tlw.ZPG.AdminWeb\Tlw.ZPG.AdminWeb.csproj", "{54DC054E-74A6-4D57-B099-34D3C7396F3E}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnitTestProject1", "UnitTestProject1\UnitTestProject1.csproj", "{F476745F-515A-4BDF-BE25-A4DC022377C9}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -45,6 +47,10 @@ Global
 		{54DC054E-74A6-4D57-B099-34D3C7396F3E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{54DC054E-74A6-4D57-B099-34D3C7396F3E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{54DC054E-74A6-4D57-B099-34D3C7396F3E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F476745F-515A-4BDF-BE25-A4DC022377C9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F476745F-515A-4BDF-BE25-A4DC022377C9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F476745F-515A-4BDF-BE25-A4DC022377C9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F476745F-515A-4BDF-BE25-A4DC022377C9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

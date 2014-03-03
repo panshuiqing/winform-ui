@@ -6,7 +6,7 @@ namespace Tlw.ZPG.Domain.Models
     /// <summary>
     /// 按钮位置
     /// </summary>
-    public enum ButtonPosition
+    public enum FunctionPosition
     {
         /// 顶部工具栏
         /// </summary>

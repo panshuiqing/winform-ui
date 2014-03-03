@@ -10,18 +10,16 @@ namespace Tlw.ZPG.Domain.Mapping
 
     using Tlw.ZPG.Domain.Models;
 
-    internal partial class CountyMap : EntityTypeConfiguration<County>
+    internal partial class PurposeMap : EntityTypeConfiguration<Purpose>
     {
-        public CountyMap()
+        public PurposeMap()
         {
             this.HasKey(t => t.ID);
-            this.ToTable("T_County");
-            this.Property(t => t.ID).HasColumnName("CountyId");
-            this.Property(t => t.CountyName).HasColumnName("CountyName").IsRequired().IsUnicode(false).HasMaxLength(20);
+            this.ToTable("Z_Purpose");
+            this.Property(t => t.ID).HasColumnName("PurposeId");
+            this.Property(t => t.PurposeName).HasColumnName("PurposeName").IsRequired().HasMaxLength(100);
             this.Property(t => t.ParentId).HasColumnName("ParentId");
-            this.Property(t => t.CountyCode).HasColumnName("CountyCode").HasMaxLength(50);
-            this.Property(t => t.OrderNo).HasColumnName("OrderNo");
-            this.Property(t => t.FullName).HasColumnName("FullName").HasMaxLength(100);
+            this.Property(t => t.OrderNum).HasColumnName("OrderNum");
             this.HasRequired(t => t.Parent).WithMany(t => t.Nodes).HasForeignKey(d => d.ParentId);
         }
     }

@@ -35,7 +35,7 @@
   <ItemGroup>
     <Reference Include="EntityFramework, Version=5.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\lib\EntityFramework.dll</HintPath>
+      <HintPath>..\packages\EntityFramework.5.0.0\lib\net45\EntityFramework.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
@@ -57,64 +57,66 @@
     <Compile Include="Enums\TradeStatus.cs" />
     <Compile Include="Enums\TradeType.cs" />
     <Compile Include="Enums\OperateType.cs" />
-    <Compile Include="Mapping\AccountInfoMap.cs" />
-    <Compile Include="Mapping\AccountMap.cs" />
-    <Compile Include="Mapping\AccountVerifyMap.cs" />
-    <Compile Include="Mapping\AfficheFilterMap.cs" />
-    <Compile Include="Mapping\AfficheMap.cs" />
-    <Compile Include="Mapping\ApplyNumbersMap.cs" />
-    <Compile Include="Mapping\ButtonMap.cs" />
+    <Compile Include="Mapping\Account\AccountInfoMap.cs" />
+    <Compile Include="Mapping\Account\AccountMap.cs" />
+    <Compile Include="Mapping\Account\AccountVerifyMap.cs" />
+    <Compile Include="Mapping\Trade\AfficheFilterMap.cs" />
+    <Compile Include="Mapping\Trade\AfficheMap.cs" />
+    <Compile Include="Mapping\ApplyNumberMap.cs" />
+    <Compile Include="Mapping\User\FunctionMap.cs" />
     <Compile Include="Mapping\ClientErrorLogMap.cs" />
     <Compile Include="Mapping\CountyMap.cs" />
     <Compile Include="Mapping\DictionaryMap.cs" />
     <Compile Include="Mapping\DownloadMap.cs" />
     <Compile Include="Mapping\FeedBookMap.cs" />
     <Compile Include="Mapping\GuestBookMap.cs" />
-    <Compile Include="Mapping\LandAttachMap.cs" />
-    <Compile Include="Mapping\LandMap.cs" />
-    <Compile Include="Mapping\MenuMap.cs" />
+    <Compile Include="Mapping\Trade\LandAttachMap.cs" />
+    <Compile Include="Mapping\Trade\LandMap.cs" />
+    <Compile Include="Mapping\User\MenuMap.cs" />
     <Compile Include="Mapping\NewsMap.cs" />
-    <Compile Include="Mapping\PersonMap.cs" />
-    <Compile Include="Mapping\PurposeMap.cs" />
-    <Compile Include="Mapping\RoleMap.cs" />
+    <Compile Include="Mapping\Account\PersonMap.cs" />
+    <Compile Include="Mapping\Trade\PurposeMap.cs" />
+    <Compile Include="Mapping\User\RoleMap.cs" />
     <Compile Include="Mapping\SystemLogMap.cs" />
-    <Compile Include="Mapping\TradeDetailMap.cs" />
-    <Compile Include="Mapping\TradeLogMap.cs" />
-    <Compile Include="Mapping\TradeMap.cs" />
-    <Compile Include="Mapping\TradeMessageMap.cs" />
-    <Compile Include="Mapping\TradeResultConfirmMap.cs" />
-    <Compile Include="Mapping\TradeResultMap.cs" />
-    <Compile Include="Mapping\UserMap.cs" />
-    <Compile Include="Models\Account.cs" />
-    <Compile Include="Models\AccountInfo.cs" />
+    <Compile Include="Mapping\Trade\TradeDetailMap.cs" />
+    <Compile Include="Mapping\Trade\TradeLogMap.cs" />
+    <Compile Include="Mapping\Trade\TradeMap.cs" />
+    <Compile Include="Mapping\Trade\TradeMessageMap.cs" />
+    <Compile Include="Mapping\Trade\TradeResultConfirmMap.cs" />
+    <Compile Include="Mapping\Trade\TradeResultMap.cs" />
+    <Compile Include="Mapping\User\UserMap.cs" />
+    <Compile Include="Mapping\Trade\LandPurposeMap.cs" />
+    <Compile Include="Models\Account\Account.cs" />
+    <Compile Include="Models\Account\AccountInfo.cs" />
     <Compile Include="Enums\AccountStatus.cs" />
-    <Compile Include="Models\AccountVerify.cs" />
+    <Compile Include="Models\Account\AccountVerify.cs" />
     <Compile Include="Enums\AccountVerifyStatus.cs" />
-    <Compile Include="Models\Affiche.cs" />
-    <Compile Include="Models\AfficheFilter.cs" />
-    <Compile Include="Models\ApplyNumbers.cs" />
-    <Compile Include="Models\Button.cs" />
+    <Compile Include="Models\Trade\Affiche.cs" />
+    <Compile Include="Models\Trade\AfficheFilter.cs" />
+    <Compile Include="Models\ApplyNumber.cs" />
+    <Compile Include="Models\User\Function.cs" />
     <Compile Include="Models\County.cs" />
     <Compile Include="Models\Dictionary.cs" />
     <Compile Include="Models\Download.cs" />
     <Compile Include="Models\FeedBook.cs" />
     <Compile Include="Models\GuestBook.cs" />
-    <Compile Include="Models\Land.cs" />
-    <Compile Include="Models\LandAttach.cs" />
-    <Compile Include="Models\Menu.cs" />
+    <Compile Include="Models\Trade\Land.cs" />
+    <Compile Include="Models\Trade\LandAttach.cs" />
+    <Compile Include="Models\User\Menu.cs" />
     <Compile Include="Models\News.cs" />
-    <Compile Include="Models\Person.cs" />
-    <Compile Include="Models\Purpose.cs" />
-    <Compile Include="Models\Role.cs" />
+    <Compile Include="Models\Account\Person.cs" />
+    <Compile Include="Models\Trade\Purpose.cs" />
+    <Compile Include="Models\User\Role.cs" />
     <Compile Include="Models\SystemLog.cs" />
-    <Compile Include="Models\Trade.cs" />
-    <Compile Include="Models\TradeDetail.cs" />
-    <Compile Include="Models\TradeLog.cs" />
-    <Compile Include="Models\TradeMessage.cs" />
-    <Compile Include="Models\TradeResult.cs" />
-    <Compile Include="Models\TradeResultConfirm.cs" />
-    <Compile Include="Models\User.cs" />
+    <Compile Include="Models\Trade\Trade.cs" />
+    <Compile Include="Models\Trade\TradeDetail.cs" />
+    <Compile Include="Models\Trade\TradeLog.cs" />
+    <Compile Include="Models\Trade\TradeMessage.cs" />
+    <Compile Include="Models\Trade\TradeResult.cs" />
+    <Compile Include="Models\Trade\TradeResultConfirm.cs" />
+    <Compile Include="Models\User\User.cs" />
     <Compile Include="Models\ClientErrorLog.cs" />
+    <Compile Include="Models\Trade\LandPurpose.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -127,9 +129,10 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.Config" />
+    <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
