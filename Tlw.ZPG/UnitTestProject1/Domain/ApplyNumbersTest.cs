@@ -10,12 +10,11 @@ namespace Tlw.ZPG.Domain.Models
     public class ApplyNumbersTest 
     {
 
-
         [TestMethod]
         public void AddAndFindTest()
         {
             string number="1234";
-            var context = Tlw.ZPG.Infrastructure.DbContext.DbContextFactory.ContextFactory.GetDbContext();
+            var context = Tlw.ZPG.Infrastructure.DbContext.DbContextFactory.Current.GetDbContext();
             context.Set<ApplyNumber>().Add(new ApplyNumber() { Number = number, IsUsed = false, UsedTime = null });
             var id = context.SaveChanges();
             var applyNumber = context.Set<ApplyNumber>().Find(id);
@@ -25,7 +24,7 @@ namespace Tlw.ZPG.Domain.Models
         [TestMethod]
         public void RemoveTest()
         {
-            var context = Tlw.ZPG.Infrastructure.DbContext.DbContextFactory.ContextFactory.GetDbContext();
+            var context = Tlw.ZPG.Infrastructure.DbContext.DbContextFactory.Current.GetDbContext();
             var applyNumber = context.Set<ApplyNumber>().FirstOrDefault();
             if (applyNumber != null)
             {
@@ -43,7 +42,7 @@ namespace Tlw.ZPG.Domain.Models
         public void UpdateTest()
         {
             string number = Guid.NewGuid().ToString();
-            var context = Tlw.ZPG.Infrastructure.DbContext.DbContextFactory.ContextFactory.GetDbContext();
+            var context = Tlw.ZPG.Infrastructure.DbContext.DbContextFactory.Current.GetDbContext();
             var applyNumber = context.Set<ApplyNumber>().FirstOrDefault();
             if (applyNumber != null)
             {

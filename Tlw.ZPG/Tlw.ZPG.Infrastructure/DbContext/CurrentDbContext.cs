@@ -55,5 +55,4 @@ namespace Tlw.ZPG.Infrastructure.DbContext
             return currentDbContext;
         }
     }
-
 }

@@ -39,8 +39,11 @@ namespace Tlw.ZPG.Infrastructure.DbContext
         {
             get
             {
-                //反射吧，这里写死
-                return new WebCurrentDbContext();
+                if (System.Web.HttpContext.Current != null)
+                {
+                    return new WebDbContext(this);
+                }
+                return new ThreadStaticDbContext(this);
             }
         }
 

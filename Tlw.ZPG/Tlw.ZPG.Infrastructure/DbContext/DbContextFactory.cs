@@ -20,7 +20,7 @@ namespace Tlw.ZPG.Infrastructure.DbContext
             factory = new Configuration().Configure("name=Tlw_ZPG_Context").AddAssemblyFile("Tlw.ZPG.Domain.dll").BuildDbContextFactory();
         }
 
-        public static IDbContextFactory ContextFactory
+        public static IDbContextFactory Current
         {
             get
             {

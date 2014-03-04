@@ -48,6 +48,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Application.cs" />
     <Compile Include="DbContext\Configuration.cs" />
     <Compile Include="DbContext\ConfigurationSettings.cs" />
     <Compile Include="DbContext\CurrentDbContext.cs" />
@@ -56,7 +57,8 @@
     <Compile Include="DbContext\EFDbContext.cs" />
     <Compile Include="DbContext\ICurrentContext.cs" />
     <Compile Include="DbContext\IDbContextFactory.cs" />
-    <Compile Include="DbContext\WebCurrentDbContext.cs" />
+    <Compile Include="DbContext\ThreadStaticDbContext.cs" />
+    <Compile Include="DbContext\WebDbContext.cs" />
     <Compile Include="Domain\BusinessRule.cs" />
     <Compile Include="Domain\EntityBase.cs" />
     <Compile Include="Domain\IEntity.cs" />
