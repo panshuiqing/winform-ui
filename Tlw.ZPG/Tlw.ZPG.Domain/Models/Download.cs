@@ -10,5 +10,6 @@ namespace Tlw.ZPG.Domain.Models
         public string FilePath { get; set; }
         public System.DateTime CreateTime { get; set; }
         public int CreatorId { get; set; }
+        public User Creator { get; set; }
     }
 }

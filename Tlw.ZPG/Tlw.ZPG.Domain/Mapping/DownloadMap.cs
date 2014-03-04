@@ -21,6 +21,7 @@ namespace Tlw.ZPG.Domain.Mapping
             this.Property(t => t.FilePath).HasColumnName("FilePath").HasMaxLength(200);
             this.Property(t => t.CreateTime).HasColumnName("CreateTime");
             this.Property(t => t.CreatorId).HasColumnName("CreatorId");
+            this.HasRequired(t => t.Creator).WithMany();
         }
     }
 }

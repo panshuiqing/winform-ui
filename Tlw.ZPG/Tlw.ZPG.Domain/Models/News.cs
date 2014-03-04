@@ -11,6 +11,6 @@ namespace Tlw.ZPG.Domain.Models
         public NewsType NewsType { get; set; }
         public System.DateTime CreateTime { get; set; }
         public int CreatorId { get; set; }
-        public string CreatorUser { get; set; }
+        public User Creator { get; set; }
     }
 }

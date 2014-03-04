@@ -16,7 +16,7 @@ namespace Tlw.ZPG.Domain.Mapping
         {                        
               this.HasKey(t => t.ID);        
               this.ToTable("T_SystemLog");
-              this.Property(t => t.ID).HasColumnName("LogId").HasDatabaseGeneratedOption(new Nullable<DatabaseGeneratedOption>(DatabaseGeneratedOption.None));
+              this.Property(t => t.ID).HasColumnName("LogId");
               this.Property(t => t.CreateTime).HasColumnName("CreateTime");
               this.Property(t => t.LogType).HasColumnName("LogType");
               this.Property(t => t.UserId).HasColumnName("UserId");

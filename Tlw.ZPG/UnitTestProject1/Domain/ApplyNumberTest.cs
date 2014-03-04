@@ -1,35 +1,38 @@
 namespace Tlw.ZPG.Domain.Models
 {
     using System;
-    using System.Linq;
     using System.Collections.Generic;
+    using System.Data.Entity;
+    using System.Linq;
     using Microsoft.VisualStudio.TestTools.UnitTesting;
     using Tlw.ZPG.Infrastructure;
 
     [TestClass]
-    public class SystemLogTest
+    public class ApplyNumberTest 
     {
+
         [TestMethod]
         public void AddAndFindTest()
         {
-            string number = "1234";
+            string number="1234";
             var context = Application.DbContextFactory.GetDbContext();
-            var systemLog = new SystemLog() { CreateTime = DateTime.Now, Ip = number, LogType = OperateType.AfficheCreated, Remark = "4534", Url = "5345", UserId = 4, UserName = "4353" };
-            context.Set<SystemLog>().Add(systemLog);
+            var applyNumber = new ApplyNumber() { Number = number, IsUsed = false, UsedTime = null };
+            context.Set<ApplyNumber>().Add(applyNumber);
             context.SaveChanges();
-            var SystemLog_db = context.Set<SystemLog>().First(t => t.ID == systemLog.ID);
-            Assert.AreEqual(number, SystemLog_db.Ip);
+            var applyNumber_db = context.Set<ApplyNumber>().First(t => t.ID == applyNumber.ID);
+            Assert.AreEqual(number, applyNumber_db.Number);
         }
+
         [TestMethod]
         public void RemoveTest()
         {
             var context = Application.DbContextFactory.GetDbContext();
-            var systemLog = context.Set<SystemLog>().FirstOrDefault();
-            if (systemLog != null)
+            var applyNumber = context.Set<ApplyNumber>().FirstOrDefault();
+            if (applyNumber != null)
             {
-                context.Set<SystemLog>().Remove(systemLog);
+                context.Set<ApplyNumber>().Remove(applyNumber);
                 context.SaveChanges();
-                Assert.IsNull(context.Set<SystemLog>().FirstOrDefault(t => t.ID == systemLog.ID));
+                Assert.IsNull(context.Set<ApplyNumber>().FirstOrDefault(t => t.ID == applyNumber.ID));
             }
             else
             {
@@ -42,13 +45,13 @@ namespace Tlw.ZPG.Domain.Models
         {
             string number = Guid.NewGuid().ToString();
             var context = Application.DbContextFactory.GetDbContext();
-            var systemLog = context.Set<SystemLog>().FirstOrDefault();
-            if (systemLog != null)
+            var applyNumber = context.Set<ApplyNumber>().FirstOrDefault();
+            if (applyNumber != null)
             {
-                systemLog.Ip = number;
+                applyNumber.Number = number;
                 context.SaveChanges();
-                systemLog = context.Set<SystemLog>().First(t => t.ID == systemLog.ID);
-                Assert.AreEqual(number, systemLog.Ip);
+                applyNumber = context.Set<ApplyNumber>().First(t => t.ID == applyNumber.ID);
+                Assert.AreEqual(number, applyNumber.Number);
             }
             else
             {

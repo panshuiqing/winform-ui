@@ -55,7 +55,7 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
-    <Compile Include="Domain\ApplyNumbersTest.cs" />
+    <Compile Include="Domain\ApplyNumberTest.cs" />
     <Compile Include="Domain\ClientErrorLogTest.cs" />
     <Compile Include="Domain\CountyTest.cs" />
     <Compile Include="Domain\DictionaryTest.cs" />

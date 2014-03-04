@@ -22,7 +22,7 @@ namespace Tlw.ZPG.Domain.Mapping
             this.Property(t => t.CountyCode).HasColumnName("CountyCode").HasMaxLength(50);
             this.Property(t => t.OrderNo).HasColumnName("OrderNo");
             this.Property(t => t.FullName).HasColumnName("FullName").HasMaxLength(100);
-            this.HasRequired(t => t.Parent).WithMany(t => t.Nodes).HasForeignKey(d => d.ParentId);
+            this.HasRequired(t => t.Parent).WithMany(t => t.Nodes).HasForeignKey(d => d.ParentId).WillCascadeOnDelete(true);
         }
     }
 }

@@ -7,7 +7,6 @@ using System.Threading.Tasks;
 
 namespace Tlw.ZPG.Infrastructure.DbContext
 {
-   
     public class Configuration
     {
         public ConfigurationSettings Settings
@@ -27,10 +26,10 @@ namespace Tlw.ZPG.Infrastructure.DbContext
             this.Settings = settings;
         }
 
-        public Configuration Configure(string nameOrConnectionString)
+        public Configuration(string nameOrConnectionString)
+            : this()
         {
             this.Settings.NameOrConnectionString = nameOrConnectionString;
-            return this;
         }
 
         public Configuration AddClass(Type type)

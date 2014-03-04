@@ -62,7 +62,7 @@ namespace Tlw.ZPG.Services
         {
             get
             {
-                return DbContextFactory.Current.GetCurrentDbContext();
+                return Application.DbContextFactory.GetCurrentDbContext();
             }
         }
 
@@ -70,7 +70,7 @@ namespace Tlw.ZPG.Services
         {
             get
             {
-                return DbContextFactory.Current.GetCurrentDbContext().Set<TEntity>();
+                return Application.DbContextFactory.GetCurrentDbContext().Set<TEntity>();
             }
         }
     }

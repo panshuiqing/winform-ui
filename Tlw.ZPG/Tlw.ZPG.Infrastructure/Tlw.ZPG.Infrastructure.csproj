@@ -52,7 +52,6 @@
     <Compile Include="DbContext\Configuration.cs" />
     <Compile Include="DbContext\ConfigurationSettings.cs" />
     <Compile Include="DbContext\CurrentDbContext.cs" />
-    <Compile Include="DbContext\DbContextFactory.cs" />
     <Compile Include="DbContext\DbContextFactoryImpl.cs" />
     <Compile Include="DbContext\EFDbContext.cs" />
     <Compile Include="DbContext\ICurrentContext.cs" />
@@ -75,6 +74,7 @@
     <Compile Include="Events\EventSubscription.cs" />
     <Compile Include="Events\IDelegateReference.cs" />
     <Compile Include="Events\IDispatcherFacade.cs" />
+    <Compile Include="Events\IEventHandler.cs" />
     <Compile Include="Events\IEventAggregator.cs" />
     <Compile Include="Events\IEventSubscription.cs" />
     <Compile Include="Events\SubscriptionToken.cs" />

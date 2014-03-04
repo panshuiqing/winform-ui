@@ -22,7 +22,7 @@ namespace Tlw.ZPG.Domain.Mapping
             this.Property(t => t.NewsType).HasColumnName("NewsType");
             this.Property(t => t.CreateTime).HasColumnName("CreateTime");
             this.Property(t => t.CreatorId).HasColumnName("CreatorId");
-            this.Property(t => t.CreatorUser).HasColumnName("CreatorUser").IsRequired().HasMaxLength(50);
+            this.HasRequired(t => t.Creator).WithMany();
         }
     }
 }

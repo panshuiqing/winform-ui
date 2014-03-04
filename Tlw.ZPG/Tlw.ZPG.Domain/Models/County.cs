@@ -6,6 +6,11 @@ namespace Tlw.ZPG.Domain.Models
 
     public partial class County : EntityBase
     {
+        public County()
+        {
+            this.Nodes = new HashSet<County>();
+        }
+
         public string CountyName { get; set; }
         public int ParentId { get; set; }
         public int OrderNo { get; set; }
