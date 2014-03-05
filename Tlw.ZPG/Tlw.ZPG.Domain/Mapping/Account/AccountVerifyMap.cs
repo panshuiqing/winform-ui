@@ -22,7 +22,7 @@ namespace Tlw.ZPG.Domain.Mapping
             this.Property(t => t.VerifyAccountId).HasColumnName("VerifyAccountId");
             this.Property(t => t.VerifyAccount).HasColumnName("VerifyAccount").IsRequired().HasMaxLength(50);
             this.Property(t => t.Content).HasColumnName("Content").IsRequired().HasMaxLength(500);
-            this.Property(t => t.IsBider).HasColumnName("IsBider");
+            this.Property(t => t.IsAdmin).HasColumnName("IsAdmin");
         }
     }
 }

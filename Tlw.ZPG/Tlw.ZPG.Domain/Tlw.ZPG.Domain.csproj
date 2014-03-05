@@ -59,6 +59,7 @@
     <Compile Include="Enums\TradeType.cs" />
     <Compile Include="Enums\OperateType.cs" />
     <Compile Include="Enums\ApplyType.cs" />
+    <Compile Include="Enums\VerifyType.cs" />
     <Compile Include="Mapping\Account\AccountMap.cs" />
     <Compile Include="Mapping\Account\AccountVerifyMap.cs" />
     <Compile Include="Mapping\Trade\AfficheFilterMap.cs" />
@@ -132,7 +133,9 @@
     <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Events\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

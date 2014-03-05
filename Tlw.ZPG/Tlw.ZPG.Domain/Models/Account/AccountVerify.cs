@@ -11,7 +11,7 @@ namespace Tlw.ZPG.Domain.Models
         public int VerifyAccountId { get; set; }
         public string VerifyAccount { get; set; }
         public string Content { get; set; }
-        public bool IsBider { get; set; }
+        public bool IsAdmin { get; set; }
         public AccountVerifyStatus Status { get; set; }
     }
 }

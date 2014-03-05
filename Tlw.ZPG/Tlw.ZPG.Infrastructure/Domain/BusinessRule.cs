@@ -10,6 +10,11 @@ namespace Tlw.ZPG.Infrastructure
         private string _property;
         private string _rule;
 
+        public BusinessRule(string rule)
+        {
+            this._rule = rule;
+        }
+
         public BusinessRule(string property, string rule)
         {
             this._property = property;

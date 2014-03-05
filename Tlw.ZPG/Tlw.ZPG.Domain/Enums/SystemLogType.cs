@@ -8,6 +8,10 @@ namespace Tlw.ZPG.Domain.Models.Enums
 {
     public enum SystemLogType
     {
-        Default,
+        Insert,
+        Delete,
+        Update,
+        Validate,
+        Error,
     }
 }
