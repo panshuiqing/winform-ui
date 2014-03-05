@@ -53,11 +53,12 @@
     <Compile Include="Enums\ButtonPosition.cs" />
     <Compile Include="Enums\SellFashion.cs" />
     <Compile Include="Enums\NewsType.cs" />
+    <Compile Include="Enums\SystemLogType.cs" />
     <Compile Include="Enums\TradeStage.cs" />
     <Compile Include="Enums\TradeStatus.cs" />
     <Compile Include="Enums\TradeType.cs" />
     <Compile Include="Enums\OperateType.cs" />
-    <Compile Include="Mapping\Account\AccountInfoMap.cs" />
+    <Compile Include="Enums\ApplyType.cs" />
     <Compile Include="Mapping\Account\AccountMap.cs" />
     <Compile Include="Mapping\Account\AccountVerifyMap.cs" />
     <Compile Include="Mapping\Trade\AfficheFilterMap.cs" />
@@ -87,7 +88,6 @@
     <Compile Include="Mapping\User\UserMap.cs" />
     <Compile Include="Mapping\Trade\LandPurposeMap.cs" />
     <Compile Include="Models\Account\Account.cs" />
-    <Compile Include="Models\Account\AccountInfo.cs" />
     <Compile Include="Enums\AccountStatus.cs" />
     <Compile Include="Models\Account\AccountVerify.cs" />
     <Compile Include="Enums\AccountVerifyStatus.cs" />

@@ -17,7 +17,7 @@ namespace Tlw.ZPG.Domain.Mapping
               this.HasKey(t => t.ID);        
               this.ToTable("A_Person");
               this.Property(t => t.ID).HasColumnName("PersonId");
-              this.Property(t => t.AccountInfoId).HasColumnName("AccountInfoId");
+              this.Property(t => t.AccountId).HasColumnName("AccountId");
               this.Property(t => t.PersonName).HasColumnName("PersonName").HasMaxLength(50);
               this.Property(t => t.PassportType).HasColumnName("PassportType").HasMaxLength(50);
               this.Property(t => t.PassportNumber).HasColumnName("PassportNumber").HasMaxLength(100);
@@ -29,6 +29,7 @@ namespace Tlw.ZPG.Domain.Mapping
               this.Property(t => t.Email).HasColumnName("Email").HasMaxLength(50);
               this.Property(t => t.Business).HasColumnName("Business").HasMaxLength(50);
               this.Property(t => t.PostalCode).HasColumnName("PostalCode").HasMaxLength(50);
+              this.Property(t => t.ApplyType).HasColumnName("ApplyType");
          }
     }
 }

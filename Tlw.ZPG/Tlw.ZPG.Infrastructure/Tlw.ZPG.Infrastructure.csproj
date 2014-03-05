@@ -81,6 +81,7 @@
     <Compile Include="Events\ThreadOption.cs" />
     <Compile Include="Events\WeakDelegatesManager.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="IUserContext.cs" />
     <Compile Include="Utils\EnumUtil.cs" />
     <Compile Include="Utils\ReflectUtil.cs" />
     <Compile Include="Utils\SecurityUtil.cs" />

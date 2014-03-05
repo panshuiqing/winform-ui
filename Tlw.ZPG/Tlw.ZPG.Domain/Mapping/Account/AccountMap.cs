@@ -25,7 +25,17 @@ namespace Tlw.ZPG.Domain.Mapping
             this.Property(t => t.IsOnline).HasColumnName("IsOnline");
             this.Property(t => t.OnlineTime).HasColumnName("OnlineTime");
             this.Property(t => t.Status).HasColumnName("Status");
-            this.HasRequired(t => t.AccountInfo).WithRequiredPrincipal();
+            this.Property(t => t.RandomNumber).HasColumnName("RandomNumber").IsRequired().HasMaxLength(50);
+            this.Property(t => t.ApplyType).HasColumnName("ApplyType");
+            this.Property(t => t.ContactId).HasColumnName("ContactId");
+            this.Property(t => t.AgentId).HasColumnName("AgentId");
+            this.Property(t => t.CorporationId).HasColumnName("CorporationId");
+            this.Property(t => t.VerifyStatus).HasColumnName("VerifyStatus");
+            this.HasRequired(t => t.Agent).WithRequiredPrincipal();
+            this.HasRequired(t => t.Contact).WithRequiredPrincipal();
+            this.HasRequired(t => t.Corporation).WithRequiredPrincipal();
+            this.HasMany(t => t.UnionBidPersons).WithRequired();
+            this.HasMany(t => t.AccountVerifies).WithRequired();
             this.HasRequired(t => t.Trade).WithMany();
         }
     }

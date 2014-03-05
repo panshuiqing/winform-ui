@@ -6,7 +6,7 @@ namespace Tlw.ZPG.Domain.Models
 
     public partial class Person : EntityBase
     {
-        public int AccountInfoId { get; set; }
+        public int AccountId { get; set; }
         public string PersonName { get; set; }
         public string PassportType { get; set; }
         public string PassportNumber { get; set; }
@@ -18,5 +18,6 @@ namespace Tlw.ZPG.Domain.Models
         public string Email { get; set; }
         public string Business { get; set; }
         public string PostalCode { get; set; }
+        public ApplyType ApplyType { get; set; }
     }
 }

@@ -45,11 +45,22 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Common\SystemLogService.cs" />
+    <Compile Include="Common\ApplyNumberService.cs" />
+    <Compile Include="Common\ClientErrorLogService.cs" />
+    <Compile Include="Common\CountyService.cs" />
+    <Compile Include="Common\DictionaryService.cs" />
+    <Compile Include="Common\DownloadService.cs" />
+    <Compile Include="Common\FeedBookService.cs" />
+    <Compile Include="Common\GuestBookService.cs" />
+    <Compile Include="Common\NewsService.cs" />
     <Compile Include="EventHandlers\ServiceEventHandler.cs" />
     <Compile Include="Events\EntityInsertedEvent.cs" />
     <Compile Include="Events\EntityUpdatedEvent.cs" />
+    <Compile Include="ServiceAction.cs" />
     <Compile Include="ServiceBase.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="LogerManager.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Tlw.ZPG.Domain\Tlw.ZPG.Domain.csproj">
@@ -63,6 +74,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Events\EntityDeletedEvent.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Account\" />
+    <Folder Include="Trade\" />
+    <Folder Include="User\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

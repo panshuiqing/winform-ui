@@ -138,29 +138,6 @@ namespace Tlw.ZPG.Domain.Models
         ApplyFilesUploaded,
         #endregion
 
-        #region 公网内容
-        /// 回复投诉
-        /// </summary>
-        [Description("回复投诉")]
-        FeedBookReplaied,
-        /// 发布政策法规资讯
-        /// </summary>
-        [Description("发布政策法规资讯")]
-        InfoReleased,
-        /// 发布知识问答
-        /// </summary>
-        [Description("发布知识问答")]
-        QAReleased,
-        /// 发布常见问题解答
-        /// </summary>
-        [Description("发布常见问题解答")]
-        FAQReleased,
-        /// 发布格式文书
-        /// </summary>
-        [Description("发布格式文书")]
-        FilesReleased,
-        #endregion
-
         #region 短信
         /// <summary>
         /// 短信群发

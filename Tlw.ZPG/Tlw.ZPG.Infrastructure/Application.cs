@@ -30,5 +30,11 @@ namespace Tlw.ZPG.Infrastructure
             get;
             set;
         }
+
+        public static IUserContext UserContext
+        {
+            get;
+            set;
+        }
     }
 }

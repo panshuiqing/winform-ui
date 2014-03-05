@@ -17,6 +17,7 @@ namespace Tlw.ZPG.Services
         {
             if (entity == null) throw new ArgumentNullException("entity");
             this.DbSet.Add(entity);
+            LogerManager.WriteInsertLog(entity);
             Application.EventAggregator.GetEvent<EntityInsertedEvent<TEntity>>().Publish(entity);
         }
 
@@ -24,6 +25,7 @@ namespace Tlw.ZPG.Services
         {
             if (entity == null) throw new ArgumentNullException("entity");
             this.DbSet.Remove(entity);
+            LogerManager.WriteDeleteLog(entity);
             Application.EventAggregator.GetEvent<EntityDeletedEvent<TEntity>>().Publish(entity);
         }
 
@@ -40,6 +42,7 @@ namespace Tlw.ZPG.Services
         public virtual void Update(TEntity entity)
         {
             if (entity == null) throw new ArgumentNullException("entity");
+            LogerManager.WriteUpdateLog(entity);
             Application.EventAggregator.GetEvent<EntityUpdatedEvent<TEntity>>().Publish(entity); 
         }
 

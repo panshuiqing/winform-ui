@@ -12,5 +12,6 @@ namespace Tlw.ZPG.Domain.Models
         public System.DateTime CreateTime { get; set; }
         public string Phone { get; set; }
         public string Address { get; set; }
+        public string CardNo { get; set; }
     }
 }

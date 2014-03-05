@@ -9,19 +9,24 @@ namespace Tlw.ZPG.Domain.Models.Enums
     public enum AccountStatus
     {
         /// <summary>
+        /// Î´ÉóºË
+        /// </summary>
+        [Description("Î´ÉóºË")]
+        UnVerified,
+        /// <summary>
         /// Õý³£
         /// </summary>
         [Description("Õý³£")]
-        Normal = 0,
+        Normal,
         /// <summary>
         /// ¹ÒÊ§
         /// </summary>
         [Description("¹ÒÊ§")]
-        Loss = 1,
+        Loss,
         /// <summary>
         /// ¶³½á
         /// </summary>
         [Description("¶³½á")]
-        Froze = 2
+        Froze
     }
 }
