@@ -46,7 +46,7 @@ namespace Tlw.ZPG.Domain.Models
             {
                 CreateTime = DateTime.Now,
                 TradeId = tradeId,
-                Status = AccountStatus.UnVerified,
+                Status = AccountStatus.UnGrant,
                 VerifyStatus = AccountVerifyStatus.NotifySupply,
                 ApplyType = applyType,
                 Contact = Contact,
@@ -61,6 +61,10 @@ namespace Tlw.ZPG.Domain.Models
             return account;
         }
 
+        /// <summary>
+        /// 生成12位随机码
+        /// </summary>
+        /// <returns></returns>
         public static string GenerateRandomNumber()
         {
             return new Random().NextDouble().ToString().Substring(3, 6) + new Random().NextDouble().ToString().Substring(3, 6);
@@ -87,6 +91,9 @@ namespace Tlw.ZPG.Domain.Models
             return name;
         }
 
+        /// <summary>
+        /// 是否能提交审核
+        /// </summary>
         public bool CanSubmitVerify
         {
             get
@@ -117,6 +124,9 @@ namespace Tlw.ZPG.Domain.Models
             }
         }
 
+        /// <summary>
+        /// 后台管理员是否可以审核
+        /// </summary>
         public bool CanVerifyByUser
         {
             get
@@ -148,9 +158,79 @@ namespace Tlw.ZPG.Domain.Models
                 });
                 if (verifyType == VerifyType.Verified)
                 {
-                    this.Status = AccountStatus.Normal;
+                    this.Status = AccountStatus.Initiation;
                 }
             }
+        }
+
+        private string GeneratePassword()
+        {
+            return new Random().NextDouble().ToString().Substring(3, 8);
+        }
+
+        /// <summary>
+        /// 发放竞买号
+        /// </summary>
+        public void GrantApplyNumber(ApplyNumber applyNumber,int days)
+        {
+            if (applyNumber == null) throw new ArgumentNullException("applyNumber");
+            this.ApplyNumber = applyNumber.Number;
+            this.Password = GeneratePassword();
+            applyNumber.IsUsed = true;
+            applyNumber.UsedTime = DateTime.Now;
+        }
+
+        public bool CanFroze
+        {
+            get
+            {
+                return this.Status == AccountStatus.Normal || this.Status == AccountStatus.Initiation;
+            }
+        }
+
+        /// <summary>
+        /// 冻结竞买号
+        /// </summary>
+        public void Froze()
+        {
+            if (CanFroze)
+            {
+                this.Status = AccountStatus.Froze;
+            }
+        }
+
+        public bool CanRecover
+        {
+            get
+            {
+                return this.Status == AccountStatus.Froze;
+            }
+        }
+
+        /// <summary>
+        /// 解冻（恢复）
+        /// </summary>
+        public void Recover()
+        {
+            if (CanRecover)
+            {
+                this.Status = AccountStatus.Normal;
+            }
+        }
+
+        /// <summary>
+        /// 修改密码
+        /// </summary>
+        /// <param name="newPassword"></param>
+        public void ChangePassword(string newPassword)
+        {
+            this.Password = newPassword;
+            this.Status = AccountStatus.Normal;
+        }
+
+        public void ResetPassword()
+        {
+            this.Password = GeneratePassword();
         }
 
         #endregion

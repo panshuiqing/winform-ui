@@ -9,10 +9,15 @@ namespace Tlw.ZPG.Domain.Models.Enums
     public enum AccountStatus
     {
         /// <summary>
-        /// 未审核
+        /// 未发放
         /// </summary>
-        [Description("未审核")]
-        UnVerified,
+        [Description("未发放")]
+        UnGrant,
+        /// <summary>
+        /// 初始
+        /// </summary>
+        [Description("初始")]
+        Initiation,
         /// <summary>
         /// 正常
         /// </summary>
