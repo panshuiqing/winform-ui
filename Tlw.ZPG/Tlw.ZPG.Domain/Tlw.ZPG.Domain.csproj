@@ -50,6 +50,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DomainException.cs" />
     <Compile Include="Enums\ButtonPosition.cs" />
     <Compile Include="Enums\SellFashion.cs" />
     <Compile Include="Enums\NewsType.cs" />
@@ -95,7 +96,7 @@
     <Compile Include="Models\Trade\Affiche.cs" />
     <Compile Include="Models\Trade\AfficheFilter.cs" />
     <Compile Include="Models\ApplyNumber.cs" />
-    <Compile Include="Models\User\Function.cs" />
+    <Compile Include="Models\Admin\Function.cs" />
     <Compile Include="Models\County.cs" />
     <Compile Include="Models\Dictionary.cs" />
     <Compile Include="Models\Download.cs" />
@@ -103,11 +104,11 @@
     <Compile Include="Models\GuestBook.cs" />
     <Compile Include="Models\Trade\Land.cs" />
     <Compile Include="Models\Trade\LandAttach.cs" />
-    <Compile Include="Models\User\Menu.cs" />
+    <Compile Include="Models\Admin\Menu.cs" />
     <Compile Include="Models\News.cs" />
     <Compile Include="Models\Account\Person.cs" />
     <Compile Include="Models\Trade\Purpose.cs" />
-    <Compile Include="Models\User\Role.cs" />
+    <Compile Include="Models\Admin\Role.cs" />
     <Compile Include="Models\SystemLog.cs" />
     <Compile Include="Models\Trade\Trade.cs" />
     <Compile Include="Models\Trade\TradeDetail.cs" />
@@ -115,9 +116,10 @@
     <Compile Include="Models\Trade\TradeMessage.cs" />
     <Compile Include="Models\Trade\TradeResult.cs" />
     <Compile Include="Models\Trade\TradeResultConfirm.cs" />
-    <Compile Include="Models\User\User.cs" />
+    <Compile Include="Models\Admin\User.cs" />
     <Compile Include="Models\ClientErrorLog.cs" />
     <Compile Include="Models\Trade\LandPurpose.cs" />
+    <Compile Include="Models\Admin\UserService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
