@@ -16,6 +16,7 @@ namespace Tlw.ZPG.Services
         public virtual void Insert(TEntity entity)
         {
             if (entity == null) throw new ArgumentNullException("entity");
+            Validate(entity);
             this.DbSet.Add(entity);
             LogerManager.WriteInsertLog(entity);
             Application.EventAggregator.GetEvent<EntityInsertedEvent<TEntity>>().Publish(entity);
@@ -42,6 +43,7 @@ namespace Tlw.ZPG.Services
         public virtual void Update(TEntity entity)
         {
             if (entity == null) throw new ArgumentNullException("entity");
+            Validate(entity);
             LogerManager.WriteUpdateLog(entity);
             Application.EventAggregator.GetEvent<EntityUpdatedEvent<TEntity>>().Publish(entity); 
         }
@@ -54,6 +56,20 @@ namespace Tlw.ZPG.Services
         public virtual ICollection<TEntity> FindAll()
         {
             return this.DbSet.ToList();
+        }
+
+        private void Validate(TEntity entity)
+        {
+            var rules = entity.Validate();
+            if (rules.Any())
+            {
+                string message = string.Empty;
+                foreach (var item in rules)
+                {
+                    message += item.Rule + ",";
+                }
+                throw new Exception(message.TrimEnd(','));
+            }
         }
 
         protected IQueryable<TEntity> Where(Expression<Func<TEntity,bool>> predicate)
