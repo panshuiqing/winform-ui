@@ -40,6 +40,7 @@
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Drawing" />
     <Reference Include="System.Web" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -82,7 +83,9 @@
     <Compile Include="Events\WeakDelegatesManager.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="IUserContext.cs" />
+    <Compile Include="Utils\BitmapUtil.cs" />
     <Compile Include="Utils\EnumUtil.cs" />
+    <Compile Include="Utils\RandomUtil.cs" />
     <Compile Include="Utils\ReflectUtil.cs" />
     <Compile Include="Utils\SecurityUtil.cs" />
     <Compile Include="Utils\SerializeUtils.cs" />

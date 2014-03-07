@@ -54,11 +54,10 @@
     <Compile Include="Enums\ButtonPosition.cs" />
     <Compile Include="Enums\SellFashion.cs" />
     <Compile Include="Enums\NewsType.cs" />
-    <Compile Include="Enums\SystemLogType.cs" />
     <Compile Include="Enums\TradeStage.cs" />
     <Compile Include="Enums\TradeStatus.cs" />
     <Compile Include="Enums\TradeType.cs" />
-    <Compile Include="Enums\OperateType.cs" />
+    <Compile Include="Enums\SystemLogType.cs" />
     <Compile Include="Enums\ApplyType.cs" />
     <Compile Include="Enums\VerifyType.cs" />
     <Compile Include="Mapping\Account\AccountMap.cs" />
@@ -89,9 +88,10 @@
     <Compile Include="Mapping\Trade\TradeResultMap.cs" />
     <Compile Include="Mapping\User\UserMap.cs" />
     <Compile Include="Mapping\Trade\LandPurposeMap.cs" />
-    <Compile Include="Models\Account\Account.cs" />
+    <Compile Include="Models\ApplyAccount\Account.cs" />
     <Compile Include="Enums\AccountStatus.cs" />
-    <Compile Include="Models\Account\AccountVerify.cs" />
+    <Compile Include="Models\ApplyAccount\AccountSerice.cs" />
+    <Compile Include="Models\ApplyAccount\AccountVerify.cs" />
     <Compile Include="Enums\AccountVerifyStatus.cs" />
     <Compile Include="Models\Trade\Affiche.cs" />
     <Compile Include="Models\Trade\AfficheFilter.cs" />
@@ -106,7 +106,7 @@
     <Compile Include="Models\Trade\LandAttach.cs" />
     <Compile Include="Models\Admin\Menu.cs" />
     <Compile Include="Models\News.cs" />
-    <Compile Include="Models\Account\Person.cs" />
+    <Compile Include="Models\ApplyAccount\Person.cs" />
     <Compile Include="Models\Trade\Purpose.cs" />
     <Compile Include="Models\Admin\Role.cs" />
     <Compile Include="Models\SystemLog.cs" />
@@ -136,7 +136,7 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Events\" />
+    <Folder Include="Events\Account\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

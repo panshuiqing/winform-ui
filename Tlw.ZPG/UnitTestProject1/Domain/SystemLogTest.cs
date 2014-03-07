@@ -14,7 +14,7 @@ namespace Tlw.ZPG.Domain.Models
         {
             string number = "1234";
             var context = Application.DbContextFactory.GetDbContext();
-            var systemLog = new SystemLog() { CreateTime = DateTime.Now, Ip = number, LogType = Enums.SystemLogType.Insert, Remark = "4534", Url = "5345", UserId = 4, UserName = "4353" };
+            var systemLog = new SystemLog() { CreateTime = DateTime.Now, Ip = number, LogType = Enums.SystemLogType.Add, Remark = "4534", Url = "5345", UserId = 4, UserName = "4353" };
             context.Set<SystemLog>().Add(systemLog);
             context.SaveChanges();
             var SystemLog_db = context.Set<SystemLog>().First(t => t.ID == systemLog.ID);

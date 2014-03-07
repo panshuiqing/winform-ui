@@ -15,5 +15,6 @@ namespace Tlw.ZPG.Domain.Models
         public string Url { get; set; }
         public string StackTrace { get; set; }
         public string Remark { get; set; }
+        public string EntityName { get; set; }
     }
 }
