@@ -2,7 +2,9 @@ namespace Tlw.ZPG.Domain.Models.ApplyAccount
 {
     using System;
     using System.Collections.Generic;
+    using Tlw.ZPG.Domain.Models.Admin;
     using Tlw.ZPG.Domain.Models.Enums;
+    using Tlw.ZPG.Domain.Models.Trading;
     using Tlw.ZPG.Infrastructure;
     using Tlw.ZPG.Infrastructure.Utils;
 
@@ -24,8 +26,8 @@ namespace Tlw.ZPG.Domain.Models.ApplyAccount
         public int TradeId { get; set; }
         public ApplyType ApplyType { get; set; }
         public int ContactId { get; set; }
-        public int AgentId { get; set; }
-        public int CorporationId { get; set; }
+        public int? AgentId { get; set; }
+        public int? CorporationId { get; set; }
         public int AccountPersonId { get; set; }
         public bool IsOnline { get; set; }
         public Nullable<System.DateTime> OnlineTime { get; set; }
@@ -35,8 +37,9 @@ namespace Tlw.ZPG.Domain.Models.ApplyAccount
         public virtual Person AccountPerson { get; set; }
         public virtual Person Contact { get; set; }
         public virtual Person Corporation { get; set; }
-        public virtual ICollection<AccountVerify> AccountVerifies { get; set; }
-        public virtual ICollection<Person> UnionBidPersons { get; set; }
+        public virtual ICollection<AccountVerify> AccountVerifies { get; internal set; }
+        public virtual ICollection<Person> UnionBidPersons { get; internal set; }
+        public virtual ICollection<TradeDetail> TradeDetails { get; internal set; }
         #endregion
 
         #region 方法
@@ -46,7 +49,7 @@ namespace Tlw.ZPG.Domain.Models.ApplyAccount
             {
                 CreateTime = DateTime.Now,
                 TradeId = tradeId,
-                Status = AccountStatus.UnGrant,
+                Status = AccountStatus.Normal,
                 VerifyStatus = AccountVerifyStatus.NotifySupply,
                 ApplyType = applyType,
                 Contact = Contact,
@@ -77,7 +80,7 @@ namespace Tlw.ZPG.Domain.Models.ApplyAccount
         {
             this.RandomNumber = GenerateRandomNumber();
             this.CreateTime = DateTime.Now;
-            this.Status = AccountStatus.UnGrant;
+            this.Status = AccountStatus.Normal;
             this.VerifyStatus = AccountVerifyStatus.UnSubmit;
         }
 
@@ -130,6 +133,10 @@ namespace Tlw.ZPG.Domain.Models.ApplyAccount
                     VerifyAccount = GetAccountName(),
                 });
             }
+            else
+            {
+                throw new SubmitApplyException("当前状态不允许提交审核");
+            }
         }
 
         /// <summary>
@@ -145,11 +152,10 @@ namespace Tlw.ZPG.Domain.Models.ApplyAccount
         /// </summary>
         /// <param name="content"></param>
         /// <param name="user"></param>
-        public void VerifyByUser(string content, User user, VerifyType verifyType)
+        public void VerifyByUser(string content, int userId, string userName, VerifyType verifyType)
         {
             if (CanVerifyByUser())
             {
-                if (user == null) throw new ArgumentNullException("user");
                 this.VerifyStatus = (AccountVerifyStatus)Enum.Parse(typeof(AccountVerifyStatus), verifyType.ToString());
                 this.AccountVerifies.Add(new AccountVerify()
                 {
@@ -158,13 +164,13 @@ namespace Tlw.ZPG.Domain.Models.ApplyAccount
                     CreateTime = DateTime.Now,
                     IsAdmin = true,
                     Status = this.VerifyStatus,
-                    VerifyAccountId = user.ID,
-                    VerifyAccount = user.UserName,
+                    VerifyAccountId = userId,
+                    VerifyAccount = userName,
                 });
-                if (verifyType == VerifyType.Verified)
-                {
-                    this.Status = AccountStatus.Initiation;
-                }
+            }
+            else
+            {
+                throw new VerifyApplyException("当前状态不允许审核");
             }
         }
 
@@ -176,18 +182,25 @@ namespace Tlw.ZPG.Domain.Models.ApplyAccount
         /// <summary>
         /// 发放竞买号
         /// </summary>
-        public void GrantApplyNumber()
+        public void GrantApplyNumber(int userId, ApplyNumber applyNumber)
         {
-            var applyNumber = AccountSerice.GetApplyNumber();
+            if (userId != this.Trade.Affiche.CreatorId) throw new GrantApplyNumberException("挂牌人只能发放自己宗地的竞买号");
+            if (this.VerifyStatus != AccountVerifyStatus.Verified) throw new GrantApplyNumberException("未审核通过不允许发放竞买号");
+            if (this.Status == AccountStatus.Froze) throw new GrantApplyNumberException("竞买号已冻结不允许发放竞买号");
+            if (this.Trade.Status != TradeStatus.Normal) throw new GrantApplyNumberException("当前宗地状态不允许发放竞买号");
+            var days = Application.GetDictionaryValue("MinReleaseNum2TEDay", 2);
+            if (DateTime.Now > this.Trade.TradeEndTime.AddDays(-days)) throw new GrantApplyNumberException(string.Format("竞买号只能在交易截止时间前{0}天发放", days));
             this.ApplyNumber = applyNumber.Number;
             this.Password = GeneratePassword();
+            this.Status = AccountStatus.Normal;
             applyNumber.IsUsed = true;
             applyNumber.UsedTime = DateTime.Now;
+            applyNumber.GrantUserId = userId;
         }
 
         public bool CanFroze()
         {
-            return this.Status == AccountStatus.Normal || this.Status == AccountStatus.Initiation;
+            return this.Status == AccountStatus.Normal;
         }
 
         /// <summary>
@@ -198,6 +211,10 @@ namespace Tlw.ZPG.Domain.Models.ApplyAccount
             if (CanFroze())
             {
                 this.Status = AccountStatus.Froze;
+            }
+            else
+            {
+                throw new AccountFrozeException("当前状态不允许冻结竞买号");
             }
         }
 
@@ -215,16 +232,27 @@ namespace Tlw.ZPG.Domain.Models.ApplyAccount
             {
                 this.Status = AccountStatus.Normal;
             }
+            else
+            {
+                throw new AccountRecoverException("当前状态不允许解冻竞买号");
+            }
         }
 
-        /// <summary>
-        /// 修改密码
-        /// </summary>
-        /// <param name="newPassword"></param>
-        public void ChangePassword(string newPassword)
+        public bool CheckPassword(string password)
         {
-            this.Password = newPassword;
-            this.Status = AccountStatus.Normal;
+            return this.Password == SecurityUtil.MD5Encrypt(password);
+        }
+
+        public bool ChangePassword(string oldPassword, string newPassword)
+        {
+            if (string.IsNullOrEmpty(newPassword)) throw new ChangePasswordException("新密码不能为空");
+            if (newPassword.Length < 8) throw new ChangePasswordException("新密码不合法，必须大于或等于8个字符");
+            if (this.CheckPassword(oldPassword))
+            {
+                this.Password = SecurityUtil.MD5Encrypt(newPassword);
+                return true;
+            }
+            return false;
         }
 
         public void ResetPassword()

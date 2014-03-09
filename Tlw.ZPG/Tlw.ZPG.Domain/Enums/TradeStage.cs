@@ -9,21 +9,25 @@ namespace Tlw.ZPG.Domain.Models
     /// </summary>
     public enum TradeStage
     {
-        /// 未开始
+        /// <summary>
+        /// 未知
         /// </summary>
-        [Description("未开始")]
-        UnStart,
+        [Description("未知")]
+        None,
+        /// <summary>
         /// 挂牌
         /// </summary>
         [Description("挂牌")]
         Hang,
+        /// <summary>
         /// 等待
         /// </summary>
         [Description("等待")]
         Ready,
+        /// <summary>
         /// 拍卖
         /// </summary>
         [Description("拍卖")]
-        Auction
+        Auction,
     }
 }

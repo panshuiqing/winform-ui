@@ -9,6 +9,7 @@ namespace Tlw.ZPG.Domain.Mapping
     using System.Data.Entity.Infrastructure;
 
     using Tlw.ZPG.Domain.Models;
+    using Tlw.ZPG.Domain.Models.Admin;
 
     internal partial class MenuMap : EntityTypeConfiguration<Menu>
     {
@@ -23,7 +24,7 @@ namespace Tlw.ZPG.Domain.Mapping
             this.Property(t => t.MenuIcon).HasColumnName("MenuIcon").HasMaxLength(200);
             this.Property(t => t.OrderNo).HasColumnName("OrderNo");
             this.Property(t => t.MenuCode).HasColumnName("MenuCode").HasMaxLength(50);
-            this.HasRequired(t => t.Parent).WithMany(t => t.Nodes).HasForeignKey(d => d.ParentId).WillCascadeOnDelete(true);
+            this.HasOptional(t => t.Parent).WithMany(t => t.Nodes).HasForeignKey(d => d.ParentId).WillCascadeOnDelete(true);
             this.HasMany(t => t.Roles).WithMany(t => t.Menus)
                     .Map(m =>
                     {

@@ -4,14 +4,10 @@ namespace Tlw.ZPG.Domain.Models
     using System.ComponentModel;
 
     /// <summary>
-    /// 交易类别
+    /// 交易日志类别
     /// </summary>
-    public enum TradeType
+    public enum TradeLogType
     {
-        /// 报价
-        /// </summary>
-        [Description("报价")]
-        SubmitPrice,
         /// 竞买人登陆
         /// </summary>
         [Description("竞买人登陆")]
@@ -26,7 +22,23 @@ namespace Tlw.ZPG.Domain.Models
         BidderUpdatePassword,
         /// 竞竞买确认成交
         /// </summary>
-        [Description("竞买确认成交")]
+        [Description("竞买人确认成交")]
         BidderConfigResult,
+        /// 挂牌人冻结交易
+        /// </summary>
+        [Description("挂牌人冻结交易")]
+        HangFroze,
+        /// 挂牌人解冻交易
+        /// </summary>
+        [Description("挂牌人解冻交易")]
+        HangRecover,
+        /// 挂牌人终止交易
+        /// </summary>
+        [Description("挂牌人终止交易")]
+        HangTerminate,
+        /// 挂牌人录入保留价
+        /// </summary>
+        [Description("挂牌人录入保留价")]
+        HangReservePrice,
     }
 }

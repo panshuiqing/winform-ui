@@ -8,7 +8,7 @@ namespace Tlw.ZPG.Domain.Mapping
     using System.Data.Entity.ModelConfiguration;
     using System.Data.Entity.Infrastructure;
 
-    using Tlw.ZPG.Domain.Models;
+    using Tlw.ZPG.Domain.Models.Trading;
 
     internal partial class TradeResultMap : EntityTypeConfiguration<TradeResult>
     {
@@ -29,8 +29,10 @@ namespace Tlw.ZPG.Domain.Mapping
             this.Property(t => t.StartPrice).HasColumnName("StartPrice");
             this.Property(t => t.Content).HasColumnName("Content").IsRequired();
             this.Property(t => t.CountyId).HasColumnName("CountyId");
-            this.Property(t => t.CretorId).HasColumnName("CretorId");
+            this.Property(t => t.CreatorId).HasColumnName("CretorId");
             this.Property(t => t.IsOnlineResult).HasColumnName("IsOnlineResult");
+            this.HasOptional(t => t.Trade).WithMany();
+            this.HasOptional(t => t.Creator).WithMany();
         }
     }
 }

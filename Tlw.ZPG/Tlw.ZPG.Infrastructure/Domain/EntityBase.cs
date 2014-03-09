@@ -20,7 +20,7 @@ namespace Tlw.ZPG.Infrastructure
         public virtual TID ID 
         { 
             get;
-            protected set;
+            set;
         }
 
         public virtual IEnumerable<BusinessRule> Validate()

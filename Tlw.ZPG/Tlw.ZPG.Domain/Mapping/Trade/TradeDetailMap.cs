@@ -8,7 +8,7 @@ namespace Tlw.ZPG.Domain.Mapping
     using System.Data.Entity.ModelConfiguration;
     using System.Data.Entity.Infrastructure;
 
-    using Tlw.ZPG.Domain.Models;
+    using Tlw.ZPG.Domain.Models.Trading;
 
     internal partial class TradeDetailMap : EntityTypeConfiguration<TradeDetail>
     {
@@ -21,10 +21,13 @@ namespace Tlw.ZPG.Domain.Mapping
             this.Property(t => t.CreateTime).HasColumnName("CreateTime");
             this.Property(t => t.Price).HasColumnName("Price");
             this.Property(t => t.PrevPrice).HasColumnName("PrevPrice");
-            this.Property(t => t.UserId).HasColumnName("UserId");
-            this.Property(t => t.UserName).HasColumnName("UserName").IsRequired().HasMaxLength(50);
+            this.Property(t => t.AccountId).HasColumnName("AccountId");
+            this.Property(t => t.ApplyNumber).HasColumnName("ApplyNumber").IsRequired().HasMaxLength(50);
             this.Property(t => t.Remark).HasColumnName("Remark").HasMaxLength(200);
+            this.Property(t => t.IP).HasColumnName("IP").HasMaxLength(50);
+            this.Property(t => t.SystemInfo).HasColumnName("SystemInfo").HasMaxLength(200);
             this.HasRequired(t => t.Trade).WithMany(t => t.TradeDetails).HasForeignKey(t => t.TradeId);
+            this.HasRequired(t => t.Account).WithMany(t => t.TradeDetails).HasForeignKey(t => t.AccountId);
         }
     }
 }

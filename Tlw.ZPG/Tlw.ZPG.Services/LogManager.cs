@@ -5,12 +5,13 @@ using System.Text;
 using System.Threading.Tasks;
 using Tlw.ZPG.Domain.Models;
 using Tlw.ZPG.Domain.Models.Enums;
+using Tlw.ZPG.Domain.Models.Trading;
 using Tlw.ZPG.Infrastructure;
 using Tlw.ZPG.Services.Common;
 
 namespace Tlw.ZPG.Services
 {
-    public static class LogerManager
+    public static class LogManager
     {
         private static string GetEntityCName(EntityBase entity)
         {
@@ -20,7 +21,7 @@ namespace Tlw.ZPG.Services
             map[typeof(Land)] = "宗地";
             map[typeof(Trade)] = "宗地";
             map[typeof(TradeResult)] = "公示";
-            map[typeof(User)] = "用户";
+            map[typeof(Domain.Models.Admin.User)] = "用户";
             map[typeof(FeedBook)] = "投诉";
             map[typeof(GuestBook)] = "留言";
             map[typeof(Download)] = "格式文书下注";

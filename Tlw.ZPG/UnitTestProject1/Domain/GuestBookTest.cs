@@ -14,7 +14,7 @@ namespace Tlw.ZPG.Domain.Models
         {
             string number = "1234";
             var context = Application.DbContextFactory.GetDbContext();
-            var guestBook = new GuestBook() { Address = number, Content = "453", CreateTime = DateTime.Now, GuestName = "4353", Phone = "4353", Tilte = "453" };
+            var guestBook = new GuestBook() { Address = number, Content = "453", CreateTime = DateTime.Now, GuestName = "4353", Phone = "4353", Title = "453" };
             context.Set<GuestBook>().Add(guestBook);
             context.SaveChanges();
             var GuestBook_db = context.Set<GuestBook>().First(t => t.ID == guestBook.ID);

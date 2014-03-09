@@ -14,9 +14,17 @@ namespace Tlw.ZPG.Domain.Models.Admin
         }
     
         public string RoleName { get; set; }
-    
-        public virtual ICollection<Function> Functions { get; set; }
-        public virtual ICollection<Menu> Menus { get; set; }
-        public virtual ICollection<User> Users { get; set; }
+
+        public virtual ICollection<Function> Functions { get; internal set; }
+        public virtual ICollection<Menu> Menus { get; internal set; }
+        internal virtual ICollection<User> Users { get; set; }
+
+        public override IEnumerable<BusinessRule> Validate()
+        {
+            if (string.IsNullOrEmpty(this.RoleName))
+            {
+                yield return new BusinessRule("角色名称不能为空");
+            }
+        }
     }
 }

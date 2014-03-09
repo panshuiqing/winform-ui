@@ -1,4 +1,4 @@
-namespace Tlw.ZPG.Domain.Models
+namespace Tlw.ZPG.Domain.Models.Trading
 {
     using System;
     using System.Collections.Generic;

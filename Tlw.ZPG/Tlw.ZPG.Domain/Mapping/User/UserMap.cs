@@ -9,6 +9,7 @@ namespace Tlw.ZPG.Domain.Mapping
     using System.Data.Entity.Infrastructure;
 
     using Tlw.ZPG.Domain.Models;
+    using Tlw.ZPG.Domain.Models.Admin;
 
     internal partial class UserMap : EntityTypeConfiguration<User>
     {
@@ -23,7 +24,7 @@ namespace Tlw.ZPG.Domain.Mapping
             this.Property(t => t.LoginAccount).HasColumnName("LoginAccount").IsRequired().IsUnicode(false).HasMaxLength(30);
             this.Property(t => t.LoginPassword).HasColumnName("LoginPassword").IsRequired().IsUnicode(false).HasMaxLength(200);
             this.Property(t => t.LinkPhone).HasColumnName("LinkPhone").IsUnicode(false).HasMaxLength(20);
-            this.Property(t => t.EMail).HasColumnName("EMail").IsUnicode(false).HasMaxLength(50);
+            this.Property(t => t.Email).HasColumnName("Email").IsUnicode(false).HasMaxLength(50);
             this.Property(t => t.Status).HasColumnName("Status");
             this.HasRequired(t => t.County).WithMany().HasForeignKey(d => d.CountyId);
         }

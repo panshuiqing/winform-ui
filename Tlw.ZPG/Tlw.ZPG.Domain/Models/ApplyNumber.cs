@@ -4,6 +4,7 @@ namespace Tlw.ZPG.Domain.Models
     using System.Linq;
     using System.Collections.Generic;
     using Tlw.ZPG.Infrastructure;
+using Tlw.ZPG.Domain.Models.Admin;
 
     public partial class ApplyNumber : EntityBase
     {
@@ -15,25 +16,8 @@ namespace Tlw.ZPG.Domain.Models
         public string Number { get; set; }
         public bool IsUsed { get; set; }
         public Nullable<System.DateTime> UsedTime { get; set; }
+        public int? GrantUserId { get; set; }
 
-        public static ApplyNumber[] Generate(int count)
-        {
-            List<ApplyNumber> list = new List<ApplyNumber>();
-            for (int i = 0; i < count; i++)
-            {
-                var number = GenerateNumber();
-                while (list.Any(a => a.Number == number))
-                {
-                    number = GenerateNumber();
-                }
-                list.Add(ApplyNumber.Create(number));
-            }
-            return list.ToArray();
-        }
-
-        private static string GenerateNumber()
-        {
-            return new Random().NextDouble().ToString().Substring(3, 4);
-        }
+        public User GrantUser { get; set; }
     }
 }

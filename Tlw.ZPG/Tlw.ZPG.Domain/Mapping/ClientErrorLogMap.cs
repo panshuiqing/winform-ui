@@ -21,7 +21,7 @@ namespace Tlw.ZPG.Domain.Mapping
             this.Property(t => t.StackTrace).HasColumnName("StackTrace");
             this.Property(t => t.Remark).HasColumnName("Remark").HasMaxLength(500);
             this.Property(t => t.ApplyNumber).HasColumnName("ApplyNumber").HasMaxLength(50);
-            this.Property(t => t.SystemInfo).HasColumnName("SystemInfo").HasMaxLength(30);
+            this.Property(t => t.SystemInfo).HasColumnName("SystemInfo").HasMaxLength(200);
             this.Property(t => t.CreateTime).HasColumnName("CreateTime");
         }
     }

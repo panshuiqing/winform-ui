@@ -28,7 +28,7 @@ namespace Tlw.ZPG.Domain.Mapping
             this.Property(t => t.LandNames).HasColumnName("LandNames").HasMaxLength(100);
             this.Property(t => t.CardNo).HasColumnName("CardNo").HasMaxLength(50);
             this.Property(t => t.QueryNumber).HasColumnName("QueryNumber").HasMaxLength(50);
-            this.HasRequired(t => t.ReplyUser).WithMany();
+            this.HasOptional(t => t.ReplyUser).WithMany();
         }
     }
 }

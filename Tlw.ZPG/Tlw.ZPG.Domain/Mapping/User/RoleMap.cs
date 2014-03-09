@@ -9,6 +9,7 @@ namespace Tlw.ZPG.Domain.Mapping
     using System.Data.Entity.Infrastructure;
 
     using Tlw.ZPG.Domain.Models;
+    using Tlw.ZPG.Domain.Models.Admin;
 
     internal partial class RoleMap : EntityTypeConfiguration<Role>
     {

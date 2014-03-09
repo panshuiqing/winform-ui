@@ -1,7 +1,8 @@
-namespace Tlw.ZPG.Domain.Models
+namespace Tlw.ZPG.Domain.Models.Trading
 {
     using System;
     using System.Collections.Generic;
+    using Tlw.ZPG.Domain.Models.Admin;
     using Tlw.ZPG.Infrastructure;
 
     public partial class Land : EntityBase
@@ -11,9 +12,10 @@ namespace Tlw.ZPG.Domain.Models
             this.LandAttaches = new HashSet<LandAttach>();
             this.Purposes = new HashSet<Purpose>();
         }
-    
+
+        #region 属性
         public int CountyId { get; set; }
-        public int CretorId { get; set; }
+        public int CreatorId { get; set; }
         public System.DateTime CreateTime { get; set; }
         public string ProjectName { get; set; }
         public string LandNumber { get; set; }
@@ -31,9 +33,31 @@ namespace Tlw.ZPG.Domain.Models
         public decimal FulfilGuarantee { get; set; }
         public decimal CompletionGuarantee { get; set; }
         public string LandScope { get; set; }
-    
+
         public virtual County County { get; set; }
-        public virtual ICollection<LandAttach> LandAttaches { get; set; }
-        public virtual ICollection<Purpose> Purposes { get; set; }
+        public virtual User Creator { get; set; }
+        public virtual ICollection<LandAttach> LandAttaches { get; internal set; }
+        public virtual ICollection<Purpose> Purposes { get; internal set; } 
+        #endregion
+
+        public override IEnumerable<BusinessRule> Validate()
+        {
+            if (string.IsNullOrEmpty(this.ProjectName))
+            {
+                yield return new BusinessRule("项目名称不能为空");
+            }
+            if (string.IsNullOrEmpty(this.LandNumber))
+            {
+                yield return new BusinessRule("宗地号不能为空");
+            }
+            if (string.IsNullOrEmpty(this.Location))
+            {
+                yield return new BusinessRule("位置不能为空");
+            }
+            if (this.Purposes.Count == 0)
+            {
+                yield return new BusinessRule("宗地用途及出让年限不能为空");
+            }
+        }
     }
 }

@@ -1,4 +1,4 @@
-namespace Tlw.ZPG.Domain.Models
+namespace Tlw.ZPG.Domain.Models.Trading
 {
     using System;
     using System.Collections.Generic;
@@ -12,10 +12,10 @@ namespace Tlw.ZPG.Domain.Models
         }
     
         public string PurposeName { get; set; }
-        public int ParentId { get; set; }
+        public int? ParentId { get; set; }
         public int OrderNum { get; set; }
 
-        public virtual ICollection<Purpose> Nodes { get; set; }
+        public virtual ICollection<Purpose> Nodes { get; internal set; }
         public virtual Purpose Parent { get; set; }
     }
 }

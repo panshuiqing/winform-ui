@@ -5,6 +5,7 @@ namespace Tlw.ZPG.Domain.Models
     using System.Collections.Generic;
     using Microsoft.VisualStudio.TestTools.UnitTesting;
     using Tlw.ZPG.Infrastructure;
+    using Tlw.ZPG.Domain.Models.Admin;
 
     [TestClass]
     public class DownloadTest
@@ -14,19 +15,11 @@ namespace Tlw.ZPG.Domain.Models
         {
             string number = "1234";
             var context = Application.DbContextFactory.GetDbContext();
-            var user = context.Set<User>().FirstOrDefault();
-            if (user == null)
-            {
-                Assert.Inconclusive("没有用户数据无法测试");
-            }
-            else
-            {
-                var download = new Download() { CreateTime = DateTime.Now, Creator = user, FileName = number, FilePath = "45646" };
-                context.Set<Download>().Add(download);
-                context.SaveChanges();
-                var download_db = context.Set<Download>().First(t => t.ID == download.ID);
-                Assert.AreEqual(number, download_db.FileName);
-            }
+            var download = new Download() { CreateTime = DateTime.Now, FileName = number, FilePath = "45646" };
+            context.Set<Download>().Add(download);
+            context.SaveChanges();
+            var download_db = context.Set<Download>().First(t => t.ID == download.ID);
+            Assert.AreEqual(number, download_db.FileName);
         }
 
         [TestMethod]

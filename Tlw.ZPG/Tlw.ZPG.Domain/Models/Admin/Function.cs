@@ -22,5 +22,13 @@ namespace Tlw.ZPG.Domain.Models.Admin
 
         public virtual Menu Menu { get; set; }
         internal virtual ICollection<Role> Roles { get; set; }
+
+        public override IEnumerable<BusinessRule> Validate()
+        {
+            if (string.IsNullOrEmpty(this.FunctionName))
+            {
+                yield return new BusinessRule("功能名称不能为空");
+            }
+        }
     }
 }

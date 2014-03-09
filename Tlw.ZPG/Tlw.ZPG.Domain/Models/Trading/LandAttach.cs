@@ -1,4 +1,4 @@
-namespace Tlw.ZPG.Domain.Models
+namespace Tlw.ZPG.Domain.Models.Trading
 {
     using System;
     using System.Collections.Generic;
@@ -6,11 +6,10 @@ namespace Tlw.ZPG.Domain.Models
 
     public partial class LandAttach : EntityBase
     {
-        public int LandId { get; set; }
         public string AttachPath { get; set; }
         public string AttachType { get; set; }
         public System.DateTime CreateTime { get; set; }
         public int CreatorId { get; set; }
-        public bool IsAdminCreate { get; set; }
+        public bool IsAdminUpload { get; set; }
     }
 }

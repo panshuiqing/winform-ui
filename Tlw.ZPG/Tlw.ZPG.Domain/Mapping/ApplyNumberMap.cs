@@ -20,6 +20,9 @@ namespace Tlw.ZPG.Domain.Mapping
             this.Property(t => t.Number).HasColumnName("Number").IsRequired().HasMaxLength(50);
             this.Property(t => t.IsUsed).HasColumnName("IsUsed");
             this.Property(t => t.UsedTime).HasColumnName("UsedTime");
+            this.Property(t => t.GrantUserId).HasColumnName("GrantUserId");
+
+            this.HasOptional(t => t.GrantUser).WithMany();
         }
     }
 }

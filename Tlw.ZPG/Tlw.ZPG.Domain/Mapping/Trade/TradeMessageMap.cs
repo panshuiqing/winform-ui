@@ -8,7 +8,7 @@ namespace Tlw.ZPG.Domain.Mapping
     using System.Data.Entity.ModelConfiguration;
     using System.Data.Entity.Infrastructure;
 
-    using Tlw.ZPG.Domain.Models;
+    using Tlw.ZPG.Domain.Models.Trading;
 
     internal partial class TradeMessageMap : EntityTypeConfiguration<TradeMessage>
     {
@@ -22,6 +22,7 @@ namespace Tlw.ZPG.Domain.Mapping
             this.Property(t => t.Content).HasColumnName("Content").IsRequired();
             this.Property(t => t.CreateTime).HasColumnName("CreateTime");
             this.Property(t => t.CreatorId).HasColumnName("CreatorId");
+            this.HasRequired(t => t.Trade).WithMany(t => t.TradeMessages).HasForeignKey(t => t.TradeId);
         }
     }
 }

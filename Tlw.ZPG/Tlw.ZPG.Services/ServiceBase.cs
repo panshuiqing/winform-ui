@@ -15,24 +15,24 @@ namespace Tlw.ZPG.Services
     {
         public virtual void Insert(TEntity entity)
         {
-            if (entity == null) throw new ArgumentNullException("entity");
+            if (entity == null) throw new ServiceException("entity");
             Validate(entity);
             this.DbSet.Add(entity);
-            LogerManager.WriteInsertLog(entity);
+            LogManager.WriteInsertLog(entity);
             Application.EventAggregator.GetEvent<EntityInsertedEvent<TEntity>>().Publish(entity);
         }
 
         public virtual void Delete(TEntity entity)
         {
-            if (entity == null) throw new ArgumentNullException("entity");
+            if (entity == null) throw new ServiceException("entity");
             this.DbSet.Remove(entity);
-            LogerManager.WriteDeleteLog(entity);
+            LogManager.WriteDeleteLog(entity);
             Application.EventAggregator.GetEvent<EntityDeletedEvent<TEntity>>().Publish(entity);
         }
 
         public virtual void Delete(object id)
         {
-            if (id == null) throw new ArgumentNullException("id");
+            if (id == null) throw new ServiceException("id");
             var entity = this.FindById(id);
             if (entity != null)
             {
@@ -42,9 +42,9 @@ namespace Tlw.ZPG.Services
 
         public virtual void Update(TEntity entity)
         {
-            if (entity == null) throw new ArgumentNullException("entity");
+            if (entity == null) throw new ServiceException("entity");
             Validate(entity);
-            LogerManager.WriteUpdateLog(entity);
+            LogManager.WriteUpdateLog(entity);
             Application.EventAggregator.GetEvent<EntityUpdatedEvent<TEntity>>().Publish(entity); 
         }
 
@@ -68,7 +68,7 @@ namespace Tlw.ZPG.Services
                 {
                     message += item.Rule + ",";
                 }
-                throw new Exception(message.TrimEnd(','));
+                throw new ServiceException(message.TrimEnd(','));
             }
         }
 

@@ -40,6 +40,7 @@
       <HintPath>..\lib\EntityFramework.dll</HintPath>
     </Reference>
     <Reference Include="System" />
+    <Reference Include="System.Data" />
     <Reference Include="System.Data.Entity" />
   </ItemGroup>
   <Choose>
@@ -55,6 +56,7 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
+    <Compile Include="Domain\Admin\UserTest.cs" />
     <Compile Include="Domain\ApplyNumberTest.cs" />
     <Compile Include="Domain\ClientErrorLogTest.cs" />
     <Compile Include="Domain\CountyTest.cs" />

@@ -1,4 +1,4 @@
-namespace Tlw.ZPG.Domain.Models
+namespace Tlw.ZPG.Domain.Models.Trading
 {
     using System;
     using System.Collections.Generic;
@@ -9,6 +9,7 @@ namespace Tlw.ZPG.Domain.Models
         public int LandId { get; set; }
         public decimal Area { get; set; }
         public int PurposeId { get; set; }
+        public Purpose Purpose { get; set; }
 
     }
 }

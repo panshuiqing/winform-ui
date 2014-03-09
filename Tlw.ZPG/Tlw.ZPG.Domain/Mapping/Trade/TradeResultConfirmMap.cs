@@ -8,7 +8,7 @@ namespace Tlw.ZPG.Domain.Mapping
     using System.Data.Entity.ModelConfiguration;
     using System.Data.Entity.Infrastructure;
 
-    using Tlw.ZPG.Domain.Models;
+    using Tlw.ZPG.Domain.Models.Trading;
 
     internal partial class TradeResultConfirmMap : EntityTypeConfiguration<TradeResultConfirm>
     {
@@ -21,6 +21,10 @@ namespace Tlw.ZPG.Domain.Mapping
             this.Property(t => t.ConfirmTime).HasColumnName("ConfirmTime");
             this.Property(t => t.ExpiredTime).HasColumnName("ExpiredTime");
             this.Property(t => t.RandomNum).HasColumnName("RandomNum").IsRequired().HasMaxLength(50);
+            this.Property(t => t.Content).HasColumnName("Content");
+            this.Property(t => t.LandNumber).HasColumnName("LandNumber").IsRequired().HasMaxLength(50);
+            this.Property(t => t.IP).HasColumnName("IP").HasMaxLength(200);
+            this.Property(t => t.SystemInfo).HasColumnName("SystemInfo").HasMaxLength(200);
         }
     }
 }

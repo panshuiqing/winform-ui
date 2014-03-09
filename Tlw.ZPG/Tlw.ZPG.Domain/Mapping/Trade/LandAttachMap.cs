@@ -8,7 +8,7 @@ namespace Tlw.ZPG.Domain.Mapping
     using System.Data.Entity.ModelConfiguration;
     using System.Data.Entity.Infrastructure;
 
-    using Tlw.ZPG.Domain.Models;
+    using Tlw.ZPG.Domain.Models.Trading;
 
     internal partial class LandAttachMap : EntityTypeConfiguration<LandAttach>
     {
@@ -16,13 +16,12 @@ namespace Tlw.ZPG.Domain.Mapping
         {
             this.HasKey(t => t.ID);
             this.ToTable("Z_LandAttach");
-            this.Property(t => t.ID).HasColumnName("AttachId");
-            this.Property(t => t.LandId).HasColumnName("LandId");
+            this.Property(t => t.ID).HasColumnName("LandId");
             this.Property(t => t.AttachPath).HasColumnName("AttachPath").IsRequired().HasMaxLength(200);
             this.Property(t => t.AttachType).HasColumnName("AttachType").IsRequired().HasMaxLength(50);
             this.Property(t => t.CreateTime).HasColumnName("CreateTime");
             this.Property(t => t.CreatorId).HasColumnName("CreatorId");
-            this.Property(t => t.IsAdminCreate).HasColumnName("IsAdminCreate");
+            this.Property(t => t.IsAdminUpload).HasColumnName("IsAdminUpload");
         }
     }
 }

@@ -8,7 +8,7 @@ namespace Tlw.ZPG.Domain.Mapping
     using System.Data.Entity.ModelConfiguration;
     using System.Data.Entity.Infrastructure;
 
-    using Tlw.ZPG.Domain.Models;
+    using Tlw.ZPG.Domain.Models.Trading;
 
     internal partial class PurposeMap : EntityTypeConfiguration<Purpose>
     {
@@ -20,7 +20,7 @@ namespace Tlw.ZPG.Domain.Mapping
             this.Property(t => t.PurposeName).HasColumnName("PurposeName").IsRequired().HasMaxLength(100);
             this.Property(t => t.ParentId).HasColumnName("ParentId");
             this.Property(t => t.OrderNum).HasColumnName("OrderNum");
-            this.HasRequired(t => t.Parent).WithMany(t => t.Nodes).HasForeignKey(d => d.ParentId).WillCascadeOnDelete(true);
+            this.HasOptional(t => t.Parent).WithMany(t => t.Nodes).HasForeignKey(d => d.ParentId).WillCascadeOnDelete(true);
         }
     }
 }

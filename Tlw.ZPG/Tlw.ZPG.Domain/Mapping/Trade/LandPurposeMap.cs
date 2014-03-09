@@ -8,7 +8,7 @@ namespace Tlw.ZPG.Domain.Mapping
     using System.Data.Entity.ModelConfiguration;
     using System.Data.Entity.Infrastructure;
 
-    using Tlw.ZPG.Domain.Models;
+    using Tlw.ZPG.Domain.Models.Trading;
 
     internal partial class LandPurposeMap : EntityTypeConfiguration<LandPurpose>
     {
@@ -19,6 +19,7 @@ namespace Tlw.ZPG.Domain.Mapping
             this.Property(t => t.PurposeId).HasColumnName("PurposeId");
             this.Property(t => t.LandId).HasColumnName("LandId");
             this.Property(t => t.Area).HasColumnName("Area");
+            this.HasRequired(t => t.Purpose).WithRequiredPrincipal();
         }
     }
 }

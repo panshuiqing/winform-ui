@@ -3,12 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Tlw.ZPG.Infrastructure;
-using Tlw.ZPG.Infrastructure.Utils;
 
-namespace Tlw.ZPG.Domain.Models.Admin
+namespace Tlw.ZPG.Infrastructure
 {
-    public static class UserService
+    public static class Extensions
     {
         
     }

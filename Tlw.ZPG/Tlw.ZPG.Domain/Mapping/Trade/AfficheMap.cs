@@ -8,7 +8,7 @@ namespace Tlw.ZPG.Domain.Mapping
     using System.Data.Entity.ModelConfiguration;
     using System.Data.Entity.Infrastructure;
 
-    using Tlw.ZPG.Domain.Models;
+    using Tlw.ZPG.Domain.Models.Trading;
 
     internal partial class AfficheMap : EntityTypeConfiguration<Affiche>
     {
@@ -17,7 +17,7 @@ namespace Tlw.ZPG.Domain.Mapping
             this.HasKey(t => t.ID);
             this.ToTable("Z_Affiche");
             this.Property(t => t.ID).HasColumnName("AfficheId");
-            this.Property(t => t.ParentId).HasColumnName("ParentId").HasMaxLength(50);
+            this.Property(t => t.ParentId).HasColumnName("ParentId");
             this.Property(t => t.Title).HasColumnName("Title").IsRequired().HasMaxLength(200);
             this.Property(t => t.Content).HasColumnName("Content");
             this.Property(t => t.OtherContent).HasColumnName("OtherContent");
@@ -28,6 +28,7 @@ namespace Tlw.ZPG.Domain.Mapping
             this.Property(t => t.SignEndTime).HasColumnName("SignEndTime");
             this.Property(t => t.TradeBeginTime).HasColumnName("TradeBeginTime");
             this.Property(t => t.TradeEndTime).HasColumnName("TradeEndTime");
+            this.Property(t => t.VerifyTime).HasColumnName("VerifyTime");
             this.Property(t => t.IsRelease).HasColumnName("IsRelease");
             this.Property(t => t.ReleaseTime).HasColumnName("ReleaseTime");
             this.Property(t => t.Notice).HasColumnName("Notice");
@@ -40,10 +41,10 @@ namespace Tlw.ZPG.Domain.Mapping
             this.Property(t => t.VerifyStatus).HasColumnName("VerifyStatus");
             this.Property(t => t.VerifyUserId).HasColumnName("VerifyUserId");
             this.HasRequired(t => t.County).WithMany();
+            this.HasOptional(t => t.VerifyUser).WithMany();
             this.HasRequired(t => t.Creator).WithMany();
             this.HasMany(t => t.Trades).WithRequired(t => t.Affiche).HasForeignKey(t => t.AfficheId);
-            this.HasMany(t => t.Nodes).WithRequired();
-            this.HasRequired(t => t.Parent).WithMany();
+            this.HasOptional(t => t.Parent).WithMany(t => t.Nodes).HasForeignKey(d => d.ParentId).WillCascadeOnDelete(true);
         }
     }
 }

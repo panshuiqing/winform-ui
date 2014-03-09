@@ -22,6 +22,6 @@ namespace Tlw.ZPG.Domain.Models
         /// 已审核，通知补件
         /// </summary>
         [Description("已审核，通知补件")]
-        NotifySupply,
+        NotifyAdditional,
     }
 }
