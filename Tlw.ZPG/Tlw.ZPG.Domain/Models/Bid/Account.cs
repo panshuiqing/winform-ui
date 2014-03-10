@@ -1,4 +1,4 @@
-namespace Tlw.ZPG.Domain.Models.ApplyAccount
+namespace Tlw.ZPG.Domain.Models.Bid
 {
     using System;
     using System.Collections.Generic;
@@ -37,32 +37,12 @@ namespace Tlw.ZPG.Domain.Models.ApplyAccount
         public virtual Person AccountPerson { get; set; }
         public virtual Person Contact { get; set; }
         public virtual Person Corporation { get; set; }
-        public virtual ICollection<AccountVerify> AccountVerifies { get; internal set; }
-        public virtual ICollection<Person> UnionBidPersons { get; internal set; }
-        public virtual ICollection<TradeDetail> TradeDetails { get; internal set; }
+        public virtual ICollection<AccountVerify> AccountVerifies { get; set; }
+        public virtual ICollection<Person> UnionBidPersons { get; set; }
+        public virtual ICollection<TradeDetail> TradeDetails { get; set; }
         #endregion
 
         #region 方法
-        public static Account Create(int tradeId, ApplyType applyType, Person Contact, Person Corporation, Person Agent, params Person[] unionBidPersons)
-        {
-            var account = new Account()
-            {
-                CreateTime = DateTime.Now,
-                TradeId = tradeId,
-                Status = AccountStatus.Normal,
-                VerifyStatus = AccountVerifyStatus.NotifySupply,
-                ApplyType = applyType,
-                Contact = Contact,
-                Corporation = Corporation,
-                Agent = Agent,
-                IsOnline = false
-            };
-            foreach (var item in unionBidPersons)
-            {
-                account.UnionBidPersons.Add(item);
-            }
-            return account;
-        }
 
         /// <summary>
         /// 生成12位随机码
@@ -152,7 +132,7 @@ namespace Tlw.ZPG.Domain.Models.ApplyAccount
         /// </summary>
         /// <param name="content"></param>
         /// <param name="user"></param>
-        public void VerifyByUser(string content, int userId, string userName, VerifyType verifyType)
+        public void VerifyByUser(int userId, string content, string userName, VerifyType verifyType)
         {
             if (CanVerifyByUser())
             {
@@ -182,7 +162,7 @@ namespace Tlw.ZPG.Domain.Models.ApplyAccount
         /// <summary>
         /// 发放竞买号
         /// </summary>
-        public void GrantApplyNumber(int userId, ApplyNumber applyNumber)
+        public void GrantApplyNumber(int userId, string applyNumber)
         {
             if (userId != this.Trade.Affiche.CreatorId) throw new GrantApplyNumberException("挂牌人只能发放自己宗地的竞买号");
             if (this.VerifyStatus != AccountVerifyStatus.Verified) throw new GrantApplyNumberException("未审核通过不允许发放竞买号");
@@ -190,26 +170,19 @@ namespace Tlw.ZPG.Domain.Models.ApplyAccount
             if (this.Trade.Status != TradeStatus.Normal) throw new GrantApplyNumberException("当前宗地状态不允许发放竞买号");
             var days = Application.GetDictionaryValue("MinReleaseNum2TEDay", 2);
             if (DateTime.Now > this.Trade.TradeEndTime.AddDays(-days)) throw new GrantApplyNumberException(string.Format("竞买号只能在交易截止时间前{0}天发放", days));
-            this.ApplyNumber = applyNumber.Number;
+            this.ApplyNumber = applyNumber;
             this.Password = GeneratePassword();
             this.Status = AccountStatus.Normal;
-            applyNumber.IsUsed = true;
-            applyNumber.UsedTime = DateTime.Now;
-            applyNumber.GrantUserId = userId;
-        }
-
-        public bool CanFroze()
-        {
-            return this.Status == AccountStatus.Normal;
         }
 
         /// <summary>
         /// 冻结竞买号
         /// </summary>
-        public void Froze()
+        public void Froze(int userId)
         {
-            if (CanFroze())
+            if (this.Status != AccountStatus.Normal)
             {
+                if (this.Trade.CreatorId != userId) throw new AccountFrozeException("你不是该宗地创造者，不允许冻结此竞买号");
                 this.Status = AccountStatus.Froze;
             }
             else
@@ -218,18 +191,14 @@ namespace Tlw.ZPG.Domain.Models.ApplyAccount
             }
         }
 
-        public bool CanRecover()
-        {
-            return this.Status == AccountStatus.Froze;
-        }
-
         /// <summary>
         /// 解冻（恢复）
         /// </summary>
-        public void Recover()
+        public void Recover(int userId)
         {
-            if (CanRecover())
+            if (this.Status == AccountStatus.Froze)
             {
+                if (this.Trade.CreatorId != userId) throw new AccountFrozeException("你不是该宗地创造者，不允许解冻此竞买号");
                 this.Status = AccountStatus.Normal;
             }
             else
@@ -243,12 +212,12 @@ namespace Tlw.ZPG.Domain.Models.ApplyAccount
             return this.Password == SecurityUtil.MD5Encrypt(password);
         }
 
-        public void ResetPassword()
+        public void ResetPassword(int userId)
         {
             this.Password = GeneratePassword();
         }
 
-        public void LossAccount()
+        public void LossAccount(int userId)
         {
             this.Status = AccountStatus.Loss;
         }

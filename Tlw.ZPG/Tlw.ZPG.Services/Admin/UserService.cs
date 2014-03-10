@@ -8,18 +8,17 @@ using Tlw.ZPG.Infrastructure.Utils;
 
 namespace Tlw.ZPG.Services.Admin
 {
-    public class UserService:ServiceBase<User>
+    public class UserService : ServiceBase<User>
     {
         public override void Insert(Tlw.ZPG.Domain.Models.Admin.User entity)
         {
-            if (entity == null) throw new ServiceException("entity");
             entity.EncryptPassword();
             base.Insert(entity);
         }
 
-        public ServicesResult ChangePassword(string account, string password, string newPassword)
+        public ServiceResult ChangePassword(string account, string password, string newPassword)
         {
-            ServicesResult result = new ServicesResult();
+            ServiceResult result = new ServiceResult();
             if (string.IsNullOrEmpty(newPassword))
             {
                 result.Message = "新密码不能为空";
@@ -54,6 +53,18 @@ namespace Tlw.ZPG.Services.Admin
                 result.User = user;
             }
             return result;
+        }
+
+        public IList<Function> GetFunctions(int userId)
+        {
+            var user = FindById(userId);
+            return user.GetUserFunctions();
+        }
+
+        public IList<Menu> GetMenus(int userId)
+        {
+            var user = FindById(userId);
+            return user.GetUserMenus();
         }
 
         public void AddRoles(int userId, int[] roles)

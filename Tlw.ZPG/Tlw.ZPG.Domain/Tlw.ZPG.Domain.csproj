@@ -51,11 +51,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Mapping\Trade\TradeBidLogMap.cs" />
-    <Compile Include="Models\ApplyAccount\SubmitApplyException.cs" />
-    <Compile Include="Models\ApplyAccount\VerifyApplyException.cs" />
-    <Compile Include="Models\ApplyAccount\GrantApplyNumberException.cs" />
-    <Compile Include="Models\ApplyAccount\AccountFrozeException.cs" />
-    <Compile Include="Models\ApplyAccount\AccountRecoverException.cs" />
+    <Compile Include="Models\Bid\SubmitApplyException.cs" />
+    <Compile Include="Models\Bid\VerifyApplyException.cs" />
+    <Compile Include="Models\Bid\GrantApplyNumberException.cs" />
+    <Compile Include="Models\Bid\AccountFrozeException.cs" />
+    <Compile Include="Models\Bid\AccountRecoverException.cs" />
     <Compile Include="Models\DictionarySerice.cs" />
     <Compile Include="DomainException.cs" />
     <Compile Include="Enums\AfficheVerifyStatus.cs" />
@@ -95,9 +95,9 @@
     <Compile Include="Mapping\Trade\TradeResultMap.cs" />
     <Compile Include="Mapping\User\UserMap.cs" />
     <Compile Include="Mapping\Trade\LandPurposeMap.cs" />
-    <Compile Include="Models\ApplyAccount\Account.cs" />
+    <Compile Include="Models\Bid\Account.cs" />
     <Compile Include="Enums\AccountStatus.cs" />
-    <Compile Include="Models\ApplyAccount\AccountVerify.cs" />
+    <Compile Include="Models\Bid\AccountVerify.cs" />
     <Compile Include="Enums\AccountVerifyStatus.cs" />
     <Compile Include="Models\Trading\Affiche.cs" />
     <Compile Include="Models\Trading\AfficheFilter.cs" />
@@ -113,7 +113,7 @@
     <Compile Include="Models\Trading\LandAttach.cs" />
     <Compile Include="Models\Admin\Menu.cs" />
     <Compile Include="Models\News.cs" />
-    <Compile Include="Models\ApplyAccount\Person.cs" />
+    <Compile Include="Models\Bid\Person.cs" />
     <Compile Include="Models\Trading\Purpose.cs" />
     <Compile Include="Models\Admin\Role.cs" />
     <Compile Include="Models\SystemLog.cs" />

@@ -1,4 +1,4 @@
-namespace Tlw.ZPG.Domain.Models.ApplyAccount
+namespace Tlw.ZPG.Domain.Models.Bid
 {
     using System;
     using System.Collections.Generic;

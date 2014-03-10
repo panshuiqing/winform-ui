@@ -6,10 +6,9 @@ using System.Threading.Tasks;
 
 namespace Tlw.ZPG.Services
 {
-    public enum ServiceAction
+    public class ServiceResult
     {
-        Insert,
-        Delete,
-        Update,
+        public bool Success { get; set; }
+        public string Message { get; set; }
     }
 }

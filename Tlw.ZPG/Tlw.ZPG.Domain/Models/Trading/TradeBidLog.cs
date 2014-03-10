@@ -2,7 +2,7 @@ namespace Tlw.ZPG.Domain.Models.Trading
 {
     using System;
     using System.Collections.Generic;
-    using Tlw.ZPG.Domain.Models.ApplyAccount;
+    using Tlw.ZPG.Domain.Models.Bid;
     using Tlw.ZPG.Infrastructure;
 
     public partial class TradeBidLog : EntityBase

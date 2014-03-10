@@ -9,7 +9,7 @@ namespace Tlw.ZPG.Domain.Mapping
     using System.Data.Entity.Infrastructure;
 
     using Tlw.ZPG.Domain.Models;
-    using Tlw.ZPG.Domain.Models.ApplyAccount;
+    using Tlw.ZPG.Domain.Models.Bid;
 
     internal partial class AccountMap : EntityTypeConfiguration<Account>
     {

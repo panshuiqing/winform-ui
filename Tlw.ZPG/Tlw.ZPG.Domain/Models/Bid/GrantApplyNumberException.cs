@@ -4,20 +4,20 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Tlw.ZPG.Domain.Models.ApplyAccount
+namespace Tlw.ZPG.Domain.Models.Bid
 {
     /// <summary>
-    /// 竞买号冻结异常
+    /// 发放竞买号异常
     /// </summary>
-    public class AccountFrozeException : DomainException
+    public class GrantApplyNumberException : DomainException
     {
-        public AccountFrozeException(string message)
+        public GrantApplyNumberException(string message)
             : base(message)
         {
         }
 
 
-        public AccountFrozeException(string message, Exception innerException)
+        public GrantApplyNumberException(string message, Exception innerException)
             : base(message, innerException)
         {
         }

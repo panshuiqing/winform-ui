@@ -4,7 +4,7 @@ namespace Tlw.ZPG.Domain.Models.Trading
     using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;
     using Tlw.ZPG.Domain.Models.Admin;
-    using Tlw.ZPG.Domain.Models.ApplyAccount;
+    using Tlw.ZPG.Domain.Models.Bid;
     using Tlw.ZPG.Infrastructure;
     using Tlw.ZPG.Infrastructure.Utils;
 
