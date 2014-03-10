@@ -243,18 +243,6 @@ namespace Tlw.ZPG.Domain.Models.ApplyAccount
             return this.Password == SecurityUtil.MD5Encrypt(password);
         }
 
-        public bool ChangePassword(string oldPassword, string newPassword)
-        {
-            if (string.IsNullOrEmpty(newPassword)) throw new ChangePasswordException("新密码不能为空");
-            if (newPassword.Length < 8) throw new ChangePasswordException("新密码不合法，必须大于或等于8个字符");
-            if (this.CheckPassword(oldPassword))
-            {
-                this.Password = SecurityUtil.MD5Encrypt(newPassword);
-                return true;
-            }
-            return false;
-        }
-
         public void ResetPassword()
         {
             this.Password = GeneratePassword();

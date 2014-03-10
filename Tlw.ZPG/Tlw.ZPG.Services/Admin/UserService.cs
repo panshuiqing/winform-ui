@@ -17,12 +17,27 @@ namespace Tlw.ZPG.Services.Admin
             base.Insert(entity);
         }
 
-        public void ChangePassword(string account, string password, string newPassword)
+        public ServicesResult ChangePassword(string account, string password, string newPassword)
         {
-            if (string.IsNullOrEmpty(newPassword)) throw new ServiceException("新密码不能为空");
-            var user = FindByAccount(account);
-            if (user == null || !user.CheckPassword(password)) throw new ServiceException("用户名或密码不正确");
-            user.ChangePassword(newPassword);
+            ServicesResult result = new ServicesResult();
+            if (string.IsNullOrEmpty(newPassword))
+            {
+                result.Message = "新密码不能为空";
+            }
+            else
+            {
+                var user = FindByAccount(account);
+                if (user == null || !user.CheckPassword(password))
+                {
+                    result.Message = "用户名或密码不正确";
+                }
+                else
+                {
+                    user.ChangePassword(newPassword);
+                    result.Success = true;
+                }
+            }
+            return result;
         }
 
         public UserLoginResult Login(string account, string password)
