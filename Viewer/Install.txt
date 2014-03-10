@@ -1,0 +1,22 @@
+TraceTool.exe : 
+   The viewer
+
+TraceTool.exe.config : 
+   You need to edit and deploy this file only if you need dot net plugins and have multiple frameworks installed.
+   Can be removed if it's not the case.
+   
+
+TraceTool.bmp :
+   You need to deploy this file if you want to change the default icon used in the viewer.
+   Can be removed if it's not the case.
+
+TraceTool viewer documentation :
+   viewer documentation.
+
+Plugin.zip :
+   A collection of sample tracetool plugins, for framework demonstration. (like A functional plugin that show clipboard history)
+   This Zip file contains also wrappers for dot net and Java plugins.
+
+
+When the viewer is executed the first time, a traceTool.xml file is created to store your preferences.
+
