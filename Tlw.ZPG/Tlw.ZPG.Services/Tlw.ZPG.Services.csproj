@@ -48,8 +48,8 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Bid\AccountRequest.cs" />
     <Compile Include="Bid\AccountService.cs" />
-    <Compile Include="Admin\UserLoginResult.cs" />
     <Compile Include="Common\SystemLogService.cs" />
     <Compile Include="Common\ApplyNumberService.cs" />
     <Compile Include="Common\ClientErrorLogService.cs" />
@@ -63,12 +63,17 @@
     <Compile Include="Events\EntityInsertedEvent.cs" />
     <Compile Include="Events\EntityUpdatedEvent.cs" />
     <Compile Include="PageQueryExtensions.cs" />
+    <Compile Include="PageRequest.cs" />
     <Compile Include="ServiceBase.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="LogManager.cs" />
     <Compile Include="ServiceException.cs" />
-    <Compile Include="Admin\UserService.cs" />
-    <Compile Include="ServiceResult.cs" />
+    <Compile Include="Permission\PermissionService.cs" />
+    <Compile Include="ServiceResponse.cs" />
+    <Compile Include="Trading\AfficheService.cs" />
+    <Compile Include="Trading\TradeRequest.cs" />
+    <Compile Include="Trading\TradeService.cs" />
+    <Compile Include="Trading\AfficheRequest.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Tlw.ZPG.Domain\Tlw.ZPG.Domain.csproj">
@@ -83,9 +88,7 @@
   <ItemGroup>
     <Compile Include="Events\EntityDeletedEvent.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Trading\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

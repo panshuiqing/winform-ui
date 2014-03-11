@@ -53,9 +53,14 @@ namespace Tlw.ZPG.Services
             return this.DbSet.Find(id);
         }
 
-        public virtual ICollection<TEntity> FindAll()
+        public virtual IList<TEntity> FindAll()
         {
             return this.DbSet.ToList();
+        }
+
+        public IList<TEntity> Find(PageRequest request)
+        {
+            return this.DbSet.Page(request).ToList();
         }
 
         private void Validate(TEntity entity)
@@ -72,12 +77,12 @@ namespace Tlw.ZPG.Services
             }
         }
 
-        protected IQueryable<TEntity> Where(Expression<Func<TEntity,bool>> predicate)
+        internal IQueryable<TEntity> Where(Expression<Func<TEntity, bool>> predicate)
         {
             return this.DbSet.Where(predicate);
         }
 
-        protected DbContext DbContext
+        internal DbContext DbContext
         {
             get
             {
@@ -85,7 +90,7 @@ namespace Tlw.ZPG.Services
             }
         }
 
-        protected DbSet<TEntity> DbSet
+        internal DbSet<TEntity> DbSet
         {
             get
             {

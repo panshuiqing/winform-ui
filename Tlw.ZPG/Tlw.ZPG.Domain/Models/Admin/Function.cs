@@ -2,6 +2,7 @@ namespace Tlw.ZPG.Domain.Models.Admin
 {
     using System;
     using System.Collections.Generic;
+    using Tlw.ZPG.Domain.Enums;
     using Tlw.ZPG.Infrastructure;
 
     public partial class Function : EntityBase

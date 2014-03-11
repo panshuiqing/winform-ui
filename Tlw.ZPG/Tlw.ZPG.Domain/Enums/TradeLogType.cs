@@ -1,4 +1,4 @@
-namespace Tlw.ZPG.Domain.Models
+namespace Tlw.ZPG.Domain.Enums
 {
     using System;
     using System.ComponentModel;

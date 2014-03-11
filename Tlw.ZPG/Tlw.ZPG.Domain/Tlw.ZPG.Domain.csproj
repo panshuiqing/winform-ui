@@ -50,6 +50,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Enums\TradeDealType.cs" />
     <Compile Include="Mapping\Trade\TradeBidLogMap.cs" />
     <Compile Include="Models\Bid\SubmitApplyException.cs" />
     <Compile Include="Models\Bid\VerifyApplyException.cs" />

@@ -7,17 +7,11 @@ namespace Tlw.ZPG.Services
 {
     public static class PageQueryExtensions
     {
-        public static IQueryable<T> Page<T>(this IQueryable<T> query, int pageIndex, int pageSize, out int total)
+        public static IQueryable<T> Page<T>(this IQueryable<T> query, PageRequest request)
         {
-            total = query.Count();
-            return query.Skip((pageIndex - 1) * pageSize)
-                        .Take(pageSize);
-        }
-
-        public static IQueryable<T> Page<T>(this IQueryable<T> query, int pageIndex, int pageSize)
-        {
-            return query.Skip((pageIndex - 1) * pageSize)
-                        .Take(pageSize);
+            request.RowCount = query.Count();
+            return query.Skip((request.PageIndex - 1) * request.PageIndex)
+                        .Take(request.PageSize);
         }
     }
 }

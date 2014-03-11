@@ -2,8 +2,8 @@ namespace Tlw.ZPG.Domain.Models.Bid
 {
     using System;
     using System.Collections.Generic;
+    using Tlw.ZPG.Domain.Enums;
     using Tlw.ZPG.Domain.Models.Admin;
-    using Tlw.ZPG.Domain.Models.Enums;
     using Tlw.ZPG.Domain.Models.Trading;
     using Tlw.ZPG.Infrastructure;
     using Tlw.ZPG.Infrastructure.Utils;
@@ -71,7 +71,7 @@ namespace Tlw.ZPG.Domain.Models.Bid
         public string GetAccountName()
         {
             string name = string.Empty;
-            if (this.ApplyType == Models.ApplyType.Union)
+            if (this.ApplyType == ApplyType.Union)
             {
                 foreach (var item in this.UnionBidPersons)
                 {
@@ -231,11 +231,11 @@ namespace Tlw.ZPG.Domain.Models.Bid
             ValidateTrade(list);
             if (this.AccountPerson != null)
             {
-                if (this.ApplyType == Models.ApplyType.Natural)
+                if (this.ApplyType == ApplyType.Natural)
                 {
                     ValidatePerson(list, this.AccountPerson, "自然人");
                 }
-                else if (this.ApplyType == Models.ApplyType.Corporation || this.ApplyType == Models.ApplyType.OtherOrg)
+                else if (this.ApplyType == ApplyType.Corporation || this.ApplyType == ApplyType.OtherOrg)
                 {
                     ValidateOrg(list, this.AccountPerson, "");
                 }
@@ -249,11 +249,11 @@ namespace Tlw.ZPG.Domain.Models.Bid
                 ValidatePerson(list, this.Agent, "委托代理人");
             }
             ValidateContact(list);
-            if (this.ApplyType == Models.ApplyType.Union)
+            if (this.ApplyType == ApplyType.Union)
             {
                 foreach (var item in this.UnionBidPersons)
                 {
-                    if (item.ApplyType == Models.ApplyType.Natural)
+                    if (item.ApplyType == ApplyType.Natural)
                     {
                         ValidatePerson(list, item, "自然人（联合竞买）");
                     }

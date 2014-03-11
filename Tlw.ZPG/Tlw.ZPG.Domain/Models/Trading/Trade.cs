@@ -3,6 +3,7 @@ namespace Tlw.ZPG.Domain.Models.Trading
     using System;
     using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;
+    using Tlw.ZPG.Domain.Enums;
     using Tlw.ZPG.Domain.Models.Admin;
     using Tlw.ZPG.Domain.Models.Bid;
     using Tlw.ZPG.Infrastructure;
@@ -19,8 +20,10 @@ namespace Tlw.ZPG.Domain.Models.Trading
         }
 
         #region 属性
-        public int LandId { get; set; }
-        public int AfficheId { get; set; }
+        public int LandId { get; internal set; }
+        public int AfficheId { get; internal set; }
+        public System.DateTime CreateTime { get; set; }
+       
         public System.DateTime SignBeginTime { get; set; }
         public System.DateTime SignEndTime { get; set; }
         public System.DateTime TradeBeginTime { get; set; }
@@ -38,19 +41,22 @@ namespace Tlw.ZPG.Domain.Models.Trading
         public int CreatorId { get; set; }
         public decimal DealPrice { get; set; }
         public TradeStage Stage { get; internal set; }
+        public TradeDealType TradeDealType { get; internal set; }
+        public int CountyId { get; set; }
         [Timestamp]
         internal byte[] RowVersion { get; set; }
 
         public virtual Affiche Affiche { get; set; }
         public virtual Land Land { get; set; }
         public virtual User Creator { get; set; }
+        public virtual County County { get; set; }
         public virtual Account DealAccount { get; set; }
         public virtual ICollection<TradeMessage> TradeMessages { get; internal set; }
         public virtual ICollection<TradeHangLog> TradeHangLogs { get; internal set; }
         public virtual ICollection<TradeBidLog> TradeBidLogs { get; internal set; }
         public virtual ICollection<Account> Accounts { get; internal set; }
         public virtual ICollection<TradeDetail> TradeDetails { get; internal set; }
-        public virtual TradeResultConfirm TradeResultConfirm { get; set; } 
+        public virtual TradeResultConfirm TradeResultConfirm { get; internal set; } 
         #endregion
 
         /// <summary>
@@ -155,30 +161,21 @@ namespace Tlw.ZPG.Domain.Models.Trading
         /// </summary>
         public void ConfirmByBidder(string randomNumber, string applyNumber, int accountId, string ip, string systemInfo)
         {
-            if (this.Status != TradeStatus.WaitBidderConfirm) throw new ConfirmTradeResultException("确认失败，当前状态不正确");
+            if (this.Stage != TradeStage.Complete) throw new ConfirmTradeResultException("确认失败，当前状态不正确");
+            if (HasConfirm) throw new ConfirmTradeResultException("你已经确认过，不能重复确认");
             if (this.DealAccountId != accountId) throw new ConfirmTradeResultException("确认失败，你不是该宗地的成交人");
             if (DateTime.Now > this.TradeResultConfirm.ExpiredTime) throw new ConfirmTradeResultException("确认失败，信息已过期");
             if (this.TradeResultConfirm.RandomNum != randomNumber) throw new ConfirmTradeResultException("确认失败，随机码不正确");
-            SetStatus(TradeStatus.WaitHangVerify);
             this.TradeResultConfirm.ConfirmTime = DateTime.Now;
             this.TradeResultConfirm.IP = ip;
             this.TradeResultConfirm.SystemInfo = systemInfo;
         }
 
-        /// <summary>
-        /// 挂牌人审核
-        /// </summary>
-        /// <param name="userId"></param>
-        public void VerifyByHang(int userId)
+        private bool HasConfirm
         {
-            if (this.Status == TradeStatus.WaitHangVerify)
+            get
             {
-                if (userId != this.CreatorId) throw new VerifyTradeResultException("你不是公告创建者，无法审核");
-                SetStatus(TradeStatus.Completed);
-            }
-            else
-            {
-                throw new VerifyTradeResultException("当前状态不允许审核");
+                return this.TradeResultConfirm != null && this.TradeResultConfirm.ConfirmTime.HasValue;
             }
         }
 

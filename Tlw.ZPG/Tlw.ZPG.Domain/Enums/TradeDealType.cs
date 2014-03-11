@@ -4,24 +4,24 @@ namespace Tlw.ZPG.Domain.Enums
     using System.ComponentModel;
 
     /// <summary>
-    /// 新闻类别
+    /// 成交类型
     /// </summary>
-    public enum NewsType
+    public enum TradeDealType
     {
         /// <summary>
-        /// 政策法规资讯
+        /// 未知
         /// </summary>
-        [Description("政策法规资讯")]
-        Info,
+        [Description("未知")]
+        None,
         /// <summary>
-        /// 知识问答
+        /// 网上挂牌
         /// </summary>
-        [Description("知识问答")]
-        QA,
+        [Description("网上挂牌")]
+        Hang,
         /// <summary>
-        /// 常见问题解答
+        /// 转入网上拍卖
         /// </summary>
-        [Description("常见问题解答")]
-        FAQ
+        [Description("转入网上拍卖")]
+        Auction,
     }
 }

@@ -15,7 +15,7 @@ namespace Tlw.ZPG.Domain.Models.Trading
         }
 
         #region 属性
-        public int? ParentId { get; set; }
+        public int? ParentId { get; internal set; }
         public string Title { get; set; }
         public string Content { get; set; }
         public string OtherContent { get; set; }
@@ -42,7 +42,7 @@ namespace Tlw.ZPG.Domain.Models.Trading
         public virtual County County { get; set; }
         public virtual User Creator { get; set; }
         public virtual User VerifyUser { get; set; }
-        public virtual Affiche Parent { get; set; }
+        public virtual Affiche Parent { get; internal set; }
         public virtual ICollection<Affiche> Nodes { get; internal set; }
         public virtual ICollection<Trade> Trades { get; internal set; } 
         #endregion
@@ -99,11 +99,6 @@ namespace Tlw.ZPG.Domain.Models.Trading
             }
         }
 
-        public bool CanEdit()
-        {
-            return !this.IsRelease;
-        }
-
         /// <summary>
         /// 补充公告
         /// </summary>
@@ -141,35 +136,34 @@ namespace Tlw.ZPG.Domain.Models.Trading
             trade.TradeEndTime = this.TradeEndTime;
         }
 
-        public void AddLand(Land land,Trade trade,int userId)
+        public void AddTrade(int userId, Trade trade)
         {
-            CheckThrow(land, trade, userId);
-            trade.Land = land;
-            land.CreatorId = this.CreatorId;
+            CheckThrow(trade, userId);
+            trade.Land.CreatorId = this.CreatorId;
             trade.Affiche = this;
             trade.CreatorId = this.CreatorId;
             this.Trades.Add(trade);
             SetTrade(trade);
         }
 
-        private void CheckThrow(Land land, Trade trade, int userId)
+        private void CheckThrow(Trade trade, int userId)
         {
-            if (land == null) throw new DomainException("宗地信息不能为空");
             if (trade == null) throw new DomainException("交易信息不能为空");
+            if (trade.Land == null) throw new DomainException("交易信息不能为空");
             if (userId != this.CreatorId) throw new DomainException("你不是公告创建者，无法添加宗地");
-            if (string.IsNullOrEmpty(land.ProjectName))
+            if (string.IsNullOrEmpty(trade.Land.ProjectName))
             {
                 throw new DomainException("宗地项目名称不能为空");
             }
-            if (string.IsNullOrEmpty(land.LandNumber))
+            if (string.IsNullOrEmpty(trade.Land.LandNumber))
             {
                 throw new DomainException("宗地号不能为空");
             }
-            if (string.IsNullOrEmpty(land.Location))
+            if (string.IsNullOrEmpty(trade.Land.Location))
             {
                 throw new DomainException("宗地位置不能为空");
             }
-            if (land.Purposes.Count == 0)
+            if (trade.Land.Purposes.Count == 0)
             {
                 throw new DomainException("宗地用途及出让年限不能为空");
             }

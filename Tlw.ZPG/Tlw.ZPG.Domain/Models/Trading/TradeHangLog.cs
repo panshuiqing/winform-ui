@@ -2,6 +2,7 @@ namespace Tlw.ZPG.Domain.Models.Trading
 {
     using System;
     using System.Collections.Generic;
+    using Tlw.ZPG.Domain.Enums;
     using Tlw.ZPG.Domain.Models.Admin;
     using Tlw.ZPG.Infrastructure;
 

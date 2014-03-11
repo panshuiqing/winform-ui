@@ -40,6 +40,7 @@ namespace Tlw.ZPG.Domain.Mapping
             this.HasRequired(t => t.Land).WithRequiredPrincipal();
             this.HasOptional(t => t.DealAccount).WithOptionalPrincipal();
             this.HasRequired(t => t.Creator).WithMany();
+            this.HasRequired(t => t.County).WithMany();
             this.HasRequired(t => t.TradeResultConfirm).WithRequiredPrincipal();
             
         }

@@ -2,7 +2,7 @@ namespace Tlw.ZPG.Domain.Models
 {
     using System;
     using System.Collections.Generic;
-    using Tlw.ZPG.Domain.Models.Enums;
+    using Tlw.ZPG.Domain.Enums;
     using Tlw.ZPG.Infrastructure;
 
     public partial class SystemLog : EntityBase
