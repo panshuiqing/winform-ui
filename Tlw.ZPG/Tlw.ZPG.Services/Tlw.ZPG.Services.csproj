@@ -50,6 +50,7 @@
   <ItemGroup>
     <Compile Include="Bid\AccountRequest.cs" />
     <Compile Include="Bid\AccountService.cs" />
+    <Compile Include="BootStrapper.cs" />
     <Compile Include="Common\SystemLogService.cs" />
     <Compile Include="Common\ApplyNumberService.cs" />
     <Compile Include="Common\ClientErrorLogService.cs" />
@@ -59,13 +60,13 @@
     <Compile Include="Common\FeedBookService.cs" />
     <Compile Include="Common\GuestBookService.cs" />
     <Compile Include="Common\NewsService.cs" />
-    <Compile Include="EventHandlers\Bid\FrozeAccountEvent.cs" />
-    <Compile Include="EventHandlers\Bid\GrantApplyNumberEvent.cs" />
-    <Compile Include="EventHandlers\Bid\LossAccountEvent.cs" />
-    <Compile Include="EventHandlers\Bid\RecoverAccountEvent.cs" />
-    <Compile Include="EventHandlers\Bid\ResetPasswordEvent.cs" />
-    <Compile Include="EventHandlers\Bid\SubmitVerifyEvent.cs" />
-    <Compile Include="EventHandlers\Bid\VerifyByUserEvent.cs" />
+    <Compile Include="EventHandlers\Bid\FrozeAccountEventHandler.cs" />
+    <Compile Include="EventHandlers\Bid\GrantApplyNumberEventHandler.cs" />
+    <Compile Include="EventHandlers\Bid\LossAccountEventHandler.cs" />
+    <Compile Include="EventHandlers\Bid\RecoverAccountEventHandler.cs" />
+    <Compile Include="EventHandlers\Bid\ResetPasswordEventHandler.cs" />
+    <Compile Include="EventHandlers\Bid\SubmitVerifyEventHandler.cs" />
+    <Compile Include="EventHandlers\Bid\VerifyByUserEventHandler.cs" />
     <Compile Include="PageQueryExtensions.cs" />
     <Compile Include="PageRequest.cs" />
     <Compile Include="ServiceBase.cs" />

@@ -21,8 +21,8 @@ namespace Tlw.ZPG.Domain.Mapping
             this.Property(t => t.IsUsed).HasColumnName("IsUsed");
             this.Property(t => t.UsedTime).HasColumnName("UsedTime");
             this.Property(t => t.GrantUserId).HasColumnName("GrantUserId");
-
             this.HasOptional(t => t.GrantUser).WithMany();
+            this.HasOptional(t => t.Trade).WithMany();
         }
     }
 }

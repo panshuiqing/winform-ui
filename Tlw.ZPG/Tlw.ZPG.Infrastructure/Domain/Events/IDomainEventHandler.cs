@@ -5,9 +5,15 @@ using System.Text;
 
 namespace Tlw.ZPG.Infrastructure.Domain.Events
 {
-    public interface IDomainEventHandler<T> where T : IDomainEvent
+    public interface IDomainEventHandler<T> : IDomainEventHandler
+        where T : IDomainEvent
     {
         void Handle(T e);
+    }
+
+    public interface IDomainEventHandler
+    {
+        
     }
 
 }

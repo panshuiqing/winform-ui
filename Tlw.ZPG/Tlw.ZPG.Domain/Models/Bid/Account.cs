@@ -19,12 +19,12 @@ namespace Tlw.ZPG.Domain.Models.Bid
         }
 
         #region 属性
-        public string ApplyNumber { get; set; }
-        public string Password { get; set; }
-        public bool PasswordUpdated { get; set; }
-        public System.DateTime CreateTime { get; set; }
-        public AccountStatus Status { get; set; }
-        public string RandomNumber { get; set; }
+        public string ApplyNumber { get; internal set; }
+        public string Password { get; internal set; }
+        public bool PasswordUpdated { get; internal set; }
+        public System.DateTime CreateTime { get; internal set; }
+        public AccountStatus Status { get; internal set; }
+        public string RandomNumber { get; internal set; }
         public int TradeId { get; set; }
         public ApplyType ApplyType { get; set; }
         public int ContactId { get; set; }
@@ -219,6 +219,7 @@ namespace Tlw.ZPG.Domain.Models.Bid
                 throw new AccountFrozeException("竞买号已冻结或挂失，不允许重置密码");
             if (this.Trade.CreatorId != userId) throw new AccountFrozeException("挂牌人只能重置自己宗地的竞买号的密码");
             this.Password = GeneratePassword();
+            this.PasswordUpdated = false;
             DomainEvents.Publish(new ResetPasswordEvent() { Account = this });
         }
 

@@ -52,6 +52,7 @@ namespace Tlw.ZPG.Services.Bid
             applyNumber.IsUsed = true;
             applyNumber.UsedTime = DateTime.Now;
             applyNumber.GrantUserId = userId;
+            applyNumber.TradeId = account.TradeId;
         }
 
         /// <summary>

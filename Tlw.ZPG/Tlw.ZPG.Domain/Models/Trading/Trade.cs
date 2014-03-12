@@ -46,8 +46,8 @@ namespace Tlw.ZPG.Domain.Models.Trading
         [Timestamp]
         internal byte[] RowVersion { get; set; }
 
-        public virtual Affiche Affiche { get; set; }
-        public virtual Land Land { get; set; }
+        public virtual Affiche Affiche { get; internal set; }
+        public virtual Land Land { get; internal set; }
         public virtual User Creator { get; set; }
         public virtual County County { get; set; }
         public virtual Account DealAccount { get; set; }

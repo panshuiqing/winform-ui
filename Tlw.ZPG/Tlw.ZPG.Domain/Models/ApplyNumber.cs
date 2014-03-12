@@ -5,6 +5,7 @@ namespace Tlw.ZPG.Domain.Models
     using System.Collections.Generic;
     using Tlw.ZPG.Infrastructure;
 using Tlw.ZPG.Domain.Models.Admin;
+    using Tlw.ZPG.Domain.Models.Trading;
 
     public partial class ApplyNumber : EntityBase
     {
@@ -17,7 +18,9 @@ using Tlw.ZPG.Domain.Models.Admin;
         public bool IsUsed { get; set; }
         public Nullable<System.DateTime> UsedTime { get; set; }
         public int? GrantUserId { get; set; }
+        public int? TradeId { get; set; }
 
         public User GrantUser { get; set; }
+        public Trade Trade { get; set; }
     }
 }

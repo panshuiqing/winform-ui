@@ -9,7 +9,7 @@ using Tlw.ZPG.Infrastructure.Domain.Events;
 
 namespace Tlw.ZPG.Services.EventHandlers.Bid
 {
-    public class SubmitVerifyEventEventHandler : IDomainEventHandler<SubmitVerifyEvent>
+    public class SubmitVerifyEventHandler : IDomainEventHandler<SubmitVerifyEvent>
     {
         public void Handle(SubmitVerifyEvent domainEvent)
         {

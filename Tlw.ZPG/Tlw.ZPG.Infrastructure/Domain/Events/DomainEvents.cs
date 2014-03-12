@@ -7,27 +7,24 @@ namespace Tlw.ZPG.Infrastructure.Domain.Events
 {
     public static class DomainEvents
     {
-        private static IDictionary<Type, List<Delegate>> handlerMap = new Dictionary<Type, List<Delegate>>();
+        private static IDictionary<Type, List<IDomainEventHandler>> handlerMap = new Dictionary<Type, List<IDomainEventHandler>>();
 
         /// <summary>
         /// 订阅事件
         /// </summary>
         /// <typeparam name="T"></typeparam>
         /// <param name="action"></param>
-        public static void Subscribe<T>(Action<T> action) where T : IDomainEvent
+        public static void Subscribe<T>(IDomainEventHandler<T> handler) 
+            where T : IDomainEvent
         {
             var type = typeof(T);
-            List<Delegate> list = null;
-            if (handlerMap.TryGetValue(type, out list))
+            List<IDomainEventHandler> list = null;
+            if (!handlerMap.TryGetValue(type, out list))
             {
-                list.Add(action);
-            }
-            else
-            {
-                list = new List<Delegate>();
-                list.Add(action);
+                list = new List<IDomainEventHandler>();
                 handlerMap[type] = list;
             }
+            handlerMap[type].Add((IDomainEventHandler)handler);
         }
 
         /// <summary>
@@ -35,15 +32,16 @@ namespace Tlw.ZPG.Infrastructure.Domain.Events
         /// </summary>
         /// <typeparam name="T"></typeparam>
         /// <param name="domainEvent"></param>
-        public static void Publish<T>(T domainEvent) where T : IDomainEvent
+        public static void Publish<T>(T domainEvent) 
+            where T : IDomainEvent
         {
             var type = typeof(T);
-            List<Delegate> list = null;
+            List<IDomainEventHandler> list = null;
             if (handlerMap.TryGetValue(type, out list))
             {
                 foreach (var item in list)
                 {
-                    item.DynamicInvoke(domainEvent);
+                    ((IDomainEventHandler<T>)item).Handle(domainEvent);
                 }
             }
         }
