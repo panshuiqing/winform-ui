@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tlw.ZPG.Services.Wcf", "Tlw
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "前后端网站", "前后端网站", "{1CE73D58-1B33-443F-837C-A03EC85A0456}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tlw.ZPG.Web", "Tlw.ZPG.Web\Tlw.ZPG.Web.csproj", "{AD97CDB6-ACC2-4FDC-86B6-0420E20997EF}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,8 +35,15 @@ Global
 		{DA30244F-3E78-4751-A61F-C497E6F6D8DA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DA30244F-3E78-4751-A61F-C497E6F6D8DA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DA30244F-3E78-4751-A61F-C497E6F6D8DA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AD97CDB6-ACC2-4FDC-86B6-0420E20997EF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AD97CDB6-ACC2-4FDC-86B6-0420E20997EF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AD97CDB6-ACC2-4FDC-86B6-0420E20997EF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AD97CDB6-ACC2-4FDC-86B6-0420E20997EF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{AD97CDB6-ACC2-4FDC-86B6-0420E20997EF} = {1CE73D58-1B33-443F-837C-A03EC85A0456}
 	EndGlobalSection
 EndGlobal

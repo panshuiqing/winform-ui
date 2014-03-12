@@ -2,27 +2,31 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
-using System.Web.Http;
-using System.Web.Mvc;
 using System.Web.Optimization;
 using System.Web.Routing;
+using System.Web.Security;
+using Tlw.ZPG.Web;
 
 namespace Tlw.ZPG.Web
 {
-    // 注意: 有关启用 IIS6 或 IIS7 经典模式的说明，
-    // 请访问 http://go.microsoft.com/?LinkId=9394801
-
-    public class MvcApplication : System.Web.HttpApplication
+    public class Global : HttpApplication
     {
-        protected void Application_Start()
+        void Application_Start(object sender, EventArgs e)
         {
-            AreaRegistration.RegisterAllAreas();
+            // 在应用程序启动时运行的代码
+           
+        }
 
-            WebApiConfig.Register(GlobalConfiguration.Configuration);
-            FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
-            RouteConfig.RegisterRoutes(RouteTable.Routes);
-            BundleConfig.RegisterBundles(BundleTable.Bundles);
-            AuthConfig.RegisterAuth();
+        void Application_End(object sender, EventArgs e)
+        {
+            //  在应用程序关闭时运行的代码
+
+        }
+
+        void Application_Error(object sender, EventArgs e)
+        {
+            // 在出现未处理的错误时运行的代码
+
         }
     }
 }

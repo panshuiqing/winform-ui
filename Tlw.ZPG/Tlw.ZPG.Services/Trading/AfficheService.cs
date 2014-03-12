@@ -41,8 +41,7 @@ namespace Tlw.ZPG.Services.Trading
         public void AddTrade(int afficheId, int userId, Land land, Trade trade)
         {
             var affiche = this.FindById(afficheId);
-            trade.Land = land;
-            affiche.AddTrade(userId, trade);
+            affiche.AddTrade(userId, trade, land);
         }
 
         public IList<Affiche> Find(AfficheRequest request)

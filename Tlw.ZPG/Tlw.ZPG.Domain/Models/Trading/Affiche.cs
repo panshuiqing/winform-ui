@@ -136,11 +136,12 @@ namespace Tlw.ZPG.Domain.Models.Trading
             trade.TradeEndTime = this.TradeEndTime;
         }
 
-        public void AddTrade(int userId, Trade trade)
+        public void AddTrade(int userId, Trade trade, Land land)
         {
             CheckThrow(trade, userId);
             trade.Affiche = this;
             trade.CreatorId = this.CreatorId;
+            trade.Land = land;
             this.Trades.Add(trade);
             SetTrade(trade);
         }

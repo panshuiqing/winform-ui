@@ -143,7 +143,6 @@
     <Compile Include="Models\Trading\Exception\VerifyTradeResultException.cs" />
     <Compile Include="Models\Trading\Exception\SetReservePriceException.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="ChangePasswordException.cs" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />

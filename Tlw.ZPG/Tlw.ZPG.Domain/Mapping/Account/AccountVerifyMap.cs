@@ -20,10 +20,9 @@ namespace Tlw.ZPG.Domain.Mapping
             this.Property(t => t.ID).HasColumnName("VerifyId");
             this.Property(t => t.AccountId).HasColumnName("AccountId");
             this.Property(t => t.CreateTime).HasColumnName("CreateTime");
-            this.Property(t => t.VerifyAccountId).HasColumnName("VerifyAccountId");
-            this.Property(t => t.VerifyAccount).HasColumnName("VerifyAccount").IsRequired().HasMaxLength(50);
-            this.Property(t => t.Content).HasColumnName("Content").IsRequired().HasMaxLength(500);
-            this.Property(t => t.IsAdmin).HasColumnName("IsAdmin");
+            this.Property(t => t.UserId).HasColumnName("UserId");
+            this.Property(t => t.Content).HasColumnName("Content").IsRequired().HasMaxLength(300);
+            this.HasOptional(t => t.User).WithMany();
         }
     }
 }

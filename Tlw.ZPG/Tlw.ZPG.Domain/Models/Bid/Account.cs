@@ -98,27 +98,41 @@ namespace Tlw.ZPG.Domain.Models.Bid
         /// <summary>
         /// 提交审核
         /// </summary>
-        /// <param name="content"></param>
-        public void SubmitVerify(string content)
+        public void SubmitVerify()
+        {
+            DoSubmitVerify(null);
+        }
+
+        /// <summary>
+        /// 提交审核内容
+        /// </summary>
+        public void SubmitVerifyContent(string content)
+        {
+            if (string.IsNullOrEmpty(content)) throw new SubmitApplyException("内容不能为空");
+            DoSubmitVerify(content);
+        }
+
+        private void DoSubmitVerify(string content)
         {
             if (CanSubmitVerify())
             {
-                this.VerifyStatus = AccountVerifyStatus.Submited;
-                this.AccountVerifies.Add(new AccountVerify()
+                if (content == null)
+                {
+                    this.VerifyStatus = AccountVerifyStatus.Submited;
+                }
+                var verify = new AccountVerify()
                 {
                     AccountId = this.ID,
-                    Content = content,
                     CreateTime = DateTime.Now,
-                    IsAdmin = false,
+                    Content = content,
                     Status = this.VerifyStatus,
-                    VerifyAccountId = this.ID,
-                    VerifyAccount = GetAccountName(),
-                });
-                DomainEvents.Publish(new SubmitVerifyEvent() { Account = this });
+                };
+                this.AccountVerifies.Add(verify);
+                DomainEvents.Publish(new SubmitVerifyEvent() { Account = this, AccountVerify = verify });
             }
             else
             {
-                throw new SubmitApplyException("当前状态不允许提交审核");
+                throw new SubmitApplyException("当前不允许提交审核");
             }
         }
 
@@ -135,7 +149,7 @@ namespace Tlw.ZPG.Domain.Models.Bid
         /// </summary>
         /// <param name="content"></param>
         /// <param name="user"></param>
-        public void VerifyByUser(int userId, string content, string userName, VerifyType verifyType)
+        public void VerifyByUser(int userId, string content, VerifyType verifyType)
         {
             if (CanVerifyByUser())
             {
@@ -145,16 +159,14 @@ namespace Tlw.ZPG.Domain.Models.Bid
                     AccountId = this.ID,
                     Content = content,
                     CreateTime = DateTime.Now,
-                    IsAdmin = true,
                     Status = this.VerifyStatus,
-                    VerifyAccountId = userId,
-                    VerifyAccount = userName,
+                    UserId = userId,
                 });
                 DomainEvents.Publish(new VerifyByUserEvent() { Account = this });
             }
             else
             {
-                throw new VerifyApplyException("当前状态不允许审核");
+                throw new VerifyApplyException("当前不允许审核");
             }
         }
 
@@ -171,13 +183,20 @@ namespace Tlw.ZPG.Domain.Models.Bid
             if (userId != this.Trade.Affiche.CreatorId) throw new GrantApplyNumberException("挂牌人只能发放自己宗地的竞买号");
             if (this.VerifyStatus != AccountVerifyStatus.Verified) throw new GrantApplyNumberException("未审核通过不允许发放竞买号");
             if (this.Status == AccountStatus.Froze) throw new GrantApplyNumberException("竞买号已冻结不允许发放竞买号");
-            var days = Application.GetDictionaryValue("MinReleaseNum2TEDay", 2);
-            if (DateTime.Now > this.Trade.TradeEndTime.AddDays(-days)) 
-                throw new GrantApplyNumberException(string.Format("竞买号只能在交易截止时间前{0}天发放", days));
+            CheckGrantTime();
             this.ApplyNumber = applyNumber;
             this.Password = GeneratePassword();
             this.Status = AccountStatus.Normal;
             DomainEvents.Publish(new GrantApplyNumberEvent() { Account = this });
+        }
+
+        private void CheckGrantTime()
+        {
+            var days = Application.GetDictionaryValue("MinReleaseNum2TEDay", 2);
+            if (DateTime.Now > this.Trade.TradeEndTime.AddDays(-days))
+            {
+                throw new GrantApplyNumberException(string.Format("竞买号只能在交易截止时间前{0}天发放", days));
+            }
         }
 
         /// <summary>

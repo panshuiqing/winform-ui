@@ -14,6 +14,7 @@ namespace Tlw.ZPG.Services.Bid
     {
         public override void Insert(Tlw.ZPG.Domain.Models.Bid.Account entity)
         {
+            if (entity == null) throw new ServiceException("entity");
             entity.Apply();
             base.Insert(entity);
         }
@@ -23,10 +24,23 @@ namespace Tlw.ZPG.Services.Bid
         /// </summary>
         /// <param name="randomNumber"></param>
         /// <param name="content"></param>
+        public void SubmitVerify(string randomNumber)
+        {
+            var account = this.Where(t => t.RandomNumber == randomNumber).FirstOrDefault();
+            if (account == null) throw new ServiceException("随机码不存在");
+            account.SubmitVerify();
+        }
+
+        /// <summary>
+        /// 竞买人提交审核内容
+        /// </summary>
+        /// <param name="randomNumber"></param>
+        /// <param name="content"></param>
         public void SubmitVerify(string randomNumber,string content)
         {
             var account = this.Where(t => t.RandomNumber == randomNumber).FirstOrDefault();
-            account.SubmitVerify(content);
+            if (account == null) throw new ServiceException("随机码不存在");
+            account.SubmitVerifyContent(content);
         }
 
         /// <summary>
@@ -38,7 +52,8 @@ namespace Tlw.ZPG.Services.Bid
         public void VerifyByUser(int userId, string content, VerifyType verifyType)
         {
             var account = this.FindById(userId);
-            account.VerifyByUser(userId, content, account.GetAccountName(), verifyType);
+            if (account == null) throw new ServiceException("不存在此用户");
+            account.VerifyByUser(userId, content, verifyType);
         }
 
         /// <summary>
@@ -47,6 +62,7 @@ namespace Tlw.ZPG.Services.Bid
         public void GrantApplyNumber(int userId,int accountId)
         {
             var account = this.FindById(accountId);
+            if (account == null) throw new ServiceException("不存在此用户");
             var applyNumber = new ApplyNumberService().GetUnUsedApplyNumber();
             account.GrantApplyNumber(userId, applyNumber.Number);
             applyNumber.IsUsed = true;
@@ -61,6 +77,7 @@ namespace Tlw.ZPG.Services.Bid
         public void Froze(int userId, int accountId)
         {
             var account = this.FindById(accountId);
+            if (account == null) throw new ServiceException("不存在此用户");
             account.Froze(userId);
         }
 
@@ -70,6 +87,7 @@ namespace Tlw.ZPG.Services.Bid
         public void Recover(int userId, int accountId)
         {
             var account = this.FindById(accountId);
+            if (account == null) throw new ServiceException("不存在此用户");
             account.Recover(userId);
         }
         /// <summary>
@@ -80,6 +98,7 @@ namespace Tlw.ZPG.Services.Bid
         public void ResetPassword(int userId, int accountId)
         {
             var account = this.FindById(accountId);
+            if (account == null) throw new ServiceException("不存在此用户");
             account.ResetPassword(userId);
         }
 
@@ -91,6 +110,7 @@ namespace Tlw.ZPG.Services.Bid
         public void LossAccount(int userId, int accountId)
         {
             var account = this.FindById(accountId);
+            if (account == null) throw new ServiceException("不存在此用户");
             account.Loss(userId);
         }
 

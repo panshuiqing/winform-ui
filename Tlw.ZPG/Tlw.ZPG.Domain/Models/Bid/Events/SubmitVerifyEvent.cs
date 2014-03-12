@@ -9,5 +9,6 @@ namespace Tlw.ZPG.Domain.Models.Bid.Events
 {
     public class SubmitVerifyEvent : AccountEventBase
     {
+        public AccountVerify AccountVerify { get; set; }
     }
 }
