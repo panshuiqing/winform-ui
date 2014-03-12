@@ -139,7 +139,6 @@ namespace Tlw.ZPG.Domain.Models.Trading
         public void AddTrade(int userId, Trade trade)
         {
             CheckThrow(trade, userId);
-            trade.Land.CreatorId = this.CreatorId;
             trade.Affiche = this;
             trade.CreatorId = this.CreatorId;
             this.Trades.Add(trade);

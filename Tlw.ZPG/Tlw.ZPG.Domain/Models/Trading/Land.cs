@@ -14,9 +14,6 @@ namespace Tlw.ZPG.Domain.Models.Trading
         }
 
         #region  Ù–‘
-        public int CountyId { get; set; }
-        public int CreatorId { get; set; }
-        public System.DateTime CreateTime { get; set; }
         public string ProjectName { get; set; }
         public string LandNumber { get; set; }
         public string Location { get; set; }
@@ -34,8 +31,6 @@ namespace Tlw.ZPG.Domain.Models.Trading
         public decimal CompletionGuarantee { get; set; }
         public string LandScope { get; set; }
 
-        public virtual County County { get; set; }
-        public virtual User Creator { get; set; }
         public virtual ICollection<LandAttach> LandAttaches { get; internal set; }
         public virtual ICollection<Purpose> Purposes { get; internal set; } 
         #endregion

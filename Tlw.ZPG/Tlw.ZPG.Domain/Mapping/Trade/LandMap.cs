@@ -17,9 +17,6 @@ namespace Tlw.ZPG.Domain.Mapping
             this.HasKey(t => t.ID);
             this.ToTable("Z_Land");
             this.Property(t => t.ID).HasColumnName("LandId");
-            this.Property(t => t.CountyId).HasColumnName("CountyId");
-            this.Property(t => t.CreatorId).HasColumnName("CreatorId");
-            this.Property(t => t.CreateTime).HasColumnName("CreateTime");
             this.Property(t => t.ProjectName).HasColumnName("ProjectName").IsRequired().HasMaxLength(100);
             this.Property(t => t.LandNumber).HasColumnName("LandNumber").IsRequired().HasMaxLength(100);
             this.Property(t => t.Location).HasColumnName("Location").IsRequired().HasMaxLength(100);
@@ -36,8 +33,6 @@ namespace Tlw.ZPG.Domain.Mapping
             this.Property(t => t.FulfilGuarantee).HasColumnName("FulfilGuarantee");
             this.Property(t => t.CompletionGuarantee).HasColumnName("CompletionGuarantee");
             this.Property(t => t.LandScope).HasColumnName("LandScope").HasMaxLength(200);
-            this.HasRequired(t => t.County).WithMany();
-            this.HasRequired(t => t.Creator).WithMany();
             this.HasMany(t => t.Purposes).WithRequired();
         }
     }
