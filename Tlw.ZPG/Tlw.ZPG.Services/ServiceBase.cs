@@ -6,7 +6,6 @@ using System.Linq.Expressions;
 using System.Text;
 using Tlw.ZPG.Infrastructure;
 using Tlw.ZPG.Infrastructure.DbContext;
-using Tlw.ZPG.Services.Events;
 
 namespace Tlw.ZPG.Services
 {
@@ -19,7 +18,6 @@ namespace Tlw.ZPG.Services
             Validate(entity);
             this.DbSet.Add(entity);
             LogManager.WriteInsertLog(entity);
-            Application.EventAggregator.GetEvent<EntityInsertedEvent<TEntity>>().Publish(entity);
         }
 
         public virtual void Delete(TEntity entity)
@@ -27,7 +25,6 @@ namespace Tlw.ZPG.Services
             if (entity == null) throw new ServiceException("entity");
             this.DbSet.Remove(entity);
             LogManager.WriteDeleteLog(entity);
-            Application.EventAggregator.GetEvent<EntityDeletedEvent<TEntity>>().Publish(entity);
         }
 
         public virtual void Delete(object id)
@@ -45,7 +42,6 @@ namespace Tlw.ZPG.Services
             if (entity == null) throw new ServiceException("entity");
             Validate(entity);
             LogManager.WriteUpdateLog(entity);
-            Application.EventAggregator.GetEvent<EntityUpdatedEvent<TEntity>>().Publish(entity); 
         }
 
         public virtual TEntity FindById(object id)

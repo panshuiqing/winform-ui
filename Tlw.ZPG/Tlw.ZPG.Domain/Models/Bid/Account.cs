@@ -3,10 +3,12 @@ namespace Tlw.ZPG.Domain.Models.Bid
     using System;
     using System.Collections.Generic;
     using Tlw.ZPG.Domain.Enums;
+    using Tlw.ZPG.Domain.Models.Bid.Events;
     using Tlw.ZPG.Domain.Models.Admin;
     using Tlw.ZPG.Domain.Models.Trading;
     using Tlw.ZPG.Infrastructure;
     using Tlw.ZPG.Infrastructure.Utils;
+    using Tlw.ZPG.Infrastructure.Domain.Events;
 
     public partial class Account : EntityBase
     {
@@ -112,6 +114,7 @@ namespace Tlw.ZPG.Domain.Models.Bid
                     VerifyAccountId = this.ID,
                     VerifyAccount = GetAccountName(),
                 });
+                DomainEvents.Publish(new SubmitVerifyEvent() { Account = this });
             }
             else
             {
@@ -147,6 +150,7 @@ namespace Tlw.ZPG.Domain.Models.Bid
                     VerifyAccountId = userId,
                     VerifyAccount = userName,
                 });
+                DomainEvents.Publish(new VerifyByUserEvent() { Account = this });
             }
             else
             {
@@ -167,12 +171,13 @@ namespace Tlw.ZPG.Domain.Models.Bid
             if (userId != this.Trade.Affiche.CreatorId) throw new GrantApplyNumberException("挂牌人只能发放自己宗地的竞买号");
             if (this.VerifyStatus != AccountVerifyStatus.Verified) throw new GrantApplyNumberException("未审核通过不允许发放竞买号");
             if (this.Status == AccountStatus.Froze) throw new GrantApplyNumberException("竞买号已冻结不允许发放竞买号");
-            if (this.Trade.Status != TradeStatus.Normal) throw new GrantApplyNumberException("当前宗地状态不允许发放竞买号");
             var days = Application.GetDictionaryValue("MinReleaseNum2TEDay", 2);
-            if (DateTime.Now > this.Trade.TradeEndTime.AddDays(-days)) throw new GrantApplyNumberException(string.Format("竞买号只能在交易截止时间前{0}天发放", days));
+            if (DateTime.Now > this.Trade.TradeEndTime.AddDays(-days)) 
+                throw new GrantApplyNumberException(string.Format("竞买号只能在交易截止时间前{0}天发放", days));
             this.ApplyNumber = applyNumber;
             this.Password = GeneratePassword();
             this.Status = AccountStatus.Normal;
+            DomainEvents.Publish(new GrantApplyNumberEvent() { Account = this });
         }
 
         /// <summary>
@@ -180,14 +185,12 @@ namespace Tlw.ZPG.Domain.Models.Bid
         /// </summary>
         public void Froze(int userId)
         {
-            if (this.Status != AccountStatus.Normal)
+            if (this.Status == AccountStatus.Loss) throw new AccountFrozeException("竞买号已挂失，不允许冻结");
+            if (this.Status == AccountStatus.Normal)
             {
-                if (this.Trade.CreatorId != userId) throw new AccountFrozeException("你不是该宗地创造者，不允许冻结此竞买号");
+                if (this.Trade.CreatorId != userId) throw new AccountFrozeException("挂牌人只能冻结自己宗地的竞买号");
                 this.Status = AccountStatus.Froze;
-            }
-            else
-            {
-                throw new AccountFrozeException("当前状态不允许冻结竞买号");
+                DomainEvents.Publish(new FrozeAccountEvent() { Account = this });
             }
         }
 
@@ -196,14 +199,12 @@ namespace Tlw.ZPG.Domain.Models.Bid
         /// </summary>
         public void Recover(int userId)
         {
+            if (this.Status == AccountStatus.Loss) throw new AccountFrozeException("竞买号已挂失，不允许解冻");
             if (this.Status == AccountStatus.Froze)
             {
-                if (this.Trade.CreatorId != userId) throw new AccountFrozeException("你不是该宗地创造者，不允许解冻此竞买号");
+                if (this.Trade.CreatorId != userId) throw new AccountFrozeException("挂牌人只能解冻自己宗地的竞买号");
                 this.Status = AccountStatus.Normal;
-            }
-            else
-            {
-                throw new AccountRecoverException("当前状态不允许解冻竞买号");
+                DomainEvents.Publish(new RecoverAccountEvent() { Account = this });
             }
         }
 
@@ -214,12 +215,32 @@ namespace Tlw.ZPG.Domain.Models.Bid
 
         public void ResetPassword(int userId)
         {
+            if (this.Status == AccountStatus.Froze || this.Status == AccountStatus.Loss) 
+                throw new AccountFrozeException("竞买号已冻结或挂失，不允许重置密码");
+            if (this.Trade.CreatorId != userId) throw new AccountFrozeException("挂牌人只能重置自己宗地的竞买号的密码");
             this.Password = GeneratePassword();
+            DomainEvents.Publish(new ResetPasswordEvent() { Account = this });
         }
 
-        public void LossAccount(int userId)
+        /// <summary>
+        /// 挂失
+        /// </summary>
+        /// <param name="userId"></param>
+        public void Loss(int userId)
         {
-            this.Status = AccountStatus.Loss;
+            if (this.Status == AccountStatus.Loss)
+            {
+                throw new DomainException("该竞买号已经挂失过一次，不能再次挂失");
+            }
+            else
+            {
+                if (this.Trade.CreatorId != userId) throw new AccountFrozeException("挂牌人只能挂失自己宗地的竞买号");
+                var days = Application.GetDictionaryValue("MinLoseNum2TEDay", 2);
+                if (DateTime.Now > this.Trade.TradeEndTime.AddDays(-days))
+                    throw new GrantApplyNumberException(string.Format("现在离挂牌交易截止期限不足{0}日，不能挂失", days));
+                this.Status = AccountStatus.Loss;
+                DomainEvents.Publish(new LossAccountEvent() { Account = this });
+            }
         }
 
         #endregion

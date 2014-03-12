@@ -90,7 +90,7 @@ namespace Tlw.ZPG.Services.Bid
         public void LossAccount(int userId, int accountId)
         {
             var account = this.FindById(accountId);
-            account.LossAccount(userId);
+            account.Loss(userId);
         }
 
         public IList<Account> Find(AccountRequest request)

@@ -5,7 +5,6 @@ using System.Text;
 using System.Threading.Tasks;
 using Tlw.ZPG.Infrastructure.Caching;
 using Tlw.ZPG.Infrastructure.DbContext;
-using Tlw.ZPG.Infrastructure.Events;
 
 namespace Tlw.ZPG.Infrastructure
 {
@@ -21,17 +20,16 @@ namespace Tlw.ZPG.Infrastructure
 
         static Application()
         {
-            EventAggregator = new EventAggregator();
             DbContextFactory = new Configuration("name=Tlw_ZPG_Context").AddAssemblyFile("Tlw.ZPG.Domain.dll").BuildDbContextFactory();
         }
 
-        public static IEventAggregator EventAggregator
+        public static IDbContextFactory DbContextFactory
         {
             get;
             set;
         }
 
-        public static IDbContextFactory DbContextFactory
+        public static SMS.IMessager Messager
         {
             get;
             set;

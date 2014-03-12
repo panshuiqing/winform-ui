@@ -59,9 +59,13 @@
     <Compile Include="Common\FeedBookService.cs" />
     <Compile Include="Common\GuestBookService.cs" />
     <Compile Include="Common\NewsService.cs" />
-    <Compile Include="EventHandlers\ServiceEventHandler.cs" />
-    <Compile Include="Events\EntityInsertedEvent.cs" />
-    <Compile Include="Events\EntityUpdatedEvent.cs" />
+    <Compile Include="EventHandlers\Bid\FrozeAccountEvent.cs" />
+    <Compile Include="EventHandlers\Bid\GrantApplyNumberEvent.cs" />
+    <Compile Include="EventHandlers\Bid\LossAccountEvent.cs" />
+    <Compile Include="EventHandlers\Bid\RecoverAccountEvent.cs" />
+    <Compile Include="EventHandlers\Bid\ResetPasswordEvent.cs" />
+    <Compile Include="EventHandlers\Bid\SubmitVerifyEvent.cs" />
+    <Compile Include="EventHandlers\Bid\VerifyByUserEvent.cs" />
     <Compile Include="PageQueryExtensions.cs" />
     <Compile Include="PageRequest.cs" />
     <Compile Include="ServiceBase.cs" />
@@ -84,9 +88,6 @@
       <Project>{d20803bc-8cec-44f9-8b70-50834c27b6ae}</Project>
       <Name>Tlw.ZPG.Infrastructure</Name>
     </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <Compile Include="Events\EntityDeletedEvent.cs" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

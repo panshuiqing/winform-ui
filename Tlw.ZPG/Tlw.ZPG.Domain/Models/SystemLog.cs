@@ -13,8 +13,8 @@ namespace Tlw.ZPG.Domain.Models
         public string UserName { get; set; }
         public string Ip { get; set; }
         public string Url { get; set; }
-        public string StackTrace { get; set; }
-        public string Remark { get; set; }
+        public string Content { get; set; }
+        public string Title { get; set; }
         public string EntityName { get; set; }
     }
 }

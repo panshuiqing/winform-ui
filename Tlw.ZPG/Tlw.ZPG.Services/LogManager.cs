@@ -62,7 +62,7 @@ namespace Tlw.ZPG.Services
                     Url = Application.UserContext.Url,
                     UserId = Application.UserContext.UserId,
                     UserName = Application.UserContext.UserName,
-                    Remark = GetActionName(logType) + name,
+                    Title = GetActionName(logType) + name,
                     LogType = logType,
                     EntityName = entity.GetType().Name,
                 });

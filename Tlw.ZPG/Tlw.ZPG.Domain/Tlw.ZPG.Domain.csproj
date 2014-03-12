@@ -51,7 +51,15 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Enums\TradeDealType.cs" />
+    <Compile Include="Models\Bid\Events\SubmitVerifyEvent.cs" />
+    <Compile Include="Models\Bid\Events\VerifyByUserEvent.cs" />
+    <Compile Include="Models\Bid\Events\GrantApplyNumberEvent.cs" />
+    <Compile Include="Models\Bid\Events\FrozeAccountEvent.cs" />
+    <Compile Include="Models\Bid\Events\RecoverAccountEvent.cs" />
+    <Compile Include="Models\Bid\Events\ResetPasswordEvent.cs" />
+    <Compile Include="Models\Bid\Events\LossAccountEvent.cs" />
     <Compile Include="Mapping\Trade\TradeBidLogMap.cs" />
+    <Compile Include="Models\Bid\Events\AccountEventBase.cs" />
     <Compile Include="Models\Bid\SubmitApplyException.cs" />
     <Compile Include="Models\Bid\VerifyApplyException.cs" />
     <Compile Include="Models\Bid\GrantApplyNumberException.cs" />
@@ -150,9 +158,7 @@
     <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Events\Account\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

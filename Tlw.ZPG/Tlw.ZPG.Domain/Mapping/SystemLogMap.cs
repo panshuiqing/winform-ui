@@ -23,8 +23,8 @@ namespace Tlw.ZPG.Domain.Mapping
               this.Property(t => t.UserName).HasColumnName("UserName").HasMaxLength(50);
               this.Property(t => t.Ip).HasColumnName("Ip").HasMaxLength(50);
               this.Property(t => t.Url).HasColumnName("Url").HasMaxLength(200);
-              this.Property(t => t.StackTrace).HasColumnName("StackTrace");
-              this.Property(t => t.Remark).HasColumnName("Remark").HasMaxLength(500);
+              this.Property(t => t.Content).HasColumnName("Content");
+              this.Property(t => t.Title).HasColumnName("Title").HasMaxLength(50);
          }
     }
 }
