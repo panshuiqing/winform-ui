@@ -1,0 +1,693 @@
+﻿body
+{
+    padding: 0px;
+    margin: 0px;
+    font-family: 宋体, Verdana, Arial, Helvetica, sans-serif;
+    font-size: 9pt;
+    color: #000000;
+    text-align: center;
+}
+ul, li
+{
+    padding: 0px;
+    margin: 0px;
+    list-style: none;
+}
+li
+{
+    float: left;
+}
+/*input*/
+input
+{
+    background-color: #ffffff;
+    border: 1px solid #95C6E7;
+}
+input.Button
+{
+    font-family: 宋体, Verdana, Arial, Helvetica, sans-serif;
+    padding: 0px 8px;
+    font-weight: bold;
+    background: url(../images/button_bg.jpg) repeat-x left top;
+    height: 24px;
+    border: 1px solid #C0D7E7;
+    cursor: pointer;
+}
+
+/*-------------------------------------------*/
+.divAll
+{
+    width: 1000px;
+    margin: 0px auto;
+}
+.divLogo
+{
+    background: url(../images/top_bg.gif) no-repeat;
+    height: 159px;
+}
+.divMenu
+{
+    background: url(../images/menu_bg.jpg) repeat-x left top;
+      font-size:14px;
+}
+.divMenu .left
+{
+    background: url(../images/menu_left.jpg) no-repeat left top;
+}
+.divMenu .right
+{
+    background: url(../images/menu_right.jpg) no-repeat right top;
+    height: 39px;
+    padding: 0px 12px;
+}
+.divMenu li
+{
+    padding: 0px 16px;
+    line-height: 39px;
+    color: #1f4365;
+    font-weight: bold;
+      font-size:14px;
+   
+}
+.divMenu li.line
+{
+    background: url(../images/menu_line.jpg) no-repeat right top;
+    width: 2px;
+    font-size: 1px;
+    padding: 0px;
+    height: 39px;
+    
+}
+.divMenu li.select
+{
+    background: url(../images/menu_sl_bg.jpg) repeat-x left top;
+      font-size:14px;
+}
+.divMenu li a
+{
+    color: #1f4365;
+    font-weight: bold;
+    text-decoration: none;
+     font-size:14px;
+}
+.tableInfo
+{
+    border: 0px;
+    border-collapse: collapse;
+    width: 100%;
+}
+.tableInfo td
+{
+    vertical-align: top;
+    padding-right: 4px;
+}
+.tableInfo .left
+{
+    text-align: left;
+    width: 232px;
+}
+.tableInfo .Center
+{
+    background: url(../images/banner.jpg) no-repeat center;
+    height: 144px;
+}
+/*a图片*/
+.wstdcrgg
+{
+    background: url(../images/wstdcrgg.jpg) no-repeat;
+    width: 226px;
+    height: 41px;
+    display: inline-block;
+    margin-top: 6px;
+}
+.wstdcrjggs
+{
+    background: url(../images/wstdcrjggs.jpg) no-repeat;
+    width: 226px;
+    height: 41px;
+    display: inline-block;
+    margin-top: 4px;
+}
+.tdcrjggg
+{
+    background: url(../images/tdcrjggg.jpg) no-repeat;
+    width: 226px;
+    height: 41px;
+    display: inline-block;
+    margin-top: 4px;
+}
+.jmsqjgcx
+{
+    background: url(../images/jmsqjgcx.jpg) no-repeat;
+    width: 226px;
+    height: 41px;
+    display: inline-block;
+    margin-top: 4px;
+}
+.cjwtjd
+{
+    background: url(../images/cjwtjd.jpg) no-repeat;
+    width: 226px;
+    height: 41px;
+    display: inline-block;
+    margin-top: 4px;
+}
+.zxly
+{
+    background: url(../images/zxly.jpg) no-repeat;
+    width: 109px;
+    height: 65px;
+    display: inline-block;
+    margin: 6px 2px 0px 0px;
+    float: left;
+}
+.zswd
+{
+    background: url(../images/zswd.jpg) no-repeat;
+    width: 109px;
+    height: 65px;
+    display: inline-block;
+    margin: 2px 2px 0px 0px;
+    float: left;
+}
+.zmrj
+{
+    background: url(../images/zmrj.jpg) no-repeat;
+    width: 111px;
+    height: 65px;
+    display: inline-block;
+    margin: 6px 0px 0px 2px;
+    float: left;
+}
+.zcfg
+{
+    background: url(../images/zcfg.jpg) no-repeat;
+    width: 111px;
+    height: 65px;
+    display: inline-block;
+    margin: 2px 0px 0px 2px;
+    float: left;
+}
+/*竞买人操作帮助*/
+.jmrczbz
+{   
+    background: url(../images/buy_top.jpg) no-repeat;
+    width: 224px;
+    padding-top: 47px;
+    float: left;
+}
+.jmrczbz ul
+{
+    width: 224px;
+    height: 166px;
+    background: url(../images/jmrczbz_bg.jpg) no-repeat;
+     float:left;
+}
+.jmrczbz li
+{
+    width: 224px;
+    background: url(../images/jmrczbz_line.jpg) no-repeat center bottom;
+    line-height: 40px;
+    float:left;
+}
+
+.jmrczbz li a
+{
+    background: url(../images/jmrczbz_icon.gif) no-repeat 24px center;
+    padding-left: 50px;
+    font-size: 14px;
+    font-weight: bold;
+    color: #000000;
+    text-decoration: none;
+     float:left;
+}
+/*divList*/
+.divList
+{
+    margin-top: 7px;
+    width: 100%;
+    float: left;
+}
+.divList div.Header
+{
+   width:723px;
+    height:31px;
+    line-height:31px;
+    vertical-align:top;
+    background:url(../images/table_top_bg.jpg) repeat-x left top;
+    text-align:left;
+    float:left;
+}
+.divList div.Header div.left
+{
+    width:126px;
+    height:31px;
+    line-height:31px;    
+    background:url(../images/table_top_left.jpg) no-repeat left top;
+    float:left;
+}
+.divList div.Header div.left div.write
+{
+   width:126px;
+    height:31px;
+    line-height:31px;    
+    color:#000a14;
+    text-align:center;
+    font-weight:bold;
+    float:left;
+    font-size:14px;
+}
+.divList div.Header div.right
+{
+    width:3px;
+    height:31px;
+    line-height:31px;    
+    background:url(../images/table_top_right.jpg) no-repeat right top;
+    float:right;
+}
+.divList div.Header div.more{ float:right}
+.divList .Header li.select
+{
+    background: url(../images/list_sl_head.jpg) repeat-x left top;
+    font-weight: bold;
+}
+.TableList
+{
+    border: 1px solid #bfd8e7;
+    border-collapse: collapse;
+    width: 100%;
+    margin-top: -1px;
+}
+.TableList td
+{
+    height: 21px;
+    padding: 2px 4px;
+    vertical-align: middle;
+     border: 1px solid #bfd8e7;
+    border-collapse: collapse;
+}
+.TableList tr.Header
+{
+    background: #e3effb;
+    text-align: center;
+    white-space: nowrap;
+    border: 0px;
+    font-weight: bold;
+}
+.TableList tr.rowColor
+{
+    background: #f2f7fd;
+}
+.TableList .title
+{
+    text-align: left;
+}
+.TableList .city
+{
+    width: 80px;
+}
+.TableList .time
+{
+    width: 80px;
+    color: Red;
+}
+.TableList .time2
+{
+    width: 120px;
+}
+.TableList .money
+{
+    width: 70px;
+}
+.TableList .year
+{
+    width: 160px;
+}
+.TableList tr.rowColor .title, .colorRed
+{
+    color: Red;
+}
+.divList .bottom
+{
+    background: #F3F8FB;
+    line-height: 30px;
+    height: 30px;
+    border: 1px solid #C6DFF3;
+    margin-top: -1px;
+}
+.divList .bottom a
+{
+    float: right;
+    margin-right: 10px;
+    font-size: 14px;
+    text-decoration: none;
+    color: #000000;
+}
+/*挂牌出让*/
+.gpcr
+{
+    width: 100%;
+    float: left;
+    margin-top: 6px;
+}
+.gpcr li
+{      
+    width: 185px;
+    height: 93px;
+    background: url(../images/banner_bg.jpg) no-repeat right top;
+    padding-top: 10px;
+    margin-left: 7px;
+}
+.gpcr li.first
+{
+    margin: 0px;
+}
+.gpcr li span.city
+{
+    font-size: 20px;
+    color: Red;
+    font-weight: bold;
+    width: 100%;
+    display: inline-block;
+    line-height: 22px;
+    margin: 10px 0px;
+}
+.gpcr li span.info
+{
+    font-size: 12px;
+    font-weight: bold;
+    text-align:center;
+}
+/*News*/
+.divNews
+{
+    width: 225px;
+}
+.divNews .Header
+{
+    background: url(../images/news_head.jpg) no-repeat left top;
+    height: 22px;
+    font-weight: bold;
+    font-size: 14px;
+    text-align: left;
+    text-indent: 29px;
+    padding-top: 10px;
+}
+.divNews .Info
+{
+    border: 1px solid #CCE1F5;
+    border-top: 0px;
+    width: 223px;
+    padding: 4px 0px;
+}
+.divNews table
+{
+    border: 0px;
+    border-collapse: collapse;
+    width: 223px;
+}
+.divNews td
+{
+    text-align: left;
+    padding: 0px 4px;
+    line-height: 22px;
+}
+
+.divNews_long
+{
+    width: 231px;
+    float: right;
+}
+.divNews_long .Header
+{
+    background: url(../images/news_head_long.jpg) no-repeat left top;
+    height: 22px;
+    font-weight: bold;
+    font-size: 14px;
+    text-align: left;
+    text-indent: 29px;
+    padding-top: 10px;
+}
+.divNews_long .Info
+{
+    border: 1px solid #CCE1F5;
+    border-top: 0px;
+    width: 229px;
+    padding: 4px 0px;
+    height: 220px;
+}
+.divNews_long table
+{
+    border: 0px;
+    border-collapse: collapse;
+    width: 229px;
+}
+.divNews_long td
+{
+    text-align: left;
+    padding: 0px 4px;
+    line-height: 22px;
+}
+
+.address
+{
+    background: url(../images/policy_house.jpg) no-repeat;
+    width: 78px;
+    height: 25px;
+    text-align: center;
+    float: left;
+    margin: 2px 4px 4px 4px;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: bold;
+    color: #000000;
+    line-height: 25px;
+    text-indent: 26px;
+}
+
+/*友情链接*/
+.divNav
+{
+    margin-top: 5px;
+}
+.divNav a
+{
+    float: left;
+    margin-right: 5px;
+}
+.divNav a img
+{
+    border: 0px;
+}
+.divNav a.last
+{
+    margin: 0px;
+}
+/**/
+.divCopyright
+{
+    border-top: 6px solid #1c5790;
+    line-height: 30px;
+    margin-top: 6px;
+}
+
+/*-----TableBody-----*/
+.TableBody
+{
+    border: 1px solid #BCD9E7;
+    width: 100%;
+    border-collapse: collapse;
+}
+.TableBody td
+{
+    font-family: 宋体, Verdana, Arial, Helvetica, sans-serif;
+    text-align: left;
+    padding: 2px 4px;
+    height: 20px;
+    line-height: 20px;
+    border: 1px solid #BCD9E7;
+}
+.TableBody td.leftTd
+{
+    background: #DEF0FC;
+}
+.childtable
+{
+    border: 0px solid #ffffff;
+    width: 100%;
+    border-collapse: collapse;
+}
+.childtable td
+{
+    border: 0px solid #ffffff;
+}
+td.buttonTd
+{
+    background: #F0F8FB;
+    text-align: center;
+    padding: 4px;
+}
+
+/*---------------------------------------------*/
+.divNavigation
+{
+    background: url(../images/Navigation_BG.jpg) repeat-x left top;
+    height: 38px;
+    margin-top: 7px;
+}
+.divNavigation .left
+{
+    background: url(../images/Navigation_Left.jpg) no-repeat right top;
+    height: 38px;
+    width: 14px;
+}
+.divNavigation .right
+{
+    background: url(../images/Navigation_Right.jpg) no-repeat right top;
+    height: 38px;
+    width: 10px;
+    float: right;
+}
+.divNavigation .title
+{
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 32px;
+    padding-top:2px;
+    background: transparent;
+}
+
+/*超链接的样式*/
+A:link
+{
+    font-size: 12px;
+    color: #000000;
+    text-decoration: none;
+}
+A:visited
+{
+    font-size: 12px;
+    color: #000000;
+    text-decoration: none;
+}
+A:hover
+{
+    font-size: 12px;
+    color: #e67203;
+    text-decoration: none;
+}
+/*底部的样式*/
+.bottom_menu
+{
+	width: 1000px;
+	background:#3277a8;
+	height: 36px;
+	text-align:left;	
+}
+.bottom_menu a
+{
+ color:White!important;
+}
+.bottom_menu div.title
+{
+	color: White;
+	height: 36px;
+	line-height: 36px;
+	margin: 0px 20px;
+}
+.bottom_menu div.title1
+{
+	color: White;
+	height: 36px;
+	line-height: 36px;
+	margin: 0px 20px;
+}
+.bottom_bg
+{
+	width: 1000px;
+	background: url(../images/Bottom_bg.jpg) repeat-x left top;
+	height: 71px;
+	color: #000c17;
+}
+.bottom_bg div.write
+{
+	width: 810px;
+	text-align: center;
+	white-space: normal;
+	line-height: 24px;
+	padding-top: 12px;
+}
+.Transaction
+{		
+   width: 272px;  float: right; padding: 0px;white-space: nowrap;
+
+}
+.Transaction div.policy_contact
+{	
+	width:272px; 
+    vertical-align:top;    
+    padding:0px;
+    margin:0px;
+     float:right;
+}
+.Transaction div.policy_new
+{	
+	width:270px;
+    height:133px;
+    vertical-align:top;    
+	 border:1px solid #c4d1dd;
+	 text-align:center;
+}
+.Transaction div.policy_new div.write
+{	
+	width:245px;   
+    vertical-align:top; 
+    text-align:center;
+     margin-top:4px;	     
+}
+
+.Transaction div.policy_contact div.bg
+{	
+	width:272px;
+    height:32px;
+    background:url(../images/policy_bg.jpg) repeat-x left top;	
+    border:0px;
+   
+}
+.Transaction div.policy_contact div.left
+{	
+	width:118px;
+    height:32px;    
+    background:url(../images/policy_left.jpg) no-repeat left top;	
+    float:left;
+}
+.Transaction div.policy_contact div.left div.write
+{	
+	width:100px;
+    height:32px;
+    line-height:32px;
+    font-size:14px;
+    color:#001926;
+    float:left;
+    font-weight:bold;
+    text-align:right;
+    
+}
+.Transaction div.policy_contact div.right
+{	
+	width:15px;
+    height:32px;    
+    background:url(../images/policy_right.jpg) no-repeat right top;	
+    float:right;
+}
+.LM
+{	
+	float:left;	
+    width:225px;   
+     background:url(../images/Lm_rightbg.jpg) no-repeat left top;
+     color:#050f00;
+     font-weight:bold;
+     height:93px;
+     font-size:14px;
+     vertical-align:middle;
+}

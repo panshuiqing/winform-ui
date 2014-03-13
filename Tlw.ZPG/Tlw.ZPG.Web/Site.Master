@@ -1,88 +1,114 @@
-﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="Tlw.ZPG.Web.SiteMaster" %>
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="Tlw.ZPG.Web.Site" %>
 
-<!DOCTYPE html>
-<html lang="zh">
+<%@ Register src="Controls/TopControl.ascx" tagname="TopControl" tagprefix="uc1" %>
+
+<%@ Register src="Controls/FootterControl.ascx" tagname="FootterControl" tagprefix="uc2" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-    <meta charset="utf-8" />
-    <title><%: Page.Title %> - My ASP.NET Application</title>
-    <asp:PlaceHolder runat="server">     
-          <%: Scripts.Render("~/bundles/modernizr") %>
-    </asp:PlaceHolder>  
-    <webopt:BundleReference runat="server" Path="~/Content/css" /> 
-    <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
-    <meta name="viewport" content="width=device-width" />
-    <asp:ContentPlaceHolder runat="server" ID="HeadContent" />
+    <title></title>
+
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
 </head>
 <body>
-    <form runat="server">
-    <asp:ScriptManager runat="server">
-        <Scripts>
-            <%--Framework Scripts--%>
-            <asp:ScriptReference Name="MsAjaxBundle" />
-            <asp:ScriptReference Name="jquery" />
-            <asp:ScriptReference Name="jquery.ui.combined" />
-            <asp:ScriptReference Name="WebForms.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebForms.js" />
-            <asp:ScriptReference Name="WebUIValidation.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebUIValidation.js" />
-            <asp:ScriptReference Name="MenuStandards.js" Assembly="System.Web" Path="~/Scripts/WebForms/MenuStandards.js" />
-            <asp:ScriptReference Name="GridView.js" Assembly="System.Web" Path="~/Scripts/WebForms/GridView.js" />
-            <asp:ScriptReference Name="DetailsView.js" Assembly="System.Web" Path="~/Scripts/WebForms/DetailsView.js" />
-            <asp:ScriptReference Name="TreeView.js" Assembly="System.Web" Path="~/Scripts/WebForms/TreeView.js" />
-            <asp:ScriptReference Name="WebParts.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebParts.js" />
-            <asp:ScriptReference Name="Focus.js" Assembly="System.Web" Path="~/Scripts/WebForms/Focus.js" />
-            <asp:ScriptReference Name="WebFormsBundle" />
-            <%--Site Scripts--%>
-
-        </Scripts>
-    </asp:ScriptManager>
-    <header>
-        <div class="content-wrapper">
-            <div class="float-left">
-                <p class="site-title">
-                    <a runat="server" href="~/">将你的徽标放置在此处</a>
-                </p>
-            </div>
-            <div class="float-right">
-                <section id="login">
-                    <asp:LoginView runat="server" ViewStateMode="Disabled">
-                        <AnonymousTemplate>
-                            <ul>
-                                <li><a id="registerLink" runat="server" href="~/Account/Register.aspx">注册</a></li>
-                                <li><a id="loginLink" runat="server" href="~/Account/Login.aspx">登录</a></li>
-                            </ul>
-                        </AnonymousTemplate>
-                        <LoggedInTemplate>
-                            <p>
-                                你好，<a runat="server" class="username" href="~/Account/Manage.aspx" title="Manage your account">
-                                    <asp:LoginName runat="server" CssClass="username" /></a>!
-                                <asp:LoginStatus runat="server" LogoutAction="Redirect" LogoutText="注销" LogoutPageUrl="~/" />
-                            </p>
-                        </LoggedInTemplate>
-                    </asp:LoginView>
-                </section>
-                <nav>
-                    <ul id="menu">
-                        <li><a runat="server" href="~/">主页</a></li>
-                        <li><a runat="server" href="~/About.aspx">关于</a></li>
-                        <li><a runat="server" href="~/Contact.aspx">联系方式</a></li>
-                    </ul>
-                </nav>
-            </div>
-        </div>
-    </header>
-    <div id="body">
-        <asp:ContentPlaceHolder runat="server" ID="FeaturedContent" />
-        <section class="content-wrapper main-content clear-fix">
-            <asp:ContentPlaceHolder runat="server" ID="MainContent" />
-        </section>
+    <form id="form1" runat="server">
+    <div class="divAll">
+        <uc1:TopControl ID="TopControl1" runat="server" />
+        <table class="tableInfo">
+            <tr>
+                <td class="left">
+                    <div style="padding-top: 7px">
+                        <table width="225px" border="0" cellspacing="0" cellpadding="0">
+                            <tr>
+                                <td>
+                                    <img src="images/Lm_bg.jpg" width="224" height="237" border="0" usemap="#Map" />
+                                </td>
+                            </tr>
+                            <tr>
+                                <td height="4px">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="LM" style="vertical-align: middle;">
+                                        <table cellpadding="0" cellspacing="0" border="0" width="219px" height="85px" style="vertical-align: middle">
+                                            <tr>
+                                                <td width="2px">
+                                                </td>
+                                                <td width="100px" align="right">
+                                                    <a href="zxly/"><span style="font-size: 14px; position: relative; top: 20px">
+                                                        &nbsp;&nbsp;在线留言</span></a>
+                                                </td>
+                                                <td width="10px">
+                                                </td>
+                                                <td width="100px" align="right">
+                                                    <a href="download/"><span style="font-size: 14px;
+                                                        position: relative; top: 20px">&nbsp;&nbsp;&nbsp;&nbsp;竞买软件</span></a>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td width="2px">
+                                                </td>
+                                                <td width="100px" align="right">
+                                                    <a href="zswd/"><span style="font-size: 14px;
+                                                        position: relative; top: 22px">&nbsp;&nbsp;知识问答</span></a>
+                                                </td>
+                                                <td width="10px">
+                                                </td>
+                                                <td width="110px" align="right">
+                                                    <a href="zcfg/"><span style="font-size: 14px;
+                                                        position: relative; top: 22px">&nbsp;&nbsp;&nbsp;&nbsp;政策法规</span></a>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td height="8px">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="jmrczbz">
+                                        <ul>
+                                            <li><a href="demo/zc.html" target="_blank"><span style="font-size: 14px">
+                                                注册演示</span></a></li>
+                                            <li><a href="demo/gpjy.html" target="_blank"><span style="font-size: 14px">
+                                                挂牌交易演示</span></a></li>
+                                            <li><a href="demo/wspm.html" target="_blank"><span style="font-size: 14px">
+                                                网上拍卖演示</span></a></li>
+                                            <li class="wu"><a href="download/竞买人操作手册.doc" target="_blank"><span
+                                                style="font-size: 14px">竞买人操作手册下载</span></a></li>
+                                        </ul>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td height="8px">
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                    <map name="Map" id="Map">
+                        <area shape="rect" coords="42,12,194,45" href="affiche/" />
+                        <area shape="rect" coords="42,57,194,89" href="tdcrjg/" />
+                        <area shape="rect" coords="45,101,216,132" href="tdcrjg/?type=1" />
+                        <area shape="rect" coords="45,148,213,178" href="/jmsqcx/" target="_blank" />
+                        <area shape="rect" coords="44,194,180,224" href="cjwt/" />
+                    </map>
+                </td>
+                
+                <td class="right">
+                    <asp:ContentPlaceHolder ID="Content" runat="server"></asp:ContentPlaceHolder>
+                </td>
+            </tr>
+        </table>
+        <uc2:FootterControl ID="FootterControl1" runat="server" />
     </div>
-    <footer>
-        <div class="content-wrapper">
-            <div class="float-left">
-                <p>&copy; <%: DateTime.Now.Year %> - My ASP.NET Application</p>
-            </div>
-        </div>
-    </footer>
     </form>
 </body>
 </html>

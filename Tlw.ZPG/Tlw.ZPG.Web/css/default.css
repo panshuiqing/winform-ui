@@ -1,0 +1,821 @@
+﻿html
+{SCROLLBAR-FACE-COLOR: #8CC3E2;
+	SCROLLBAR-HIGHLIGHT-COLOR: #ffffff;
+	SCROLLBAR-SHADOW-COLOR: #50B5FF;
+	SCROLLBAR-3DLIGHT-COLOR: #50B5FF;
+	SCROLLBAR-ARROW-COLOR: #000000;
+	SCROLLBAR-TRACK-COLOR: #ECFAFF;
+	SCROLLBAR-DARKSHADOW-COLOR: #ffffff;
+}
+Body
+{
+	SCROLLBAR-FACE-COLOR: #8CC3E2;
+	SCROLLBAR-HIGHLIGHT-COLOR: #ffffff;
+	SCROLLBAR-SHADOW-COLOR: #50B5FF;
+	SCROLLBAR-3DLIGHT-COLOR: #50B5FF;
+	SCROLLBAR-ARROW-COLOR: #000000;
+	SCROLLBAR-TRACK-COLOR: #ECFAFF;
+	SCROLLBAR-DARKSHADOW-COLOR: #ffffff;
+	background:#ffffff;
+	margin: 0px;
+	border:0;
+	border-collapse:collapse;
+	font-size: 12px;
+	padding:0px;
+}
+TD{
+	font-size: 12px;
+}
+
+th { 
+    font: bold 11px "Trebuchet MS", Verdana, Arial, Helvetica, sans-serif; 
+    color: #4f6b72; 
+    border-right: 1px solid #C1DAD7; 
+    border-bottom: 1px solid #C1DAD7; 
+    border-top: 1px solid #C1DAD7; 
+    letter-spacing: 2px; 
+    text-transform: uppercase; 
+    text-align: left; 
+    padding: 6px 6px 6px 12px; 
+    background: #CAE8EA url(../images/bg_header.jpg) no-repeat; 
+} 
+input.Button
+{
+	font-family:宋体, Arial;
+	background:#EAF7FF url(../images/button_bg.jpg) repeat-x left top;
+	height:24px;
+	border:1px solid #C1D6E7;
+	padding:0px 4px;
+	cursor:pointer;
+}
+th.nobg { 
+    border-top: 0; 
+    border-left: 0; 
+    border-right: 1px solid #C1DAD7; 
+    background: none; 
+} 
+
+td.me { 
+    border-right: 1px solid #C1DAD7; 
+    border-bottom: 1px solid #C1DAD7; 
+    background: #fff; 
+    font-size:11px; 
+    padding: 6px 6px 6px 12px; 
+    color: #4f6b72; 
+} 
+
+
+td.alt { 
+    background: #F5FAFA; 
+    color: #797268; 
+} 
+
+th.spec { 
+    border-left: 1px solid #C1DAD7; 
+    border-top: 0; 
+    background: #fff url(../images/bullet1.gif) no-repeat; 
+    font: bold 10px "Trebuchet MS", Verdana, Arial, Helvetica, sans-serif; 
+} 
+
+th.specalt { 
+    border-left: 1px solid #C1DAD7; 
+    border-top: 0; 
+    background: #f5fafa url(../images/bullet2.gif) no-repeat; 
+    font: bold 10px "Trebuchet MS", Verdana, Arial, Helvetica, sans-serif; 
+    color: #797268; 
+} 
+
+SPAN 
+{ 
+	
+	FONT-WEIGHT: normal; 
+	FONT-SIZE: 9pt; 
+	CURSOR: hand; 
+	LINE-HEIGHT: normal; 
+	FONT-STYLE: normal; 
+	FONT-VARIANT: normal 
+}
+
+/*超链接的样式*/
+A:link
+{
+	FONT-SIZE:12px;
+	COLOR:#000000;
+	text-decoration: none;
+}
+A:visited
+{
+	FONT-SIZE:12px;
+	COLOR:#000000;
+	text-decoration: none;
+}
+A:hover
+{
+	FONT-SIZE:12px;
+	color:#e67203;
+	text-decoration: none;
+
+}
+/*基本样式*/
+/*按钮*/
+.field_button
+{
+	padding-right: 2px;
+	padding-left: 2px;
+	font-size: 12px;
+	background:url(../images/button_bg.jpg) repeat-x left center;
+	cursor: hand;
+	color: black;
+	height:21px;
+	line-height:130%;
+	_line-height:140%;
+	border: 1px solid #52b5ff;
+}
+.hidden_button
+{
+	display:none;
+}
+/*选择*/
+.field_select
+{
+	font-family: Verdana, Geneva, ms sans serif;
+	font-size: 12px;
+	background: #ffffff;
+	color: #222222;
+	border: 1px #555555 solid;
+	border-left: 1px #555555 solid;
+	border-right: 1px #eeeeee solid;
+	border-bottom: 1px #eeeeee solid;
+}
+/*�文件上传选择*/
+.field_file
+{
+	background-color: #FFF1E1; 
+	font-size: 12px;
+	border: #336699;
+	border-style: solid;
+	border-top-width: 1px;
+	border-right-width: 1px;
+	border-bottom-width: 1px;
+	border-left-width: 1px;
+	height: auto; 
+}
+/*�左边红色*/
+.EditColorRedItem1{
+	border-top: 1px solid #9fd6ff;
+	border-bottom: 1px solid #9fd6ff;
+	border-left: 1px solid #9fd6ff;
+	border-right: 1px solid #9fd6ff;
+	padding-left: 7px;
+	padding-right: 7px;
+	line-height: 1.1pc;
+	vertical-align: middle;
+	font-weight: bolder;
+	color: red;
+	background-color: #c8e1fb;
+}
+.EditRedItem1
+{
+	border-top: 1px solid #9fd6ff;
+	border-bottom: 1px solid #9fd6ff;
+	border-left: 1px solid #9fd6ff;
+	border-right: 1px solid #9fd6ff;
+	padding-left: 7px;
+	padding-right: 7px;
+	line-height: 1.1pc;
+	vertical-align: middle;
+	color: red;
+}
+/*�左边加粗*/
+.EditStrongItem1{
+	border-top: 1px solid #9fd6ff;
+	border-bottom: 1px solid #9fd6ff;
+	border-left: 1px solid #9fd6ff;
+	border-right: 1px solid #9fd6ff;
+	padding-left: 7px;
+	padding-right: 7px;
+	line-height: 1.1pc;
+	vertical-align: middle;
+	font-weight: bolder;
+	background-color: #c8e1fb;
+}
+/*�左边加粗*/
+.EditStrongItem2{
+	border-top: 1px solid #9fd6ff;
+	border-bottom: 1px solid #9fd6ff;
+	border-left: 1px solid #9fd6ff;
+	border-right: 1px solid #9fd6ff;
+	padding-left: 7px;
+	padding-right: 7px;
+	line-height: 1.1pc;
+	vertical-align: middle;
+	font-weight: bolder;
+}
+
+/*�右边*/
+.EditItem2{
+	padding:4px;
+	border:1px solid #bcd9e7;
+	border-collapse:collapse;
+	
+}
+/*�左边*/
+.EditItem1{
+	border-top: 1px solid #9fd6ff;
+	border-bottom: 1px solid #9fd6ff;
+	border-left: 1px solid #9fd6ff;
+	border-right: 1px solid #9fd6ff;
+	padding-left: 7px;
+	padding-right: 7px;
+	line-height: 1.1pc;
+	vertical-align: middle;
+	color: #444444;
+	background-color: #c8e1fb;
+}
+/*�后台查询左边*/
+.SearchItemL{
+	border-top: 1px solid #9fd6ff;
+	border-bottom: 1px solid #9fd6ff;
+	border-left: 1px solid #9fd6ff;
+	border-right: 1px solid #9fd6ff;
+	padding-left: 7px;
+	padding-right: 7px;
+	line-height: 1.1pc;
+	vertical-align: middle;
+	color: #444444;
+	background-color: #c8e1fb;
+}
+/*�后台查询右边*/
+.SearchItemR{
+	border-top: 1px solid #9fd6ff;
+	border-bottom: 1px solid #9fd6ff;
+	border-left: 1px solid #9fd6ff;
+	border-right: 1px solid #9fd6ff;
+	vertical-align: middle;
+	background-color: #FFFFFF;
+	
+}
+/*�表格*/
+.EditTable
+{
+	border:0px;
+	border-collapse:collapse;
+	word-wrap: break-word;
+}
+/*输入*/
+.field_input
+{
+	font-family: Verdana, Geneva, ms sans serif;
+	font-size: 12px;
+	background: #ffffff;
+	color: #222222;
+	border-top: 1px #555555 solid;
+	border-left: 1px #555555 solid;
+	border-right: 1px #eeeeee solid;
+	border-bottom: 1px #eeeeee solid;
+}
+
+/*下划线文本框**/
+.filed_xhx
+{
+	border-bottom: black 1px solid;
+	border-top-style: none;
+    border-right-style: none;
+    border-left-style: none;
+    background-color: transparent;
+}
+
+/* �列表页面表头 */
+.field_gridHeader
+{
+	font-size: 12px;
+	background-color:#CEE8F7;
+	color: #000000;
+	text-decoration: none;
+	height: 27px;
+	Text-align:center;
+	
+	background-repeat: repeat-x;
+	background-position: left top;
+}
+/* 列表报表页面表头 */
+.fieldReport_gridHeader
+{
+	background-color: #9fd6ff;
+	font-size: 12px;
+	BACKGROUND-IMAGE: url(../images/gridbackground.gif);
+	color: #000000;
+	text-decoration: none;
+	height: 57px;
+	Text-align:center;
+	
+	background-repeat: repeat-x;
+	background-position: left top;
+}
+/* 列表页面表格 */
+.field_gridTable
+{
+	border:1px solid #BCD9E7;
+	table-layout:fixed;
+}
+.field_gridTable td
+{
+	border:1px solid #BCD9E7;
+	padding:4px;
+}
+.field_gridTable td td
+{
+	border:0px;
+	padding:0px;
+}
+/* 列表**/
+.field_gridItem
+{
+	background-color: White; 
+	height: 25px;
+	WORD-BREAK: break-all;
+	text-align:center;
+}
+
+.field_gridCell
+{
+	overflow:hidden;
+	text-overflow:ellipsis;
+	white-space: nowrap;
+	height: 20px;
+	WORD-BREAK: break-all;
+}
+
+/* �鼠标移动 */
+.field_gridMouseover
+{
+	background-color:#fff7ee; 
+	height: 25px;
+}
+/* 列表选中 */
+.field_gridSelectedItem
+{
+	background-color:#feebc7; 
+	height: 25px;
+}
+/*列表交互*/
+.field_gridAlternatingItem
+{
+	background-color: #DEF0FC; 
+	height: 25px;
+	text-align:center;
+}
+/****** CSS按扭 ******/
+TD.clsBtnUp /*鼠标按键抬起时的状*/
+{
+	border-width: 1px;
+	border-color: #FFFFFF;
+	border-style: outset;
+	color: #FFFFFF;
+	cursor: hand;
+	filter: progid:DXImageTransform.Microsoft.Gradient(GradientType=0, StartColorStr=#ffffff, EndColorStr=#a9daff);
+}
+TD.clsBtnDown /*�鼠标按下时的状*/
+{
+	color: #FFFFFF;
+	cursor: hand;
+	border: 1px inset #52b5ff;
+	filter: progid:DXImageTransform.Microsoft.Gradient(GradientType=0, StartColorStr=#ffffff, EndColorStr=#a9daff);
+}
+TD.clsBtnOn /*�当鼠标在按扭上的状*/
+{
+	color: #FFFFFF;
+	cursor: hand;
+	border: 1px inset #6cabe7;
+	filter: progid:DXImageTransform.Microsoft.Gradient(GradientType=0, StartColorStr=#ffffff, EndColorStr=#a9daff);
+}
+TD.clsBtnOff /*�按扭的一般状*/
+{
+	color: #FFFFFF;
+	border: 0px solid #6cabe7;
+	filter: progid:DXImageTransform.Microsoft.Gradient(GradientType=0, StartColorStr=#ffffff, EndColorStr=#a9daff);
+}
+
+/* �功能按钮 */
+TD.funBtnUp
+{
+	color: #000000;
+	cursor: hand;
+	filter: progid:DXImageTransform.Microsoft.Gradient(GradientType=0, StartColorStr=#ffffff, EndColorStr=#a9daff);
+	PADDING-BOTTOM: 0px;
+	PADDING-LEFT: 3px;
+	PADDING-RIGHT: 3px;
+	PADDING-TOP: 0px;
+	border: 2px outset #97d2ff;
+}
+TD.funBtnDown
+{
+	color: #000000;
+	cursor: hand;
+	filter: progid:DXImageTransform.Microsoft.Gradient(GradientType=0, StartColorStr=#ffffff, EndColorStr=#a9daff);
+	PADDING-BOTTOM: 0px;
+	PADDING-LEFT: 3px;
+	PADDING-RIGHT: 3px;
+	PADDING-TOP: 0px;
+	border: 2px inset #97d2ff;
+}
+TD.funBtnOn
+{
+	border-width:2px;
+	border-color: #E0E0E0;
+	border-style:inset;
+	color: #000000;
+	cursor: hand;
+	filter: progid:DXImageTransform.Microsoft.Gradient(GradientType=0, StartColorStr=#ffffff, EndColorStr=#a9daff);
+	PADDING-BOTTOM: 0px; PADDING-LEFT: 3px; PADDING-RIGHT: 3px; PADDING-TOP: 0px
+}
+TD.funBtnOff
+{
+	color: #000000;
+	filter: progid:DXImageTransform.Microsoft.Gradient(GradientType=0, StartColorStr=#ffffff, EndColorStr=#a9daff);
+	PADDING-BOTTOM: 0px;
+	PADDING-LEFT: 3px;
+	PADDING-RIGHT: 3px;
+	PADDING-TOP: 0px;
+	border: 2px solid #61b4e8;
+}
+
+TD.FunToolBar
+{
+	PADDING-BOTTOM: 0px;
+	PADDING-LEFT: 10px;
+	PADDING-RIGHT: 10px;
+	PADDING-TOP: 0px;
+	background-color: #006cbe;
+	color: #FFFFFF;
+	
+	background-image: url(../images/FunToolBar.gif);
+	background-repeat: repeat-x;
+	background-position: left top;
+	height: 29px;
+	border-top-width: 1px;
+	border-right-width: 1px;
+	border-bottom-width: 1px;
+	border-left-width: 1px;
+	border-top-style: solid;
+	border-right-style: solid;
+	border-bottom-style: solid;
+	border-left-style: solid;
+	border-top-color: #0e82d7;
+	border-right-color: #006cbe;
+	border-bottom-color: #006cbe;
+	border-left-color: #0e82d7;
+}
+
+TD.StatisticCategoryButton
+{
+	PADDING-BOTTOM: 0px; 
+	PADDING-LEFT: 10px; 
+	PADDING-RIGHT: 10px; 
+	PADDING-TOP: 0px;
+}
+
+TD.staBtnUp
+{
+	border-width:2px;
+	border-color:#FFFFFF;
+	border-style:outset;
+	color: #000000;
+	cursor: hand;
+	background-color: #E0E0E0;
+	PADDING-BOTTOM: 0px; PADDING-LEFT: 3px; PADDING-RIGHT: 3px; PADDING-TOP: 0px
+}
+TD.staBtnDown
+{
+	border-width:2px;
+	border-color:#FFFFFF;
+	border-style:inset;
+	color: #000000;
+	cursor: hand;
+	background-color: #E0E0E0;
+	PADDING-BOTTOM: 0px; PADDING-LEFT: 3px; PADDING-RIGHT: 3px; PADDING-TOP: 0px
+}
+TD.staBtnOn
+{
+	border-width:2px;
+	border-color: #E0E0E0;
+	border-style:inset;
+	color: #000000;
+	cursor: hand;
+	PADDING-BOTTOM: 0px; PADDING-LEFT: 3px; PADDING-RIGHT: 3px; PADDING-TOP: 0px
+}
+TD.staBtnOff
+{
+	border-width:2px;
+	border-color: #FFFFFF;
+	border-style:solid;
+	color: #000000;
+	PADDING-BOTTOM: 0px; PADDING-LEFT: 3px; PADDING-RIGHT: 3px; PADDING-TOP: 0px;
+}
+/* 窗口关闭 */
+.Back_Image_Off
+{
+	background-image: url(../images/back_off.gif);
+}
+.Back_Image_On
+{
+	background-image: url(../images/back_on.gif);
+}
+/* 保存 */
+.Save_Image_Off
+{
+	background-image: url(../images/save_off.gif);
+}
+.Save_Image_On
+{
+	background-image: url(../images/save_on.gif);
+}
+/* 导航功能按钮 */
+.divSearch
+{
+	background:url(../images/Search_BG.jpg) repeat-x left center;
+	height:31px;
+	border:1px solid #C4E3F7;
+	margin:4px;
+}
+.tableSearch
+{
+	border:0px;
+	border-collapse:collapse;
+	margin-top:1px;
+}
+.tableSearch table td
+{
+	vertical-align:middle;
+}
+.tableSearch .img
+{
+	width:16px;
+	float:left;
+	padding:0px;
+	margin:0px;
+	border-collapse:collapse; border:0px;
+}
+.tableSearch .txt
+{
+	
+	
+}
+.tableSearch .txt td
+{
+	text-align:left;
+	padding:0px;
+	white-space:nowrap;
+	margin:0px;
+	padding-top:2px;border-collapse:collapse; border:0px;
+}
+
+TD.MenuFunToolBar
+{
+	padding:0px 10px;
+	color: #FFFFFF;
+}
+/*普通状态*/
+.tableSearch TD.MenufunBtnOff
+{
+	color: #000000;
+	white-space:nowrap;padding:0px 10px 0px 0px;
+}
+/*头部功能栏鼠标*/
+.tableSearch TD.MenufunBtnOn
+{
+	border-width:1px;
+	border-color: #E0E0E0;
+	border-style:inset;
+	color: #000000;
+	cursor: hand;
+	padding:0px 10px 0px 0px;height:22px;
+}
+/*头部功能栏鼠标移动*/
+.tableSearch Td.MenufunBtnUp 
+{
+	border:1px inset #ffffff;
+	color: #000000;
+	cursor: hand;padding:0px 10px 0px 0px;height:22px;
+}
+/*头部功能栏鼠标点击*/
+.tableSearch Td.MenufunBtnDown 
+{
+	border-width:1px;
+	border-color: #E0E0E0;
+	border-style:inset;
+	background-color:#ffffff;
+	color: #000000;
+	cursor: hand;
+	padding:0px 10px 0px 0px;
+	height:22px;
+}
+TD.MenuFunfunBtnOn
+{
+	border-width:2px;
+	border-color: #E0E0E0;
+	border-style:inset;
+	color: #000000;
+	cursor: hand;
+	padding:0px;
+}
+
+TD.MenuFunfunBtnOff
+{
+	color: #000000;
+	padding:0px 3px;
+}
+TD.MenuFunTdCss
+{
+	
+}
+/* 编辑 */
+.MenuAdd_Image_Off
+{
+	background-image: url(../images/add_off.gif);
+}
+.MenuAdd_Image_On
+{
+	background-image: url(../images/add_on.gif);
+}
+.MenuEdit_Image_Off
+{
+	background-image: url(../images/edit_off.gif);
+}
+.MenuEdit_Image_On
+{
+	background-image: url(../images/edit_on.gif);
+}
+.MenuDel_Image_Off
+{
+	background-image: url(../images/delete_off.gif);
+}
+.MenuDel_Image_On
+{
+	background-image: url(../images/delete_on.gif);
+}
+.MenuView_Image_Off
+{
+	background-image: url(../images/view_off.gif);
+}
+.MenuView_Image_On
+{
+	background-image: url(../images/view_on.gif);
+}
+.MenuBack_Image_Off
+{
+	background-image: url(../images/back_off.gif);
+}
+.MenuBack_Image_On
+{
+	background-image: url(../images/back_on.gif);
+}
+.MenuRefresh_Image_Off
+{
+	background-image: url(../images/Refresh_off.gif);
+}
+.MenuRefresh_Image_On
+{
+	background-image: url(../images/Refresh_on.gif);
+}
+.MenuOperation_Image_Off
+{
+	background-image: url(../images/Operation_off.gif);
+}
+.MenuOperation_Image_On
+{
+	background-image: url(../images/Operation_on.gif);
+}
+/*公告信息样式*/
+.DTitleIcon
+{
+	background:url(../images/DTitleIcon.jpg) no-repeat;
+	height:34px;
+	width:30px;
+	font-size:1px;	
+}
+.DTitle
+{
+	white-space:nowrap;
+	font-weight:bold;
+	color:#ffffff;
+	font-size:14px;
+	background:url(../images/DTitle.jpg) repeat-x left top;
+	height:32px;
+	line-height:32px;
+	padding-top:2px;
+}
+.DTitle span
+{
+	font-size:12px;
+	font-weight:normal;
+}
+.DTitleIconR
+{
+	height:34px;
+	width:9px;
+	font-size:1px;	
+	background:url(../images/DTitleIconR.jpg) no-repeat;
+}
+/*-------------*/
+.DItem1{
+	padding-left: 7px;
+	padding-right: 7px;
+	line-height: 1.1pc;
+	vertical-align: middle;
+	color: #444444;
+	background-color: #DEF0FC;
+	border-collapse:collapse;border:1px solid #bcd9e7;
+}
+.DItem2{
+	padding:4px;
+	border:1px solid #bcd9e7;
+	border-collapse:collapse;
+}
+.DBody{
+	border:0px;
+	border:1px solid #bcd9e7;
+	border-collapse:collapse;
+}
+/*EditTitle表头*/
+.EditTitleIcon{
+	
+	background-image: url(../images/EditTitleIcon.gif);
+	background-repeat: no-repeat;
+	background-position: left top;
+	height: 30px;
+	width: 20px;
+}
+.EditTitle{
+	
+	background-image: url(../images/EditTitle.gif);
+	background-repeat: repeat-x;
+	background-position:  center top;
+	height: 30px;
+	width: 135px;
+	color: #FFFFFF;
+	font-size: 14px;
+	text-align: left;
+	vertical-align: middle;
+	font-weight: bold;
+}
+.EditTitleIconR{
+	
+	background-image: url(../images/EditTitleIconR.gif);
+	background-repeat: no-repeat;
+	background-position: left top;
+	height: 30px;
+	
+}
+/*TableBody*/
+.TableBody
+{
+	border:0px;
+	border-collapse:collapse;
+}
+.SearchItemR
+{
+	padding:4px;
+	border:1px solid #bcd9e7;
+	border-collapse:collapse;
+}
+.SearchItemL{
+	padding-left: 7px;
+	padding-right: 7px;
+	line-height: 1.1pc;
+	vertical-align: middle;
+	color: #444444;
+	background-color: #DEF0FC;
+	border-collapse:collapse;
+}
+/*TopGroup*/
+.TopGroup
+{
+	margin-top:4px;
+}
+.TopGroup,.TopGroup table
+{
+	border:0px;
+	border-collapse:collapse;
+}
+.TopGroup table td
+{
+	padding-right:4px;
+}
+.TopGroup td
+{
+	border:0px;
+	cursor:pointer;
+}
+.SelectedTab
+{
+	color:#FFFFFF;
+}
+/*MultiPage*/
+.MultiPage
+{
+	border:1px solid #9FD1F6;
+	margin:0px;
+	left:0px;
+	top:0px;
+}
