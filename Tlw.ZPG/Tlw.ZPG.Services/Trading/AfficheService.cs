@@ -46,16 +46,20 @@ namespace Tlw.ZPG.Services.Trading
 
         public IList<Affiche> Find(AfficheRequest request)
         {
-            if (string.IsNullOrEmpty(request.CountyCode) && string.IsNullOrEmpty(request.Title))
-                return this.FindAll().ToList();
-            var query = from a in this.DbSet
-                        where a.County.CountyCode.Contains(StringUtil.TrimEnd(request.CountyCode, "0"))
-                        select a;
+            var query = this.DbSet.AsQueryable();
+            if (!string.IsNullOrEmpty(request.CountyCode))
+            {
+                query = query.Where(a => a.County.CountyCode.Contains(StringUtil.TrimEnd(request.CountyCode, "0")));
+            }
             if (!string.IsNullOrEmpty(request.Title))
             {
-                query.Where(a => a.Title.Contains(request.Title));
+                query = query.Where(a => a.Title.Contains(request.Title));
             }
-            return query.Page(request).ToList();
+            if (!string.IsNullOrEmpty(request.Tag))
+            {
+                query = query.Where(t=>t.Tags.Contains(request.Tag));
+            }
+            return query.OrderByDescending(t => t.ID).Page(request).ToList();
         }
     }
 }

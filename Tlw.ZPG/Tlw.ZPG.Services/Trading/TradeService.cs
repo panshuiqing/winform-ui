@@ -12,26 +12,35 @@ namespace Tlw.ZPG.Services.Trading
     {
         public IList<Trade> Find(TradeRequest request)
         {
-            var query = from t in this.DbSet
-                        where t.County.CountyCode.Contains(StringUtil.TrimEnd(request.CountyCode,"0"))
-                        select t;
+            var query = this.DbSet.AsQueryable();
+            query = query.Where(t => t.County.CountyCode.Contains(StringUtil.TrimEnd(request.CountyCode, "0")));
             if (!string.IsNullOrEmpty(request.LandNumber))
             {
-                query.Where(t => t.Land.LandNumber.Contains(request.LandNumber));
+                query = query.Where(t => t.Land.LandNumber.Contains(request.LandNumber));
             }
             if (request.BeginTime.HasValue)
             {
-                query.Where(t => t.CreateTime >= request.BeginTime);
+                query = query.Where(t => t.CreateTime >= request.BeginTime);
             }
             if (request.EndTime.HasValue)
             {
-                query.Where(t => t.CreateTime <= request.EndTime);
+                query = query.Where(t => t.CreateTime <= request.EndTime);
             }
             if (request.TradeStatus.HasValue)
             {
-                query.Where(t => t.Status == request.TradeStatus);
+                query = query.Where(t => t.Status == request.TradeStatus);
             }
             return query.Page(request).ToList();
+        }
+
+        /// <summary>
+        /// 最新报价Top 20
+        /// </summary>
+        /// <returns></returns>
+        public IList<TradeDetail> FindNewDetails()
+        {
+            ServiceBase<TradeDetail> service = new ServiceBase<TradeDetail>();
+            return service.DbSet.OrderByDescending(t => t.ID).Take(20).ToList();
         }
     }
 }

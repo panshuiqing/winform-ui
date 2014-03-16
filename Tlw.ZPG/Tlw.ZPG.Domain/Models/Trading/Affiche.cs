@@ -15,29 +15,106 @@ namespace Tlw.ZPG.Domain.Models.Trading
         }
 
         #region 属性
-        public int? ParentId { get; internal set; }
+        /// <summary>
+        /// 原公告ID
+        /// </summary>
+        public int? ParentId { get; set; }
+        /// <summary>
+        /// 标题
+        /// </summary>
         public string Title { get; set; }
+        /// <summary>
+        /// 内容
+        /// </summary>
         public string Content { get; set; }
+        /// <summary>
+        /// 其他内容
+        /// </summary>
         public string OtherContent { get; set; }
+        /// <summary>
+        /// 资质要求
+        /// </summary>
         public string QualificationRequire { get; set; }
+        /// <summary>
+        /// 创建用户ID
+        /// </summary>
         public int CreatorId { get; set; }
+        /// <summary>
+        /// 创建时间
+        /// </summary>
         public System.DateTime CreateTime { get; set; }
+        /// <summary>
+        /// 报名起始时间
+        /// </summary>
         public System.DateTime SignBeginTime { get; set; }
+        /// <summary>
+        /// 报名截止时间
+        /// </summary>
         public System.DateTime SignEndTime { get; set; }
+        /// <summary>
+        /// 交易起始时间
+        /// </summary>
         public System.DateTime TradeBeginTime { get; set; }
+        /// <summary>
+        /// 交易截止时间
+        /// </summary>
         public System.DateTime TradeEndTime { get; set; }
+        /// <summary>
+        /// 审核时间
+        /// </summary>
         public System.DateTime? VerifyTime { get; set; }
+        /// <summary>
+        /// 是否发布
+        /// </summary>
         public bool IsRelease { get; set; }
+        /// <summary>
+        /// 发布时间
+        /// </summary>
         public System.DateTime ReleaseTime { get; set; }
+        /// <summary>
+        /// 交易须知
+        /// </summary>
         public string Notice { get; set; }
+        /// <summary>
+        /// 行政区id
+        /// </summary>
         public int CountyId { get; set; }
-        public bool IsOnlineAffiche { get; set; }
-        public int SellModel { get; set; }
+        /// <summary>
+        /// 公告类型
+        /// </summary>
+        public string AfficheType { get; set; }
+        /// <summary>
+        /// 出让方式
+        /// </summary>
+        public string SellModel { get; set; }
+        /// <summary>
+        /// 公告编号
+        /// </summary>
         public string AfficheNumber { get; set; }
+        /// <summary>
+        /// 公告编号（2014号）
+        /// </summary>
+        public string AfficheNumberShort { get; set; }
+        /// <summary>
+        /// 批准文号
+        /// </summary>
         public string RatificationNumber { get; set; }
+        /// <summary>
+        /// 批准机关
+        /// </summary>
         public string RatificationOrg { get; set; }
+        /// <summary>
+        /// 审核状态
+        /// </summary>
         public AfficheVerifyStatus VerifyStatus { get; set; }
+        /// <summary>
+        /// 审核用户id
+        /// </summary>
         public int? VerifyUserId { get; set; }
+        /// <summary>
+        /// 标签，多个,分割
+        /// </summary>
+        public string Tags { get; set; }
 
         public virtual County County { get; set; }
         public virtual User Creator { get; set; }
@@ -144,6 +221,16 @@ namespace Tlw.ZPG.Domain.Models.Trading
             trade.Land = land;
             this.Trades.Add(trade);
             SetTrade(trade);
+            foreach (var item in land.Purposes)
+            {
+                var purpose = item;
+                while (purpose.ParentId.HasValue)
+                {
+                    purpose = item.Parent;
+                }
+                this.Tags += purpose.PurposeName + ",";
+            }
+            this.Tags = this.Tags.TrimEnd(',');
         }
 
         private void CheckThrow(Trade trade, int userId)

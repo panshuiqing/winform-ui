@@ -13,7 +13,7 @@ namespace Tlw.ZPG.Domain.Models.Trading
         public int LandType { get; set; }
         public decimal LandArea { get; set; }
         public string LandLocation { get; set; }
-        public System.DateTime? DealTime { get; set; }
+        public System.DateTime DealTime { get; set; }
         public string DealUser { get; set; }
         public decimal DealPrice { get; set; }
         public decimal StartPrice { get; set; }

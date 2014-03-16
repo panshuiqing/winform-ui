@@ -33,8 +33,8 @@
             this.label3 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.progressBar1 = new System.Windows.Forms.ProgressBar();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.txtNewDb = new System.Windows.Forms.TextBox();
+            this.txtOldDb = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // label1
@@ -43,15 +43,14 @@
             this.label1.ForeColor = System.Drawing.Color.Red;
             this.label1.Location = new System.Drawing.Point(26, 9);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(560, 39);
+            this.label1.Size = new System.Drawing.Size(596, 69);
             this.label1.TabIndex = 0;
-            this.label1.Text = "数据迁移提示：此工具为招拍挂旧数据迁移到新系统，迁移成功后请不要再使用此工具。";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(27, 127);
+            this.label2.Location = new System.Drawing.Point(27, 132);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(119, 17);
             this.label2.TabIndex = 1;
@@ -60,7 +59,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(27, 86);
+            this.label3.Location = new System.Drawing.Point(27, 91);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(119, 17);
             this.label3.TabIndex = 1;
@@ -69,7 +68,7 @@
             // button1
             // 
             this.button1.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.button1.Location = new System.Drawing.Point(490, 181);
+            this.button1.Location = new System.Drawing.Point(490, 186);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(132, 41);
             this.button1.TabIndex = 3;
@@ -79,37 +78,37 @@
             // 
             // progressBar1
             // 
-            this.progressBar1.Location = new System.Drawing.Point(30, 192);
+            this.progressBar1.Location = new System.Drawing.Point(30, 197);
             this.progressBar1.Name = "progressBar1";
             this.progressBar1.Size = new System.Drawing.Size(442, 30);
             this.progressBar1.TabIndex = 4;
             // 
-            // textBox1
+            // txtNewDb
             // 
-            this.textBox1.Location = new System.Drawing.Point(152, 127);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(470, 23);
-            this.textBox1.TabIndex = 2;
-            this.textBox1.Text = "Server=10.0.0.80\\sql2005;Database=tradesystem2011ZPG;Uid=sa;Pwd=123;";
+            this.txtNewDb.Location = new System.Drawing.Point(152, 132);
+            this.txtNewDb.Name = "txtNewDb";
+            this.txtNewDb.Size = new System.Drawing.Size(470, 23);
+            this.txtNewDb.TabIndex = 2;
+            this.txtNewDb.Text = "Server=.;Database=Teleware.ZPG;Uid=sa;Pwd=123;";
             // 
-            // textBox2
+            // txtOldDb
             // 
-            this.textBox2.Location = new System.Drawing.Point(152, 86);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(470, 23);
-            this.textBox2.TabIndex = 2;
-            this.textBox2.Text = "Server=10.0.0.80\\sql2005;Database=tradesystem2011ZPG;Uid=sa;Pwd=123;";
+            this.txtOldDb.Location = new System.Drawing.Point(152, 91);
+            this.txtOldDb.Name = "txtOldDb";
+            this.txtOldDb.Size = new System.Drawing.Size(470, 23);
+            this.txtOldDb.TabIndex = 2;
+            this.txtOldDb.Text = "Server=.;Database=zpg;Uid=sa;Pwd=123;";
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(656, 244);
+            this.ClientSize = new System.Drawing.Size(656, 249);
             this.Controls.Add(this.progressBar1);
             this.Controls.Add(this.button1);
-            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.txtOldDb);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txtNewDb);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
@@ -130,8 +129,8 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.ProgressBar progressBar1;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox txtNewDb;
+        private System.Windows.Forms.TextBox txtOldDb;
     }
 }
 

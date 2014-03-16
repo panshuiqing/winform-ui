@@ -21,7 +21,8 @@ namespace Tlw.ZPG.Domain.Mapping
             this.Property(t => t.LandNumber).HasColumnName("LandNumber").IsRequired().HasMaxLength(100);
             this.Property(t => t.Location).HasColumnName("Location").IsRequired().HasMaxLength(100);
             this.Property(t => t.Area).HasColumnName("Area");
-            this.Property(t => t.LandPurpose).HasColumnName("LandPurpose").IsRequired().HasMaxLength(500);
+            this.Property(t => t.LandPurpose).HasColumnName("LandPurpose").HasMaxLength(500);
+            this.Property(t => t.LandPurposeShort).HasColumnName("LandPurposeShort").HasMaxLength(100);
             this.Property(t => t.LandState).HasColumnName("LandState");
             this.Property(t => t.Phones).HasColumnName("Phones").HasMaxLength(200);
             this.Property(t => t.Notice).HasColumnName("Notice");

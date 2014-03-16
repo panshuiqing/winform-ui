@@ -19,6 +19,8 @@ namespace Tlw.ZPG.Domain.Mapping
             this.Property(t => t.ID).HasColumnName("TradeId");
             this.Property(t => t.LandId).HasColumnName("LandId");
             this.Property(t => t.AfficheId).HasColumnName("AfficheId");
+            this.Property(t => t.CreateTime).HasColumnName("CreateTime");
+            this.Property(t => t.UpdateTime).HasColumnName("UpdateTime");
             this.Property(t => t.SignBeginTime).HasColumnName("SignBeginTime");
             this.Property(t => t.SignEndTime).HasColumnName("SignEndTime");
             this.Property(t => t.TradeBeginTime).HasColumnName("TradeBeginTime");

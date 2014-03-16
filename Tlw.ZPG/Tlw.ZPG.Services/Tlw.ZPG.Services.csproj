@@ -77,6 +77,7 @@
     <Compile Include="ServiceResponse.cs" />
     <Compile Include="Trading\AfficheService.cs" />
     <Compile Include="Trading\TradeRequest.cs" />
+    <Compile Include="Trading\TradeResultService.cs" />
     <Compile Include="Trading\TradeService.cs" />
     <Compile Include="Trading\AfficheRequest.cs" />
   </ItemGroup>

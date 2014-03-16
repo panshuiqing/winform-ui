@@ -33,13 +33,15 @@ namespace Tlw.ZPG.Domain.Mapping
             this.Property(t => t.ReleaseTime).HasColumnName("ReleaseTime");
             this.Property(t => t.Notice).HasColumnName("Notice");
             this.Property(t => t.CountyId).HasColumnName("CountyId");
-            this.Property(t => t.IsOnlineAffiche).HasColumnName("IsOnlineAffiche");
-            this.Property(t => t.SellModel).HasColumnName("SellModel");
+            this.Property(t => t.AfficheType).HasColumnName("AfficheType").IsRequired().HasMaxLength(50);
+            this.Property(t => t.SellModel).HasColumnName("SellModel").IsRequired().HasMaxLength(50);
             this.Property(t => t.AfficheNumber).HasColumnName("AfficheNumber").IsRequired().HasMaxLength(50);
+            this.Property(t => t.AfficheNumberShort).HasColumnName("AfficheNumberShort").IsRequired().HasMaxLength(50);
             this.Property(t => t.RatificationNumber).HasColumnName("RatificationNumber").HasMaxLength(50);
             this.Property(t => t.RatificationOrg).HasColumnName("RatificationOrg").HasMaxLength(100);
             this.Property(t => t.VerifyStatus).HasColumnName("VerifyStatus");
             this.Property(t => t.VerifyUserId).HasColumnName("VerifyUserId");
+            this.Property(t => t.Tags).HasColumnName("Tags").HasMaxLength(100);
             this.HasRequired(t => t.County).WithMany();
             this.HasOptional(t => t.VerifyUser).WithMany();
             this.HasRequired(t => t.Creator).WithMany();

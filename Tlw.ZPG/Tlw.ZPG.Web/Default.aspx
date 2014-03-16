@@ -1,7 +1,6 @@
 ﻿<%@ Page Title="主页" Language="C#" AutoEventWireup="true" CodeBehind="Default.aspx.cs" Inherits="Tlw.ZPG.Web._Default" %>
 
 <%@ Register src="Controls/TopControl.ascx" tagname="TopControl" tagprefix="uc1" %>
-
 <%@ Register src="Controls/FootterControl.ascx" tagname="FootterControl" tagprefix="uc2" %>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
@@ -17,41 +16,10 @@
     <link href="css/tabStrip.css" rel="Stylesheet" type="text/css" />
     <link href="css/Index.css" type="text/css"rel="Stylesheet" />
     <script src="js/jquery-1.7.1.min.js" type="text/javascript"></script>
-    <script type="text/javascript">
-        //选项卡js
-        $(document).ready(function () {
-            $('#TabStrip table').hover(function () {
-                if (!$(this).hasClass('SelectedTab')) {
-                    $(this).removeClass('DefaultTab').addClass('DefaultTabHover');
-                    $('td:first img', this).attr('src', 'images/tabStrip/hover_tab_left_icon.gif');
-                    $('td:last img', this).attr('src', 'images/tabStrip/hover_tab_right_icon.gif');
-                }
-            }, function () {
-                if (!$(this).hasClass('SelectedTab')) {
-                    $(this).removeClass('DefaultTabHover').addClass('DefaultTab');
-                    $('td:first img', this).attr('src', 'images/tabStrip/tab_left_icon.gif');
-                    $('td:last img', this).attr('src', 'images/tabStrip/tab_right_icon.gif');
-                }
-            }).click(function () {
-                if (!$(this).hasClass('SelectedTab')) {
-                    var selectedTab = $('table.SelectedTab');
-                    $('td:first img', selectedTab).attr('src', 'images/tabStrip/tab_left_icon.gif');
-                    $('td:last img', selectedTab).attr('src', 'images/tabStrip/tab_right_icon.gif');
-                    $('table.SelectedTab').removeClass('SelectedTab').addClass('DefaultTab');
-                    $(this).removeClass('DefaultTabHover').addClass('SelectedTab');
-                    $('td:first img', this).attr('src', 'images/tabStrip/selected_tab_left_icon.gif');
-                    $('td:last img', this).attr('src', 'images/tabStrip/selected_tab_right_icon.gif');
-                    $('.MultiPage table').hide();
-                    var id = $(this).attr('pageView');
-                    $('.MultiPage #' + id).show();
-                    $('.MultiPage #' + id + ' table').show();
-                }
-            });
-        });
-    </script>
+    <script src="js/TabStrip.js" type="text/javascript"></script>
 </head>
 <body>
-    <form id="form1" runat="server">
+    <form id="form1" action="/">
         <div class="divAll" style="text-align: left">
            <uc1:TopControl ID="TopControl1" runat="server" />
             <table style="margin: 6px 0px; width: 1000px" class="tableInfo" border="0" cellspacing="0"
@@ -72,12 +40,12 @@
                                                     </tr>
                                                 </tbody>
                                             </table>
-                                            <map id="Map" name="Map">
-                                                <area href="PublicSysMsg/TradeAffiche.aspx?AfficheFashionId=53" shape="rect" coords="42,12,194,45">
-                                                <area href="PublicSysMsg/TradeResultListView.aspx" shape="rect" coords="42,57,194,89">
-                                                <area href="PublicSysMsg/TradeResultListView.aspx?ResultId=139" shape="rect" coords="45,101,216,132">
-                                                <area href="PublicSysMsg/UserRegisterQuery.aspx" shape="rect" target="_blank" coords="45,148,213,178">
-                                                <area href="PublicSysMsg/FamiliarQuestion.aspx" shape="rect" coords="44,194,180,224">
+                                            <map name="Map" id="Map">
+                                                <area shape="rect" coords="42,12,194,45" href="affiche/" />
+                                                <area shape="rect" coords="42,57,194,89" href="tdcrjg/" />
+                                                <area shape="rect" coords="45,101,216,132" href="tdcrjg/?type=1" />
+                                                <area shape="rect" coords="45,148,213,178" href="/jmsqcx/" target="_blank" />
+                                                <area shape="rect" coords="44,194,180,224" href="cjwt/" />
                                             </map>
                                         </td>
                                         <td class="right" width="814px">
@@ -213,82 +181,27 @@
                                                                                                             <b>挂牌交易截止时间</b>
                                                                                                         </td>
                                                                                                     </tr>
-                                                                                                    <tr title="tesat">
-                                                                                                        <td class="C1AItem2" nowrap>· <a href="javascript:OpenNewWindow('PublicSysMsg/TradeAffiche/AfficheView.aspx?AfficheId=1564&amp;TempId=0&amp;ViewId=1199',false,700,400,'NewWin');">tesat </a>
-                                                                                                        </td>
-                                                                                                        <td class="gridItem" align="middle">福州
-                                                                                                        </td>
-                                                                                                        <td class="gridItem" align="middle">
-                                                                                                            <font color="red"><strong>2014-01-22 </strong></font>
-                                                                                                        </td>
-                                                                                                        <td class="gridItem" align="middle">
-                                                                                                            <font color="blue"><strong>2014-01-22 </strong></font>
-                                                                                                        </td>
-                                                                                                    </tr>
-                                                                                                    <tr class="rowColor" title="bbb">
-                                                                                                        <td class="C1AItem2" nowrap>· <a href="javascript:OpenNewWindow('PublicSysMsg/TradeAffiche/AfficheView.aspx?AfficheId=1563&amp;TempId=0&amp;ViewId=1198',false,700,400,'NewWin');">bbb </a>
-                                                                                                        </td>
-                                                                                                        <td class="gridItem" align="middle">福州
-                                                                                                        </td>
-                                                                                                        <td class="gridItem" align="middle">
-                                                                                                            <font color="red"><strong>2014-01-21 </strong></font>
-                                                                                                        </td>
-                                                                                                        <td class="gridItem" align="middle">
-                                                                                                            <font color="blue"><strong>2014-01-21 </strong></font>
-                                                                                                        </td>
-                                                                                                    </tr>
-                                                                                                    <tr title="2014年新">
-                                                                                                        <td class="C1AItem2" nowrap>· <a href="javascript:OpenNewWindow('PublicSysMsg/TradeAffiche/AfficheView.aspx?AfficheId=1562&amp;TempId=0&amp;ViewId=1197',false,700,400,'NewWin');">2014年新 </a>
-                                                                                                        </td>
-                                                                                                        <td class="gridItem" align="middle">福州
-                                                                                                        </td>
-                                                                                                        <td class="gridItem" align="middle">
-                                                                                                            <font color="red"><strong>2014-01-21 </strong></font>
-                                                                                                        </td>
-                                                                                                        <td class="gridItem" align="middle">
-                                                                                                            <font color="blue"><strong>2014-01-21 </strong></font>
-                                                                                                        </td>
-                                                                                                    </tr>
-                                                                                                    <tr class="rowColor" title="aaa">
-                                                                                                        <td class="C1AItem2" nowrap>· <a href="javascript:OpenNewWindow('PublicSysMsg/TradeAffiche/AfficheView.aspx?AfficheId=1561&amp;TempId=0&amp;ViewId=1196',false,700,400,'NewWin');">aaa </a>
-                                                                                                        </td>
-                                                                                                        <td class="gridItem" align="middle">福州
-                                                                                                        </td>
-                                                                                                        <td class="gridItem" align="middle">
-                                                                                                            <font color="red"><strong>2014-01-14 </strong></font>
-                                                                                                        </td>
-                                                                                                        <td class="gridItem" align="middle">
-                                                                                                            <font color="blue"><strong>2014-01-14 </strong></font>
-                                                                                                        </td>
-                                                                                                    </tr>
-                                                                                                    <tr title="ccc">
-                                                                                                        <td class="C1AItem2" nowrap>· <a href="javascript:OpenNewWindow('PublicSysMsg/TradeAffiche/AfficheView.aspx?AfficheId=1560&amp;TempId=0&amp;ViewId=1195',false,700,400,'NewWin');">ccc </a>
-                                                                                                        </td>
-                                                                                                        <td class="gridItem" align="middle">福州
-                                                                                                        </td>
-                                                                                                        <td class="gridItem" align="middle">
-                                                                                                            <font color="red"><strong>2014-01-14 </strong></font>
-                                                                                                        </td>
-                                                                                                        <td class="gridItem" align="middle">
-                                                                                                            <font color="blue"><strong>2014-01-14 </strong></font>
-                                                                                                        </td>
-                                                                                                    </tr>
-                                                                                                    <tr class="rowColor" title="aaa">
-                                                                                                        <td class="C1AItem2" nowrap>· <a href="javascript:OpenNewWindow('PublicSysMsg/TradeAffiche/AfficheView.aspx?AfficheId=1559&amp;TempId=0&amp;ViewId=1194',false,700,400,'NewWin');">aaa </a>
-                                                                                                        </td>
-                                                                                                        <td class="gridItem" align="middle">福州
-                                                                                                        </td>
-                                                                                                        <td class="gridItem" align="middle">
-                                                                                                            <font color="red"><strong>2014-01-13 </strong></font>
-                                                                                                        </td>
-                                                                                                        <td class="gridItem" align="middle">
-                                                                                                            <font color="blue"><strong>2014-01-13 </strong></font>
-                                                                                                        </td>
-                                                                                                    </tr>
+                                                                                                    <asp:Repeater ID="Repeater_all" runat="server">
+                                                                                                        <ItemTemplate>
+                                                                                                            <tr title="<%#Eval("Title") %>" class="<%#(Container.ItemIndex+2) % 2 == 0 ? "rowColor" : ""  %>">
+                                                                                                                <td class="C1AItem2" nowrap>· <a href="Affiche/Detail.aspx?id=<%#Eval("ID") %>"><%#Eval("Title") %></a>
+                                                                                                                </td>
+                                                                                                                <td class="gridItem" align="middle">
+                                                                                                                    <%#Eval("County.FullName") %>
+                                                                                                                </td>
+                                                                                                                <td class="gridItem" align="middle">
+                                                                                                                    <font color="red"><strong><%#Eval("SignEndTime","{0:yyyy:MM:dd}") %></strong></font>
+                                                                                                                </td>
+                                                                                                                <td class="gridItem" align="middle">
+                                                                                                                    <font color="blue"><strong><%#Eval("TradeEndTime","{0:yyyy:MM:dd}") %></strong></font>
+                                                                                                                </td>
+                                                                                                            </tr>
+                                                                                                        </ItemTemplate>
+                                                                                                    </asp:Repeater>
                                                                                                     <tr>
                                                                                                         <td style="text-align: right; background-color: white; height: 16px" class="gridItem"
                                                                                                             colspan="4">
-                                                                                                            <a href="PublicSysMsg/TradeAffiche.aspx?AfficheFashionId=53">更多...</a>
+                                                                                                            <a href="Affiche/">更多...</a>
                                                                                                         </td>
                                                                                                     </tr>
                                                                                                 </tbody>
@@ -318,82 +231,27 @@
                                                                                                             <b>挂牌交易截止时间</b>
                                                                                                         </td>
                                                                                                     </tr>
-                                                                                                    <tr title="aaa">
-                                                                                                        <td class="C1AItem2" nowrap>· <a href="javascript:OpenNewWindow('PublicSysMsg/TradeAffiche/AfficheView.aspx?AfficheId=1561&amp;TempId=0&amp;ViewId=1196',false,700,400,'NewWin');">aaa </a>
-                                                                                                        </td>
-                                                                                                        <td class="gridItem" align="middle">福州
-                                                                                                        </td>
-                                                                                                        <td class="gridItem" align="middle">
-                                                                                                            <font color="red"><strong>2014-01-14 </strong></font>
-                                                                                                        </td>
-                                                                                                        <td class="gridItem" align="middle">
-                                                                                                            <font color="blue"><strong>2014-01-14 </strong></font>
-                                                                                                        </td>
-                                                                                                    </tr>
-                                                                                                    <tr class="rowColor" title="bbb">
-                                                                                                        <td class="C1AItem2" nowrap>· <a href="javascript:OpenNewWindow('PublicSysMsg/TradeAffiche/AfficheView.aspx?AfficheId=1558&amp;TempId=0&amp;ViewId=1193',false,700,400,'NewWin');">bbb </a>
-                                                                                                        </td>
-                                                                                                        <td class="gridItem" align="middle">福州
-                                                                                                        </td>
-                                                                                                        <td class="gridItem" align="middle">
-                                                                                                            <font color="red"><strong>2014-01-13 </strong></font>
-                                                                                                        </td>
-                                                                                                        <td class="gridItem" align="middle">
-                                                                                                            <font color="blue"><strong>2014-01-13 </strong></font>
-                                                                                                        </td>
-                                                                                                    </tr>
-                                                                                                    <tr title="test0109-1">
-                                                                                                        <td class="C1AItem2" nowrap>· <a href="javascript:OpenNewWindow('PublicSysMsg/TradeAffiche/AfficheView.aspx?AfficheId=1552&amp;TempId=0&amp;ViewId=1187',false,700,400,'NewWin');">test0109-1 </a>
-                                                                                                        </td>
-                                                                                                        <td class="gridItem" align="middle">福州
-                                                                                                        </td>
-                                                                                                        <td class="gridItem" align="middle">
-                                                                                                            <font color="red"><strong>2014-01-09 </strong></font>
-                                                                                                        </td>
-                                                                                                        <td class="gridItem" align="middle">
-                                                                                                            <font color="blue"><strong>2014-01-09 </strong></font>
-                                                                                                        </td>
-                                                                                                    </tr>
-                                                                                                    <tr class="rowColor" title="test11-1">
-                                                                                                        <td class="C1AItem2" nowrap>· <a href="javascript:OpenNewWindow('PublicSysMsg/TradeAffiche/AfficheView.aspx?AfficheId=1551&amp;TempId=0&amp;ViewId=1186',false,700,400,'NewWin');">test11-1 </a>
-                                                                                                        </td>
-                                                                                                        <td class="gridItem" align="middle">福州
-                                                                                                        </td>
-                                                                                                        <td class="gridItem" align="middle">
-                                                                                                            <font color="red"><strong>2014-01-08 </strong></font>
-                                                                                                        </td>
-                                                                                                        <td class="gridItem" align="middle">
-                                                                                                            <font color="blue"><strong>2014-01-08 </strong></font>
-                                                                                                        </td>
-                                                                                                    </tr>
-                                                                                                    <tr title="test0108">
-                                                                                                        <td class="C1AItem2" nowrap>· <a href="javascript:OpenNewWindow('PublicSysMsg/TradeAffiche/AfficheView.aspx?AfficheId=1550&amp;TempId=0&amp;ViewId=1185',false,700,400,'NewWin');">test0108 </a>
-                                                                                                        </td>
-                                                                                                        <td class="gridItem" align="middle">福州仓山区
-                                                                                                        </td>
-                                                                                                        <td class="gridItem" align="middle">
-                                                                                                            <font color="red"><strong>2014-01-08 </strong></font>
-                                                                                                        </td>
-                                                                                                        <td class="gridItem" align="middle">
-                                                                                                            <font color="blue"><strong>2014-01-08 </strong></font>
-                                                                                                        </td>
-                                                                                                    </tr>
-                                                                                                    <tr class="rowColor" title="关于2012年第二十七次挂牌交易公告（测试）">
-                                                                                                        <td class="C1AItem2" nowrap>· <a href="javascript:OpenNewWindow('PublicSysMsg/TradeAffiche/AfficheView.aspx?AfficheId=1532&amp;TempId=0&amp;ViewId=1165',false,700,400,'NewWin');">关于2012年第二十七次挂牌交易公告（测试） </a>
-                                                                                                        </td>
-                                                                                                        <td class="gridItem" align="middle">福州闽清县
-                                                                                                        </td>
-                                                                                                        <td class="gridItem" align="middle">
-                                                                                                            <font color="red"><strong>2012-10-22 </strong></font>
-                                                                                                        </td>
-                                                                                                        <td class="gridItem" align="middle">
-                                                                                                            <font color="blue"><strong>2012-10-22 </strong></font>
-                                                                                                        </td>
-                                                                                                    </tr>
+                                                                                                     <asp:Repeater ID="Repeater_szyd" runat="server">
+                                                                                                        <ItemTemplate>
+                                                                                                            <tr title="<%#Eval("Title") %>" class="<%#(Container.ItemIndex+2) % 2 == 0 ? "rowColor" : ""  %>">
+                                                                                                                <td class="C1AItem2" nowrap>· <a href="Affiche/Detail.aspx?id=<%#Eval("ID") %>"><%#Eval("Title") %></a>
+                                                                                                                </td>
+                                                                                                                <td class="gridItem" align="middle">
+                                                                                                                    <%#Eval("County.FullName") %>
+                                                                                                                </td>
+                                                                                                                <td class="gridItem" align="middle">
+                                                                                                                    <font color="red"><strong><%#Eval("SignEndTime","{0:yyyy:MM:dd}") %></strong></font>
+                                                                                                                </td>
+                                                                                                                <td class="gridItem" align="middle">
+                                                                                                                    <font color="blue"><strong><%#Eval("TradeEndTime","{0:yyyy:MM:dd}") %></strong></font>
+                                                                                                                </td>
+                                                                                                            </tr>
+                                                                                                        </ItemTemplate>
+                                                                                                    </asp:Repeater>
                                                                                                     <tr>
                                                                                                         <td style="text-align: right; background-color: white; height: 16px" class="gridItem"
                                                                                                             colspan="4">
-                                                                                                            <a href="PublicSysMsg/TradeAffiche.aspx?AfficheFashionId=53">更多...</a>
+                                                                                                            <a href="Afiche/?tag=商住用地">更多...</a>
                                                                                                         </td>
                                                                                                     </tr>
                                                                                                 </tbody>
@@ -423,82 +281,27 @@
                                                                                                             <b>挂牌交易截止时间</b>
                                                                                                         </td>
                                                                                                     </tr>
-                                                                                                    <tr title="tesat">
-                                                                                                        <td class="C1AItem2" nowrap>· <a href="javascript:OpenNewWindow('PublicSysMsg/TradeAffiche/AfficheView.aspx?AfficheId=1564&amp;TempId=0&amp;ViewId=1199',false,700,400,'NewWin');">tesat </a>
-                                                                                                        </td>
-                                                                                                        <td class="gridItem" align="middle">福州
-                                                                                                        </td>
-                                                                                                        <td style="text-align: center" class="gridItem">
-                                                                                                            <font color="red"><strong>2014-01-22 </strong></font>
-                                                                                                        </td>
-                                                                                                        <td class="gridItem" align="middle">
-                                                                                                            <font color="blue"><strong>2014-01-22 </strong></font>
-                                                                                                        </td>
-                                                                                                    </tr>
-                                                                                                    <tr class="rowColor" title="bbb">
-                                                                                                        <td class="C1AItem2" nowrap>· <a href="javascript:OpenNewWindow('PublicSysMsg/TradeAffiche/AfficheView.aspx?AfficheId=1563&amp;TempId=0&amp;ViewId=1198',false,700,400,'NewWin');">bbb </a>
-                                                                                                        </td>
-                                                                                                        <td class="gridItem" align="middle">福州
-                                                                                                        </td>
-                                                                                                        <td style="text-align: center" class="gridItem">
-                                                                                                            <font color="red"><strong>2014-01-21 </strong></font>
-                                                                                                        </td>
-                                                                                                        <td class="gridItem" align="middle">
-                                                                                                            <font color="blue"><strong>2014-01-21 </strong></font>
-                                                                                                        </td>
-                                                                                                    </tr>
-                                                                                                    <tr title="2014年新">
-                                                                                                        <td class="C1AItem2" nowrap>· <a href="javascript:OpenNewWindow('PublicSysMsg/TradeAffiche/AfficheView.aspx?AfficheId=1562&amp;TempId=0&amp;ViewId=1197',false,700,400,'NewWin');">2014年新 </a>
-                                                                                                        </td>
-                                                                                                        <td class="gridItem" align="middle">福州
-                                                                                                        </td>
-                                                                                                        <td style="text-align: center" class="gridItem">
-                                                                                                            <font color="red"><strong>2014-01-21 </strong></font>
-                                                                                                        </td>
-                                                                                                        <td class="gridItem" align="middle">
-                                                                                                            <font color="blue"><strong>2014-01-21 </strong></font>
-                                                                                                        </td>
-                                                                                                    </tr>
-                                                                                                    <tr class="rowColor" title="ccc">
-                                                                                                        <td class="C1AItem2" nowrap>· <a href="javascript:OpenNewWindow('PublicSysMsg/TradeAffiche/AfficheView.aspx?AfficheId=1560&amp;TempId=0&amp;ViewId=1195',false,700,400,'NewWin');">ccc </a>
-                                                                                                        </td>
-                                                                                                        <td class="gridItem" align="middle">福州
-                                                                                                        </td>
-                                                                                                        <td style="text-align: center" class="gridItem">
-                                                                                                            <font color="red"><strong>2014-01-14 </strong></font>
-                                                                                                        </td>
-                                                                                                        <td class="gridItem" align="middle">
-                                                                                                            <font color="blue"><strong>2014-01-14 </strong></font>
-                                                                                                        </td>
-                                                                                                    </tr>
-                                                                                                    <tr title="aaa">
-                                                                                                        <td class="C1AItem2" nowrap>· <a href="javascript:OpenNewWindow('PublicSysMsg/TradeAffiche/AfficheView.aspx?AfficheId=1559&amp;TempId=0&amp;ViewId=1194',false,700,400,'NewWin');">aaa </a>
-                                                                                                        </td>
-                                                                                                        <td class="gridItem" align="middle">福州
-                                                                                                        </td>
-                                                                                                        <td style="text-align: center" class="gridItem">
-                                                                                                            <font color="red"><strong>2014-01-13 </strong></font>
-                                                                                                        </td>
-                                                                                                        <td class="gridItem" align="middle">
-                                                                                                            <font color="blue"><strong>2014-01-13 </strong></font>
-                                                                                                        </td>
-                                                                                                    </tr>
-                                                                                                    <tr class="rowColor" title="testa">
-                                                                                                        <td class="C1AItem2" nowrap>· <a href="javascript:OpenNewWindow('PublicSysMsg/TradeAffiche/AfficheView.aspx?AfficheId=1557&amp;TempId=0&amp;ViewId=1192',false,700,400,'NewWin');">testa </a>
-                                                                                                        </td>
-                                                                                                        <td class="gridItem" align="middle">福州
-                                                                                                        </td>
-                                                                                                        <td style="text-align: center" class="gridItem">
-                                                                                                            <font color="red"><strong>2014-01-10 </strong></font>
-                                                                                                        </td>
-                                                                                                        <td class="gridItem" align="middle">
-                                                                                                            <font color="blue"><strong>2014-01-10 </strong></font>
-                                                                                                        </td>
-                                                                                                    </tr>
+                                                                                                    <asp:Repeater ID="Repeater_gyyd" runat="server">
+                                                                                                        <ItemTemplate>
+                                                                                                            <tr title="<%#Eval("Title") %>" class="<%#(Container.ItemIndex+2) % 2 == 0 ? "rowColor" : ""  %>">
+                                                                                                                <td class="C1AItem2" nowrap>· <a href="Affiche/Detail.aspx?id=<%#Eval("ID") %>"><%#Eval("Title") %></a>
+                                                                                                                </td>
+                                                                                                                <td class="gridItem" align="middle">
+                                                                                                                    <%#Eval("County.FullName") %>
+                                                                                                                </td>
+                                                                                                                <td class="gridItem" align="middle">
+                                                                                                                    <font color="red"><strong><%#Eval("SignEndTime","{0:yyyy:MM:dd}") %></strong></font>
+                                                                                                                </td>
+                                                                                                                <td class="gridItem" align="middle">
+                                                                                                                    <font color="blue"><strong><%#Eval("TradeEndTime","{0:yyyy:MM:dd}") %></strong></font>
+                                                                                                                </td>
+                                                                                                            </tr>
+                                                                                                        </ItemTemplate>
+                                                                                                    </asp:Repeater>
                                                                                                     <tr>
                                                                                                         <td style="text-align: right; background-color: white; height: 16px" class="gridItem"
                                                                                                             colspan="4">
-                                                                                                            <a href="PublicSysMsg/TradeAffiche.aspx?AfficheFashionId=53">更多...</a>
+                                                                                                            <a href="Affiche/tag=工业用地">更多...</a>
                                                                                                         </td>
                                                                                                     </tr>
                                                                                                 </tbody>
@@ -528,82 +331,27 @@
                                                                                                             <b>挂牌交易截止时间</b>
                                                                                                         </td>
                                                                                                     </tr>
-                                                                                                    <tr title="关于2012年第二十五次挂牌交易公告（测试）">
-                                                                                                        <td class="C1AItem2" nowrap>· <a href="javascript:OpenNewWindow('PublicSysMsg/TradeAffiche/AfficheView.aspx?AfficheId=1529&amp;TempId=0&amp;ViewId=1162',false,700,400,'NewWin');">关于2012年第二十五次挂牌交易公告（测试） </a>
-                                                                                                        </td>
-                                                                                                        <td class="gridItem" align="middle">福州永泰县
-                                                                                                        </td>
-                                                                                                        <td style="text-align: center" class="gridItem">
-                                                                                                            <font color="red"><strong>2012-09-14 </strong></font>
-                                                                                                        </td>
-                                                                                                        <td class="gridItem" align="middle">
-                                                                                                            <font color="blue"><strong>2012-09-14 </strong></font>
-                                                                                                        </td>
-                                                                                                    </tr>
-                                                                                                    <tr class="rowColor" title="关于2012年第二十三次挂牌交易公告（测试）">
-                                                                                                        <td class="C1AItem2" nowrap>· <a href="javascript:OpenNewWindow('PublicSysMsg/TradeAffiche/AfficheView.aspx?AfficheId=1528&amp;TempId=0&amp;ViewId=1161',false,700,400,'NewWin');">关于2012年第二十三次挂牌交易公告（测试） </a>
-                                                                                                        </td>
-                                                                                                        <td class="gridItem" align="middle">福州连江县
-                                                                                                        </td>
-                                                                                                        <td style="text-align: center" class="gridItem">
-                                                                                                            <font color="red"><strong>2012-09-14 </strong></font>
-                                                                                                        </td>
-                                                                                                        <td style="text-align: center" class="gridItem">
-                                                                                                            <font color="blue"><strong>2012-09-14 </strong></font>
-                                                                                                        </td>
-                                                                                                    </tr>
-                                                                                                    <tr title="关于2012年第二一次挂牌交易公告（测试）">
-                                                                                                        <td class="C1AItem2" nowrap>· <a href="javascript:OpenNewWindow('PublicSysMsg/TradeAffiche/AfficheView.aspx?AfficheId=1526&amp;TempId=0&amp;ViewId=1159',false,700,400,'NewWin');">关于2012年第二一次挂牌交易公告（测试） </a>
-                                                                                                        </td>
-                                                                                                        <td class="gridItem" align="middle">福州罗源县
-                                                                                                        </td>
-                                                                                                        <td style="text-align: center" class="gridItem">
-                                                                                                            <font color="red"><strong>2012-09-15 </strong></font>
-                                                                                                        </td>
-                                                                                                        <td class="gridItem" align="middle">
-                                                                                                            <font color="blue"><strong>2012-09-15 </strong></font>
-                                                                                                        </td>
-                                                                                                    </tr>
-                                                                                                    <tr class="rowColor" title="关于2012年第二十次挂牌交易公告（测试）">
-                                                                                                        <td class="C1AItem2" nowrap>· <a href="javascript:OpenNewWindow('PublicSysMsg/TradeAffiche/AfficheView.aspx?AfficheId=1525&amp;TempId=0&amp;ViewId=1158',false,700,400,'NewWin');">关于2012年第二十次挂牌交易公告（测试） </a>
-                                                                                                        </td>
-                                                                                                        <td class="gridItem" align="middle">福州福清市
-                                                                                                        </td>
-                                                                                                        <td style="text-align: center" class="gridItem">
-                                                                                                            <font color="red"><strong>2012-09-13 </strong></font>
-                                                                                                        </td>
-                                                                                                        <td style="text-align: center" class="gridItem">
-                                                                                                            <font color="blue"><strong>2012-09-13 </strong></font>
-                                                                                                        </td>
-                                                                                                    </tr>
-                                                                                                    <tr title="福州市土地出让公告_20120223测试">
-                                                                                                        <td class="C1AItem2" nowrap>· <a href="javascript:OpenNewWindow('PublicSysMsg/TradeAffiche/AfficheView.aspx?AfficheId=1489&amp;TempId=0&amp;ViewId=1117',false,700,400,'NewWin');">福州市土地出让公告_20120223测试 </a>
-                                                                                                        </td>
-                                                                                                        <td class="gridItem" align="middle">福州
-                                                                                                        </td>
-                                                                                                        <td style="text-align: center" class="gridItem">
-                                                                                                            <font color="red"><strong>2012-02-23 </strong></font>
-                                                                                                        </td>
-                                                                                                        <td class="gridItem" align="middle">
-                                                                                                            <font color="blue"><strong>2012-02-23 </strong></font>
-                                                                                                        </td>
-                                                                                                    </tr>
-                                                                                                    <tr class="rowColor" title="测试_福州鼓楼_土地公告20120213_003">
-                                                                                                        <td class="C1AItem2" nowrap>· <a href="javascript:OpenNewWindow('PublicSysMsg/TradeAffiche/AfficheView.aspx?AfficheId=1483&amp;TempId=0&amp;ViewId=1109',false,700,400,'NewWin');">测试_福州鼓楼_土地公告20120213_003 </a>
-                                                                                                        </td>
-                                                                                                        <td class="gridItem" align="middle">福州鼓楼区
-                                                                                                        </td>
-                                                                                                        <td style="text-align: center" class="gridItem">
-                                                                                                            <font color="red"><strong>2012-02-13 </strong></font>
-                                                                                                        </td>
-                                                                                                        <td style="text-align: center" class="gridItem">
-                                                                                                            <font color="blue"><strong>2012-02-13 </strong></font>
-                                                                                                        </td>
-                                                                                                    </tr>
+                                                                                                    <asp:Repeater ID="Repeater_other" runat="server">
+                                                                                                        <ItemTemplate>
+                                                                                                            <tr title="<%#Eval("Title") %>">
+                                                                                                                <td class="C1AItem2" nowrap>· <a href="Affiche/Detail.aspx?id=<%#Eval("ID") %>"><%#Eval("Title") %></a>
+                                                                                                                </td>
+                                                                                                                <td class="gridItem" align="middle">
+                                                                                                                    <%#Eval("County.FullName") %>
+                                                                                                                </td>
+                                                                                                                <td class="gridItem" align="middle">
+                                                                                                                    <font color="red"><strong><%#Eval("SignEndTime","{0:yyyy:MM:dd}") %></strong></font>
+                                                                                                                </td>
+                                                                                                                <td class="gridItem" align="middle">
+                                                                                                                    <font color="blue"><strong><%#Eval("TradeEndTime","{0:yyyy:MM:dd}") %></strong></font>
+                                                                                                                </td>
+                                                                                                            </tr>
+                                                                                                        </ItemTemplate>
+                                                                                                    </asp:Repeater>
                                                                                                     <tr>
                                                                                                         <td style="text-align: right; background-color: white; height: 16px" class="gridItem"
                                                                                                             colspan="4">
-                                                                                                            <a href="PublicSysMsg/TradeAffiche.aspx?AfficheFashionId=53">更多...</a>
+                                                                                                            <a href="Affiche/?tag=其他用地">更多...</a>
                                                                                                         </td>
                                                                                                     </tr>
                                                                                                 </tbody>
@@ -633,30 +381,16 @@
                                     <tr>
                                         <td width="775" align="middle">
                                             <ul class="gpcr">
-                                                <li style="background: url(./images/city/福州.jpg) no-repeat right top" class="first">
-                                                    <a style="text-decoration: none" title="点击查看详情...." href="javascript:OpenNewWindow('PublicSysMsg/TradeAffiche/AfficheView.aspx?AfficheId=1564&amp;TempId=0&amp;ViewId=1199')">
-                                                        <span style="font-size: 14px" id="gpcrtime0">14年1月22日<font color="#ff2d2d">至1</font>4年1月22日</span><span
-                                                            class="city">福州<img style="border-bottom: medium none; border-left: medium none; border-top: medium none; border-right: medium none"
-                                                                src="./images/new.gif"></span><span
-                                                                    class="info">挂牌出让1宗国有土地使用权</span></a></li>
-                                                <li style="background: url(./images/city/福州.jpg) no-repeat right top"><a style="text-decoration: none"
-                                                    title="点击查看详情...." href="javascript:OpenNewWindow('PublicSysMsg/TradeAffiche/AfficheView.aspx?AfficheId=1563&amp;TempId=0&amp;ViewId=1198')">
-                                                    <span style="font-size: 14px" id="gpcrtime1">14年1月21日<font color="#ff2d2d">至1</font>4年1月21日</span><span
-                                                        class="city">福州<img style="border-bottom: medium none; border-left: medium none; border-top: medium none; border-right: medium none"
-                                                            src="./images/new.gif"></span><span
-                                                                class="info">挂牌出让1宗国有土地使用权</span></a></li>
-                                                <li style="background: url(./images/city/福州.jpg) no-repeat right top"><a style="text-decoration: none"
-                                                    title="点击查看详情...." href="javascript:OpenNewWindow('PublicSysMsg/TradeAffiche/AfficheView.aspx?AfficheId=1562&amp;TempId=0&amp;ViewId=1197')">
-                                                    <span style="font-size: 14px" id="gpcrtime2">14年1月21日<font color="#ff2d2d">至1</font>4年1月21日</span><span
-                                                        class="city">福州<img style="border-bottom: medium none; border-left: medium none; border-top: medium none; border-right: medium none"
-                                                            src="./images/new.gif"></span><span
-                                                                class="info">挂牌出让1宗国有土地使用权</span></a></li>
-                                                <li style="background: url(./images/city/福州.jpg) no-repeat right top"><a style="text-decoration: none"
-                                                    title="点击查看详情...." href="javascript:OpenNewWindow('PublicSysMsg/TradeAffiche/AfficheView.aspx?AfficheId=1561&amp;TempId=0&amp;ViewId=1196')">
-                                                    <span style="font-size: 14px" id="gpcrtime3">14年1月14日<font color="#ff2d2d">至1</font>4年1月14日</span><span
-                                                        class="city">福州<img style="border-bottom: medium none; border-left: medium none; border-top: medium none; border-right: medium none"
-                                                            src="./images/new.gif"></span><span
-                                                                class="info">挂牌出让1宗国有土地使用权</span></a></li>
+                                                <asp:Repeater ID="Repeater_pic" runat="server">
+                                                    <ItemTemplate>
+                                                        <li style="background: url(./images/city/福州.jpg) no-repeat right top" class="<%#Container.ItemIndex == 0 ? "first" : ""  %>">
+                                                            <a style="text-decoration: none" title="点击查看详情...." href="Affiche/Detail.aspx?id=<%#Eval("ID") %>">
+                                                                <span style="font-size: 14px" id="gpcrtime0"><%#Eval("SignBeginTime","{0:yy年MM月dd日}") %>至<%#Eval("SignEndTime","{0:yy年MM月dd日}") %></span><span
+                                                                    class="city"><%#Eval("County.FullName") %><img style="border-bottom: medium none; border-left: medium none; border-top: medium none; border-right: medium none"
+                                                                        src="./images/new.gif"></span><span
+                                                                            class="info">挂牌出让<%#Eval("Trades.Count") %>宗国有土地使用权</span></a></li>
+                                                    </ItemTemplate>
+                                                </asp:Repeater>
                                             </ul>
                                         </td>
                                         <td style="padding-top: 6px" align="right">
@@ -734,86 +468,27 @@
                                                     <table style="width: 762px; table-layout: fixed" id="NewPriceList" class="TableList"
                                                     border="0" cellspacing="0" cellpadding="0">
                                                     <tbody>
-                                                        <tr style="background-color: #f0f7fd">
-                                                            <td style="width: 210px; white-space: nowrap; overflow: hidden" title="福州仓山区-福州2012年30次1号">
-                                                                <a href="">福州仓山区福州仓山区福州仓山区福州仓山区</a>
-                                                            </td>
-                                                            <td>福州仓山区
-                                                            </td>
-                                                            <td style="width: 180px; white-space: nowrap; overflow: hidden" title="工业用地(农副食品加工业：面积 5000平方米、出让年限 50年);">工业用地(农副食品加工业：面积 5000平方米、出让年限 50年)
-                                                            </td>
-                                                            <td style="width: 102px;">￥2204900.0万
-                                                            </td>
-                                                            <td style="width: 140px;">2014-1-23 9:27:46
-                                                            </td>
-                                                        </tr>
-                                                        <tr style="background-color: #f0f7fd">
-                                                            <td style="width: 210px;" title="福州仓山区-福州2012年30次1号">
-                                                                <a href="">福州仓山区</a>
-                                                            </td>
-                                                            <td style="width: 130px;">福州仓山区
-                                                            </td>
-                                                            <td style="width: 180px;" title="工业用地(农副食品加工业：面积 5000平方米、出让年限 50年);">工业用地
-                                                            </td>
-                                                            <td style="width: 100px;">￥2204900.0万
-                                                            </td>
-                                                            <td style="width: 140px;">2014-1-23 9:27:46
-                                                            </td>
-                                                        </tr>
-                                                        <tr style="background-color: #f0f7fd">
-                                                            <td style="width: 210px;" title="福州仓山区-福州2012年30次1号">
-                                                                <a href="">福州仓山区</a>
-                                                            </td>
-                                                            <td style="width: 130px;">福州仓山区
-                                                            </td>
-                                                            <td style="width: 180px;" title="工业用地(农副食品加工业：面积 5000平方米、出让年限 50年);">工业用地
-                                                            </td>
-                                                            <td style="width: 100px;">￥2204900.0万
-                                                            </td>
-                                                            <td style="width: 140px;">2014-1-23 9:27:46
-                                                            </td>
-                                                        </tr>
-                                                        <tr style="background-color: #f0f7fd">
-                                                            <td style="width: 210px;" title="福州仓山区-福州2012年30次1号">
-                                                                <a href="">福州仓山区</a>
-                                                            </td>
-                                                            <td style="width: 130px;">福州仓山区
-                                                            </td>
-                                                            <td style="width: 180px;" title="工业用地(农副食品加工业：面积 5000平方米、出让年限 50年);">工业用地
-                                                            </td>
-                                                            <td style="width: 100px;">￥2204900.0万
-                                                            </td>
-                                                            <td style="width: 140px;">2014-1-23 9:27:46
-                                                            </td>
-                                                        </tr>
-                                                        <tr style="background-color: #f0f7fd">
-                                                            <td style="width: 210px;" title="福州仓山区-福州2012年30次1号">
-                                                                <a href="">福州仓山区</a>
-                                                            </td>
-                                                            <td style="width: 130px;">福州仓山区
-                                                            </td>
-                                                            <td style="width: 180px;" title="工业用地(农副食品加工业：面积 5000平方米、出让年限 50年);">工业用地
-                                                            </td>
-                                                            <td style="width: 100px;">￥2204900.0万
-                                                            </td>
-                                                            <td style="width: 140px;">2014-1-23 9:27:46
-                                                            </td>
-                                                        </tr>
-                                                        <tr style="background-color: #f0f7fd">
-                                                            <td style="width: 210px;" title="福州仓山区-福州2012年30次1号">
-                                                                <a href="">福州仓山区</a>
-                                                            </td>
-                                                            <td style="width: 130px;">福州仓山区
-                                                            </td>
-                                                            <td style="width: 180px;" title="工业用地(农副食品加工业：面积 5000平方米、出让年限 50年);">工业用地
-                                                            </td>
-                                                            <td style="width: 100px;">￥2204900.0万
-                                                            </td>
-                                                            <td style="width: 140px;">2014-1-23 9:27:46
-                                                            </td>
-                                                        </tr>
+                                                    <asp:Repeater ID="Repeater_price" runat="server">
+                                                        <ItemTemplate>
+                                                            <tr style="background-color: #f0f7fd">
+                                                                <td style="width: 210px; white-space: nowrap; overflow: hidden" title="<%#Eval("Trade.Land.LandNumber") %>">
+                                                                    <a href=""><%#Eval("Trade.Land.LandNumber") %></a>
+                                                                </td>
+                                                                <td><%#Eval("Trade.County.FullName") %>
+                                                                </td>
+                                                                <td style="width: 180px; white-space: nowrap; overflow: hidden" title="<%#Eval("Trade.Land.LandPurposeShort") %>">
+                                                                    <%#Eval("Trade.Land.LandPurposeShort") %>
+                                                                </td>
+                                                                <td style="width: 102px;">￥<%#Eval("Price","{0:0.0}") %>万
+                                                                </td>
+                                                                <td style="width: 140px;"><%#Eval("CreateTime","{0:yyyy-MM-dd HH:mm:ss}") %>
+                                                                </td>
+                                                            </tr>
+                                                        </ItemTemplate>
+                                                    </asp:Repeater>
                                                     </tbody>
-                                                </table></marquee>
+                                                </table>
+                                                </marquee>
                                             </div>
                                         </td>
                                         <td style="text-align: right" width="235">
@@ -894,151 +569,26 @@
                                                                             <td style="width: 100px" nowrap align="middle">成交时间
                                                                             </td>
                                                                         </tr>
-                                                                        <tr class="field_gridItem">
-                                                                            <td align="middle">1
-                                                                            </td>
-                                                                            <td class="field_gridCell" title="福州鼓楼区-tesa" align="middle">
-                                                                                <a style="text-decoration: none" href="javascript:OpenNewWindow('PublicSysMsg/TradeResult/TradeResultView.aspx?ResultinformationId=1609',false,700,400,'NewWin');">福州鼓楼区-tesa</a>
-                                                                            </td>
-                                                                            <td class="field_gridCell" align="middle">23.00
-                                                                            </td>
-                                                                            <td class="field_gridCell" align="middle">310.00
-                                                                            </td>
-                                                                            <td class="field_gridCell" align="middle">2
-                                                                            </td>
-                                                                            <td align="middle">2014-01-21
-                                                                            </td>
-                                                                        </tr>
-                                                                        <tr class="rowColor">
-                                                                            <td align="middle">2
-                                                                            </td>
-                                                                            <td class="field_gridCell" title="福州鼓楼区-c" align="middle">
-                                                                                <a style="text-decoration: none" href="javascript:OpenNewWindow('PublicSysMsg/TradeResult/TradeResultView.aspx?ResultinformationId=1608',false,700,400,'NewWin');">福州鼓楼区-c</a>
-                                                                            </td>
-                                                                            <td class="field_gridCell" align="middle">23.00
-                                                                            </td>
-                                                                            <td class="field_gridCell" align="middle"></td>
-                                                                            <td class="field_gridCell" align="middle">&nbsp;
-                                                                            </td>
-                                                                            <td align="middle">(流拍)
-                                                                            </td>
-                                                                        </tr>
-                                                                        <tr class="field_gridItem">
-                                                                            <td align="middle">3
-                                                                            </td>
-                                                                            <td class="field_gridCell" title="福州鼓楼区-cd" align="middle">
-                                                                                <a style="text-decoration: none" href="javascript:OpenNewWindow('PublicSysMsg/TradeResult/TradeResultView.aspx?ResultinformationId=1607',false,700,400,'NewWin');">福州鼓楼区-cd</a>
-                                                                            </td>
-                                                                            <td class="field_gridCell" align="middle">23.00
-                                                                            </td>
-                                                                            <td class="field_gridCell" align="middle"></td>
-                                                                            <td class="field_gridCell" align="middle">&nbsp;
-                                                                            </td>
-                                                                            <td align="middle">(流拍)
-                                                                            </td>
-                                                                        </tr>
-                                                                        <tr class="rowColor">
-                                                                            <td align="middle">4
-                                                                            </td>
-                                                                            <td class="field_gridCell" title="福州鼓楼区-bbb" align="middle">
-                                                                                <a style="text-decoration: none" href="javascript:OpenNewWindow('PublicSysMsg/TradeResult/TradeResultView.aspx?ResultinformationId=1606',false,700,400,'NewWin');">福州鼓楼区-bbb</a>
-                                                                            </td>
-                                                                            <td class="field_gridCell" align="middle">34.00
-                                                                            </td>
-                                                                            <td class="field_gridCell" align="middle"></td>
-                                                                            <td class="field_gridCell" align="middle">&nbsp;
-                                                                            </td>
-                                                                            <td align="middle">(流拍)
-                                                                            </td>
-                                                                        </tr>
-                                                                        <tr class="field_gridItem">
-                                                                            <td align="middle">5
-                                                                            </td>
-                                                                            <td class="field_gridCell" title="福州鼓楼区-cc" align="middle">
-                                                                                <a style="text-decoration: none" href="javascript:OpenNewWindow('PublicSysMsg/TradeResult/TradeResultView.aspx?ResultinformationId=1605',false,700,400,'NewWin');">福州鼓楼区-cc</a>
-                                                                            </td>
-                                                                            <td class="field_gridCell" align="middle">3.00
-                                                                            </td>
-                                                                            <td class="field_gridCell" align="middle"></td>
-                                                                            <td class="field_gridCell" align="middle">&nbsp;
-                                                                            </td>
-                                                                            <td align="middle">(流拍)
-                                                                            </td>
-                                                                        </tr>
-                                                                        <tr class="rowColor">
-                                                                            <td align="middle">6
-                                                                            </td>
-                                                                            <td class="field_gridCell" title="福州鼓楼区-111" align="middle">
-                                                                                <a style="text-decoration: none" href="javascript:OpenNewWindow('PublicSysMsg/TradeResult/TradeResultView.aspx?ResultinformationId=1604',false,700,400,'NewWin');">福州鼓楼区-111</a>
-                                                                            </td>
-                                                                            <td class="field_gridCell" align="middle">2.00
-                                                                            </td>
-                                                                            <td class="field_gridCell" align="middle">27.00
-                                                                            </td>
-                                                                            <td class="field_gridCell" align="middle">4
-                                                                            </td>
-                                                                            <td align="middle">2014-01-13
-                                                                            </td>
-                                                                        </tr>
-                                                                        <tr class="field_gridItem">
-                                                                            <td align="middle">7
-                                                                            </td>
-                                                                            <td class="field_gridCell" title="福州鼓楼区-zxm1" align="middle">
-                                                                                <a style="text-decoration: none" href="javascript:OpenNewWindow('PublicSysMsg/TradeResult/TradeResultView.aspx?ResultinformationId=1603',false,700,400,'NewWin');">福州鼓楼区-zxm1</a>
-                                                                            </td>
-                                                                            <td class="field_gridCell" align="middle">3.00
-                                                                            </td>
-                                                                            <td class="field_gridCell" align="middle">68.00
-                                                                            </td>
-                                                                            <td class="field_gridCell" align="middle">3
-                                                                            </td>
-                                                                            <td align="middle">2014-01-10
-                                                                            </td>
-                                                                        </tr>
-                                                                        <tr class="rowColor">
-                                                                            <td align="middle">8
-                                                                            </td>
-                                                                            <td class="field_gridCell" title="福州鼓楼区-aaa" align="middle">
-                                                                                <a style="text-decoration: none" href="javascript:OpenNewWindow('PublicSysMsg/TradeResult/TradeResultView.aspx?ResultinformationId=1602',false,700,400,'NewWin');">福州鼓楼区-aaa</a>
-                                                                            </td>
-                                                                            <td class="field_gridCell" align="middle">3.00
-                                                                            </td>
-                                                                            <td class="field_gridCell" align="middle"></td>
-                                                                            <td class="field_gridCell" align="middle">&nbsp;
-                                                                            </td>
-                                                                            <td align="middle">(流拍)
-                                                                            </td>
-                                                                        </tr>
-                                                                        <tr class="field_gridItem">
-                                                                            <td align="middle">9
-                                                                            </td>
-                                                                            <td class="field_gridCell" title="福州鼓楼区-bb" align="middle">
-                                                                                <a style="text-decoration: none" href="javascript:OpenNewWindow('PublicSysMsg/TradeResult/TradeResultView.aspx?ResultinformationId=1601',false,700,400,'NewWin');">福州鼓楼区-bb</a>
-                                                                            </td>
-                                                                            <td class="field_gridCell" align="middle">45.00
-                                                                            </td>
-                                                                            <td class="field_gridCell" align="middle">12.00
-                                                                            </td>
-                                                                            <td class="field_gridCell" align="middle">a
-                                                                            </td>
-                                                                            <td align="middle">2014-01-10
-                                                                            </td>
-                                                                        </tr>
-                                                                        <tr class="rowColor">
-                                                                            <td align="middle">10
-                                                                            </td>
-                                                                            <td class="field_gridCell" title="福州鼓楼区-aaa" align="middle">
-                                                                                <a style="text-decoration: none" href="javascript:OpenNewWindow('PublicSysMsg/TradeResult/TradeResultView.aspx?ResultinformationId=1600',false,700,400,'NewWin');">福州鼓楼区-aaa</a>
-                                                                            </td>
-                                                                            <td class="field_gridCell" align="middle">2.00
-                                                                            </td>
-                                                                            <td class="field_gridCell" align="middle">12.00
-                                                                            </td>
-                                                                            <td class="field_gridCell" align="middle">w
-                                                                            </td>
-                                                                            <td align="middle">2014-01-10
-                                                                            </td>
-                                                                        </tr>
+                                                                        <asp:Repeater ID="Repeater_result" runat="server">
+                                                                            <ItemTemplate>
+                                                                                <tr class="field_gridItem">
+                                                                                    <td align="middle">
+                                                                                        <%#Container.ItemIndex + 1 %>
+                                                                                    </td>
+                                                                                    <td class="field_gridCell" title="<%#Eval("LandNumber") %>" align="middle">
+                                                                                        <a style="text-decoration: none" href="TradeResult/Detail.aspx?id=<%#Eval("ID") %>">福州鼓楼区-tesa</a>
+                                                                                    </td>
+                                                                                    <td class="field_gridCell" align="middle"><%#Eval("LandArea","{0:0.00}") %>
+                                                                                    </td>
+                                                                                    <td class="field_gridCell" align="middle"><%#Eval("DealPrice","{0:0.00}") %>
+                                                                                    </td>
+                                                                                    <td class="field_gridCell" align="middle"><%#Eval("DealUser") %>
+                                                                                    </td>
+                                                                                    <td align="middle"><%#Eval("DealTime","{0:yyyy-MM-dd}") %>
+                                                                                    </td>
+                                                                                </tr>
+                                                                            </ItemTemplate>
+                                                                        </asp:Repeater>
                                                                     </tbody>
                                                                 </table>
                                                             </div>
@@ -1070,36 +620,16 @@
                                                                                 <tr>
                                                                                     <td height="6"></td>
                                                                                 </tr>
-                                                                                <tr>
-                                                                                    <td style="text-align: left; padding-left: 8px">
-                                                                                        <a style="text-decoration: none" href="">
-                                                                                            <span style="width: 200px; text-overflow: ellipsis; display: block; white-space: nowrap; overflow: hidden">·中华人民共和国土地管理法</span> </a>
-                                                                                    </td>
-                                                                                </tr>
-                                                                                <tr>
-                                                                                    <td style="text-align: left; padding-left: 8px">
-                                                                                        <a style="text-decoration: none" href="">
-                                                                                            <span style="width: 200px; text-overflow: ellipsis; display: block; white-space: nowrap; overflow: hidden">·中华人民共和国城市房地产管理法</span> </a>
-                                                                                    </td>
-                                                                                </tr>
-                                                                                <tr>
-                                                                                    <td style="text-align: left; padding-left: 8px">
-                                                                                        <a style="text-decoration: none" href="">
-                                                                                            <span style="width: 200px; text-overflow: ellipsis; display: block; white-space: nowrap; overflow: hidden">·中华人民共和国物权法</span> </a>
-                                                                                    </td>
-                                                                                </tr>
-                                                                                <tr>
-                                                                                    <td style="text-align: left; padding-left: 8px">
-                                                                                        <a style="text-decoration: none" href="">
-                                                                                            <span style="width: 200px; text-overflow: ellipsis; display: block; white-space: nowrap; overflow: hidden">·中华人民共和国城乡规划法</span> </a>
-                                                                                    </td>
-                                                                                </tr>
-                                                                                <tr>
-                                                                                    <td style="text-align: left; padding-left: 8px">
-                                                                                        <a style="text-decoration: none" href="">
-                                                                                            <span style="width: 200px; text-overflow: ellipsis; display: block; white-space: nowrap; overflow: hidden">·中华人民共和国行政许可法</span> </a>
-                                                                                    </td>
-                                                                                </tr>
+                                                                                <asp:Repeater ID="Repeater_zcfg" runat="server">
+                                                                                    <ItemTemplate>
+                                                                                        <tr>
+                                                                                            <td style="text-align: left; padding-left: 8px">
+                                                                                                <a style="text-decoration: none" href="News/Detail.aspx?id=<%#Eval("ID") %>">
+                                                                                                    <span style="width: 200px; text-overflow: ellipsis; display: block; white-space: nowrap; overflow: hidden">·<%#Eval("Title") %></span> </a>
+                                                                                            </td>
+                                                                                        </tr>
+                                                                                    </ItemTemplate>
+                                                                                </asp:Repeater>
                                                                             </tbody>
                                                                         </table>
                                                                     </div>

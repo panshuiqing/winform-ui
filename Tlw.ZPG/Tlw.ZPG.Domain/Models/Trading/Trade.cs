@@ -20,28 +20,98 @@ namespace Tlw.ZPG.Domain.Models.Trading
         }
 
         #region 属性
+        /// <summary>
+        /// 宗地id
+        /// </summary>
         public int LandId { get; internal set; }
+        /// <summary>
+        /// 公告id
+        /// </summary>
         public int AfficheId { get; internal set; }
+        /// <summary>
+        /// 创建时间
+        /// </summary>
         public System.DateTime CreateTime { get; set; }
-       
+        /// <summary>
+        /// 修改时间
+        /// </summary>
+        public System.DateTime? UpdateTime { get; set; }
+
+        /// <summary>
+        /// 报名起始时间
+        /// </summary>
         public System.DateTime SignBeginTime { get; set; }
+        /// <summary>
+        /// 报名截止时间
+        /// </summary>
         public System.DateTime SignEndTime { get; set; }
+        /// <summary>
+        /// 交易起始时间
+        /// </summary>
         public System.DateTime TradeBeginTime { get; set; }
+        /// <summary>
+        /// 交易截止时间
+        /// </summary>
         public System.DateTime TradeEndTime { get; set; }
+        /// <summary>
+        /// 起始价
+        /// </summary>
         public decimal StartPrice { get; set; }
+        /// <summary>
+        /// 保留价
+        /// </summary>
         internal string ReservePrice { get; set; }
+        /// <summary>
+        /// 挂牌阶段加价幅度
+        /// </summary>
         public decimal HangPriceIncrease { get; set; }
+        /// <summary>
+        /// 拍卖阶段加价幅度
+        /// </summary>
         public decimal AuctionPriceIncrease { get; set; }
+        /// <summary>
+        /// 当前报价
+        /// </summary>
         public decimal CurrentPrice { get; internal set; }
+        /// <summary>
+        /// 状态
+        /// </summary>
         public TradeStatus Status { get; internal set; }
+        /// <summary>
+        /// 前一个状态
+        /// </summary>
         public TradeStatus? PrevStatus { get; internal set; }
+        /// <summary>
+        /// 状态变动时间
+        /// </summary>
         public DateTime StatusTime { get; internal set; }
+        /// <summary>
+        /// 成交时间
+        /// </summary>
         public System.DateTime? DealTime { get; set; }
+        /// <summary>
+        /// 成交用户id
+        /// </summary>
         public int DealAccountId { get; set; }
+        /// <summary>
+        /// 创建用户id
+        /// </summary>
         public int CreatorId { get; set; }
+        /// <summary>
+        /// 成交价
+        /// </summary>
         public decimal DealPrice { get; set; }
+        /// <summary>
+        /// 阶段
+        /// </summary>
         public TradeStage Stage { get; internal set; }
+        /// <summary>
+        /// 成交类型
+        /// </summary>
         public TradeDealType TradeDealType { get; internal set; }
+        /// <summary>
+        /// 行政区id
+        /// </summary>
         public int CountyId { get; set; }
         [Timestamp]
         internal byte[] RowVersion { get; set; }

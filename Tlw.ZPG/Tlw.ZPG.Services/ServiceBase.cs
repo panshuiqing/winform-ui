@@ -54,9 +54,9 @@ namespace Tlw.ZPG.Services
             return this.DbSet.ToList();
         }
 
-        public IList<TEntity> Find(PageRequest request)
+        public virtual IList<TEntity> Find(PageRequest request)
         {
-            return this.DbSet.Page(request).ToList();
+            return this.DbSet.OrderByDescending(t => t.ID).Page(request).ToList();
         }
 
         private void Validate(TEntity entity)
