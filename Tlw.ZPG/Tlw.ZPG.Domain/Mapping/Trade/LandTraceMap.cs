@@ -10,13 +10,14 @@ namespace Tlw.ZPG.Domain.Mapping
 
     using Tlw.ZPG.Domain.Models.Trading;
 
-    internal partial class LandMap : EntityTypeConfiguration<Land>
+    internal partial class LandTraceMap : EntityTypeConfiguration<LandTrace>
     {
-        public LandMap()
+        public LandTraceMap()
         {
             this.HasKey(t => t.ID);
             this.ToTable("Z_Land");
-            this.Property(t => t.ID).HasColumnName("LandId");
+            this.Property(t => t.ID).HasColumnName("TraceId");
+            this.Property(t => t.LandId).HasColumnName("LandId");
             this.Property(t => t.ProjectName).HasColumnName("ProjectName").IsRequired().HasMaxLength(100);
             this.Property(t => t.LandNumber).HasColumnName("LandNumber").IsRequired().HasMaxLength(100);
             this.Property(t => t.Location).HasColumnName("Location").IsRequired().HasMaxLength(100);
@@ -33,9 +34,7 @@ namespace Tlw.ZPG.Domain.Mapping
             this.Property(t => t.FulfilGuarantee).HasColumnName("FulfilGuarantee");
             this.Property(t => t.CompletionGuarantee).HasColumnName("CompletionGuarantee");
             this.Property(t => t.LandScope).HasColumnName("LandScope").HasMaxLength(200);
-            this.HasMany(t => t.LandPurposes).WithOptional();
-            this.HasMany(t => t.LandAttaches).WithOptional();
-            this.HasMany(t => t.LandTraces).WithOptional();
+            this.HasMany(t => t.LandPurposes).WithRequired();
         }
     }
 }

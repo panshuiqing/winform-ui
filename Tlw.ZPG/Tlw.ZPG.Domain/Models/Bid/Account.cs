@@ -42,6 +42,7 @@ namespace Tlw.ZPG.Domain.Models.Bid
         public virtual ICollection<AccountVerify> AccountVerifies { get; set; }
         public virtual ICollection<Person> UnionBidPersons { get; set; }
         public virtual ICollection<TradeDetail> TradeDetails { get; set; }
+        public virtual ICollection<Attachment> Attachments { get; set; }
         #endregion
 
         #region ·½·¨

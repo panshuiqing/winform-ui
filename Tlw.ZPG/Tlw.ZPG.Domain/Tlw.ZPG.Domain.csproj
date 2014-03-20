@@ -51,6 +51,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Enums\TradeDealType.cs" />
+    <Compile Include="Mapping\Trade\LandTraceMap.cs" />
     <Compile Include="Models\Bid\Events\SubmitVerifyEvent.cs" />
     <Compile Include="Models\Bid\Events\VerifyByUserEvent.cs" />
     <Compile Include="Models\Bid\Events\GrantApplyNumberEvent.cs" />
@@ -88,7 +89,7 @@
     <Compile Include="Mapping\DownloadMap.cs" />
     <Compile Include="Mapping\FeedBookMap.cs" />
     <Compile Include="Mapping\GuestBookMap.cs" />
-    <Compile Include="Mapping\Trade\LandAttachMap.cs" />
+    <Compile Include="Mapping\AttachmentMap.cs" />
     <Compile Include="Mapping\Trade\LandMap.cs" />
     <Compile Include="Mapping\User\MenuMap.cs" />
     <Compile Include="Mapping\NewsMap.cs" />
@@ -118,8 +119,9 @@
     <Compile Include="Models\FeedBook.cs" />
     <Compile Include="Models\GuestBook.cs" />
     <Compile Include="Models\Trading\Exception\SubmitPriceException.cs" />
+    <Compile Include="Models\Trading\Exception\AfficheReleaseException.cs" />
     <Compile Include="Models\Trading\Land.cs" />
-    <Compile Include="Models\Trading\LandAttach.cs" />
+    <Compile Include="Models\Attachment.cs" />
     <Compile Include="Models\Admin\Menu.cs" />
     <Compile Include="Models\News.cs" />
     <Compile Include="Models\Bid\Person.cs" />
@@ -142,6 +144,7 @@
     <Compile Include="Models\Trading\Exception\ConfirmTradeResultException.cs" />
     <Compile Include="Models\Trading\Exception\VerifyTradeResultException.cs" />
     <Compile Include="Models\Trading\Exception\SetReservePriceException.cs" />
+    <Compile Include="Models\Trading\LandTrace.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

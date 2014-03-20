@@ -40,6 +40,7 @@ namespace Tlw.ZPG.Domain.Mapping
             this.HasMany(t => t.UnionBidPersons).WithRequired();
             this.HasMany(t => t.AccountVerifies).WithRequired();
             this.HasRequired(t => t.Trade).WithMany();
+            this.HasMany(t => t.Attachments).WithOptional();
         }
     }
 }

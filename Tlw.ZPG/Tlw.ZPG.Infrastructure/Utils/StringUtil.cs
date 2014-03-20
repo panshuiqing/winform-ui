@@ -71,5 +71,55 @@ namespace Tlw.ZPG.Infrastructure.Utils
             return !string.IsNullOrEmpty(input) && (Regex.IsMatch(input, @"^[1-9]\d{7}((0\d)|(1[0-2]))(([0|1|2]\d)|3[0-1])\d{3}$") 
                 || Regex.IsMatch(input, @"^[1-9]\d{5}[1-9]\d{3}((0\d)|(1[0-2]))(([0|1|2]\d)|3[0-1])\d{4}$"));
         }
+
+        /// <summary>
+        /// 数字转大写（零一二三四五六七八九十）
+        /// </summary>
+        /// <param name="input"></param>
+        /// <returns></returns>
+        public static string DateToUpper(DateTime datetime)
+        {
+            string result = string.Empty;
+            Dictionary<string, string> map = new Dictionary<string, string>();
+            map["0"] = "零";
+            map["1"] = "一";
+            map["2"] = "二";
+            map["3"] = "三";
+            map["4"] = "四";
+            map["5"] = "五";
+            map["6"] = "六";
+            map["7"] = "七";
+            map["8"] = "八";
+            map["9"] = "九";
+            foreach (var item in datetime.Year.ToString())
+            {
+                result += map[item.ToString()];
+            }
+            result += "年";
+            if (datetime.Month < 10)
+            {
+                result += map[datetime.Month.ToString()] + "月";
+            }
+            else
+            {
+                result += "十" + map[datetime.Month.ToString()] + "月"; ;
+            }
+            if (datetime.Day < 10)
+            {
+                result += map[datetime.Day.ToString()] + "日";
+            }
+            else
+            {
+                if (datetime.Day == 10)
+                {
+                    result += "十日";
+                }
+                else
+                {
+                    result += map[datetime.Day.ToString()[0].ToString()] + "十" + map[datetime.Day.ToString()[1].ToString()] + "日";
+                }
+            }
+            return result;
+        }
     }
 }

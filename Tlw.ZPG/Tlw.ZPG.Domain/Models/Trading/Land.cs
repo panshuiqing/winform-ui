@@ -9,8 +9,9 @@ namespace Tlw.ZPG.Domain.Models.Trading
     {
         public Land()
         {
-            this.LandAttaches = new HashSet<LandAttach>();
-            this.Purposes = new HashSet<Purpose>();
+            this.LandAttaches = new HashSet<Attachment>();
+            this.LandPurposes = new HashSet<LandPurpose>();
+            this.LandTraces = new HashSet<LandTrace>();
         }
 
         #region 属性
@@ -34,10 +35,6 @@ namespace Tlw.ZPG.Domain.Models.Trading
         /// 土地用途（完整）
         /// </summary>
         public string LandPurpose { get; set; }
-        /// <summary>
-        /// 土地用途（只显示父级）
-        /// </summary>
-        public string LandPurposeShort { get; set; }
         /// <summary>
         /// 土地现状
         /// </summary>
@@ -83,8 +80,9 @@ namespace Tlw.ZPG.Domain.Models.Trading
         /// </summary>
         public string LandScope { get; set; }
 
-        public virtual ICollection<LandAttach> LandAttaches { get; internal set; }
-        public virtual ICollection<Purpose> Purposes { get; internal set; } 
+        public virtual ICollection<Attachment> LandAttaches { get; internal set; }
+        public virtual ICollection<LandPurpose> LandPurposes { get; internal set; }
+        public virtual ICollection<LandTrace> LandTraces { get; internal set; } 
         #endregion
 
         public override IEnumerable<BusinessRule> Validate()
@@ -101,7 +99,7 @@ namespace Tlw.ZPG.Domain.Models.Trading
             {
                 yield return new BusinessRule("位置不能为空");
             }
-            if (this.Purposes.Count == 0)
+            if (this.LandPurposes.Count == 0)
             {
                 yield return new BusinessRule("宗地用途及出让年限不能为空");
             }

@@ -5,6 +5,7 @@ namespace Tlw.ZPG.Domain.Models.Trading
     using Tlw.ZPG.Domain.Enums;
     using Tlw.ZPG.Domain.Models.Admin;
     using Tlw.ZPG.Infrastructure;
+    using Tlw.ZPG.Infrastructure.Utils;
 
     public partial class Affiche : EntityBase
     {
@@ -36,6 +37,14 @@ namespace Tlw.ZPG.Domain.Models.Trading
         /// </summary>
         public string QualificationRequire { get; set; }
         /// <summary>
+        /// 交易须知
+        /// </summary>
+        public string Notice { get; set; }
+        /// <summary>
+        /// 挂牌方式及竞价办法
+        /// </summary>
+        public string HandModeAndBidMethod { get; set; }
+        /// <summary>
         /// 创建用户ID
         /// </summary>
         public int CreatorId { get; set; }
@@ -43,6 +52,10 @@ namespace Tlw.ZPG.Domain.Models.Trading
         /// 创建时间
         /// </summary>
         public System.DateTime CreateTime { get; set; }
+        /// <summary>
+        /// 修改时间
+        /// </summary>
+        public System.DateTime? UpdateTime { get; set; }
         /// <summary>
         /// 报名起始时间
         /// </summary>
@@ -72,10 +85,6 @@ namespace Tlw.ZPG.Domain.Models.Trading
         /// </summary>
         public System.DateTime ReleaseTime { get; set; }
         /// <summary>
-        /// 交易须知
-        /// </summary>
-        public string Notice { get; set; }
-        /// <summary>
         /// 行政区id
         /// </summary>
         public int CountyId { get; set; }
@@ -94,7 +103,21 @@ namespace Tlw.ZPG.Domain.Models.Trading
         /// <summary>
         /// 公告编号（2014号）
         /// </summary>
-        public string AfficheNumberShort { get; set; }
+        public string AfficheNumberShort
+        {
+            get
+            {
+                string shortNum = string.Empty;
+                if (!string.IsNullOrEmpty(AfficheNumber))
+                {
+                    var index = AfficheNumber.IndexOf('[');
+                    var length = AfficheNumber.IndexOf(']') - index + 1;
+                    shortNum = AfficheNumber.Substring(index, length);
+                }
+
+                return shortNum;
+            }
+        }
         /// <summary>
         /// 批准文号
         /// </summary>
@@ -115,13 +138,17 @@ namespace Tlw.ZPG.Domain.Models.Trading
         /// 标签，多个,分割
         /// </summary>
         public string Tags { get; set; }
+        /// <summary>
+        /// 来源
+        /// </summary>
+        public string ComeForm { get; set; }
 
         public virtual County County { get; set; }
         public virtual User Creator { get; set; }
         public virtual User VerifyUser { get; set; }
         public virtual Affiche Parent { get; internal set; }
         public virtual ICollection<Affiche> Nodes { get; internal set; }
-        public virtual ICollection<Trade> Trades { get; internal set; } 
+        public virtual ICollection<Trade> Trades { get; internal set; }
         #endregion
 
         public override IEnumerable<BusinessRule> Validate()
@@ -140,15 +167,15 @@ namespace Tlw.ZPG.Domain.Models.Trading
             }
             if (this.ReleaseTime < DateTime.Now)
             {
-                yield return new BusinessRule("发布时间不能小于当前时间");
+                yield return new BusinessRule("发布时间不能早于当前时间");
             }
-            if (this.SignBeginTime < DateTime.Now)
+            if (this.SignBeginTime < this.ReleaseTime)
             {
-                yield return new BusinessRule("报名时间不能小于当前时间");
+                yield return new BusinessRule("报名时间不能早于发布时间");
             }
-            if (this.TradeBeginTime < this.SignBeginTime)
+            if (this.TradeEndTime < this.SignEndTime)
             {
-                yield return new BusinessRule("交易起始时间必须大于报名时间");
+                yield return new BusinessRule("交易截止时间不能早于报名截止时间");
             }
             //报名截止时间到交易截止时间最小差 3
             var days = Application.GetDictionaryValue("MinSE2TEDay", 3);
@@ -174,6 +201,23 @@ namespace Tlw.ZPG.Domain.Models.Trading
             {
                 yield return new BusinessRule(string.Format("公告发布时间到报名截止时间最小差{0}天", days));
             }
+        }
+
+        public void SetContentByTemplete(string templete)
+        {
+            if (templete == null) throw new DomainException("templete不能为null");
+            templete = templete.Replace("{Affiche_Org}", this.ComeForm);
+            templete = templete.Replace("{Affiche_Number}", this.AfficheNumber);
+            templete = templete.Replace("{RatificationOrg}", this.RatificationOrg);
+            templete = templete.Replace("{Affiche_Number_Short}", this.AfficheNumberShort);
+            templete = templete.Replace("{Affiche_QualificationRequire}", this.QualificationRequire);
+            //templete = templete.Replace("{Affiche_HandModeAndBidMethod}", this.HandModeAndBidMethod);
+            templete = templete.Replace("{Affiche_Sign_Time}", this.SignBeginTime.ToString("yyyy年MM月dd日HH点至") + this.SignEndTime.ToString("yyyy年MM月dd日HH点"));
+            templete = templete.Replace("{Affiche_Trade_Time}", this.TradeBeginTime.ToString("yyyy年MM月dd日HH点至") + this.TradeEndTime.ToString("yyyy年MM月dd日HH点"));
+            templete = templete.Replace("{Other_Content}", this.OtherContent);
+            templete = templete.Replace("{Affiche_Org}", this.ComeForm);
+            templete = templete.Replace("{Afiche_Release_Time}", StringUtil.DateToUpper(this.ReleaseTime));
+            this.Content = templete;
         }
 
         /// <summary>
@@ -219,18 +263,40 @@ namespace Tlw.ZPG.Domain.Models.Trading
             trade.Affiche = this;
             trade.CreatorId = this.CreatorId;
             trade.Land = land;
-            this.Trades.Add(trade);
             SetTrade(trade);
-            foreach (var item in land.Purposes)
+            SetTags(land);
+            this.Trades.Add(trade);
+        }
+
+        private void SetTags(Land land)
+        {
+            foreach (var item in land.LandPurposes)
             {
-                var purpose = item;
+                var purpose = item.Purpose;
+                DoSetTags(purpose.PurposeName);
                 while (purpose.ParentId.HasValue)
                 {
-                    purpose = item.Parent;
+                    purpose = purpose.Parent;
+                    DoSetTags(purpose.PurposeName);
                 }
-                this.Tags += purpose.PurposeName + ",";
             }
-            this.Tags = this.Tags.TrimEnd(',');
+            this.Tags = this.Tags.TrimEnd(',').TrimStart(',');
+        }
+
+        private void DoSetTags(string purposeName)
+        {
+            if (purposeName.Contains("工业用地"))
+            {
+                this.Tags += "工业用地,";
+            }
+            else if (purposeName.Contains("住宅用地") || purposeName.Contains("商服用地"))
+            {
+                this.Tags += "商住用地,";
+            }
+            else
+            {
+                this.Tags += "其他用地,";
+            }
         }
 
         private void CheckThrow(Trade trade, int userId)
@@ -250,7 +316,7 @@ namespace Tlw.ZPG.Domain.Models.Trading
             {
                 throw new DomainException("宗地位置不能为空");
             }
-            if (trade.Land.Purposes.Count == 0)
+            if (trade.Land.LandPurposes.Count == 0)
             {
                 throw new DomainException("宗地用途及出让年限不能为空");
             }
@@ -260,37 +326,37 @@ namespace Tlw.ZPG.Domain.Models.Trading
         {
             if (this.IsRelease)
             {
-                throw new DomainException("公告已经发布，不能再次发布");
+                throw new AfficheReleaseException("公告已经发布，不能再次发布");
             }
             if (userId != this.CreatorId)
             {
-                throw new DomainException("你不是此公告创建者，不能发布公告");
+                throw new AfficheReleaseException("你不是此公告创建者，不能发布公告");
             }
             if (this.ParentId.HasValue)
             {
                 //补充公告
+                if (this.Trades.Count != this.Parent.Trades.Count)
+                {
+                    throw new AfficheReleaseException("补充公告不能删除或者增加宗地信息");
+                }
                 if (this.Parent.TradeBeginTime < DateTime.Now)
                 {
-                    throw new DomainException("原公告交易时间已到，不能发布补充公告");
+                    throw new AfficheReleaseException("原公告交易时间已到，不能发布补充公告");
+                }
+                if (this.ReleaseTime <= this.Parent.ReleaseTime)
+                {
+                    throw new AfficheReleaseException("补充公告发布时间不能早于原公告发布时间");
                 }
             }
-            if (this.ReleaseTime < DateTime.Now)
-            {
-                throw new DomainException("公告发布时间必须在当前时间之后");
-            }
-            if (DateTime.Now > this.TradeBeginTime)
-            {
-                throw new DomainException("交易开始时间必须大于当前时间");
-            }
-            if (!this.ParentId.HasValue)
+            else
             {
                 if (string.IsNullOrEmpty(this.Notice))
                 {
-                    throw new DomainException("交易须知不能为空");
+                    throw new AfficheReleaseException("交易须知不能为空");
                 }
                 if (this.Trades.Count == 0)
                 {
-                    throw new DomainException("宗地信息未增加");
+                    throw new AfficheReleaseException("宗地信息未增加");
                 }
             }
         }
