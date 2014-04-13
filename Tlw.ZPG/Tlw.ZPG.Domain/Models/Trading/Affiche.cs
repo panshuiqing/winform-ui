@@ -2,8 +2,10 @@ namespace Tlw.ZPG.Domain.Models.Trading
 {
     using System;
     using System.Collections.Generic;
+    using FluentValidation.Results;
     using Tlw.ZPG.Domain.Enums;
     using Tlw.ZPG.Domain.Models.Admin;
+    using Tlw.ZPG.Domain.Validators;
     using Tlw.ZPG.Infrastructure;
     using Tlw.ZPG.Infrastructure.Utils;
 
@@ -101,24 +103,6 @@ namespace Tlw.ZPG.Domain.Models.Trading
         /// </summary>
         public string AfficheNumber { get; set; }
         /// <summary>
-        /// 公告编号（2014号）
-        /// </summary>
-        public string AfficheNumberShort
-        {
-            get
-            {
-                string shortNum = string.Empty;
-                if (!string.IsNullOrEmpty(AfficheNumber))
-                {
-                    var index = AfficheNumber.IndexOf('[');
-                    var length = AfficheNumber.IndexOf(']') - index + 1;
-                    shortNum = AfficheNumber.Substring(index, length);
-                }
-
-                return shortNum;
-            }
-        }
-        /// <summary>
         /// 批准文号
         /// </summary>
         public string RatificationNumber { get; set; }
@@ -153,91 +137,68 @@ namespace Tlw.ZPG.Domain.Models.Trading
 
         public override IEnumerable<BusinessRule> Validate()
         {
-            if (string.IsNullOrEmpty(this.Title))
+            AfficheValidator validator = new AfficheValidator();
+            ValidationResult results = validator.Validate(this);
+            foreach (var item in results.Errors)
             {
-                yield return new BusinessRule("公告标题不能为空");
-            }
-            if (string.IsNullOrEmpty(this.AfficheNumber))
-            {
-                yield return new BusinessRule("公告编号不能为空");
-            }
-            if (string.IsNullOrEmpty(this.RatificationOrg))
-            {
-                yield return new BusinessRule("出让方案批准机关不能为空");
-            }
-            if (this.ReleaseTime < DateTime.Now)
-            {
-                yield return new BusinessRule("发布时间不能早于当前时间");
-            }
-            if (this.SignBeginTime < this.ReleaseTime)
-            {
-                yield return new BusinessRule("报名时间不能早于发布时间");
-            }
-            if (this.TradeEndTime < this.SignEndTime)
-            {
-                yield return new BusinessRule("交易截止时间不能早于报名截止时间");
-            }
-            //报名截止时间到交易截止时间最小差 3
-            var days = Application.GetDictionaryValue("MinSE2TEDay", 3);
-            if ((this.TradeEndTime - this.SignBeginTime).TotalDays < days)
-            {
-                yield return new BusinessRule(string.Format("报名截止时间必须在挂牌交易截止时间点前{0}日", days));
-            }
-            //公告发布时间到交易起始时间最小差 20
-            days = Application.GetDictionaryValue("MinAfficheR2TSDay", 20);
-            if ((this.TradeBeginTime - this.ReleaseTime).TotalDays < days)
-            {
-                yield return new BusinessRule(string.Format("公告发布时间到交易起始时间最小差{0}天", days));
-            }
-            //交易起始时间到交易结束时间最小差 10
-            days = Application.GetDictionaryValue("MinTradeS2EDay", 10);
-            if ((this.TradeEndTime - this.TradeBeginTime).TotalDays < days)
-            {
-                yield return new BusinessRule(string.Format("交易时间段必须大于{0}天", days));
-            }
-            //公告发布时间到报名截止时间最小差 28
-            days = Application.GetDictionaryValue("MinAfficheR2SEDay", 28);
-            if ((this.SignEndTime - this.ReleaseTime).TotalDays < days)
-            {
-                yield return new BusinessRule(string.Format("公告发布时间到报名截止时间最小差{0}天", days));
+                yield return new BusinessRule(item.PropertyName, item.ErrorMessage);
             }
         }
 
-        public void SetContentByTemplete(string templete)
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="formater"></param>
+        public void FormatContent(string formater)
         {
-            if (templete == null) throw new DomainException("templete不能为null");
-            templete = templete.Replace("{Affiche_Org}", this.ComeForm);
-            templete = templete.Replace("{Affiche_Number}", this.AfficheNumber);
-            templete = templete.Replace("{RatificationOrg}", this.RatificationOrg);
-            templete = templete.Replace("{Affiche_Number_Short}", this.AfficheNumberShort);
-            templete = templete.Replace("{Affiche_QualificationRequire}", this.QualificationRequire);
-            //templete = templete.Replace("{Affiche_HandModeAndBidMethod}", this.HandModeAndBidMethod);
-            templete = templete.Replace("{Affiche_Sign_Time}", this.SignBeginTime.ToString("yyyy年MM月dd日HH点至") + this.SignEndTime.ToString("yyyy年MM月dd日HH点"));
-            templete = templete.Replace("{Affiche_Trade_Time}", this.TradeBeginTime.ToString("yyyy年MM月dd日HH点至") + this.TradeEndTime.ToString("yyyy年MM月dd日HH点"));
-            templete = templete.Replace("{Other_Content}", this.OtherContent);
-            templete = templete.Replace("{Affiche_Org}", this.ComeForm);
-            templete = templete.Replace("{Afiche_Release_Time}", StringUtil.DateToUpper(this.ReleaseTime));
-            this.Content = templete;
+            if (formater == null) throw new DomainException("templete不能为null");
+            formater = formater.Replace("{Affiche_Org}", this.ComeForm);
+            formater = formater.Replace("{Affiche_Number}", this.AfficheNumber);
+            formater = formater.Replace("{RatificationOrg}", this.RatificationOrg);
+            formater = formater.Replace("{Affiche_Number}", this.AfficheNumber);
+            formater = formater.Replace("{Affiche_QualificationRequire}", this.QualificationRequire);
+            formater = formater.Replace("{Affiche_HandModeAndBidMethod}", this.HandModeAndBidMethod);
+            formater = formater.Replace("{Affiche_Sign_Time}", this.SignBeginTime.ToString("yyyy年MM月dd日HH点至") + this.SignEndTime.ToString("yyyy年MM月dd日HH点"));
+            formater = formater.Replace("{Affiche_Trade_Time}", this.TradeBeginTime.ToString("yyyy年MM月dd日HH点至") + this.TradeEndTime.ToString("yyyy年MM月dd日HH点"));
+            formater = formater.Replace("{Other_Content}", this.OtherContent);
+            formater = formater.Replace("{Land_Count}", this.Trades.Count.ToString());
+            formater = formater.Replace("{Afiche_Release_Time}", StringUtil.DateToUpper(this.ReleaseTime));
+            this.Content = formater;
         }
 
         /// <summary>
         /// 补充公告
         /// </summary>
-        /// <param name="original">原公告</param>
-        public void Replenish(Affiche original)
+        /// <param name="affiche">新公告</param>
+        public void Supply(int userId, Affiche affiche)
         {
-            if (original == null) throw new DomainException("原公告不能为空");
-            if (!original.IsRelease)
+            if (affiche == null)
             {
-                throw new DomainException("原公告没有发布之前不能补充公告");
+                throw new ReplenishException("补充公告不能为空");
             }
-            if (original.ParentId.HasValue)
+            if (userId != this.CreatorId)
             {
-                throw new DomainException("不能对补充公告进行再次补充");
+                throw new ReplenishException("你不是公告创建者，不能补充公告");
             }
-            this.Parent = original;
+            if (!this.IsRelease)
+            {
+                throw new ReplenishException("原公告没有发布之前不能补充公告");
+            }
+            //不能对已经补充的公告再次进行补充，系统自动对原公告进行补充
+            if (this.ParentId.HasValue)
+            {
+                affiche.Parent = this.Parent;
+            }
+            else
+            {
+                affiche.Parent = this;
+            }
         }
 
+        /// <summary>
+        /// 发布公告
+        /// </summary>
+        /// <param name="userId"></param>
         public void Release(int userId)
         {
             ReleaseCheck(userId);
@@ -255,19 +216,28 @@ namespace Tlw.ZPG.Domain.Models.Trading
             trade.SignEndTime = this.SignEndTime;
             trade.TradeBeginTime = this.TradeBeginTime;
             trade.TradeEndTime = this.TradeEndTime;
+            trade.Land.SetLandPurpose();
         }
 
-        public void AddTrade(int userId, Trade trade, Land land)
+        /// <summary>
+        /// 添加宗地
+        /// </summary>
+        /// <param name="userId"></param>
+        /// <param name="trade"></param>
+        public void AddTrade(int userId, Trade trade)
         {
-            CheckThrow(trade, userId);
+            if (userId != this.CreatorId) throw new DomainException("你不是公告创建者，无法添加宗地");
             trade.Affiche = this;
             trade.CreatorId = this.CreatorId;
-            trade.Land = land;
             SetTrade(trade);
-            SetTags(land);
+            SetTags(trade.Land);
             this.Trades.Add(trade);
         }
 
+        /// <summary>
+        /// 设置tags，以便在前台查询（首页标签查询）
+        /// </summary>
+        /// <param name="land"></param>
         private void SetTags(Land land)
         {
             foreach (var item in land.LandPurposes)
@@ -280,7 +250,7 @@ namespace Tlw.ZPG.Domain.Models.Trading
                     DoSetTags(purpose.PurposeName);
                 }
             }
-            this.Tags = this.Tags.TrimEnd(',').TrimStart(',');
+            this.Tags = this.Tags.Trim(',');
         }
 
         private void DoSetTags(string purposeName)
@@ -296,29 +266,6 @@ namespace Tlw.ZPG.Domain.Models.Trading
             else
             {
                 this.Tags += "其他用地,";
-            }
-        }
-
-        private void CheckThrow(Trade trade, int userId)
-        {
-            if (trade == null) throw new DomainException("交易信息不能为空");
-            if (trade.Land == null) throw new DomainException("交易信息不能为空");
-            if (userId != this.CreatorId) throw new DomainException("你不是公告创建者，无法添加宗地");
-            if (string.IsNullOrEmpty(trade.Land.ProjectName))
-            {
-                throw new DomainException("宗地项目名称不能为空");
-            }
-            if (string.IsNullOrEmpty(trade.Land.LandNumber))
-            {
-                throw new DomainException("宗地号不能为空");
-            }
-            if (string.IsNullOrEmpty(trade.Land.Location))
-            {
-                throw new DomainException("宗地位置不能为空");
-            }
-            if (trade.Land.LandPurposes.Count == 0)
-            {
-                throw new DomainException("宗地用途及出让年限不能为空");
             }
         }
 

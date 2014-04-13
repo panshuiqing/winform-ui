@@ -5,7 +5,7 @@ using System.Text;
 
 namespace Tlw.ZPG.Infrastructure.DbContext
 {
-    public interface ICurrentDbContext
+    public interface IDbContextContainer
     {
         EFDbContext GetCurrentDbContext();
     }

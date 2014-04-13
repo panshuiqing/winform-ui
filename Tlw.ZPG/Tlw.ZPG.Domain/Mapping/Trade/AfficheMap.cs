@@ -44,11 +44,10 @@ namespace Tlw.ZPG.Domain.Mapping
             this.Property(t => t.VerifyStatus).HasColumnName("VerifyStatus");
             this.Property(t => t.VerifyUserId).HasColumnName("VerifyUserId");
             this.Property(t => t.Tags).HasColumnName("Tags").HasMaxLength(100);
-            this.HasRequired(t => t.County).WithMany();
-            this.HasOptional(t => t.VerifyUser).WithMany();
-            this.HasRequired(t => t.Creator).WithMany();
-            this.HasMany(t => t.Trades).WithRequired(t => t.Affiche).HasForeignKey(t => t.AfficheId);
-            this.HasOptional(t => t.Parent).WithMany(t => t.Nodes).HasForeignKey(d => d.ParentId).WillCascadeOnDelete(true);
+            this.HasRequired(t => t.County).WithMany().WillCascadeOnDelete(false);
+            this.HasOptional(t => t.VerifyUser).WithMany().WillCascadeOnDelete(false);
+            this.HasRequired(t => t.Creator).WithMany().WillCascadeOnDelete(false);
+            this.HasOptional(t => t.Parent).WithMany(t => t.Nodes).HasForeignKey(d => d.ParentId).WillCascadeOnDelete(false);
         }
     }
 }

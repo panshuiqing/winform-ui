@@ -38,6 +38,7 @@
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Web" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -51,15 +52,16 @@
     <Compile Include="Bid\AccountRequest.cs" />
     <Compile Include="Bid\AccountService.cs" />
     <Compile Include="BootStrapper.cs" />
-    <Compile Include="Common\SystemLogService.cs" />
-    <Compile Include="Common\ApplyNumberService.cs" />
-    <Compile Include="Common\ClientErrorLogService.cs" />
-    <Compile Include="Common\CountyService.cs" />
-    <Compile Include="Common\DictionaryService.cs" />
-    <Compile Include="Common\DownloadService.cs" />
-    <Compile Include="Common\FeedBookService.cs" />
-    <Compile Include="Common\GuestBookService.cs" />
-    <Compile Include="Common\NewsService.cs" />
+    <Compile Include="Content\NewsRequest.cs" />
+    <Compile Include="Content\SystemLogService.cs" />
+    <Compile Include="Content\ApplyNumberService.cs" />
+    <Compile Include="Content\ClientErrorLogService.cs" />
+    <Compile Include="Content\CountyService.cs" />
+    <Compile Include="Content\DictionaryService.cs" />
+    <Compile Include="Content\DownloadService.cs" />
+    <Compile Include="Content\FeedBookService.cs" />
+    <Compile Include="Content\GuestBookService.cs" />
+    <Compile Include="Content\NewsService.cs" />
     <Compile Include="EventHandlers\Bid\FrozeAccountEventHandler.cs" />
     <Compile Include="EventHandlers\Bid\GrantApplyNumberEventHandler.cs" />
     <Compile Include="EventHandlers\Bid\LossAccountEventHandler.cs" />
@@ -71,15 +73,15 @@
     <Compile Include="PageRequest.cs" />
     <Compile Include="ServiceBase.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="LogManager.cs" />
     <Compile Include="ServiceException.cs" />
     <Compile Include="Permission\PermissionService.cs" />
-    <Compile Include="ServiceResponse.cs" />
+    <Compile Include="SystemLogCodes.cs" />
     <Compile Include="Trading\AfficheService.cs" />
     <Compile Include="Trading\TradeRequest.cs" />
     <Compile Include="Trading\TradeResultService.cs" />
     <Compile Include="Trading\TradeService.cs" />
     <Compile Include="Trading\AfficheRequest.cs" />
+    <Compile Include="UserContext.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Tlw.ZPG.Domain\Tlw.ZPG.Domain.csproj">

@@ -9,8 +9,5 @@ namespace Tlw.ZPG.Domain.Models
         public string FilePath { get; set; }
         public string FileTitle { get; set; }
         public System.DateTime CreateTime { get; set; }
-        public int UserId { get; set; }
-        public int AccountId { get; set; }
-        public int ItemId { get; set; }
     }
 }

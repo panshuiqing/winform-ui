@@ -11,7 +11,5 @@ namespace Tlw.ZPG.Domain.Models.Trading
         public string Content { get; set; }
         public System.DateTime CreateTime { get; set; }
         public int CreatorId { get; set; }
-    
-        public virtual Trade Trade { get; set; }
     }
 }

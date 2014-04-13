@@ -28,7 +28,7 @@ namespace Tlw.ZPG.Domain.Models.Admin
         {
             if (string.IsNullOrEmpty(this.FunctionName))
             {
-                yield return new BusinessRule("功能名称不能为空");
+                yield return new BusinessRule("FunctionName", "功能名称不能为空");
             }
         }
     }

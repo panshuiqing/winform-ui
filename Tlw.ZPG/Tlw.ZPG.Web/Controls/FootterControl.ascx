@@ -1,10 +1,10 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="FootterControl.ascx.cs" Inherits="Tlw.ZPG.Web.Controls.FootterControl" %>
 <div class="bottom_menu">
     <div class="title1">
-        <a href="/">首 页</a> | <a href="jygz/" target="_blank">交易规则</a> | 
-        <a href="jylc/" target="_blank">交易流程</a> | <a href="jmsq/" target="_blank">竞买申请</a> | 
-        <a href="crzdcx/">出让宗地查询</a> | <a href="zcfgzx/">政策法规资讯</a> | 
-        <a href="gsws/">格式文书下载</a> | <a href="download/">交易软件下载</a>
+        <a href="/">首 页</a> | <a href="/jygz/" target="_blank">交易规则</a> | 
+        <a href="/jylc/" target="_blank">交易流程</a> | <a href="/jmsq/" target="_blank">竞买申请</a> | 
+        <a href="/crzdcx/">出让宗地查询</a> | <a href="/zcfgzx/">政策法规资讯</a> | 
+        <a href="/gsws/">格式文书下载</a> | <a href="/download/">交易软件下载</a>
     </div>
 </div>
 <div class="bottom_bg">

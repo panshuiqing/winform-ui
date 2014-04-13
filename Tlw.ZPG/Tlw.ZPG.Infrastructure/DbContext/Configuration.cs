@@ -44,9 +44,9 @@ namespace Tlw.ZPG.Infrastructure.DbContext
             return this;
         }
 
-        public Configuration AddAssemblyFile(string fileName)
+        public Configuration AddAssembly(string fileName)
         {
-            this.Settings.AssemblyFileNames.Add(fileName);
+            this.Settings.AssemblyNames.Add(fileName);
             return this;
         }
 

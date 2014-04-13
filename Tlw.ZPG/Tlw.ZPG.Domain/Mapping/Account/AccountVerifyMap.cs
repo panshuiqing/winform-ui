@@ -22,7 +22,6 @@ namespace Tlw.ZPG.Domain.Mapping
             this.Property(t => t.CreateTime).HasColumnName("CreateTime");
             this.Property(t => t.UserId).HasColumnName("UserId");
             this.Property(t => t.Content).HasColumnName("Content").IsRequired().HasMaxLength(300);
-            this.HasOptional(t => t.User).WithMany();
         }
     }
 }

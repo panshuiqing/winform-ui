@@ -33,14 +33,14 @@ namespace Tlw.ZPG.Domain.Mapping
             this.Property(t => t.AgentId).HasColumnName("AgentId");
             this.Property(t => t.CorporationId).HasColumnName("CorporationId");
             this.Property(t => t.VerifyStatus).HasColumnName("VerifyStatus");
-            this.HasOptional(t => t.Agent).WithOptionalPrincipal();
-            this.HasRequired(t => t.Contact).WithRequiredPrincipal();
-            this.HasOptional(t => t.Corporation).WithOptionalPrincipal();
-            this.HasRequired(t => t.AccountPerson).WithRequiredPrincipal();
+            this.HasOptional(t => t.Agent).WithOptionalDependent();
+            this.HasRequired(t => t.Contact).WithRequiredDependent();
+            this.HasOptional(t => t.Corporation).WithOptionalDependent();
+            this.HasRequired(t => t.AccountPerson).WithRequiredDependent();
             this.HasMany(t => t.UnionBidPersons).WithRequired();
             this.HasMany(t => t.AccountVerifies).WithRequired();
-            this.HasRequired(t => t.Trade).WithMany();
-            this.HasMany(t => t.Attachments).WithOptional();
+            this.HasRequired(t => t.Trade).WithMany().WillCascadeOnDelete(false);
+            this.HasMany(t => t.Attachments).WithRequired();
         }
     }
 }

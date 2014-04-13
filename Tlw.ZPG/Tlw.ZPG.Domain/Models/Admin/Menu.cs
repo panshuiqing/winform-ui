@@ -31,7 +31,7 @@ namespace Tlw.ZPG.Domain.Models.Admin
         {
             if (string.IsNullOrEmpty(this.MenuName))
             {
-                yield return new BusinessRule("菜单名称不能为空");
+                yield return new BusinessRule("MenuName", "菜单名称不能为空");
             }
         }
     }

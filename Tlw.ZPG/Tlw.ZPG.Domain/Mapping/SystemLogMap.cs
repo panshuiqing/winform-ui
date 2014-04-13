@@ -19,6 +19,7 @@ namespace Tlw.ZPG.Domain.Mapping
               this.Property(t => t.ID).HasColumnName("LogId");
               this.Property(t => t.CreateTime).HasColumnName("CreateTime");
               this.Property(t => t.LogType).HasColumnName("LogType");
+              this.Property(t => t.LogCode).HasColumnName("LogCode").HasMaxLength(50);
               this.Property(t => t.UserId).HasColumnName("UserId");
               this.Property(t => t.UserName).HasColumnName("UserName").HasMaxLength(50);
               this.Property(t => t.Ip).HasColumnName("Ip").HasMaxLength(50);

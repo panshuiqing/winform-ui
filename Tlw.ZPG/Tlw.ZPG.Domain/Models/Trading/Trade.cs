@@ -11,11 +11,11 @@ namespace Tlw.ZPG.Domain.Models.Trading
 
     public partial class Trade : EntityBase
     {
+        private const string ENCRYPT_KEY = "87654321";
+
         public Trade()
         {
             this.TradeMessages = new HashSet<TradeMessage>();
-            this.TradeHangLogs = new HashSet<TradeHangLog>();
-            this.Accounts = new HashSet<Account>();
             this.TradeDetails = new HashSet<TradeDetail>();
         }
 
@@ -92,7 +92,7 @@ namespace Tlw.ZPG.Domain.Models.Trading
         /// <summary>
         /// 成交用户id
         /// </summary>
-        public int DealAccountId { get; set; }
+        public int? DealAccountId { get; set; }
         /// <summary>
         /// 创建用户id
         /// </summary>
@@ -113,6 +113,10 @@ namespace Tlw.ZPG.Domain.Models.Trading
         /// 行政区id
         /// </summary>
         public int CountyId { get; set; }
+        /// <summary>
+        /// 交易结果公示
+        /// </summary>
+        public TradeResultAffiche ResultAffiche { get; set; }
         [Timestamp]
         internal byte[] RowVersion { get; set; }
 
@@ -122,11 +126,9 @@ namespace Tlw.ZPG.Domain.Models.Trading
         public virtual County County { get; set; }
         public virtual Account DealAccount { get; set; }
         public virtual ICollection<TradeMessage> TradeMessages { get; internal set; }
-        public virtual ICollection<TradeHangLog> TradeHangLogs { get; internal set; }
-        public virtual ICollection<TradeBidLog> TradeBidLogs { get; internal set; }
-        public virtual ICollection<Account> Accounts { get; internal set; }
+        public virtual ICollection<TradeLog> TradeLogs { get; internal set; }
         public virtual ICollection<TradeDetail> TradeDetails { get; internal set; }
-        public virtual TradeResultConfirm TradeResultConfirm { get; internal set; } 
+        public virtual TradeDealConfirm TradeResultConfirm { get; internal set; }
         #endregion
 
         /// <summary>
@@ -148,8 +150,8 @@ namespace Tlw.ZPG.Domain.Models.Trading
                 if (this.Status == TradeStatus.Froze)
                 {
                     if (userId != this.CreatorId) throw new TradeRecoverException("你不是该宗地创建者，无法解冻交易");
-                    var canRecoverHours = Application.GetDictionaryValue("HowManyHoursCanRecoverAfterFrozed", 1);
-                    var resumedHours = Application.GetDictionaryValue("ShouldBeResumedAfterHoursLater", 24);
+                    var canRecoverHours = AppSettings.GetValue("HowManyHoursCanRecoverAfterFrozed", 1);
+                    var resumedHours = AppSettings.GetValue("ShouldBeResumedAfterHoursLater", 24);
                     if ((DateTime.Now - this.StatusTime).TotalHours > canRecoverHours)
                         throw new TradeRecoverException(string.Format("冻结超过{0}个小时，必须在{1}小时后解冻", canRecoverHours, resumedHours));
                     if(GetPostponeTime() < tradeEndTime)
@@ -181,7 +183,7 @@ namespace Tlw.ZPG.Domain.Models.Trading
                 if (this.Status == TradeStatus.Normal)
                 {
                     if (userId != this.CreatorId) throw new TradeFrozeException("你不是该宗地创建者，无法冻结交易");
-                    var minutes = Application.GetDictionaryValue("CanFrozeOrTerminateBeforeTradeEndTime", 60);
+                    var minutes = AppSettings.GetValue("CanFrozeOrTerminateBeforeTradeEndTime", 60);
                     if ((this.TradeEndTime - DateTime.Now).TotalMinutes <= minutes)
                     {
                         throw new TradeFrozeException(string.Format("交易最后{0}分钟不能冻结", minutes));
@@ -205,7 +207,7 @@ namespace Tlw.ZPG.Domain.Models.Trading
                 if (this.Status == TradeStatus.Normal || this.Status == TradeStatus.Froze)
                 {
                     if (userId != this.CreatorId) throw new TradeTerminateException("你不是该宗地创建者，无法终止交易");
-                    var minutes = Application.GetDictionaryValue("CanFrozeOrTerminateBeforeTradeEndTime", 60);
+                    var minutes = AppSettings.GetValue("CanFrozeOrTerminateBeforeTradeEndTime", 60);
                     if ((this.TradeEndTime - DateTime.Now).TotalMinutes <= minutes)
                     {
                         throw new TradeTerminateException(string.Format("交易最后{0}分钟不能终止", minutes));
@@ -249,15 +251,31 @@ namespace Tlw.ZPG.Domain.Models.Trading
             }
         }
 
+        /// <summary>
+        /// 设置保留价
+        /// </summary>
+        /// <param name="userId"></param>
+        /// <param name="price"></param>
         public void SetReservePrice(int userId, decimal price)
         {
             if (price < this.StartPrice) throw new SetReservePriceException("保留价不得低于起始价");
             if (this.Status != TradeStatus.Normal) throw new SetReservePriceException("当前状态不允许录入保留价");
-            var hours = Application.GetDictionaryValue("HowManyHoursCanSetReservePriceBeforeTradeEndTime", 1);
+            var hours = AppSettings.GetValue("HowManyHoursCanSetReservePriceBeforeTradeEndTime", 1);
             if ((this.TradeEndTime - DateTime.Now).TotalHours < 1) throw new SetReservePriceException(string.Format("交易结束前{0}个小时不允许录入保留价", hours));
             if (!string.IsNullOrEmpty(this.ReservePrice)) throw new SetReservePriceException("已有保留价，不能再次录入");
             this.ReservePrice = price.ToString();
-            this.ReservePrice = SecurityUtil.EncryptTriDes(this.ReservePrice, "12345678");
+            this.ReservePrice = SecurityUtil.EncryptTriDes(this.ReservePrice, ENCRYPT_KEY);
+        }
+
+        /// <summary>
+        /// 判断是否大于保留价
+        /// </summary>
+        /// <param name="price"></param>
+        /// <returns></returns>
+        public bool IsGreaterThanReservePrice(decimal price)
+        {
+            var reservePrice = Convert.ToDecimal(SecurityUtil.DecryptTriDes(this.ReservePrice, ENCRYPT_KEY));
+            return price > reservePrice;
         }
 
         #region 报价

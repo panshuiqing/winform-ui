@@ -19,29 +19,35 @@ namespace Tlw.ZPG.Services.Trading
         public override void Update(Affiche entity)
         {
             if (entity.IsRelease) throw new ServiceException("公告已发布，不能修改");
+            string path = System.Web.HttpContext.Current.Server.MapPath("~App_Data/templete/affiche.html");
+            string templete = System.IO.File.ReadAllText(path);
+            entity.FormatContent(templete);
             base.Update(entity);
         }
 
         /// <summary>
         /// 补充公告
         /// </summary>
-        /// <param name="originalId">原公告</param>
-        public void Replenish(int originalId,Affiche affiche)
+        /// <param name="originalId">原公告id</param>
+        public void Replenish(int originalId, Affiche affiche)
         {
             var originalAffiche = this.FindById(originalId);
-            affiche.Replenish(originalAffiche);
+            originalAffiche.Supply(UserContext.Current.UserId, affiche);
+            Insert(affiche);
         }
 
-        public void Release(int userId,int afficheId)
+        public void Release(int afficheId)
         {
             var affiche = this.FindById(afficheId);
-            affiche.Release(userId);
+            affiche.Release(UserContext.Current.UserId);
         }
 
-        public void AddTrade(int afficheId, int userId, Land land, Trade trade)
+        public void AddTrade(int afficheId, Trade trade)
         {
+            if (trade == null) throw new ServiceException("trade不能为空");
             var affiche = this.FindById(afficheId);
-            affiche.AddTrade(userId, trade, land);
+            Validate(affiche);
+            affiche.AddTrade(UserContext.Current.UserId, trade);
         }
 
         public IList<Affiche> Find(AfficheRequest request)
@@ -57,7 +63,7 @@ namespace Tlw.ZPG.Services.Trading
             }
             if (!string.IsNullOrEmpty(request.Tag))
             {
-                query = query.Where(t=>t.Tags.Contains(request.Tag));
+                query = query.Where(t => t.Tags.Contains(request.Tag));
             }
             return query.OrderByDescending(t => t.ID).Page(request).ToList();
         }

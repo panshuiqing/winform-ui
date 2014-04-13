@@ -35,7 +35,6 @@ namespace Tlw.ZPG.Domain.Mapping
             this.Property(t => t.LandScope).HasColumnName("LandScope").HasMaxLength(200);
             this.HasMany(t => t.LandPurposes).WithOptional();
             this.HasMany(t => t.LandAttaches).WithOptional();
-            this.HasMany(t => t.LandTraces).WithOptional();
         }
     }
 }

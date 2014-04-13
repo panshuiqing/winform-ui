@@ -4,26 +4,26 @@
         <ul class="right">
             <li><a href="/" title="首 页">首 页</a></li>
             <li class='line'></li>
-            <li><a href="jygz/"
-                title="交易规则" target="_blank">交易规则 </a></li>
+            <li><a href="/jygz/"
+                title="交易规则" target="_blank">交易规则</a></li>
             <li class='line'></li>
-            <li><a href="jylc/"
-                title="交易流程" target="_blank">交易流程 </a></li>
+            <li><a href="/jylc/"
+                title="交易流程" target="_blank">交易流程</a></li>
             <li class='line'></li>
-            <li><a href="jmsq/"
-                title="竞买申请" target="_blank">竞买申请 </a></li>
+            <li><a href="/jmsq/"
+                title="竞买申请">竞买申请</a></li>
             <li class='line'></li>
-            <li><a href="crzdcx/"
-                title="出让宗地查询">出让宗地查询 </a></li>
+            <li><a href="/crzdcx/"
+                title="出让宗地查询">出让宗地查询</a></li>
             <li class='line'></li>
-            <li><a href="zcfgzx/"
-                title="政策法规资讯">政策法规资讯 </a></li>
+            <li><a href="/zcfg/"
+                title="政策法规资讯">政策法规资讯</a></li>
             <li class='line'></li>
-            <li><a href="gsws/"
-                title="格式文书下载">格式文书下载 </a></li>
+            <li><a href="/gsws/"
+                title="格式文书下载">格式文书下载</a></li>
             <li class='line'></li>
-            <li><a href="download/"
-                title="交易软件下载">交易软件下载 </a></li>
+            <li><a href="/download/"
+                title="交易软件下载">交易软件下载</a></li>
             <li class='line'></li>
         </ul>
         <div style="font-size: 15px; color: #FF0000; font-weight: bold; text-align: center;">

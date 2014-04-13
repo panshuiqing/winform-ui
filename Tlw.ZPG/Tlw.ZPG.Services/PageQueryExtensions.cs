@@ -10,7 +10,7 @@ namespace Tlw.ZPG.Services
         public static IQueryable<T> Page<T>(this IQueryable<T> query, PageRequest request)
         {
             request.RowCount = query.Count();
-            return query.Skip((request.PageIndex - 1) * request.PageIndex)
+            return query.Skip((request.PageIndex - 1) * request.PageSize)
                         .Take(request.PageSize);
         }
     }

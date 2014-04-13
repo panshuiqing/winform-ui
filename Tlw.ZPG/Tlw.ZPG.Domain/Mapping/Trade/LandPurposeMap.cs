@@ -19,7 +19,8 @@ namespace Tlw.ZPG.Domain.Mapping
             this.Property(t => t.PurposeId).HasColumnName("PurposeId");
             this.Property(t => t.LandId).HasColumnName("LandId");
             this.Property(t => t.Area).HasColumnName("Area");
-            this.HasRequired(t => t.Purpose).WithRequiredPrincipal();
+            this.Property(t => t.Years).HasColumnName("Years");
+            this.HasRequired(t => t.Purpose).WithMany();
         }
     }
 }

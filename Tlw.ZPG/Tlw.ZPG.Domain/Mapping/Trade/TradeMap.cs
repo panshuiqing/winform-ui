@@ -39,12 +39,13 @@ namespace Tlw.ZPG.Domain.Mapping
             this.Property(t => t.DealPrice).HasColumnName("DealPrice");
             this.Property(t => t.Stage).HasColumnName("Stage");
             this.Property(p => p.RowVersion).IsRowVersion();
-            this.HasRequired(t => t.Land).WithRequiredPrincipal();
-            this.HasOptional(t => t.DealAccount).WithOptionalPrincipal();
-            this.HasRequired(t => t.Creator).WithMany();
-            this.HasRequired(t => t.County).WithMany();
+            this.HasRequired(t => t.Land).WithRequiredDependent();
+            this.HasOptional(t => t.DealAccount).WithOptionalDependent();
+            this.HasRequired(t => t.Creator).WithMany().WillCascadeOnDelete(false);
+            this.HasRequired(t => t.County).WithMany().WillCascadeOnDelete(false);
             this.HasRequired(t => t.TradeResultConfirm).WithRequiredPrincipal();
-            
+            this.HasRequired(t => t.Affiche).WithMany(t => t.Trades);
+            this.HasOptional(t => t.ResultAffiche).WithOptionalPrincipal(t => t.Trade);
         }
     }
 }

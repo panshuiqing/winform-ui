@@ -9,7 +9,7 @@ namespace Tlw.ZPG.Infrastructure.DbContext
     {
         EFDbContext GetDbContext();
         EFDbContext GetCurrentDbContext();
-        ICurrentDbContext CurrentDbContext { get; }
+        IDbContextContainer DbContextContainer { get; }
 
         ConfigurationSettings Settings { get; }
     }

@@ -4,34 +4,39 @@ namespace Tlw.ZPG.Domain.Enums
     using System.ComponentModel;
 
     /// <summary>
-    /// 操作类别
+    /// 日志类别
     /// </summary>
     public enum SystemLogType
     {
         /// <summary>
-        /// 新增
+        /// 公告日志
         /// </summary>
-        [Description("新增")]
-        Add,
+        [Description("公告日志")]
+        Affiche,
         /// <summary>
-        /// 删除
+        /// 交易日志
         /// </summary>
-        [Description("删除")]
-        Delete,
+        [Description("交易日志")]
+        Trade,
         /// <summary>
-        /// 修改
+        /// 竞买号日志
         /// </summary>
-        [Description("修改")]
-        Update,
+        [Description("竞买号日志")]
+        ApplyNumber,
         /// <summary>
-        /// 操作异常
+        /// 登录日志
         /// </summary>
-        [Description("操作异常")]
+        [Description("登录日志")]
+        Login,
+        /// <summary>
+        /// 异常日志
+        /// </summary>
+        [Description("异常日志")]
         Exception,
         /// <summary>
-        /// 其他
+        /// 其他日志
         /// </summary>
-        [Description("其他")]
+        [Description("其他日志")]
         Other,
     }
 }

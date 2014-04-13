@@ -13,7 +13,5 @@ using Tlw.ZPG.Infrastructure;
         public int? UserId { get; set; }
         public string Content { get; set; }
         public AccountVerifyStatus Status { get; set; }
-
-        public virtual User User { get; set; }
     }
 }

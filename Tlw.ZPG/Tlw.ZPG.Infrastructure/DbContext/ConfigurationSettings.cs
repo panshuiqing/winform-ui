@@ -12,12 +12,12 @@ namespace Tlw.ZPG.Infrastructure.DbContext
         public ConfigurationSettings()
         {
             this.Types = new List<Type>();
-            this.AssemblyFileNames = new List<string>();
+            this.AssemblyNames = new List<string>();
             this.Assambles = new List<Assembly>();
         }
 
         public string NameOrConnectionString { get; set; }
-        public IList<string> AssemblyFileNames { get; set; }
+        public IList<string> AssemblyNames { get; set; }
         public IList<Assembly> Assambles { get; set; }
         public IList<Type> Types { get; set; }
     }

@@ -28,14 +28,14 @@ namespace Tlw.ZPG.Infrastructure.DbContext
 
         public EFDbContext GetCurrentDbContext()
         {
-            if (CurrentDbContext == null)
+            if (DbContextContainer == null)
             {
                 return null;
             }
-            return CurrentDbContext.GetCurrentDbContext();
+            return DbContextContainer.GetCurrentDbContext();
         }
 
-        public ICurrentDbContext CurrentDbContext
+        public IDbContextContainer DbContextContainer
         {
             get
             {

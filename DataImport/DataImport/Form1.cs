@@ -42,7 +42,7 @@ namespace DataImport
 
         private EFDbContext GetDbContext()
         {
-            return new Configuration(this.txtNewDb.Text).AddAssemblyFile("Tlw.ZPG.Domain.dll").BuildDbContextFactory().GetDbContext();
+            return new Configuration(this.txtNewDb.Text).AddAssembly("Tlw.ZPG.Domain.dll").BuildDbContextFactory().GetDbContext();
         }
 
         private void Import_Affiche()
@@ -153,7 +153,7 @@ namespace DataImport
         private void SetAfficheContent(Affiche affiche)
         {
            var templete = System.IO.File.ReadAllText("affiche.html");
-           affiche.SetContentByTemplete(templete);
+           affiche.FormatContent(templete);
            affiche.Content = affiche.Content.Replace("{Affiche_HandModeAndBidMethod}", "1、采取在“福建省国有建设用地使用权出让网上交易系统”挂牌的方式进行。 竞买申请人登录“福建省国有建设用地使用权出让网上交易系统”（以下简称网上交易系统）注册登记，提出竞买申请，经挂牌人审查确认，获得登录网上交易系统的竞买号和初始交易密码，在规定的期间内登录网上交易系统进行网上报价和竞买等。<br/>&nbsp;&nbsp;&nbsp;2、竞买人初次报价可等于或大于挂牌起始价，之后每次报价必须比当前最高报价递增一个加价幅度以上的价格（不要求按加价幅度的整数倍报价）。挂牌出让按照价高者得的原则确定竞得人。");
 
         }

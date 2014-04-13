@@ -9,19 +9,37 @@ using Tlw.ZPG.Infrastructure.Utils;
 
 namespace Tlw.ZPG.Services.Permission
 {
+
+    internal class UserService : ServiceBase<User>
+    {
+        public User FindByAccount(string account)
+        {
+            return this.Where(t => t.LoginAccount == account).FirstOrDefault();
+        }
+    }
+
+    internal class RoleService : ServiceBase<Role>
+    { }
+
+    internal class FunctionService : ServiceBase<Function>
+    { }
+
+    internal class MenuService : ServiceBase<Menu>
+    { }
+
     public class PermissionService
     {
-        private ServiceBase<User> userService;
-        private ServiceBase<Role> roleService;
-        private ServiceBase<Function> functionService;
-        private ServiceBase<Menu> menuService;
+        private UserService userService;
+        private RoleService roleService;
+        private FunctionService functionService;
+        private MenuService menuService;
 
         public PermissionService()
         {
-            userService = new ServiceBase<User>();
-            roleService = new ServiceBase<Role>();
-            functionService = new ServiceBase<Function>();
-            menuService = new ServiceBase<Menu>();
+            userService = new UserService();
+            roleService = new RoleService();
+            functionService = new FunctionService();
+            menuService = new MenuService();
         }
 
         #region create
@@ -91,34 +109,24 @@ namespace Tlw.ZPG.Services.Permission
         }  
         #endregion
 
-        public ServiceResponse ChangePassword(string account, string password, string newPassword)
+        public void ChangePassword(string account, string password, string newPassword)
         {
-            ServiceResponse result = new ServiceResponse();
             if (string.IsNullOrEmpty(newPassword))
             {
-                result.Message = "新密码不能为空";
+                throw new ServiceException("新密码不能为空");
             }
             else
             {
                 var user = FindByAccount(account);
-                if (user == null || !user.CheckPassword(password))
-                {
-                    result.Message = "用户名或密码不正确";
-                }
-                else
-                {
-                    user.ChangePassword(newPassword);
-                    result.Success = true;
-                }
+                user.ChangePassword(password, newPassword);
             }
-            return result;
         }
 
         public bool ValidateUser(string account, string password)
         {
             if(string.IsNullOrEmpty(account) || string.IsNullOrEmpty(password)) return false;
             var user = FindByAccount(account);
-            return user != null && user.CheckPassword(password);
+            return user != null && user.ValidatePassword(password);
         }
 
         public IList<Function> GetFunctions(int userId)
@@ -139,10 +147,7 @@ namespace Tlw.ZPG.Services.Permission
             foreach (var item in roles)
             {
                 var role = roleService.FindById(item);
-                if (!user.Roles.Contains(role))
-                {
-                    user.Roles.Add(role);
-                }
+                user.Roles.Add(role);
             }
         }
 
@@ -174,8 +179,7 @@ namespace Tlw.ZPG.Services.Permission
 
         public User FindByAccount(string account)
         {
-            return userService.Where(t => t.LoginAccount == account).FirstOrDefault();
+            return userService.FindByAccount(account);
         }
-
     }
 }

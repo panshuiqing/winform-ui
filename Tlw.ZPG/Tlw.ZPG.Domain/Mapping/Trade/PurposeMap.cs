@@ -20,7 +20,7 @@ namespace Tlw.ZPG.Domain.Mapping
             this.Property(t => t.PurposeName).HasColumnName("PurposeName").IsRequired().HasMaxLength(100);
             this.Property(t => t.ParentId).HasColumnName("ParentId");
             this.Property(t => t.OrderNum).HasColumnName("OrderNum");
-            this.HasOptional(t => t.Parent).WithMany(t => t.Nodes).HasForeignKey(d => d.ParentId).WillCascadeOnDelete(true);
+            this.HasOptional(t => t.Parent).WithMany(t => t.Nodes).HasForeignKey(d => d.ParentId).WillCascadeOnDelete(false);
         }
     }
 }

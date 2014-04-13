@@ -23,7 +23,7 @@ namespace Tlw.ZPG.Domain.Models.Admin
         {
             if (string.IsNullOrEmpty(this.RoleName))
             {
-                yield return new BusinessRule("角色名称不能为空");
+                yield return new BusinessRule("RoleName", "角色名称不能为空");
             }
         }
     }

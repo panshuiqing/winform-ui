@@ -36,11 +36,11 @@ namespace Tlw.ZPG.Infrastructure.DbContext
                     types.Add(type);
                 }
             }
-            else if (this.DbContextFactory.Settings.AssemblyFileNames.Count > 0)
+            else if (this.DbContextFactory.Settings.AssemblyNames.Count > 0)
             {
-                foreach (var item in this.DbContextFactory.Settings.AssemblyFileNames)
+                foreach (var item in this.DbContextFactory.Settings.AssemblyNames)
                 {
-                    foreach (var type in  Assembly.LoadFrom(item).GetTypes())
+                    foreach (var type in  Assembly.Load(item).GetTypes())
                     {
                         types.Add(type);
                     }

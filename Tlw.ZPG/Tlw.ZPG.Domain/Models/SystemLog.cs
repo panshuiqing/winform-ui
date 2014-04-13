@@ -9,12 +9,12 @@ namespace Tlw.ZPG.Domain.Models
     {
         public System.DateTime CreateTime { get; set; }
         public SystemLogType LogType { get; set; }
+        public string LogCode { get; set; }
         public int UserId { get; set; }
         public string UserName { get; set; }
         public string Ip { get; set; }
         public string Url { get; set; }
         public string Content { get; set; }
         public string Title { get; set; }
-        public string EntityName { get; set; }
     }
 }

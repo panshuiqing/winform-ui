@@ -9,9 +9,8 @@ namespace Tlw.ZPG.Domain.Models.Trading
     {
         public Land()
         {
-            this.LandAttaches = new HashSet<Attachment>();
+            this.LandAttaches = new HashSet<LandAttach>();
             this.LandPurposes = new HashSet<LandPurpose>();
-            this.LandTraces = new HashSet<LandTrace>();
         }
 
         #region 属性
@@ -34,7 +33,7 @@ namespace Tlw.ZPG.Domain.Models.Trading
         /// <summary>
         /// 土地用途（完整）
         /// </summary>
-        public string LandPurpose { get; set; }
+        public string LandPurpose { get; private set; }
         /// <summary>
         /// 土地现状
         /// </summary>
@@ -80,28 +79,19 @@ namespace Tlw.ZPG.Domain.Models.Trading
         /// </summary>
         public string LandScope { get; set; }
 
-        public virtual ICollection<Attachment> LandAttaches { get; internal set; }
+        public virtual ICollection<LandAttach> LandAttaches { get; internal set; }
         public virtual ICollection<LandPurpose> LandPurposes { get; internal set; }
-        public virtual ICollection<LandTrace> LandTraces { get; internal set; } 
         #endregion
 
-        public override IEnumerable<BusinessRule> Validate()
+        /// <summary>
+        /// 把LandPurposes集合转化为字符串保存
+        /// </summary>
+        public void SetLandPurpose()
         {
-            if (string.IsNullOrEmpty(this.ProjectName))
+            LandPurpose=string.Empty;
+            foreach (var item in LandPurposes)
             {
-                yield return new BusinessRule("项目名称不能为空");
-            }
-            if (string.IsNullOrEmpty(this.LandNumber))
-            {
-                yield return new BusinessRule("宗地号不能为空");
-            }
-            if (string.IsNullOrEmpty(this.Location))
-            {
-                yield return new BusinessRule("位置不能为空");
-            }
-            if (this.LandPurposes.Count == 0)
-            {
-                yield return new BusinessRule("宗地用途及出让年限不能为空");
+                LandPurpose += string.Format("{0}：面积：{1}平方米、出让年限：{2}年;",item.Purpose.PurposeName,item.Area,item.Years);
             }
         }
     }

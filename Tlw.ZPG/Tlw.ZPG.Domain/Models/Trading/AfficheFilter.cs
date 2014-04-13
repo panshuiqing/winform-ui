@@ -6,7 +6,7 @@ namespace Tlw.ZPG.Domain.Models.Trading
 
     public partial class AfficheFilter : EntityBase
     {
-        public string FilterKeyword { get; set; }
+        public string Pattern { get; set; }
         public string Remark { get; set; }
         public string ErrorMessage { get; set; }
     }

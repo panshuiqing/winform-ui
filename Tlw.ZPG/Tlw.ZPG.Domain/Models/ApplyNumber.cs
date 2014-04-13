@@ -4,7 +4,7 @@ namespace Tlw.ZPG.Domain.Models
     using System.Linq;
     using System.Collections.Generic;
     using Tlw.ZPG.Infrastructure;
-using Tlw.ZPG.Domain.Models.Admin;
+    using Tlw.ZPG.Domain.Models.Admin;
     using Tlw.ZPG.Domain.Models.Trading;
 
     public partial class ApplyNumber : EntityBase

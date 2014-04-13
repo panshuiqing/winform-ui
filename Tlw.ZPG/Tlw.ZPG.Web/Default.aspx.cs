@@ -28,7 +28,7 @@ namespace Tlw.ZPG.Web
 
         private void BindNews()
         {
-            var list_news = new Tlw.ZPG.Services.Common.NewsService().Find(new Services.PageRequest() { PageSize = 5 });
+            var list_news = new Tlw.ZPG.Services.Content.NewsService().Find(new Services.PageRequest() { PageSize = 5 });
             this.Repeater_zcfg.DataSource = list_news;
             this.Repeater_zcfg.DataBind();
         }
@@ -42,7 +42,7 @@ namespace Tlw.ZPG.Web
 
         private void BindPrice()
         {
-            var list_price = new TradeService().FindNewDetails();
+            var list_price = new TradeService().FindNewDetails(20);
             this.Repeater_price.DataSource = list_price;
             this.Repeater_price.DataBind();
         }

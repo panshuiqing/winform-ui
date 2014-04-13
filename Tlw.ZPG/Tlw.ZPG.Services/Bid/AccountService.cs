@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using Tlw.ZPG.Domain.Enums;
 using Tlw.ZPG.Domain.Models;
 using Tlw.ZPG.Domain.Models.Bid;
-using Tlw.ZPG.Services.Common;
+using Tlw.ZPG.Services.Content;
 
 namespace Tlw.ZPG.Services.Bid
 {
@@ -15,7 +15,7 @@ namespace Tlw.ZPG.Services.Bid
         public override void Insert(Tlw.ZPG.Domain.Models.Bid.Account entity)
         {
             if (entity == null) throw new ServiceException("entity");
-            entity.Apply();
+            //entity.Apply();
             base.Insert(entity);
         }
 

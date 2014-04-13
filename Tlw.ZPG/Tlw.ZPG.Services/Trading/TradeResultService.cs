@@ -7,13 +7,13 @@ using Tlw.ZPG.Domain.Models.Trading;
 
 namespace Tlw.ZPG.Services.Trading
 {
-    public class TradeResultService:ServiceBase<TradeResult>
+    public class TradeResultService:ServiceBase<TradeResultAffiche>
     {
         /// <summary>
         /// 最新top 10
         /// </summary>
         /// <returns></returns>
-        public IList<TradeResult> FindNewList()
+        public IList<TradeResultAffiche> FindNewList()
         {
             return this.DbSet.OrderByDescending(t => t.DealTime).Take(10).ToList();
         }

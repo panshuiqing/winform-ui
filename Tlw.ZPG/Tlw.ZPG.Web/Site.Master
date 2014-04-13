@@ -7,7 +7,8 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta http-equiv="x-ua-compatible"content="IE=7"/> 
     <title></title>
 
     <asp:ContentPlaceHolder ID="head" runat="server">
@@ -16,6 +17,8 @@
 <body>
     <form id="form1" runat="server">
     <div class="divAll">
+        <div class="divLogo">
+        </div>
         <uc1:TopControl ID="TopControl1" runat="server" />
         <table class="tableInfo">
             <tr>
@@ -24,7 +27,7 @@
                         <table width="225px" border="0" cellspacing="0" cellpadding="0">
                             <tr>
                                 <td>
-                                    <img src="images/Lm_bg.jpg" width="224" height="237" border="0" usemap="#Map" />
+                                    <img src="/images/Lm_bg.jpg" width="224" height="237" border="0" usemap="#Map" />
                                 </td>
                             </tr>
                             <tr>
@@ -39,13 +42,13 @@
                                                 <td width="2px">
                                                 </td>
                                                 <td width="100px" align="right">
-                                                    <a href="zxly/"><span style="font-size: 14px; position: relative; top: 20px">
+                                                    <a href="/zxly/"><span style="font-size: 14px; position: relative; top: 20px">
                                                         &nbsp;&nbsp;在线留言</span></a>
                                                 </td>
                                                 <td width="10px">
                                                 </td>
                                                 <td width="100px" align="right">
-                                                    <a href="download/"><span style="font-size: 14px;
+                                                    <a href="/download/"><span style="font-size: 14px;
                                                         position: relative; top: 20px">&nbsp;&nbsp;&nbsp;&nbsp;竞买软件</span></a>
                                                 </td>
                                             </tr>
@@ -53,13 +56,13 @@
                                                 <td width="2px">
                                                 </td>
                                                 <td width="100px" align="right">
-                                                    <a href="zswd/"><span style="font-size: 14px;
+                                                    <a href="/zswd/"><span style="font-size: 14px;
                                                         position: relative; top: 22px">&nbsp;&nbsp;知识问答</span></a>
                                                 </td>
                                                 <td width="10px">
                                                 </td>
                                                 <td width="110px" align="right">
-                                                    <a href="zcfg/"><span style="font-size: 14px;
+                                                    <a href="/zcfg/"><span style="font-size: 14px;
                                                         position: relative; top: 22px">&nbsp;&nbsp;&nbsp;&nbsp;政策法规</span></a>
                                                 </td>
                                             </tr>
@@ -75,13 +78,13 @@
                                 <td>
                                     <div class="jmrczbz">
                                         <ul>
-                                            <li><a href="demo/zc.html" target="_blank"><span style="font-size: 14px">
+                                            <li><a href="/demo/zc.html" target="_blank"><span style="font-size: 14px">
                                                 注册演示</span></a></li>
-                                            <li><a href="demo/gpjy.html" target="_blank"><span style="font-size: 14px">
+                                            <li><a href="/demo/gpjy.html" target="_blank"><span style="font-size: 14px">
                                                 挂牌交易演示</span></a></li>
-                                            <li><a href="demo/wspm.html" target="_blank"><span style="font-size: 14px">
+                                            <li><a href="/demo/wspm.html" target="_blank"><span style="font-size: 14px">
                                                 网上拍卖演示</span></a></li>
-                                            <li class="wu"><a href="download/竞买人操作手册.doc" target="_blank"><span
+                                            <li class="wu"><a href="/download/竞买人操作手册.doc" target="_blank"><span
                                                 style="font-size: 14px">竞买人操作手册下载</span></a></li>
                                         </ul>
                                     </div>
@@ -94,11 +97,11 @@
                         </table>
                     </div>
                     <map name="Map" id="Map">
-                        <area shape="rect" coords="42,12,194,45" href="affiche/" />
-                        <area shape="rect" coords="42,57,194,89" href="tdcrjg/" />
-                        <area shape="rect" coords="45,101,216,132" href="tdcrjg/?type=1" />
+                        <area shape="rect" coords="42,12,194,45" href="/affiche/" />
+                        <area shape="rect" coords="42,57,194,89" href="/tdcrjg/" />
+                        <area shape="rect" coords="45,101,216,132" href="/tdcrjg/?type=1" />
                         <area shape="rect" coords="45,148,213,178" href="/jmsqcx/" target="_blank" />
-                        <area shape="rect" coords="44,194,180,224" href="cjwt/" />
+                        <area shape="rect" coords="44,194,180,224" href="/cjwt/" />
                     </map>
                 </td>
                 

@@ -37,10 +37,9 @@ namespace Tlw.ZPG.Services.Trading
         /// 最新报价Top 20
         /// </summary>
         /// <returns></returns>
-        public IList<TradeDetail> FindNewDetails()
+        public IList<TradeDetail> FindNewDetails(int count)
         {
-            ServiceBase<TradeDetail> service = new ServiceBase<TradeDetail>();
-            return service.DbSet.OrderByDescending(t => t.ID).Take(20).ToList();
+            return CurrentDbContext.Set<TradeDetail>().OrderByDescending(t => t.ID).Take(count).ToList();
         }
     }
 }

@@ -2,6 +2,8 @@ namespace Tlw.ZPG.Domain.Models.Admin
 {
     using System;
     using System.Collections.Generic;
+    using System.Collections.ObjectModel;
+    using System.ComponentModel.DataAnnotations.Schema;
     using Tlw.ZPG.Infrastructure;
     using Tlw.ZPG.Infrastructure.Utils;
 
@@ -21,12 +23,11 @@ namespace Tlw.ZPG.Domain.Models.Admin
         public string LinkPhone { get; set; }
         public string Email { get; set; }
         public int Status { get; set; }
-
-        public virtual ICollection<Role> Roles { get; internal set; }
-        public virtual County County { get; set; } 
+        public virtual ICollection<Role> Roles { get; set; }
+        public virtual County County { get; set; }
         #endregion
 
-        public bool CheckPassword(string password)
+        public bool ValidatePassword(string password)
         {
             return this.LoginPassword == SecurityUtil.MD5Encrypt(password);
         }
@@ -36,9 +37,16 @@ namespace Tlw.ZPG.Domain.Models.Admin
             this.LoginPassword = SecurityUtil.MD5Encrypt(this.LoginPassword);
         }
 
-        public void ChangePassword(string newPassword)
+        public void ChangePassword(string password, string newPassword)
         {
-            this.LoginPassword = SecurityUtil.MD5Encrypt(newPassword);
+            if (ValidatePassword(password))
+            {
+                this.LoginPassword = SecurityUtil.MD5Encrypt(newPassword);
+            }
+            else
+            {
+                throw new ChangePasswordException("原密码不正确");
+            }
         }
 
         public IList<Menu> GetUserMenus()
@@ -65,11 +73,11 @@ namespace Tlw.ZPG.Domain.Models.Admin
         {
             if (string.IsNullOrEmpty(this.LoginAccount))
             {
-                yield return new BusinessRule("登录账号不能为空");
+                yield return new BusinessRule("LoginAccount", "登录账号不能为空");
             }
             if (string.IsNullOrEmpty(this.LoginPassword))
             {
-                yield return new BusinessRule("登录密码不能为空");
+                yield return new BusinessRule("LoginPassword", "登录密码不能为空");
             }
         }
     }

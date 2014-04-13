@@ -5,7 +5,7 @@ using System.Text;
 
 namespace Tlw.ZPG.Infrastructure.DbContext
 {
-    public class WebDbContext : CurrentDbContext
+    public class WebDbContext : DbContextContainer
     {
         private IDbContextFactory factory;
 

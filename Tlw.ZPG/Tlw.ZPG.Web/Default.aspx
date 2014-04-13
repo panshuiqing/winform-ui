@@ -7,14 +7,8 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <title>福建省国有建设用地使用权出让网上交易系统</title>
-    <style type="text/css">
-        #glowtext {
-            filter: glow(color=red,strength=2);
-            width: 100%;
-        }
-    </style>
     <link href="css/tabStrip.css" rel="Stylesheet" type="text/css" />
-    <link href="css/Index.css" type="text/css"rel="Stylesheet" />
+    <link href="css/index.css" type="text/css"rel="Stylesheet" />
     <script src="js/jquery-1.7.1.min.js" type="text/javascript"></script>
     <script src="js/TabStrip.js" type="text/javascript"></script>
 </head>

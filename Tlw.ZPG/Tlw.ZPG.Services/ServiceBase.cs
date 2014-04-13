@@ -12,19 +12,21 @@ namespace Tlw.ZPG.Services
     public class ServiceBase<TEntity>
         where TEntity : EntityBase
     {
+        protected ServiceBase()
+        {
+        }
+
         public virtual void Insert(TEntity entity)
         {
             if (entity == null) throw new ServiceException("entity");
             Validate(entity);
             this.DbSet.Add(entity);
-            LogManager.WriteInsertLog(entity);
         }
 
         public virtual void Delete(TEntity entity)
         {
             if (entity == null) throw new ServiceException("entity");
             this.DbSet.Remove(entity);
-            LogManager.WriteDeleteLog(entity);
         }
 
         public virtual void Delete(object id)
@@ -41,7 +43,6 @@ namespace Tlw.ZPG.Services
         {
             if (entity == null) throw new ServiceException("entity");
             Validate(entity);
-            LogManager.WriteUpdateLog(entity);
         }
 
         public virtual TEntity FindById(object id)
@@ -58,8 +59,8 @@ namespace Tlw.ZPG.Services
         {
             return this.DbSet.OrderByDescending(t => t.ID).Page(request).ToList();
         }
-
-        private void Validate(TEntity entity)
+        
+        protected void Validate(TEntity entity)
         {
             var rules = entity.Validate();
             if (rules.Any())
@@ -73,24 +74,24 @@ namespace Tlw.ZPG.Services
             }
         }
 
-        internal IQueryable<TEntity> Where(Expression<Func<TEntity, bool>> predicate)
+        protected IQueryable<TEntity> Where(Expression<Func<TEntity, bool>> predicate)
         {
             return this.DbSet.Where(predicate);
         }
 
-        internal DbContext DbContext
+        protected DbContext CurrentDbContext
         {
             get
             {
-                return Application.DbContextFactory.GetCurrentDbContext();
+                return DbContextFactory.Instance.GetCurrentDbContext();
             }
         }
 
-        internal DbSet<TEntity> DbSet
+        protected DbSet<TEntity> DbSet
         {
             get
             {
-                return Application.DbContextFactory.GetCurrentDbContext().Set<TEntity>();
+                return DbContextFactory.Instance.GetCurrentDbContext().Set<TEntity>();
             }
         }
     }

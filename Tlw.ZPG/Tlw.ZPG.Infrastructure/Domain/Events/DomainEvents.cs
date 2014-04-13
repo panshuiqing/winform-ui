@@ -5,8 +5,10 @@ using System.Text;
 
 namespace Tlw.ZPG.Infrastructure.Domain.Events
 {
-    public static class DomainEvents
+    public sealed class DomainEvents
     {
+        private DomainEvents() { }
+
         private static IDictionary<Type, List<IDomainEventHandler>> handlerMap = new Dictionary<Type, List<IDomainEventHandler>>();
 
         /// <summary>

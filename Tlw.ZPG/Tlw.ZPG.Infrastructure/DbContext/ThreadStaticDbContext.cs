@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Tlw.ZPG.Infrastructure.DbContext
 {
-    public class ThreadStaticDbContext : CurrentDbContext
+    public class ThreadStaticDbContext : DbContextContainer
     {
         [ThreadStatic]
         private static EFDbContext _session;

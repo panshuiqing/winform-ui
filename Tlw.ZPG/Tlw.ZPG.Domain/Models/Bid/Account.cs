@@ -9,6 +9,8 @@ namespace Tlw.ZPG.Domain.Models.Bid
     using Tlw.ZPG.Infrastructure;
     using Tlw.ZPG.Infrastructure.Utils;
     using Tlw.ZPG.Infrastructure.Domain.Events;
+    using FluentValidation.Results;
+    using Tlw.ZPG.Domain.Validators;
 
     public partial class Account : EntityBase
     {
@@ -34,7 +36,7 @@ namespace Tlw.ZPG.Domain.Models.Bid
         public bool IsOnline { get; set; }
         public Nullable<System.DateTime> OnlineTime { get; set; }
         public AccountVerifyStatus VerifyStatus { get; set; }
-        public virtual Trade Trade { get; set; }
+        public virtual Trade Trade { get; internal set; }
         public virtual Person Agent { get; set; }
         public virtual Person AccountPerson { get; set; }
         public virtual Person Contact { get; set; }
@@ -42,7 +44,7 @@ namespace Tlw.ZPG.Domain.Models.Bid
         public virtual ICollection<AccountVerify> AccountVerifies { get; set; }
         public virtual ICollection<Person> UnionBidPersons { get; set; }
         public virtual ICollection<TradeDetail> TradeDetails { get; set; }
-        public virtual ICollection<Attachment> Attachments { get; set; }
+        public virtual ICollection<AccountAttach> Attachments { get; set; }
         #endregion
 
         #region 方法
@@ -59,8 +61,9 @@ namespace Tlw.ZPG.Domain.Models.Bid
         /// <summary>
         /// 申请，注册
         /// </summary>
-        public void Apply()
+        public void Apply(Trade trade)
         {
+            this.Trade = trade;
             this.RandomNumber = GenerateRandomNumber();
             this.CreateTime = DateTime.Now;
             this.Status = AccountStatus.Normal;
@@ -193,7 +196,7 @@ namespace Tlw.ZPG.Domain.Models.Bid
 
         private void CheckGrantTime()
         {
-            var days = Application.GetDictionaryValue("MinReleaseNum2TEDay", 2);
+            var days = AppSettings.GetValue("MinReleaseNum2TEDay", 2);
             if (DateTime.Now > this.Trade.TradeEndTime.AddDays(-days))
             {
                 throw new GrantApplyNumberException(string.Format("竞买号只能在交易截止时间前{0}天发放", days));
@@ -256,7 +259,7 @@ namespace Tlw.ZPG.Domain.Models.Bid
             else
             {
                 if (this.Trade.CreatorId != userId) throw new AccountFrozeException("挂牌人只能挂失自己宗地的竞买号");
-                var days = Application.GetDictionaryValue("MinLoseNum2TEDay", 2);
+                var days = AppSettings.GetValue("MinLoseNum2TEDay", 2);
                 if (DateTime.Now > this.Trade.TradeEndTime.AddDays(-days))
                     throw new GrantApplyNumberException(string.Format("现在离挂牌交易截止期限不足{0}日，不能挂失", days));
                 this.Status = AccountStatus.Loss;
@@ -269,138 +272,14 @@ namespace Tlw.ZPG.Domain.Models.Bid
         #region Validate
         public override IEnumerable<BusinessRule> Validate()
         {
-            List<BusinessRule> list = new List<BusinessRule>();
-            ValidateTrade(list);
-            if (this.AccountPerson != null)
+            AccountValidator validator = new AccountValidator();
+            ValidationResult results = validator.Validate(this);
+            foreach (var item in results.Errors)
             {
-                if (this.ApplyType == ApplyType.Natural)
-                {
-                    ValidatePerson(list, this.AccountPerson, "自然人");
-                }
-                else if (this.ApplyType == ApplyType.Corporation || this.ApplyType == ApplyType.OtherOrg)
-                {
-                    ValidateOrg(list, this.AccountPerson, "");
-                }
-            }
-            if (this.Corporation != null)
-            {
-                ValidatePerson(list, this.Corporation, "法定代表人");
-            }
-            if (this.Agent != null)
-            {
-                ValidatePerson(list, this.Agent, "委托代理人");
-            }
-            ValidateContact(list);
-            if (this.ApplyType == ApplyType.Union)
-            {
-                foreach (var item in this.UnionBidPersons)
-                {
-                    if (item.ApplyType == ApplyType.Natural)
-                    {
-                        ValidatePerson(list, item, "自然人（联合竞买）");
-                    }
-                    else
-                    {
-                        ValidateOrg(list, item, "联合竞买");
-                    }
-                }
-            }
-            return list;
-        }
-
-        private void ValidateTrade(List<BusinessRule> list)
-        {
-            if (this.Trade == null)
-            {
-                list.Add(new BusinessRule("不存在此宗地"));
-            }
-            else
-            {
-                if (this.Trade.SignBeginTime > DateTime.Now)
-                {
-                    list.Add(new BusinessRule("还未到报名时间"));
-                }
-                if (this.Trade.SignEndTime < DateTime.Now)
-                {
-                    list.Add(new BusinessRule("已过报名时间"));
-                }
+                yield return new BusinessRule(item.PropertyName, item.ErrorMessage);
             }
         }
 
-        private void ValidateOrg(List<BusinessRule> list, Person person, string prefix)
-        {
-            if (string.IsNullOrEmpty(this.Agent.Unit) || this.Agent.Unit.Length < 8)
-            {
-                list.Add(new BusinessRule(prefix + "单位名称填写不完整"));
-            }
-            if (string.IsNullOrEmpty(this.Agent.UnitCode) || this.Agent.UnitCode.Length < 5)
-            {
-                list.Add(new BusinessRule(prefix + "单位注册代码填写不完整"));
-            }
-            if (string.IsNullOrEmpty(this.Agent.MobilePhone) || this.Agent.MobilePhone.Length < 7)
-            {
-                list.Add(new BusinessRule(prefix + "电话填写不完整"));
-            }
-            if (!StringUtil.IsPostalCode(this.Agent.PostalCode))
-            {
-                list.Add(new BusinessRule(prefix + "邮编不正确"));
-            }
-        }
-
-        private void ValidatePerson(List<BusinessRule> list, Person person, string prefix)
-        {
-            if (person != null)
-            {
-                if (string.IsNullOrEmpty(person.PersonName) || person.PersonName.Length < 2)
-                {
-                    list.Add(new BusinessRule(prefix + "姓名填写不完整"));
-                }
-                if (string.IsNullOrEmpty(person.PassportNumber) || person.PassportNumber.Length < 5)
-                {
-                    list.Add(new BusinessRule(prefix + "证件号码填写不完整"));
-                }
-                else if (person.PassportType == "身份证" && !StringUtil.IsCardNo(person.PassportType))
-                {
-                    list.Add(new BusinessRule(prefix + "身份证填写不完整"));
-                }
-                if (string.IsNullOrEmpty(person.Address) || person.Address.Length < 12)
-                {
-                    list.Add(new BusinessRule(prefix + "地址填写不完整"));
-                }
-                if (string.IsNullOrEmpty(person.MobilePhone) || person.MobilePhone.Length < 7)
-                {
-                    list.Add(new BusinessRule(prefix + "电话填写不完整"));
-                }
-                if (!StringUtil.IsPostalCode(person.PostalCode))
-                {
-                    list.Add(new BusinessRule(prefix + "邮编不正确"));
-                }
-            }
-        }
-
-        private void ValidateContact(List<BusinessRule> list)
-        {
-            if (string.IsNullOrEmpty(this.Contact.PersonName) || this.Contact.PersonName.Length < 2)
-            {
-                list.Add(new BusinessRule("联系人姓名填写不完整"));
-            }
-            if (string.IsNullOrEmpty(this.Contact.Telephone) || this.Contact.Telephone.Length < 7)
-            {
-                list.Add(new BusinessRule("联系人固定电话填写不完整"));
-            }
-            if (!StringUtil.IsMobilePhone(this.Contact.MobilePhone))
-            {
-                list.Add(new BusinessRule("联系人手机号码不正确"));
-            }
-            if (string.IsNullOrEmpty(this.Contact.Address) || this.Contact.Address.Length < 12)
-            {
-                list.Add(new BusinessRule("联系人地址填写不完整"));
-            }
-            if (!StringUtil.IsPostalCode(this.Contact.PostalCode))
-            {
-                list.Add(new BusinessRule("联系人邮编不正确"));
-            }
-        } 
         #endregion
     }
 }

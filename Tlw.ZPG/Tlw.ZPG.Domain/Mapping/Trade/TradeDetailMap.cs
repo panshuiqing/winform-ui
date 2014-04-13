@@ -26,8 +26,8 @@ namespace Tlw.ZPG.Domain.Mapping
             this.Property(t => t.Remark).HasColumnName("Remark").HasMaxLength(200);
             this.Property(t => t.IP).HasColumnName("IP").HasMaxLength(50);
             this.Property(t => t.SystemInfo).HasColumnName("SystemInfo").HasMaxLength(200);
-            this.HasRequired(t => t.Trade).WithMany(t => t.TradeDetails).HasForeignKey(t => t.TradeId);
-            this.HasRequired(t => t.Account).WithMany(t => t.TradeDetails).HasForeignKey(t => t.AccountId);
+            this.HasRequired(t => t.Trade).WithMany(t => t.TradeDetails);
+            this.HasRequired(t => t.Account).WithMany(t => t.TradeDetails).WillCascadeOnDelete(false);
         }
     }
 }
